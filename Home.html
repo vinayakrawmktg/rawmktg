@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>RawMktg · Marketing intelligence, no fluff</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/brand.css" />
+  <style>
+    /* ============ Dateline strip ============ */
+    .dateline{
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--rule);
+      font: 500 11px/1 var(--f-mono);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .dateline .row{
+      display:flex; justify-content: space-between; align-items: center;
+      height: 32px;
+    }
+    .dateline .row .lhs{ display:flex; gap: 18px; }
+    .dateline .row .lhs span b{ color: var(--ink); font-weight: 600; }
+
+    /* ============ Hero ============ */
+    .hero{
+      padding: 56px 0 32px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .hero .grid{
+      display:grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 56px;
+      align-items: end;
+    }
+    .hero .left .kicker{
+      display:flex; gap: 14px; align-items: baseline; margin-bottom: 22px;
+    }
+    .hero .left .kicker .pill{
+      font: 600 10px/1 var(--f-mono);
+      letter-spacing: 0.20em; text-transform: uppercase;
+      color: var(--signal);
+      border: 1px solid var(--signal);
+      padding: 5px 8px; border-radius: 999px;
+    }
+    .hero .left .kicker .meta{
+      font: 500 11px/1 var(--f-mono); color: var(--mute);
+      letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .hero h1{
+      font: 700 75px/1.05 var(--f-display);
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+    .hero h1 em{ font-style: normal; color: var(--signal); }
+    .hero h1 a{ color: inherit; text-decoration: none; }
+    .hero h1 a:hover em{ text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .hero .lede{
+      font: 400 22px/1.45 var(--f-prose);
+      color: var(--ink);
+      margin: 0 0 24px;
+      max-width: 560px;
+    }
+    .hero .byline-row{
+      display:flex; align-items: center; gap: 24px;
+      font: 500 11px/1 var(--f-mono);
+      letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--mute);
+    }
+    .hero .byline-row b{ color: var(--ink); font-weight: 600; }
+    .hero .byline-row .read{
+      padding: 8px 14px;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      transition: background .12s, color .12s;
+    }
+    .hero .byline-row .read:hover{ background: var(--ink); color: var(--paper); }
+
+    /* Hero right: terminal snapshot */
+    .hero .right .terminal-card{
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--rl);
+      padding: 18px;
+      font-family: var(--f-mono);
+    }
+    .hero .right .terminal-card .head{
+      display:flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      margin-bottom: 12px;
+    }
+    .hero .right .terminal-card .head .title{
+      font: 600 11px/1 var(--f-mono);
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--signal);
+    }
+    .hero .right .terminal-card .head .ts{
+      font: 500 10px/1 var(--f-mono);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .hero .right .terminal-card .line{
+      display:flex; justify-content: space-between;
+      padding: 8px 0; font-size: 12px;
+      border-bottom: 1px dashed rgba(255,255,255,.10);
+    }
+    .hero .right .terminal-card .line:last-child{ border-bottom: none; }
+    .hero .right .terminal-card .line .k{ color: rgba(255,255,255,.55); }
+    .hero .right .terminal-card .line .v.up   { color: var(--up); }
+    .hero .right .terminal-card .line .v.down { color: var(--signal); }
+    .hero .right .terminal-card .foot{
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      font: 500 10px/1.4 var(--f-mono);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      display:flex; justify-content: space-between;
+    }
+    .hero .right .terminal-card .foot a{
+      color: var(--signal); text-decoration: none;
+      border-bottom: 1px solid var(--signal);
+    }
+
+    /* ============ Section heading ============ */
+    .sect-head{
+      display:flex; justify-content: space-between; align-items: baseline;
+      margin: 64px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--ink);
+    }
+    .sect-head h2{
+      font: 700 55px/1.08 var(--f-display);
+      margin: 0;
+      display:flex; align-items: baseline; gap: 14px;
+    }
+    .sect-head h2 .n{
+      font: 600 13px/1 var(--f-mono);
+      color: var(--signal);
+      letter-spacing: 0.16em;
+    }
+    .sect-head .right{
+      font: 500 11px/1 var(--f-mono);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--mute);
+    }
+    .sect-head .right a{ color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--signal); }
+
+    /* ============ Article cards ============ */
+    .cards-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .card{
+      display:flex; flex-direction: column;
+      padding-top: 18px;
+      border-top: 2px solid var(--ink);
+    }
+    .card .kicker{
+      display:flex; gap: 10px; align-items: baseline;
+      font: 600 10px/1 var(--f-mono);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 14px;
+    }
+    .card .kicker .n{ color: var(--mute); }
+    .card h3{
+      font: 700 35px/1.18 var(--f-display);
+      margin: 0 0 12px;
+      text-wrap: balance;
+    }
+    .card h3 a{ color: inherit; text-decoration: none; }
+    .card h3 a:hover{ background: var(--signal-soft); }
+    .card .dek{
+      font: 400 14px/1.5 var(--f-prose);
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+    .card .meta{
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed var(--rule-2);
+      display:flex; justify-content: space-between;
+      font: 500 10px/1 var(--f-mono);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mute);
+    }
+    .card .meta b{ color: var(--ink); font-weight: 600; }
+
+    /* ============ Topics ============ */
+    .topics{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .topic{
+      padding: 22px 18px;
+      background: var(--paper-2);
+      border-radius: var(--rl);
+      text-decoration: none;
+      color: inherit;
+      display:flex; flex-direction: column; gap: 8px;
+      transition: background .12s;
+    }
+    .topic:hover{ background: var(--paper-3); }
+    .topic .n{
+      font: 600 10px/1 var(--f-mono);
+      letter-spacing: 0.20em; text-transform: uppercase;
+      color: var(--signal);
+    }
+    .topic .name{
+      font: 700 27px/1.25 var(--f-display);
+      color: var(--ink);
+    }
+    .topic .count{
+      font: 500 11px/1 var(--f-mono);
+      letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--mute);
+      margin-top: 4px;
+    }
+    .topic .desc{
+      font: 400 14px/1.5 var(--f-prose);
+      color: var(--ink);
+      margin-top: 4px;
+    }
+
+    /* ============ Numbers band ============ */
+    .numbers{
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--rl);
+      padding: 36px 40px;
+      display:grid;
+      grid-template-columns: 1.2fr repeat(4, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+    .numbers .label{
+      font: 600 12px/1.3 var(--f-mono);
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--signal);
+    }
+    .numbers .label b{
+      display:block; font: 700 27px/1.2 var(--f-display); color: var(--paper);
+      margin-top: 6px;
+    }
+    .numbers .stat .v{
+      font: 700 35px/1.18 var(--f-display);
+      color: var(--paper);
+      display:flex; align-items: baseline; gap: 6px;
+    }
+    .numbers .stat .v small{
+      font: 600 13px/1 var(--f-mono);
+      letter-spacing: 0;
+      color: var(--signal);
+    }
+    .numbers .stat .k{
+      font: 500 10px/1.4 var(--f-mono);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-top: 8px;
+    }
+
+    /* ============ Subscribe ============ */
+    .subscribe{
+      margin-top: 64px;
+      padding: 40px 36px;
+      background: var(--paper-2);
+      border-radius: var(--rl);
+      border: 1px solid var(--rule);
+      display:grid; grid-template-columns: 1fr 340px; gap: 28px;
+      align-items: center;
+    }
+    .subscribe h3{
+      font: 700 38px/1.15 var(--f-display);
+      margin: 0 0 10px;
+    }
+    .subscribe h3 em{ font-style: normal; color: var(--signal); }
+    .subscribe p{
+      font: 400 16px/1.55 var(--f-prose);
+      color: var(--ink);
+      margin: 0;
+      max-width: 520px;
+    }
+    .subscribe .form{
+      display:flex; flex-direction: column; gap: 8px;
+    }
+    .subscribe input{
+      background: var(--paper);
+      border: 1px solid var(--rule-2);
+      color: var(--ink);
+      padding: 12px 14px;
+      font: 500 13px/1 var(--f-mono);
+      letter-spacing: 0.04em;
+      border-radius: var(--r);
+    }
+    .subscribe input::placeholder{ color: var(--mute); }
+    .subscribe button{
+      background: var(--ink); color: var(--paper);
+      border: none; padding: 12px 14px;
+      font: 600 12px/1 var(--f-mono);
+      letter-spacing: 0.16em; text-transform: uppercase;
+      cursor: pointer; border-radius: var(--r);
+    }
+    .subscribe button:hover{ background: var(--signal); }
+    .subscribe .terms{
+      font: 500 10px/1.4 var(--f-mono);
+      letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--mute);
+    }
+
+    @media (max-width: 880px){
+      .hero .grid{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 44px; }
+      .cards-3{ grid-template-columns: 1fr; }
+      .topics{ grid-template-columns: repeat(2, 1fr); }
+      .numbers{ grid-template-columns: 1fr 1fr; }
+      .subscribe{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav">
+  <div class="page">
+    <div class="row">
+      <a href="Home.html" style="text-decoration:none;color:inherit;">
+        <span class="rm-logo sm"><span class="raw">Raw</span><span class="mktg">Mktg</span><span class="dot">.</span></span>
+      </a>
+      <div class="links">
+        <a href="#">SEO</a>
+        <a href="#">GEO</a>
+        <a href="#">Reports</a>
+        <a href="#">Data</a>
+        <a href="#" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ DATELINE ============ -->
+<div class="dateline">
+  <div class="page">
+    <div class="row">
+      <div class="lhs">
+        <span>Issue №&nbsp;<b>047</b></span>
+        <span>2026.05.12 · Tuesday</span>
+        <span>Marketing intelligence — no fluff</span>
+      </div>
+      <div class="rhs">
+        <span>Next drop · 2026.05.26 06:00 UTC</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="Home">
+  <div class="page">
+    <div class="grid">
+      <div class="left">
+        <div class="kicker">
+          <span class="pill">Report №&nbsp;047</span>
+          <span class="meta">Search · Q1 2026 · 14 min read</span>
+        </div>
+        <h1>
+          <a href="Article.html">Why <em>42%</em> of B2B "AI overviews" still cite your competitors — and the four fixes that moved citation share in 30 days.</a>
+        </h1>
+        <p class="lede">We scraped 12,418 AI Overviews across eight B2B verticals, attributed every citation back to its source, and shipped four interventions on a single client. Here's what moved.</p>
+        <div class="byline-row">
+          <span>By <b>Jordan Reyes</b></span>
+          <span>·</span>
+          <span>n = 12,418 SERPs</span>
+          <a class="read" href="Article.html">Read report →</a>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="terminal-card">
+          <div class="head">
+            <span class="title">Live · this week</span>
+            <span class="ts">2026.05.12</span>
+          </div>
+          <div class="line"><span class="k">B2B citation share, top-10</span><span class="v down">−3.1%</span></div>
+          <div class="line"><span class="k">AI overview presence (avg)</span><span class="v up">71.4%</span></div>
+          <div class="line"><span class="k">Glossary-page citations</span><span class="v up">+12.1pp</span></div>
+          <div class="line"><span class="k">Landing-page citations</span><span class="v down">−9.2pp</span></div>
+          <div class="line"><span class="k">Citation volatility (σ)</span><span class="v">0.41</span></div>
+          <div class="line"><span class="k">Sample size, 30d</span><span class="v">12,418</span></div>
+          <div class="foot">
+            <span>Refresh · 06:00 UTC daily</span>
+            <a href="#">Subscribe →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LATEST REPORTS ============ -->
+<section class="page">
+  <div class="sect-head">
+    <h2><span class="n">§ Reports</span>Latest</h2>
+    <div class="right"><a href="#">All reports →</a></div>
+  </div>
+  <div class="cards-3">
+    <article class="card">
+      <div class="kicker"><span>№ 046</span><span>· SEO · Authority</span></div>
+      <h3><a href="#">The case against domain authority — five months of data say it stopped predicting in October.</a></h3>
+      <p class="dek">DA is the most-quoted vanity metric in B2B SEO. We tested it against 18,000 ranking changes. The correlation collapsed in Q4.</p>
+      <div class="meta"><span>By <b>Mara Olsson</b></span><span>12 min</span></div>
+    </article>
+
+    <article class="card">
+      <div class="kicker"><span>№ 045</span><span>· GEO · Schema</span></div>
+      <h3><a href="#">Schema depth, a benchmark — what 200 B2B sites actually ship vs what gets quoted.</a></h3>
+      <p class="dek">A field study of 200 mid-market B2B sites. Three pages of FAQPage markup will outperform an entire blog. The data plus the audit script.</p>
+      <div class="meta"><span>By <b>Jordan Reyes</b></span><span>9 min</span></div>
+    </article>
+
+    <article class="card">
+      <div class="kicker"><span>№ 044</span><span>· Attribution</span></div>
+      <h3><a href="#">Multi-touch attribution is a coin flip — eight quarters of B2B pipeline say so.</a></h3>
+      <p class="dek">We re-attributed $48M of closed-won pipeline using six different MTA models. Six models, six different "winners." A defense of last-touch.</p>
+      <div class="meta"><span>By <b>D. Hashimoto</b></span><span>11 min</span></div>
+    </article>
+  </div>
+
+  <!-- second row -->
+  <div class="cards-3" style="margin-top: 32px;">
+    <article class="card">
+      <div class="kicker"><span>№ 043</span><span>· Email</span></div>
+      <h3><a href="#">B2B cold email open rates, debunked — what changed when Apple Mail killed pixels.</a></h3>
+      <p class="dek">Five vendors, 6.2M sends, 90 days post-pixel. Why "open rate" is now a worse-than-useless metric, and what to replace it with.</p>
+      <div class="meta"><span>By <b>Mara Olsson</b></span><span>7 min</span></div>
+    </article>
+
+    <article class="card">
+      <div class="kicker"><span>№ 042</span><span>· Paid · LinkedIn</span></div>
+      <h3><a href="#">LinkedIn CPM is up 38% YoY — and the spend mix that beats it.</a></h3>
+      <p class="dek">An audit of $14M in B2B LinkedIn spend. The campaign types that absorbed the CPM hike — and the two that didn't.</p>
+      <div class="meta"><span>By <b>D. Hashimoto</b></span><span>10 min</span></div>
+    </article>
+
+    <article class="card">
+      <div class="kicker"><span>№ 041</span><span>· GEO · Methodology</span></div>
+      <h3><a href="#">How we built the RawMktg AI-overview crawler — methodology, source, and what we got wrong.</a></h3>
+      <p class="dek">The infrastructure piece. Crawl design, de-personalization, citation parsing, page-type classification, audit κ.</p>
+      <div class="meta"><span>By <b>Jordan Reyes</b></span><span>15 min</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ NUMBERS BAND ============ -->
+<section class="page" style="margin-top: 64px;">
+  <div class="numbers">
+    <div class="label">
+      RawMktg
+      <b>By the numbers · 2026 YTD</b>
+    </div>
+    <div class="stat"><div class="v">47</div><div class="k">Reports shipped</div></div>
+    <div class="stat"><div class="v">412<small>k</small></div><div class="k">SERPs analyzed</div></div>
+    <div class="stat"><div class="v">28<small>k</small></div><div class="k">Subscribers</div></div>
+    <div class="stat"><div class="v">0</div><div class="k">Sponsored words</div></div>
+  </div>
+</section>
+
+<!-- ============ ARCHIVE TABLE ============ -->
+<section class="page">
+  <div class="sect-head">
+    <h2><span class="n">§ Archive</span>The index</h2>
+    <div class="right"><a href="#">Browse all 47 →</a></div>
+  </div>
+
+  <div class="tt-frame">
+    <div class="tt-head">
+      <div class="lhs">
+        <span class="t-eyebrow" style="color: var(--signal);">Index</span>
+        <span style="font: 600 13px/1 var(--f-mono); color: var(--paper); letter-spacing: -0.01em;">All reports · most recent first</span>
+      </div>
+      <span style="font: 500 10px/1 var(--f-mono); color: rgba(255,255,255,.45); letter-spacing: 0.14em; text-transform: uppercase;">47 of 47</span>
+    </div>
+    <table class="tt">
+      <thead>
+        <tr>
+          <th class="k">№</th>
+          <th>Title</th>
+          <th>Topic</th>
+          <th>Author</th>
+          <th class="num">Date</th>
+          <th class="num">n</th>
+          <th class="num">Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="k">047</td><td class="b">Why 42% of B2B AI overviews cite competitors</td><td><span class="tag-pill signal">GEO</span></td><td>J. Reyes</td><td class="num">2026.05.12</td><td class="num">12,418</td><td class="num">14m</td></tr>
+        <tr><td class="k">046</td><td class="b">The case against domain authority</td><td><span class="tag-pill">SEO</span></td><td>M. Olsson</td><td class="num">2026.04.28</td><td class="num">18,002</td><td class="num">12m</td></tr>
+        <tr><td class="k">045</td><td class="b">Schema depth, a benchmark</td><td><span class="tag-pill signal">GEO</span></td><td>J. Reyes</td><td class="num">2026.04.14</td><td class="num">200</td><td class="num">9m</td></tr>
+        <tr><td class="k">044</td><td class="b">Multi-touch attribution is a coin flip</td><td><span class="tag-pill">Attribution</span></td><td>D. Hashimoto</td><td class="num">2026.03.31</td><td class="num">$48M</td><td class="num">11m</td></tr>
+        <tr><td class="k">043</td><td class="b">B2B cold email open rates, debunked</td><td><span class="tag-pill">Email</span></td><td>M. Olsson</td><td class="num">2026.03.17</td><td class="num">6.2M</td><td class="num">7m</td></tr>
+        <tr><td class="k">042</td><td class="b">LinkedIn CPM is up 38% YoY</td><td><span class="tag-pill">Paid</span></td><td>D. Hashimoto</td><td class="num">2026.03.03</td><td class="num">$14M</td><td class="num">10m</td></tr>
+        <tr><td class="k">041</td><td class="b">How we built the RawMktg AI-overview crawler</td><td><span class="tag-pill signal">GEO</span></td><td>J. Reyes</td><td class="num">2026.02.17</td><td class="num">—</td><td class="num">15m</td></tr>
+        <tr><td class="k">040</td><td class="b">Pipeline coverage is lying to you</td><td><span class="tag-pill">RevOps</span></td><td>D. Hashimoto</td><td class="num">2026.02.03</td><td class="num">312 cos</td><td class="num">8m</td></tr>
+        <tr><td class="k">039</td><td class="b">The intent-data buyer's index, Q1</td><td><span class="tag-pill">Data</span></td><td>M. Olsson</td><td class="num">2026.01.20</td><td class="num">9 vendors</td><td class="num">13m</td></tr>
+        <tr><td class="k">038</td><td class="b">Webinar attendance is at a five-year low</td><td><span class="tag-pill">Demand</span></td><td>J. Reyes</td><td class="num">2026.01.06</td><td class="num">880</td><td class="num">6m</td></tr>
+      </tbody>
+    </table>
+    <div class="tt-foot">
+      <span>Sort · date desc · 10 of 47 shown</span>
+      <span><a href="#" style="color:var(--signal);text-decoration:none;border-bottom:1px solid var(--signal);">All 47 →</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPICS ============ -->
+<section class="page">
+  <div class="sect-head">
+    <h2><span class="n">§ Topics</span>Coverage</h2>
+    <div class="right"><a href="#">RSS · OPML →</a></div>
+  </div>
+  <div class="topics">
+    <a class="topic" href="#">
+      <span class="n">01</span>
+      <span class="name">SEO</span>
+      <span class="count">18 reports</span>
+      <span class="desc">Organic search, ranking, technical SEO, what's actually moving.</span>
+    </a>
+    <a class="topic" href="#">
+      <span class="n">02</span>
+      <span class="name">GEO</span>
+      <span class="count">11 reports</span>
+      <span class="desc">Generative engine optimization. Citations, schema, retrieval.</span>
+    </a>
+    <a class="topic" href="#">
+      <span class="n">03</span>
+      <span class="name">Attribution</span>
+      <span class="count">7 reports</span>
+      <span class="desc">Pipeline math, MTA / MMM, what to measure when you can't measure.</span>
+    </a>
+    <a class="topic" href="#">
+      <span class="n">04</span>
+      <span class="name">Paid &amp; Email</span>
+      <span class="count">11 reports</span>
+      <span class="desc">CPM, CPL, deliverability. The unfashionable channels, audited.</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="page">
+  <div class="subscribe">
+    <div>
+      <h3>One report. Every other Tuesday. <em>Zero fluff.</em></h3>
+      <p>The full dataset behind each report — plus the methodology, source pages, and prompts — goes to subscribers only. No tracking pixels. Unsubscribe in one click.</p>
+    </div>
+    <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed →';">
+      <input type="email" placeholder="you@company.com" />
+      <button type="submit">Subscribe →</button>
+      <span class="terms">28k subscribers · 0 sponsored words</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOT ============ -->
+<footer class="site-foot">
+  <div class="page">
+    <div class="row">
+      <div>
+        <span class="rm-logo sm"><span class="raw">Raw</span><span class="mktg">Mktg</span><span class="dot">.</span></span>
+        <div style="margin-top:8px;">Marketing intelligence · no fluff</div>
+      </div>
+      <div style="text-align:right;">
+        <div><a href="Home.html">Home</a> &nbsp;·&nbsp; <a href="BrandKit.html">Brand Kit</a> &nbsp;·&nbsp; <a href="Article.html">Sample report</a> &nbsp;·&nbsp; <a href="#">RSS</a></div>
+        <div style="margin-top:8px;">© RawMktg 2026 · v1.0</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

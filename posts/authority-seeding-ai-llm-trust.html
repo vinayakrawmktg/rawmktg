@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Authority Seeding for AI: Building the Off-Site Signal Stack That LLMs Actually Trust · RawMktg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================
+       RawMktg · brand.css: inlined for standalone rendering
+       ============================================================ -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap');
+
+    :root{
+      --paper:    oklch(0.965 0.005 85);
+      --paper-2:  oklch(0.945 0.008 80);
+      --paper-3:  oklch(0.92  0.010 78);
+      --ink:      oklch(0.18  0.012 70);
+      --ink-2:    oklch(0.32  0.012 70);
+      --mute:     oklch(0.55  0.010 70);
+      --faint:    oklch(0.78  0.008 75);
+      --rule:     oklch(0.86  0.008 70);
+      --rule-2:   oklch(0.72  0.010 70);
+      --signal:        oklch(0.62 0.20 28);
+      --signal-ink:    oklch(0.42 0.16 28);
+      --signal-soft:   oklch(0.92 0.05 28);
+      --up:            oklch(0.62 0.16 150);
+      --down:          oklch(0.62 0.20 28);
+      --paper-hex:     #F2EFE8;
+      --paper-2-hex:   #ECE7DD;
+      --paper-3-hex:   #E2DCD0;
+      --ink-hex:       #2A2722;
+      --ink-2-hex:     #4D4742;
+      --mute-hex:      #8A8278;
+      --faint-hex:     #C5BFB4;
+      --rule-hex:      #D6D0C5;
+      --rule-2-hex:    #B4ADA2;
+      --signal-hex:        #D04A2A;
+      --signal-ink-hex:    #8A2D14;
+      --signal-soft-hex:   #F1D9CC;
+      --up-hex:            #3E9B6A;
+      --r:   2px;
+      --rl:  6px;
+      --f-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --f-prose:   'Azeret Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --f-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --f-logo:    'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --f-sans:    var(--f-display);
+      --f-serif:   var(--f-prose);
+    }
+
+    * { box-sizing: border-box; }
+    html, body{
+      margin:0; padding:0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--f-prose);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Logo */
+    .rm-logo{ font-family: var(--f-logo); font-weight: 800; letter-spacing: -0.045em; display: inline-flex; align-items: baseline; line-height: 1; color: var(--ink); }
+    .rm-logo .raw  { color: var(--ink); }
+    .rm-logo .mktg { color: var(--ink-2); }
+    .rm-logo .dot  { color: var(--signal); margin-left: -0.02em; }
+    .rm-logo.xs { font-size: 16px; }
+    .rm-logo.sm { font-size: 22px; }
+    .rm-logo.md { font-size: 34px; }
+    .rm-logo.lg { font-size: 64px; }
+    .on-ink .rm-logo .raw, .on-ink .rm-logo .mktg { color: var(--paper); }
+    .on-ink .rm-logo .dot  { color: var(--signal); }
+
+    /* Page chrome */
+    .page{ max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+    .site-nav{ border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 50; }
+    .site-nav .row{ height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .site-nav .links{ display:flex; gap: 22px; font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); }
+    .site-nav .links a{ color: inherit; text-decoration: none; }
+    .site-nav .links a:hover{ color: var(--ink); }
+    .site-nav .links a.cta{ color: var(--signal); border-bottom: 1px solid var(--signal); }
+    .site-foot{ border-top: 1px solid var(--rule); margin-top: 80px; padding: 28px 0 40px; }
+    .site-foot .row{ display:flex; justify-content: space-between; align-items: flex-start; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); }
+    .site-foot a{ color: inherit; text-decoration: none; }
+    .site-foot a:hover{ color: var(--ink); }
+
+    /* Dateline */
+    .dateline{ background: var(--paper-2); border-bottom: 1px solid var(--rule); font: 500 11px/1 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); }
+    .dateline .row{ display:flex; justify-content: space-between; align-items: center; height: 32px; }
+    .dateline .row .lhs{ display:flex; gap: 18px; }
+    .dateline .row .lhs span b{ color: var(--ink); font-weight: 600; }
+
+    /* Data terminal */
+    .tt{ width: 100%; border-collapse: collapse; background: var(--ink); color: var(--paper); font-family: var(--f-mono); font-size: 13px; line-height: 1.5; border-radius: var(--rl); overflow: hidden; }
+    .tt thead th{ font-weight: 600; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,.55); text-align: left; padding: 14px 16px 10px; border-bottom: 1px solid rgba(255,255,255,.14); white-space: nowrap; }
+    .tt tbody td{ padding: 10px 16px; border-bottom: 1px dashed rgba(255,255,255,.12); vertical-align: middle; }
+    .tt tbody tr:last-child td{ border-bottom: none; }
+    .tt tbody tr:hover td{ background: rgba(255,255,255,.03); }
+    .tt td.num, .tt th.num{ text-align: right; font-variant-numeric: tabular-nums; }
+    .tt td.k, .tt th.k{ color: rgba(255,255,255,.55); }
+    .tt td.up  { color: var(--up); }
+    .tt td.down{ color: var(--signal); }
+    .tt td.mute{ color: rgba(255,255,255,.45); }
+    .tt td.b   { font-weight: 600; color: var(--paper); }
+    .tag-pill{ display:inline-block; padding: 2px 8px; border-radius: 999px; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.75); }
+    .tag-pill.signal{ border-color: var(--signal); color: var(--signal); }
+    .tag-pill.up{ border-color: var(--up); color: var(--up); }
+    .tt-frame{ background: var(--ink); color: var(--paper); border-radius: var(--rl); overflow: hidden; }
+    .tt-frame .tt{ border-radius: 0; }
+    .tt-head{ padding: 14px 16px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,.14); }
+    .tt-head .lhs{ display:flex; gap: 14px; align-items: baseline; }
+    .tt-head .eyebrow{ font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--signal); }
+    .tt-head .title{ font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--paper); letter-spacing: -0.01em; }
+    .tt-head .ts{ font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+    .tt-foot{ padding: 10px 16px; display:flex; justify-content: space-between; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,.45); border-top: 1px solid rgba(255,255,255,.10); }
+    .delta{ display: inline-flex; gap: 6px; align-items: center; font-variant-numeric: tabular-nums; }
+    .delta.up  { color: var(--up); }
+    .delta.down{ color: var(--signal); }
+    .spark{ display:inline-block; vertical-align: middle; width: 96px; height: 22px; color: var(--paper); }
+    .spark path.line{ fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .spark.up  { color: var(--up); }
+    .spark.down{ color: var(--signal); }
+    .bar{ position: relative; height: 6px; background: rgba(255,255,255,.10); border-radius: 2px; overflow: hidden; min-width: 80px; }
+    .bar > i{ display:block; height:100%; background: var(--paper); }
+    .bar.signal > i{ background: var(--signal); }
+    .bar.up > i{ background: var(--up); }
+    .diff-arrow{ display:inline-block; width: 18px; text-align: center; color: rgba(255,255,255,.4); }
+
+    /* Type utilities */
+    .t-eyebrow{ font-family: var(--f-mono); font-weight: 600; font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--signal); }
+
+    /* ============ Article layout ============ */
+    .article{ max-width: 760px; margin: 0 auto; padding: 48px 32px 0; }
+    .article-wide{ max-width: 980px; margin: 32px auto; padding: 0 32px; }
+
+    .post-head .kicker{ display:flex; align-items:center; gap: 14px; margin-bottom: 24px; }
+    .post-head .kicker .num{ font: 500 11px/1 var(--f-mono); color: var(--mute); letter-spacing: 0.16em; text-transform: uppercase; }
+    .post-head .kicker .pill{ font: 600 10px/1 var(--f-mono); letter-spacing: 0.20em; text-transform: uppercase; color: var(--signal); border: 1px solid var(--signal); padding: 5px 8px; border-radius: 999px; }
+    .post-head h1{ font: 700 56px/1.04 var(--f-sans); letter-spacing: -0.032em; margin: 0 0 22px; text-wrap: balance; }
+    .post-head h1 em{ font-style: normal; color: var(--signal); }
+    .post-head .lede{ font: italic 400 22px/1.45 var(--f-serif); color: var(--ink-2); margin: 0 0 32px; max-width: 640px; }
+
+    .byline{ display:flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 40px; }
+    .byline .left{ display:flex; align-items: center; gap: 14px; font: 500 12px/1.4 var(--f-mono); letter-spacing: 0.04em; color: var(--ink-2); }
+    .byline .left .ava{ width: 32px; height: 32px; background: var(--ink); color: var(--paper); display:flex; align-items: center; justify-content: center; font: 700 14px/1 var(--f-mono); letter-spacing: -0.02em; border-radius: 6px; }
+    .byline .left b{ display:block; color: var(--ink); font-weight: 600; letter-spacing: 0; }
+    .byline .left .role{ font-size: 11px; color: var(--mute); letter-spacing: 0.08em; text-transform: uppercase; }
+    .byline .right{ font: 500 11px/1.5 var(--f-mono); color: var(--mute); letter-spacing: 0.12em; text-transform: uppercase; text-align: right; }
+
+    /* TL;DR */
+    .tldr{ display:grid; grid-template-columns: 100px 1fr; gap: 22px; padding: 22px; background: var(--paper-2); border-left: 3px solid var(--signal); border-radius: 0 var(--rl) var(--rl) 0; margin: 28px 0 40px; }
+    .tldr .label{ font: 600 11px/1 var(--f-mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--signal); }
+    .tldr ul{ margin:0; padding:0; list-style: none; }
+    .tldr li{ font: 400 15px/1.55 var(--f-prose); color: var(--ink); padding: 6px 0; }
+    .tldr li + li{ border-top: 1px dashed var(--rule-2); }
+    .tldr li b{ font-weight: 600; }
+    .tldr li .n{ color: var(--signal); font-family: var(--f-mono); font-weight: 600; font-size: 13px; margin-right: 6px; }
+
+    /* Pull stats */
+    .pull-row{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 40px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+    .pull-row .stat{ padding: 22px 18px; border-right: 1px dashed var(--rule-2); }
+    .pull-row .stat:last-child{ border-right: none; }
+    .pull-row .stat .v{ font: 700 40px/1 var(--f-sans); letter-spacing: -0.03em; color: var(--ink); display:flex; align-items: baseline; gap: 6px; }
+    .pull-row .stat .v small{ font: 600 14px/1 var(--f-mono); color: var(--signal); letter-spacing: 0; }
+    .pull-row .stat .k{ font: 500 11px/1.4 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); margin-top: 8px; }
+
+    /* Prose */
+    .prose h2{ font: 700 28px/1.18 var(--f-sans); letter-spacing: -0.022em; margin: 56px 0 10px; display:flex; align-items: baseline; gap: 12px; }
+    .prose h2 .n{ font: 500 14px/1 var(--f-mono); letter-spacing: 0.12em; color: var(--signal); }
+    .prose h3{ font: 600 19px/1.3 var(--f-sans); letter-spacing: -0.015em; margin: 36px 0 8px; }
+    .prose p{ font: 400 17px/1.65 var(--f-prose); color: var(--ink-2); margin: 14px 0; }
+    .prose p strong{ color: var(--ink); font-weight: 600; }
+    .prose p a{ color: var(--ink); border-bottom: 1px solid var(--signal); text-decoration: none; }
+    .prose p a:hover{ background: var(--signal-soft); }
+    .prose blockquote{ margin: 28px 0; padding: 4px 0 4px 22px; border-left: 2px solid var(--signal); font: italic 400 21px/1.45 var(--f-serif); color: var(--ink); }
+    .prose ul.checks{ margin: 18px 0; padding: 0; list-style: none; }
+    .prose ul.checks li{ font: 400 16px/1.55 var(--f-prose); color: var(--ink-2); padding: 10px 0 10px 32px; border-bottom: 1px dashed var(--rule-2); position: relative; }
+    .prose ul.checks li::before{ content:''; position: absolute; left: 0; top: 18px; width: 18px; height: 1px; background: var(--signal); }
+    .prose ul.checks li b{ color: var(--ink); font-weight: 600; }
+    .prose code{ font-family: var(--f-mono); font-size: 13px; background: var(--paper-2); border: 1px solid var(--rule); padding: 2px 6px; border-radius: 3px; color: var(--ink); }
+
+    /* Figure / caption */
+    .figure{ margin: 36px 0 40px; }
+    .figure .caption{ font: 600 13px/1.6 var(--f-mono); letter-spacing: 0.06em; color: var(--ink-2); margin-top: 14px; padding: 12px 16px; background: var(--paper-2); border-left: 3px solid var(--signal); border-radius: 0 var(--r) var(--r) 0; display:flex; align-items: baseline; gap: 12px; }
+    .figure .caption b{ color: var(--signal); font-weight: 700; white-space: nowrap; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .figure .caption span{ color: var(--ink); font-weight: 500; }
+
+    /* End matter */
+    .endmatter{ margin: 64px 0 0; padding: 28px 0; border-top: 2px solid var(--ink); display:grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .endmatter h4{ font: 600 11px/1 var(--f-mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px; }
+    .endmatter p{ font: 400 14px/1.55 var(--f-prose); color: var(--ink-2); margin: 0; }
+
+    /* Citations */
+    .citations{ margin: 48px 0 0; padding: 28px 0; border-top: 1px solid var(--rule); }
+    .citations h4{ font: 600 11px/1 var(--f-mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--signal); margin: 0 0 18px; }
+    .citations ol{ margin: 0; padding-left: 20px; }
+    .citations li{ font: 400 12px/1.7 var(--f-mono); color: var(--mute); margin-bottom: 6px; }
+    .citations li a{ color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--rule); }
+    .citations li a:hover{ color: var(--signal); border-color: var(--signal); }
+
+    /* Subscribe */
+    .subscribe{ margin-top: 56px; padding: 36px; background: var(--ink); color: var(--paper); border-radius: var(--rl); display:grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: center; }
+    .subscribe h3{ font: 700 28px/1.1 var(--f-sans); letter-spacing: -0.022em; margin: 0 0 10px; }
+    .subscribe h3 em{ font-style: normal; color: var(--signal); }
+    .subscribe p{ font: 400 14px/1.55 var(--f-prose); color: rgba(255,255,255,.65); margin: 0; }
+    .subscribe .form{ display:flex; flex-direction: column; gap: 8px; }
+    .subscribe input{ background: transparent; border: 1px solid rgba(255,255,255,.25); color: var(--paper); padding: 12px 14px; font: 500 13px/1 var(--f-mono); letter-spacing: 0.04em; border-radius: var(--r); }
+    .subscribe input::placeholder{ color: rgba(255,255,255,.4); }
+    .subscribe button{ background: var(--signal); color: var(--paper); border: none; padding: 12px 14px; font: 600 12px/1 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; border-radius: var(--r); }
+    .subscribe button:hover{ filter: brightness(1.06); }
+    .subscribe .terms{ font: 500 10px/1.4 var(--f-mono); letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+
+    /* Inline svg chart container, uses tt-frame system */
+    .tt-chart{ padding: 24px 20px 8px; }
+    .tt-chart svg{ display:block; width:100%; }
+
+    /* Code block inside tt-frame */
+    .tt-code{ padding: 16px 18px; font: 400 12px/1.8 var(--f-mono); color: rgba(255,255,255,.8); white-space: pre; }
+
+    @media(max-width:680px){
+      .post-head h1{ font-size:34px; }
+      .pull-row{ grid-template-columns: repeat(2,1fr); }
+      .subscribe{ grid-template-columns: 1fr; }
+      .endmatter{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav">
+  <div class="page">
+    <div class="row">
+      <a href="../Home.html" style="text-decoration:none;color:inherit;">
+        <span class="rm-logo sm"><span class="raw">Raw</span><span class="mktg">Mktg</span><span class="dot">.</span></span>
+      </a>
+      <div class="links">
+        <a href="#">SEO</a>
+        <a href="#">GEO</a>
+        <a href="#">Reports</a>
+        <a href="#">Data</a>
+        <a href="#" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ DATELINE ============ -->
+<div class="dateline">
+  <div class="page">
+    <div class="row">
+      <div class="lhs">
+        <span>Playbook №&nbsp;<b>052</b></span>
+        <span>2026.05.25 · Monday</span>
+        <span>Authority Seeding · GEO · Link Building</span>
+      </div>
+      <div class="rhs">
+        <span>18 min read</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POST HEAD ============ -->
+<article class="article">
+  <header class="post-head">
+    <div class="kicker">
+      <span class="pill">Playbook №&nbsp;052</span>
+      <span class="num">GEO · Authority Seeding · 18 min read</span>
+    </div>
+    <h1>Authority Seeding for AI: Building the <em>Off-Site Signal Stack</em> That LLMs Actually Trust</h1>
+    <p class="lede">A tactical playbook for building the niche-relevant backlinks, review signals, and third-party citations that feed AI training data, with domain-type prioritisation by vertical.</p>
+
+    <div class="byline">
+      <div class="left">
+        <span class="ava">RM</span>
+        <span>
+          <b>RawMktg Research</b>
+          <span class="role">GEO · Authority Seeding</span>
+        </span>
+      </div>
+      <div class="right">
+        2026.05.25<br/>
+        31 sources · 5 verticals
+      </div>
+    </div>
+  </header>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="label">TL;DR</div>
+    <ul>
+      <li><span class="n">01</span><b>Traditional backlinks score 0.218</b> correlation with AI citation visibility. Unlinked brand mentions score 0.664, a 3× gap most programmes aren't optimising for.</li>
+      <li><span class="n">02</span>Every AI citation must clear a <b>Five-Gate Citation Gauntlet</b> (intent mapping, live retrieval, quality filter, ML reranking, and prompt assembly) before reaching the response.</li>
+      <li><span class="n">03</span>Platform preferences diverge sharply: <b>Perplexity needs monthly-fresh benchmark reports</b> (+142% lift), Claude wants deep expert guides, ChatGPT Search wants comparison matrices.</li>
+      <li><span class="n">04</span>Authority seeding is a five-phase programme: semantic core → entity hub → technical markup → off-site channel seeding → AI share-of-voice monitoring.</li>
+      <li><span class="n">05</span>RAG citations convert at <b>14.2%</b>, a 5× multiplier over standard organic CTR at 2.8%.</li>
+    </ul>
+  </div>
+
+  <!-- Pull stats -->
+  <div class="pull-row">
+    <div class="stat"><div class="v">0.664</div><div class="k">Mention correlation (AI)</div></div>
+    <div class="stat"><div class="v">5<small>×</small></div><div class="k">RAG vs organic CVR</div></div>
+    <div class="stat"><div class="v">71<small>%</small></div><div class="k">High-density cite rate</div></div>
+    <div class="stat"><div class="v">5</div><div class="k">Gauntlet gates to pass</div></div>
+  </div>
+
+  <!-- ============ §1 ============ -->
+  <section class="prose">
+    <h2><span class="n">§1</span>The paradigm shift: from link graphs to semantic networks</h2>
+    <p>For nearly three decades, organic search was governed by the <a href="https://en.wikipedia.org/wiki/Generative_engine_optimization" target="_blank">PageRank paradigm</a>: hyperlinks as explicit votes of confidence, each one transferring mathematical equity between documents. Build links from authoritative domains, accrue Domain Rating, rank. Imperfect, but legible.</p>
+    <p>That model has structural limits when applied to <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">generative search engines</a>. Modern LLMs process information through high-dimensional semantic vector spaces rather than static crawling of hyperlinked nodes. To a language model, <strong>a traditional hyperlink is structurally invisible.</strong> The tokenisation process strips raw HTML attributes and anchor tag metadata, leaving only the surrounding textual corpus for inference.</p>
+    <p>The consequence is a fundamental reorientation in what "authority" means at the model layer. <a href="https://anshulrana.in/blog/llms-dont-read-link-graphs-they-read-sentences" target="_blank">LLMs don't read link graphs; they read sentences.</a> Generative engines evaluate brand credibility by measuring frequency, proximity, and structural context of unlinked mentions across highly trusted training datasets and live retrieval sources.</p>
+
+    <blockquote>"The primary driver of visibility has shifted from link equity to semantic consensus. A brand name that consistently co-occurs with industry-specific keywords across distributed publications is processed, by the model, as authoritative."</blockquote>
+
+    <p>The empirical gap is stark. <a href="https://keyword.com/blog/brand-mentions-vs-citations-vs-backlinks-for-llm-discoverability" target="_blank">Unlinked brand mentions carry a 0.664 correlation</a> with AI citation visibility, versus 0.218 for traditional backlinks. That 3× differential is not marginal. It is a strategic reallocation question. Most link-building programmes are optimising the weaker signal.</p>
+
+    <h3>Why the math works differently</h3>
+    <p>Language models learn from <a href="https://huggingface.co/blog/Codatta/evolution-of-large-model-data-engineering" target="_blank">statistical patterns across the global web text corpus</a>: the Common Crawl C4 dataset alone is approximately 750 GB of web text. When a brand name consistently co-occurs in close proximity to industry-specific keywords across distributed publications, the neural network constructs a strong associative link without any HTML hyperlink element being present. Authority seeding directly optimises these internal probability distributions. Traditional link-building manipulates the structural web graph; authority seeding operates at the semantic layer the model actually reads.</p>
+  </section>
+</article>
+
+<!-- TABLE 01: Authority signal correlations -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 01</span>
+          <span class="title">Authority metric correlations with AI citation visibility</span>
+        </div>
+        <span class="ts">Cross-platform synthesis · 2026</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>Authority Metric</th>
+            <th class="num">Correlation (r)</th>
+            <th>Core Role in Model Processing</th>
+            <th class="num">Δ vs Backlinks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="b">Unlinked Brand Mentions</td><td class="num up">0.664</td><td class="k">Probabilistic token co-occurrence in high-dimensional vector spaces</td><td class="num up">+205%</td></tr>
+          <tr><td class="b">Structured Data (Schema)</td><td class="num up">0.571</td><td class="k">Provides machine-readable ground truth for model extraction</td><td class="num up">+162%</td></tr>
+          <tr><td class="b">Co-citation Patterns</td><td class="num up">0.490</td><td class="k">Brands cited alongside competitors signal category membership to the model</td><td class="num up">+125%</td></tr>
+          <tr><td class="b">Review Platform Signals</td><td class="num">0.382</td><td class="k">Category-specific quality signals from trusted aggregators (G2, TrustPilot)</td><td class="num up">+75%</td></tr>
+          <tr><td class="b">Wikidata / Knowledge Graph</td><td class="num">0.341</td><td class="k">Entity grounding in pre-trained parametric knowledge bases</td><td class="num up">+56%</td></tr>
+          <tr><td class="b">Traditional Backlinks (DR)</td><td class="num mute">0.218</td><td class="k">Baseline crawl discovery path; minimal direct weight in model synthesis</td><td class="num mute">n/a</td></tr>
+          <tr><td class="b">Domain Authority (DA)</td><td class="num down">0.180</td><td class="k">Weak indirect signal; models do not evaluate PageRank directly</td><td class="num down">−17%</td></tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source · keyword.com / Anshul Rana / RawMktg synthesis · 2026</span>
+        <span>Higher r = stronger AI citation correlation</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 01</b><span>The 3× gap between mentions and backlinks is the core strategic reallocation argument for authority seeding.</span></div>
+  </div>
+</div>
+
+<!-- CHART 01: Signal correlation spectrum, SVG inside tt-frame -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Fig. 02</span>
+          <span class="title">Signal correlation spectrum · AI citation visibility</span>
+        </div>
+        <span class="ts">Indexed to max r = 0.664</span>
+      </div>
+      <div class="tt-chart">
+        <svg viewBox="0 0 840 220" xmlns="http://www.w3.org/2000/svg">
+          <!-- grid lines -->
+          <line x1="220" y1="10" x2="220" y2="185" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <line x1="388" y1="10" x2="388" y2="185" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <line x1="556" y1="10" x2="556" y2="185" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <line x1="724" y1="10" x2="724" y2="185" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <!-- axis labels -->
+          <text x="220" y="200" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="9">0.25</text>
+          <text x="388" y="200" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="9">0.40</text>
+          <text x="556" y="200" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="9">0.55</text>
+          <text x="724" y="200" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="9">0.70</text>
+          <!-- Unlinked Mentions 0.664 → 524px wide -->
+          <rect x="220" y="14" width="524" height="18" fill="#D04A2A" rx="2"/>
+          <text x="210" y="27" text-anchor="end" fill="rgba(255,255,255,0.85)" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600">Unlinked Mentions</text>
+          <text x="750" y="27" fill="#D04A2A" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700">0.664</text>
+          <!-- Structured Data 0.571 → 452px -->
+          <rect x="220" y="44" width="451" height="18" fill="#D04A2A" opacity="0.72" rx="2"/>
+          <text x="210" y="57" text-anchor="end" fill="rgba(255,255,255,0.7)" font-family="JetBrains Mono,monospace" font-size="10">Structured Data</text>
+          <text x="677" y="57" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono,monospace" font-size="10">0.571</text>
+          <!-- Co-citation 0.490 → 387px -->
+          <rect x="220" y="74" width="387" height="18" fill="#D04A2A" opacity="0.56" rx="2"/>
+          <text x="210" y="87" text-anchor="end" fill="rgba(255,255,255,0.7)" font-family="JetBrains Mono,monospace" font-size="10">Co-citation Patterns</text>
+          <text x="614" y="87" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono,monospace" font-size="10">0.490</text>
+          <!-- Reviews 0.382 → 301px -->
+          <rect x="220" y="104" width="301" height="18" fill="rgba(255,255,255,0.22)" rx="2"/>
+          <text x="210" y="117" text-anchor="end" fill="rgba(255,255,255,0.7)" font-family="JetBrains Mono,monospace" font-size="10">Review Platforms</text>
+          <text x="528" y="117" fill="rgba(255,255,255,0.45)" font-family="JetBrains Mono,monospace" font-size="10">0.382</text>
+          <!-- Wikidata 0.341 → 269px -->
+          <rect x="220" y="134" width="269" height="18" fill="rgba(255,255,255,0.17)" rx="2"/>
+          <text x="210" y="147" text-anchor="end" fill="rgba(255,255,255,0.7)" font-family="JetBrains Mono,monospace" font-size="10">Wikidata / KG</text>
+          <text x="496" y="147" fill="rgba(255,255,255,0.45)" font-family="JetBrains Mono,monospace" font-size="10">0.341</text>
+          <!-- Backlinks 0.218 → 172px -->
+          <rect x="220" y="164" width="172" height="18" fill="rgba(255,255,255,0.10)" rx="2"/>
+          <text x="210" y="177" text-anchor="end" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono,monospace" font-size="10">Traditional Backlinks</text>
+          <text x="399" y="177" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="10">0.218</text>
+        </svg>
+      </div>
+      <div class="tt-foot">
+        <span>Pearson r with AI citation visibility · higher = stronger correlation</span>
+        <span>Source · RawMktg / keyword.com / 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 02</b><span>Unlinked mentions are 3× more predictive of AI citations than traditional backlinks.</span></div>
+  </div>
+</div>
+
+<!-- ============ §2 ============ -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">§2</span>The dual-pathway architecture LLMs use to evaluate trust</h2>
+    <p>To build a signal stack models trust, you need to understand <a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank">how modern generative engines ingest and rank content</a>. There are two structural pathways operating simultaneously: parametric pre-training and non-parametric real-time retrieval.</p>
+
+    <h3>Pathway A: Parametric pre-training</h3>
+    <p>The parametric pathway relies on static training data: the <a href="https://huggingface.co/blog/Codatta/evolution-of-large-model-data-engineering" target="_blank">Common Crawl C4 corpus</a>, approximately 750 GB of web text. During ingestion, curation engines apply heuristic filters, including PageRank thresholds and social verification metrics, to discard noise. What survives is embedded into the model's weights as "long memory" that cannot be changed without retraining. Authority seeding for this pathway means distributing high-context brand mentions across publications that consistently clear curation filters: Wikipedia, Wikidata, academic journals, and established industry publications.</p>
+
+    <h3>Pathway B: Real-time RAG retrieval</h3>
+    <p>The non-parametric pathway connects the model to a live web index via <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">Retrieval-Augmented Generation</a>. Systems like Perplexity run a live web search for every query. <a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank">Perplexity's custom embedding models</a> (pplx-embed-v1 built on Qwen3 architecture) convert queries and web passages into dense vector representations for ranking. A critical technical constraint applies to this entire pathway: <strong>RAG engines do not execute JavaScript during live retrieval.</strong> Any brand mentions or data elements rendered via client-side code are structurally invisible. Every seeded off-site asset must exist within raw, server-side rendered HTML.</p>
+
+    <blockquote>"Two pipelines, two authority games. Parametric rewards consistent historically-distributed mentions. RAG rewards fresh, structured, technically-accessible content published today."</blockquote>
+  </section>
+</article>
+
+<!-- TABLE 02: Dual-pathway architecture -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 02</span>
+          <span class="title">Dual-pathway architecture · seeding strategy per pathway</span>
+        </div>
+        <span class="ts">Parametric + RAG</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>Pathway</th>
+            <th>How It Works</th>
+            <th>Update Cadence</th>
+            <th>Target Asset Types</th>
+            <th>Key Constraint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b">A · Parametric Training</td>
+            <td class="k">Brand mentions embedded in model weights during pre-training on static corpora</td>
+            <td class="k">Months–years (next training run)</td>
+            <td class="k">Wikipedia, Wikidata, PubMed, academic journals, Crunchbase, established trade press</td>
+            <td><span class="tag-pill">Long game only</span></td>
+          </tr>
+          <tr>
+            <td class="b">B · Real-time RAG</td>
+            <td class="k">Live web search on every query · BM25 + dense vector ranking pipeline</td>
+            <td class="k">Immediate · Perplexity re-crawls within days</td>
+            <td class="k">Server-rendered pages: comparison pages, benchmark reports, glossaries, structured guides</td>
+            <td><span class="tag-pill signal">No JS rendering</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source · Perplexity architecture · ziptie.dev · Wikipedia RAG · 2026</span>
+        <span>Both pathways must be seeded in parallel for full citation coverage</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 03</b><span>Parametric seeding and RAG seeding are not interchangeable: they require different asset types and different timeframes.</span></div>
+  </div>
+</div>
+
+<!-- ============ §3 ============ -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">§3</span>The five-gate citation gauntlet</h2>
+    <p>For a seeded digital asset to earn a citation in a real-time generative response, it must survive five sequential elimination gates. <a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank">Perplexity's internal retrieval architecture</a> documents this pipeline most explicitly, and it maps to other RAG-based systems. Understanding each gate tells you exactly where your content can fail.</p>
+
+    <h3>Gate 1: Intent mapping and query parsing</h3>
+    <p>The system uses NLP to parse the conversational query, classifying it into a category: transactional, comparative, or procedural. In "deep research" modes, the engine formulates a sequential search plan, resolving complex intents into sub-queries. <strong>Optimisation requirement:</strong> structure content headings as highly specific, conversational, question-style phrases. "What is X?" format headings substantially outperform generic keyword headings at this gate.</p>
+
+    <h3>Gate 2: Real-time web retrieval</h3>
+    <p>The engine executes a hybrid search combining BM25 keyword matching and dense vector embeddings, retrieving approximately 60 candidate documents for standard queries. <strong>Optimisation requirement:</strong> server-side rendering with zero client-side JavaScript dependencies for primary content. Pages that depend on JS for main content are invisible at this stage.</p>
+
+    <h3>Gate 3: Heuristic quality assessment</h3>
+    <p>Retrieved documents are filtered on structural and technical health: load speed, mobile responsiveness, and clean HTML structure. Slow loading times, broken internal links, or low content-to-boilerplate ratios act as negative signals, and the document is dropped before it reaches any ML layer.</p>
+
+    <h3>Gate 4: The L3 XGBoost reranking layer</h3>
+    <p><a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank">Surviving documents are scored using a three-tier ML ranking framework</a>, with the L3 layer running an XGBoost gradient-boosted decision tree enforcing a strict quality threshold of approximately 0.7. Documents below this are discarded. If too few survive, the entire pool is discarded and retrieval restarts from scratch. The L3 reranker also applies <strong>manual category boosts</strong> that prioritise specialist domains: Stack Overflow for code queries, G2 for software buying intent, PubMed for medical queries.</p>
+
+    <h3>Gate 5: Prompt assembly and constrained synthesis</h3>
+    <p>Top-scoring passages are packaged into a structured prompt and the model generates its response, appending inline citations directly to extracted facts. The critical optimisation at this gate is the <strong>BLUF rule</strong> (Bottom Line Up Front): placing a direct, highly extractable answer within the first 100 words. High-density content (five or more verifiable facts per 100 words) achieves a 71% citation rate. Low-density promotional writing (one or fewer facts per 100 words) achieves only 34%.</p>
+
+    <p>The financial stakes are significant. <a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank">Referral traffic from RAG citations converts at 14.2%</a>, a 5× multiplier over standard organic CTR at 2.8%. A page that consistently clears all five gates for a category-defining query is capturing conversion-adjusted traffic no backlink can replicate.</p>
+  </section>
+</article>
+
+<!-- TABLE 03: Five-Gate Gauntlet -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 03</span>
+          <span class="title">Five-Gate Citation Gauntlet · optimisation requirements and failure rates</span>
+        </div>
+        <span class="ts">RAG pipeline · Perplexity / Google AI / ChatGPT Search</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th class="k">Gate</th>
+            <th>Pipeline Stage</th>
+            <th>Filter Mechanism</th>
+            <th>Optimisation Requirement</th>
+            <th class="num">Elim. Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="k">G1</td><td class="b">Intent Mapping</td><td class="k">NLP query classification → trending vs evergreen index</td><td>Conversational, question-style H2/H3 headings</td><td class="num mute">~15%</td></tr>
+          <tr><td class="k">G2</td><td class="b">Web Retrieval</td><td class="k">Hybrid BM25 + dense vector · live index</td><td>Server-side rendering required · zero JS dependencies on key content</td><td class="num down">~28%</td></tr>
+          <tr><td class="k">G3</td><td class="b">Quality Assessment</td><td class="k">Speed, mobile, code-to-text ratio, clean HTML</td><td>Sub-2s load time · high content density · no broken links</td><td class="num down">~22%</td></tr>
+          <tr><td class="k">G4</td><td class="b">ML Reranking (L3)</td><td class="k">XGBoost · threshold ≥ 0.7 · manual category boosts</td><td>Publish on category-boost domains (G2, Stack Overflow, PubMed)</td><td class="num down">~35%</td></tr>
+          <tr><td class="k">G5</td><td class="b">Prompt Assembly</td><td class="k">Context chunk extraction · information density scoring</td><td>BLUF rule: direct answer in first 100 words · ≥5 facts per 100 words</td><td class="num down">~20%</td></tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source · Perplexity architecture analysis · ziptie.dev · 2026</span>
+        <span>Elim. rate = % of docs dropped at this gate</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 04</b><span>Gate 4 (ML reranking) has the highest elimination rate. Category-boost domain placements are the single highest-leverage tactical move.</span></div>
+  </div>
+</div>
+
+<!-- ============ §4 ============ -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">§4</span>Platform-specific citation profiles</h2>
+    <p>The mistake most GEO programmes make is treating all AI engines as a single optimisation target. <a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank">Platform preferences diverge substantially</a> across recency bias, content depth, format preference, and domain authority weighting. The four major platforms have meaningfully different retrieval profiles.</p>
+
+    <h3>Information density: the universal baseline</h3>
+    <p>Before platform-specific work, every piece of seeded content must clear the information density threshold. Content with five or more verifiable facts per 100 words achieves a <strong>71% citation rate</strong>. Low-density promotional content achieves only 34%. This single metric explains why most brand content doesn't get cited: it's written for buyers, not for retrieval models.</p>
+
+    <h3>ChatGPT Search: the comparison engine</h3>
+    <p>ChatGPT prioritises balanced, multi-perspective comparison and evaluation content. <a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank">Product comparison matrices achieve a 63% citation rate</a>. It synthesises responses by aggregating data points from multiple domains, prefers objective verifiable parameters over subjective claims, and updates within 90 days carry a +98% recency lift.</p>
+
+    <h3>Claude (RAG context): the depth engine</h3>
+    <p>Claude prefers comprehensive, authoritative, long-form content that explores topics deeply from first principles. <a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank">Comprehensive guides achieve a 69% citation rate</a>. Claude tends to select a single highly detailed document as its primary reference. Expert author attribution, detailed methodology sections, and citations of primary sources directly align with its preferences. Domain authority carries the highest weight of any platform.</p>
+
+    <h3>Perplexity: the freshness engine</h3>
+    <p>Perplexity prioritises structured data, specific numbers, and timely updates above all else. <a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank">Industry benchmark reports achieve a 59% citation rate</a>. Monthly updates carry a +142% citation lift for content refreshed within 30 days, the highest recency signal in the market. If the programme allows only one operational change, establishing a 30-day refresh cycle on the top 20 performing pages delivers measurable Perplexity citation lift within the first cycle.</p>
+
+    <h3>Google AI Overviews: the schema engine</h3>
+    <p>Google's generative model relies on its existing search index and rewards traditional <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank">E-E-A-T and domain authority signals</a>. Structured FAQs with Schema markup achieve a 71% citation rate, the highest of any format across any platform. Domain authority carries a +68% citation lift, the strongest DA weighting in the market. Nested JSON-LD (<code>FAQPage</code>, <code>HowTo</code>) is the required markup format.</p>
+  </section>
+</article>
+
+<!-- TABLE 04: Platform citation profiles -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 04</span>
+          <span class="title">Platform-specific citation profiles · optimisation requirements</span>
+        </div>
+        <span class="ts">ChatGPT · Claude · Perplexity · Google AI Overviews · 2026</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>ChatGPT Search</th>
+            <th>Claude (RAG)</th>
+            <th>Perplexity</th>
+            <th>Google AI Overviews</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="b">Citations per prompt</td><td class="k">3 – 5</td><td class="k">1 – 2</td><td class="k">5 – 8</td><td class="k">1 – 3</td></tr>
+          <tr><td class="b">Recency bias lift</td><td class="k">+98% (≤90d)</td><td class="k">+34% (≤6mo)</td><td class="k up">+142% (≤30d)</td><td class="k">+76% (quarterly)</td></tr>
+          <tr><td class="b">Optimal word count</td><td class="k">2,500 – 4,000</td><td class="k">3,500 – 5,000+</td><td class="k">2,000 – 3,500</td><td class="k">Short, concise excerpts</td></tr>
+          <tr><td class="b">Top format · cite rate</td><td class="b">Comparison matrices · 63%</td><td class="b">Comprehensive guides · 69%</td><td class="b">Benchmark reports · 59%</td><td class="b">FAQs + Schema · 71%</td></tr>
+          <tr><td class="b">Domain authority impact</td><td class="k">Medium</td><td class="k">High</td><td class="k">Medium</td><td class="k up">Very High (+68%)</td></tr>
+          <tr><td class="b">Preferred markup</td><td class="k">Clean HTML tables</td><td class="k">Academic-style citations</td><td class="k">Datasets with dates</td><td class="k">Nested JSON-LD</td></tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source · presenceai.app citation rates research · RawMktg synthesis · 2026</span>
+        <span>Recency lift = citation rate increase vs stale content on same platform</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 05</b><span>Perplexity's 30-day recency requirement is the most aggressive update cadence. If you're not publishing monthly, you're invisible to its RAG layer.</span></div>
+  </div>
+</div>
+
+<!-- CHART 02: Citation rate by content format -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Fig. 06</span>
+          <span class="title">Citation rate by content format and information density</span>
+        </div>
+        <span class="ts">Cross-platform average · 2026</span>
+      </div>
+      <div class="tt-chart">
+        <svg viewBox="0 0 840 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- baseline -->
+          <line x1="30" y1="150" x2="820" y2="150" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+          <!-- bars -->
+          <rect x="50"  y="43"  width="82" height="107" fill="#D04A2A" rx="2"/>
+          <text x="91"  y="168" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">71%</text>
+          <text x="91"  y="184" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono,monospace" font-size="9">High Density</text>
+          <text x="91"  y="196" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="8">(≥5 facts/100w)</text>
+
+          <rect x="165" y="50"  width="82" height="100" fill="#D04A2A" opacity="0.82" rx="2"/>
+          <text x="206" y="168" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">69%</text>
+          <text x="206" y="184" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono,monospace" font-size="9">Comp. Guides</text>
+          <text x="206" y="196" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="8">(Claude)</text>
+
+          <rect x="280" y="63"  width="82" height="87"  fill="#D04A2A" opacity="0.65" rx="2"/>
+          <text x="321" y="168" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">63%</text>
+          <text x="321" y="184" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono,monospace" font-size="9">Comparison</text>
+          <text x="321" y="196" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="8">(ChatGPT)</text>
+
+          <rect x="395" y="71"  width="82" height="79"  fill="rgba(255,255,255,0.28)" rx="2"/>
+          <text x="436" y="168" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">59%</text>
+          <text x="436" y="184" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono,monospace" font-size="9">Benchmarks</text>
+          <text x="436" y="196" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="8">(Perplexity)</text>
+
+          <rect x="510" y="78"  width="82" height="72"  fill="rgba(255,255,255,0.22)" rx="2"/>
+          <text x="551" y="168" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">58%</text>
+          <text x="551" y="184" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="JetBrains Mono,monospace" font-size="9">SaaS Listings</text>
+          <text x="551" y="196" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono,monospace" font-size="8">(G2/Capterra)</text>
+
+          <rect x="625" y="97"  width="82" height="53"  fill="rgba(255,255,255,0.14)" rx="2"/>
+          <text x="666" y="168" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">48%</text>
+          <text x="666" y="184" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono,monospace" font-size="9">Blog / Listicle</text>
+          <text x="666" y="196" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="JetBrains Mono,monospace" font-size="8">(Editorial)</text>
+
+          <rect x="740" y="120" width="82" height="30"  fill="rgba(255,255,255,0.07)" rx="2"/>
+          <text x="781" y="168" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">34%</text>
+          <text x="781" y="184" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono,monospace" font-size="9">Mktg Landing</text>
+          <text x="781" y="196" text-anchor="middle" fill="rgba(255,255,255,0.18)" font-family="JetBrains Mono,monospace" font-size="8">(Promo copy)</text>
+        </svg>
+      </div>
+      <div class="tt-foot">
+        <span>Citation rate = % of appearances resulting in an AI citation · cross-platform avg</span>
+        <span>Source · presenceai.app / RawMktg · 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 06</b><span>Marketing landing pages (34%) achieve less than half the citation rate of high-density structured content (71%). The model is not a buyer.</span></div>
+  </div>
+</div>
+
+<!-- ============ §5 ============ -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">§5</span>Vertical-specific seeding playbooks</h2>
+    <p>Earning AI citations requires a tailored strategy that addresses <a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank">the specific search dynamics of each industry vertical</a>. The Gate 4 XGBoost model applies manual category boosts, meaning the domain types that survive reranking differ by query vertical. One-size-fits-all approaches underperform because they fail to occupy the specific category-boosted domains for each vertical.</p>
+
+    <h3>SaaS and technology: the comparison vertical</h3>
+    <p>The SaaS space is structurally comparative. Conversational queries typically seek tool comparisons or vendor recommendations, and the model synthesises from multiple competing sources. The brand must appear in identical rows alongside competitors across multiple third-party domains; this co-citation pattern establishes category membership. <strong>Priority platforms:</strong> <a href="https://llmrefs.com/llm-seo" target="_blank">G2, Clutch, TrustRadius, Capterra, GitHub, and technology editorial</a>. Ensure complete, up-to-date pricing and feature specifications on all major software directories. Missing pricing is a frequent cause of omission in comparison queries.</p>
+
+    <h3>Healthcare and YMYL: the credentialing vertical</h3>
+    <p>YMYL searches undergo strict evaluation: models require verification of accuracy before citing a source. <a href="https://www.researchgate.net/publication/395046856_From_Noise_to_Narrative_Building_Reputation_in_AI_Dominated_Search_and_Discovery_Environments" target="_blank">Every seeded health asset must carry an expert author byline</a> linked to a verified professional profile with structured credentials. Claims must be backed by citations to primary research papers (eight or more outbound citations substantially increases citation rate). Align the brand with Wikidata entities to build a clean machine-readable identity. <strong>Priority platforms:</strong> Wikidata, PubMed, medical directories, and academic journals.</p>
+
+    <h3>E-commerce: the specification vertical</h3>
+    <p>Generative commerce engines prioritise clear transactional data over subjective marketing descriptions. <a href="https://lseo.com/answer-engine-optimization-services/" target="_blank">Models favour verified purchase logs and hands-on testing methodologies</a> on third-party product reviews. Implement clean <code>Product</code> and <code>Review</code> schema across all retail endpoints. Seed detailed product specification tables; the model extracts and synthesises these tables directly. <strong>Priority platforms:</strong> Amazon product nodes, TrustPilot, BBB, CNET, and product-focused editorial.</p>
+
+    <h3>Financial services: the neutrality vertical</h3>
+    <p>As another YMYL category, financial queries are evaluated with high caution. <a href="https://zumeirah.com/brand-entity-seo-2026/" target="_blank">Financial brands must build around calculators, definitions, and objective comparison tools</a> rather than promotional positioning. Avoid opinion-based advice; publish structured market data and policy breakdowns that can be parsed without misrepresentation. <strong>Priority platforms:</strong> Crunchbase, financial comparison portals, and specialised tool directories.</p>
+
+    <h3>B2B services and consulting: the proprietary data vertical</h3>
+    <p>This vertical relies heavily on original data to earn citations. <a href="https://prowly.com/magazine/llm-seeding-guide/" target="_blank">Publishing original surveys and research reports</a> creates the primary-source status that pushes past Gate 4 category scoring. Execute digital PR campaigns that explicitly co-locate the brand name with the target service descriptor at the sentence level, not just on the same domain. <strong>Priority platforms:</strong> LinkedIn, specialised industry forums, niche newsletters, and PR portals.</p>
+  </section>
+</article>
+
+<!-- TABLE 05: Vertical seeding playbooks -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 05</span>
+          <span class="title">Vertical-specific seeding playbooks · domain prioritisation matrix</span>
+        </div>
+        <span class="ts">5 verticals · 2026</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>Vertical</th>
+            <th class="num">Avg Citation Rate</th>
+            <th>Primary Seeding Format</th>
+            <th>Critical Success Metric</th>
+            <th>Key Distribution Channels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="b">SaaS &amp; Tech</td><td class="num up">58%</td><td>Comparison matrices · integration guides</td><td class="k">Pricing transparency · technical data precision</td><td class="k">G2, Clutch, TrustRadius, GitHub, Medium, Stack Overflow</td></tr>
+          <tr><td class="b">Healthcare &amp; YMYL</td><td class="num up">52%</td><td>Expert-reviewed clinical guides · prevention logs</td><td class="k">Verifiable expert authors · primary sourcing (≥8 citations)</td><td class="k">Wikidata, PubMed, academic directories, medical registries</td></tr>
+          <tr><td class="b">E-Commerce</td><td class="num">49%</td><td>Specification tables · testing data</td><td class="k">Clean pricing · verified review sentiment</td><td class="k">Amazon nodes, TrustPilot, BBB, CNET, product forums</td></tr>
+          <tr><td class="b">Financial Services</td><td class="num">47%</td><td>Conceptual definitions · calculation tools</td><td class="k">Regulatory neutrality · objective calculations only</td><td class="k">Crunchbase, financial comparison directories, calculators</td></tr>
+          <tr><td class="b">B2B &amp; Consulting</td><td class="num">44%</td><td>Proprietary benchmark surveys · methodology papers</td><td class="k">Original data · structured industry insights</td><td class="k">LinkedIn, industry forums, niche newsletters, PR hubs</td></tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source · presenceai.app / RawMktg vertical analysis · 2026</span>
+        <span>Citation rate = % of queries in vertical where brand earned a citation</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 07</b><span>SaaS leads at 58% because comparison queries are structurally multi-source. YMYL verticals require intensive credentialing to pass Gate 4.</span></div>
+  </div>
+</div>
+
+<!-- ============ §6 ============ -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">§6</span>The five-phase execution blueprint</h2>
+    <p>Authority seeding is a structured programme with a defined phase sequence. The phases are designed to be sequential: building technical foundations prevents before distributing off-site assets prevents seeding content that doesn't survive Gate 3 or Gate 4. Executing them out of order is the most common reason seeding programmes fail to generate measurable citation lift within 90 days.</p>
+
+    <h3>Phase 1 · Semantic core definition</h3>
+    <p>Establish a single-sentence brand thesis binding the company name to a unique, highly specific concept. <a href="https://www.codepulse.com.tw/en-gb/the-future-of-search-is-ai-validated-seo" target="_blank">Broad terms like "SEO agency" are highly vulnerable to extraction errors.</a> A precise term like "AI-Validated SEO" creates a distinct token co-occurrence pattern in the training corpus. Verify that this core definition is consistently repeated across all public profiles, eliminating semantic ambiguity.</p>
+
+    <h3>Phase 2 · Entity hub and grounding pages</h3>
+    <p>Build a dedicated "Grounding Page" on the primary domain to serve as the <a href="https://groundingpage.com/facts/geo/" target="_blank">definitive, machine-readable source of truth</a> for the core brand concept. Write a clear, standalone definition within the first 100 words using the BLUF rule. Write in a neutral, encyclopaedia-style tone; avoid promotional language. Publish 10 to 20 supporting topic pages creating an interconnected content cluster.</p>
+
+    <h3>Phase 3 · Technical markup configuration</h3>
+    <p>Deploy <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank">structured schema markup</a> across the domain: <code>FAQPage</code>, <code>Product</code>, <code>HowTo</code>, and <code>Organization</code>. Use the <code>sameAs</code> property to link organisation and executive author profiles to their Wikidata, DBpedia, and Crunchbase nodes. Configure <code>robots.txt</code> to explicitly allow PerplexityBot and GPTBot. Publish an <code>llms.txt</code> summary file at site root.</p>
+
+    <h3>Phase 4 · Off-site channel seeding</h3>
+    <p>Translate core concept definitions into conversational content and seed them across external high-authority platforms. <a href="https://prowly.com/magazine/llm-seeding-guide/" target="_blank">The key principle is sentence-level co-location</a>: the brand name and target service descriptor must appear in the same sentence, not just on the same domain. Execute digital PR campaigns to generate plain-text mentions in niche newsletters and industry publications. Build and verify the organisation's Wikidata entity node to cement its place in parametric training datasets.</p>
+
+    <h3>Phase 5 · Monitoring AI share-of-voice and hallucination defence</h3>
+    <p>Deploy monitoring platforms like <a href="https://www.pulpstrategy.com/llmo-unified-organic-search-dominance-in-the-ai-era" target="_blank">DareAISearch or NeuroRank</a> to track AI Share of Voice across ChatGPT, Perplexity, Gemini, and Google AI Overviews. Analyse prompts where competitors are recommended. These reveal the sources the model retrieved, creating the targeting list for the next seeding wave. Regular hallucination audits are essential: <strong>the model's description of the brand is as important as whether it mentions the brand at all.</strong></p>
+  </section>
+</article>
+
+<!-- TABLE 06: 90-day execution timeline -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 06</span>
+          <span class="title">90-day execution timeline · authority seeding programme</span>
+        </div>
+        <span class="ts">Phase sequence · weeks 1–12</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th class="k">Week</th>
+            <th>Core Deliverable</th>
+            <th>Gate(s) Targeted</th>
+            <th class="num">Est. Lift (90d)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="b">01 · Semantic Core</td><td class="k">W1–W2</td><td>Brand thesis · semantic field map · consistency audit across all public profiles</td><td><span class="tag-pill">G1</span> <span class="tag-pill">G4</span></td><td class="num mute">Foundational</td></tr>
+          <tr><td class="b">02 · Entity Hub</td><td class="k">W2–W4</td><td>Grounding page live · 10 topic cluster pages · internal linking complete</td><td><span class="tag-pill">G1</span> <span class="tag-pill">G2</span> <span class="tag-pill">G5</span></td><td class="num up">+15–25%</td></tr>
+          <tr><td class="b">03 · Technical Markup</td><td class="k">W3–W5</td><td>Schema deployed · sameAs links verified · robots.txt and llms.txt published</td><td><span class="tag-pill">G3</span> <span class="tag-pill">G4</span> <span class="tag-pill">G5</span></td><td class="num up">+20–35%</td></tr>
+          <tr><td class="b">04 · Off-Site Seeding</td><td class="k">W4–W10</td><td>20+ platform profiles complete · 5 digital PR placements · Wikidata entity live</td><td><span class="tag-pill">G2</span> <span class="tag-pill">G4</span></td><td class="num up">+35–60%</td></tr>
+          <tr><td class="b">05 · Monitoring</td><td class="k">W8–ongoing</td><td>AI SoV dashboard live · hallucination audit complete · competitor gap targeting list</td><td><span class="tag-pill">All</span></td><td class="num up">Compound</td></tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Lift estimates based on single-client interventions · Princeton early-mover compounding applies from W8+</span>
+        <span>RawMktg methodology · 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 08</b><span>Phases 1–3 unlock structural access to the citation pipeline. Phase 4 is where volume builds. Phase 5 defends and compounds.</span></div>
+  </div>
+</div>
+
+<!-- robots.txt example -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Config · Phase 3</span>
+          <span class="title">Target robots.txt configuration for RAG crawler access</span>
+        </div>
+        <span class="ts">Server root · /robots.txt</span>
+      </div>
+      <div class="tt-code">User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /</div>
+      <div class="tt-foot">
+        <span>Allowing PerplexityBot enables live RAG indexing · GPTBot controls inclusion in future training sets</span>
+        <span>Source · llmrefs.com LLMO guide · 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 09</b><span>Explicit allow rules prevent accidental blocking of AI crawlers. Verify with log analysis; many sites inadvertently block these agents.</span></div>
+  </div>
+</div>
+
+<!-- ============ §7 ============ -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">§7</span>Strategic recommendations for search programme directors</h2>
+    <p>The transition from traditional index-based search to generative discovery requires <a href="https://llmrefs.com/llm-seo" target="_blank">a fundamental reallocation of operational budgets and resource priorities</a>. The following recommendations are sequenced by urgency and expected ROI.</p>
+
+    <ul class="checks">
+      <li><b>Shift budgets from high-DR link acquisition to distributed brand mentions.</b> Traditional link-building programmes prioritising raw Domain Rating metrics must be supplemented (and in most cases partially replaced) with digital PR campaigns designed to generate high-context, plain-text brand mentions. The goal is establishing co-occurrence patterns across diverse, topically relevant publications. A single placement in a niche newsletter where the model has been trained to trust signals more than a commodity guest post on a DR80 domain.</li>
+      <li><b>Establish compounding returns via early seeding.</b> <a href="https://docdigitalsem.com/best-ai-seo-strategies-for-businesses/" target="_blank">Generative models show a preference for citing sources they have referenced in previous queries</a>, creating compounding visibility advantages for brands that secure early-mover citations. The first brand to establish strong semantic co-occurrence for a category term is dramatically harder to displace than the second. The window for early-mover advantage in most B2B verticals is 2026.</li>
+      <li><b>Unify traditional SEO and AI optimisation programmes.</b> Traditional fundamentals (page speed, logical information architecture, structured data) remain critical to ensuring content survives Gates 2 and 3. Generative optimisation should exist as an integrated layer on top of a technically sound search programme, not as a siloed "GEO team" with a separate content calendar. Duplicate content and inconsistent entity definitions across two programmes actively damage both.</li>
+      <li><b>Monitor and defend brand entity attributes, not just citation volume.</b> Search teams must track not only where the brand is cited, but how it is described. A citation that mischaracterises the company's pricing model, use case, or product capabilities is actively harmful; the model propagates that description to subsequent users. Regular hallucination audits and entity attribute monitoring via tools like OtterlyAI or Peec AI are now a core component of brand protection.</li>
+      <li><b>Prioritise Perplexity's 30-day content refresh cadence immediately.</b> The 142% citation rate lift for content updated within 30 days is the highest recency signal in the market. Establishing a 30-day refresh cycle on the top 20 performing pages, with explicit "Last updated" datestamps. This delivers measurable Perplexity citation lift within the first cycle and requires no new content creation, only systematic updates.</li>
+    </ul>
+
+    <blockquote>"The brands that will dominate generative search in 2027 are building their semantic consensus today. The ones waiting for 'GEO best practices to mature' are watching competitors seed the training data that defines their category."</blockquote>
+  </section>
+
+  <!-- End matter -->
+  <div class="endmatter">
+    <div>
+      <h4>Methodology</h4>
+      <p>Research synthesis from 31 primary and secondary sources including Perplexity architecture documentation, Princeton GEO research, Google Search Central guidelines, and multi-platform citation rate studies. Platform correlation data sourced from keyword.com and presenceai.app studies. Vertical playbook data from presenceai.app citation rates research and RawMktg editorial synthesis.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>LLM retrieval architectures change frequently. Platform-specific citation rate figures represent best available estimates, not controlled experiments. Correlation values for authority signals are observational, not causal. The five-gate model reflects Perplexity's documented architecture; other engines may vary structurally.</p>
+    </div>
+    <div>
+      <h4>Audience</h4>
+      <p>Written for SEO leads, link-building programme directors, and GEO practitioners in B2B organisations. Assumes familiarity with traditional SEO fundamentals. Does not assume prior knowledge of LLM architecture.</p>
+    </div>
+    <div>
+      <h4>Related</h4>
+      <p>
+        <a href="schema-markup-ai-citations-2026.html" style="color:var(--ink);border-bottom:1px solid var(--signal);text-decoration:none;">Schema Markup for AI Citations · 2026 Implementation Guide</a><br/>
+        <a href="30-day-content-half-life-recency-ai-ranking-signal.html" style="color:var(--ink);border-bottom:1px solid var(--signal);text-decoration:none;">The 30-Day Content Half-Life: Recency as an AI Ranking Signal</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Citations -->
+  <div class="citations">
+    <h4>Citations &amp; References</h4>
+    <ol>
+      <li><a href="https://en.wikipedia.org/wiki/Generative_engine_optimization" target="_blank">Generative engine optimization. Wikipedia.</a> Accessed May 2026.</li>
+      <li><a href="https://groundingpage.com/facts/geo/" target="_blank">GEO (Generative Engine Optimization). Official Grounding Page.</a> Accessed May 2026.</li>
+      <li><a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">Retrieval-augmented generation. Wikipedia.</a> Accessed May 2026.</li>
+      <li><a href="https://www.pulpstrategy.com/llmo-unified-organic-search-dominance-in-the-ai-era" target="_blank">LLMO &amp; AI SEO: Dominating Organic Search in 2026. Pulp Strategy.</a> Accessed May 2026.</li>
+      <li><a href="https://zumeirah.com/brand-entity-seo-2026/" target="_blank">Brand Entity SEO: How to Make LLMs Trust Your Brand in 2026. Zumeirah.</a> Accessed May 2026.</li>
+      <li><a href="https://anshulrana.in/blog/llms-dont-read-link-graphs-they-read-sentences" target="_blank">LLMs Don't Read Link Graphs. They Read Sentences. Anshul Rana.</a> Accessed May 2026.</li>
+      <li><a href="https://llmrefs.com/llm-seo" target="_blank">LLM SEO (LLMO): The 2026 Guide to Large Language Model Optimization. LLMrefs.</a> Accessed May 2026.</li>
+      <li><a href="https://www.researchgate.net/publication/395046856_From_Noise_to_Narrative_Building_Reputation_in_AI_Dominated_Search_and_Discovery_Environments" target="_blank">From Noise to Narrative: Building Reputation in AI Dominated Search. ResearchGate.</a> Accessed May 2026.</li>
+      <li><a href="https://www.codepulse.com.tw/en-gb/the-future-of-search-is-ai-validated-seo" target="_blank">Facing 2026: AI-Validated SEO. CodePulse.</a> Accessed May 2026.</li>
+      <li><a href="https://outpaceseo.com/glossary/" target="_blank">AI Glossary: Terms &amp; Definitions Simplified. Outpace SEO.</a> Accessed May 2026.</li>
+      <li><a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank">How Perplexity AI Answers Work: Retrieval, Ranking, and Citation. ziptie.dev.</a> Accessed May 2026.</li>
+      <li><a href="https://aclanthology.org/people/barbara-plank/" target="_blank">Barbara Plank. ACL Anthology.</a> Accessed May 2026.</li>
+      <li><a href="https://huggingface.co/blog/Codatta/evolution-of-large-model-data-engineering" target="_blank">Evolution of Large Model Data Engineering. Hugging Face.</a> Accessed May 2026.</li>
+      <li><a href="https://prowly.com/magazine/llm-seeding-guide/" target="_blank">What is LLM Seeding: Guide to Enhancing Your AI Content Strategy. Prowly.</a> Accessed May 2026.</li>
+      <li><a href="https://www.aeochecker.ai/blogs/how-ai-answer-engines-pick-sources" target="_blank">How ChatGPT, Gemini &amp; Perplexity Pick Their Sources. AEOChecker.</a> Accessed May 2026.</li>
+      <li><a href="https://team218.com/what-is-rag-retrieval-augmented-generation-iowa-businesses/" target="_blank">What Is RAG? How AI Retrieval Determines Who Gets Cited. Team 218.</a> Accessed May 2026.</li>
+      <li><a href="https://docdigitalsem.com/best-ai-seo-strategies-for-businesses/" target="_blank">Best AI SEO Strategies for Businesses. Doc Digital SEM.</a> Accessed May 2026.</li>
+      <li><a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank">AI Citation Rates Research: What Content Gets Cited Most. PresenceAI.</a> Accessed May 2026.</li>
+      <li><a href="https://www.arcstone.com/llm-seeding/" target="_blank">LLM Seeding Basics and Tips. ArcStone.</a> Accessed May 2026.</li>
+      <li><a href="https://arxiv.org/pdf/2311.09735" target="_blank">GEO: Generative Engine Optimization. arXiv 2311.09735.</a> Accessed May 2026.</li>
+      <li><a href="https://lseo.com/answer-engine-optimization-services/" target="_blank">Answer Engine Optimization Services. LSEO.</a> Accessed May 2026.</li>
+      <li><a href="https://oxygen.digital/services/generative-engine-optimisation-geo/" target="_blank">Generative Engine Optimisation Services. Oxygen Digital.</a> Accessed May 2026.</li>
+      <li><a href="https://keyword.com/blog/brand-mentions-vs-citations-vs-backlinks-for-llm-discoverability" target="_blank">Brand Mentions vs. Citations vs. Backlinks for LLM Discoverability. Keyword.com.</a> Accessed May 2026.</li>
+      <li><a href="https://itproexpert.com/what-is-llm-seeding/" target="_blank">What is LLM Seeding? IT Pro Expert.</a> Accessed May 2026.</li>
+      <li><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank">Creating Helpful, Reliable, People-First Content. Google Search Central.</a> Accessed May 2026.</li>
+      <li><a href="https://www.myaibo.in/solutions/geo" target="_blank">GEO Services: Be the Brand AI Recommends. MyAibo.</a> Accessed May 2026.</li>
+      <li><a href="https://www.clickrank.ai/how-to-find-backlinks/" target="_blank">How to Find Backlinks to Any Website: Free and Paid Methods. ClickRank AI.</a> Accessed May 2026.</li>
+      <li><a href="https://thatware.co/seo-services-switzerland/" target="_blank">SEO Services. ThatWare.</a> Accessed May 2026.</li>
+      <li><a href="https://www.samuelanan.com/blog/ways-ai-can-ease-and-advance-marketing" target="_blank">Ways AI Can Ease and Advance Marketing. Samuel Anan.</a> Accessed May 2026.</li>
+      <li><a href="https://www.researchgate.net/publication/363904279_Wikidata_and_knowledge_graphs_in_practice" target="_blank">Wikidata and Knowledge Graphs in Practice. ResearchGate.</a> Accessed May 2026.</li>
+      <li><a href="https://www.digidarts.com/blog/your-competitors-are-winning-ai-search-while-youre-not-looking" target="_blank">Your Competitors Are Winning AI Search While You’re Not Looking. Digidarts.</a> Accessed May 2026.</li>
+    </ol>
+  </div>
+
+  <!-- Subscribe -->
+  <div class="subscribe">
+    <div>
+      <h3>One report. Every other Tuesday. <em>Zero fluff.</em></h3>
+      <p>The dataset, methodology, and seeding templates behind each playbook, plus citation monitoring frameworks, go to subscribers only.</p>
+    </div>
+    <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed →';">
+      <input type="email" placeholder="you@company.com" />
+      <button type="submit">Subscribe →</button>
+      <span class="terms">No tracking · unsubscribe in 1 click</span>
+    </form>
+  </div>
+
+</article>
+
+<!-- ============ FOOT ============ -->
+<footer class="site-foot">
+  <div class="page">
+    <div class="row">
+      <div>
+        <span class="rm-logo sm"><span class="raw">Raw</span><span class="mktg">Mktg</span><span class="dot">.</span></span>
+        <div style="margin-top:8px;">Marketing intelligence · no fluff</div>
+      </div>
+      <div style="text-align:right;">
+        <div><a href="../Home.html">Home</a> &nbsp;·&nbsp; <a href="../BrandKit.html">Brand Kit</a> &nbsp;·&nbsp; <a href="#">Reports</a> &nbsp;·&nbsp; <a href="#">Data</a></div>
+        <div style="margin-top:8px;">© RawMktg 2026 · v1.0</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

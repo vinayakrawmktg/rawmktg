@@ -1,0 +1,16 @@
+# rawmktg
+
+> rawmktg is a blog by Epic Slope Partners covering B2B marketing strategy, SEO, GEO (Generative Engine Optimization), AI search visibility, and content marketing for SaaS companies.
+
+## Published Posts
+
+- [The Anatomy of a High-Citation Page](/posts/anatomy-of-a-high-citation-page.html): What makes a page get cited by AI systems — structure, signals, and the elements that build trust with LLMs.
+- [Authority Seeding for AI & LLM Trust](/posts/authority-seeding-ai-llm-trust.html): How to build AI-readable authority signals so your brand gets cited, not ignored, by generative search engines.
+- [The 30-Day Content Half-Life](/posts/30-day-content-half-life-recency-ai-ranking-signal.html): Why recency is now a ranking signal in AI-powered search and how to keep content fresh enough to matter.
+
+## About
+
+**Publisher:** Epic Slope Partners
+**Author:** Vinayak Ravi
+**Contact:** vinayak@epicslope.partners
+**Focus:** B2B SaaS marketing, GEO, SEO, AI search, content strategy

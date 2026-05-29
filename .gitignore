@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Internal working files - never deploy
+drafts/
+research/
+design/
+
+# Blogs folder (legacy, now empty)
+Blogs/
+
+# Word, Excel docs
+*.docx
+*.xlsx
+
+# Claude settings
+.claude/
