@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>Prompt-to-Citation Tracking: Build a GEO Measurement Stack · rawmktg.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation -- the metrics that prove AI visibility ROI." />
+  <meta name="description" content="How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation: the metrics that prove AI visibility ROI." />
   <meta name="author" content="rawmktg." />
   <link rel="canonical" href="https://rawmktg.com/Blogs/prompt-to-citation-tracking.html" />
 
@@ -12,7 +12,7 @@
   <meta property="og:type"        content="article" />
   <meta property="og:url"         content="https://rawmktg.com/Blogs/prompt-to-citation-tracking.html" />
   <meta property="og:title"       content="Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero" />
-  <meta property="og:description" content="How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation -- the metrics that prove AI visibility ROI." />
+  <meta property="og:description" content="How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation: the metrics that prove AI visibility ROI." />
   <meta property="og:site_name"   content="rawmktg." />
   <meta property="og:image"       content="https://rawmktg.com/assets/images/prompt-to-citation-tracking-header.png" />
   <meta property="article:author"         content="rawmktg." />
@@ -30,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero",
-    "description": "How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation -- the metrics that prove AI visibility ROI.",
+    "description": "How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation: the metrics that prove AI visibility ROI.",
     "image": "https://rawmktg.com/assets/images/prompt-to-citation-tracking-header.png",
     "url": "https://rawmktg.com/Blogs/prompt-to-citation-tracking.html",
     "datePublished": "2026-05-30",
@@ -266,7 +266,7 @@
         "name": "How do you track AI citations from ChatGPT and Perplexity in GA4?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Create a custom AI Search channel group in GA4 under Admin > Data Display > Channel Groups. Add a regex rule matching AI referrer hostnames: ^(chatgpt|perplexity|gemini|copilot|claude|you|phind|grok|deepseek|chat\\.mistral)\\. -- and critically, drag this channel to the top of the evaluation order above Referral and Organic Search. Use a dual setup that keeps Google's native AI Assistant channel alongside your custom grouping for maximum coverage and retroactive classification."
+          "text": "Create a custom AI Search channel group in GA4 under Admin > Data Display > Channel Groups. Add a regex rule matching AI referrer hostnames: ^(chatgpt|perplexity|gemini|copilot|claude|you|phind|grok|deepseek|chat\\.mistral)\\.. Critically, drag this channel to the top of the evaluation order above Referral and Organic Search. Use a dual setup that keeps Google's native AI Assistant channel alongside your custom grouping for maximum coverage and retroactive classification."
         }
       },
       {
@@ -320,7 +320,7 @@
       <span class="eyebrow-date">May 2026</span>
     </div>
     <h1 class="article-headline">Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero</h1>
-    <p class="article-deck">A blueprint for building the monitoring system that turns AI citations into attributable revenue -- query portfolios, GA4 session attribution, UTM handling for LLM referrals, and the Looker Studio setup that proves GEO ROI to the C-suite.</p>
+    <p class="article-deck">A blueprint for building the monitoring system that turns AI citations into attributable revenue: query portfolios, GA4 session attribution, UTM handling for LLM referrals, and the Looker Studio setup that proves GEO ROI to the C-suite.</p>
   </header>
 </div>
 
@@ -330,19 +330,19 @@
 
     <main class="article-content" id="article-main">
 
-      <p>Digital marketing is in the middle of an architectural transition. For nearly three decades, search engine optimization operated on a stable paradigm: crawl, index, and rank pages by keyword density, HTML markup, and backlink authority. The arrival of large language models and retrieval-augmented generation (RAG) has rewired user behavior from keyword queries into conversational, natural-language dialogue -- and established <a href="https://thatware.co/5-layer-geo-stack-ai-visibility-framework/" target="_blank" rel="noopener">Generative Engine Optimization (GEO)</a> as the discipline that ensures a brand is recognized, retrieved, and cited inside AI-generated answers.<sup><a href="#r1">1</a></sup></p>
+      <p>Digital marketing is in the middle of an architectural transition. For nearly three decades, search engine optimization operated on a stable paradigm: crawl, index, and rank pages by keyword density, HTML markup, and backlink authority. The arrival of large language models and retrieval-augmented generation (RAG) has rewired user behavior from keyword queries into conversational, natural-language dialogue, establishing <a href="https://thatware.co/5-layer-geo-stack-ai-visibility-framework/" target="_blank" rel="noopener">Generative Engine Optimization (GEO)</a> as the discipline that ensures a brand is recognized, retrieved, and cited inside AI-generated answers.<sup><a href="#r1">1</a></sup></p>
 
-      <p>Traditional metrics -- keyword rankings, raw backlink volume -- are increasingly insufficient in an environment dominated by ChatGPT, Gemini, Perplexity, and Google AI Overviews. These systems synthesize multiple sources into a single answer that can either displace organic clicks entirely or route highly qualified traffic through inline citation links.<sup><a href="#r2">2</a></sup> Visibility is no longer a linear function of SERP placement; it is a multi-dimensional function of entity authority, semantic clarity, and retrieval compatibility.</p>
+      <p>Traditional metrics (keyword rankings, raw backlink volume) are increasingly insufficient in an environment dominated by ChatGPT, Gemini, Perplexity, and Google AI Overviews. These systems synthesize multiple sources into a single answer that can either displace organic clicks entirely or route highly qualified traffic through inline citation links.<sup><a href="#r2">2</a></sup> Visibility is no longer a linear function of SERP placement; it is a multi-dimensional function of entity authority, semantic clarity, and retrieval compatibility.</p>
 
-      <p>To operationalize this, mature teams structure work around a <strong>5-Layer GEO Stack</strong> that moves a brand from basic indexation to machine-identifiable authority:<sup><a href="#r1">1</a></sup> entity engineering, LLM training and entity injection, semantic site infrastructure, retrieval and chunk governance, and citation engineering across trusted third parties. Measurement -- the focus of this guide -- is what tells you whether any of those layers are working.</p>
+      <p>To operationalize this, mature teams structure work around a <strong>5-Layer GEO Stack</strong> that moves a brand from basic indexation to machine-identifiable authority:<sup><a href="#r1">1</a></sup> entity engineering, LLM training and entity injection, semantic site infrastructure, retrieval and chunk governance, and citation engineering across trusted third parties. Measurement (the focus of this guide) is what tells you whether any of those layers are working.</p>
 
       <!-- §1: The Paradigm Shift -->
-      <h2 id="paradigm-shift">01 -- The Paradigm Shift From SEO to GEO Measurement</h2>
+      <h2 id="paradigm-shift">01: The Paradigm Shift From SEO to GEO Measurement</h2>
 
-      <div class="section-answer">Traditional SEO tools measure where you rank. GEO measurement tools measure whether you get cited -- by which AI engine, for which query type, at what position in the answer, and whether the citation converts. These are fundamentally different questions requiring a fundamentally different data architecture.</div>
+      <div class="section-answer">Traditional SEO tools measure where you rank. GEO measurement tools measure whether you get cited: by which AI engine, for which query type, at what position in the answer, and whether the citation converts. These are fundamentally different questions requiring a fundamentally different data architecture.</div>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 01 -- SEO tools vs. LLM citation-tracking platforms</div>
+        <div class="tt-label">Table 01: SEO tools vs. LLM citation-tracking platforms</div>
         <table class="tt">
           <thead>
             <tr>
@@ -379,27 +379,27 @@
       <p>The stakes are concrete. If a brand's data is ingested but cited under a competitor's name, or an engine synthesizes the brand's data without a backlink, a severe <strong>"Invisibility Gap"</strong> opens up.<sup><a href="#r4">4</a></sup> A dedicated prompt-to-citation tracking framework is the only viable way to diagnose and close those attribution blind spots.<sup><a href="#r2">2</a></sup></p>
 
       <!-- §2: Multi-Engine -->
-      <h2 id="engines">02 -- Multi-Engine Retrieval Architectures &amp; Citation Behavior</h2>
+      <h2 id="engines">02: Multi-Engine Retrieval Architectures &amp; Citation Behavior</h2>
 
-      <div class="section-answer">Each AI engine has a structurally different home turf. ChatGPT favors encyclopedic content, Perplexity skews toward fresh community discussions, Claude demands formal technical documentation, and Google AI Overviews over-indexes on multimodal content. Optimizing for one engine while ignoring others is a losing game. The technical breakdown of <a href="/Blogs/why-engines-recommend-different-vendors.html">why ChatGPT, Perplexity, and Gemini cite differently</a> -- and what to do about it -- is a prerequisite for designing an effective prompt portfolio.</div>
+      <div class="section-answer">Each AI engine has a structurally different home turf. ChatGPT favors encyclopedic content, Perplexity skews toward fresh community discussions, Claude demands formal technical documentation, and Google AI Overviews over-indexes on multimodal content. Optimizing for one engine while ignoring others is a losing game. The technical breakdown of <a href="/Blogs/why-engines-recommend-different-vendors.html">why ChatGPT, Perplexity, and Gemini cite differently</a>, along with what to do about it, is a prerequisite for designing an effective prompt portfolio.</div>
 
       <p>There is a fundamental split between <strong>citation-first</strong> systems (Perplexity, Google AI Overviews) that synthesize real-time web results via active crawlers, and <strong>conversation-first</strong> systems (standard ChatGPT, Claude) that lean on pre-trained parametric memory and search the live web only when prompted.<sup><a href="#r3">3</a></sup> Those architectures produce very distinct source biases:</p>
 
       <ul>
-        <li><strong>ChatGPT</strong> -- powered largely by Bing's index, it favors encyclopedic, structured content; <a href="https://discoveredlabs.com/blog/ai-citation-patterns-how-chatgpt-claude-and-perplexity-choose-sources" target="_blank" rel="noopener">Wikipedia accounts for roughly 47.9% of its top-ten citations</a>, with 87% alignment to Bing's top results.<sup><a href="#r6">6</a></sup></li>
-        <li><strong>Perplexity</strong> -- a real-time answer engine that leans heavily on user discussion, with Reddit making up about 46.7% of its top-cited sources, and is exceptionally receptive to fresh content.<sup><a href="#r6">6</a></sup></li>
-        <li><strong>Claude</strong> -- prioritizes technical precision and formal documentation; blogs and whitepapers make up ~43.8% of cited sources, and it frequently strips URL referrers, naming brands while omitting active links.<sup><a href="#r7">7</a></sup></li>
-        <li><strong>Google AI Overviews</strong> -- skewed toward multimodal content, with YouTube capturing ~23.3% of top citations, and only ~12% overlap with standard organic top-10 links.<sup><a href="#r7">7</a></sup></li>
+        <li><strong>ChatGPT</strong>: powered largely by Bing's index, it favors encyclopedic, structured content; <a href="https://discoveredlabs.com/blog/ai-citation-patterns-how-chatgpt-claude-and-perplexity-choose-sources" target="_blank" rel="noopener">Wikipedia accounts for roughly 47.9% of its top-ten citations</a>, with 87% alignment to Bing's top results.<sup><a href="#r6">6</a></sup></li>
+        <li><strong>Perplexity</strong>: a real-time answer engine that leans heavily on user discussion, with Reddit making up about 46.7% of its top-cited sources, and is exceptionally receptive to fresh content.<sup><a href="#r6">6</a></sup></li>
+        <li><strong>Claude</strong>: prioritizes technical precision and formal documentation; blogs and whitepapers make up ~43.8% of cited sources, and it frequently strips URL referrers, naming brands while omitting active links.<sup><a href="#r7">7</a></sup></li>
+        <li><strong>Google AI Overviews</strong>: skewed toward multimodal content, with YouTube capturing ~23.3% of top citations, and only ~12% overlap with standard organic top-10 links.<sup><a href="#r7">7</a></sup></li>
       </ul>
 
       <div class="chart-wrap">
-        <div class="chart-title-mono">Chart 01 -- Dominant source class by platform</div>
+        <div class="chart-title-mono">Chart 01: Dominant source class by platform</div>
         <div class="chart-sub-mono">Share of top citations held by each engine's leading source type</div>
         <div class="canvas-wrap"><canvas id="sourceChart"></canvas></div>
       </div>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 02 -- Retrieval architecture and referrer behavior by platform</div>
+        <div class="tt-label">Table 02: Retrieval architecture and referrer behavior by platform</div>
         <table class="tt">
           <thead>
             <tr>
@@ -414,19 +414,19 @@
               <td class="label">ChatGPT</td>
               <td>Bing index + parametric memory<sup><a href="#r6">6</a></sup></td>
               <td>Numbered footnotes</td>
-              <td>High -- passes <code>utm_source=chatgpt.com</code> natively<sup><a href="#r8">8</a></sup></td>
+              <td>High (passes <code>utm_source=chatgpt.com</code> natively)<sup><a href="#r8">8</a></sup></td>
             </tr>
             <tr>
               <td class="label">Perplexity</td>
               <td>Continuous web scrape + RAG<sup><a href="#r6">6</a></sup></td>
               <td>Transparent inline numbered links</td>
-              <td>High -- passes <code>perplexity.ai</code> referrer<sup><a href="#r10">10</a></sup></td>
+              <td>High (passes <code>perplexity.ai</code> referrer)<sup><a href="#r10">10</a></sup></td>
             </tr>
             <tr>
               <td class="label">Claude</td>
               <td>Parametric cutoff + select scrapes<sup><a href="#r6">6</a></sup></td>
               <td>Contextual brackets / inline links</td>
-              <td>Extremely low -- strips referrers<sup><a href="#r10">10</a></sup></td>
+              <td>Extremely low (strips referrers)<sup><a href="#r10">10</a></sup></td>
             </tr>
             <tr>
               <td class="label">Google AIO</td>
@@ -439,14 +439,14 @@
       </div>
 
       <!-- §3: Prompt Portfolio -->
-      <h2 id="portfolio">03 -- Designing &amp; Executing the Prompt Portfolio</h2>
+      <h2 id="portfolio">03: Designing &amp; Executing the Prompt Portfolio</h2>
 
-      <div class="section-answer">The first functional layer of the GEO measurement stack is off-site monitoring. Because engines produce variable, personalized responses, you measure visibility by building a controlled Prompt Portfolio -- a baseline diagnostic test run on a recurring schedule.</div>
+      <div class="section-answer">The first functional layer of the GEO measurement stack is off-site monitoring. Because engines produce variable, personalized responses, you measure visibility by building a controlled Prompt Portfolio: a baseline diagnostic test run on a recurring schedule.</div>
 
       <p>Start with a 30-day playbook: assemble a representative set of <strong>50-150 prompts</strong> sorted into three functional buckets.<sup><a href="#r5">5</a></sup></p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 03 -- The three prompt buckets</div>
+        <div class="tt-label">Table 03: The three prompt buckets</div>
         <table class="tt">
           <thead>
             <tr>
@@ -478,7 +478,7 @@
       <p>Once selected, tag every prompt by funnel stage, product category, ICP alignment, and target geography. For statistical validity, track <strong>3-5 key competitors</strong> against the exact same prompt set.<sup><a href="#r5">5</a></sup> You then quantify the outputs with six core off-site metrics:</p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 04 -- Six core GEO off-site metrics</div>
+        <div class="tt-label">Table 04: Six core GEO off-site metrics</div>
         <table class="tt">
           <thead>
             <tr>
@@ -524,11 +524,11 @@
 
       <div class="info-box">
         <div class="info-box-label">Manual vs. Automated</div>
-        <p>Small query sets can be run by hand monthly in a spreadsheet.<sup><a href="#r3">3</a></sup> At scale, use monitoring APIs -- <a href="https://www.withgauge.com/resources/best-ai-citation-tracking-tools-2026" target="_blank" rel="noopener">Gauge</a>, Profound, Peec AI, or Otterly -- to fire prompts in cookieless browsers, capture the raw LLM JSON, parse out inline links, and emit normalized destination URLs for analysis.<sup><a href="#r5">5</a></sup></p>
+        <p>Small query sets can be run by hand monthly in a spreadsheet.<sup><a href="#r3">3</a></sup> At scale, use monitoring APIs (<a href="https://www.withgauge.com/resources/best-ai-citation-tracking-tools-2026" target="_blank" rel="noopener">Gauge</a>, Profound, Peec AI, or Otterly) to fire prompts in cookieless browsers, capture the raw LLM JSON, parse out inline links, and emit normalized destination URLs for analysis.<sup><a href="#r5">5</a></sup></p>
       </div>
 
       <!-- §4: Site Auditing -->
-      <h2 id="crawlers">04 -- Site Auditing &amp; Chunk Governance for AI Crawlers</h2>
+      <h2 id="crawlers">04: Site Auditing &amp; Chunk Governance for AI Crawlers</h2>
 
       <div class="section-answer">Before you can monitor citations, your infrastructure has to be machine-readable. If AI agents hit barriers while crawling or parsing, citation potential collapses at the source. Four technical checks come first.</div>
 
@@ -536,7 +536,7 @@
         <li><strong>User-agent allow-listing:</strong> confirm <code>robots.txt</code> explicitly permits GPTBot, CCBot, ClaudeBot, PerplexityBot. See the full breakdown in <a href="how-ai-crawlers-index-your-site.html">How AI Crawlers Index Your Site</a>.</li>
         <li><strong>Render stability:</strong> priority pages return 200 OK, render under JavaScript, and avoid crawl waste via clean canonicals and faceted controls.</li>
         <li><strong>Schema validation:</strong> deploy and verify Product, Organization, FAQPage, and Article schema with Google's Rich Results Test.</li>
-        <li><strong>Content accessibility:</strong> keep facts, specs, and brand claims in raw HTML -- not locked inside images, PDFs, or script-only widgets.</li>
+        <li><strong>Content accessibility:</strong> keep facts, specs, and brand claims in raw HTML, not locked inside images, PDFs, or script-only widgets.</li>
       </ul>
 
       <p>Then optimize layout with a <strong>Chunk Governance Model</strong>. <a href="how-rag-actually-works.html">RAG systems split pages into localized segments</a> before embedding them, so pages must preserve context at the modular level.<sup><a href="#r1">1</a></sup></p>
@@ -589,21 +589,21 @@
       </div>
 
       <!-- §5: GA4 -->
-      <h2 id="ga4">05 -- GA4 AI-Search Session Attribution Architecture</h2>
+      <h2 id="ga4">05: GA4 AI-Search Session Attribution Architecture</h2>
 
       <div class="section-answer">Off-site tools show where you're cited. On-site analytics must measure the traffic and conversions those citations drive. The problem: default GA4 misclassifies AI referrals, dumping ChatGPT, Perplexity, and Claude traffic into generic Referral or Direct buckets and obscuring the real value of GEO work.</div>
 
-      <h3>The native channel -- and why it isn't enough</h3>
+      <h3>The native channel (and why it isn't enough)</h3>
 
-      <p>Across late 2025 and mid-2026, Google added a native <a href="https://delante.co/ga4-adds-a-ai-assistant-channel-what-it-changes/" target="_blank" rel="noopener">"AI Assistant" default channel group</a>. When GA4 detects a recognized AI referrer, it assigns session medium <code>ai-assistant</code>, channel group <strong>AI Assistant</strong>, and campaign <code>(ai-assistant)</code>.<sup><a href="#r11">11</a></sup> Useful -- but relying on it alone leaves three gaps:</p>
+      <p>Across late 2025 and mid-2026, Google added a native <a href="https://delante.co/ga4-adds-a-ai-assistant-channel-what-it-changes/" target="_blank" rel="noopener">"AI Assistant" default channel group</a>. When GA4 detects a recognized AI referrer, it assigns session medium <code>ai-assistant</code>, channel group <strong>AI Assistant</strong>, and campaign <code>(ai-assistant)</code>.<sup><a href="#r11">11</a></sup> Useful, but relying on it alone leaves three gaps:</p>
 
       <ul>
-        <li><strong>No retroactivity</strong> -- historical traffic stays stuck in Direct/Referral forever.</li>
-        <li><strong>Incomplete coverage</strong> -- Google's closed list misses emerging and regional engines, under-counting AI referrers by an estimated ~30%.<sup><a href="#r12">12</a></sup></li>
-        <li><strong>Referrer fragility</strong> -- if a link is opened from an app, in-app browser, or copy-paste, the referrer is stripped and the session lands in Direct.</li>
+        <li><strong>No retroactivity:</strong> historical traffic stays stuck in Direct/Referral forever.</li>
+        <li><strong>Incomplete coverage:</strong> Google's closed list misses emerging and regional engines, under-counting AI referrers by an estimated ~30%.<sup><a href="#r12">12</a></sup></li>
+        <li><strong>Referrer fragility:</strong> if a link is opened from an app, in-app browser, or copy-paste, the referrer is stripped and the session lands in Direct.</li>
       </ul>
 
-      <p>AI traffic is worth fighting for. Early-adopter data shows AI-sourced sessions convert at up to <strong>4.4x</strong> the rate of traditional Google organic, with deeper sessions and more first-session conversions -- users finished their research inside the chatbot before clicking.<sup><a href="#r12">12</a></sup></p>
+      <p>AI traffic is worth fighting for. Early-adopter data shows AI-sourced sessions convert at up to <strong>4.4x</strong> the rate of traditional Google organic, with deeper sessions and more first-session conversions: users finished their research inside the chatbot before clicking.<sup><a href="#r12">12</a></sup></p>
 
       <div class="stats-strip">
         <div class="sc-strip">
@@ -621,7 +621,7 @@
       </div>
 
       <div class="chart-wrap">
-        <div class="chart-title-mono">Chart 02 -- AI referral traffic distribution</div>
+        <div class="chart-title-mono">Chart 02: AI referral traffic distribution</div>
         <div class="chart-sub-mono">Share of active AI referral sessions by platform (SE Ranking, late 2025)</div>
         <div class="canvas-wrap"><canvas id="refChart"></canvas></div>
       </div>
@@ -631,7 +631,7 @@
       <p>The fix is a <a href="https://solvspot.com/blog/ai-search-attribution-ga4-2026" target="_blank" rel="noopener">dual setup</a>: keep Google's native channel <em>and</em> add a custom, regex-driven <strong>AI Search</strong> channel grouping you control. This gives complete coverage, retroactive classification, and rule ownership.<sup><a href="#r10">10</a></sup> Configure it in <strong>Admin &rarr; Data Display &rarr; Channel Groups</strong>, create a group named <em>AI-Aware Channel Grouping</em>, add a channel called <em>AI Search</em>, and apply this rule:</p>
 
       <div class="code-block">
-        <div class="code-block-label">GA4 channel rule -- Source matches regex</div>
+        <div class="code-block-label">GA4 channel rule: Source matches regex</div>
         <pre><span class="cm"># Case-insensitive; captures primary AI referrer hostnames</span>
 ^(chatgpt|perplexity|gemini|copilot|claude|you|phind|grok|deepseek|chat\.mistral)\.</pre>
       </div>
@@ -646,7 +646,7 @@
       <h3>Five operational gotchas in 2026</h3>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 05 -- GA4 attribution anomalies and workarounds</div>
+        <div class="tt-label">Table 05: GA4 attribution anomalies and workarounds</div>
         <table class="tt">
           <thead>
             <tr>
@@ -658,12 +658,12 @@
           <tbody>
             <tr>
               <td class="label">Claude referrer stripping</td>
-              <td>Applies <code>rel="noreferrer"</code>, no UTMs -- lands as Direct<sup><a href="#r10">10</a></sup></td>
+              <td>Applies <code>rel="noreferrer"</code>, no UTMs: lands as Direct<sup><a href="#r10">10</a></sup></td>
               <td>Model Claude traffic proportionally to ChatGPT/Perplexity trends<sup><a href="#r10">10</a></sup></td>
             </tr>
             <tr>
               <td class="label">AI Overview masking</td>
-              <td>Passes <code>google.com/search</code> -- looks organic<sup><a href="#r10">10</a></sup></td>
+              <td>Passes <code>google.com/search</code>: looks organic<sup><a href="#r10">10</a></sup></td>
               <td>Treat as Organic; watch for CTR spikes at stable positions in Search Console<sup><a href="#r10">10</a></sup></td>
             </tr>
             <tr>
@@ -686,7 +686,7 @@
       </div>
 
       <!-- §6: Looker Studio -->
-      <h2 id="looker">06 -- Looker Studio Engineering: The ESP Measurement Stack</h2>
+      <h2 id="looker">06: Looker Studio Engineering: The ESP Measurement Stack</h2>
 
       <div class="section-answer">To present GEO datasets to stakeholders, blend qualitative off-site prompt data with quantitative on-site behavior in Looker Studio. The ESP configuration bridges citation volume to direct revenue using a multi-source blend of Google Search Console, GA4, and a Google Sheet holding the prompt-portfolio logs.</div>
 
@@ -737,13 +737,13 @@
       </div>
 
       <div class="code-block">
-        <div class="code-block-label">Looker Studio calculated field -- normalize the page key</div>
+        <div class="code-block-label">Looker Studio calculated field: normalize the page key</div>
         <pre><span class="fn">REGEXP_REPLACE</span>(Landing Page + Query String, <span class="st">'\?.*'</span>, <span class="st">''</span>)</pre>
       </div>
 
       <h3>Calculated fields that prove ROI</h3>
 
-      <p>The headline metric is <strong>Revenue per Citation (RPC)</strong> -- it quantifies the financial return of each citation won and lets you defend content investment to the C-suite.<sup><a href="#r15">15</a></sup> To isolate AI Overview performance, filter GSC charts on its native search-appearance flag:</p>
+      <p>The headline metric is <strong>Revenue per Citation (RPC)</strong>: it quantifies the financial return of each citation won and lets you defend content investment to the C-suite.<sup><a href="#r15">15</a></sup> To isolate AI Overview performance, filter GSC charts on its native search-appearance flag:</p>
 
       <div class="code-block">
         <div class="code-block-label">Revenue per Citation + AI Overview filter</div>
@@ -753,35 +753,35 @@ RPC = <span class="fn">SUM</span>(Revenue) / <span class="fn">SUM</span>(Citatio
 <span class="cm">// Isolate Google AI Overview rows in GSC</span>
 Include  Search Appearance = AI_OVERVIEW
 
-<span class="cm">// Entity heatmap -- extract brand/product terms from query</span>
+<span class="cm">// Entity heatmap: extract brand/product terms from query</span>
 <span class="fn">REGEXP_EXTRACT</span>(Query, <span class="st">'(?i)(brand name|product name|competitor name)'</span>)</pre>
       </div>
 
       <h3>The five-panel ESP dashboard</h3>
 
       <ol class="body-ol">
-        <li><strong>Executive scorecard</strong> -- Total Citations, Blended AI Session Volume, AI Overview CTR, and RPC on a rolling daily basis.<sup><a href="#r15">15</a></sup></li>
-        <li><strong>Dual-axis trend</strong> -- Citations (left axis) vs. Direct Revenue (right axis) over 12 weeks, exposing causal links between citation spikes and revenue.<sup><a href="#r15">15</a></sup></li>
-        <li><strong>Top performing pages</strong> -- landing pages ranked by citation volume against sessions and conversions, identifying "AI-friendly" hero pages to clone.<sup><a href="#r10">10</a></sup></li>
-        <li><strong>Entity heatmap</strong> -- query entities plotted against citation impressions to surface authority gaps.<sup><a href="#r15">15</a></sup></li>
-        <li><strong>Conversion funnel</strong> -- off-site discovery to transaction, diagnosing leaks like "answer cannibalization."<sup><a href="#r15">15</a></sup></li>
+        <li><strong>Executive scorecard:</strong> Total Citations, Blended AI Session Volume, AI Overview CTR, and RPC on a rolling daily basis.<sup><a href="#r15">15</a></sup></li>
+        <li><strong>Dual-axis trend:</strong> Citations (left axis) vs. Direct Revenue (right axis) over 12 weeks, exposing causal links between citation spikes and revenue.<sup><a href="#r15">15</a></sup></li>
+        <li><strong>Top performing pages:</strong> landing pages ranked by citation volume against sessions and conversions, identifying "AI-friendly" hero pages to clone.<sup><a href="#r10">10</a></sup></li>
+        <li><strong>Entity heatmap:</strong> query entities plotted against citation impressions to surface authority gaps.<sup><a href="#r15">15</a></sup></li>
+        <li><strong>Conversion funnel:</strong> off-site discovery to transaction, diagnosing leaks like "answer cannibalization."<sup><a href="#r15">15</a></sup></li>
       </ol>
 
       <div class="chart-wrap">
-        <div class="chart-title-mono">Chart 03 -- Citations vs. direct revenue over 12 weeks</div>
+        <div class="chart-title-mono">Chart 03: Citations vs. direct revenue over 12 weeks</div>
         <div class="chart-sub-mono">Dual-axis: citation volume (bars) against direct revenue (line). Illustrative pattern.</div>
         <div class="canvas-wrap"><canvas id="trendChart"></canvas></div>
       </div>
 
-      <p>A page with high citations but low click-through is the classic "answer cannibalization" signal -- the LLM answered so completely the user never clicked. The fix is to add <strong>click triggers</strong>: downloadable templates, interactive tools, or proprietary data that require a visit.<sup><a href="#r15">15</a></sup></p>
+      <p>A page with high citations but low click-through is the classic "answer cannibalization" signal: the LLM answered so completely the user never clicked. The fix is to add <strong>click triggers</strong>: downloadable templates, interactive tools, or proprietary data that require a visit.<sup><a href="#r15">15</a></sup></p>
 
       <!-- §7: Feedback Loop -->
-      <h2 id="loop">07 -- The Strategic Feedback Loop</h2>
+      <h2 id="loop">07: The Strategic Feedback Loop</h2>
 
       <div class="section-answer">A measurement stack only earns its keep if it drives action. The Source Gap List is the diagnostic entry point: when competitors are cited for high-value prompts instead of you, classify the cited domains into three buckets, each with a distinct response.</div>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 06 -- Source Gap domain classification and response</div>
+        <div class="tt-label">Table 06: Source Gap domain classification and response</div>
         <table class="tt">
           <thead>
             <tr>
@@ -820,7 +820,7 @@ Include  Search Appearance = AI_OVERVIEW
         <svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" font-family="'Space Grotesk', system-ui, sans-serif">
           <text x="350" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="rgba(255,255,255,.70)">The Continuous GEO Feedback Loop</text>
           <rect x="20" y="32" width="196" height="88" rx="8" fill="#2A2722" stroke="rgba(208,74,42,.50)"/>
-          <text x="118" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#D04A2A">1 -- Weekly</text>
+          <text x="118" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#D04A2A">1: Weekly</text>
           <text x="118" y="78" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.60)">Prompt evaluation:</text>
           <text x="118" y="94" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.60)">wins, losses, volatility</text>
 
@@ -828,7 +828,7 @@ Include  Search Appearance = AI_OVERVIEW
           <polygon points="244,71 244,81 252,76" fill="rgba(255,255,255,.30)"/>
 
           <rect x="252" y="32" width="196" height="88" rx="8" fill="#2A2722" stroke="rgba(62,155,106,.50)"/>
-          <text x="350" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#3E9B6A">2 -- Monthly</text>
+          <text x="350" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#3E9B6A">2: Monthly</text>
           <text x="350" y="78" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.60)">Diagnostic audit:</text>
           <text x="350" y="94" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.60)">source gap, money prompts</text>
 
@@ -836,7 +836,7 @@ Include  Search Appearance = AI_OVERVIEW
           <polygon points="476,71 476,81 484,76" fill="rgba(255,255,255,.30)"/>
 
           <rect x="484" y="32" width="196" height="88" rx="8" fill="#2A2722" stroke="rgba(212,163,74,.50)"/>
-          <text x="582" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#D4A34A">3 -- Quarterly</text>
+          <text x="582" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#D4A34A">3: Quarterly</text>
           <text x="582" y="78" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.60)">Scaling sprint: refresh</text>
           <text x="582" y="94" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.60)">stats, schema, scorecard</text>
         </svg>
@@ -845,13 +845,13 @@ Include  Search Appearance = AI_OVERVIEW
 
       <h2>Strategic Conclusions</h2>
 
-      <p>Building a GEO measurement stack is not a tweak to an SEO program -- it is a fundamental reconfiguration of how organizations attribute and value digital visibility.<sup><a href="#r2">2</a></sup> With AI-sourced sessions converting at up to 4.4x organic, failing to attribute that traffic is a high-stakes risk that leads to misallocated budget and under-investment in the highest-yield channel you have.<sup><a href="#r12">12</a></sup> Four moves to make now:</p>
+      <p>Building a GEO measurement stack is not a tweak to an SEO program: it is a fundamental reconfiguration of how organizations attribute and value digital visibility.<sup><a href="#r2">2</a></sup> With AI-sourced sessions converting at up to 4.4x organic, failing to attribute that traffic is a high-stakes risk that leads to misallocated budget and under-investment in the highest-yield channel you have.<sup><a href="#r12">12</a></sup> Four moves to make now:</p>
 
       <ol class="body-ol">
-        <li><strong>Deploy the dual GA4 setup</strong> -- custom AI Search regex, pinned to the top of the evaluation order.<sup><a href="#r10">10</a></sup></li>
-        <li><strong>Establish a baseline prompt portfolio</strong> -- 50-150 money/problem/proof prompts, tracked monthly across the major engines.<sup><a href="#r3">3</a></sup></li>
-        <li><strong>Build the blended Looker Studio dashboard</strong> -- GSC + GA4 + prompt sheet, surfacing Revenue per Citation.<sup><a href="#r14">14</a></sup></li>
-        <li><strong>Operationalize the Source Gap loop</strong> -- feed citation data straight into the content calendar.<sup><a href="#r2">2</a></sup></li>
+        <li><strong>Deploy the dual GA4 setup:</strong> custom AI Search regex, pinned to the top of the evaluation order.<sup><a href="#r10">10</a></sup></li>
+        <li><strong>Establish a baseline prompt portfolio:</strong> 50-150 money/problem/proof prompts, tracked monthly across the major engines.<sup><a href="#r3">3</a></sup></li>
+        <li><strong>Build the blended Looker Studio dashboard:</strong> GSC + GA4 + prompt sheet, surfacing Revenue per Citation.<sup><a href="#r14">14</a></sup></li>
+        <li><strong>Operationalize the Source Gap loop:</strong> feed citation data straight into the content calendar.<sup><a href="#r2">2</a></sup></li>
       </ol>
 
       <p>Do this, and you demystify the generative search ecosystem, prove the tangible ROI of AI-ready content, and run an agile, data-driven strategy built for the next generation of discovery.</p>
@@ -860,21 +860,21 @@ Include  Search Appearance = AI_OVERVIEW
       <div class="about-block">
         <div class="about-label">Works Cited</div>
         <ol class="citations-list">
-          <li><span class="cite-num">1.</span> ThatWare -- GEO Stack: 5-Layer AI Visibility &amp; Citation Framework. <a href="https://thatware.co/5-layer-geo-stack-ai-visibility-framework/" target="_blank" rel="noopener">thatware.co/5-layer-geo-stack-ai-visibility-framework</a></li>
-          <li><span class="cite-num">2.</span> Topify -- LLM Citation Tracking Analytics, Explained. <a href="https://topify.ai/blog/llm-citation-tracking-analytics-explained" target="_blank" rel="noopener">topify.ai/blog/llm-citation-tracking-analytics-explained</a></li>
-          <li><span class="cite-num">3.</span> Reboot Online -- Tracking AI Visibility and Citations (GEO Playbook). <a href="https://www.rebootonline.com/geo/geo-playbook/tracking-ai-visibility/" target="_blank" rel="noopener">rebootonline.com/geo/geo-playbook/tracking-ai-visibility</a></li>
-          <li><span class="cite-num">4.</span> Gauge -- Best AI Citation Tracking Tools in 2026. <a href="https://www.withgauge.com/resources/best-ai-citation-tracking-tools-2026" target="_blank" rel="noopener">withgauge.com/resources/best-ai-citation-tracking-tools-2026</a></li>
-          <li><span class="cite-num">5.</span> The Rank Masters -- Best AI Citation Tracking Tools for AI Visibility (2026). <a href="https://www.therankmasters.com/insights/ai-visibility/best-ai-visibility-tools-citation-tracking" target="_blank" rel="noopener">therankmasters.com/insights/ai-visibility/best-ai-visibility-tools-citation-tracking</a></li>
-          <li><span class="cite-num">6.</span> DiscoveredLabs -- AI Citation Patterns: How ChatGPT, Claude, and Perplexity Choose Sources. <a href="https://discoveredlabs.com/blog/ai-citation-patterns-how-chatgpt-claude-and-perplexity-choose-sources" target="_blank" rel="noopener">discoveredlabs.com/blog/ai-citation-patterns</a></li>
-          <li><span class="cite-num">7.</span> ZipTie -- How Different AI Platforms Cite the Same Source Differently. <a href="https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/" target="_blank" rel="noopener">ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently</a></li>
-          <li><span class="cite-num">8.</span> Pixelmojo -- How to Get Cited by ChatGPT, Perplexity, Claude &amp; Gemini (2026). <a href="https://www.pixelmojo.io/blogs/geo-playbook-get-cited-chatgpt-perplexity-claude" target="_blank" rel="noopener">pixelmojo.io/blogs/geo-playbook-get-cited-chatgpt-perplexity-claude</a></li>
-          <li><span class="cite-num">9.</span> AuthorityTech -- How to Check Traffic from ChatGPT, Perplexity &amp; Gemini in GA4 (2026 Setup Guide). <a href="https://authoritytech.io/blog/ai-traffic-attribution-how-to-track-chatgpt-perplexity-gemini" target="_blank" rel="noopener">authoritytech.io/blog/ai-traffic-attribution</a></li>
-          <li><span class="cite-num">10.</span> SolvSpot -- GA4 AI Search Attribution: Tracking ChatGPT and Perplexity. <a href="https://solvspot.com/blog/ai-search-attribution-ga4-2026" target="_blank" rel="noopener">solvspot.com/blog/ai-search-attribution-ga4-2026</a></li>
-          <li><span class="cite-num">11.</span> Delante -- Google Analytics 4 Adds a Native AI Assistant Channel. <a href="https://delante.co/ga4-adds-a-ai-assistant-channel-what-it-changes/" target="_blank" rel="noopener">delante.co/ga4-adds-a-ai-assistant-channel-what-it-changes</a></li>
-          <li><span class="cite-num">12.</span> OrganiKPI -- Track AI Search Referrals in GA4: ChatGPT &amp; Gemini. <a href="https://organikpi.com/blog/technical-seo/ga4-ai-search-referral-attribution/" target="_blank" rel="noopener">organikpi.com/blog/technical-seo/ga4-ai-search-referral-attribution</a></li>
-          <li><span class="cite-num">13.</span> Affiverse -- Track AI Traffic in GA4: A Guide for Affiliates. <a href="https://www.affiversemedia.com/track-ai-traffic-ga4-affiliate-guide/" target="_blank" rel="noopener">affiversemedia.com/track-ai-traffic-ga4-affiliate-guide</a></li>
-          <li><span class="cite-num">14.</span> eSEOspace -- GEO Dashboards and Reporting Templates. <a href="https://eseospace.com/blog/geo-dashboards-and-reporting-templates/" target="_blank" rel="noopener">eseospace.com/blog/geo-dashboards-and-reporting-templates</a></li>
-          <li><span class="cite-num">15.</span> BlogSEO -- Looker Studio Dashboard Template: Track AI Overview Citations and Organic Revenue. <a href="https://www.blogseo.io/blog/looker-studio-ai-overview-citations-revenue" target="_blank" rel="noopener">blogseo.io/blog/looker-studio-ai-overview-citations-revenue</a></li>
+          <li><span class="cite-num">1.</span> ThatWare, GEO Stack: 5-Layer AI Visibility &amp; Citation Framework. <a href="https://thatware.co/5-layer-geo-stack-ai-visibility-framework/" target="_blank" rel="noopener">thatware.co/5-layer-geo-stack-ai-visibility-framework</a></li>
+          <li><span class="cite-num">2.</span> Topify, LLM Citation Tracking Analytics, Explained. <a href="https://topify.ai/blog/llm-citation-tracking-analytics-explained" target="_blank" rel="noopener">topify.ai/blog/llm-citation-tracking-analytics-explained</a></li>
+          <li><span class="cite-num">3.</span> Reboot Online, Tracking AI Visibility and Citations (GEO Playbook). <a href="https://www.rebootonline.com/geo/geo-playbook/tracking-ai-visibility/" target="_blank" rel="noopener">rebootonline.com/geo/geo-playbook/tracking-ai-visibility</a></li>
+          <li><span class="cite-num">4.</span> Gauge, Best AI Citation Tracking Tools in 2026. <a href="https://www.withgauge.com/resources/best-ai-citation-tracking-tools-2026" target="_blank" rel="noopener">withgauge.com/resources/best-ai-citation-tracking-tools-2026</a></li>
+          <li><span class="cite-num">5.</span> The Rank Masters, Best AI Citation Tracking Tools for AI Visibility (2026). <a href="https://www.therankmasters.com/insights/ai-visibility/best-ai-visibility-tools-citation-tracking" target="_blank" rel="noopener">therankmasters.com/insights/ai-visibility/best-ai-visibility-tools-citation-tracking</a></li>
+          <li><span class="cite-num">6.</span> DiscoveredLabs, AI Citation Patterns: How ChatGPT, Claude, and Perplexity Choose Sources. <a href="https://discoveredlabs.com/blog/ai-citation-patterns-how-chatgpt-claude-and-perplexity-choose-sources" target="_blank" rel="noopener">discoveredlabs.com/blog/ai-citation-patterns</a></li>
+          <li><span class="cite-num">7.</span> ZipTie, How Different AI Platforms Cite the Same Source Differently. <a href="https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/" target="_blank" rel="noopener">ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently</a></li>
+          <li><span class="cite-num">8.</span> Pixelmojo, How to Get Cited by ChatGPT, Perplexity, Claude &amp; Gemini (2026). <a href="https://www.pixelmojo.io/blogs/geo-playbook-get-cited-chatgpt-perplexity-claude" target="_blank" rel="noopener">pixelmojo.io/blogs/geo-playbook-get-cited-chatgpt-perplexity-claude</a></li>
+          <li><span class="cite-num">9.</span> AuthorityTech, How to Check Traffic from ChatGPT, Perplexity &amp; Gemini in GA4 (2026 Setup Guide). <a href="https://authoritytech.io/blog/ai-traffic-attribution-how-to-track-chatgpt-perplexity-gemini" target="_blank" rel="noopener">authoritytech.io/blog/ai-traffic-attribution</a></li>
+          <li><span class="cite-num">10.</span> SolvSpot, GA4 AI Search Attribution: Tracking ChatGPT and Perplexity. <a href="https://solvspot.com/blog/ai-search-attribution-ga4-2026" target="_blank" rel="noopener">solvspot.com/blog/ai-search-attribution-ga4-2026</a></li>
+          <li><span class="cite-num">11.</span> Delante, Google Analytics 4 Adds a Native AI Assistant Channel. <a href="https://delante.co/ga4-adds-a-ai-assistant-channel-what-it-changes/" target="_blank" rel="noopener">delante.co/ga4-adds-a-ai-assistant-channel-what-it-changes</a></li>
+          <li><span class="cite-num">12.</span> OrganiKPI, Track AI Search Referrals in GA4: ChatGPT &amp; Gemini. <a href="https://organikpi.com/blog/technical-seo/ga4-ai-search-referral-attribution/" target="_blank" rel="noopener">organikpi.com/blog/technical-seo/ga4-ai-search-referral-attribution</a></li>
+          <li><span class="cite-num">13.</span> Affiverse, Track AI Traffic in GA4: A Guide for Affiliates. <a href="https://www.affiversemedia.com/track-ai-traffic-ga4-affiliate-guide/" target="_blank" rel="noopener">affiversemedia.com/track-ai-traffic-ga4-affiliate-guide</a></li>
+          <li><span class="cite-num">14.</span> eSEOspace, GEO Dashboards and Reporting Templates. <a href="https://eseospace.com/blog/geo-dashboards-and-reporting-templates/" target="_blank" rel="noopener">eseospace.com/blog/geo-dashboards-and-reporting-templates</a></li>
+          <li><span class="cite-num">15.</span> BlogSEO, Looker Studio Dashboard Template: Track AI Overview Citations and Organic Revenue. <a href="https://www.blogseo.io/blog/looker-studio-ai-overview-citations-revenue" target="_blank" rel="noopener">blogseo.io/blog/looker-studio-ai-overview-citations-revenue</a></li>
         </ol>
         <p style="font-family:var(--f-mono);font-size:11px;color:var(--faint);margin-top:16px;">All sources accessed 30 May 2026.</p>
       </div>
