@@ -1,0 +1,39 @@
+# netlify.toml
+# Disables Pretty URLs so /Blogs/xxx.html is served directly
+# without being redirected to /blogs/xxx.
+
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = false
+
+# Catch any already-indexed lowercase URLs and send them to the
+# canonical uppercase /Blogs/ path (including .html extension).
+# Redirect www to apex domain
+[[redirects]]
+  from = "https://www.rawmktg.com/*"
+  to   = "https://rawmktg.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "/blogs/:slug.html"
+  to   = "/Blogs/:slug.html"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "/blogs/:slug"
+  to   = "/Blogs/:slug.html"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "/posts/eeat-ai-signal-llm-brand-authority"
+  to   = "/Blogs/eeat-is-an-ai-signal-now.html"
+  status = 301
+  force  = true

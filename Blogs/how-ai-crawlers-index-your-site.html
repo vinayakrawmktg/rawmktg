@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>How AI Crawlers Index Your Site: GPTBot vs. Perplexity · rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Three crawlers, three indexing logics, one robots.txt. A side-by-side breakdown of OAI-SearchBot, PerplexityBot, and CCBot: crawl frequency, scope, JavaScript handling, IP verification, and the unified configuration that keeps your site visible to citation engines without leaking content to training corpora." />
+  <meta name="author" content="rawmktg." />
+  <link rel="canonical" href="https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html" />
+  <meta property="og:title"       content="OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site" />
+  <meta property="og:description" content="None of the three AI crawlers execute JavaScript. A technical breakdown of how OAI-SearchBot, PerplexityBot, and CCBot actually work, how to verify them, and the robots.txt configuration that maximises citation share." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/how-ai-crawlers-index-your-site-header.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-05-29T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Index Your Site" />
+  <meta name="twitter:description" content="0 of 3 AI crawlers execute JavaScript. The technical breakdown of crawl logic, verification, and the robots.txt configuration that separates citation indexers from training harvesters." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/how-ai-crawlers-index-your-site-header.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site",
+    "description": "Three crawlers, three indexing logics, one robots.txt. A side-by-side breakdown of OAI-SearchBot, PerplexityBot, and CCBot: crawl frequency, scope, JavaScript handling, IP verification, and the unified configuration for AI citation visibility.",
+    "image": "https://rawmktg.com/assets/images/how-ai-crawlers-index-your-site-header.png",
+    "url": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html" },
+    "keywords": ["OAI-SearchBot", "PerplexityBot", "CCBot", "AI crawlers", "GEO", "robots.txt", "JavaScript rendering", "AI indexing", "ChatGPT Search", "technical SEO", "B2B marketing"]
+  }
+  </script>
+
+  <!-- Speakable for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
+    "url": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#D04A2A; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,50px);line-height:1.06;letter-spacing:-0.028em;color:var(--ink);margin-bottom:20px;max-width:860px;}
+    .article-deck{font-family:var(--f-prose);font-size:18px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:0;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content blockquote{border-left:3px solid var(--signal);padding:12px 20px;margin:24px 0;background:var(--paper-2);border-radius:0 6px 6px 0;font-style:italic;color:var(--ink-2);}
+    .article-content code{font-family:var(--f-mono);font-size:13px;background:var(--paper-3);color:var(--ink);padding:2px 6px;border-radius:3px;}
+
+    /* Section answer callout */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt-head-bar{background:var(--ink);border-radius:8px 8px 0 0;padding:14px 18px;display:flex;justify-content:space-between;align-items:baseline;}
+    .tt-head-title{font-family:var(--f-display);font-weight:600;font-size:13px;color:var(--paper);letter-spacing:-0.01em;}
+    .tt-head-eyebrow{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);}
+    .tt-head-ts{font-family:var(--f-mono);font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt-foot-bar{background:#1A1815;border-top:1px solid rgba(255,255,255,.08);border-radius:0 0 8px 8px;padding:10px 18px;display:flex;justify-content:space-between;}
+    .tt-foot-bar span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+
+    /* Code blocks */
+    .code-wrap{margin:28px 0 36px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;overflow:hidden;}
+    .code-block-head{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08);}
+    .code-block-title{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);}
+    .code-block-lang{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+    .code-block pre{margin:0;padding:18px 20px;font-family:var(--f-mono);font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.85);overflow-x:auto;white-space:pre;}
+    .code-block .c{color:rgba(255,255,255,.38);}
+    .code-block .kw{color:#F1D9CC;}
+    .code-block .str{color:#E6C9B5;}
+    .code-block .ok{color:var(--up);}
+    .code-block .err{color:var(--signal);}
+
+    /* Diagram */
+    .diagram-wrap{margin:28px 0 36px;background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:28px;overflow:hidden;}
+    .diagram-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:16px;}
+    .diagram-wrap svg{width:100%;height:auto;display:block;}
+
+    /* TL;DR block */
+    .tldr-block{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:22px 24px;margin:0 0 36px;}
+    .tldr-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:16px;}
+    .tldr-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .tldr-list li{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--ink-2);padding-left:0;}
+    .tldr-list li::before{display:none;}
+    .tldr-list .tn{font-family:var(--f-mono);font-size:11px;font-weight:600;color:var(--signal);margin-right:8px;}
+    .tldr-list li + li{border-top:1px dashed var(--rule-2);padding-top:12px;}
+
+    /* Sources list */
+    .sources-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .sources-list li{font-family:var(--f-mono);font-size:11.5px;line-height:1.55;color:var(--mute);padding-left:16px;position:relative;}
+    .sources-list li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .sources-list a{color:var(--mute);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color 0.15s;}
+    .sources-list a:hover{color:var(--signal);}
+
+    /* About / data note */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rawmktg.com/#organization",
+    "name": "rawmktg.",
+    "url": "https://rawmktg.com",
+    "sameAs": ["https://www.linkedin.com/company/rawmktg/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site", "item": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- Nav -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header image -->
+<img src="../assets/images/how-ai-crawlers-index-your-site-header.png"
+     alt="OAI-SearchBot vs. PerplexityBot vs. Common Crawl: how AI crawlers actually index your site - rawmktg."
+     class="article-header-img" width="1200" height="630">
+
+<!-- Article header -->
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <span class="eyebrow-tag">Technical GEO · Crawlers</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-date">May 2026</span>
+    </div>
+    <h1 class="article-headline">OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site</h1>
+    <p class="article-deck">Three crawlers, three indexing logics, one robots.txt. A side-by-side breakdown of crawl frequency, scope, JavaScript handling, and IP verification, plus the unified configuration that keeps your site visible to citation engines without leaking content to training corpora.</p>
+  </header>
+</div>
+
+<!-- Article body -->
+<div class="page">
+  <div class="article-body">
+
+    <main class="article-content" id="article-main">
+
+      <!-- TL;DR -->
+      <div class="tldr-block">
+        <div class="tldr-label">TL;DR</div>
+        <ul class="tldr-list">
+          <li><span class="tn">01</span><strong>None of the three execute JavaScript.</strong> Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.</li>
+          <li><span class="tn">02</span><strong>Crawl logic differs by mission.</strong> OAI-SearchBot indexes for citations, <a href="/Blogs/how-rag-actually-works.html">PerplexityBot for RAG</a>, CCBot for archival training. Same User-Agent header, three different scopes.</li>
+          <li><span class="tn">03</span><strong>Robots.txt blocks the bot, not the URL.</strong> A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a <code>noindex</code> meta tag on the page itself.</li>
+          <li><span class="tn">04</span><strong>Verify before you trust the User-Agent.</strong> Spoofed AI crawlers are common. Validate with FCrDNS or the published JSON CIDR feeds.</li>
+        </ul>
+      </div>
+
+      <h2 id="crawl-landscape">The Shape of the Modern Crawl Landscape</h2>
+
+      <p>For most of the last twenty years, technical SEO had one rendering target. Googlebot crawled your pages, queued them through the <a href="https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/" target="_blank" rel="noopener">Web Rendering Service</a>, executed JavaScript inside a headless Chromium fleet, and emitted a populated DOM that the indexer could read. The cost of that pipeline was Google's problem.</p>
+
+      <p>That model does not generalise to the new wave. <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OAI-SearchBot</a>, <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">PerplexityBot</a>, and <a href="https://commoncrawl.org/ccbot" target="_blank" rel="noopener">CCBot</a> are high-velocity HTML parsers. They fetch raw markup as quickly as the network allows, extract structured text, and move on. None of them runs your bundle.js. None of them waits for hydration. <strong>If your content depends on client-side execution to appear, it does not exist as far as these three are concerned.</strong></p>
+
+      <p>The second shift is functional. The three crawlers are not variants of the same indexer with different traffic budgets. They have distinct missions, distinct triggers, and distinct downstream consumers. OAI-SearchBot feeds <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">ChatGPT Search and the Atlas browser</a>. PerplexityBot populates <a href="/Blogs/how-rag-actually-works.html">Perplexity's retrieval index</a>. CCBot builds the multi-petabyte archive that trains a long list of open-source models. The same User-Agent slot in your robots.txt does three different things.</p>
+
+      <blockquote>"The same User-Agent slot in your robots.txt does three different things. If you treat the three crawlers identically, you are leaving citation share on the table or leaking training data, sometimes both."</blockquote>
+
+      <!-- Table 01 -->
+      <div class="tt-wrap">
+        <div class="tt-head-bar">
+          <div>
+            <div class="tt-head-eyebrow">Table 01</div>
+            <div class="tt-head-title">Comparative taxonomy: OAI-SearchBot, PerplexityBot, CCBot</div>
+          </div>
+          <span class="tt-head-ts">v1 · 2026.05</span>
+        </div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>OAI-SearchBot</th>
+              <th>PerplexityBot</th>
+              <th>CCBot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Operator</td>
+              <td>OpenAI</td>
+              <td>Perplexity AI</td>
+              <td>Common Crawl Foundation</td>
+            </tr>
+            <tr>
+              <td class="label">Primary mission</td>
+              <td>Index for citation in ChatGPT Search</td>
+              <td>Index for RAG and Perplexity Answers</td>
+              <td>Open-source web archive</td>
+            </tr>
+            <tr>
+              <td class="label">Downstream consumer</td>
+              <td>ChatGPT Search, SearchGPT, Atlas</td>
+              <td>Perplexity UI and API</td>
+              <td>Llama, Mistral, academic NLP</td>
+            </tr>
+            <tr>
+              <td class="label">Trigger</td>
+              <td>Continuous discovery, query-weighted</td>
+              <td>Continuous discovery, retrieval-weighted</td>
+              <td>Periodic batch snapshots</td>
+            </tr>
+            <tr>
+              <td class="label">Frequency</td>
+              <td>Dynamic: freshness + popularity</td>
+              <td>Continuous: ongoing sweeps</td>
+              <td>Monthly to multi-month batches</td>
+            </tr>
+            <tr>
+              <td class="label">Scope</td>
+              <td>Targeted: high-value semantic pages</td>
+              <td>Targeted: authoritative URLs</td>
+              <td>Broad: sitemap-driven sampling</td>
+            </tr>
+            <tr>
+              <td class="label">Robots.txt</td>
+              <td>Adheres: 24 hr propagation</td>
+              <td>Adheres: 24 hr propagation</td>
+              <td>Adheres: supports opt-out registries</td>
+            </tr>
+            <tr>
+              <td class="label">JavaScript execution</td>
+              <td class="down">No</td>
+              <td class="down">No</td>
+              <td class="down">No</td>
+            </tr>
+            <tr>
+              <td class="label">Verification</td>
+              <td>JSON CIDR + UA</td>
+              <td>JSON CIDR + UA</td>
+              <td>JSON CIDR + FCrDNS</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tt-foot-bar">
+          <span>Source: vendor documentation, May 2026</span>
+          <span>Three crawlers, one robots.txt slot each</span>
+        </div>
+      </div>
+
+      <h2 id="crawler-behaviour">How Each Crawler Actually Behaves</h2>
+
+      <h3>OAI-SearchBot: OpenAI's citation indexer</h3>
+
+      <p><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OAI-SearchBot</a> is OpenAI's proactive retrieval bot. It exists to discover, index, and cache pages for inclusion in ChatGPT Search and Atlas. Functionally, it behaves like a traditional search spider: it prioritises well-structured semantic text that can be summarised and cited with an active link in the user-facing response.</p>
+
+      <p>It is not GPTBot. <a href="https://www.qwairy.co/guides/geo-101-glossary/oai-searchbot" target="_blank" rel="noopener">GPTBot compiles training corpora for foundation models</a>; OAI-SearchBot builds a live citation index. The two share infrastructure. If a site allows crawling by both, <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">OpenAI may consolidate the work into a single fetch</a> to satisfy both objectives, which reduces request volume on the origin server but also means a single Allow can serve two purposes you may not have intended.</p>
+
+      <h3>PerplexityBot: Perplexity's retrieval engine</h3>
+
+      <p><a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">PerplexityBot</a> is the background agent that maintains Perplexity's real-time retrieval index. Its objective is structural: keep authoritative, content-dense pages discoverable so the retrieval-augmented generation layer can cite them accurately. It deprioritises programmatic listings, faceted directories, and thin paginated archives, which is rational given that those pages rarely become useful citations.</p>
+
+      <h3>CCBot: Common Crawl's archival harvester</h3>
+
+      <p><a href="https://commoncrawl.org/ccbot" target="_blank" rel="noopener">CCBot</a> operates the largest open web crawl in the world. Its outputs are released as monthly WARC snapshots and consumed by academic NLP labs, by foundation model teams at Meta and Mistral, and by every downstream open-source training pipeline that does not run its own crawler. Because CCBot has no real-time query to serve, it does not try to fetch every URL on a domain. It samples, and it relies heavily on your XML sitemap to decide which representative pages to capture.</p>
+
+      <h3>User-triggered fetchers: ChatGPT-User and Perplexity-User</h3>
+
+      <p>Both OpenAI and Perplexity also operate a second class of agent: <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">ChatGPT-User</a> and <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">Perplexity-User</a>. These do not crawl proactively. They execute a single HTTP GET when a user pastes a URL into the chat interface, or when the assistant needs to fetch a page to answer a question in real time.</p>
+
+      <p>Because those fetches represent synchronous human intent, <strong>they generally ignore standard Disallow rules</strong> in robots.txt. Blocking them at the firewall level does not improve your indexing; it prevents users from sharing your pages inside the assistant. The right mental model is "browser request initiated by a human", not "automated crawler".</p>
+
+      <!-- Diagram: Proactive vs user-triggered -->
+      <div class="diagram-wrap">
+        <div class="diagram-label">Fig. 02: Proactive crawl vs. user-triggered fetch</div>
+        <svg viewBox="0 0 940 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing proactive crawlers and user-triggered fetchers">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#2A2722"/>
+            </marker>
+            <marker id="arr-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#D04A2A"/>
+            </marker>
+          </defs>
+          <style>
+            .lbl { font: 600 11px/1 "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; fill: #2A2722; }
+            .lbl-mute { font: 500 10px/1 "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; fill: #8A8278; }
+            .lbl-sig { fill: #D04A2A; }
+            .box { fill: #F2EFE8; stroke: #2A2722; stroke-width: 1.4; }
+            .box-ink { fill: #2A2722; stroke: #2A2722; }
+            .box-ink-lbl { fill: #F2EFE8; }
+            .line { stroke: #2A2722; stroke-width: 1.2; fill: none; }
+            .line-sig { stroke: #D04A2A; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; }
+          </style>
+          <!-- Row 1: Proactive -->
+          <text x="0" y="22" class="lbl-mute">Proactive: automated discovery</text>
+          <rect x="0" y="36" width="180" height="48" rx="6" class="box"/>
+          <text x="90" y="65" text-anchor="middle" class="lbl">OAI-SearchBot</text>
+          <rect x="200" y="36" width="180" height="48" rx="6" class="box"/>
+          <text x="290" y="65" text-anchor="middle" class="lbl">PerplexityBot</text>
+          <rect x="400" y="36" width="180" height="48" rx="6" class="box"/>
+          <text x="490" y="65" text-anchor="middle" class="lbl">CCBot</text>
+          <line x1="180" y1="60" x2="200" y2="60" class="line" marker-end="url(#arr)"/>
+          <line x1="380" y1="60" x2="400" y2="60" class="line" marker-end="url(#arr)"/>
+          <line x1="580" y1="60" x2="660" y2="60" class="line" marker-end="url(#arr)"/>
+          <rect x="660" y="36" width="260" height="48" rx="6" class="box-ink"/>
+          <text x="790" y="65" text-anchor="middle" class="lbl box-ink-lbl">Your origin server</text>
+          <!-- Row 2: User-triggered -->
+          <text x="0" y="138" class="lbl-mute lbl-sig">User-triggered: synchronous fetch</text>
+          <rect x="0" y="152" width="180" height="48" rx="6" class="box"/>
+          <text x="90" y="181" text-anchor="middle" class="lbl">ChatGPT-User</text>
+          <rect x="200" y="152" width="180" height="48" rx="6" class="box"/>
+          <text x="290" y="181" text-anchor="middle" class="lbl">Perplexity-User</text>
+          <line x1="180" y1="176" x2="200" y2="176" class="line-sig" marker-end="url(#arr-s)"/>
+          <line x1="380" y1="176" x2="660" y2="176" class="line-sig" marker-end="url(#arr-s)"/>
+          <rect x="660" y="152" width="260" height="48" rx="6" class="box-ink"/>
+          <text x="790" y="181" text-anchor="middle" class="lbl box-ink-lbl">Your origin server</text>
+          <!-- Captions -->
+          <text x="0" y="225" class="lbl-mute">Robots.txt respected</text>
+          <text x="940" y="225" text-anchor="end" class="lbl-mute lbl-sig">Robots.txt ignored: human intent</text>
+        </svg>
+      </div>
+
+      <h2 id="js-rendering-gap">The JavaScript Rendering Gap</h2>
+
+      <p>This is the single biggest source of silent indexing failure on the modern web, and the reason a site can rank well on Google but appear nowhere in ChatGPT or Perplexity. <a href="https://salt.agency/blog/ai-crawlers-javascript/" target="_blank" rel="noopener">None of the three AI crawlers executes client-side JavaScript</a>. They are not waiting for a hydration event. They are not running a headless Chromium. They take the bytes the server returns, parse the HTML, and move on.</p>
+
+      <p>If your application relies on React, Vue, Angular, or Svelte to fetch data from an API and construct the DOM in the browser, an AI crawler sees this and only this:</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">Initial HTML payload</span>
+            <span class="code-block-lang">html · GET /products/atlas-x9</span>
+          </div>
+          <pre><span class="c">&lt;!-- What the crawler sees before any JS runs --&gt;</span>
+&lt;!DOCTYPE <span class="kw">html</span>&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Dynamic Web Application&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=<span class="str">"root"</span>&gt;&lt;/div&gt;
+    &lt;script src=<span class="str">"/static/js/bundle.js"</span>&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+      </div>
+
+      <p>That payload is functionally empty. It has a title and a script tag. It has no body copy, no schema markup, no internal links, no navigation. For OAI-SearchBot and PerplexityBot, the URL is effectively a blank page that cannot be cited. For CCBot, it becomes a near-useless row in a WARC archive. <a href="https://visively.com/kb/ai/ai-crawlers-javascript-rendering" target="_blank" rel="noopener">The failure modes compound in predictable ways</a>:</p>
+
+      <ul>
+        <li><strong>Empty indexing shells.</strong> No text content reaches the index. The URL is registered but cannot be surfaced as a citation.</li>
+        <li><strong>Invisible navigation paths.</strong> If internal links are rendered client-side, the crawler cannot follow them. Crawl depth collapses to one.</li>
+        <li><strong>Hidden interactive content.</strong> Tabbed panels, accordions, and click-loaded sections never become text.</li>
+        <li><strong>Lost lazy-loaded assets.</strong> Images, JSON-LD structured data, and below-the-fold content loaded via IntersectionObserver are not processed.</li>
+      </ul>
+
+      <h3>Which rendering strategy actually works</h3>
+
+      <p>The fix is to put the populated DOM in the initial HTTP response. There are four ways to do that, each with a different operational cost.</p>
+
+      <!-- Table 02 -->
+      <div class="tt-wrap">
+        <div class="tt-head-bar">
+          <div>
+            <div class="tt-head-eyebrow">Table 02</div>
+            <div class="tt-head-title">Rendering strategies: AI crawler compatibility</div>
+          </div>
+          <span class="tt-head-ts">decision matrix</span>
+        </div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Strategy</th>
+              <th>Mechanism</th>
+              <th>AI crawler fit</th>
+              <th>Overhead</th>
+              <th>Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">SSR</td>
+              <td>Full HTML generated per request</td>
+              <td class="up">Excellent</td>
+              <td>High: server compute</td>
+              <td class="mute">E-commerce, dynamic apps</td>
+            </tr>
+            <tr>
+              <td class="label">SSG</td>
+              <td>Pre-rendered at build, served from CDN</td>
+              <td class="up">Excellent</td>
+              <td>Low</td>
+              <td class="mute">Docs, blogs, marketing sites</td>
+            </tr>
+            <tr>
+              <td class="label">ISR</td>
+              <td>Static with on-demand background regeneration</td>
+              <td class="up">Excellent</td>
+              <td>Moderate: edge framework</td>
+              <td class="mute">Large content platforms</td>
+            </tr>
+            <tr>
+              <td class="label">Dynamic prerender</td>
+              <td>UA-sniff crawlers, serve HTML, SPA to users</td>
+              <td class="up">Good</td>
+              <td>Moderate: headless service</td>
+              <td class="mute">Legacy SPAs: cloaking risk</td>
+            </tr>
+            <tr>
+              <td class="label">CSR (default)</td>
+              <td>Bundle.js builds the DOM in the browser</td>
+              <td class="down">Broken</td>
+              <td>Low</td>
+              <td class="mute">Authenticated apps only</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tt-foot-bar">
+          <span>Compatibility scored against OAI-SearchBot, PerplexityBot, CCBot</span>
+          <span>Source: vendor docs + rawmktg. testing</span>
+        </div>
+      </div>
+
+      <h2 id="verifying-crawlers">Verifying Real Crawlers from Spoofed Ones</h2>
+
+      <p>The User-Agent header is a string. A string can be set to anything. <a href="https://datadome.co/bots/oai-searchbot/" target="_blank" rel="noopener">Malicious scrapers, competitor monitors, and aggressive data harvesters routinely impersonate AI crawlers</a> to evade rate limits and security policies that grant AI bots a wide lane. If your only filter is the User-Agent string, you are giving that lane to everyone who asks for it.</p>
+
+      <p>Two verification techniques are reliable. The first is Forward-Confirmed Reverse DNS, which is the canonical method for CCBot. The second is matching the source IP against a published JSON CIDR feed, which is what both OpenAI and Perplexity publish.</p>
+
+      <h3>Forward-Confirmed Reverse DNS</h3>
+
+      <p>FCrDNS validates that an IP both reverse-resolves to the crawler's official domain and that the resulting hostname forward-resolves back to the same IP. The double check is what makes spoofing hard: an attacker can fake a User-Agent, but cannot easily forge both DNS directions.</p>
+
+      <!-- Diagram: FCrDNS flow -->
+      <div class="diagram-wrap">
+        <div class="diagram-label">Fig. 04: FCrDNS verification flow: CCBot example</div>
+        <svg viewBox="0 0 940 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-step FCrDNS verification diagram">
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#2A2722"/>
+            </marker>
+          </defs>
+          <style>
+            .h { font: 600 12px/1 "JetBrains Mono", monospace; letter-spacing:.16em; text-transform:uppercase; fill: #D04A2A; }
+            .lbl2 { font: 500 11px/1.3 "JetBrains Mono", monospace; letter-spacing:.06em; fill:#2A2722; }
+            .mute2 { fill:#8A8278; }
+            .box2 { fill: #F2EFE8; stroke:#2A2722; stroke-width:1.4; }
+            .ink2 { fill: #2A2722; stroke:#2A2722; }
+            .ink-lbl { fill:#F2EFE8; }
+            .step { font: 600 10px/1 "JetBrains Mono", monospace; letter-spacing:.18em; text-transform:uppercase; fill:#D04A2A; }
+            .conn { stroke:#2A2722; stroke-width:1.2; fill:none; }
+          </style>
+          <!-- Step 1: PTR -->
+          <text x="0" y="20" class="step">Step 1: PTR lookup</text>
+          <rect x="0" y="36" width="280" height="80" rx="6" class="box2"/>
+          <text x="14" y="62" class="lbl2">Incoming IP</text>
+          <text x="14" y="84" class="lbl2 mute2">18.97.14.84</text>
+          <text x="14" y="106" class="lbl2 mute2">UA: CCBot/2.0</text>
+          <line x1="280" y1="76" x2="330" y2="76" class="conn" marker-end="url(#arr2)"/>
+          <rect x="330" y="36" width="280" height="80" rx="6" class="ink2"/>
+          <text x="344" y="62" class="lbl2 ink-lbl">reverse DNS</text>
+          <text x="344" y="84" class="lbl2 ink-lbl">18-97-14-84.crawl.</text>
+          <text x="344" y="106" class="lbl2 ink-lbl">commoncrawl.org</text>
+          <!-- Step 2: Pattern -->
+          <text x="0" y="148" class="step">Step 2: Domain pattern check</text>
+          <rect x="0" y="160" width="610" height="44" rx="6" class="box2"/>
+          <text x="14" y="187" class="lbl2">Does hostname match <tspan font-weight="700">*.crawl.commoncrawl.org</tspan> ?</text>
+          <text x="600" y="187" text-anchor="end" class="lbl2" fill="#3E9B6A">match</text>
+          <!-- Step 3: A record -->
+          <text x="0" y="236" class="step">Step 3: Forward DNS</text>
+          <rect x="0" y="248" width="280" height="20" rx="4" class="box2"/>
+          <text x="14" y="263" class="lbl2">host 18-97-14-84.crawl.commoncrawl.org</text>
+          <line x1="280" y1="258" x2="330" y2="258" class="conn" marker-end="url(#arr2)"/>
+          <rect x="330" y="248" width="280" height="20" rx="4" class="ink2"/>
+          <text x="344" y="263" class="lbl2 ink-lbl">18.97.14.84</text>
+          <text x="630" y="263" class="lbl2" fill="#3E9B6A">matches origin IP: verified</text>
+        </svg>
+      </div>
+
+      <p>In practice, you run two <code>host</code> queries and check the answers against each other:</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">FCrDNS: CCBot verification</span>
+            <span class="code-block-lang">bash · 3 steps, ~80ms</span>
+          </div>
+          <pre><span class="c"># Step 1: reverse lookup on the inbound IP</span>
+$ host 18.97.14.84
+84.14.97.18.in-addr.arpa domain name pointer <span class="ok">18-97-14-84.crawl.commoncrawl.org.</span>
+
+<span class="c"># Step 2: pattern check: hostname ends in .crawl.commoncrawl.org</span>
+
+<span class="c"># Step 3: forward lookup on the resolved hostname</span>
+$ host 18-97-14-84.crawl.commoncrawl.org
+18-97-14-84.crawl.commoncrawl.org has address <span class="ok">18.97.14.84</span>
+
+<span class="c"># Forward IP matches the inbound IP. Verified CCBot.</span></pre>
+        </div>
+      </div>
+
+      <h3>Published JSON CIDR feeds</h3>
+
+      <p>FCrDNS adds latency. For high-volume edges, both OpenAI and Perplexity publish IP range feeds in JSON that you can ingest into your firewall or web server at startup and refresh on a cron.</p>
+
+      <ul>
+        <li><strong>OAI-SearchBot.</strong> <a href="https://openai.com/searchbot.json" target="_blank" rel="noopener">openai.com/searchbot.json</a>: current CIDR blocks include <code>20.42.10.176/28</code>, <code>172.203.190.128/28</code>, <code>51.8.102.0/24</code>, <code>135.234.64.0/24</code>.</li>
+        <li><strong>PerplexityBot.</strong> <a href="https://www.perplexity.com/perplexitybot.json" target="_blank" rel="noopener">perplexity.com/perplexitybot.json</a>: refreshed on a similar cadence.</li>
+        <li><strong>GPTBot and ChatGPT-User.</strong> Listed separately at <a href="https://openai.com/gptbot.json" target="_blank" rel="noopener">openai.com/gptbot.json</a> and <a href="https://openai.com/chatgpt-user.json" target="_blank" rel="noopener">openai.com/chatgpt-user.json</a>. Treat them independently from the search bot.</li>
+        <li><strong>CCBot.</strong> Publishes its <a href="https://commoncrawl.org/ccbot" target="_blank" rel="noopener">official IP ranges</a> alongside FCrDNS guidance; combine both for defence in depth.</li>
+      </ul>
+
+      <h3>Nginx: programmatic spoof prevention</h3>
+
+      <p>The cleanest place to enforce this is the edge. The configuration below uses the Nginx <code>geo</code> and <code>map</code> directives to check that any request claiming to be OAI-SearchBot actually originates from one of OpenAI's published CIDR blocks. Spoofed requests get a 403 before they reach the application.</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">Nginx: spoof prevention for AI indexers</span>
+            <span class="code-block-lang">nginx · edge / WAF layer</span>
+          </div>
+          <pre><span class="c"># ====================================================================</span>
+<span class="c"># NGINX · SPOOF PREVENTION MAP · GENERATIVE-AI INDEXERS</span>
+<span class="c"># ====================================================================</span>
+
+<span class="c"># 1. Verified OpenAI IP range map (from openai.com/searchbot.json)</span>
+geo $is_verified_openai {
+    default 0;
+    20.42.10.176/28     1;   <span class="c"># OAI-SearchBot CIDR</span>
+    172.203.190.128/28  1;
+    51.8.102.0/24       1;
+    135.234.64.0/24     1;
+}
+
+<span class="c"># 2. Match the claimed User-Agent against the verified IP map</span>
+map $http_user_agent $deny_spoofed_searchbot {
+    <span class="str">"~*OAI-SearchBot"</span> $is_verified_openai;   <span class="c"># claim must come from a real OpenAI IP</span>
+    default            1;                       <span class="c"># everything else passes through</span>
+}
+
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name example.com;
+
+    location / {
+        <span class="c"># Claims to be OAI-SearchBot but not from a verified IP: 403</span>
+        if ($deny_spoofed_searchbot = 0) {
+            return <span class="err">403</span>;
+        }
+        try_files $uri $uri/ /index.html;
+    }
+}</pre>
+        </div>
+      </div>
+
+      <p>Run the equivalent map for PerplexityBot using its JSON feed. For CCBot, layer FCrDNS on top, since Common Crawl's IP ranges shift more often than the OpenAI list and reverse DNS is the authoritative check.</p>
+
+      <h2 id="robots-sitemap">A Unified robots.txt and Sitemap Strategy</h2>
+
+      <p>The point of the configuration below is to express a specific policy: <strong><a href="/Blogs/geo-compounding-flywheel.html">be discoverable for citation</a>, be invisible to training.</strong> Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">robots.txt: citation-on, training-off</span>
+            <span class="code-block-lang">text · /robots.txt</span>
+          </div>
+          <pre><span class="c"># ====================================================================</span>
+<span class="c"># ROBOTS.TXT · ALLOW REAL-TIME CITATION, BLOCK TRAINING</span>
+<span class="c"># ====================================================================</span>
+
+<span class="c"># 1. Allow OAI-SearchBot: ChatGPT Search citations</span>
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 5
+
+<span class="c"># 2. Allow PerplexityBot: Perplexity answers and RAG</span>
+User-agent: PerplexityBot
+Allow: /
+
+<span class="c"># 3. Block GPTBot: OpenAI foundation-model training</span>
+User-agent: GPTBot
+Disallow: /
+
+<span class="c"># 4. Block CCBot: downstream open-source training corpora</span>
+User-agent: CCBot
+Disallow: /
+
+<span class="c"># Declare the sitemap so allowed crawlers can find fresh content</span>
+Sitemap: https://example.com/sitemap.xml</pre>
+        </div>
+      </div>
+
+      <h3>The robots.txt / noindex paradox</h3>
+
+      <p>This is the trap that catches most teams the first time they try to remove a page from ChatGPT Search. If you globally disallow a URL in robots.txt, <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">OpenAI may still display the title as a bare navigational link</a> if it discovered the URL via a third-party reference. To suppress the URL entirely, you need a <code>noindex</code> meta tag on the page. But the bot must be able to crawl the page to read that tag.</p>
+
+      <p>The resolution is to allow the page in robots.txt and add the meta directive in the HTML head:</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">noindex directive: per-page exclusion</span>
+            <span class="code-block-lang">html · &lt;head&gt;</span>
+          </div>
+          <pre>&lt;head&gt;
+    &lt;title&gt;Internal-only resource&lt;/title&gt;
+    <span class="c">&lt;!-- Bot-specific: blocks only ChatGPT Search --&gt;</span>
+    &lt;meta name=<span class="str">"OAI-SearchBot"</span> content=<span class="str">"noindex"</span>&gt;
+
+    <span class="c">&lt;!-- Universal: blocks all bots that honour the directive --&gt;</span>
+    &lt;meta name=<span class="str">"robots"</span> content=<span class="str">"noindex, nofollow"</span>&gt;
+&lt;/head&gt;</pre>
+        </div>
+      </div>
+
+      <h3>XML sitemaps that actually help</h3>
+
+      <p>All three of the crawlers we are configuring for use the sitemap, but they use it differently. OAI-SearchBot and PerplexityBot treat it as a freshness hint: a starting point for what to revisit. CCBot treats it as a sampling guide: a way to choose which representative pages to capture in its archive. The implications for sitemap hygiene are the same in either case.</p>
+
+      <ul>
+        <li><strong>Exclude non-canonical URLs.</strong> No query parameters, no faceted filters, no duplicate paths. One URL per page of content.</li>
+        <li><strong>Every URL returns 200.</strong> Broken sitemap entries train the crawler to deprioritise the entire feed.</li>
+        <li><strong>Partition by velocity.</strong> Split the sitemap index into a high-frequency feed for fresh content and a low-frequency feed for static archives. Set <code>lastmod</code> honestly.</li>
+        <li><strong>Include changefreq and priority sparingly.</strong> They are hints, not directives. Lying about them costs trust.</li>
+      </ul>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">sitemap.xml: minimal correct shape</span>
+            <span class="code-block-lang">xml · /sitemap.xml</span>
+          </div>
+          <pre>&lt;?xml version=<span class="str">"1.0"</span> encoding=<span class="str">"UTF-8"</span>?&gt;
+&lt;urlset xmlns=<span class="str">"http://www.sitemaps.org/schemas/sitemap/0.9"</span>&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://example.com/authoritative-guide&lt;/loc&gt;
+    &lt;lastmod&gt;2026-05-20&lt;/lastmod&gt;
+    &lt;changefreq&gt;daily&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</pre>
+        </div>
+      </div>
+
+      <h3>The /llms.txt convention</h3>
+
+      <p><a href="https://www.brightedge.com/resources/guide-for-ai-agents" target="_blank" rel="noopener">/llms.txt is an emerging convention</a> for AI-specific discovery. Placed at the root of your domain as a plain markdown file, it gives the crawler a curated map of your highest-value pages, optimised for context-constrained parsing. Treat it as a complement to your sitemap, not a replacement for it. Adoption is not yet universal across the three crawlers, but the cost of publishing one is trivial and the upside is real.</p>
+
+      <h2 id="geo-optimisations">The GEO Optimisations That Move the Needle</h2>
+
+      <p>Once the rendering, verification, and robots configuration are correct, <a href="/Blogs/schema-markup-ai-citations-2026.html">three secondary optimisations consistently improve citation outcomes</a> across all three crawlers. None of them is novel. All three are skipped by most teams because the audit signal is weak.</p>
+
+      <h3>ARIA roles and semantic layout</h3>
+
+      <p>Generative search engines do not just scrape text. They use the structural context of the document to decide what is content, what is navigation, and what is chrome. <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">ChatGPT Atlas in particular uses ARIA roles, states, and properties</a> to map page structure when it needs to interact with a site agentically. The cost of marking up your structure properly is minutes per template. The benefit is durable.</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">Semantic + ARIA: article template</span>
+            <span class="code-block-lang">html · structure as signal</span>
+          </div>
+          <pre>&lt;main id=<span class="str">"primary-content"</span> role=<span class="str">"main"</span>&gt;
+    &lt;article&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Technical overview&lt;/h1&gt;
+            &lt;p class=<span class="str">"byline"</span>&gt;Published 2026-05-21 · rawmktg.&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;section aria-labelledby=<span class="str">"summary"</span>&gt;
+            &lt;h2 id=<span class="str">"summary"</span>&gt;Summary&lt;/h2&gt;
+            &lt;p&gt;Informational text goes here.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;button aria-expanded=<span class="str">"false"</span>
+        aria-controls=<span class="str">"collapsible-menu"</span>
+        role=<span class="str">"button"</span>&gt;
+    Advanced technical details
+&lt;/button&gt;</pre>
+        </div>
+      </div>
+
+      <h3>UTM referral tracking</h3>
+
+      <p>To measure traffic from generative search, configure analytics to recognise the referrer parameters that AI platforms append. ChatGPT Search appends a <code>utm_source=chatgpt.com</code> parameter to outbound citation links. Perplexity and other platforms behave similarly. Without explicit segmentation, this traffic lands in your "direct" or "referral" bucket and becomes invisible.</p>
+
+      <h3>The pre-deployment validation routine</h3>
+
+      <p>Before you ship a change that touches templates, headers, or routing, run this four-step audit. It catches roughly 80% of the regressions seen in client work.</p>
+
+      <div class="code-wrap">
+        <div class="code-block">
+          <div class="code-block-head">
+            <span class="code-block-title">Pre-deployment validation checklist</span>
+            <span class="code-block-lang">bash · 4 checks, under 30s</span>
+          </div>
+          <pre><span class="c"># 1. Confirm the raw HTML contains the content you expect</span>
+<span class="c">#    (no JS execution: what the AI crawler will actually see)</span>
+curl -A <span class="str">"OAI-SearchBot"</span> -L <span class="str">"https://example.com/target-page"</span> \
+  | grep -i <span class="str">"critical-payload"</span>
+
+<span class="c"># 2. Confirm reverse DNS resolves cleanly for your own host</span>
+host $(dig +short example.com)
+
+<span class="c"># 3. Robots.txt returns 200 OK and the right content-type</span>
+curl -I <span class="str">"https://example.com/robots.txt"</span>
+
+<span class="c"># 4. Sitemap is reachable and contains no broken &lt;loc&gt; entries</span>
+curl -s <span class="str">"https://example.com/sitemap.xml"</span> \
+  | grep -o <span class="str">"&lt;loc&gt;[^&lt;]*"</span> \
+  | while read -r url; do
+      code=$(curl -o /dev/null -s -w <span class="str">"%{http_code}"</span> <span class="str">"${url#&lt;loc&gt;}"</span>)
+      echo <span class="str">"$code  ${url#&lt;loc&gt;}"</span>
+    done | grep -v <span class="str">"^200"</span></pre>
+        </div>
+      </div>
+
+      <h2 id="action-plan">What to Actually Do This Week</h2>
+
+      <p>The work in this article is mostly configuration, not strategy. If your team has a one-week window to close the most expensive gaps, the priority order is unambiguous.</p>
+
+      <ul>
+        <li><strong>Day 1: Verify your rendering.</strong> Run <code>curl -A "OAI-SearchBot" $URL</code> against your ten highest-value pages. If the body is empty, the rest of the list does not matter yet. Plan an SSR or ISR migration.</li>
+        <li><strong>Day 2: Ship the unified robots.txt.</strong> Allow OAI-SearchBot and PerplexityBot. Disallow GPTBot and CCBot unless your strategy is explicitly to feed open training corpora.</li>
+        <li><strong>Day 3: Audit your sitemap.</strong> Strip non-canonical URLs. Verify every <code>&lt;loc&gt;</code> returns 200. Split into velocity-based partitions.</li>
+        <li><strong>Day 4: Stand up verification at the edge.</strong> Ingest the OpenAI and Perplexity JSON feeds into your WAF or Nginx config. Layer FCrDNS for CCBot.</li>
+        <li><strong>Day 5: Add the analytics segment.</strong> Carve out <code>utm_source=chatgpt.com</code> and equivalents into a dedicated channel so you can actually measure citation traffic.</li>
+      </ul>
+
+      <p>Citation share is now the easiest variable to move in technical SEO, because most competitors have not done any of the above. The configuration in this article covers most of the gap.</p>
+
+      <!-- Sources -->
+      <div class="about-block">
+        <div class="about-label">Sources</div>
+        <ul class="sources-list">
+          <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OpenAI, "OAI-SearchBot, GPTBot, and ChatGPT-User documentation"</a></li>
+          <li><a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">Perplexity AI, "PerplexityBot and Perplexity-User documentation"</a></li>
+          <li><a href="https://commoncrawl.org/ccbot" target="_blank" rel="noopener">Common Crawl Foundation, "CCBot documentation and IP ranges"</a></li>
+          <li><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">OpenAI, "Publishers and developers FAQ: ChatGPT Search"</a></li>
+          <li><a href="https://www.qwairy.co/guides/geo-101-glossary/oai-searchbot" target="_blank" rel="noopener">Qwairy, "OAI-SearchBot vs. GPTBot: GEO glossary"</a></li>
+          <li><a href="https://salt.agency/blog/ai-crawlers-javascript/" target="_blank" rel="noopener">Salt Agency, "AI crawlers and JavaScript rendering"</a></li>
+          <li><a href="https://visively.com/kb/ai/ai-crawlers-javascript-rendering" target="_blank" rel="noopener">Visively, "AI crawler JavaScript rendering failure modes"</a></li>
+          <li><a href="https://datadome.co/bots/oai-searchbot/" target="_blank" rel="noopener">DataDome, "OAI-SearchBot: verification and spoofing prevention"</a></li>
+          <li><a href="https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/" target="_blank" rel="noopener">SEO Kreativ, "JavaScript SEO and the Google Web Rendering Service"</a></li>
+          <li><a href="https://www.brightedge.com/resources/guide-for-ai-agents" target="_blank" rel="noopener">BrightEdge, "Guide for AI agents and the llms.txt convention"</a></li>
+          <li><a href="https://openai.com/searchbot.json" target="_blank" rel="noopener">OpenAI, "searchbot.json CIDR feed"</a></li>
+          <li><a href="https://www.perplexity.com/perplexitybot.json" target="_blank" rel="noopener">Perplexity, "perplexitybot.json CIDR feed"</a></li>
+          <li><a href="https://openai.com/gptbot.json" target="_blank" rel="noopener">OpenAI, "gptbot.json CIDR feed"</a></li>
+          <li><a href="https://openai.com/chatgpt-user.json" target="_blank" rel="noopener">OpenAI, "chatgpt-user.json CIDR feed"</a></li>
+        </ul>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-label">Key stats</div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-val">0</div>
+            <div class="stat-label">Crawlers that execute JS</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">24 hrs</div>
+            <div class="stat-label">Robots.txt propagation window</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">3</div>
+            <div class="stat-label">Verification protocols covered</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">4 CIDRs</div>
+            <div class="stat-label">OpenAI search IP ranges</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Contents</div>
+        <ul class="toc-list">
+          <li><a href="#crawl-landscape"><span class="toc-num">01</span>The crawl landscape</a></li>
+          <li><a href="#crawler-behaviour"><span class="toc-num">02</span>How each crawler behaves</a></li>
+          <li><a href="#js-rendering-gap"><span class="toc-num">03</span>The JS rendering gap</a></li>
+          <li><a href="#verifying-crawlers"><span class="toc-num">04</span>Verifying real crawlers</a></li>
+          <li><a href="#robots-sitemap"><span class="toc-num">05</span>Robots.txt and sitemap</a></li>
+          <li><a href="#geo-optimisations"><span class="toc-num">06</span>GEO optimisations</a></li>
+          <li><a href="#action-plan"><span class="toc-num">07</span>What to do this week</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="foot-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter">Subscribe</a>
+        <a href="/llms.txt">llms.txt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

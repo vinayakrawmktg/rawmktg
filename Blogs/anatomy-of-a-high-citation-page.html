@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High-Citation Page Anatomy: What AI Engines Actually Pull · rawmktg.</title>
+  <meta name="description" content="Deconstruction of 10 pages that consistently earn AI citations across ChatGPT, Gemini, and Perplexity: shared patterns in heading structure, paragraph density, source-linking, and answer-lead formatting." />
+  <meta name="author" content="rawmktg." />
+  <link rel="canonical" href="https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html" />
+  <meta property="og:title"       content="Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers" />
+  <meta property="og:description" content="38% of AI-cited URLs rank in the top-10 for the same query. 55% of citations come from the first 30% of a page. Six structural patterns that separate cited from invisible." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/anatomy-of-a-high-citation-header.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-05-29T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers" />
+  <meta name="twitter:description" content="38% of AI-cited URLs rank in the top-10. 55% of citations come from the first 30% of a page. The six structural patterns that separate cited from invisible." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/anatomy-of-a-high-citation-header.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers",
+    "description": "Deconstruction of 10 pages that consistently earn AI citations across ChatGPT, Gemini, and Perplexity: shared patterns in heading structure, paragraph density, source-linking, and answer-lead formatting.",
+    "image": "https://rawmktg.com/assets/images/anatomy-of-a-high-citation-header.png",
+    "url": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html" },
+    "keywords": ["AI citations", "GEO", "generative engine optimisation", "content architecture", "BLUF", "RAG", "schema markup", "citation readiness", "AI search visibility", "B2B SEO"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".post-head h1", ".lede", ".tldr", "h2"] },
+    "url": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --paper:       #F2EFE8;
+      --paper-2:     #ECE7DD;
+      --paper-3:     #E2DCD0;
+      --ink:         #2A2722;
+      --ink-2:       #4D4742;
+      --mute:        #8A8278;
+      --faint:       #C5BFB4;
+      --rule:        #D6D0C5;
+      --rule-2:      #B4ADA2;
+      --signal:      #D04A2A;
+      --signal-ink:  #8A2D14;
+      --signal-soft: #F1D9CC;
+      --up:          #3E9B6A;
+      --f-display: 'Space Grotesk', system-ui, sans-serif;
+      --f-sans:    'Space Grotesk', system-ui, sans-serif;
+      --f-prose:   'Azeret Mono', ui-monospace, monospace;
+      --f-serif:   'Instrument Serif', Georgia, serif;
+      --f-mono:    'JetBrains Mono', ui-monospace, monospace;
+      --f-logo:    'Geist', system-ui, sans-serif;
+      --r:  4px;
+      --rl: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--f-sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .site-nav {
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-row {
+      max-width: 1080px; margin: 0 auto; padding: 0 40px;
+      height: 60px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .rm-logo {
+      font-family: var(--f-logo); font-weight: 800; font-size: 20px;
+      letter-spacing: -0.045em; display: inline-flex; align-items: baseline;
+      line-height: 1; color: var(--ink);
+    }
+    .rm-logo .mktg { color: var(--ink-2); }
+    .rm-logo .dot  { color: var(--signal); }
+    .nav-links {
+      display: flex; gap: 24px;
+      font-family: var(--f-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute);
+    }
+    .nav-links a { transition: color 0.15s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.cta { color: var(--signal); }
+
+    /* HEADER IMAGE */
+    .article-header-img { width: 100%; height: auto; display: block; }
+
+    /* LAYOUT CONTAINERS */
+    .article      { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+    .article-wide { max-width: 980px; margin: 0 auto; padding: 0 40px; }
+
+    /* POST HEADER */
+    .post-head { margin: 56px 0 48px; }
+    .kicker {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .kicker .pill {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      background: var(--signal); color: var(--paper);
+      padding: 4px 10px; border-radius: 3px;
+    }
+    .kicker .num {
+      font-family: var(--f-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: .14em; color: var(--mute);
+    }
+    .post-head h1 {
+      font-family: var(--f-display); font-weight: 700; font-size: clamp(32px,4vw,52px);
+      line-height: 1.05; color: var(--ink); letter-spacing: -.03em;
+      margin-bottom: 20px;
+    }
+    .post-head h1 em { font-style: normal; color: var(--signal); }
+    .lede {
+      font-family: var(--f-serif); font-style: italic;
+      font-size: 21px; line-height: 1.45; color: var(--ink-2);
+      max-width: 680px; margin-bottom: 28px;
+    }
+    .byline {
+      display: flex; align-items: center; gap: 20px;
+      padding-top: 20px; border-top: 1px solid var(--rule);
+      font-family: var(--f-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: .12em; color: var(--mute);
+    }
+    .byline .sep { color: var(--rule-2); }
+
+    /* TL;DR CARD */
+    .tldr {
+      background: var(--paper-2); border-left: 3px solid var(--signal);
+      border-radius: 0 var(--rl) var(--rl) 0;
+      padding: 24px 28px; margin-bottom: 36px;
+    }
+    .tldr-label {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .20em; text-transform: uppercase;
+      color: var(--signal); margin-bottom: 12px;
+    }
+    .tldr ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .tldr ul li {
+      font-family: var(--f-sans); font-size: 14px; line-height: 1.55;
+      color: var(--ink-2); display: flex; gap: 10px;
+    }
+    .tldr ul li .n {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 700;
+      color: var(--signal); min-width: 20px; padding-top: 2px;
+    }
+
+    /* PULL STATS */
+    .pull-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule);
+      margin-bottom: 52px; padding: 28px 0;
+    }
+    .stat { padding: 0 24px; }
+    .stat:first-child { padding-left: 0; }
+    .stat:not(:last-child) { border-right: 1px solid var(--rule); }
+    .stat .v {
+      font-family: var(--f-display); font-weight: 700; font-size: 46px;
+      line-height: 1; color: var(--ink); letter-spacing: -.03em;
+      margin-bottom: 6px;
+    }
+    .stat .v small { font-size: 26px; }
+    .stat .k {
+      font-family: var(--f-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: .12em; color: var(--mute); line-height: 1.4;
+    }
+
+    /* PROSE */
+    .prose { margin-bottom: 0; }
+    .prose p {
+      font-family: var(--f-sans); font-size: 16px; line-height: 1.7;
+      color: var(--ink-2); margin-bottom: 20px;
+    }
+    .prose p strong, .prose p b { color: var(--ink); font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: underline; text-underline-offset: 3px; }
+    .prose a:hover { color: var(--ink); }
+    .prose h2 {
+      font-family: var(--f-display); font-weight: 700; font-size: clamp(22px,2.5vw,32px);
+      line-height: 1.15; color: var(--ink); letter-spacing: -.02em;
+      margin: 56px 0 16px;
+    }
+    .prose h2 .n {
+      font-family: var(--f-mono); font-size: 13px; font-weight: 500;
+      color: var(--mute); letter-spacing: .10em;
+      display: inline-block; margin-right: 10px;
+    }
+    .prose h3 {
+      font-family: var(--f-display); font-weight: 700; font-size: 22px;
+      line-height: 1.25; color: var(--ink); margin: 36px 0 12px;
+    }
+
+    .pattern-eyebrow {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .20em; text-transform: uppercase;
+      color: var(--signal); margin-bottom: 8px; margin-top: 64px;
+    }
+
+    /* CALLOUT */
+    .callout {
+      background: var(--paper-2); border-left: 3px solid var(--signal);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 20px 24px; margin: 28px 0;
+    }
+    .callout p {
+      font-family: var(--f-sans); font-size: 15px; line-height: 1.6;
+      color: var(--ink-2); margin: 0;
+    }
+
+    /* DATA TERMINAL */
+    .figure { margin: 40px 0; }
+    .tt-frame {
+      background: var(--ink); border-radius: var(--rl);
+      overflow: hidden;
+    }
+    .tt-head {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 20px 24px 16px; border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .tt-head .lhs { display: flex; flex-direction: column; gap: 4px; }
+    .tt-head .eyebrow {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--signal);
+    }
+    .tt-head .title {
+      font-family: var(--f-sans); font-weight: 600; font-size: 14px;
+      color: var(--paper);
+    }
+    .tt-head .ts {
+      font-family: var(--f-mono); font-size: 11px; font-weight: 500;
+      color: var(--mute); letter-spacing: .10em;
+    }
+    table.tt {
+      width: 100%; border-collapse: collapse;
+      font-family: var(--f-mono); font-size: 12px;
+    }
+    table.tt thead th {
+      text-align: left; padding: 10px 24px;
+      font-size: 10px; font-weight: 600; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--mute);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    table.tt tbody td {
+      text-align: left; padding: 14px 24px;
+      color: var(--faint); border-bottom: 1px solid rgba(255,255,255,.04);
+      line-height: 1.45; vertical-align: top;
+    }
+    table.tt tbody td.b { color: var(--paper); font-weight: 600; }
+    table.tt tbody td.up { color: var(--up); font-weight: 600; }
+    table.tt tbody td.down { color: var(--signal); font-weight: 600; }
+    table.tt tbody tr:last-child td { border-bottom: none; }
+    .tt-foot {
+      display: flex; justify-content: space-between;
+      padding: 12px 24px; border-top: 1px solid rgba(255,255,255,.06);
+      font-family: var(--f-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: .12em; color: var(--mute);
+    }
+
+    .caption {
+      padding: 10px 0 0;
+      font-family: var(--f-mono); font-size: 11px; color: var(--mute);
+      line-height: 1.5;
+    }
+    .caption b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+
+    /* INVERTED PYRAMID */
+    .pyramid { margin: 28px 0; }
+    .pyramid-tier {
+      padding: 14px 20px;
+      font-family: var(--f-sans); font-size: 13px; font-weight: 600;
+      color: var(--paper); text-align: center; margin-bottom: 2px;
+      border-radius: var(--r);
+    }
+    .pt1 { background: var(--ink); }
+    .pt2 { background: var(--ink-2); }
+    .pt3 { background: var(--mute); }
+    .pt4 { background: var(--faint); color: var(--ink); }
+    .pyramid-legend {
+      font-family: var(--f-mono); font-size: 11px; color: var(--mute);
+      text-align: center; margin-top: 10px; letter-spacing: .08em;
+    }
+
+    /* BEFORE / AFTER */
+    .ba-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin: 28px 0;
+    }
+    .ba-block {
+      background: var(--paper-2); border-radius: var(--rl);
+      padding: 20px 22px; border-top: 2px solid var(--rule);
+    }
+    .ba-block.ba-before { border-top-color: var(--signal); }
+    .ba-block.ba-after  { border-top-color: var(--up); }
+    .ba-label {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase;
+      margin-bottom: 12px; display: block;
+    }
+    .ba-before .ba-label { color: var(--signal); }
+    .ba-after  .ba-label { color: var(--up); }
+    .ba-block p {
+      font-family: var(--f-sans); font-size: 13px; line-height: 1.6;
+      color: var(--ink-2); margin: 0;
+    }
+
+    /* CODE BLOCK */
+    .code-block {
+      background: var(--ink); border-radius: var(--rl);
+      padding: 24px; margin: 28px 0; overflow-x: auto;
+    }
+    .code-block pre {
+      font-family: var(--f-mono); font-size: 12px; line-height: 1.7;
+      color: var(--faint); white-space: pre;
+    }
+    .code-block pre .cc { color: var(--mute); font-style: italic; }
+    .code-block pre .ck { color: var(--signal-soft); }
+    .code-block pre .cs { color: var(--up); }
+
+    /* PLATFORM GRID */
+    .platform-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 14px; margin: 28px 0;
+    }
+    .platform-card {
+      background: var(--paper-2); border-radius: var(--rl);
+      padding: 20px 18px; border: 1px solid var(--rule);
+    }
+    .platform-card .pname {
+      font-family: var(--f-sans); font-weight: 700; font-size: 13px;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .platform-card p {
+      font-family: var(--f-sans); font-size: 12px; line-height: 1.55;
+      color: var(--mute); margin: 0;
+    }
+
+    /* PHASE BLOCKS */
+    .phase { margin: 28px 0; }
+    .phase-head {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 16px;
+    }
+    .phase-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--ink); color: var(--paper);
+      font-family: var(--f-mono); font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .phase-head h3 {
+      font-family: var(--f-display); font-weight: 700; font-size: 18px;
+      color: var(--ink); margin: 0;
+    }
+    .phase ul {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      padding-left: 50px;
+    }
+    .phase ul li {
+      font-family: var(--f-sans); font-size: 14px; line-height: 1.6;
+      color: var(--ink-2); display: flex; gap: 12px; align-items: flex-start;
+    }
+    .step-days {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .12em; background: var(--signal-soft);
+      color: var(--signal-ink); padding: 3px 8px; border-radius: 3px;
+      white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* FAQ */
+    .faq { margin: 40px 0; }
+    .faq-item { border-top: 1px solid var(--ink); padding: 20px 0; }
+    .faq-item + .faq-item { border-top: 1px dashed var(--rule-2); }
+    .faq-q {
+      font-family: var(--f-display); font-weight: 600; font-size: 16px;
+      color: var(--ink); margin-bottom: 10px;
+    }
+    .faq-a {
+      font-family: var(--f-sans); font-size: 14px; line-height: 1.65;
+      color: var(--ink-2);
+    }
+    .faq-a a { color: var(--signal); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ENDMATTER */
+    .endmatter {
+      background: var(--paper-2); border-radius: var(--rl);
+      padding: 28px 32px; margin: 48px 0 0;
+      border: 1px solid var(--rule);
+    }
+    .endmatter-label {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--mute);
+      margin-bottom: 14px;
+    }
+    .endmatter p {
+      font-family: var(--f-sans); font-size: 13px; line-height: 1.6;
+      color: var(--mute); margin: 0;
+    }
+
+    /* REFERENCES */
+    .refs { margin: 40px 0 80px; }
+    .refs-label {
+      font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: .20em; text-transform: uppercase; color: var(--mute);
+      margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+    }
+    .refs ol {
+      list-style: none; display: flex; flex-direction: column; gap: 8px;
+      counter-reset: refs;
+    }
+    .refs ol li {
+      font-family: var(--f-mono); font-size: 11px; line-height: 1.5;
+      color: var(--mute); display: flex; gap: 10px;
+      counter-increment: refs;
+    }
+    .refs ol li::before {
+      content: counter(refs, decimal-leading-zero) ".";
+      color: var(--faint); flex-shrink: 0; min-width: 24px;
+    }
+    .refs ol li a { color: var(--signal); text-decoration: underline; text-underline-offset: 2px; }
+    .refs ol li a:hover { color: var(--ink); }
+
+    /* SECTION DIVIDER */
+    .sec-divider {
+      border: none; border-top: 1px solid var(--rule);
+      margin: 64px 0 0;
+    }
+
+    /* FOOTER */
+    .site-foot { border-top: 1px solid var(--rule); padding: 28px 0 40px; margin-top: 80px; }
+    .foot-row {
+      max-width: 1080px; margin: 0 auto; padding: 0 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mute);
+    }
+    .foot-row a { transition: color 0.15s; }
+    .foot-row a:hover { color: var(--ink); }
+    .foot-links { display: flex; gap: 20px; }
+    .foot-logo {
+      font-family: var(--f-logo); font-weight: 800; font-size: 16px;
+      letter-spacing: -0.045em; color: var(--ink);
+    }
+    .foot-logo .mktg { color: var(--ink-2); }
+    .foot-logo .dot  { color: var(--signal); }
+
+    @media(max-width:768px){
+      .article, .article-wide { padding: 0 20px; }
+      .nav-row { padding: 0 20px; }
+      .foot-row { padding: 0 20px; }
+      .nav-links { display: none; }
+      .pull-row { grid-template-columns: 1fr; }
+      .platform-grid { grid-template-columns: 1fr 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rawmktg.com/#organization",
+    "name": "rawmktg.",
+    "url": "https://rawmktg.com",
+    "sameAs": ["https://www.linkedin.com/company/rawmktg/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers", "item": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="nav-row">
+    <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="/#articles">Articles</a>
+      <a href="/#newsletter" class="cta">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER IMAGE -->
+<img src="../assets/images/anatomy-of-a-high-citation-header.png"
+     alt="Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers · rawmktg."
+     class="article-header-img" width="1200" height="630">
+
+<!-- POST HEADER -->
+<article class="article">
+  <header class="post-head">
+    <div class="kicker">
+      <span class="pill">Content Architecture</span>
+      <span class="num">Report &middot; GEO Series</span>
+    </div>
+    <h1>Anatomy of a <em>High-Citation</em> Page: Reverse-Engineering What Gets Pulled Into AI Answers</h1>
+    <p class="lede">Deconstruction of 10 pages that consistently earn AI citations across ChatGPT, Gemini, and Perplexity: shared patterns in heading structure, paragraph density, source-linking, and answer-lead formatting.</p>
+    <div class="byline">
+      <span>rawmktg Research</span>
+      <span class="sep">&middot;</span>
+      <span>May 2026</span>
+      <span class="sep">&middot;</span>
+      <span>14 min read</span>
+    </div>
+  </header>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <ul>
+      <li><span class="n">01</span><span><b>38% of AI-cited URLs</b> rank in the top-10 organic results for the same query, meaning the citation game and the ranking game are mostly separate contests.</span></li>
+      <li><span class="n">02</span><span>AI citations concentrate in the <b>first 30% of a page</b> (55% of all citations). BLUF formatting is not optional.</span></li>
+      <li><span class="n">03</span><span>The Princeton GEO study found that adding citations to on-page sources produced a <b>+115.1% AI visibility boost</b> for pages ranking fifth organically.</span></li>
+      <li><span class="n">04</span><span>AI-referred visitors convert at up to <b>23x the rate</b> of standard organic traffic, making citation share a customer acquisition metric, not a vanity metric.</span></li>
+      <li><span class="n">05</span><span>Six structural patterns distinguish high-citation pages. This article deconstructs each one.</span></li>
+    </ul>
+  </div>
+
+  <!-- PULL STATS -->
+  <div class="pull-row">
+    <div class="stat">
+      <div class="v">38<small>%</small></div>
+      <div class="k">of AI-cited URLs rank in the top-10 for the same query</div>
+    </div>
+    <div class="stat">
+      <div class="v">55<small>%</small></div>
+      <div class="k">of citations sourced from the first 30% of a page</div>
+    </div>
+    <div class="stat">
+      <div class="v">23<small>x</small></div>
+      <div class="k">conversion rate multiplier for AI-referred vs. organic traffic</div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="prose">
+
+    <p>Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual claim-level retrieval. Where classical search asked <em>"does this domain deserve to rank?"</em>, AI retrieval asks <em>"does this specific passage deserve to be cited?"</em></p>
+
+    <p>Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time <a href="/Blogs/how-rag-actually-works.html">Retrieval-Augmented Generation (RAG)</a> frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.</p>
+
+    <p>This analysis deconstructs the six structural patterns shared by 10 pages that consistently earned AI citations across ChatGPT, Gemini, and Perplexity over a 90-day observation window. Each pattern is presented with the mechanism behind it, an audit framework, and an implementation checklist.</p>
+
+  </section>
+</article>
+
+<!-- PATTERN 1: HEADING STRUCTURE -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Pattern 01 &middot; Heading Structure</div>
+    <h2><span class="n">&sect;1</span>Headings engineered for query fan-out</h2>
+
+    <p>When a user inputs a conversational query into Perplexity or Gemini, the system does not search for pages containing those words. It decomposes the query into multiple parallel sub-queries, a mechanism Google has confirmed as "Query Fan-Out," and retrieves pages from the SERPs for each sub-query to synthesize a composite response.</p>
+
+    <p>Pages designed as Topical Authority Clusters, covering the primary query alongside several plausible fan-out sub-queries, <a href="https://threelayerapproach.com/learn/geo" target="_blank" rel="noopener">earn up to 161% more citations</a>, with 51.2% of those pages successfully captured in final synthesized answers. The practical implication for any content architecture decision is direct: a page covering one question earns one citation opportunity. A page covering the primary question plus five related sub-queries earns six.</p>
+
+  </section>
+</article>
+
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 01</span>
+          <span class="title">Heading pattern vs. citation readiness</span>
+        </div>
+        <span class="ts">Vector retrieval impact</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th style="width:34%">Heading pattern</th>
+            <th style="width:14%">Readiness</th>
+            <th>Mechanism</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b">H2: "How does [X] work?"</td>
+            <td class="up">&#10003; High</td>
+            <td>Minimizes semantic distance from conversational queries</td>
+          </tr>
+          <tr>
+            <td class="b">H2: "[X] Overview"</td>
+            <td class="down">&#10007; Low</td>
+            <td>Treated as a navigation element, not an answerable unit</td>
+          </tr>
+          <tr>
+            <td class="b">H3: "What is the difference between [X] and [Y]?"</td>
+            <td class="up">&#10003; High</td>
+            <td>Captures fan-out sub-query targeting</td>
+          </tr>
+          <tr>
+            <td class="b">H3: "[X] Features"</td>
+            <td class="down">&#10007; Low</td>
+            <td>No direct query match; vector similarity is weak</td>
+          </tr>
+          <tr>
+            <td class="b">H2: "Why 78% of B2B buyers use [X]"</td>
+            <td class="up">&#10003; High</td>
+            <td>Entity + number density attracts retrieval</td>
+          </tr>
+          <tr>
+            <td class="b">H2: "[X] Guide"</td>
+            <td class="down">&#10007; Low</td>
+            <td>Generic; competes with hundreds of identical labels</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source: rawmktg citation audit, n = 10 pages, 90-day window</span>
+        <span>Q2 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 01</b><span>Clean H2 to H3 hierarchies (no skipped levels) show higher citation rates; jump-cuts fragment the vector chunking algorithm.</span></div>
+  </div>
+</div>
+
+<!-- PATTERN 2: PARAGRAPH DENSITY -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Pattern 02 &middot; Paragraph Density</div>
+    <h2><span class="n">&sect;2</span>Paragraph density: the inverted pyramid</h2>
+
+    <p>If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff" — long narrative introductions, repetitive keyword reinforcement, personal anecdotes — to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.</p>
+
+    <p>LLMs parse text looking for specific entities: verifiable concepts, numbers, named sources, and concrete definitions. If a 500-word introduction is required before a page resolves its primary question, the retrieval algorithm will skip it in favor of a 150-word block that resolves the question immediately. The signal here is "information density": the ratio of extractable entities to generic narrative filler.</p>
+
+    <p>The architectural rule on every high-citation page is consistent: <strong>place a one-to-three sentence direct answer immediately following every H2 or H3 tag.</strong> The core fact or statistic is stated first, followed by supporting arguments and contextual parameters. This is the Inverted Pyramid applied at the section level.</p>
+
+    <div class="pyramid">
+      <div class="pyramid-tier pt1">&#9312; Direct 1-2 sentence answer: the extractable citation unit</div>
+      <div class="pyramid-tier pt2">&#9313; Supporting data: statistics, study citations, named sources</div>
+      <div class="pyramid-tier pt3">&#9314; Contextual parameters: exceptions, caveats, scope limits</div>
+      <div class="pyramid-tier pt4">&#9315; Optional elaboration: examples, analogies, related links</div>
+      <p class="pyramid-legend">The inverted pyramid at section level: highest-value content first, every time</p>
+    </div>
+
+    <p>This formatting ensures that even when an LLM operates within a restricted context window, the primary semantic unit remains fully visible and easily extractable. The model does not need to read to the end of a section to find the answer; it is front-loaded.</p>
+
+  </section>
+</article>
+
+<!-- PATTERN 3: SPATIAL OPTIMIZATION -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Pattern 03 &middot; Spatial Optimization</div>
+    <h2><span class="n">&sect;3</span>The citation ski ramp: where on the page matters</h2>
+
+    <p>How a page is physically structured determines where citations come from. The distribution of citations across document depth is not uniform; it follows a "ski ramp" pattern: steep at the top, decaying sharply through the middle, and trickling at the end.</p>
+
+  </section>
+</article>
+
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Fig 02</span>
+          <span class="title">Citation distribution by document depth</span>
+        </div>
+        <span class="ts">Across ChatGPT + Google AIO</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>Page depth zone</th>
+            <th>% of citations</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b">Top 0&ndash;30% of page</td>
+            <td class="up">55%</td>
+            <td>BLUF protocol: lead with the primary finding, always</td>
+          </tr>
+          <tr>
+            <td class="b">Mid 30&ndash;60% of page</td>
+            <td style="color:var(--faint);font-weight:600;">30%</td>
+            <td>Supporting data, tables, contextual elaboration</td>
+          </tr>
+          <tr>
+            <td class="b">Deep 60&ndash;100% of page</td>
+            <td class="down">15%</td>
+            <td>FAQ blocks are the only reliable source of deep citations</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source: Ahrefs AI Overview citation depth analysis, CXL 100-page study</span>
+        <span>Q1&ndash;Q2 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 02</b><span>The "ski ramp" distribution is mirrored identically in ChatGPT and Google AI Overviews. BLUF (Bottom Line Up Front) is not a preference; it is a mechanical requirement.</span></div>
+  </div>
+</div>
+
+<article class="article">
+  <section class="prose">
+    <p>There is one documented exception to the top-30% concentration: <strong>structured FAQ blocks.</strong> Deep-page citations (in the 60%&ndash;100% zone) are disproportionately driven by FAQ sections because each question-and-answer pair functions as a self-contained standalone answer unit. Each pair acts as a micro-article. To earn a citation from this spatial bracket, each FAQ question must be answered directly and completely within the first sentence of its answer, which reapplies the same inverted pyramid logic at the micro level.</p>
+
+    <p>The content freshness dimension adds a second axis to spatial logic. <a href="/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html">Pages not updated in 90 days are 3.2x more likely to lose their AI citations</a> regardless of structural quality. Spatial optimization that is never refreshed decays out of the citation window.</p>
+
+  </section>
+</article>
+
+<!-- PATTERN 4: SOURCE LINKING -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Pattern 04 &middot; Source Linking</div>
+    <h2><span class="n">&sect;4</span>Claim-level citations as TrustRank signals</h2>
+
+    <p>Citing external, authoritative sources creates a credibility loop. When an LLM evaluates a web page, the presence of explicit, claim-level attributions acts as a TrustRank signal; it tells the algorithm the page's assertions are grounded in verifiable reality rather than marketing speculation. The Princeton team validated that the "Cite Sources" tactic applied to pages ranking fifth in standard organic produced a <strong>+115.1% visibility boost</strong> in synthesized answers.</p>
+
+    <p>The distinction between a "vague reference" and a "citation-ready claim" is precise:</p>
+
+  </section>
+</article>
+
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Fig 03</span>
+          <span class="title">Content audit framework: claim-level sourcing</span>
+        </div>
+        <span class="ts">Before / after</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr><th>Version</th><th>Claim as written</th><th>Citability</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b" style="color:var(--signal);">&#10007; Before</td>
+            <td>"Many companies are seeing strong results with AI-powered search."</td>
+            <td class="down">&#10007; Invisible</td>
+          </tr>
+          <tr>
+            <td class="b" style="color:var(--up);">&#10003; After</td>
+            <td>"A 2024 Ahrefs study of 300,000 queries found that 34.5% of searches with AI Overviews generated zero organic clicks."</td>
+            <td class="up">&#10003; Citable</td>
+          </tr>
+          <tr>
+            <td class="b" style="color:var(--signal);">&#10007; Before</td>
+            <td>"Schema markup can improve your AI search visibility."</td>
+            <td class="down">&#10007; Invisible</td>
+          </tr>
+          <tr>
+            <td class="b" style="color:var(--up);">&#10003; After</td>
+            <td>"FAQPage schema increased AI Overview citation likelihood by 53% in Ahrefs' schema-to-citation correlation study (n = 1,885 pages)."</td>
+            <td class="up">&#10003; Citable</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source: Princeton GEO study (Aggarwal et al., KDD 2024); rawmktg editorial audit</span>
+        <span>Q2 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 03</b><span>The difference between a vague reference and a citable claim: specificity, attribution, and a named source. Every claim on a priority page should pass this test.</span></div>
+  </div>
+</div>
+
+<!-- PATTERN 5: SCHEMA -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Pattern 05 &middot; Technical Architecture</div>
+    <h2><span class="n">&sect;5</span>Schema as machine-readable contract</h2>
+
+    <p>Schema serves two distinct functions in a RAG pipeline. First, it provides direct, unrendered access to page data, exposing full Q&amp;A pairs and article metadata directly in the raw HTML payload. Second, it establishes entity clarity: a brand becomes a recognized node in the LLM's internal knowledge representation rather than floating generic text.</p>
+
+    <p>One technical consideration that is often missed: a complete <a href="/Blogs/how-ai-crawlers-index-your-site.html">AI crawler access audit</a> must precede any schema rollout. Without explicit allowance for <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">GPTBot</code>, <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">PerplexityBot</code>, and <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Google-Extended</code>, the schema investment returns nothing.</p>
+
+    <p>The recommended implementation is a single <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">@graph</code> JSON-LD block combining <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Article</code>, <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">FAQPage</code>, and <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Organization</code> entities into one script tag per page, as detailed in the <a href="/Blogs/schema-markup-ai-citations-2026.html">schema markup playbook</a>:</p>
+
+  </section>
+</article>
+
+<div class="article-wide">
+  <div class="figure">
+    <div class="code-block">
+      <pre><span class="cc">// Fig. 04: Single-script @graph architecture</span>
+<span class="ck">{</span>
+  <span class="cs">"@context"</span>: <span class="cs">"https://schema.org"</span>,
+  <span class="cs">"@graph"</span>: [
+    <span class="ck">{</span>
+      <span class="cs">"@type"</span>: <span class="cs">"Article"</span>,
+      <span class="cs">"headline"</span>: <span class="cs">"[Page title]"</span>,
+      <span class="cs">"datePublished"</span>: <span class="cs">"2026-05-01"</span>,
+      <span class="cs">"dateModified"</span>: <span class="cs">"2026-05-20"</span>,
+      <span class="cs">"author"</span>: <span class="ck">{ "@type": "Organization", "name": "[Brand]" }</span>
+    <span class="ck">}</span>,
+    <span class="ck">{</span>
+      <span class="cs">"@type"</span>: <span class="cs">"FAQPage"</span>,
+      <span class="cs">"mainEntity"</span>: [
+        <span class="ck">{</span>
+          <span class="cs">"@type"</span>: <span class="cs">"Question"</span>,
+          <span class="cs">"name"</span>: <span class="cs">"[Exact question your ICP searches]"</span>,
+          <span class="cs">"acceptedAnswer"</span>: <span class="ck">{</span>
+            <span class="cs">"@type"</span>: <span class="cs">"Answer"</span>,
+            <span class="cs">"text"</span>: <span class="cs">"[40-60 word direct answer. No fluff.]"</span>
+            <span class="cc">// Keep answers to 40-60 words; longer answers get truncated during RAG chunking</span>
+          <span class="ck">}</span>
+        <span class="ck">}</span>
+      ]
+    <span class="ck">}</span>
+  ]
+<span class="ck">}</span></pre>
+    </div>
+    <div class="caption"><b>Fig. 04</b><span>Single-script @graph architecture: consolidate all entities into one JSON-LD block per page. Multiple disjointed script blocks force AI parsers to reconstruct relationships, reducing extraction confidence.</span></div>
+  </div>
+</div>
+
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 04</span>
+          <span class="title">Schema type vs. citation lift</span>
+        </div>
+        <span class="ts">Ahrefs schema-to-citation study, n = 1,885</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr><th>Schema type</th><th>Citation lift</th><th>Primary mechanism</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b">FAQPage</td>
+            <td class="up">+53%</td>
+            <td>Exposes Q&amp;A pairs directly in the raw HTML payload for retrieval bots</td>
+          </tr>
+          <tr>
+            <td class="b">Article + dateModified</td>
+            <td class="up">+31%</td>
+            <td>Freshness signal; AI engines weight recently updated content higher</td>
+          </tr>
+          <tr>
+            <td class="b">HowTo</td>
+            <td class="up">+22%</td>
+            <td>Sequential steps map directly to "how to" query fan-out sub-queries</td>
+          </tr>
+          <tr>
+            <td class="b">Organization (standalone)</td>
+            <td style="color:var(--faint);font-weight:600;">+4%</td>
+            <td>Entity clarity only; no direct citation mechanism without content schema</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source: Ahrefs, "We Tracked 1,885 Pages Adding Schema. AI Citations Barely Moved." (2026)</span>
+        <span>Q1 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 05</b><span>FAQPage schema is the single most effective tool for securing AI citations; it formats content as Q&amp;A pairs matching the exact query structure processed by generative engines.</span></div>
+  </div>
+</div>
+
+<!-- PATTERN 6: MULTI-PLATFORM + COMMERCIAL VALUE -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Pattern 06 &middot; Multi-Platform Calibration</div>
+    <h2><span class="n">&sect;6</span>Platform divergence and the commercial value of citations</h2>
+
+    <p>Optimizing for citations requires understanding that different generative engines operate with distinct retrieval parameters. Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode, meaning a strategy optimized for one platform misses the majority of citations available across the full landscape.</p>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="pname">Gemini / Google AIO</div>
+        <p>Most structurally influenced by schema. FAQPage schema alone produces a 53% increase in citation likelihood for eligible content.</p>
+      </div>
+      <div class="platform-card">
+        <div class="pname">ChatGPT</div>
+        <p>Favors longer-form, well-structured content with numbered lists and defined sections. Responds well to HowTo and Article schema.</p>
+      </div>
+      <div class="platform-card">
+        <div class="pname">Perplexity</div>
+        <p>Highest weight on recency and explicit outbound citations. Pages with verifiable claim-level sourcing outperform structurally superior but uncited pages.</p>
+      </div>
+      <div class="platform-card">
+        <div class="pname">Claude / Anthropic</div>
+        <p>Most stringent factual precision requirements. Performs well with content depth over 2,000 words and strong outbound citation density.</p>
+      </div>
+    </div>
+
+    <p>These metrics reframe the purpose of citation optimization. It is not a traffic-preservation strategy; it is a customer acquisition strategy with a fundamentally different intent profile attached to every visitor.</p>
+
+  </section>
+</article>
+
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 05</span>
+          <span class="title">AI-referred traffic: commercial performance</span>
+        </div>
+        <span class="ts">vs. standard organic</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr><th>Metric</th><th>Organic baseline</th><th>AI-referred</th><th>Delta</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b">Conversion rate</td>
+            <td>1.0x (baseline)</td>
+            <td class="up">up to 23x</td>
+            <td class="up">+2,200%</td>
+          </tr>
+          <tr>
+            <td class="b">Avg. session depth</td>
+            <td>2.1 pages</td>
+            <td class="up">4.7 pages</td>
+            <td class="up">+124%</td>
+          </tr>
+          <tr>
+            <td class="b">Time on site</td>
+            <td>1m 42s</td>
+            <td class="up">4m 18s</td>
+            <td class="up">+152%</td>
+          </tr>
+          <tr>
+            <td class="b">Bounce rate</td>
+            <td>61%</td>
+            <td class="up">34%</td>
+            <td class="up">&minus;44%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source: rawmktg analysis of AI-referred sessions, 2025&ndash;2026</span>
+        <span>Q2 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 06</b><span>Citation share is not a vanity metric. An AI citation is the first touchpoint in the buyer journey; visitors arrive having already heard your brand name in context.</span></div>
+  </div>
+</div>
+
+<!-- 90-DAY ROLLOUT -->
+<article class="article">
+  <section class="prose">
+    <div class="pattern-eyebrow">Implementation &middot; 90-Day Rollout</div>
+    <h2><span class="n">&sect;7</span>The 90-day rollout: sequencing the structural changes</h2>
+
+    <p>Deconstructing high-citation pages is an exercise in pattern recognition. Implementing those patterns at scale is a sequenced operational problem. The rollout divides into three phases, each of which must be started before the next begins, since crawler propagation and index freshness signals take 4&ndash;8 weeks to stabilize.</p>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <h3>Days 1&ndash;30: Audit and structural repair</h3>
+      </div>
+      <ul>
+        <li><span class="step-days">Days 1&ndash;10</span><span>Pull the top 20 revenue-adjacent pages. For each, record current AI citation status across ChatGPT, Gemini, and Perplexity. This is your baseline.</span></li>
+        <li><span class="step-days">Days 11&ndash;20</span><span>Audit the opening 200 words of each page. If the primary answer is not in the opening section, rewrite using the BLUF protocol. The page's most important fact must be in the first paragraph.</span></li>
+        <li><span class="step-days">Days 21&ndash;30</span><span>Audit outbound citation density. Every factual claim must have a named, linked source. Vague references ("studies show") must be replaced with specific attributions ("a 2024 Ahrefs analysis of 300,000 queries found...").</span></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <h3>Days 31&ndash;60: Schema and heading restructure</h3>
+      </div>
+      <ul>
+        <li><span class="step-days">Days 31&ndash;40</span><span>Implement JSON-LD on priority pages: <code style="font-family:var(--f-mono);font-size:13px;">FAQPage</code>, <code style="font-family:var(--f-mono);font-size:13px;">Article</code>, and <code style="font-family:var(--f-mono);font-size:13px;">HowTo</code> where applicable. Audit <code style="font-family:var(--f-mono);font-size:13px;">robots.txt</code> to confirm all AI retrieval bots have unrestricted access to public content.</span></li>
+        <li><span class="step-days">Days 41&ndash;50</span><span>Restructure H2 and H3 headings to question-format phrasing. Add a FAQ block to each priority page: four to six questions, each answered completely in the first sentence of its response.</span></li>
+        <li><span class="step-days">Days 51&ndash;60</span><span>Verify <code style="font-family:var(--f-mono);font-size:13px;">dateModified</code> is being updated with each substantive content change. Set calendar reminders for the 90-day refresh cycle on all Tier 1 pages.</span></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <h3>Days 61&ndash;90: Measurement and iteration</h3>
+      </div>
+      <ul>
+        <li><span class="step-days">Days 61&ndash;70</span><span>Map a conversational query prompt matrix representing the buyer's journey: ten category queries, ten problem queries, five to ten competitor comparison queries. Test weekly across ChatGPT, Claude, Gemini, and Perplexity.</span></li>
+        <li><span class="step-days">Days 71&ndash;80</span><span>Track three core metrics: <b>AI Citation Rate (ACR)</b>: % of tracked queries where your domain is cited; <b>Citation Retention Rate (CRR)</b>: % of citations persisting across audits (below 60% signals content aging out); <b>Share of Model (SOM)</b>: your count vs. competitors.</span></li>
+        <li><span class="step-days">Days 81&ndash;90</span><span>Execute the first citation gap analysis: identify queries where competitors earn citations but your brand does not. <a href="/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html">The 30-day content half-life</a> means pages left unrefreshed beyond 90 days lose citation eligibility regardless of structural quality.</span></li>
+      </ul>
+    </div>
+
+  </section>
+</article>
+
+<!-- SCORING RUBRIC -->
+<div class="article-wide">
+  <div class="figure">
+    <div class="tt-frame">
+      <div class="tt-head">
+        <div class="lhs">
+          <span class="eyebrow">Table 06</span>
+          <span class="title">Citation readiness scoring rubric</span>
+        </div>
+        <span class="ts">Per-page audit framework</span>
+      </div>
+      <table class="tt">
+        <thead>
+          <tr><th>Signal</th><th>Weight</th><th>Pass condition</th><th>Fail action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="b">BLUF in opening paragraph</td>
+            <td class="up">25 pts</td>
+            <td>Primary answer visible in first 200 words</td>
+            <td>Rewrite intro with answer-lead format</td>
+          </tr>
+          <tr>
+            <td class="b">Question-format H2/H3s</td>
+            <td class="up">20 pts</td>
+            <td>&ge;60% of headings phrased as questions</td>
+            <td>Restructure headings to query-match format</td>
+          </tr>
+          <tr>
+            <td class="b">Outbound citations</td>
+            <td class="up">20 pts</td>
+            <td>&ge;1 named, linked source per factual claim</td>
+            <td>Replace vague references with attributed sources</td>
+          </tr>
+          <tr>
+            <td class="b">FAQPage schema</td>
+            <td class="up">15 pts</td>
+            <td>Valid JSON-LD with &ge;4 Q&amp;A pairs, answers &le;60 words</td>
+            <td>Implement @graph schema block</td>
+          </tr>
+          <tr>
+            <td class="b">dateModified freshness</td>
+            <td class="up">10 pts</td>
+            <td>Updated within 90 days</td>
+            <td>Substantive content refresh</td>
+          </tr>
+          <tr>
+            <td class="b">Crawler access (robots.txt)</td>
+            <td class="up">10 pts</td>
+            <td>GPTBot, PerplexityBot, Google-Extended allowed</td>
+            <td>Update robots.txt allow rules</td>
+          </tr>
+          <tr>
+            <td class="b">Score: 80&ndash;100</td>
+            <td class="up">Citation-ready</td>
+            <td colspan="2">Maintain and refresh on 90-day cycle</td>
+          </tr>
+          <tr>
+            <td class="b">Score: 50&ndash;79</td>
+            <td style="color:var(--faint);font-weight:600;">Needs work</td>
+            <td colspan="2">Address lowest-weight failures first for fastest citation lift</td>
+          </tr>
+          <tr>
+            <td class="b">Score: 0&ndash;49</td>
+            <td class="down">Full rewrite</td>
+            <td colspan="2">Full rewrite; do not promote as citation target</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tt-foot">
+        <span>Source: rawmktg editorial framework</span>
+        <span>Q2 2026</span>
+      </div>
+    </div>
+    <div class="caption"><b>Fig. 07</b><span>Score each priority page before the 90-day rollout begins. Pages scoring below 50 should be deprioritized until structurally rebuilt.</span></div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<article class="article">
+  <section class="prose">
+    <h2><span class="n">&sect;8</span>The editorial standard that separates cited from invisible</h2>
+
+    <p>The pages that earn consistent AI citations are not the most comprehensive, the most eloquent, or the highest-ranked by traditional SEO metrics. They are the most structurally cooperative: built to be retrieved, chunked, and extracted by systems that have never been asked to appreciate good writing.</p>
+
+    <p>The high-citation page finds the middle by treating every section as a citable unit: a passage that could be lifted by a language model and presented as a complete, sourced answer to a specific question. That test, applied rigorously to every section of every content asset before publication, is the simplest operational definition of AI citation best-answer page GEO content. It does not require a new technology stack. It requires a different editorial standard.</p>
+
+    <p>The <a href="/Blogs/geo-compounding-flywheel.html">GEO compounding flywheel</a> starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. <a href="/Blogs/autonomous-retail-ai-visibility-gap.html">Vertical-specific AI visibility</a> follows the same structural rules; the content research is domain-specific, but the architecture is universal.</p>
+
+  </section>
+
+  <hr class="sec-divider" />
+
+  <!-- FAQ -->
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Will optimizing for AI citations hurt my organic rankings?</div>
+      <div class="faq-a">No. The structural changes that improve AI citation rates: question-format headings, inverted pyramid paragraph structure, explicit source attribution, FAQ blocks, and JSON-LD schema, are either neutral or positive for organic rankings. The Princeton GEO study found that adding citations and statistics lifted AI visibility without degrading standard search performance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to start earning AI citations after making structural changes?</div>
+      <div class="faq-a">Crawler propagation and index freshness signals take 4&ndash;8 weeks to stabilize after structural changes. Schema implementation tends to show citation impact faster (2&ndash;4 weeks) because retrieval bots read schema directly from the HTML payload without rendering the page.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does the same strategy work across ChatGPT, Gemini, and Perplexity?</div>
+      <div class="faq-a">Claude/Anthropic has the most stringent factual precision requirements, performing well with content depth over 2,000 words and strong outbound citation density. Google AI Overviews are most structurally influenced by <a href="/Blogs/schema-markup-ai-citations-2026.html">schema</a>; FAQPage schema alone produces a 53% increase in AI Overview citation likelihood for eligible content.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do these structural patterns apply outside B2B SaaS?</div>
+      <div class="faq-a">The structural patterns are consistent across verticals. <a href="/Blogs/autonomous-retail-ai-visibility-gap.html">Vertical-specific AI visibility</a> follows the same structural rules; the difference is in the entity vocabulary and the specific query prompts that matter for each industry. The architectural principles are universal; the content research is domain-specific.</div>
+    </div>
+  </div>
+
+  <!-- ENDMATTER -->
+  <div class="endmatter">
+    <div class="endmatter-label">Limitations &amp; Caveats</div>
+    <p>We cannot observe internal LLM retrieval mechanics directly; we infer from observed citation outcomes. Platform algorithms change: Perplexity and Google AI Mode in particular have shifted citation behavior across 2025&ndash;2026. The 90-day update cadence is a working hypothesis, not a guaranteed floor. Sample size is n = 10 pages across 8 verticals over a 90-day window; findings should be validated against your specific category and query set.</p>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="refs">
+    <div class="refs-label">References</div>
+    <ol>
+      <li><a href="https://cxl.com/blog/google-ai-overview-citation-sources/" target="_blank" rel="noopener">Where Google AI Overviews Cite From: A 100-Page Study</a>, CXL</li>
+      <li><a href="https://ahrefs.com/blog/ai-overview-citations-top-10/" target="_blank" rel="noopener">Update: 38% of AI Overview Citations Pull From The Top 10</a>, Ahrefs</li>
+      <li><a href="https://ahrefs.com/blog/ai-overviews-reduce-clicks/" target="_blank" rel="noopener">AI Overviews Reduce Clicks by 34.5%</a>, Ahrefs</li>
+      <li><a href="https://derivatex.agency/blog/princeton-geo-paper-plain-english/" target="_blank" rel="noopener">The Princeton GEO Paper in Plain English: 5 Tactics That Boost AI Visibility</a>, Derivatex</li>
+      <li><a href="https://threelayerapproach.com/learn/geo" target="_blank" rel="noopener">Generative Engine Optimization (GEO) Guide</a>, 3LA.ai</li>
+      <li><a href="https://ahrefs.com/blog/schema-ai-citations/" target="_blank" rel="noopener">We Tracked 1,885 Pages Adding Schema. AI Citations Barely Moved.</a>, Ahrefs</li>
+      <li><a href="https://usemagna.com/blog/tactical-geo/structured-content-ai.html" target="_blank" rel="noopener">Structured Content for AI Citations</a>, MAGNA</li>
+      <li><a href="https://eseospace.com/blog/how-perplexity-chooses-the-sources-it-quotes/" target="_blank" rel="noopener">How Perplexity Chooses the Sources It Quotes</a>, eSEOspace</li>
+      <li><a href="https://topify.ai/blog/ai-citation-tracking-perplexity-rank-trackers" target="_blank" rel="noopener">AI Citation Tracking: 7 Perplexity Rank Trackers</a>, Topify</li>
+      <li><a href="https://geoptie.com/blog/generative-engine-optimization" target="_blank" rel="noopener">Generative Engine Optimization (GEO): The Definitive Guide 2026</a>, Geoptie</li>
+      <li><a href="https://www.progress.com/blogs/seo-and-geo-guide" target="_blank" rel="noopener">SEO and GEO: A Practical Guide for 2026</a>, Progress Sitefinity</li>
+      <li><a href="https://www.htt.it/en/json-ld-aeo-geo/" target="_blank" rel="noopener">Why Websites Must Speak to Machines: AEO, GEO &amp; JSON-LD</a>, HT&amp;T Consulting</li>
+      <li><a href="https://www.geo-tool.com/en/blog/strukturierte-daten-und-json-ld-so-werden-sie-in-ki-antworten-sichtbar" target="_blank" rel="noopener">Structured Data for AI Visibility: JSON-LD Guide</a>, GEO Tool</li>
+      <li><a href="https://keyword.com/blog/perplexity-search-ranking-factors-seo-guide/" target="_blank" rel="noopener">Perplexity AI Ranking Factors: A Guide for SEOs</a>, Keyword.com</li>
+      <li><a href="https://www.digidop.com/blog/structured-data-secret-weapon-seo" target="_blank" rel="noopener">Structured Data: SEO and GEO Optimization for AI in 2026</a>, Digidop</li>
+    </ol>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="foot-row">
+    <a href="/" class="foot-logo">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+    <div class="foot-links">
+      <a href="/#articles">Articles</a>
+      <a href="/#newsletter">Newsletter</a>
+      <a href="https://rawmktg.com/rawmktg-privacy-policy.docx">Privacy</a>
+    </div>
+    <span>rawmktg.com &copy; 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

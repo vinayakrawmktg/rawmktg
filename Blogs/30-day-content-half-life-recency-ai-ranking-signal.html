@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The 30-Day Content Half-Life: AI Recency Ranking Signal · rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Content freshness in AI search is now a mechanical requirement, not a preference. A breakdown of why recency is a hard signal, how each platform weighs it, and a programmatic refresh system to keep your content inside the citation window." />
+  <meta name="author" content="rawmktg." />
+  <link rel="canonical" href="https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html" />
+  <meta property="og:title"       content="The 30-Day Content Half-Life: Why Recency Is Now a Hard Ranking Signal for AI Answers" />
+  <meta property="og:description" content="Pages not updated in 90 days are 3.2x more likely to lose AI citations. A technical breakdown of the recency signal and a programmatic refresh system to stay inside the citation window." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/the-30-day-content-half-life-header.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-05-29T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="The 30-Day Content Half-Life: Why Recency Is Now a Hard AI Ranking Signal" />
+  <meta name="twitter:description" content="3.2x more likely to lose AI citations if your page hasn't been updated in 90 days. Here is the technical reason why, and the refresh system to fix it." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/the-30-day-content-half-life-header.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The 30-Day Content Half-Life: Why Recency Is Now a Hard Ranking Signal for AI Answers",
+    "description": "Content freshness in AI search is now a mechanical requirement. A technical breakdown of why recency is a hard signal across ChatGPT, Perplexity, Claude, and Google AI Overviews, plus a programmatic refresh system.",
+    "image": "https://rawmktg.com/assets/images/the-30-day-content-half-life-header.png",
+    "url": "https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html" },
+    "keywords": ["content freshness", "AI search", "GEO", "AI citations", "recency signal", "content strategy", "ChatGPT citations", "Perplexity", "Google AI Overviews", "content refresh", "RAG", "B2B marketing"]
+  }
+  </script>
+
+  <!-- Speakable for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
+    "url": "https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#D04A2A; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,50px);line-height:1.06;letter-spacing:-0.028em;color:var(--ink);margin-bottom:20px;max-width:860px;}
+    .article-deck{font-family:var(--f-prose);font-size:18px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:0;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar blocks */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content ol{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:ol-counter;}
+    .article-content ol li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:28px;position:relative;counter-increment:ol-counter;}
+    .article-content ol li::before{content:counter(ol-counter) ".";position:absolute;left:0;color:var(--signal);font-weight:600;font-family:var(--f-mono);font-size:12px;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+
+    /* Section answer callout */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout (big single number) */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Dual stat callout */
+    .dual-stat{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    .dual-stat .ds-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .dual-stat .ds-text{font-family:var(--f-prose);font-size:13px;line-height:1.65;color:rgba(242,239,232,.78);}
+    .dual-stat .ds-divider{border:none;border-left:1px solid rgba(255,255,255,.12);}
+
+    /* Info box */
+    .info-box{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:20px 24px;margin:28px 0 36px;}
+    .info-box-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .info-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.action{color:rgba(242,239,232,.88);font-style:italic;}
+
+    /* Phase blocks for the 90-day plan */
+    .phase-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:22px 24px;margin-bottom:20px;}
+    .phase-block-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:12px;}
+    .phase-block h4{font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em;}
+    .phase-block .phase-obj{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);margin-bottom:14px;font-style:italic;}
+    .phase-block ul{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .phase-block ul li{font-family:var(--f-prose);font-size:13px;line-height:1.65;color:var(--ink-2);padding-left:18px;position:relative;}
+    .phase-block ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+
+    /* About / data note */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .dual-stat{grid-template-columns:1fr;gap:16px;}
+    }
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rawmktg.com/#organization",
+    "name": "rawmktg.",
+    "url": "https://rawmktg.com",
+    "sameAs": ["https://www.linkedin.com/company/rawmktg/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "The 30-Day Content Half-Life: Why Recency Is Now a Hard Ranking Signal for AI Answers", "item": "https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQPage schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should content be updated to retain AI citations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pages updated within 30 days show the highest AI citation retention. Beyond 90 days, pages are 3.2x more likely to lose citations regardless of domain authority. Updating at least the dateModified schema value alongside substantive content changes is the most reliable way to stay inside the citation window."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI platforms weight content recency most heavily?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perplexity applies the tightest recency window at approximately 30 days. Google AI Overviews rely heavily on the dateModified schema signal. ChatGPT applies a roughly 90-day window, while Claude weights recency alongside factual precision. All four platforms deprioritise content beyond 90 days regardless of backlink profile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the content half-life in AI search?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The content half-life is the decay curve of AI citation eligibility. Citation probability begins declining after 30 days without an update, drops sharply at 60 days, and reaches near-zero at 90 days. The primary signal AI engines use to measure freshness is the schema-declared dateModified field, not crawl date alone."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- Nav -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header image -->
+<img src="../assets/images/the-30-day-content-half-life-header.png"
+     alt="The 30-Day Content Half-Life: recency as a hard AI ranking signal - rawmktg."
+     class="article-header-img" width="1200" height="630">
+
+<!-- Article header -->
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <span class="eyebrow-tag">Content Strategy · GEO</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-date">May 2026</span>
+    </div>
+    <h1 class="article-headline">The 30-Day Content Half-Life: Why Recency Is Now a Hard Ranking Signal for AI Answers</h1>
+    <p class="article-deck">Content freshness in AI search is no longer a nice-to-have. It is a mechanical requirement. Pages not updated in 90 days are 3.2x more likely to lose their AI citations entirely. This is the breakdown of why that happens, and the system to prevent it.</p>
+  </header>
+</div>
+
+<!-- Article body -->
+<div class="page">
+  <div class="article-body">
+
+    <main class="article-content" id="article-main">
+
+      <p>There is a number that should get every content strategist's attention: 3.2x.</p>
+
+      <p>That is how much more likely a page that has not been updated in 90 days is to completely lose its AI search citations compared to a page refreshed within the same window. This is the 30-day content half-life in action. And understanding it mechanically, not just philosophically, is the difference between a content program that compounds in value and one that quietly decays.</p>
+
+      <p>This article unpacks what is actually happening inside AI search engines, why recency has become a hard signal, how each major platform weighs freshness differently, and what a systematic refresh cadence looks like in practice.</p>
+
+
+      <h2 id="paradigm-shift">The Paradigm Shift That Most Teams Missed</h2>
+
+      <div class="section-answer">For most of the past decade, "evergreen" content was the gold standard. Publish once, accrue authority over years. That model has broken down. AI search does not reward historical authority; it rewards present-tense relevance.</div>
+
+      <p>The shift is not simply that Google changed its algorithm. The deeper change is the rise of <a href="/Blogs/how-rag-actually-works.html">retrieval-augmented generation (RAG) as the architecture powering every major AI answer engine</a>. RAG systems do not consult a cached index of historical rankings. Every time a query is processed, the engine runs parallel searches across real-time web content. Historical domain authority still provides a relevance signal, but it is filtered through a recency gate that older content increasingly fails to pass.</p>
+
+      <p>Traditional organic search traffic has always decayed, but slowly. <a href="https://ahrefs.com" target="_blank" rel="noopener">Ahrefs</a> data shows that most pages see gradual traffic declines over a 12-24 month horizon. AI citation loss operates on a categorically different timeline. Citation decay can begin within 30-45 days of a page going stale, and complete citation loss within 90 days is a documented pattern in fresh content tracking studies.</p>
+
+      <p>The brands winning in this environment understand something important: AI search does not reward authority the same way Google does. It rewards recent, structured, citable evidence. A well-structured page published last month can outperform an authoritative piece published two years ago, if the newer page contains fresh data, structured claims, and machine-readable formatting.</p>
+
+
+      <h2 id="anatomy">The Anatomy of the 30-Day Citation Drop-Off</h2>
+
+      <div class="section-answer">Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources cited on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.</div>
+
+      <div class="stat-callout">
+        <div class="sc-val">3.2x</div>
+        <div class="sc-text">More likely to lose AI citations entirely if a page has not been updated in 90 days. Citation decay begins at 30-45 days and accelerates sharply beyond 60 days without a substantive content refresh.</div>
+      </div>
+
+      <p>This is not a bug. It is a feature of how RAG systems work. AI engines rely on live search grounding. Every time a query is processed, the engine runs fresh retrieval across the indexed web. A page that was well-positioned 90 days ago competes, in real time, against every page published or refreshed since then. If the older page contains stale data, outdated pricing, or superseded claims, the retrieval model's relevance scoring will begin to favour more recent alternatives.</p>
+
+      <p>Over 80% of citations answering commercial queries are pulled from pages updated within the prior 30 days. That number has held across multiple tracking studies spanning different query types and AI platforms. The 30-day window is not a rule imposed by any single platform. It is an emergent property of how retrieval systems score freshness signals across all major engines simultaneously.</p>
+
+      <div class="dual-stat">
+        <div>
+          <div class="ds-val">13 weeks</div>
+          <div class="ds-text">Effective shelf life for AI citations on commercial B2B content before citation retention begins declining below 50%.</div>
+        </div>
+        <div class="ds-divider"></div>
+        <div>
+          <div class="ds-val">40-60%</div>
+          <div class="ds-text">Month-over-month turnover in AI-cited sources for high-competition B2B query categories.</div>
+        </div>
+      </div>
+
+
+      <h2 id="technical-architecture">Why Recency Is a Hard Signal, Not a Preference: The Technical Architecture</h2>
+
+      <div class="section-answer">Three distinct mechanisms work together to create structural bias toward fresh content in AI answers: live search grounding, LLM second-stage reranking, and query fan-out amplification. Understanding each one explains why "AI prefers fresh content" is not a soft preference, it is a mechanical outcome.</div>
+
+      <h3>Live Search Grounding and Inherited Freshness Bias</h3>
+      <p>Large language models have a fixed training cutoff. To answer questions about the present, including current pricing, recent product updates, and current vendor comparisons, they rely on live web retrieval. The search grounding layer inherits the freshness scoring of the underlying search engine. When Google or Bing surfaces recent results as more relevant to a query, the AI's retrieval layer inherits that signal directly. Fresh content gets higher placement in the retrieved context window, which means it gets synthesised first and weighted more heavily in the final answer.</p>
+
+      <h3>LLMs as Second-Stage Rerankers</h3>
+      <p>Once retrieved documents land in the LLM's context window, the model acts as a second-stage reranker. Research into how LLMs handle date signals shows a consistent pattern: when two identical passages are compared, injecting a newer publication date reverses the model's preference in the majority of cases. The model treats recency as a proxy for reliability, particularly for factual claims about markets, pricing, and competitive landscapes.</p>
+
+      <p>This is not a bias that gets corrected over time. It reflects a rational strategy for a model trying to minimise hallucination risk. When uncertain between two sources, defaulting to the more recent one reduces the chance of citing a fact that has since been superseded.</p>
+
+      <h3>The Query Fan-Out Amplifier</h3>
+      <p>There is a third mechanism worth understanding: query fan-out. When a complex B2B query enters Google AI Mode or Perplexity, the system decomposes it into multiple sub-queries and runs them in parallel. A query like "best contract management software for mid-market" might fan out into sub-queries about pricing, integrations, compliance features, and recent user reviews simultaneously. Content that lacks machine-readable recency signals is structurally filtered out of these sub-queries during the initial retrieval pass, before any quality or relevance scoring happens.</p>
+
+
+      <h2 id="platform-breakdown">Platform-by-Platform: How Each Engine Weighs Recency</h2>
+
+      <div class="section-answer">AI search engines do not treat content freshness uniformly. ChatGPT, Perplexity, Claude, and Google AI Overviews each apply different recency heuristics and citation signals. A single refresh strategy optimised for one platform will underperform on others.</div>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Recency sensitivity and top citation signals by AI platform</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Recency Sensitivity</th>
+              <th>Top Citation Signals</th>
+              <th>Key Takeaway</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">ChatGPT</td>
+              <td class="mid">High (90-day window)</td>
+              <td>Pricing tables, comparison tables, scenario-based content</td>
+              <td class="action">Structure wins. Narrative content without direct-answer formatting performs significantly worse.</td>
+            </tr>
+            <tr>
+              <td class="label">Perplexity</td>
+              <td class="down">Very High (near real-time)</td>
+              <td>Structured timestamps, updated statistics, visible date signals</td>
+              <td class="action">Make freshness visible in code, not just prose. Perplexity reads and weights explicit date metadata.</td>
+            </tr>
+            <tr>
+              <td class="label">Claude</td>
+              <td class="up">Moderate (6-month window)</td>
+              <td>Long-form depth (2,000+ words), methodological transparency, citations</td>
+              <td class="action">Substance over speed. One deep, well-cited source beats three thin, recent ones.</td>
+            </tr>
+            <tr>
+              <td class="label">Google AI Overview</td>
+              <td class="mid">High + Schema-dependent</td>
+              <td>FAQPage schema (+53% lift), HowTo schema, dateModified in JSON-LD</td>
+              <td class="action">60% of AI Overview citations bypass top-20 organic rankings. Schema and structured data are the lever here.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <h2 id="zero-click">The Zero-Click Reality Changes the ROI Equation</h2>
+
+      <div class="section-answer">Zero-click searches have increased significantly, meaning traditional click-through rates understate the value of AI citation presence. The right metric is not traffic: it is citation presence as a trust signal that influences buyer behaviour across the entire purchase journey.</div>
+
+      <p>For CMOs managing blended customer acquisition costs, this matters concretely. Brands cited in AI answers see reduced CAC across paid and organic channels because AI citation presence functions as ambient credibility. Buyers arrive at a sales conversation having already encountered your brand framed as an authoritative source, which shortens evaluation cycles and improves close rates on inbound.</p>
+
+      <p>There is also a compounding multiplier between citations and mentions. Brands that secure both direct citations (where the AI cites your page as a source) and indirect mentions (where the AI references your brand name in an answer citing another source) benefit from a reinforcement effect. Buyers who encounter a brand name twice in AI answers, once as a citation and once as a reference, demonstrate meaningfully higher conversion intent than those who encounter it only once.</p>
+
+      <div class="stat-callout">
+        <div class="sc-val">35%</div>
+        <div class="sc-text">Increase in organic CTR for brands cited in Google AI Overviews, compared to brands with equivalent rankings but no AI citation presence. AI citations function as a trust pre-qualifier that drives qualified click behaviour.</div>
+      </div>
+
+
+      <h2 id="on-page-blueprint">What AI-Ready Content Actually Looks Like: The On-Page Blueprint</h2>
+
+      <div class="section-answer">Making existing content AI-extractable does not require rebuilding pages from scratch. Empirical testing shows that adding three or more structural elements to a single page elevates the AI citation rate to above 70% for that page. The five highest-leverage elements are heading hierarchies, direct answer boxes, entity density, AI learning notes, and schema markup.</div>
+
+      <h3>1. Logical Heading Hierarchies</h3>
+      <p>A single H1 tag as the primary anchor, supported by clean, sequential H2-to-H3 hierarchies, yields meaningfully higher citation rates than pages with flat or inconsistent heading structure. Retrieval models use heading hierarchies to segment pages into coherent chunks during the indexing process. A disorganised heading structure creates chunks that lack standalone meaning, making them harder to retrieve for any single sub-query.</p>
+
+      <h3>2. Direct Answer Boxes</h3>
+      <p>Narrative introductions are a structural liability in AI search. Placing a concise direct answer box immediately below a section heading, before any supporting explanation, gives retrieval systems a clean, extractable response to a specific question. Pages that lead with the answer and follow with supporting evidence consistently outperform pages with the same information buried in narrative prose.</p>
+
+      <h3>3. Entity Density</h3>
+      <p>Retrieval systems rely on semantic entity mapping to determine contextual relevance. B2B content should target 8-12 recognisable entities per 1,000 words: named companies, product categories, regulatory frameworks, market metrics, and named methodologies. Entity-dense content clusters more tightly in vector space, which means it appears in more sub-query retrievals across a given query fan-out.</p>
+
+      <h3>4. AI Learning Notes</h3>
+      <p>A lightweight machine-readable summary annotation placed at the top of high-value pages, outlining the core entities covered, the key claims made, and the data sources referenced, provides a structured signal that retrieval models can read without needing to parse the full document. This is the content equivalent of a structured abstract in academic publishing.</p>
+
+      <h3>5. Schema Markup</h3>
+      <p>For Google AI Overviews specifically, structured JSON-LD schema is the highest-leverage technical investment available. <a href="/Blogs/schema-markup-ai-citations-2026.html">FAQPage schema yields a documented 53% lift in AI Overview citation rates</a>. HowTo schema and Article schema with populated dateModified fields provide the recency signals that Perplexity and ChatGPT's grounding layers weight heavily during retrieval scoring.</p>
+
+
+      <h2 id="refresh-system">The Programmatic Refresh-Cadence System</h2>
+
+      <div class="section-answer">B2B organisations do not need to increase publication volume to combat citation decay. The leverage is in systematic, prioritised refreshing of existing high-value pages. For an enterprise-scale site with 100 active pages, executing this system well requires approximately 18 minor content refreshes per month. That is roughly one page per working day.</div>
+
+      <h3>The Four-Tier Prioritisation Model</h3>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Content refresh prioritisation framework by tier</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Content Type</th>
+              <th>Refresh Cycle</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Tier 1</td>
+              <td>Revenue-adjacent pages (pricing, comparisons, use cases)</td>
+              <td class="down">8-12 weeks</td>
+              <td>Direct conversion risk if citations drop. These pages are actively consulted during vendor evaluation.</td>
+            </tr>
+            <tr>
+              <td class="label">Tier 2</td>
+              <td>Thought leadership and category authority content</td>
+              <td class="mid">12-16 weeks</td>
+              <td>Anchors brand positioning in AI answers. Loss here reduces competitive presence in awareness-stage queries.</td>
+            </tr>
+            <tr>
+              <td class="label">Tier 3</td>
+              <td>Supporting informational content and FAQs</td>
+              <td class="up">6 months</td>
+              <td>Supports Tier 1 and 2 via entity coverage and internal linking density.</td>
+            </tr>
+            <tr>
+              <td class="label">Tier 4</td>
+              <td>Archive candidates</td>
+              <td class="mute">Evaluate for retirement</td>
+              <td>Consolidate or redirect. Do not invest refresh resources in pages with no pipeline value.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>The Five-Step Refresh Workflow</h3>
+      <ol>
+        <li><strong>Audit and inventory.</strong> Export the CMS library with organic traffic, last-modified dates, and existing schema types flagged. This is the master refresh queue.</li>
+        <li><strong>Prioritise by pipeline value.</strong> Revenue-adjacent pages get first priority. Citation loss on a Tier 1 page is a live conversion event, not just a visibility metric.</li>
+        <li><strong>Execute substantive updates, not cosmetic ones.</strong> AI models evaluate reasoning usefulness. They are not fooled by year-changing the title or reordering paragraphs. Refreshes must add new data points, updated statistics, new structured comparisons, or expanded schema.</li>
+        <li><strong>Deploy recency signals.</strong> Update the CMS modification date. Update the JSON-LD dateModified field. Add a visible "Updated: [Month Year]" annotation above the fold. These three signals together maximise retrieval-layer recency scoring across all major platforms.</li>
+        <li><strong>Track citation recovery.</strong> Monitor citation status across ChatGPT, Perplexity, and Google AI Overviews over a 4-6 week post-refresh window. Citation recovery timelines typically run 2-4 weeks for Perplexity, 4-6 weeks for ChatGPT, and 6-8 weeks for Google AI Overviews.</li>
+      </ol>
+
+
+      <h2 id="measurement">Measuring What Matters: The AI Citation Audit Framework</h2>
+
+      <div class="section-answer">Traditional SEO dashboards track rankings and clicks. Neither metric captures AI citation health with any fidelity. B2B content teams need a parallel measurement system built around three metrics: AI Citation Rate, Citation Retention Rate, and Share of Model.</div>
+
+      <h3>The Core Query Set</h3>
+      <p>Curate 20-30 queries that represent how your ICP actually searches when evaluating solutions in your category:</p>
+      <ul>
+        <li><strong>Category queries (approx. 10):</strong> "Best [Category] platforms" or "What is [Category]"</li>
+        <li><strong>Problem queries (approx. 10):</strong> "How to [action your product enables]" or "Why does [problem] happen"</li>
+        <li><strong>Competitor queries (5-10):</strong> "[Competitor] alternatives" or "[Competitor] vs [Category]"</li>
+      </ul>
+      <p>Run this query set every 3-5 days for priority terms, weekly or biweekly for the full portfolio, across ChatGPT, Perplexity, and Google AI Overviews.</p>
+
+      <h3>The Three Core Metrics</h3>
+
+      <div class="tt-wrap">
+        <div class="tt-label">AI citation audit: core metric definitions and intervention thresholds</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Definition</th>
+              <th>Intervention Threshold</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">AI Citation Rate (ACR)</td>
+              <td>Percentage of tracked queries where your domain is cited in any form.</td>
+              <td class="down">Below 25% signals a structural problem with content accessibility or freshness across the portfolio.</td>
+            </tr>
+            <tr>
+              <td class="label">Citation Retention Rate (CRR)</td>
+              <td>Percentage of citations that persist from one audit run to the next.</td>
+              <td class="down">CRR below 60% is the primary early warning signal for content decay. Trigger a refresh audit immediately.</td>
+            </tr>
+            <tr>
+              <td class="label">Share of Model (SOM)</td>
+              <td>Your citation count as a percentage of total citations across the tracked query set, including competitor citations.</td>
+              <td class="mid">Declining SOM with stable ACR indicates competitors are gaining ground faster than you. Increase refresh cadence on Tier 1 pages.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Citation Readiness Scoring</h3>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Page-level citation readiness scoring framework</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Score</th>
+              <th>Readiness Level</th>
+              <th>What to Do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="up label">20-25</td>
+              <td class="up">High Readiness</td>
+              <td>Structured tables, strict heading hierarchy, direct-answer formatting throughout. Maintain refresh cadence.</td>
+            </tr>
+            <tr>
+              <td class="mid label">15-19</td>
+              <td class="mid">Moderate Readiness</td>
+              <td>Accurate content but missing structured formatting or schema. Add direct-answer boxes and FAQ schema to prioritise pages.</td>
+            </tr>
+            <tr>
+              <td class="down label">10-14</td>
+              <td class="down">Low Readiness</td>
+              <td>Long-form narrative structure without logical chunking. Restructure with heading hierarchy and extract key claims into direct-answer format.</td>
+            </tr>
+            <tr>
+              <td class="mute label">Under 10</td>
+              <td class="mute">Not Citation Ready</td>
+              <td>Subjective or narrative content lacking factual claims, data, or structure. Full rewrite or consolidation required before investing in refresh cadence.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <h2 id="90-day-plan">The 90-Day Operational Rollout Plan</h2>
+
+      <div class="section-answer">For content leaders implementing this system from scratch, a phased 90-day rollout provides enough time for crawlers to re-index refreshed pages and for citation recovery to become measurable. The three phases are Foundation, Content Optimisation, and Authority Building.</div>
+
+      <div class="phase-block">
+        <div class="phase-block-label">Phase 1: Foundation</div>
+        <h4>Days 1-30: Make the domain maximally AI-accessible</h4>
+        <p class="phase-obj">Objective: make the existing domain maximally accessible to AI crawlers and establish a measurement baseline.</p>
+        <ul>
+          <li>Days 1-2: Verify <a href="/Blogs/how-ai-crawlers-index-your-site.html">robots.txt does not block GPTBot, PerplexityBot, or Google-Extended</a></li>
+          <li>Days 3-10: Audit structured data gaps across high-traffic landing pages; deploy FAQPage schema on key service and support pages</li>
+          <li>Days 11-15: Configure GA4 to track referral traffic from OpenAI, Perplexity, and generative sources</li>
+          <li>Days 16-22: Rewrite introductory blocks of top-20 traffic posts to lead with direct, factual answers</li>
+          <li>Days 23-26: Publish an llms.txt file, a markdown summary of the site's structure for machine-learning parsers</li>
+          <li>Days 27-30: Run first manual audit of 20-30 core ICP queries to establish a performance baseline</li>
+        </ul>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-block-label">Phase 2: Content Optimisation</div>
+        <h4>Days 31-60: Execute substantive on-page updates</h4>
+        <p class="phase-obj">Objective: execute substantive on-page updates across high-priority content templates.</p>
+        <ul>
+          <li>Days 31-40: Re-optimise core solution pages with entity density and direct-answer formatting</li>
+          <li>Days 41-45: Embed data visualisations, comparison tables, and visual process diagrams</li>
+          <li>Days 46-52: Publish supporting informational sub-topics with clean internal linking to primary solution pages</li>
+          <li>Days 53-57: Deploy structured Person and Author markup linking experts' bio pages to canonical social profiles</li>
+          <li>Days 58-60: Mid-cycle citation check vs. Day 30 baseline; database updates take 4-8 weeks to propagate</li>
+        </ul>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-block-label">Phase 3: Authority and Persistent Citation</div>
+        <h4>Days 61-90+: Build off-site validation</h4>
+        <p class="phase-obj">Objective: build off-site validation and secure third-party brand mentions.</p>
+        <ul>
+          <li>Days 61-75: Secure placements on high-ranking external domains, industry listicles, and category roundups. These are the referring sources AI systems treat as corroborating signals.</li>
+          <li>Days 76-85: Participate in Reddit and community forums with factual, helpful answers that feed the UGC layers used by AI systems for corroboration</li>
+          <li>Days 86-90: Re-run core query set across ChatGPT, Perplexity, and Gemini; structure refresh queue for the next 90-day cycle</li>
+        </ul>
+      </div>
+
+
+      <h2 id="budget-model">The Budget Model That Supports This Strategy</h2>
+
+      <div class="section-answer">The 0/50/30/20 content budget model is a response to a specific market condition: as AI-assisted generation drives the cost of producing commodity content toward zero, the marginal value of publishing another generic guide approaches zero simultaneously. Budget must shift toward content that AI systems cannot synthesise from existing sources.</div>
+
+      <div class="tt-wrap">
+        <div class="tt-label">The 0/50/30/20 content budget allocation model</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Allocation</th>
+              <th>Category</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="down label">0%</td>
+              <td>Commodity SEO articles</td>
+              <td>Generic guides are easily synthesised by AI. Publishing them adds volume but no citation value, and dilutes crawl budget.</td>
+            </tr>
+            <tr>
+              <td class="up label">50%</td>
+              <td>Proprietary data journalism</td>
+              <td>Original research, surveys, and unique benchmarks create primary sources that AI systems cite because they contain information that cannot be synthesised from other sources.</td>
+            </tr>
+            <tr>
+              <td class="mid label">30%</td>
+              <td>Video atomisation and UGC</td>
+              <td>Short-form video and community content increases the total surface area where your brand and expertise appear across the non-traditional content layers that AI systems increasingly ingest.</td>
+            </tr>
+            <tr>
+              <td class="mid label">20%</td>
+              <td>Technical GEO infrastructure</td>
+              <td>Schema deployments, semantic markup audits, and structured data maintenance. This is the plumbing that enables everything else to work.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Defending this to your CFO, three points:</strong></p>
+      <p>First, AI citations directly protect paid advertising efficiency. Brands cited in AI Overviews earn a 35% increase in organic CTR and a documented reduction in cost-per-click on branded terms, because ambient AI citation presence pre-qualifies buyers before they reach paid search.</p>
+      <p>Second, traditional ranking is no longer a protective moat. Roughly 60% of AI Overview citations go to pages outside the top-20 organic results. The implication is that a brand ranked #1 in traditional search for a query is not guaranteed AI citation presence, while a brand ranked #25 with superior structure and freshness may appear in every AI answer for that query.</p>
+      <p>Third, AI-referred traffic converts at a higher rate. AI-referred sessions demonstrate meaningfully higher commercial intent than sessions from traditional organic search, because buyers using AI search are typically further along in their evaluation process and searching with more specific, decision-stage queries.</p>
+
+
+      <h2 id="conclusion">The Strategic Conclusion</h2>
+
+      <p>The 30-day content half-life is not a temporary phenomenon that will correct itself as AI search matures. It is a structural feature of how retrieval-augmented generation works, baked into the architecture of every major platform.</p>
+
+      <p>The teams that adapt fastest are not the ones with the largest content libraries or the highest domain authority scores. They are the ones that treat content freshness as an operational system, with defined tiers, scheduled refresh cycles, measurable citation metrics, and a budget model aligned to where AI citation value actually accrues.</p>
+
+      <p>For content strategists, that means a systematic refresh calendar that keeps revenue-adjacent pages inside the citation window, a measurement framework built around AI Citation Rate and Citation Retention Rate, and a budget reallocation toward proprietary data and technical GEO infrastructure.</p>
+
+      <p>The search result page that buyers see is increasingly generated, not ranked. The brands that appear in those generated answers are the ones that will define category leadership over the next three to five years. The system to get there is manageable, measurable, and starts with a single refresh audit this week.</p>
+
+      <div class="about-block">
+        <div class="about-label">Sources and Research Base</div>
+        <p>This article draws on research from: <a href="https://www.airops.com/report/the-2026-state-of-ai-search" target="_blank" rel="noopener">AirOps State of AI Search 2026</a>, <a href="https://presenceai.app/blog/ai-search-citation-rates-research-which-content-gets-cited" target="_blank" rel="noopener">Presenceai Citation Rates Research</a>, <a href="https://www.knechtstrategies.com/ai-citation-tracking-why-40-60-of-your-ai-citations-will-turn-over-every-month-and-what-to-do-about-it/" target="_blank" rel="noopener">Knecht Strategy AI citation tracking study</a>, and <a href="https://ahrefs.com" target="_blank" rel="noopener">Ahrefs</a> organic traffic decay data. Data reflects conditions as of Q1-Q2 2026.</p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Key Numbers</div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-val">3.2x</div>
+            <div class="stat-label">More likely to lose AI citations after 90 days without update</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">13 wks</div>
+            <div class="stat-label">Effective AI citation shelf life for commercial B2B content</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">80%+</div>
+            <div class="stat-label">Commercial query citations pulled from pages updated in the prior 30 days</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">53%</div>
+            <div class="stat-label">AI Overview citation lift from FAQPage schema deployment</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#paradigm-shift"><span class="toc-num">01</span> The Paradigm Shift</a></li>
+          <li><a href="#anatomy"><span class="toc-num">02</span> The Citation Drop-Off</a></li>
+          <li><a href="#technical-architecture"><span class="toc-num">03</span> Technical Architecture</a></li>
+          <li><a href="#platform-breakdown"><span class="toc-num">04</span> Platform-by-Platform</a></li>
+          <li><a href="#zero-click"><span class="toc-num">05</span> The Zero-Click Reality</a></li>
+          <li><a href="#on-page-blueprint"><span class="toc-num">06</span> On-Page Blueprint</a></li>
+          <li><a href="#refresh-system"><span class="toc-num">07</span> The Refresh System</a></li>
+          <li><a href="#measurement"><span class="toc-num">08</span> Measurement Framework</a></li>
+          <li><a href="#90-day-plan"><span class="toc-num">09</span> 90-Day Rollout Plan</a></li>
+          <li><a href="#budget-model"><span class="toc-num">10</span> Budget Model</a></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-foot">
+  <div class="page">
+    <div class="foot-row">
+      <span>rawmktg. &copy; 2026</span>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/#articles">Articles</a>
+        <a href="mailto:vinayak@epicslope.partners">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

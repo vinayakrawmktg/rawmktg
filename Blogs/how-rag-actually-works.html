@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>How RAG Actually Works, And Why It Matters for GEO · rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A technical breakdown of Retrieval-Augmented Generation for B2B marketing leaders. The five-stage AI search pipeline, what the GEO research actually shows, and a three-phase action plan for this quarter." />
+  <meta name="author" content="rawmktg." />
+  <link rel="canonical" href="https://rawmktg.com/Blogs/how-rag-actually-works.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/Blogs/how-rag-actually-works.html" />
+  <meta property="og:title"       content="How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter" />
+  <meta property="og:description" content="51% of B2B buyers now start in an AI chatbot. A five-stage pipeline decides which brands appear in the answer. Here is how that pipeline works, and how to engineer your content for it." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/how-rag-actually-works-header.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-05-01T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="How RAG Actually Works, And Why It Matters for GEO" />
+  <meta name="twitter:description" content="Pages ranked #5 on Google saw a 115% increase in AI visibility when they added citations and structured claims. Top-ranked pages without these signals often dropped. Here is the full breakdown." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/how-rag-actually-works-header.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter",
+    "description": "A technical breakdown of Retrieval-Augmented Generation for B2B marketing leaders. The five-stage AI search pipeline, Princeton/Georgia Tech GEO research findings, and a three-phase action plan.",
+    "image": "https://rawmktg.com/assets/images/how-rag-actually-works-header.png",
+    "url": "https://rawmktg.com/Blogs/how-rag-actually-works.html",
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/how-rag-actually-works.html" },
+    "keywords": ["RAG", "Retrieval-Augmented Generation", "GEO", "Generative Engine Optimization", "AI search", "B2B marketing", "ChatGPT citations", "Perplexity", "AI Overviews", "content strategy"]
+  }
+  </script>
+
+  <!-- Speakable for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
+    "url": "https://rawmktg.com/Blogs/how-rag-actually-works.html"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#D04A2A; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .eyebrow-series{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,50px);line-height:1.06;letter-spacing:-0.028em;color:var(--ink);margin-bottom:20px;max-width:860px;}
+    .article-deck{font-family:var(--f-prose);font-size:18px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:0;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar blocks */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+
+    /* Section answer callout */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout (big single number) */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Info box */
+    .info-box{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:20px 24px;margin:28px 0 36px;}
+    .info-box-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .info-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.action{color:rgba(242,239,232,.88);font-style:italic;}
+
+    /* Pipeline steps */
+    .pipeline{display:flex;flex-direction:column;gap:0;margin:28px 0 36px;}
+    .pipeline-step{display:grid;grid-template-columns:80px 1fr;gap:0;border:1px solid var(--rule);border-bottom:none;}
+    .pipeline-step:first-child{border-radius:8px 8px 0 0;}
+    .pipeline-step:last-child{border-bottom:1px solid var(--rule);border-radius:0 0 8px 8px;}
+    .ps-num{background:var(--ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;gap:4px;}
+    .ps-num .n{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:-0.02em;color:var(--signal);}
+    .ps-num .stage{font-family:var(--f-mono);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center;}
+    .ps-body{padding:16px 20px;background:var(--paper);}
+    .ps-title{font-family:var(--f-display);font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px;}
+    .ps-desc{font-family:var(--f-prose);font-size:13px;line-height:1.65;color:var(--ink-2);margin-bottom:8px;}
+    .ps-action{font-family:var(--f-mono);font-size:11px;line-height:1.55;color:var(--signal);border-top:1px solid var(--rule);padding-top:8px;margin-top:2px;}
+
+    /* Action steps */
+    .phase-block{margin-bottom:32px;}
+    .phase-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* About / data note */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .pipeline-step{grid-template-columns:60px 1fr;}
+    }
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rawmktg.com/#organization",
+    "name": "rawmktg.",
+    "url": "https://rawmktg.com",
+    "sameAs": ["https://www.linkedin.com/company/rawmktg/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter", "item": "https://rawmktg.com/Blogs/how-rag-actually-works.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQPage schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does RAG work in AI search engines?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAG (Retrieval-Augmented Generation) operates in five stages: query decomposition (breaking the question into sub-queries), parallel retrieval (fetching candidate passages from indexed sources), content chunking and embedding (converting passages into vectors for similarity matching), relevance re-ranking (scoring chunks against the query intent), and answer synthesis (generating a cited response from the top-ranked passages)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What content format performs best for RAG retrieval?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The formats with the highest RAG retrieval rates are: question-format headings that match likely queries, a direct answer placed in the first sentence of each section, named source citations within the body text, FAQPage JSON-LD schema, and passage lengths of 40 to 60 words that fully resolve a single specific question. Long paragraphs that answer multiple questions in one block consistently underperform in chunk-level retrieval."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is RAG the most important GEO lever for B2B marketers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAG powers every major AI search engine -- ChatGPT, Perplexity, Claude, and Gemini -- meaning citation eligibility is determined at the retrieval stage before the model writes a single word. Optimising content for RAG retrieval (passage structure, schema, entity clarity) directly improves citation rates regardless of organic search ranking, making it the highest-leverage GEO action available."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- Nav -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header image -->
+<img src="../assets/images/how-rag-actually-works-header.png"
+     alt="How RAG Actually Works, GEO technical series · rawmktg."
+     class="article-header-img" width="1200" height="630">
+
+<!-- Article header -->
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <span class="eyebrow-tag">Technical · GEO</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-series">GEO &amp; AEO Intelligence, Article 1</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-date">May 2026</span>
+    </div>
+    <h1 class="article-headline">How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter</h1>
+    <p class="article-deck">Every time a B2B buyer types a question into ChatGPT or Perplexity, a five-stage pipeline executes in milliseconds to decide which brands appear in the answer, and which ones don't exist. Here is how that pipeline works, what the research says about improving your citation rate, and what to do about it this quarter.</p>
+  </header>
+</div>
+
+<!-- Article body -->
+<div class="page">
+  <div class="article-body">
+
+    <main class="article-content" id="article-main">
+
+      <p>Traditional SEO optimised for a ranked list of ten hyperlinks. The game was simple: rank higher, get clicked. RAG has replaced that game with something categorically different. The AI does not present a list, it presents a verdict. A single synthesised answer, built from a handful of retrieved passages, delivered with the confidence of a trusted advisor. If your content is not in those retrieved passages, you are not in the verdict.</p>
+
+      <!-- What is RAG -->
+      <h2 id="what-is-rag">What Is RAG, and Why Does It Replace Keyword Strategy?</h2>
+
+      <div class="section-answer">Retrieval-Augmented Generation is the architectural bridge that allows LLMs to access information beyond their static training data. For B2B marketing, this single architectural fact changes everything: the authority of your content now depends entirely on its ability to be retrieved by these systems.</div>
+
+      <p>Models like GPT-4 or Gemini are extraordinarily capable at reasoning, but they are hard-constrained by a knowledge cutoff, the moment their training stopped. They are also prone to hallucination when queried on niche, recent, or proprietary information, because they predict the next word based on probability, not verified fact.</p>
+
+      <p>RAG solves this by decoupling the model's generative capability from its knowledge base. When a user submits a query, the system first behaves like a librarian: it searches an external index of live web pages and documents for relevant passages. Those retrieved passages are then handed to the LLM as grounded context, effectively telling it: "here is the information you are allowed to draw from." The model synthesises, the citations appear, and the buyer reads an answer that feels definitive.</p>
+
+      <p>Content that cannot be found by the retriever does not exist in the AI's world.</p>
+
+      <h3>The Five Components of a RAG System</h3>
+
+      <div class="tt-wrap">
+        <div class="tt-label">RAG system components, technical function and marketing implication</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>RAG Component</th>
+              <th>Technical Function</th>
+              <th>Strategic Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Embeddings</td>
+              <td>Mathematical representation of concept similarity, words with related meaning cluster together in vector space.</td>
+              <td class="action">Content must be semantically dense and topically coherent, not just keyword-heavy.</td>
+            </tr>
+            <tr>
+              <td class="label">Vector Database</td>
+              <td>Storage for high-dimensional content vectors, enabling sub-second semantic search at scale.</td>
+              <td class="action">Fast retrieval requires pages that are cleanly 'chunkable', not bloated with navigation or JavaScript.</td>
+            </tr>
+            <tr>
+              <td class="label">Retriever</td>
+              <td>The algorithm that identifies the most relevant documents for a given query vector.</td>
+              <td class="action">Your visibility depends entirely on making the top-k selection, typically just 5–10 passages, for any given query.</td>
+            </tr>
+            <tr>
+              <td class="label">Generator</td>
+              <td>The LLM that reads the retrieved passages and synthesises the final answer.</td>
+              <td class="action">Your brand's claims are filtered through the model's summarisation logic. Clarity wins over cleverness.</td>
+            </tr>
+            <tr>
+              <td class="label">Groundedness</td>
+              <td>The system instruction that forces the LLM to stay within retrieved facts rather than hallucinating.</td>
+              <td class="action">Accuracy in the retriever directly protects brand trust, if you're mis-retrieved, you're misrepresented.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Chunking -->
+      <h2 id="chunking">Why 'Chunking' Is the Most Underrated Concept in GEO</h2>
+
+      <div class="section-answer">AI search engines do not ingest your entire page in a single pass. They process content in discrete 300–500 word segments. Only 5 to 10 chunks, from across the entire indexed web, advance to the generation stage. A single poorly structured section can cause an otherwise authoritative page to be ignored entirely.</div>
+
+      <p>Each chunk is independently vectorised and stored in the retrieval index. When a query arrives, the retriever identifies the top-k most relevant chunks and presents them to the LLM. This creates a high-stakes environment: a single poorly structured section on an otherwise authoritative page can cause that page to be ignored entirely. Conversely, a single exceptionally clear, well-cited paragraph can earn a citation even if the rest of the page is unremarkable.</p>
+
+      <div class="info-box">
+        <div class="info-box-label">The Chunking Implication</div>
+        <p>GEO is not about rewriting entire pages. It is about engineering individual paragraphs, specifically the 40–60 word "answer capsule" at the start of each section, to be extractable, factually dense, and self-contained enough to stand alone as a cited passage.</p>
+      </div>
+
+      <h3>Classic RAG vs. Agentic Retrieval</h3>
+
+      <p>Classic RAG is a single-shot process: query arrives, retriever pulls passages, LLM generates answer. Efficient, but limited when the buyer's question requires multi-step reasoning, which most B2B evaluation queries do.</p>
+
+      <p>Agentic retrieval uses the LLM itself as a reasoning agent that decomposes the original question into sub-queries. A question like "How does Vendor A's security stack compare to Vendor B for a mid-market manufacturing firm?" becomes three separate searches: Vendor A's security specs, Vendor B's specs, and the compliance requirements of the manufacturing sector. The agent may also follow links between pages, dereferencing URLs to gather deeper context, mimicking the behaviour of a human researcher doing due diligence.</p>
+
+      <p>The implication for content architecture is significant. Your pages must not just answer one question in isolation. They must interlink in a way that allows an autonomous AI agent to traverse the topic and gather a complete picture. A product page that does not link to your security documentation, compliance certifications, and relevant case studies is invisible to an agentic query about security.</p>
+
+      <!-- Five-stage pipeline -->
+      <h2 id="pipeline">The Five-Stage AI Search Pipeline Every Marketer Must Understand</h2>
+
+      <p>Every query submitted to ChatGPT, Perplexity, or Gemini passes through a five-stage pipeline before an answer is generated. This pipeline is the definitive filter that decides whether your content is cited or rendered invisible.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">01</span><span class="stage">Understand</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Query Rewriting and Entity Tagging</div>
+            <div class="ps-desc">The AI system rewrites and transforms the user's natural-language prompt into a format optimised for its internal retrieval engine. This involves resolving ambiguities, expanding acronyms, and tagging specific entities against a massive internal knowledge graph. If your brand name or product category is inconsistent across the web, the transformation stage may fail to recognise you as a relevant entity.</div>
+            <div class="ps-action">Counter-move: Ensure your brand name, product category, and core use cases are described with absolute consistency across your own site, LinkedIn, Crunchbase, Wikidata, and major industry directories.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">02</span><span class="stage">Fan-Out</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Sub-Query Generation</div>
+            <div class="ps-desc">B2B evaluation queries are inherently multi-faceted. The AI generates several targeted sub-queries to ensure all dimensions of the question are covered. A query about "enterprise CRM implementation costs" might fan out into sub-queries for licensing fees, average implementation timelines, and hidden migration costs. A website that provides 360-degree coverage of a topic is far more likely to be retrieved across multiple sub-queries.</div>
+            <div class="ps-action">Counter-move: Build topical clusters that cover all angles of your core buyer questions, not just the primary keyword.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">03</span><span class="stage">Retrieve</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Hybrid Search and the Race to Top-K</div>
+            <div class="ps-desc">Sub-queries are issued against a live index using hybrid search, a combination of traditional keyword matching (BM25) and semantic vector search. Keyword search excels at finding specific proper nouns and technical terms; vector search captures broader conceptual intent. The AI does not read full pages, it extracts the specific passages that best match each sub-query. Only the top-k passages advance.</div>
+            <div class="ps-action">Counter-move: Optimise for both exact-match terms (technical specs, product names) and semantic intent.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">04</span><span class="stage">Re-Rank</span></div>
+          <div class="ps-body">
+            <div class="ps-title">The Silent Score That Decides Whether You Get Cited</div>
+            <div class="ps-desc">Once candidate passages have been retrieved, a re-ranker algorithm scores them for extraction utility. The re-ranker does not prioritise raw domain authority the way Google's traditional algorithm might. Instead, it rewards extractability (clearly structured content easy to summarise), factual density (specific statistics and data points over vague generalisations), and corroboration (claims supported by multiple independent sources).</div>
+            <div class="ps-action">Counter-move: Use direct, factual language. Open each section with a 40–60 word "answer capsule". Embed verifiable stats and third-party citations.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">05</span><span class="stage">Generate</span></div>
+          <div class="ps-body">
+            <div class="ps-title">LLM Synthesis and Citation Attachment</div>
+            <div class="ps-desc">The top-ranked passages are handed to the LLM, which synthesises them into a cohesive response. Citations are attached, inline footnotes or a panel of source links, attributing specific claims to the retrieved websites. If your content was not retrieved at Stage 3, or was downranked at Stage 4, you are not in this answer. The buyer never knows you existed.</div>
+            <div class="ps-action">Counter-move: Frame key insights as standalone, quotable single-paragraph claims, the unit the LLM is most likely to lift and attribute.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform differences -->
+      <h2 id="platforms">How ChatGPT, Perplexity, and Gemini Cite Differently</h2>
+
+      <div class="section-answer">The five-stage pipeline is consistent in principle, but the three dominant AI search platforms each exhibit distinct retrieval behaviours and citation biases. Treating them as identical will leave significant citation share on the table.</div>
+
+      <div class="tt-wrap">
+        <div class="tt-label">AI search platform comparison, retrieval behaviour and B2B priority use case</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Retrieval Source</th>
+              <th>Preferred Content Type</th>
+              <th>B2B Priority Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">ChatGPT</td>
+              <td>Bing index + OAI-SearchBot</td>
+              <td>Deep editorial, authoritative guides, encyclopaedic depth. Particularly sensitive to identity clarity, brands well-defined in Wikipedia/Wikidata are cited more consistently.</td>
+              <td class="mid">Brand awareness and thought leadership at top of funnel.</td>
+            </tr>
+            <tr>
+              <td class="label">Perplexity</td>
+              <td>Real-time RAG + Reddit + forums</td>
+              <td>Fresh, specialised, niche content, <a href="/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html">recency is a hard signal</a>. Disproportionately cites Reddit and forum discussions as 'authentic' human signals. New content can earn citations within days.</td>
+              <td class="up">Market research queries, competitive comparisons, fast-moving categories.</td>
+            </tr>
+            <tr>
+              <td class="label">Gemini / AIO</td>
+              <td>Google Index + Entity Knowledge Graph</td>
+              <td>Technical SEO-optimised, <a href="/Blogs/eeat-is-an-ai-signal-now.html">E-E-A-T, consistent entity data across platforms</a>. Adds a cross-platform entity authority check, evaluating whether your brand's description is consistent across LinkedIn, Crunchbase, and your own site.</td>
+              <td class="mid">High-intent conversions, scale, established category leadership.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- GEO research -->
+      <h2 id="research">What Does the GEO Research Actually Show?</h2>
+
+      <div class="section-answer">A landmark <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Princeton/Georgia Tech study</a> tested nine specific content optimisation tactics across 10,000 queries. The most counterintuitive finding: traditional SEO ranking does not guarantee AI visibility. Pages ranked at position 5 on Google saw a 115% increase in AI visibility when they added citations and structured claims, while top-ranked pages without these signals often dropped.</div>
+
+      <div class="stat-callout">
+        <div class="sc-val">40%</div>
+        <div class="sc-text">Potential uplift in AI visibility from structural content improvements, according to <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Princeton/Georgia Tech GEO research</a> across 10,000 queries. Three tactics drove the majority of the gain: authoritative citations, numerical density, and quotable expert commentary.</div>
+      </div>
+
+      <p>Three tactics emerged as the highest-impact interventions:</p>
+
+      <ul>
+        <li><strong>Authoritative Citations:</strong> Adding references to recognised third-party sources, industry analysts, government reports, peer-reviewed research, was the single most effective tactic for improving citation rates.</li>
+        <li><strong>Numerical Density:</strong> Integrating specific statistics and data points increased the probability of being cited by 37%. "A 21% increase in efficiency" dramatically outperforms "significant efficiency gains" in the re-ranking stage.</li>
+        <li><strong>Quotable Expert Commentary:</strong> Direct quotations from named industry experts help re-rankers validate the trustworthiness of the content, resulting in a significant lift in citation frequency.</li>
+      </ul>
+
+      <p>Beyond content, the <a href="https://arxiv.org/abs/2603.29979" target="_blank" rel="noopener">GEO-SFE research</a> identifies hierarchical clarity as a primary retrieval signal. Pages with heading depth between H2 and H4, with balanced content distribution under each heading, outperform both flat pages (no sub-headings) and over-nested pages (six or more heading levels). The attention mechanism of transformer models is diluted by structural complexity.</p>
+
+      <!-- B2B buyer -->
+      <h2 id="buyer">Where Is the B2B Buyer in All of This?</h2>
+
+      <div class="section-answer"><a href="https://learn.g2.com/g2-2026-ai-search-insight-report" target="_blank" rel="noopener">51% of B2B software buyers</a> now begin their research in an AI chatbot rather than a traditional search engine. <a href="https://6sense.com/science-of-b2b/buyer-experience-report-2025/" target="_blank" rel="noopener">94% of buying groups</a> rank their vendor shortlist in order of preference before making their first call to a salesperson. <a href="https://learn.g2.com/g2-2026-ai-search-insight-report" target="_blank" rel="noopener">69% chose a different vendor</a> than they initially planned based on AI guidance.</div>
+
+      <div class="tt-wrap">
+        <div class="tt-label">B2B buyer behaviour, traditional search era vs. AI answer economy</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Buyer Behaviour Metric</th>
+              <th>Traditional Search (2023–24)</th>
+              <th>AI Answer Economy (2025–26)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Primary research starting point</td>
+              <td class="mute">Google Search (dominant)</td>
+              <td class="up">AI chatbot (51% of buyers)</td>
+            </tr>
+            <tr>
+              <td class="label">Average buying cycle length</td>
+              <td class="mute">11.3 months</td>
+              <td class="mid">10.1 months</td>
+            </tr>
+            <tr>
+              <td class="label">Point of first vendor contact</td>
+              <td class="mute">~69% of journey complete</td>
+              <td class="up">~61% complete (6–7 weeks earlier)</td>
+            </tr>
+            <tr>
+              <td class="label">Vendor discovery mechanism</td>
+              <td class="mute">Pre-existing brand awareness</td>
+              <td class="up">AI-suggested discovery (33% buy from previously unknown vendors)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Website restructuring -->
+      <h2 id="architecture">How to Restructure Your Website for the RAG Era</h2>
+
+      <p>The shift from traditional SEO to GEO requires a corresponding shift in how you conceptualise your website. A traditional B2B website is a flat document architecture, pages designed for humans to read in sequence. A GEO-optimised website is a linked data architecture, pages designed for AI agents to traverse, reason with, and extract from.</p>
+
+      <p>The Enhanced Entity Page model offers a practical framework. Rather than treating each page as standalone content, it treats each page as an entry point into a knowledge graph, where every page explicitly defines its relationships to parent products, related industries, specific buyer pain points, and supporting case studies. In practice, this means building three structural layers into every key page:</p>
+
+      <ul>
+        <li><strong>The Schema.org Layer:</strong> Standardised JSON-LD that defines who the organisation is and what the page represents, machine-readable context for AI crawlers.</li>
+        <li><strong>The Entity Layer:</strong> Visible components, breadcrumbs, interlinked topic hubs, author biographies, that help AI agents understand the expertise and context behind the content.</li>
+        <li><strong>The RAG Layer:</strong> A structured JSON block specifically for AI pipelines, containing "retrieval hints", the potential user questions this page answers, and clean text chunks the AI can extract without parsing through navigation, ads, or complex code.</li>
+      </ul>
+
+      <h3>llms.txt and AGENTS.md: The New Governance Layer for <a href="/Blogs/how-ai-crawlers-index-your-site.html">AI Crawlers</a></h3>
+
+      <div class="tt-wrap">
+        <div class="tt-label">AI governance standards, function, audience, and location</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Standard</th>
+              <th>Primary Purpose</th>
+              <th>Key Audience</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">robots.txt</td>
+              <td>Crawler exclusion and crawl budget management.</td>
+              <td class="mute">Traditional search bots (Googlebot, Bingbot).</td>
+              <td class="mute">yourdomain.com/robots.txt</td>
+            </tr>
+            <tr>
+              <td class="label">llms.txt</td>
+              <td>Content curation and prioritisation for AI ingestion.</td>
+              <td class="mid">AI answer engines (Perplexity, Claude, ChatGPT).</td>
+              <td class="mid">yourdomain.com/llms.txt</td>
+            </tr>
+            <tr>
+              <td class="label">AGENTS.md</td>
+              <td>Operational instructions and rules for autonomous agents.</td>
+              <td class="up">Autonomous AI agents (code assistants, agentic workflows).</td>
+              <td class="up">yourdomain.com/AGENTS.md</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>An llms.txt file signals to AI crawlers which ungated resources are the most authoritative, directing them toward the latest product documentation, research, and guides while excluding archived or deprecated versions. AGENTS.md goes further: it provides machine-readable operational rules for AI agents interacting with your brand data, including certified data sources, prohibited actions, and human contacts to surface when conflicting information is encountered.</p>
+
+      <!-- Measurement -->
+      <h2 id="measurement">How to Measure GEO Success</h2>
+
+      <div class="section-answer">The new North Star metric is Citation Share, the percentage of relevant AI answers that cite your domain as a source. This is distinct from AI Visibility, which simply tracks whether your brand is mentioned. A citation confirms the AI engine found your live content useful enough to attribute a specific fact to it.</div>
+
+      <div class="stat-callout">
+        <div class="sc-val">60%</div>
+        <div class="sc-text">Projected zero-click rate in AI search by end of 2026: meaning the majority of B2B brand value is realised inside the AI response itself, not on your website. Citation Share, not organic sessions, is the metric that matters.</div>
+      </div>
+
+      <p>The supporting metrics that build toward Citation Share:</p>
+
+      <ul>
+        <li><strong>Citation Rate:</strong> Average citations earned per 100 queries in your tracked query set.</li>
+        <li><strong>Position in Citation Panel:</strong> Rank order within the sources list. Position 1 captures the majority of click-throughs; positions 4+ see near-zero traffic.</li>
+        <li><strong>Click-Through to Source (CTS):</strong> Highly platform-dependent, Perplexity averages 15–25%, Google AIO sits at 1–3%. Understand which platform is driving which behaviour.</li>
+        <li><strong>Recency Window:</strong> AI answers shift rapidly. A 30-day-old citation score is historical data; a 14-day window is the operational standard.</li>
+      </ul>
+
+      <!-- Action plan -->
+      <h2 id="action-plan">The Three-Phase GEO Action Plan for This Quarter</h2>
+
+      <div class="phase-block">
+        <div class="phase-label">Phase 1, Audit and Entity Alignment</div>
+        <p>Before optimising content, establish how you are understood at the entity level. Run a Citation Share audit across ChatGPT, Perplexity, and Gemini for your most important commercial queries. Confirm your brand name and category are identical across your website, LinkedIn, Crunchbase, and Wikidata. Check that <a href="/Blogs/how-ai-crawlers-index-your-site.html">GPTBot, OAI-SearchBot, and Google-Extended are not blocked in your robots.txt</a> from accessing high-value pages.</p>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-label">Phase 2, Structural and Content Re-Engineering</div>
+        <p>Restructure top-performing pages as Enhanced Entity Pages with question-based H2 and H3 headings. Open every major section with a 40–60 word answer capsule. Integrate at least one verifiable statistic and one authoritative third-party citation into every 500 words. Implement JSON-LD schema (Article, FAQPage, or Product as appropriate) and build the RAG data layer with retrieval hints for each page.</p>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-label">Phase 3, Open the Content Wall and Build Your AI Governance Layer</div>
+        <p>Identify the content prospects use to form their shortlists, pricing, technical specs, comparison guides, ROI frameworks, and remove all gates from these pages. A lead-gen form is a retrieval blocker: if the AI crawler cannot read your white paper, it cannot recommend your brand. Deploy an llms.txt file at your domain root and prepare an AGENTS.md file to provide operational guidance for autonomous agents. Establish a 14-day Citation Share reporting cadence to measure the compounding effect of each change.</p>
+      </div>
+
+      <!-- Conclusion -->
+      <h2 id="conclusion">Conclusion: The Physics of AI Search Have Changed</h2>
+
+      <p>The era of the ten blue links is functionally over. In its place, the Answer Economy operates by the logic of Retrieval-Augmented Generation, a five-stage pipeline that retrieves, re-ranks, and synthesises content into a verdict the buyer trusts as authoritative.</p>
+
+      <p>For B2B marketing teams, this is not a new channel to add to the mix. It is a new physics for the entire discovery layer of the buying journey. The brands that emerge as the definitive answers to their buyers' AI queries in 2026 will be the ones that compound that authority into durable competitive moats over the following years.</p>
+
+      <p>The research is clear, the buyer data is clear, and the mechanics are now explained. The only remaining question is whether your content architecture is ready to be retrieved.</p>
+
+      <!-- About -->
+      <div class="about-block">
+        <div class="about-label">Sources</div>
+        <p><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Princeton/Georgia Tech GEO Study</a> &nbsp;·&nbsp; <a href="https://learn.g2.com/g2-2026-ai-search-insight-report" target="_blank" rel="noopener">G2 Answer Economy Report 2026</a> &nbsp;·&nbsp; <a href="https://6sense.com/science-of-b2b/buyer-experience-report-2025/" target="_blank" rel="noopener">6sense B2B Buyer Experience Report 2025</a> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2603.29979" target="_blank" rel="noopener">arXiv GEO-SFE Research 2026</a>. Data presented as published; rawmktg. makes no representation as to subsequent changes in these figures.</p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Key statistics">
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Key Numbers</div>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-val">51%</div>
+            <div class="stat-label">Of B2B software buyers now begin research in an AI chatbot (G2, 2026)</div>
+          </div>
+          <hr class="stat-divider" />
+          <div class="stat-item">
+            <div class="stat-val">115%</div>
+            <div class="stat-label">AI visibility increase for position-5 pages that added structured citations</div>
+          </div>
+          <hr class="stat-divider" />
+          <div class="stat-item">
+            <div class="stat-val">69%</div>
+            <div class="stat-label">Of buyers chose a different vendor than initially planned based on AI guidance</div>
+          </div>
+          <hr class="stat-divider" />
+          <div class="stat-item">
+            <div class="stat-val">5–10</div>
+            <div class="stat-label">Passages from across the entire web that advance to the generation stage per query</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">In This Article</div>
+        <ol class="toc-list">
+          <li><a href="#what-is-rag"><span class="toc-num">01</span>What is RAG?</a></li>
+          <li><a href="#chunking"><span class="toc-num">02</span>Why chunking matters</a></li>
+          <li><a href="#pipeline"><span class="toc-num">03</span>The five-stage pipeline</a></li>
+          <li><a href="#platforms"><span class="toc-num">04</span>ChatGPT vs Perplexity vs Gemini</a></li>
+          <li><a href="#research"><span class="toc-num">05</span>What the GEO research shows</a></li>
+          <li><a href="#buyer"><span class="toc-num">06</span>Where is the B2B buyer?</a></li>
+          <li><a href="#architecture"><span class="toc-num">07</span>Restructuring for RAG</a></li>
+          <li><a href="#measurement"><span class="toc-num">08</span>How to measure GEO</a></li>
+          <li><a href="#action-plan"><span class="toc-num">09</span>Three-phase action plan</a></li>
+          <li><a href="#conclusion"><span class="toc-num">10</span>Conclusion</a></li>
+        </ol>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links">
+        <a href="mailto:vinayak@epicslope.partners">Contact</a>
+        <a href="/llms.txt">llms.txt</a>
+      </div>
+      <span>© 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

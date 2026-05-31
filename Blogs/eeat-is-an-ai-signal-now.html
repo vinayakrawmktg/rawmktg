@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>E-E-A-T Is an AI Signal Now: LLM Preferences Explained · rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="E-E-A-T is no longer a qualitative guideline for human raters. It is mathematically encoded into LLM parameter weights through RLHF and DPO training pipelines. A technical breakdown of how it works and a 90-day execution plan." />
+  <meta name="author" content="rawmktg." />
+  <link rel="canonical" href="https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html" />
+  <meta property="og:title"       content="E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences" />
+  <meta property="og:description" content="96% of AI Overview citations go to sources with verifiable E-E-A-T profiles. Here is the technical mechanism behind that, and the 90-day plan to act on it." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/e-e-a-t-is-an-ai-signal-now-header.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-05-29T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLMs" />
+  <meta name="twitter:description" content="96% of AI Overview citations go to strong E-E-A-T sources. Pages ranked #5 with high E-E-A-T outperform #1 results by 2.3x in AI citation frequency. The technical breakdown." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/e-e-a-t-is-an-ai-signal-now-header.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences",
+    "description": "E-E-A-T is mathematically encoded into LLM parameter weights via RLHF and DPO training. A technical breakdown of the alignment pipeline, Google's Content Warehouse signals, and a 90-day GEO execution framework.",
+    "image": "https://rawmktg.com/assets/images/e-e-a-t-is-an-ai-signal-now-header.png",
+    "url": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html" },
+    "keywords": ["E-E-A-T", "GEO", "Generative Engine Optimization", "AI citations", "RLHF", "DPO", "LLM preferences", "AI search", "content strategy", "B2B marketing", "Google Quality Rater Guidelines"]
+  }
+  </script>
+
+  <!-- Speakable for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
+    "url": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#D04A2A; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,50px);line-height:1.06;letter-spacing:-0.028em;color:var(--ink);margin-bottom:20px;max-width:860px;}
+    .article-deck{font-family:var(--f-prose);font-size:18px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:0;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar blocks */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content blockquote{border-left:3px solid var(--signal);padding:12px 20px;margin:24px 0;background:var(--paper-2);border-radius:0 6px 6px 0;font-style:italic;color:var(--ink-2);}
+
+    /* Section answer callout */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.action{color:rgba(242,239,232,.88);font-style:italic;}
+
+    /* Pipeline phases */
+    .pipeline{display:flex;flex-direction:column;gap:0;margin:28px 0 36px;}
+    .pipeline-step{display:grid;grid-template-columns:80px 1fr;gap:0;border:1px solid var(--rule);border-bottom:none;}
+    .pipeline-step:first-child{border-radius:8px 8px 0 0;}
+    .pipeline-step:last-child{border-bottom:1px solid var(--rule);border-radius:0 0 8px 8px;}
+    .ps-num{background:var(--ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;gap:4px;}
+    .ps-num .n{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:-0.02em;color:var(--signal);}
+    .ps-num .stage{font-family:var(--f-mono);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center;}
+    .ps-body{padding:16px 20px;background:var(--paper);}
+    .ps-title{font-family:var(--f-display);font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px;}
+    .ps-desc{font-family:var(--f-prose);font-size:13px;line-height:1.65;color:var(--ink-2);margin-bottom:8px;}
+    .ps-action{font-family:var(--f-mono);font-size:11px;line-height:1.55;color:var(--signal);border-top:1px solid var(--rule);padding-top:8px;margin-top:2px;}
+    .ps-desc a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+
+    /* Phase blocks */
+    .phase-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:22px 24px;margin-bottom:20px;}
+    .phase-block-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:12px;}
+    .phase-block h4{font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em;}
+    .phase-block p{font-family:var(--f-prose);font-size:13px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .phase-block a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+
+    /* Sources list */
+    .sources-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .sources-list li{font-family:var(--f-mono);font-size:11.5px;line-height:1.55;color:var(--mute);padding-left:16px;position:relative;}
+    .sources-list li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .sources-list a{color:var(--mute);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color 0.15s;}
+    .sources-list a:hover{color:var(--signal);}
+
+    /* About / data note */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .pipeline-step{grid-template-columns:60px 1fr;}
+    }
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences", "item": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- Nav -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header image -->
+<img src="../assets/images/e-e-a-t-is-an-ai-signal-now-header.png"
+     alt="E-E-A-T is an AI signal now: how Google's quality framework got baked into LLM preferences - rawmktg."
+     class="article-header-img" width="1200" height="630">
+
+<!-- Article header -->
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <span class="eyebrow-tag">Authority &amp; Trust · GEO</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-date">May 2026</span>
+    </div>
+    <h1 class="article-headline">E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences</h1>
+    <p class="article-deck">For nearly two decades, E-E-A-T was a qualitative guideline for human search quality raters. Today, those same quality preferences are mathematically encoded into the parameter weights of large language models. The gap between writing for E-E-A-T and writing for AI citation has collapsed to zero.</p>
+  </header>
+</div>
+
+<!-- Article body -->
+<div class="page">
+  <div class="article-body">
+
+    <main class="article-content" id="article-main">
+
+      <p>The rules of digital visibility are being rewritten. For nearly two decades, Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, and Trustworthiness) functioned as a <a href="https://outpaceseo.com/glossary/google-search-quality-rater-guidelines/" target="_blank" rel="noopener">qualitative guideline for human search quality raters</a>. It was abstract, interpretive, and largely invisible to the algorithms themselves. That era is over.</p>
+
+      <p>Today, those same human-defined quality preferences are mathematically encoded into the parameter weights of large language models (LLMs) through a process called preference alignment. When a generative AI system like Perplexity, Google AI Overviews, or ChatGPT Search decides which sources to cite, it is not running a fresh keyword match. It is <a href="/Blogs/how-rag-actually-works.html">executing a policy baked in during training</a>, a policy that mirrors, with striking precision, the criteria Google trained its human raters to apply. The gap between "writing for E-E-A-T" and "writing for AI citation" has effectively collapsed to zero.</p>
+
+      <p>This article traces the technical mechanism behind that collapse: how RLHF and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.</p>
+
+
+      <h2 id="paradigm-shift">From Search Signal to Parameter Weight: The Paradigm Shift</h2>
+
+      <div class="section-answer">In classical SEO, E-E-A-T was a set of diffuse, second-order signals. A website could compensate for weak authority through strong technical execution. In generative search, E-E-A-T does not function as a ranking booster. It functions as an inclusion filter.</div>
+
+      <p>In classical search engine optimization, E-E-A-T was a set of diffuse, second-order signals. A website could often compensate for weak authority through strong technical execution, efficient crawl budgets, and aggressive link acquisition. The ranking gradient was forgiving. <a href="https://notionhive.com/blog/eeat-vs-llms-authority-without-backlinks" target="_blank" rel="noopener">Generative Search Engines operate under entirely different mechanics</a>.</p>
+
+      <p>Systems like Perplexity, Google AI Overviews, Gemini, and ChatGPT Search synthesize answers by retrieving information from multiple sources and summarizing them using LLMs. This architecture breaks the historical connection between organic rankings and visibility. Within a generative search engine, E-E-A-T does not function as a ranking booster. It functions as an inclusion filter.</p>
+
+      <p>The evidence is stark. <a href="https://ziptie.dev/blog/eeat-for-ai-search/" target="_blank" rel="noopener">Research on AI Overview citation frequency</a> shows that 96% of AI Overview citations go to sources with exceptionally strong, verifiable E-E-A-T profiles. Pages ranked at position 5 in organic search that demonstrate high E-E-A-T signals outperform top-ranked results by 2.3x in AI citation frequency. If your content lacks structured, verifiable authority, the generative engine will not include it, regardless of how high it ranks in traditional search.</p>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Traditional SEO vs. Generative Engine Optimization: structural comparison</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Traditional SEO</th>
+              <th>Generative Engine Optimization (GEO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Authority Target</td>
+              <td>Link-based equity (PageRank), anchor text, domain authority scores</td>
+              <td class="action">Semantic authority, Knowledge Graph density, co-occurrence in trusted publications</td>
+            </tr>
+            <tr>
+              <td class="label">Retrieval Architecture</td>
+              <td>Ranked lists of URLs pointing to external pages</td>
+              <td class="action">Grounded, multi-source retrieval-augmented synthesis with inline citation</td>
+            </tr>
+            <tr>
+              <td class="label">Filter Style</td>
+              <td>Continuous ranking gradients across a smooth scoring distribution</td>
+              <td class="action">Binary gatekeeping requiring computational verification of source credibility</td>
+            </tr>
+            <tr>
+              <td class="label">Content Unit</td>
+              <td>Long-form documents optimized for keyword density and heading structure</td>
+              <td class="action">Self-contained 150-to-300-word semantic passages optimized for extraction</td>
+            </tr>
+            <tr>
+              <td class="label">Verification Loop</td>
+              <td>Historical backlink profiles and domain registration signals</td>
+              <td class="action">Real-time consensus matching, outbound citation authority, cross-source corroboration</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <h2 id="alignment-pipeline">The Alignment Pipeline: How Human Preferences Shape Model Weights</h2>
+
+      <div class="section-answer">The trust hierarchy inside an LLM is the outcome of a deliberate post-training process called preference alignment. This is precisely where E-E-A-T principles are converted from qualitative guidelines into quantitative model weights, across three sequential phases.</div>
+
+      <p>The trust hierarchy inside an LLM is not an accident. It is the outcome of a deliberate post-training process called preference alignment, designed to transform a raw statistical prediction engine into a system that behaves as helpfully, honestly, and harmlessly as a knowledgeable human expert would. <a href="https://medium.com/@vi.ha.engr/building-an-rlhf-pipeline-for-llms-a-beginner-friendly-tutorial-21112bfcff9b" target="_blank" rel="noopener">This multi-stage pipeline</a> is precisely where E-E-A-T principles are converted from qualitative guidelines into quantitative model weights.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">01</span><span class="stage">Phase</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Supervised Fine-Tuning (SFT)</div>
+            <div class="ps-desc">Before any reinforcement learning begins, the base model undergoes SFT on curated datasets of high-quality prompt-response pairs written by human experts. This phase transitions the model from raw text completion to structured instruction-following. Critically, <a href="https://www.ibm.com/think/topics/rlhf" target="_blank" rel="noopener">developers apply filtering heuristics</a> that favor expert-sounding, structured dialogue formats, priming the network's parameters to expect the kind of precise, authoritative communication that high-E-E-A-T content exemplifies.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">02</span><span class="stage">Phase</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Reward Modeling and the Human Rater Connection</div>
+            <div class="ps-desc">Once fine-tuned, the model generates multiple candidate responses for a given prompt. Human evaluators, operating under guidelines that <a href="https://www.longato.ch/does-llms-like-chatgpt-gemini-use-eeat/" target="_blank" rel="noopener">closely mirror Google's Search Quality Rater Guidelines</a>, rank those candidate outputs based on utility, correctness, and authority. This preference data trains a Reward Model that learns to predict which responses a knowledgeable human would prefer. <a href="https://arxiv.org/html/2505.10597v1" target="_blank" rel="noopener">Collaborative Reward Modeling (CRM) frameworks</a> address reward hacking by using dual reward models that peer-review each other's training data, filtering out the noisy, mislabeled preferences that would otherwise teach the model to produce polished misinformation.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">03</span><span class="stage">Phase</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Direct Preference Optimization (DPO)</div>
+            <div class="ps-desc">The dominant modern alignment approach has shifted from classical RLHF with Proximal Policy Optimization (PPO) to <a href="https://aiengineering.academy/LLM/TheoryBehindFinetuning/DPO/" target="_blank" rel="noopener">Direct Preference Optimization (DPO)</a>. DPO eliminates the need for a separate reward model by showing that the optimal policy can be derived analytically and optimized directly on preference pairs. For SEO and marketing practitioners, the implication is straightforward: the models your customers use were trained on a reward signal that explicitly rewards E-E-A-T-consistent content.</div>
+          </div>
+        </div>
+      </div>
+
+
+      <h2 id="factuality-layer">The Factuality Layer: F-DPO and TI-DPO</h2>
+
+      <div class="section-answer">Standard DPO contains a structural vulnerability: human annotators tend to prefer confident, fluent responses, which can teach models to produce persuasive misinformation. Two research advances directly address this, and both have direct implications for how content is scored and cited.</div>
+
+      <p>Standard DPO contains a structural vulnerability that matters enormously for content creators. Because human annotators tend to prefer confident, fluent responses, standard preference optimization can inadvertently teach models to produce persuasive misinformation rather than accurate but less stylistically polished answers. Two recent research advances directly address this problem.</p>
+
+      <p><strong>Factuality-Aware DPO (F-DPO)</strong> modifies the alignment process by integrating binary factuality indicators directly into the preference learning objectives. <a href="https://arxiv.org/html/2601.03027v1" target="_blank" rel="noopener">Empirical benchmarks show</a> that F-DPO reduces hallucination rates on models like Qwen3-8B by five times (from 0.424 to 0.084) while simultaneously improving factual scores by 50% (from 5.26 to 7.90). When a human-preferred response is determined to be less factual than the dispreferred response, F-DPO flips the preference pair, ensuring the model is penalized for polished misinformation rather than rewarded for it.</p>
+
+      <p><strong>Token-Importance Guided DPO (TI-DPO)</strong> addresses a different flaw: standard DPO treats all tokens equally, wasting optimization budget on filler words rather than on the critical factual entities and statistics that determine whether a response is trustworthy. <a href="https://openreview.net/forum?id=cMEnMVvMw9" target="_blank" rel="noopener">TI-DPO uses gradient-based token attribution</a> to assign high optimization weight to critical semantic units (specific numbers, named entities, verifiable claims) and downweight background stylistic noise. The practical consequence: models trained with TI-DPO are specifically tuned to notice and reproduce accurate factual entities, the exact elements that distinguish authoritative content from generic filler.</p>
+
+
+      <h2 id="activation-space">Where Trustworthiness Lives: Inside the Model's Activation Space</h2>
+
+      <div class="section-answer">Preference alignment does not merely change what a model says. It changes the geometric structure of how the model internally represents information. Two research paradigms explain this: Representation Engineering and Contrast-Consistent Search. Both have a direct, concrete implication for content creators.</div>
+
+      <p>Preference alignment does not merely change what a model says. It changes the geometric structure of how the model internally represents information. Two complementary research paradigms illuminate this: Representation Engineering (RepE) and Contrast-Consistent Search (CCS).</p>
+
+      <p><a href="https://montrealethics.ai/representation-engineering-a-top-down-approach-to-ai-transparency/" target="_blank" rel="noopener">Representation Engineering (RepE)</a> treats the high-dimensional activation spaces formed across neural network layers as the fundamental unit of analysis. By prompting models with contrastive templates (honest prompts versus dishonest prompts), RepE identifies the precise directional axis in the activation space that corresponds to truthfulness. It then steers the model's internal activations during inference using Low-Rank Representation Adaptation (LoRRA), actively suppressing outputs that align with the deception axis. <a href="https://arxiv.org/html/2503.03750v2" target="_blank" rel="noopener">Rigorous truthfulness benchmarks like TruthfulQA</a> confirm significant performance improvements through this approach.</p>
+
+      <p><a href="https://openreview.net/forum?id=fMFwDJgoOB" target="_blank" rel="noopener">Contrast-Consistent Search (CCS)</a> takes a different approach: rather than actively steering activations, it probes for stable truthfulness directions that already exist within a model's pre-trained layers. CCS trains a lightweight classifier on contrastive pairs of statements and finds that truthfulness is geometrically encoded, consistently, in intermediate model layers across a wide range of topics.</p>
+
+      <p>The marketing implication of both findings is significant. If your content contains internally inconsistent claims, exaggerated copy, or factual errors, it triggers activation states that align with the model's "low-trust" axis. During retrieval, the model's attention mechanisms are then less likely to select and cite those passages. This is not a keyword penalty. It is a deep, structural exclusion from the model's generative output.</p>
+
+      <div class="stat-callout">
+        <div class="sc-val">96%</div>
+        <div class="sc-text">Of AI Overview citations go to sources with exceptionally strong, verifiable E-E-A-T profiles. Pages at position 5 in organic search with high E-E-A-T signals outperform top-ranked results by 2.3x in AI citation frequency.</div>
+      </div>
+
+
+      <h2 id="content-warehouse">Google's Automated Quality Machine: Signals from the Content Warehouse Leak</h2>
+
+      <div class="section-answer">While LLMs encode E-E-A-T through preference alignment, Google's traditional search stack evaluates it through automated ML classifiers. The architecture of this system was exposed via the leak of Google's internal Content Warehouse API documentation and confirmed through DOJ antitrust trial testimony.</div>
+
+      <p>While LLMs encode E-E-A-T through preference alignment, Google's traditional search stack evaluates it through automated machine learning classifiers. The architecture of this system was exposed via the leak of <a href="https://www.bubblehub.ie/blog/on-page-seo" target="_blank" rel="noopener">Google's internal Content Warehouse API documentation</a> and confirmed through DOJ antitrust trial testimony from Google's VP of Search, Pandu Nayak. The system evaluates every indexed page and domain along two primary dimensions: static Quality (Q*) and dynamic Popularity (P*).</p>
+
+      <h3>The contentEffort Attribute: Measuring Creative Investment</h3>
+      <p>The most consequential signal for content creators is the <a href="https://www.hobo-web.co.uk/the-contenteffort-attribute-the-helpful-content-system-and-e-e-a-t-is-gemini-behind-the-hcu/" target="_blank" rel="noopener">contentEffort attribute</a>, housed within the QualityNsrPQData module. This is an LLM-based estimation of human labor and creative investment, designed as a countermeasure against low-effort, automated content generation. It evaluates three primary factors:</p>
+      <ul>
+        <li><strong>Replicability Assessment:</strong> How easily could this page be reproduced by a standard generative model? Pages containing generic, formulaic text score poorly. Pages integrating original research, primary data, custom visual assets, and direct expert interviews receive high effort scores.</li>
+        <li><strong>Linguistic and Structural Complexity:</strong> The logical hierarchy of the text, the precision of vocabulary, and the integration of authoritative outbound references are all evaluated.</li>
+        <li><strong>Multi-Modal Asset Analysis:</strong> Using multi-modal models like Gemini, the system distinguishes custom-designed diagrams, tools, and infographics from generic stock imagery or templated designs.</li>
+      </ul>
+
+      <h3>siteFocusScore and siteRadius: Topical Authority as a Vector Problem</h3>
+      <p>Topical authority is evaluated at the domain level using <a href="https://www.hobo-web.co.uk/topical-authority/" target="_blank" rel="noopener">site2vec embedding technology</a>. Two metrics define this evaluation. The <strong>siteFocusScore</strong> quantifies how tightly a domain focuses its publishing footprint on a primary, specialized theme. The <strong>siteRadius</strong> measures the topical distance between an individual page's semantic vector and the host domain's central theme. When a specialized domain publishes content that drifts far from its core focus, the siteRadius increases, diluting the site's overall topical authority.</p>
+
+      <p>There is also the <strong>predictedDefaultNsr</strong> attribute, a VersionedFloatSignal that tracks quality trajectory over time rather than calculating a static score. A domain that consistently publishes high-quality content builds positive "algorithmic momentum," making it resilient to minor quality fluctuations and algorithm updates. Sites that publish inconsistently face the inverse: "algorithmic friction" that compounds against them.</p>
+
+      <h3>NavBoost: The Dynamic Popularity Signal</h3>
+      <p>Static quality assessments are validated by the NavBoost system, which monitors a rolling 13-month window of user interaction data from search clicks and Chrome browser telemetry. NavBoost categorizes interactions into three explicit verification vectors: <strong>goodClicks</strong> (significant dwell time, no return to search results), <strong>badClicks</strong> (rapid bounces), and <strong>lastLongestClicks</strong> (the final result a user selects before ending a search session, a strong signal of query resolution). A page receiving algorithmic demotions from classifiers like the scamness score, GibberishScore, or copycatScore requires strong positive NavBoost signals to override those classifications.</p>
+
+
+      <h2 id="quality-rater-guidelines">The 2025 Quality Rater Guidelines Update: AI Content Gets a Hard Line</h2>
+
+      <div class="section-answer">Google's 2025 updates to its Search Quality Rater Guidelines removed any remaining ambiguity about how AI-generated content is treated. If all or almost all of the main content on a page is AI-generated with little to no added value, raters must apply the "Lowest" quality rating.</div>
+
+      <p>Google's <a href="https://originality.ai/blog/google-search-quality-rater-guidelines-ai" target="_blank" rel="noopener">2025 updates to its Search Quality Rater Guidelines</a> (used by approximately 16,000 external evaluators) removed any remaining ambiguity about how AI-generated content is treated. The updated guidelines state clearly: if all or almost all of the main content on a page is AI-generated with little to no added value, raters must apply the "Lowest" quality rating.</p>
+
+      <p>The update adds a dedicated section on "filler content," defined as wordy, repetitive text that lacks substance. <a href="https://dreamwarrior.com/blog/google-search-quality-raters-guidelines-updated/" target="_blank" rel="noopener">Evaluators are instructed to identify AI spam</a> using signals including: obvious AI formatting artifacts (phrases like "As an AI assistant..."), automated summaries that lack original insight, text that mimics human writing but provides only generic explanations, and unnatural repetition of keywords or formulaic phrasing patterns.</p>
+
+      <p>Two additional updates deserve attention. First, guest contributions and syndicated content face stricter scrutiny: if guest content is irrelevant to the host domain's primary audience, it can negatively affect the entire site's quality classification. Second, evaluators are now required to disable ad blockers when assessing pages, ensuring they evaluate the full user experience, including any intrusive advertising or deceptive layouts that might compromise perceived trustworthiness.</p>
+
+
+      <h2 id="mageo">Next-Generation GEO: MAGEO, DSV-CF, and the Research Frontier</h2>
+
+      <div class="section-answer">As GEO matures, the field is moving from manual, page-level adjustments to automated multi-agent frameworks. MAGEO coordinates three dedicated agents to continuously learn and apply engine-specific optimization skills. DSV-CF introduces a dual-axis metric that penalizes spurious citations alongside raw citation volume.</div>
+
+      <p>As generative engine optimization matures, the field is moving from manual, page-level adjustments to automated, multi-agent frameworks and sophisticated evaluation metrics.</p>
+
+      <p><a href="https://arxiv.org/html/2604.19516v1" target="_blank" rel="noopener">MAGEO (Multi-Agent Generative Engine Optimization)</a> reframes GEO as a continuous strategy learning problem coordinated by three dedicated agents: a Planning Agent that analyzes target queries and evaluates competitive landscapes; an Editing Agent that applies targeted structural edits to source content; and a Fidelity-Aware Evaluation Agent that ensures edits preserve original factual meaning without introducing errors. Over training cycles, MAGEO distills validated editing patterns into reusable, engine-specific optimization skills.</p>
+
+      <p>To measure the effectiveness of these optimization loops, researchers have developed the Dual-axis Semantic Visibility and Citation Fidelity (DSV-CF) metric. Traditional metrics often measure simple exposure; DSV-CF evaluates two axes: the Semantic Visibility Axis (position, word count, and visual prominence of citations within generated responses) and the Citation Fidelity Axis (which penalizes "spurious citations" where a model attributes a claim to a source that does not actually support it). The <a href="https://arxiv.org/html/2509.05607v2" target="_blank" rel="noopener">CC-GSEO-Bench framework</a> extends this with a content-centric benchmark evaluating creator influence across three dimensions: Exposure, Faithful Credit, and Causal Impact.</p>
+
+
+      <h2 id="geo-trinity">The On-Page Playbook: The GEO Holy Trinity</h2>
+
+      <div class="section-answer"><a href="/Blogs/geo-compounding-flywheel.html">The original KDD 2024 GEO study from Princeton University</a> evaluated nine distinct content modifications. Three tactics consistently delivered the largest gains in AI citation frequency, now collectively referred to as the "Holy Trinity" of GEO: Quotation Addition, Statistics Addition, and Cite Sources.</div>
+
+      <p>The <a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener">original KDD 2024 Generative Engine Optimization study from Princeton University</a> evaluated nine distinct content modifications to measure their impact on AI citation frequency. Three tactics consistently delivered the largest gains:</p>
+
+      <div class="tt-wrap">
+        <div class="tt-label">GEO Holy Trinity: empirical results from the Princeton/Georgia Tech study (PAWC = Position-Adjusted Word Count, SI = Subjective Impression)</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Tactic</th>
+              <th>PAWC Gain</th>
+              <th>SI Gain</th>
+              <th>Why It Works</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Quotation Addition</td>
+              <td class="up">+41%</td>
+              <td class="up">+28%</td>
+              <td>Expert quotes function as high-trust semantic anchors that models extract and attribute directly.</td>
+            </tr>
+            <tr>
+              <td class="label">Statistics Addition</td>
+              <td class="mid">+31%</td>
+              <td class="mid">+23%</td>
+              <td>Concrete numbers are easier for attention heads to isolate and reproduce accurately.</td>
+            </tr>
+            <tr>
+              <td class="label">Cite Sources</td>
+              <td class="mid">+30%</td>
+              <td class="mid">+20%</td>
+              <td>Outbound links to primary sources act as real-time verification signals during retrieval.</td>
+            </tr>
+            <tr>
+              <td class="label">Fluency Optimization</td>
+              <td class="mute">+28%</td>
+              <td class="mute">+15%</td>
+              <td>Improved readability makes text easier for models to parse and summarize cleanly.</td>
+            </tr>
+            <tr>
+              <td class="label">Authoritative Voice</td>
+              <td class="mute">+10%</td>
+              <td class="mute">+8%</td>
+              <td>Confident, direct tone aligns with stylistic patterns of high-trust training data.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1. Quotation Addition: High-Trust Semantic Anchors</h3>
+      <p>Direct expert quotes enclosed in quotation marks function as high-trust semantic anchors, allowing models to easily extract and attribute assertions. Implementation requires moving beyond paraphrased text to verbatim statements from accredited Subject Matter Experts (SMEs) with established external digital footprints, such as professional publications, speaking engagements, or entries in Wikidata. Embed quotes within clean HTML <code>&lt;blockquote&gt;</code> tags, explicitly attributing each quote with the expert's full name, official title, and primary credentials.</p>
+
+      <h3>2. Statistics Addition: Replacing Adjectives with Data Points</h3>
+      <p><a href="https://derivatex.agency/blog/princeton-geo-paper-plain-english/" target="_blank" rel="noopener">Replacing qualitative adjectives with precise, year-specific statistics</a> makes content significantly easier for model attention heads to isolate and cite. The practical step: audit your content and replace vague claims like "Our platform significantly improves conversion rates" with precise, verifiable data points like "Our platform delivers an average 18.4% increase in conversion rates for enterprise e-commerce brands, based on our 2025 Performance Benchmark Report." Present this data in structured formats such as tables or definition lists. The TI-DPO training regime means that models are specifically fine-tuned to weight numerical entities more heavily during response generation.</p>
+
+      <h3>3. Cite Sources: Outbound Links as Verification Signals</h3>
+      <p>While traditional SEO treats inbound links as votes of confidence, GEO uses outbound links to primary sources as verification signals. <a href="https://www.bbehmermedia.com/holy-trinity-geo-citations-quotes-stats" target="_blank" rel="noopener">Every substantive assertion should be supported by an outbound citation</a> pointing to an authoritative, primary domain such as government databases, academic institutions, or established industry research bodies. Use descriptive inline anchor text rather than generic links, so the citation relationship is unambiguous to the model.</p>
+
+
+      <h2 id="off-page">Building Off-Page Semantic Authority and Entity Footprints</h2>
+
+      <div class="section-answer">In generative search, off-page authority is no longer determined by backlink volume. Generative models are representation engines that evaluate credibility by analyzing semantic relationships and co-occurrence patterns across high-dimensional vector spaces. Four off-page factors correlate most strongly with AI citation probability.</div>
+
+      <p>In generative search, off-page authority is no longer determined by backlink volume. <a href="https://notionhive.com/blog/eeat-vs-llms-authority-without-backlinks" target="_blank" rel="noopener">Generative models are representation engines</a> that evaluate credibility by analyzing semantic relationships and co-occurrence patterns across high-dimensional vector spaces. Four off-page factors correlate most strongly with AI citation probability:</p>
+
+      <ul>
+        <li><strong>Vector Embedding Alignment (0.84 correlation):</strong> How closely the semantic footprint of your off-site content aligns with the latent intent vectors of targeted consumer queries. Built by publishing deep, comprehensive content across multiple authoritative industry platforms.</li>
+        <li><strong>Knowledge Graph Density (0.76 correlation):</strong> A brand's presence within structured external databases such as Google's Knowledge Graph, Wikidata, Wikipedia, and DBpedia acts as a primary source of truth for AI engines, allowing models to verify the relationships between entities, people, products, and services.</li>
+        <li><strong>Branded Web Mentions (0.392 correlation) and Search Volume (0.334 correlation):</strong> High-frequency occurrences of your brand name alongside targeted keyword phrases across authoritative publications create strong semantic associations, effectively training model weights to view your brand as a natural answer to queries in your topic space.</li>
+        <li><strong><a href="/Blogs/schema-markup-ai-citations-2026.html">Schema Markup (73% selection boost) and Metadata (40% citation increase)</a>:</strong> Proper implementation of Schema.org structured data provides generative engines with a clear, machine-readable guide to your content, significantly boosting selection rates.</li>
+      </ul>
+
+      <h3>Three Systematic Off-Page Initiatives</h3>
+      <ul>
+        <li><strong>Structured Schema and Identity Matching:</strong> Deploy robust <a href="/Blogs/schema-markup-ai-citations-2026.html">Organization and Person schema markup</a> across all core web properties. Use the <code>sameAs</code> property to link your brand and its featured experts directly to authoritative third-party entity profiles such as Wikidata, Wikipedia, or professional associations. Use the <code>knowsAbout</code> schema property within Person profiles to explicitly define the semantic categories where your authors possess certified expertise.</li>
+        <li><strong>Wikidata and Wikipedia Entity Mapping:</strong> Establish and maintain verified listings on Wikidata. Because Wikidata serves as a primary training corpus and retrieval layer for foundational LLMs, having a structured, queryable entity record cements your brand's existence in the semantic layer of the web, making it verifiable and citable by default.</li>
+        <li><strong>PR-Driven Co-occurrence and Earned Media:</strong> Traditional SEO link acquisition often targets cheap, low-traffic blogs. In generative search, this approach is largely ineffective. <a href="https://ziptie.dev/blog/eeat-for-ai-search/" target="_blank" rel="noopener">Earned media placements drive over 90% of all AI citations</a>, and because LLM knowledge bases are frozen for extended periods, a single high-quality placement on a trusted platform continues to drive AI citations for 18 to 24 months post-publication.</li>
+      </ul>
+
+
+      <h2 id="90-day-framework">The 90-Day Execution Framework</h2>
+
+      <div class="section-answer">Translating this technical understanding into operational practice requires a structured, phased approach. The following 90-day framework builds semantic authority, optimizes on-page structure, and maximizes citation visibility across generative search engines.</div>
+
+      <div class="phase-block">
+        <div class="phase-block-label">Phase 1: Foundation</div>
+        <h4>Weeks 1-4: Build verifiable identity infrastructure</h4>
+        <p>Begin with a rigorous site-wide <a href="https://ahrefs.com/blog/eeat-audit/" target="_blank" rel="noopener">E-E-A-T audit</a>, removing anonymous or generic "by admin" bylines and replacing them with verified author profiles that include credentials, publication history, and external links to professional profiles. Deploy comprehensive Organization and Person schema markup across your top organic pages, linking authors to third-party profiles using <code>sameAs</code> and <code>knowsAbout</code> properties. Query Google's Knowledge Graph API to verify entity recognition status for your brand and key authors. Primary metrics: schema compliance rates, Knowledge Graph entity ID verification, and branded organic search volume.</p>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-block-label">Phase 2: On-Page GEO Injection</div>
+        <h4>Weeks 5-8: Restructure content for extraction</h4>
+        <p>Restructure existing content into self-contained, 150-to-300-word passages that directly answer high-intent queries. Implement the GEO Holy Trinity across your highest-value pages: add authoritative outbound citations to primary sources, integrate verbatim expert quotes with explicit attribution, and convert qualitative assertions into structured, tabular statistics with year-specific data points. <a href="https://www.elementera.com/blog/generative-engine-optimization-what-geo-aeo-ai-search-paper-shows-your-business" target="_blank" rel="noopener">Target a 30-to-40% increase in citation frequency</a> across ChatGPT, Perplexity, and Google AI Overviews as your primary success metric.</p>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-block-label">Phase 3: Authority Amplification</div>
+        <h4>Weeks 9-12: Build off-site semantic authority</h4>
+        <p>Execute high-tier PR and earned media campaigns on trusted platforms to build brand mentions and semantic co-occurrence. Focus placements on mainstream news outlets, respected industry publications, and established digital communities where your target audience already has high trust. Simultaneously, monitor site-wide topical focus by analyzing siteRadius metrics and removing or redirecting off-topic content that dilutes domain authority. Deploy automated tracking to monitor brand visibility across target generative search prompts, using citation frequency and conversion rate of AI referral visitors as your north-star metrics.</p>
+      </div>
+
+
+      <h2 id="conclusion">Conclusion: The Convergence of Human Judgment and Algorithmic Truth</h2>
+
+      <p>The central insight of this analysis is that E-E-A-T has always been a proxy for a deeper truth: information is more valuable when it comes from sources with genuine knowledge, real-world experience, and verifiable credibility. For years, search engines approximated this truth through signals like backlinks and engagement metrics. Preference alignment has now encoded that approximation directly into model weights, with mathematical precision.</p>
+
+      <p>The practical consequence for marketing leaders is that the question "How do we rank for this keyword?" has been replaced by a harder question: "Does our brand represent a genuine semantic attractor in the topic spaces our customers care about?" A semantic attractor is not built through keyword density or link volume. It is built through consistent, expert-authored content, verifiable entity relationships, and earned authority in trusted publications, exactly what E-E-A-T has always described.</p>
+
+      <p>The brands that understand this shift earliest will not just maintain their search visibility. They will occupy a structural advantage in the generative search era that compounds over time, as their citation authority grows with each earned media placement and each well-sourced, expert-verified piece of content they publish. In a world where the model's weights are the algorithm, becoming the source the model trusts is the only optimization strategy that matters.</p>
+
+
+      <div class="about-block">
+        <div class="about-label">Sources</div>
+        <ul class="sources-list">
+          <li><a href="https://ziptie.dev/blog/eeat-for-ai-search/" target="_blank" rel="noopener">E-E-A-T for AI Search: How to Build Authority That Gets Cited by AI (Ziptie)</a></li>
+          <li><a href="https://arxiv.org/html/2509.05607v2" target="_blank" rel="noopener">CC-GSEO-Bench: A Content-Centric Benchmark for Measuring Source Influence in Generative Search Engines (arXiv)</a></li>
+          <li><a href="https://arxiv.org/html/2311.09735v3" target="_blank" rel="noopener">GEO: Generative Engine Optimization (arXiv)</a></li>
+          <li><a href="https://outpaceseo.com/glossary/google-search-quality-rater-guidelines/" target="_blank" rel="noopener">What is Google Search Quality Rater Guidelines? (OutpaceSEO)</a></li>
+          <li><a href="https://ahrefs.com/blog/eeat-seo/" target="_blank" rel="noopener">E-E-A-T: How to Build Trust and Boost Web &amp; AI Visibility (Ahrefs)</a></li>
+          <li><a href="https://www.longato.ch/does-llms-like-chatgpt-gemini-use-eeat/" target="_blank" rel="noopener">Do LLMs Use E-E-A-T? What ChatGPT and Gemini Apply (Flavio Longato)</a></li>
+          <li><a href="https://www.hobo-web.co.uk/the-contenteffort-attribute-the-helpful-content-system-and-e-e-a-t-is-gemini-behind-the-hcu/" target="_blank" rel="noopener">The ContentEffort Attribute, the Helpful Content System and E-E-A-T (Hobo SEO)</a></li>
+          <li><a href="https://ahrefs.com/blog/eeat-audit/" target="_blank" rel="noopener">E-E-A-T Audit: 220+ Markers That Measure Experience, Expertise, Authority, and Trust (Ahrefs)</a></li>
+          <li><a href="https://medium.com/@vi.ha.engr/building-an-rlhf-pipeline-for-llms-a-beginner-friendly-tutorial-21112bfcff9b" target="_blank" rel="noopener">Building an RLHF Pipeline for LLMs: A Beginner-Friendly Tutorial (Medium)</a></li>
+          <li><a href="https://wandb.ai/ayush-thakur/Intro-RLAIF/reports/An-Introduction-to-Training-LLMs-Using-Reinforcement-Learning-From-Human-Feedback-RLHF---VmlldzozMzYyNjcy" target="_blank" rel="noopener">An Introduction to Training LLMs Using RLHF (Weights &amp; Biases)</a></li>
+          <li><a href="https://notionhive.com/blog/eeat-vs-llms-authority-without-backlinks" target="_blank" rel="noopener">E-E-A-T vs. LLMs: How AI Measures Authority Without Backlinks (Notionhive)</a></li>
+          <li><a href="https://www.imd.org/ibyimd/artificial-intelligence/generative-engine-optimization/" target="_blank" rel="noopener">Generative Engine Optimization (IMD)</a></li>
+          <li><a href="https://www.szymonslowik.com/how-google-uses-entities-to-understand-content/" target="_blank" rel="noopener">What Are Entities in SEO and How Google Uses Them (Szymon Slowik)</a></li>
+          <li><a href="https://ciwebgroup.com/blog/the-role-of-brand-authority-and-e-e-a-t-in-the-ai-search-era" target="_blank" rel="noopener">The Complete Guide to Brand Authority &amp; E-E-A-T in AI Search (CI Web Group)</a></li>
+          <li><a href="https://www.hobo-web.co.uk/what-is-e-e-a-t-in-seo/" target="_blank" rel="noopener">What Is E-E-A-T in SEO in 2026 (Hobo SEO)</a></li>
+          <li><a href="https://www.bubblehub.ie/blog/on-page-seo" target="_blank" rel="noopener">The Definitive Guide to On-Page SEO After the Google Leak (BubbleHub)</a></li>
+          <li><a href="https://www.yext.com/blog/how-google-e-e-a-t-framework-impacts-ai-visibility" target="_blank" rel="noopener">How Google's E-E-A-T Framework Impacts Brand Visibility in AI Search Results (Yext)</a></li>
+          <li><a href="https://arxiv.org/pdf/2311.09735" target="_blank" rel="noopener">GEO: Generative Engine Optimization (arXiv PDF)</a></li>
+          <li><a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener">GEO: Generative Engine Optimization (Princeton University)</a></li>
+          <li><a href="https://www.thehoth.com/blog/generative-engine-optimization/" target="_blank" rel="noopener">Generative Engine Optimization (GEO): What It Is and Why It Matters (The HOTH)</a></li>
+          <li><a href="https://www.ibm.com/think/topics/rlhf" target="_blank" rel="noopener">What is RLHF? (IBM)</a></li>
+          <li><a href="https://arxiv.org/html/2601.03027v1" target="_blank" rel="noopener">Reducing Hallucinations in LLMs via Factuality-Aware Preference Learning (arXiv)</a></li>
+          <li><a href="https://arxiv.org/html/2505.10597v1" target="_blank" rel="noopener">Two Minds Better Than One: Collaborative Reward Modeling for LLM Alignment (arXiv)</a></li>
+          <li><a href="https://openreview.net/forum?id=cMEnMVvMw9" target="_blank" rel="noopener">Token-Importance Guided Direct Preference Optimization (OpenReview)</a></li>
+          <li><a href="https://openreview.net/forum?id=fMFwDJgoOB" target="_blank" rel="noopener">Truthfulness in LLMs: A Layer-wise Comparative Analysis of RepE and CCS (OpenReview)</a></li>
+          <li><a href="https://montrealethics.ai/representation-engineering-a-top-down-approach-to-ai-transparency/" target="_blank" rel="noopener">Representation Engineering: A Top-Down Approach to AI Transparency (Montreal AI Ethics)</a></li>
+          <li><a href="https://arxiv.org/html/2503.03750v2" target="_blank" rel="noopener">The MASK Benchmark: Disentangling Honesty From Accuracy in AI Systems (arXiv)</a></li>
+          <li><a href="https://aiengineering.academy/LLM/TheoryBehindFinetuning/DPO/" target="_blank" rel="noopener">DPO (Direct Preference Optimization) (AI Engineering Academy)</a></li>
+          <li><a href="https://keywordseverywhere.com/blog/google-e-e-a-t-guidelines-an-overview/" target="_blank" rel="noopener">Google E-E-A-T Guidelines: an Overview 2026 (Keywords Everywhere)</a></li>
+          <li><a href="https://www.hobo-web.co.uk/topical-authority/" target="_blank" rel="noopener">Topical Authority: Site Radius &amp; Site Focus Score from the Google Leak (Hobo SEO)</a></li>
+          <li><a href="https://originality.ai/blog/google-search-quality-rater-guidelines-ai" target="_blank" rel="noopener">Google Search Quality Rater Guidelines: Key Insights About AI Use (Originality.AI)</a></li>
+          <li><a href="https://dreamwarrior.com/blog/google-search-quality-raters-guidelines-updated/" target="_blank" rel="noopener">Google Search Quality Raters Guidelines Updated (Dream Warrior Group)</a></li>
+          <li><a href="https://arxiv.org/html/2604.19516v1" target="_blank" rel="noopener">From Experience to Skill: Multi-Agent GEO via Reusable Strategy Learning (arXiv)</a></li>
+          <li><a href="https://derivatex.agency/blog/princeton-geo-paper-plain-english/" target="_blank" rel="noopener">The Princeton GEO Paper in Plain English (Derivatex)</a></li>
+          <li><a href="https://www.elementera.com/blog/generative-engine-optimization-what-geo-aeo-ai-search-paper-shows-your-business" target="_blank" rel="noopener">Generative Engine Optimization: GEO Paper Insights for Business (Elementera AI)</a></li>
+          <li><a href="https://www.seo.com/basics/how-search-engines-work/ai-overviews-ranking-factors/" target="_blank" rel="noopener">Google AI Overviews Ranking Factors You Need to Know (SEO.com)</a></li>
+          <li><a href="https://www.bbehmermedia.com/holy-trinity-geo-citations-quotes-stats" target="_blank" rel="noopener">The Holy Trinity of GEO: Citations, Quotations, and Statistics (Bbehmer Media)</a></li>
+        </ul>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Key Numbers</div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-val">96%</div>
+            <div class="stat-label">Of AI Overview citations go to strong E-E-A-T sources</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">2.3x</div>
+            <div class="stat-label">AI citation lift for position-5 pages with high E-E-A-T vs. top-ranked low-E-E-A-T pages</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">+41%</div>
+            <div class="stat-label">PAWC gain from quotation addition (GEO Holy Trinity, Princeton study)</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">90%+</div>
+            <div class="stat-label">Of all AI citations driven by earned media placements on trusted platforms</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#paradigm-shift"><span class="toc-num">01</span> The Paradigm Shift</a></li>
+          <li><a href="#alignment-pipeline"><span class="toc-num">02</span> The Alignment Pipeline</a></li>
+          <li><a href="#factuality-layer"><span class="toc-num">03</span> F-DPO and TI-DPO</a></li>
+          <li><a href="#activation-space"><span class="toc-num">04</span> Activation Space</a></li>
+          <li><a href="#content-warehouse"><span class="toc-num">05</span> Content Warehouse Leak</a></li>
+          <li><a href="#quality-rater-guidelines"><span class="toc-num">06</span> 2025 Guidelines Update</a></li>
+          <li><a href="#mageo"><span class="toc-num">07</span> MAGEO &amp; Research Frontier</a></li>
+          <li><a href="#geo-trinity"><span class="toc-num">08</span> The GEO Holy Trinity</a></li>
+          <li><a href="#off-page"><span class="toc-num">09</span> Off-Page Authority</a></li>
+          <li><a href="#90-day-framework"><span class="toc-num">10</span> 90-Day Framework</a></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-foot">
+  <div class="page">
+    <div class="foot-row">
+      <span>rawmktg. &copy; 2026</span>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/#articles">Articles</a>
+        <a href="mailto:vinayak@epicslope.partners">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
