@@ -788,7 +788,7 @@ Sitemap: https://example.com/sitemap.xml</pre>
 
       <h3>The /llms.txt convention</h3>
 
-      <p><a href="https://www.brightedge.com/resources/guide-for-ai-agents" target="_blank" rel="noopener">/llms.txt is an emerging convention</a> for AI-specific discovery. Placed at the root of your domain as a plain markdown file, it gives the crawler a curated map of your highest-value pages, optimised for context-constrained parsing. Treat it as a complement to your sitemap, not a replacement for it. Adoption is not yet universal across the three crawlers, but the cost of publishing one is trivial and the upside is real.</p>
+      <p><a href="https://www.brightedge.com/resources/guide-for-ai-agents" target="_blank" rel="noopener">/llms.txt is an emerging convention</a> for AI-specific discovery. Placed at the root of your domain as a plain markdown file, it gives the crawler a curated map of your highest-value pages, optimised for context-constrained parsing. Treat it as a complement to your sitemap, not a replacement for it. Adoption is not yet universal across the three crawlers, but the cost of publishing one is trivial and the upside is real. For data on what the configuration gap costs in practice, see our <a href="/blogs/aec-ai-visibility-gap">AEC software AI visibility analysis</a>: zero of six companies had published an llms.txt, and citation rates reflected the gap.</p>
 
       <h2 id="geo-optimisations">The GEO Optimisations That Move the Needle</h2>
 
@@ -796,7 +796,7 @@ Sitemap: https://example.com/sitemap.xml</pre>
 
       <h3>ARIA roles and semantic layout</h3>
 
-      <p>Generative search engines do not just scrape text. They use the structural context of the document to decide what is content, what is navigation, and what is chrome. <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">ChatGPT Atlas in particular uses ARIA roles, states, and properties</a> to map page structure when it needs to interact with a site agentically. The cost of marking up your structure properly is minutes per template. The benefit is durable.</p>
+      <p>Generative search engines do not just scrape text. They use the structural context of the document to decide what is content, what is navigation, and what is chrome. <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">ChatGPT Atlas in particular uses ARIA roles, states, and properties</a> to map page structure when it needs to interact with a site agentically. The cost of marking up your structure properly is minutes per template. The benefit is durable. For the content-level patterns that make newly-accessible pages worth citing, see <a href="/blogs/anatomy-of-a-high-citation-page">Anatomy of a High-Citation Page</a>.</p>
 
       <div class="code-wrap">
         <div class="code-block">
@@ -872,7 +872,7 @@ curl -s <span class="str">"https://example.com/sitemap.xml"</span> \
         <li><strong>Day 5: Add the analytics segment.</strong> Carve out <code>utm_source=chatgpt.com</code> and equivalents into a dedicated channel so you can actually measure citation traffic.</li>
       </ul>
 
-      <p>Citation share is now the easiest variable to move in technical SEO, because most competitors have not done any of the above. The configuration in this article covers most of the gap.</p>
+      <p>Citation share is now the easiest variable to move in technical SEO, because most competitors have not done any of the above. The configuration in this article covers most of the gap. Use a <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a> to measure citation impact before and after each change. For the content architecture layer, see <a href="/blogs/topical-authority-cluster-ai-shortlists">The Topical Authority Cluster</a>. For off-site authority signals, see <a href="/blogs/authority-seeding-ai-llm-trust">Authority Seeding for AI</a>.</p>
 
       <!-- Sources -->
       <div class="about-block">
