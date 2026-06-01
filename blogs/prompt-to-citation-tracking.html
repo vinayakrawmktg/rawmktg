@@ -207,10 +207,12 @@
     .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
     .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
     .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);margin-bottom:0;}
-    .citations-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:12px;}
-    .citations-list li{font-family:var(--f-mono);font-size:11.5px;line-height:1.6;color:var(--mute);display:flex;gap:8px;}
-    .citations-list li .cite-num{min-width:28px;flex-shrink:0;color:var(--signal);font-weight:600;}
-    .citations-list a{color:var(--signal);word-break:break-all;}
+    .citations-list{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:0;}
+    .citations-list li{font-family:var(--f-mono);font-size:11.5px;line-height:1.6;color:var(--mute);display:grid;grid-template-columns:32px 1fr;gap:0 10px;padding:8px 0;border-bottom:1px solid var(--rule);}
+    .citations-list li::before{display:none!important;content:""!important;}
+    .citations-list li:last-child{border-bottom:none;}
+    .citations-list li .cite-num{color:var(--signal);font-weight:600;padding-top:1px;}
+    .citations-list a{display:block;color:var(--signal);overflow-wrap:break-word;margin-top:2px;}
     .citations-list a:hover{color:var(--ink);}
 
     /* Footer */
