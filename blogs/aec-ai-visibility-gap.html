@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="index, follow" />
+  <title>AEC AI Visibility Gap: Who Gets Found When Buyers Ask · rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ahrefs data across 6 AEC software platforms: 4 of 6 have fewer than 2 total AI citations. What drives AI visibility, what doesn't, and the highest-ROI fixes." />
+  <meta name="author" content="rawmktg." />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/aec-ai-visibility-gap" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/aec-ai-visibility-gap" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/aec-ai-visibility-gap" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/aec-ai-visibility-gap" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/blogs/aec-ai-visibility-gap" />
+  <meta property="og:title"       content="When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room" />
+  <meta property="og:description" content="A data analysis of LLM citation visibility across 6 AEC technology platforms. 4 of 6 companies have fewer than 2 total AI citations across all six platforms combined. Here is what drives the gap and how to close it." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/aec-ai-visibility-gap.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-06-01T00:00:00Z" />
+  <meta property="article:modified_time"  content="2026-06-01T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room" />
+  <meta name="twitter:description" content="Ahrefs data across 6 AEC software platforms: 4 of 6 have fewer than 2 AI citations. What drives AI visibility and the highest-ROI fixes." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/aec-ai-visibility-gap.png" />
+
+  <!-- JSON-LD BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room",
+    "description": "A data analysis of LLM citation visibility across six AEC technology platforms using Ahrefs data. Covers the visibility gap, why organic traffic doesn't predict AI citations, platform-by-platform behavior, shared factors among visible companies, the llms.txt infrastructure gap, and a prioritized action plan for vendors.",
+    "image": "https://rawmktg.com/assets/images/aec-ai-visibility-gap.png",
+    "url": "https://rawmktg.com/blogs/aec-ai-visibility-gap",
+    "datePublished": "2026-06-01",
+    "dateModified": "2026-06-01",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/aec-ai-visibility-gap" },
+    "keywords": ["AEC software", "AI visibility", "GEO", "BIM", "construction technology", "ChatGPT citations", "Perplexity", "AI search", "llms.txt", "AEC marketing"]
+  }
+  </script>
+
+  <!-- Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
+    "url": "https://rawmktg.com/blogs/aec-ai-visibility-gap"
+  }
+  </script>
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "AEC AI Visibility Gap", "item": "https://rawmktg.com/blogs/aec-ai-visibility-gap"}
+    ]
+  }
+  </script>
+
+  <!-- FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why don't AEC software companies show up in AI search results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most AEC software companies lack the editorial footprint, structured data infrastructure, and community discussion that AI platforms use as citation signals. 4 of 6 companies analyzed had fewer than 2 total AI citations across ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, and Grok combined. High organic traffic and domain rating do not predict AI citation visibility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI platform is easiest for AEC software companies to get cited on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perplexity is the most accessible platform for near-term GEO investment. It rewards direct, well-organized product content and documentation — FAQ-style, clear-language pages that any AEC software company can build. Google AI Overviews and Grok together account for 77% of AEC software citations but require long-term editorial authority and community presence respectively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is llms.txt and why does it matter for AEC software companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "llms.txt is an emerging standard similar to robots.txt that lets a company explicitly communicate to AI crawlers what content to index and how to understand the brand. None of the 6 AEC software companies analyzed had published an llms.txt file at the time of the audit, representing a uniform, low-effort, high-leverage gap across the entire segment."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#D04A2A; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- Nav -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header image -->
+<img src="../assets/images/aec-ai-visibility-gap.png"
+     alt="When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room - rawmktg."
+     class="article-header-img" width="1200" height="630" loading="eager">
+
+<!-- Article header -->
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <span class="eyebrow-tag">Analysis · AEC Technology</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-date">June 2026</span>
+    </div>
+    <h1 class="article-headline">When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room</h1>
+    <p class="article-deck">A data analysis of LLM citation visibility across leading AEC technology platforms, and what it signals for how the industry gets discovered.</p>
+    <p class="article-data-note">Based on Ahrefs AI citation data across six AEC technology companies, June 2026. Six platforms tracked: Google AI Overviews, ChatGPT, Gemini, Perplexity, Microsoft Copilot, and Grok.</p>
+  </header>
+</div>
+
+<!-- Article body -->
+<div class="page">
+  <div class="article-body">
+
+    <main class="article-content" id="article-main">
+
+      <p>Construction professionals have always relied on word of mouth, conference demos, and peer referrals to discover new software. That dynamic is shifting. A growing share of AEC practitioners now open ChatGPT, Perplexity, or Google's AI search before they visit a vendor's website. They ask questions like "what's the best clash detection software for MEP coordination?" or "which BIM collaboration platform integrates with Revit?" and they expect a synthesized answer.</p>
+
+      <p>AI search works differently from traditional search. Google's algorithm surfaces pages that match a query. AI platforms synthesize an answer, and they draw from a very different set of signals to decide which companies get named. If your brand is not part of that synthesis, you do not exist in that response.</p>
+
+      <p>For the AEC software segment — spanning BIM coordination, MEP design automation, construction planning, and model checking — the question of who gets named and who gets passed over is increasingly consequential. To find out where the segment currently stands, we analyzed AI citation data across six AEC technology companies representing a cross-section of the market: established platforms with years of editorial history alongside newer entrants building their footprints now.</p>
+
+      <!-- §01 The Visibility Gap -->
+      <h2 id="visibility-gap"><span class="section-num">01</span>The Visibility Gap Is Wider Than Expected</h2>
+
+      <div class="section-answer">The most striking finding is not that some companies have more AI citations than others. It is how concentrated that visibility is. Four of six companies registered fewer than 2 total citations across all six platforms combined. The median for the group is pulled heavily upward by two outliers.</div>
+
+      <p>Across the six companies in our analysis, total AI citations ranged from 0 to 310. The median for the group sits around 10 — a number that significantly overstates the typical experience because it is pulled upward by two outliers at the top of the distribution.</p>
+
+      <div class="stat-callout">
+        <div class="sc-val">4 of 6</div>
+        <div class="sc-text">AEC software companies in our analysis had fewer than 2 total AI citations across all six platforms combined — including ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, and Grok. Companies with established customer bases and genuine technical differentiation were effectively invisible.</div>
+      </div>
+
+      <!-- Fig 1: Citation matrix table -->
+      <div class="tt-wrap">
+        <div class="tt-label">Fig. 1 — AI Citation Count by Platform (June 2026) · Source: Ahrefs</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>AI Overviews</th>
+              <th>ChatGPT</th>
+              <th>Gemini</th>
+              <th>Perplexity</th>
+              <th>Copilot</th>
+              <th>Grok</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Revizto</td>
+              <td class="up">110</td>
+              <td class="up">17</td>
+              <td class="up">14</td>
+              <td class="up">37</td>
+              <td class="mid">6</td>
+              <td class="up">126</td>
+              <td class="label">310</td>
+            </tr>
+            <tr>
+              <td class="label">Alice Technologies</td>
+              <td class="mid">33</td>
+              <td class="mute">1</td>
+              <td class="mute">1</td>
+              <td class="mute">1</td>
+              <td class="mute">2</td>
+              <td class="mute">5</td>
+              <td class="label">43</td>
+            </tr>
+            <tr>
+              <td class="label">Solibri</td>
+              <td class="mute">6</td>
+              <td class="mute">4</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="mute">4</td>
+              <td class="mute">6</td>
+              <td class="label">20</td>
+            </tr>
+            <tr>
+              <td class="label">Endra.ai</td>
+              <td class="absent">1</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="neg">1</td>
+            </tr>
+            <tr>
+              <td class="label">Augmenta</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="neg">0</td>
+            </tr>
+            <tr>
+              <td class="label">Vavetek</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="absent">1</td>
+              <td class="absent">0</td>
+              <td class="absent">0</td>
+              <td class="neg">1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Fig 2: Horizontal bar chart -->
+      <div class="tt-label" style="margin-bottom:8px;">Fig. 2 — Total AI Citations: Comparative View (all six platforms)</div>
+      <div class="chart-wrap">
+        <canvas id="totalCitationsChart" height="220"></canvas>
+      </div>
+      <div class="chart-caption">Bar length proportional to total citations. Four of six companies register 1 or fewer total citations across all platforms.</div>
+
+      <p>Put another way: if you are an AEC buyer asking an AI platform for a software recommendation today, there are realistically only one or two companies in this space that reliably appear across platforms. Everyone else has little to no presence — including companies with established customer bases, genuine technical differentiation, and meaningful product revenue.</p>
+
+      <div class="pull-quote">"Four of six AEC software companies in our analysis had fewer than 2 total AI citations across all six platforms combined."</div>
+
+      <p>This is the visibility gap. And unlike gaps in organic search rankings, where a well-executed content push can move results within weeks, AI citation presence is built on a different foundation with a longer lag time.</p>
+
+      <!-- §02 Organic Traffic vs AI Visibility -->
+      <h2 id="organic-vs-ai"><span class="section-num">02</span>High Organic Traffic Does Not Equal High AI Visibility</h2>
+
+      <div class="section-answer">Within our analysis, domain ratings ranged from 7 to 65 and monthly organic traffic ranged from single digits to over 10,000 visits. A clean correlation with AI citations does not emerge. The signals AI platforms use to decide who to cite are fundamentally different from the signals that drive traditional rankings.</div>
+
+      <p>Augmenta, with a domain rating of 38 and over 500 monthly organic visits — solid metrics for an early-stage software company — had zero AI citations across all six platforms. Conversely, companies with more modest keyword footprints but stronger editorial press histories, such as Revizto and Alice Technologies, show up far more reliably in AI-generated responses.</p>
+
+      <p>The reason is that domain rating is a lagging indicator of backlink accumulation. AI citation is more directly tied to brand presence in editorial content. In the long run these two things are correlated, but at the current stage of the market, they can diverge significantly.</p>
+
+      <!-- Fig 3: Traditional SEO vs AI signals -->
+      <div class="tt-label" style="margin-bottom:8px;">Fig. 3 — What Drives Rankings vs. What Drives AI Citations</div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="compare-col-label seo">Traditional SEO Signals</div>
+          <ul>
+            <li>Keyword-optimized page titles and meta tags</li>
+            <li>Backlink volume (quantity of referring domains)</li>
+            <li>On-page keyword density and semantic relevance</li>
+            <li>Site speed and Core Web Vitals scores</li>
+            <li>Content length and topic coverage breadth</li>
+            <li>Domain Rating / domain authority score</li>
+          </ul>
+        </div>
+        <div class="compare-col geo-col">
+          <div class="compare-col-label geo">AI Citation Signals (GEO)</div>
+          <ul>
+            <li>Editorial mentions in authoritative publications</li>
+            <li>Third-party brand mentions in context (quality over quantity)</li>
+            <li>Structured, crawlable product definitions and FAQs</li>
+            <li>llms.txt and JSON-LD schema markup (SoftwareApp)</li>
+            <li>Practitioner community discussion (X, forums, Slack)</li>
+            <li>Brand footprint in LLM training data (pre-2024 record)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Companies that have invested in press and community presence have a head start in the AI citation era that pure SEO investment does not replicate. The overlap between the two signal sets is smaller than most AEC vendors currently assume. For a deeper explanation of <a href="/blogs/how-rag-actually-works">how retrieval-augmented generation actually determines which sources get pulled</a>, the mechanics are covered in our RAG explainer.</p>
+
+      <!-- §03 Platform Behavior -->
+      <h2 id="platform-behavior"><span class="section-num">03</span>The Six Platforms Behave Very Differently</h2>
+
+      <div class="section-answer">AI citation distribution is not uniform across platforms. Google AI Overviews and Grok together account for 77% of all AEC software citations in our dataset — yet they reward completely different behaviors. Perplexity is the most accessible platform for companies investing now. ChatGPT and Gemini are the longest lead-time challenges.</div>
+
+      <p>Google AI Overviews favors editorial authority earned through recognized trade publications. Grok, powered by X (formerly Twitter), favors active brand discussion within AEC practitioner communities. Revizto leads on both, but for different reasons: years of trade press coverage and sustained practitioner community discussion feed separate citation pathways to the same outcome.</p>
+
+      <p>Perplexity is arguably the most accessible platform for companies investing now. It rewards direct, well-organized product content and documentation — the kind of FAQ-style, clear-language pages that any AEC software company can build. On Perplexity, the editorial prestige gap matters less than product content clarity, making it the platform most responsive to near-term <a href="/blogs/geo-foundation-audit">GEO work</a>.</p>
+
+      <p>ChatGPT and Gemini are harder to break into with smaller brand footprints. Both draw heavily from training data compiled before the past 12 to 18 months, meaning they reflect brand awareness that was already established before the current AI citation era. For newer companies, this is the longest-lead-time problem: you cannot shortcut your way into ChatGPT and Gemini citation without first building the editorial record that their training data captured.</p>
+
+      <!-- Fig 4: Platform profile table -->
+      <div class="tt-wrap">
+        <div class="tt-label">Fig. 4 — Platform Profile: Citation Share, Key Signals and Strategy (total citations: 375)</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Citations</th>
+              <th>% Share</th>
+              <th>Key Citation Signal</th>
+              <th>Recommended Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Google AI Overviews</td>
+              <td class="up">150</td>
+              <td class="up">40%</td>
+              <td>Editorial authority in AEC and tech media</td>
+              <td>Long-term press strategy; recognized outlet coverage</td>
+            </tr>
+            <tr>
+              <td class="label">Grok</td>
+              <td class="up">137</td>
+              <td class="up">37%</td>
+              <td>Brand discussion in X communities</td>
+              <td>Active participation in AEC practitioner X communities</td>
+            </tr>
+            <tr>
+              <td class="label">Perplexity</td>
+              <td class="mid">39</td>
+              <td class="mid">10%</td>
+              <td>Structured, direct product content</td>
+              <td>FAQ pages, clear product definitions — highest near-term ROI</td>
+            </tr>
+            <tr>
+              <td class="label">ChatGPT</td>
+              <td class="mute">22</td>
+              <td class="mute">6%</td>
+              <td>Pre-2024 brand training history</td>
+              <td>Invest in editorial record today; results in 12–24 months</td>
+            </tr>
+            <tr>
+              <td class="label">Gemini</td>
+              <td class="mute">15</td>
+              <td class="mute">4%</td>
+              <td>Established brand recognition</td>
+              <td>Same as ChatGPT; patience and consistency required</td>
+            </tr>
+            <tr>
+              <td class="label">Microsoft Copilot</td>
+              <td class="absent">12</td>
+              <td class="absent">3%</td>
+              <td>Enterprise endorsement signals</td>
+              <td>Lower priority; focus resources on top three platforms first</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pull-quote">"On Grok, Revizto's citation count exceeded the combined total of all five other companies. On Perplexity, Revizto also led, but with Alice Technologies, Solibri, and Endra all within range. Platform-specific strategy matters."</div>
+
+      <!-- §04 What Visible Companies Share -->
+      <h2 id="visible-factors"><span class="section-num">04</span>What the Visible Companies Have in Common</h2>
+
+      <div class="section-answer">Revizto and Alice Technologies — the two companies with citations across three or more platforms — share a set of common characteristics. Third-party editorial coverage is the single strongest predictor. Brand-level community presence is the second factor. Longevity matters. One gap is shared by every company in the segment without exception.</div>
+
+      <p>Third-party editorial coverage is the single strongest predictor of AI citation visibility. Both Revizto and Alice Technologies have been covered in publications that AI models are known to reference heavily: major business outlets, AEC-specific trade media, and technology press. It is not the volume of press mentions that matters most, but the authority of the publications doing the mentioning. A single article in a recognized trade publication carries more AI citation weight than dozens of blog posts on owned channels.</p>
+
+      <p>Brand-level community presence is the second factor. Companies with meaningful citation profiles have generated sustained discussion among AEC practitioners in forums, professional communities, and social media. This organic brand chatter — separate from any company-controlled content — creates the kind of multi-source corroboration that <a href="/blogs/authority-seeding-ai-llm-trust">LLMs use to validate a brand's existence and significance</a>.</p>
+
+      <p>Finally, longevity matters. Both companies have been in the market long enough to accumulate the editorial trail that AI platforms draw from. The content that AI models currently use for citations was largely written 12 to 24 months ago. This is a sobering reality for newer entrants: the compounding advantage that more established players have built is real, and it cannot be acquired overnight. But it can be started today.</p>
+
+      <!-- Fig 5: Visibility factors matrix -->
+      <div class="tt-wrap">
+        <div class="tt-label">Fig. 5 — AI Visibility Factors by Company · ✓ present, ~ partial, ✗ absent</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Visibility Factor</th>
+              <th>Revizto</th>
+              <th>Alice</th>
+              <th>Solibri</th>
+              <th>Endra</th>
+              <th>Augmenta</th>
+              <th>Vavetek</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Trade Media Coverage</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="neg">✗</td>
+              <td class="mid">~</td>
+              <td class="neg">✗</td>
+            </tr>
+            <tr>
+              <td class="label">Community Presence (X / Forums)</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="mid">~</td>
+              <td class="mid">~</td>
+              <td class="up">✓</td>
+              <td class="mid">~</td>
+            </tr>
+            <tr>
+              <td class="label">Structured Product Content</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="mid">~</td>
+              <td class="mid">~</td>
+              <td class="neg">✗</td>
+            </tr>
+            <tr>
+              <td class="label">Market Longevity (5+ years)</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="up">✓</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+            </tr>
+            <tr class="highlight">
+              <td class="label">llms.txt Published</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+              <td class="neg">✗</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The llms.txt row is the standout finding: uniformly absent across the entire segment. This is not a gap between leaders and laggards. It is a shared gap that any company in the segment can close first.</p>
+
+      <!-- §05 The Missing Infrastructure -->
+      <h2 id="llms-txt"><span class="section-num">05</span>The Missing Infrastructure: llms.txt</h2>
+
+      <div class="section-answer">None of the six companies had a published llms.txt file at the time of the audit. This is a low-effort, high-leverage intervention. Any company that moves first gains an uncrowded signaling advantage at a moment when these signals are still being weighted and calibrated by the platforms themselves.</div>
+
+      <p>llms.txt is an emerging standard — similar in concept to robots.txt — that lets a company explicitly communicate to <a href="/blogs/how-ai-crawlers-index-your-site">AI crawlers</a> what content to index, how to understand the brand, and what the product does. A well-constructed file tells AI crawlers directly: here is what we do, here is who we serve, here is what differentiates us, and here are the pages that matter.</p>
+
+      <p>The absence of this file across an entire segment is notable precisely because it is low-effort. Implementation typically takes 2–4 hours. No vendor in this analysis has done it yet, which means the first company to publish a well-structured llms.txt gains an uncrowded signal in a category where signals are still scarce.</p>
+
+      <!-- Fig 6: llms.txt code block -->
+      <div class="code-wrap">
+        <div class="code-label">Fig. 6 — Sample llms.txt structure for an AEC software company (illustrative)</div>
+        <div class="code-block">
+          <span class="code-lang">llms.txt</span>
+          <pre><span class="cm"># llms.txt — AI crawler guidance for [yourdomain].ai</span>
+
+<span class="tg">&gt;</span> <span class="at">[Your Company Name]</span>
+
+[Company] is a <span class="st">[one-sentence product description for AI models]</span>.
+Category: <span class="st">AEC Software / BIM Tools / Construction Technology</span>
+
+<span class="at">## What We Do</span>
+[2–3 sentences: core product, primary workflow, key differentiator]
+
+<span class="at">## Primary Use Cases</span>
+- <span class="st">[Use case 1, e.g. "MEP clash detection in Revit projects"]</span>
+- <span class="st">[Use case 2, e.g. "Automated rebar detailing for structural teams"]</span>
+- <span class="st">[Use case 3]</span>
+
+<span class="at">## Key Pages</span>
+- /product: Core platform overview
+- /case-studies: Customer outcomes and project examples
+- /integrations: Supported BIM and CAD tool integrations
+
+<span class="at">## Target Users</span>
+MEP engineers, BIM coordinators, structural detailing teams
+
+<span class="cm">## Noindex</span>
+<span class="cm"># /admin, /login, /dashboard (not for AI indexing)</span></pre>
+        </div>
+      </div>
+
+      <p>llms.txt is one piece of a broader AI infrastructure gap. robots.txt signals, sitemap.xml health, and <a href="/blogs/schema-markup-ai-citations-2026">structured data schemas</a> (SoftwareApplication, FAQPage, HowTo) all contribute to how AI platforms understand and cite a product. Across the companies in our analysis, these elements are inconsistently implemented or entirely absent, even among the more established players.</p>
+
+      <div class="callout-box">
+        <div class="callout-box-label">Infrastructure gap — shared across all six</div>
+        <p>No llms.txt. Inconsistent or absent JSON-LD structured data. Unverified robots.txt signals for AI crawler agents. These are not competitive moats. They are table stakes that no company in the segment has built yet. The first vendor to close all three moves from invisible to indexed before competitors have started.</p>
+      </div>
+
+      <!-- §06 Implications for Buyers -->
+      <h2 id="buyers"><span class="section-num">06</span>What This Means for AEC Buyers</h2>
+
+      <div class="section-answer">AI platforms are not yet reliable discovery tools for this segment. The companies that surface in AI responses today are not necessarily the best-fit tools for a given workflow. They are the tools that established brand footprints before the AI citation era.</div>
+
+      <p>For practitioners evaluating AEC software today — BIM coordinators making platform decisions, MEP leads assessing coordination tools, technology managers comparing model-checking solutions — there is a practical implication worth understanding. The companies that surface in AI responses today did so because they established brand footprints before the AI citation era, earned coverage in publications that LLMs weight as authoritative, and accumulated enough third-party mentions to appear in training data. These criteria overlap with quality, but they are not the same as quality.</p>
+
+      <p>This means that due diligence for AEC software selection still requires going beyond AI recommendations. Peer networks, category-specific review platforms, product trials, and direct conversations with practitioners using the tools remain essential — particularly for evaluating newer entrants that may offer strong technical capabilities without the AI visibility that established names have built.</p>
+
+      <p>The situation will change. As AI citation data becomes more real-time and as more companies build the infrastructure to be properly indexed and understood by AI crawlers, the overlap between "best product" and "AI-visible product" should improve. But as of mid-2026, the gap is significant enough that buyers should treat AI recommendations as one input among several, not as a definitive guide to the market.</p>
+
+      <!-- §07 Implications for Vendors -->
+      <h2 id="vendors"><span class="section-num">07</span>What This Means for AEC Software Vendors</h2>
+
+      <div class="section-answer">The window to shape AI-generated perception of your product is open right now, and it will not stay open indefinitely. LLMs are continuously updating their knowledge bases. The citations that Perplexity, ChatGPT, and Google AI Overviews return today will be different from what they return in 12 months. The highest-leverage actions are ranked below by effort-to-impact ratio.</div>
+
+      <p>For companies building and selling AEC software, the compounding nature of AI citation visibility means that early movers earn an advantage that is genuinely hard to close later. The <a href="/blogs/geo-compounding-flywheel">GEO flywheel</a> is real: citations generate brand recognition, which generates editorial coverage, which generates more citations. Starting that loop now, even at small scale, is more valuable than a larger investment that starts 12 months later.</p>
+
+      <!-- Fig 7: Action plan table -->
+      <div class="tt-wrap">
+        <div class="tt-label">Fig. 7 — Vendor AI Visibility Action Plan (Prioritized by Effort-to-Impact Ratio)</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Action</th>
+              <th>Effort</th>
+              <th>Expected Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="now-row">
+              <td class="metric">NOW</td>
+              <td>Publish llms.txt at root domain (/llms.txt)</td>
+              <td class="up">Low (2–4 hrs)</td>
+              <td>Direct AI crawler signal; first-mover in AEC segment</td>
+            </tr>
+            <tr class="now-row">
+              <td class="metric">NOW</td>
+              <td>Add JSON-LD schemas: SoftwareApplication, FAQPage</td>
+              <td class="up">Low (1 day)</td>
+              <td>Structured indexing by Perplexity and Google AI Overviews</td>
+            </tr>
+            <tr class="short-row">
+              <td class="mid">SHORT-TERM</td>
+              <td>Pitch one AEC trade pub (Construction Dive, ENR, BD+C)</td>
+              <td class="mid">Medium (2–4 wks)</td>
+              <td>High: editorial authority drives AI Overviews and ChatGPT</td>
+            </tr>
+            <tr class="short-row">
+              <td class="mid">SHORT-TERM</td>
+              <td>Build active brand presence in AEC communities on X</td>
+              <td class="mid">Medium (ongoing)</td>
+              <td>Directly drives Grok (37% of all citations in our dataset)</td>
+            </tr>
+            <tr class="ongoing-row">
+              <td class="mute">ONGOING</td>
+              <td>Create FAQ-style, direct-answer product pages</td>
+              <td class="mute">Low–Medium</td>
+              <td>Perplexity and AI Overviews; most controllable near-term lever</td>
+            </tr>
+            <tr class="ongoing-row">
+              <td class="mute">ONGOING</td>
+              <td>Pursue analyst coverage and long-form practitioner reviews</td>
+              <td class="neg">High (3–12 mos)</td>
+              <td>ChatGPT and Gemini; longest lead time, highest compound value</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pull-quote">"The companies that invest in AI visibility infrastructure today will be the ones that show up in the room when buyers ask. That advantage, once built, is hard for slower movers to close."</div>
+
+      <p>For AEC software companies at any stage, the full <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a> methodology provides the structured five-step diagnostic for mapping citation gaps and building the remediation plan. The technical infrastructure layer — <a href="/blogs/how-ai-crawlers-index-your-site">AI crawler access</a>, <a href="/blogs/schema-markup-ai-citations-2026">structured schema</a>, and llms.txt — is where every company in this segment should start, because it is the only layer with zero editorial prerequisite and immediate implementation impact.</p>
+
+      <!-- The Bottom Line -->
+      <h2 id="bottom-line"><span class="section-num">08</span>The Bottom Line</h2>
+
+      <div class="section-answer">AI visibility in the AEC software segment is nascent, concentrated, and increasingly consequential. The companies that appear when buyers ask AI for recommendations today did not get there by accident. The visibility gap between the category leaders and everyone else is real and growing — but it is not yet unbridgeable.</div>
+
+      <p>The companies that appear when buyers ask AI for recommendations today built editorial footprints, earned community trust, and accumulated the kind of third-party reference material that LLMs are trained to treat as authoritative. That work took years.</p>
+
+      <p>For companies that have not yet built that footprint, the honest assessment is that there is no shortcut to the top of the distribution. But the bottom of the distribution is not a fixed address. The infrastructure gaps — llms.txt, structured schemas, FAQ content optimized for AI retrieval — can be closed in weeks. The editorial and community gaps require months. Both tracks can run in parallel, and the companies that start both tracks now will be meaningfully better positioned in 12 months than those that wait.</p>
+
+      <p>The question is not whether AI will influence AEC software buying decisions. It already does. The question is which companies will be part of the answer when buyers ask, and which ones will remain invisible in a conversation that increasingly shapes where the market's attention goes.</p>
+
+      <!-- Methodology -->
+      <div class="about-block">
+        <div class="about-label">Methodology</div>
+        <p>AI citation data sourced from Ahrefs (June 1, 2026) across six AEC technology companies: Revizto, Alice Technologies, Solibri, Endra.ai, Augmenta, and Vavetek. Six AI platforms tracked: Google AI Overviews, ChatGPT, Gemini, Perplexity, Microsoft Copilot, and Grok. Technical infrastructure checks performed via direct HTTP analysis of company websites on the same date. Total citation universe: 375 citations. Companies were selected to represent a cross-section of the AEC software market by stage, product category, and domain authority range (7–65). Citation counts reflect indexed references as reported by Ahrefs at the time of the audit; real-time retrieval platforms such as Perplexity may update more frequently than training-based platforms such as ChatGPT and Gemini.</p>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Article sidebar">
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Key Findings</div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-val">310</div>
+            <div class="stat-label">total AI citations for Revizto vs. 0 for the two lowest companies</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">77%</div>
+            <div class="stat-label">of all AEC software citations from AI Overviews + Grok combined</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">0 of 6</div>
+            <div class="stat-label">companies in the segment with llms.txt published</div>
+          </div>
+          <hr class="stat-divider" />
+          <div>
+            <div class="stat-val">10%</div>
+            <div class="stat-label">Perplexity's citation share — highest near-term ROI platform for new entrants</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Contents</div>
+        <ul class="toc-list">
+          <li><a href="#visibility-gap"><span class="toc-num">01</span>The Visibility Gap</a></li>
+          <li><a href="#organic-vs-ai"><span class="toc-num">02</span>Organic Traffic vs. AI Visibility</a></li>
+          <li><a href="#platform-behavior"><span class="toc-num">03</span>Platform Behavior</a></li>
+          <li><a href="#visible-factors"><span class="toc-num">04</span>What Visible Companies Share</a></li>
+          <li><a href="#llms-txt"><span class="toc-num">05</span>The Missing Infrastructure</a></li>
+          <li><a href="#buyers"><span class="toc-num">06</span>Implications for Buyers</a></li>
+          <li><a href="#vendors"><span class="toc-num">07</span>Implications for Vendors</a></li>
+          <li><a href="#bottom-line"><span class="toc-num">08</span>The Bottom Line</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Related Articles</div>
+        <ul class="toc-list">
+          <li><a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a></li>
+          <li><a href="/blogs/how-rag-actually-works">How RAG Actually Works</a></li>
+          <li><a href="/blogs/schema-markup-ai-citations-2026">Schema Markup for AI Citations</a></li>
+          <li><a href="/blogs/how-ai-crawlers-index-your-site">How AI Crawlers Index Your Site</a></li>
+          <li><a href="/blogs/authority-seeding-ai-llm-trust">Authority Seeding for AI Trust</a></li>
+          <li><a href="/blogs/geo-compounding-flywheel">The GEO Compounding Flywheel</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links">
+        <a href="mailto:vinayak@epicslope.partners">Contact</a>
+        <a href="/llms.txt">llms.txt</a>
+      </div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  const palette = {
+    signal:   '#D04A2A',
+    up:       '#3E9B6A',
+    mid:      '#D4A34A',
+    mute:     'rgba(255,255,255,0.25)',
+    grid:     'rgba(255,255,255,0.07)',
+    text:     'rgba(255,255,255,0.55)',
+    mono:     "'JetBrains Mono', monospace"
+  };
+
+  // Total citations horizontal bar
+  const ctx = document.getElementById('totalCitationsChart');
+  if(ctx){
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Revizto', 'Alice Technologies', 'Solibri', 'Vavetek', 'Endra.ai', 'Augmenta'],
+        datasets: [{
+          label: 'Total AI Citations',
+          data: [310, 43, 20, 1, 1, 0],
+          backgroundColor: [
+            palette.up,
+            'rgba(62,155,106,0.55)',
+            'rgba(212,163,74,0.7)',
+            'rgba(208,74,42,0.45)',
+            'rgba(208,74,42,0.45)',
+            'rgba(255,255,255,0.12)'
+          ],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: { label: ctx => ' ' + ctx.raw + ' total citations' }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: palette.text, font: { family: palette.mono, size: 10 } },
+            grid:  { color: palette.grid }
+          },
+          y: {
+            ticks: { color: palette.text, font: { family: palette.mono, size: 11 } },
+            grid:  { color: 'transparent' }
+          }
+        }
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
