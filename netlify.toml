@@ -12,6 +12,12 @@
 [build.processing.html]
   pretty_urls = true
 
+# X-Robots-Tag for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+
 # www → apex (301)
 [[redirects]]
   from   = "https://www.rawmktg.com/*"
