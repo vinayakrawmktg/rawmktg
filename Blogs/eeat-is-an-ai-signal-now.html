@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="E-E-A-T is no longer a qualitative guideline for human raters. It is mathematically encoded into LLM parameter weights through RLHF and DPO training pipelines. A technical breakdown of how it works and a 90-day execution plan." />
   <meta name="author" content="rawmktg." />
-  <link rel="canonical" href="https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/eeat-is-an-ai-signal-now" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="article" />
-  <meta property="og:url"         content="https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html" />
+  <meta property="og:url"         content="https://rawmktg.com/blogs/eeat-is-an-ai-signal-now" />
   <meta property="og:title"       content="E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences" />
   <meta property="og:description" content="96% of AI Overview citations go to sources with verifiable E-E-A-T profiles. Here is the technical mechanism behind that, and the 90-day plan to act on it." />
   <meta property="og:site_name"   content="rawmktg." />
@@ -32,12 +32,12 @@
     "headline": "E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences",
     "description": "E-E-A-T is mathematically encoded into LLM parameter weights via RLHF and DPO training. A technical breakdown of the alignment pipeline, Google's Content Warehouse signals, and a 90-day GEO execution framework.",
     "image": "https://rawmktg.com/assets/images/e-e-a-t-is-an-ai-signal-now-header.png",
-    "url": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html",
+    "url": "https://rawmktg.com/blogs/eeat-is-an-ai-signal-now",
     "datePublished": "2026-05-29",
     "dateModified": "2026-05-29",
     "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
     "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/eeat-is-an-ai-signal-now" },
     "keywords": ["E-E-A-T", "GEO", "Generative Engine Optimization", "AI citations", "RLHF", "DPO", "LLM preferences", "AI search", "content strategy", "B2B marketing", "Google Quality Rater Guidelines"]
   }
   </script>
@@ -48,7 +48,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
-    "url": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html"
+    "url": "https://rawmktg.com/blogs/eeat-is-an-ai-signal-now"
   }
   </script>
 
@@ -209,7 +209,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
-      {"@type": "ListItem", "position": 2, "name": "E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences", "item": "https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html"}
+      {"@type": "ListItem", "position": 2, "name": "E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences", "item": "https://rawmktg.com/blogs/eeat-is-an-ai-signal-now"}
     ]
   }
   </script>
@@ -256,7 +256,7 @@
 
       <p>The rules of digital visibility are being rewritten. For nearly two decades, Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, and Trustworthiness) functioned as a <a href="https://outpaceseo.com/glossary/google-search-quality-rater-guidelines/" target="_blank" rel="noopener">qualitative guideline for human search quality raters</a>. It was abstract, interpretive, and largely invisible to the algorithms themselves. That era is over.</p>
 
-      <p>Today, those same human-defined quality preferences are mathematically encoded into the parameter weights of large language models (LLMs) through a process called preference alignment. When a generative AI system like Perplexity, Google AI Overviews, or ChatGPT Search decides which sources to cite, it is not running a fresh keyword match. It is <a href="/Blogs/how-rag-actually-works.html">executing a policy baked in during training</a>, a policy that mirrors, with striking precision, the criteria Google trained its human raters to apply. The gap between "writing for E-E-A-T" and "writing for AI citation" has effectively collapsed to zero.</p>
+      <p>Today, those same human-defined quality preferences are mathematically encoded into the parameter weights of large language models (LLMs) through a process called preference alignment. When a generative AI system like Perplexity, Google AI Overviews, or ChatGPT Search decides which sources to cite, it is not running a fresh keyword match. It is <a href="/blogs/how-rag-actually-works">executing a policy baked in during training</a>, a policy that mirrors, with striking precision, the criteria Google trained its human raters to apply. The gap between "writing for E-E-A-T" and "writing for AI citation" has effectively collapsed to zero.</p>
 
       <p>This article traces the technical mechanism behind that collapse: how RLHF and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.</p>
 
@@ -364,7 +364,7 @@
 
       <p><a href="https://openreview.net/forum?id=fMFwDJgoOB" target="_blank" rel="noopener">Contrast-Consistent Search (CCS)</a> takes a different approach: rather than actively steering activations, it probes for stable truthfulness directions that already exist within a model's pre-trained layers. CCS trains a lightweight classifier on contrastive pairs of statements and finds that truthfulness is geometrically encoded, consistently, in intermediate model layers across a wide range of topics.</p>
 
-      <p>The marketing implication of both findings is significant. If your content contains internally inconsistent claims, exaggerated copy, or factual errors, it triggers activation states that align with the model's "low-trust" axis. During retrieval, the model's attention mechanisms are then less likely to select and cite those passages. This is not a keyword penalty. It is a deep, structural exclusion from the model's generative output. The <a href="/Blogs/hallucination-proofing-your-brand.html">Claim-Anchoring Framework</a> provides the content architecture for making brand claims machine-attributable and hallucination-resistant.</p>
+      <p>The marketing implication of both findings is significant. If your content contains internally inconsistent claims, exaggerated copy, or factual errors, it triggers activation states that align with the model's "low-trust" axis. During retrieval, the model's attention mechanisms are then less likely to select and cite those passages. This is not a keyword penalty. It is a deep, structural exclusion from the model's generative output. The <a href="/blogs/hallucination-proofing-your-brand">Claim-Anchoring Framework</a> provides the content architecture for making brand claims machine-attributable and hallucination-resistant.</p>
 
       <div class="stat-callout">
         <div class="sc-val">96%</div>
@@ -419,7 +419,7 @@
 
       <h2 id="geo-trinity">The On-Page Playbook: The GEO Holy Trinity</h2>
 
-      <div class="section-answer"><a href="/Blogs/geo-compounding-flywheel.html">The original KDD 2024 GEO study from Princeton University</a> evaluated nine distinct content modifications. Three tactics consistently delivered the largest gains in AI citation frequency, now collectively referred to as the "Holy Trinity" of GEO: Quotation Addition, Statistics Addition, and Cite Sources.</div>
+      <div class="section-answer"><a href="/blogs/geo-compounding-flywheel">The original KDD 2024 GEO study from Princeton University</a> evaluated nine distinct content modifications. Three tactics consistently delivered the largest gains in AI citation frequency, now collectively referred to as the "Holy Trinity" of GEO: Quotation Addition, Statistics Addition, and Cite Sources.</div>
 
       <p>The <a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener">original KDD 2024 Generative Engine Optimization study from Princeton University</a> evaluated nine distinct content modifications to measure their impact on AI citation frequency. Three tactics consistently delivered the largest gains:</p>
 
@@ -489,12 +489,12 @@
         <li><strong>Vector Embedding Alignment (0.84 correlation):</strong> How closely the semantic footprint of your off-site content aligns with the latent intent vectors of targeted consumer queries. Built by publishing deep, comprehensive content across multiple authoritative industry platforms.</li>
         <li><strong>Knowledge Graph Density (0.76 correlation):</strong> A brand's presence within structured external databases such as Google's Knowledge Graph, Wikidata, Wikipedia, and DBpedia acts as a primary source of truth for AI engines, allowing models to verify the relationships between entities, people, products, and services.</li>
         <li><strong>Branded Web Mentions (0.392 correlation) and Search Volume (0.334 correlation):</strong> High-frequency occurrences of your brand name alongside targeted keyword phrases across authoritative publications create strong semantic associations, effectively training model weights to view your brand as a natural answer to queries in your topic space.</li>
-        <li><strong><a href="/Blogs/schema-markup-ai-citations-2026.html">Schema Markup (73% selection boost) and Metadata (40% citation increase)</a>:</strong> Proper implementation of Schema.org structured data provides generative engines with a clear, machine-readable guide to your content, significantly boosting selection rates.</li>
+        <li><strong><a href="/blogs/schema-markup-ai-citations-2026">Schema Markup (73% selection boost) and Metadata (40% citation increase)</a>:</strong> Proper implementation of Schema.org structured data provides generative engines with a clear, machine-readable guide to your content, significantly boosting selection rates.</li>
       </ul>
 
       <h3>Three Systematic Off-Page Initiatives</h3>
       <ul>
-        <li><strong>Structured Schema and Identity Matching:</strong> Deploy robust <a href="/Blogs/schema-markup-ai-citations-2026.html">Organization and Person schema markup</a> across all core web properties. Use the <code>sameAs</code> property to link your brand and its featured experts directly to authoritative third-party entity profiles such as Wikidata, Wikipedia, or professional associations. Use the <code>knowsAbout</code> schema property within Person profiles to explicitly define the semantic categories where your authors possess certified expertise.</li>
+        <li><strong>Structured Schema and Identity Matching:</strong> Deploy robust <a href="/blogs/schema-markup-ai-citations-2026">Organization and Person schema markup</a> across all core web properties. Use the <code>sameAs</code> property to link your brand and its featured experts directly to authoritative third-party entity profiles such as Wikidata, Wikipedia, or professional associations. Use the <code>knowsAbout</code> schema property within Person profiles to explicitly define the semantic categories where your authors possess certified expertise.</li>
         <li><strong>Wikidata and Wikipedia Entity Mapping:</strong> Establish and maintain verified listings on Wikidata. Because Wikidata serves as a primary training corpus and retrieval layer for foundational LLMs, having a structured, queryable entity record cements your brand's existence in the semantic layer of the web, making it verifiable and citable by default.</li>
         <li><strong>PR-Driven Co-occurrence and Earned Media:</strong> Traditional SEO link acquisition often targets cheap, low-traffic blogs. In generative search, this approach is largely ineffective. <a href="https://ziptie.dev/blog/eeat-for-ai-search/" target="_blank" rel="noopener">Earned media placements drive over 90% of all AI citations</a>, and because LLM knowledge bases are frozen for extended periods, a single high-quality placement on a trusted platform continues to drive AI citations for 18 to 24 months post-publication.</li>
       </ul>

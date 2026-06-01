@@ -1,6 +1,8 @@
 # netlify.toml
-# Disables Pretty URLs so /Blogs/xxx.html is served directly
-# without being redirected to /blogs/xxx.
+# Physical files live at /Blogs/:slug.html
+# Canonical URLs are /blogs/:slug (clean, lowercase, no extension)
+# A 200 rewrite makes Netlify serve the file at the clean URL transparently.
+# Old /Blogs/ URLs get 301'd to the new canonical.
 
 [build]
   publish = "."
@@ -11,29 +13,38 @@
 [build.processing.html]
   pretty_urls = false
 
-# Catch any already-indexed lowercase URLs and send them to the
-# canonical uppercase /Blogs/ path (including .html extension).
-# Redirect www to apex domain
+# www → apex (301)
 [[redirects]]
-  from = "https://www.rawmktg.com/*"
-  to   = "https://rawmktg.com/:splat"
+  from   = "https://www.rawmktg.com/*"
+  to     = "https://rawmktg.com/:splat"
   status = 301
   force  = true
 
+# Old /posts/ URL already indexed by Google (301)
 [[redirects]]
-  from = "/blogs/:slug.html"
-  to   = "/Blogs/:slug.html"
+  from   = "/posts/eeat-ai-signal-llm-brand-authority"
+  to     = "/blogs/eeat-is-an-ai-signal-now"
   status = 301
   force  = true
 
+# Old uppercase /Blogs/:slug.html → new clean canonical (301)
 [[redirects]]
-  from = "/blogs/:slug"
-  to   = "/Blogs/:slug.html"
+  from   = "/Blogs/:slug.html"
+  to     = "/blogs/:slug"
   status = 301
   force  = true
 
+# Old uppercase /Blogs/:slug (no extension) → new clean canonical (301)
 [[redirects]]
-  from = "/posts/eeat-ai-signal-llm-brand-authority"
-  to   = "/Blogs/eeat-is-an-ai-signal-now.html"
+  from   = "/Blogs/:slug"
+  to     = "/blogs/:slug"
   status = 301
+  force  = true
+
+# Serve clean /blogs/:slug by transparently proxying /Blogs/:slug.html (200 rewrite)
+# Browser URL stays at /blogs/:slug — this is the canonical URL.
+[[redirects]]
+  from   = "/blogs/:slug"
+  to     = "/Blogs/:slug.html"
+  status = 200
   force  = true

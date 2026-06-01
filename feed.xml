@@ -11,120 +11,120 @@
 
     <item>
       <title><![CDATA[Why ChatGPT, Perplexity and Gemini Cite Different Vendors · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/why-engines-recommend-different-vendors.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/why-engines-recommend-different-vendors.html</guid>
+      <link>https://rawmktg.com/blogs/why-engines-recommend-different-vendors</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/why-engines-recommend-different-vendors</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[ChatGPT, Perplexity, and Gemini pull from different data sources and weight different signals. A technical breakdown of each engine's retrieval logic and a prioritisation matrix for B2B SaaS brands.]]></description>
     </item>
 
     <item>
       <title><![CDATA[Prompt-to-Citation Tracking: Build a GEO Measurement Stack · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/prompt-to-citation-tracking.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/prompt-to-citation-tracking.html</guid>
+      <link>https://rawmktg.com/blogs/prompt-to-citation-tracking</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/prompt-to-citation-tracking</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[How to build a GEO measurement stack from zero: prompt portfolios, GA4 AI search attribution, custom Looker Studio dashboard, and Revenue per Citation -- the metrics that prove AI visibility ROI.]]></description>
     </item>
 
     <item>
       <title><![CDATA[Stop AI Getting Your Brand Wrong: GEO Content Architecture · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/hallucination-proofing-your-brand.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/hallucination-proofing-your-brand.html</guid>
+      <link>https://rawmktg.com/blogs/hallucination-proofing-your-brand</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/hallucination-proofing-your-brand</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[The specific markup, FAQ architecture, and claim-anchoring techniques that measurably reduce AI hallucinations about your brand -- grounded in the Princeton GEO study and real RAG pipeline mechanics.]]></description>
     </item>
 
     <item>
       <title><![CDATA[Schema Markup for AI Citations: 2026 B2B Playbook · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/schema-markup-ai-citations-2026.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/schema-markup-ai-citations-2026.html</guid>
+      <link>https://rawmktg.com/blogs/schema-markup-ai-citations-2026</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/schema-markup-ai-citations-2026</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[53% of AI-cited pages have valid schema markup. A complete technical playbook covering @graph architecture, FAQPage, Article, SoftwareApplication, and HowTo schema for B2B SaaS brands competing for AI citations.]]></description>
     </item>
 
     <item>
       <title><![CDATA[How AI Crawlers Index Your Site: GPTBot vs. Perplexity · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html</guid>
+      <link>https://rawmktg.com/blogs/how-ai-crawlers-index-your-site</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/how-ai-crawlers-index-your-site</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[Three crawlers, three indexing logics, one robots.txt. A side-by-side breakdown of OAI-SearchBot, PerplexityBot, and CCBot: crawl frequency, scope, JavaScript handling, IP verification, and the unified configuration that keeps your site visible to citation engines without leaking content to training corpora.]]></description>
     </item>
 
     <item>
       <title><![CDATA[GEO Compounding Flywheel: Build Durable AI Visibility · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/geo-compounding-flywheel.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/geo-compounding-flywheel.html</guid>
+      <link>https://rawmktg.com/blogs/geo-compounding-flywheel</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/geo-compounding-flywheel</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[A seven-step loop (Build, Crawl, Train/Retrieve, Rate, Recommend, Validate, Re-signal) is quietly deciding which B2B brands LLMs will recommend for the next decade. The brands that start the loop now will be the ones impossible to unseat later.]]></description>
     </item>
 
     <item>
       <title><![CDATA[E-E-A-T Is an AI Signal Now: LLM Preferences Explained · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/eeat-is-an-ai-signal-now.html</guid>
+      <link>https://rawmktg.com/blogs/eeat-is-an-ai-signal-now</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/eeat-is-an-ai-signal-now</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[E-E-A-T is no longer a qualitative guideline for human raters. It is mathematically encoded into LLM parameter weights through RLHF and DPO training pipelines. A technical breakdown of how it works and a 90-day execution plan.]]></description>
     </item>
 
     <item>
       <title><![CDATA[Authority Seeding for AI: Building LLM Trust Signals · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/authority-seeding-ai-llm-trust.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/authority-seeding-ai-llm-trust.html</guid>
+      <link>https://rawmktg.com/blogs/authority-seeding-ai-llm-trust</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/authority-seeding-ai-llm-trust</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[A tactical playbook for building the niche-relevant backlinks, review signals, and third-party citations that feed AI training data, with domain-type prioritisation by vertical.]]></description>
     </item>
 
     <item>
       <title><![CDATA[High-Citation Page Anatomy: What AI Engines Actually Pull · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html</guid>
+      <link>https://rawmktg.com/blogs/anatomy-of-a-high-citation-page</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/anatomy-of-a-high-citation-page</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[Deconstruction of 10 pages that consistently earn AI citations across ChatGPT, Gemini, and Perplexity: shared patterns in heading structure, paragraph density, source-linking, and answer-lead formatting.]]></description>
     </item>
 
     <item>
       <title><![CDATA[The 30-Day Content Half-Life: AI Recency Ranking Signal · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html</guid>
+      <link>https://rawmktg.com/blogs/30-day-content-half-life-recency-ai-ranking-signal</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/30-day-content-half-life-recency-ai-ranking-signal</guid>
       <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[Content freshness in AI search is now a mechanical requirement, not a preference. A breakdown of why recency is a hard signal, how each platform weighs it, and a programmatic refresh system to keep your content inside the citation window.]]></description>
     </item>
 
     <item>
       <title><![CDATA[India's Senior Living Sector Has an AI Visibility Problem · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/india-senior-living-ai-visibility-gap.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/india-senior-living-ai-visibility-gap.html</guid>
+      <link>https://rawmktg.com/blogs/india-senior-living-ai-visibility-gap</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/india-senior-living-ai-visibility-gap</guid>
       <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[A data-driven look at the SEO and GEO gap across three of India's leading senior living brands. The ChatGPT citation gap is 39×. The Gemini gap is 49×. And the most dangerous scenario isn't invisibility, it's misclassification.]]></description>
     </item>
 
     <item>
       <title><![CDATA[How RAG Actually Works, And Why It Matters for GEO · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/how-rag-actually-works.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/how-rag-actually-works.html</guid>
+      <link>https://rawmktg.com/blogs/how-rag-actually-works</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/how-rag-actually-works</guid>
       <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[A technical breakdown of Retrieval-Augmented Generation for B2B marketing leaders. The five-stage AI search pipeline, what the GEO research actually shows, and a three-phase action plan for this quarter.]]></description>
     </item>
 
     <item>
       <title><![CDATA[Autonomous Retail: The $74B Industry's AI Visibility Gap · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/autonomous-retail-ai-visibility-gap.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/autonomous-retail-ai-visibility-gap.html</guid>
+      <link>https://rawmktg.com/blogs/autonomous-retail-ai-visibility-gap</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/autonomous-retail-ai-visibility-gap</guid>
       <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[A DR 16 company has more AI citations than AiFi (DR 60), Standard AI (DR 55), and GetZippin combined. How a $74 billion market is being shaped by whoever shows up first in Google and ChatGPT.]]></description>
     </item>
 
     <item>
       <title><![CDATA[CX SaaS SEO Analysis: 6 Companies, One Pattern · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/cx-saas-seo-discoverability-analysis.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/cx-saas-seo-discoverability-analysis.html</guid>
+      <link>https://rawmktg.com/blogs/cx-saas-seo-discoverability-analysis</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/cx-saas-seo-discoverability-analysis</guid>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[We audited six B2B SaaS companies in the customer experience and survey software space. Six findings on organic traffic gaps, technical SEO debt, content funnel inversions, backlink quality, and AI visibility.]]></description>
     </item>
 
     <item>
       <title><![CDATA[Container Tracking SaaS SEO &amp; GEO: 6-Company Analysis · rawmktg.]]></title>
-      <link>https://rawmktg.com/Blogs/container-tracking-saas-seo-geo-analysis.html</link>
-      <guid isPermaLink="true">https://rawmktg.com/Blogs/container-tracking-saas-seo-geo-analysis.html</guid>
+      <link>https://rawmktg.com/blogs/container-tracking-saas-seo-geo-analysis</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/container-tracking-saas-seo-geo-analysis</guid>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[We analysed six B2B SaaS companies in the container tracking software space across organic search, AI citations, referring domains, and keyword strategy. Seven findings from Ahrefs data.]]></description>
     </item>

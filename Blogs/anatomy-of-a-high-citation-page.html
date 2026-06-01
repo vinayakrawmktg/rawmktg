@@ -6,11 +6,11 @@
   <title>High-Citation Page Anatomy: What AI Engines Actually Pull · rawmktg.</title>
   <meta name="description" content="Deconstruction of 10 pages that consistently earn AI citations across ChatGPT, Gemini, and Perplexity: shared patterns in heading structure, paragraph density, source-linking, and answer-lead formatting." />
   <meta name="author" content="rawmktg." />
-  <link rel="canonical" href="https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/anatomy-of-a-high-citation-page" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="article" />
-  <meta property="og:url"         content="https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html" />
+  <meta property="og:url"         content="https://rawmktg.com/blogs/anatomy-of-a-high-citation-page" />
   <meta property="og:title"       content="Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers" />
   <meta property="og:description" content="38% of AI-cited URLs rank in the top-10 for the same query. 55% of citations come from the first 30% of a page. Six structural patterns that separate cited from invisible." />
   <meta property="og:site_name"   content="rawmktg." />
@@ -32,12 +32,12 @@
     "headline": "Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers",
     "description": "Deconstruction of 10 pages that consistently earn AI citations across ChatGPT, Gemini, and Perplexity: shared patterns in heading structure, paragraph density, source-linking, and answer-lead formatting.",
     "image": "https://rawmktg.com/assets/images/anatomy-of-a-high-citation-header.png",
-    "url": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html",
+    "url": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page",
     "datePublished": "2026-05-29",
     "dateModified": "2026-05-29",
     "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
     "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page" },
     "keywords": ["AI citations", "GEO", "generative engine optimisation", "content architecture", "BLUF", "RAG", "schema markup", "citation readiness", "AI search visibility", "B2B SEO"]
   }
   </script>
@@ -47,7 +47,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".post-head h1", ".lede", ".tldr", "h2"] },
-    "url": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html"
+    "url": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page"
   }
   </script>
 
@@ -501,7 +501,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers", "item": "https://rawmktg.com/Blogs/anatomy-of-a-high-citation-page.html"}
+      {"@type": "ListItem", "position": 2, "name": "Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers", "item": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page"}
     ]
   }
   </script>
@@ -575,7 +575,7 @@
 
     <p>Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual claim-level retrieval. Where classical search asked <em>"does this domain deserve to rank?"</em>, AI retrieval asks <em>"does this specific passage deserve to be cited?"</em></p>
 
-    <p>Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time <a href="/Blogs/how-rag-actually-works.html">Retrieval-Augmented Generation (RAG)</a> frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.</p>
+    <p>Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time <a href="/blogs/how-rag-actually-works">Retrieval-Augmented Generation (RAG)</a> frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.</p>
 
     <p>This analysis deconstructs the six structural patterns shared by 10 pages that consistently earned AI citations across ChatGPT, Gemini, and Perplexity over a 90-day observation window. Each pattern is presented with the mechanism behind it, an audit framework, and an implementation checklist.</p>
 
@@ -740,7 +740,7 @@
   <section class="prose">
     <p>There is one documented exception to the top-30% concentration: <strong>structured FAQ blocks.</strong> Deep-page citations (in the 60%&ndash;100% zone) are disproportionately driven by FAQ sections because each question-and-answer pair functions as a self-contained standalone answer unit. Each pair acts as a micro-article. To earn a citation from this spatial bracket, each FAQ question must be answered directly and completely within the first sentence of its answer, which reapplies the same inverted pyramid logic at the micro level.</p>
 
-    <p>The content freshness dimension adds a second axis to spatial logic. <a href="/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html">Pages not updated in 90 days are 3.2x more likely to lose their AI citations</a> regardless of structural quality. Spatial optimization that is never refreshed decays out of the citation window.</p>
+    <p>The content freshness dimension adds a second axis to spatial logic. <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">Pages not updated in 90 days are 3.2x more likely to lose their AI citations</a> regardless of structural quality. Spatial optimization that is never refreshed decays out of the citation window.</p>
 
   </section>
 </article>
@@ -812,9 +812,9 @@
 
     <p>Schema serves two distinct functions in a RAG pipeline. First, it provides direct, unrendered access to page data, exposing full Q&amp;A pairs and article metadata directly in the raw HTML payload. Second, it establishes entity clarity: a brand becomes a recognized node in the LLM's internal knowledge representation rather than floating generic text.</p>
 
-    <p>One technical consideration that is often missed: a complete <a href="/Blogs/how-ai-crawlers-index-your-site.html">AI crawler access audit</a> must precede any schema rollout. Without explicit allowance for <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">GPTBot</code>, <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">PerplexityBot</code>, and <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Google-Extended</code>, the schema investment returns nothing.</p>
+    <p>One technical consideration that is often missed: a complete <a href="/blogs/how-ai-crawlers-index-your-site">AI crawler access audit</a> must precede any schema rollout. Without explicit allowance for <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">GPTBot</code>, <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">PerplexityBot</code>, and <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Google-Extended</code>, the schema investment returns nothing.</p>
 
-    <p>The recommended implementation is a single <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">@graph</code> JSON-LD block combining <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Article</code>, <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">FAQPage</code>, and <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Organization</code> entities into one script tag per page, as detailed in the <a href="/Blogs/schema-markup-ai-citations-2026.html">schema markup playbook</a>:</p>
+    <p>The recommended implementation is a single <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">@graph</code> JSON-LD block combining <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Article</code>, <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">FAQPage</code>, and <code style="font-family:var(--f-mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:3px;">Organization</code> entities into one script tag per page, as detailed in the <a href="/blogs/schema-markup-ai-citations-2026">schema markup playbook</a>:</p>
 
   </section>
 </article>
@@ -906,7 +906,7 @@
     <div class="pattern-eyebrow">Pattern 06 &middot; Multi-Platform Calibration</div>
     <h2><span class="n">&sect;6</span>Platform divergence and the commercial value of citations</h2>
 
-    <p>Optimizing for citations requires understanding that different generative engines operate with distinct retrieval parameters. Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode, meaning a strategy optimized for one platform misses the majority of citations available across the full landscape. The technical reason for this, along with platform-specific playbooks for each engine, is in <a href="/Blogs/why-engines-recommend-different-vendors.html">Why ChatGPT, Perplexity and Gemini Recommend Different Vendors</a>.</p>
+    <p>Optimizing for citations requires understanding that different generative engines operate with distinct retrieval parameters. Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode, meaning a strategy optimized for one platform misses the majority of citations available across the full landscape. The technical reason for this, along with platform-specific playbooks for each engine, is in <a href="/blogs/why-engines-recommend-different-vendors">Why ChatGPT, Perplexity and Gemini Recommend Different Vendors</a>.</p>
 
     <div class="platform-grid">
       <div class="platform-card">
@@ -1022,7 +1022,7 @@
       <ul>
         <li><span class="step-days">Days 61&ndash;70</span><span>Map a conversational query prompt matrix representing the buyer's journey: ten category queries, ten problem queries, five to ten competitor comparison queries. Test weekly across ChatGPT, Claude, Gemini, and Perplexity.</span></li>
         <li><span class="step-days">Days 71&ndash;80</span><span>Track three core metrics: <b>AI Citation Rate (ACR)</b>: % of tracked queries where your domain is cited; <b>Citation Retention Rate (CRR)</b>: % of citations persisting across audits (below 60% signals content aging out); <b>Share of Model (SOM)</b>: your count vs. competitors.</span></li>
-        <li><span class="step-days">Days 81&ndash;90</span><span>Execute the first citation gap analysis: identify queries where competitors earn citations but your brand does not. <a href="/Blogs/30-day-content-half-life-recency-ai-ranking-signal.html">The 30-day content half-life</a> means pages left unrefreshed beyond 90 days lose citation eligibility regardless of structural quality.</span></li>
+        <li><span class="step-days">Days 81&ndash;90</span><span>Execute the first citation gap analysis: identify queries where competitors earn citations but your brand does not. <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">The 30-day content half-life</a> means pages left unrefreshed beyond 90 days lose citation eligibility regardless of structural quality.</span></li>
       </ul>
     </div>
 
@@ -1116,7 +1116,7 @@
 
     <p>The high-citation page finds the middle by treating every section as a citable unit: a passage that could be lifted by a language model and presented as a complete, sourced answer to a specific question. That test, applied rigorously to every section of every content asset before publication, is the simplest operational definition of AI citation best-answer page GEO content. It does not require a new technology stack. It requires a different editorial standard.</p>
 
-    <p>The <a href="/Blogs/geo-compounding-flywheel.html">GEO compounding flywheel</a> starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. <a href="/Blogs/autonomous-retail-ai-visibility-gap.html">Vertical-specific AI visibility</a> follows the same structural rules; the content research is domain-specific, but the architecture is universal.</p>
+    <p>The <a href="/blogs/geo-compounding-flywheel">GEO compounding flywheel</a> starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. <a href="/blogs/autonomous-retail-ai-visibility-gap">Vertical-specific AI visibility</a> follows the same structural rules; the content research is domain-specific, but the architecture is universal.</p>
 
   </section>
 
@@ -1134,11 +1134,11 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">Does the same strategy work across ChatGPT, Gemini, and Perplexity?</div>
-      <div class="faq-a">Claude/Anthropic has the most stringent factual precision requirements, performing well with content depth over 2,000 words and strong outbound citation density. Google AI Overviews are most structurally influenced by <a href="/Blogs/schema-markup-ai-citations-2026.html">schema</a>; FAQPage schema alone produces a 53% increase in AI Overview citation likelihood for eligible content.</div>
+      <div class="faq-a">Claude/Anthropic has the most stringent factual precision requirements, performing well with content depth over 2,000 words and strong outbound citation density. Google AI Overviews are most structurally influenced by <a href="/blogs/schema-markup-ai-citations-2026">schema</a>; FAQPage schema alone produces a 53% increase in AI Overview citation likelihood for eligible content.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Do these structural patterns apply outside B2B SaaS?</div>
-      <div class="faq-a">The structural patterns are consistent across verticals. <a href="/Blogs/autonomous-retail-ai-visibility-gap.html">Vertical-specific AI visibility</a> follows the same structural rules; the difference is in the entity vocabulary and the specific query prompts that matter for each industry. The architectural principles are universal; the content research is domain-specific.</div>
+      <div class="faq-a">The structural patterns are consistent across verticals. <a href="/blogs/autonomous-retail-ai-visibility-gap">Vertical-specific AI visibility</a> follows the same structural rules; the difference is in the entity vocabulary and the specific query prompts that matter for each industry. The architectural principles are universal; the content research is domain-specific.</div>
     </div>
   </div>
 

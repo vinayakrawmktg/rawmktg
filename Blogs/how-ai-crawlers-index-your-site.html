@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Three crawlers, three indexing logics, one robots.txt. A side-by-side breakdown of OAI-SearchBot, PerplexityBot, and CCBot: crawl frequency, scope, JavaScript handling, IP verification, and the unified configuration that keeps your site visible to citation engines without leaking content to training corpora." />
   <meta name="author" content="rawmktg." />
-  <link rel="canonical" href="https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/how-ai-crawlers-index-your-site" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="article" />
-  <meta property="og:url"         content="https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html" />
+  <meta property="og:url"         content="https://rawmktg.com/blogs/how-ai-crawlers-index-your-site" />
   <meta property="og:title"       content="OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site" />
   <meta property="og:description" content="None of the three AI crawlers execute JavaScript. A technical breakdown of how OAI-SearchBot, PerplexityBot, and CCBot actually work, how to verify them, and the robots.txt configuration that maximises citation share." />
   <meta property="og:site_name"   content="rawmktg." />
@@ -32,12 +32,12 @@
     "headline": "OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site",
     "description": "Three crawlers, three indexing logics, one robots.txt. A side-by-side breakdown of OAI-SearchBot, PerplexityBot, and CCBot: crawl frequency, scope, JavaScript handling, IP verification, and the unified configuration for AI citation visibility.",
     "image": "https://rawmktg.com/assets/images/how-ai-crawlers-index-your-site-header.png",
-    "url": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html",
+    "url": "https://rawmktg.com/blogs/how-ai-crawlers-index-your-site",
     "datePublished": "2026-05-29",
     "dateModified": "2026-05-29",
     "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
     "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/how-ai-crawlers-index-your-site" },
     "keywords": ["OAI-SearchBot", "PerplexityBot", "CCBot", "AI crawlers", "GEO", "robots.txt", "JavaScript rendering", "AI indexing", "ChatGPT Search", "technical SEO", "B2B marketing"]
   }
   </script>
@@ -48,7 +48,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
-    "url": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html"
+    "url": "https://rawmktg.com/blogs/how-ai-crawlers-index-your-site"
   }
   </script>
 
@@ -231,7 +231,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
-      {"@type": "ListItem", "position": 2, "name": "OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site", "item": "https://rawmktg.com/Blogs/how-ai-crawlers-index-your-site.html"}
+      {"@type": "ListItem", "position": 2, "name": "OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site", "item": "https://rawmktg.com/blogs/how-ai-crawlers-index-your-site"}
     ]
   }
   </script>
@@ -281,7 +281,7 @@
         <div class="tldr-label">TL;DR</div>
         <ul class="tldr-list">
           <li><span class="tn">01</span><strong>None of the three execute JavaScript.</strong> Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.</li>
-          <li><span class="tn">02</span><strong>Crawl logic differs by mission.</strong> OAI-SearchBot indexes for citations, <a href="/Blogs/how-rag-actually-works.html">PerplexityBot for RAG</a>, CCBot for archival training. Same User-Agent header, three different scopes.</li>
+          <li><span class="tn">02</span><strong>Crawl logic differs by mission.</strong> OAI-SearchBot indexes for citations, <a href="/blogs/how-rag-actually-works">PerplexityBot for RAG</a>, CCBot for archival training. Same User-Agent header, three different scopes.</li>
           <li><span class="tn">03</span><strong>Robots.txt blocks the bot, not the URL.</strong> A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a <code>noindex</code> meta tag on the page itself.</li>
           <li><span class="tn">04</span><strong>Verify before you trust the User-Agent.</strong> Spoofed AI crawlers are common. Validate with FCrDNS or the published JSON CIDR feeds.</li>
         </ul>
@@ -293,7 +293,7 @@
 
       <p>That model does not generalise to the new wave. <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OAI-SearchBot</a>, <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">PerplexityBot</a>, and <a href="https://commoncrawl.org/ccbot" target="_blank" rel="noopener">CCBot</a> are high-velocity HTML parsers. They fetch raw markup as quickly as the network allows, extract structured text, and move on. None of them runs your bundle.js. None of them waits for hydration. <strong>If your content depends on client-side execution to appear, it does not exist as far as these three are concerned.</strong></p>
 
-      <p>The second shift is functional. The three crawlers are not variants of the same indexer with different traffic budgets. They have distinct missions, distinct triggers, and distinct downstream consumers. OAI-SearchBot feeds <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">ChatGPT Search and the Atlas browser</a>. PerplexityBot populates <a href="/Blogs/how-rag-actually-works.html">Perplexity's retrieval index</a>. CCBot builds the multi-petabyte archive that trains a long list of open-source models. The same User-Agent slot in your robots.txt does three different things. Those distinct missions translate into different citation scoring models: <a href="/Blogs/why-engines-recommend-different-vendors.html">ChatGPT, Perplexity, and Gemini each rank content differently</a> once it enters their retrieval pool.</p>
+      <p>The second shift is functional. The three crawlers are not variants of the same indexer with different traffic budgets. They have distinct missions, distinct triggers, and distinct downstream consumers. OAI-SearchBot feeds <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">ChatGPT Search and the Atlas browser</a>. PerplexityBot populates <a href="/blogs/how-rag-actually-works">Perplexity's retrieval index</a>. CCBot builds the multi-petabyte archive that trains a long list of open-source models. The same User-Agent slot in your robots.txt does three different things. Those distinct missions translate into different citation scoring models: <a href="/blogs/why-engines-recommend-different-vendors">ChatGPT, Perplexity, and Gemini each rank content differently</a> once it enters their retrieval pool.</p>
 
       <blockquote>"The same User-Agent slot in your robots.txt does three different things. If you treat the three crawlers identically, you are leaving citation share on the table or leaking training data, sometimes both."</blockquote>
 
@@ -691,7 +691,7 @@ server {
 
       <h2 id="robots-sitemap">A Unified robots.txt and Sitemap Strategy</h2>
 
-      <p>The point of the configuration below is to express a specific policy: <strong><a href="/Blogs/geo-compounding-flywheel.html">be discoverable for citation</a>, be invisible to training.</strong> Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.</p>
+      <p>The point of the configuration below is to express a specific policy: <strong><a href="/blogs/geo-compounding-flywheel">be discoverable for citation</a>, be invisible to training.</strong> Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.</p>
 
       <div class="code-wrap">
         <div class="code-block">
@@ -783,7 +783,7 @@ Sitemap: https://example.com/sitemap.xml</pre>
 
       <h2 id="geo-optimisations">The GEO Optimisations That Move the Needle</h2>
 
-      <p>Once the rendering, verification, and robots configuration are correct, <a href="/Blogs/schema-markup-ai-citations-2026.html">three secondary optimisations consistently improve citation outcomes</a> across all three crawlers. None of them is novel. All three are skipped by most teams because the audit signal is weak.</p>
+      <p>Once the rendering, verification, and robots configuration are correct, <a href="/blogs/schema-markup-ai-citations-2026">three secondary optimisations consistently improve citation outcomes</a> across all three crawlers. None of them is novel. All three are skipped by most teams because the audit signal is weak.</p>
 
       <h3>ARIA roles and semantic layout</h3>
 
