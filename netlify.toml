@@ -1,8 +1,7 @@
 # netlify.toml
-# Physical files live at /Blogs/:slug.html
-# Canonical URLs are /blogs/:slug (clean, lowercase, no extension)
-# A 200 rewrite makes Netlify serve the file at the clean URL transparently.
-# Old /Blogs/ URLs get 301'd to the new canonical.
+# Files live at /blogs/:slug.html (lowercase folder, .html extension)
+# pretty_urls = true makes Netlify serve /blogs/slug → blogs/slug.html natively (no redirect)
+# Old /Blogs/ URLs (uppercase) get 301'd to the new clean canonical.
 
 [build]
   publish = "."
@@ -11,7 +10,7 @@
   skip_processing = false
 
 [build.processing.html]
-  pretty_urls = false
+  pretty_urls = true
 
 # www → apex (301)
 [[redirects]]
@@ -39,12 +38,4 @@
   from   = "/Blogs/:slug"
   to     = "/blogs/:slug"
   status = 301
-  force  = true
-
-# Serve clean /blogs/:slug by transparently proxying /Blogs/:slug.html (200 rewrite)
-# Browser URL stays at /blogs/:slug — this is the canonical URL.
-[[redirects]]
-  from   = "/blogs/:slug"
-  to     = "/Blogs/:slug.html"
-  status = 200
   force  = true
