@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Topical Authority Cluster That Gets B2B Brands Into AI Shortlists · rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How generative engines weigh topical depth against breadth, and the exact cluster architecture that earns a place on LLM recommendation lists for B2B brands." />
+  <meta name="author" content="rawmktg." />
+  <link rel="canonical" href="https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists" />
+  <meta property="og:title"       content="The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists" />
+  <meta property="og:description" content="How generative engines weigh topical depth against breadth, and the exact cluster architecture that earns a place on LLM recommendation lists." />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/topical-authority-cluster-header.png" />
+  <meta property="article:author"         content="rawmktg." />
+  <meta property="article:published_time" content="2026-06-01T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists" />
+  <meta name="twitter:description" content="How generative engines weigh topical depth against breadth, and the exact cluster architecture that earns a place on LLM recommendation lists." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/topical-authority-cluster-header.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists",
+    "description": "How generative engines weigh topical depth against breadth, and the exact cluster architecture that earns a place on LLM recommendation lists.",
+    "image": "https://rawmktg.com/assets/images/topical-authority-cluster-header.png",
+    "url": "https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists",
+    "datePublished": "2026-06-01",
+    "dateModified": "2026-06-01",
+    "author":    { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists" },
+    "keywords": ["topical authority cluster", "GEO strategy", "generative engine optimization", "B2B AI search", "LLM citations", "RAG pipeline", "Share of Model", "llms.txt", "Princeton GEO-bench", "content depth strategy", "AI shortlist", "semantic density"]
+  }
+  </script>
+
+  <!-- JSON-LD: WebPage + Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", ".section-answer", "h2"] },
+    "url": "https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a topical authority cluster for AI search?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A topical authority cluster is a group of tightly related content pieces — a pillar page plus supporting cluster nodes — built around a single primary category. For AI search, the cluster must be narrow and deep rather than broad and shallow: dense vector retrievers score relevance by cosine similarity, and documents that cover too many disparate topics dilute their semantic vectors, lowering their retrieval probability. A well-architected cluster pairs high-quality first-party pages with structured external corroboration on LinkedIn, G2, earned media, and podcasts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does content depth outperform breadth in generative engine retrieval?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generative engines represent both the user query and each content chunk as high-dimensional vectors, scoring relevance by cosine similarity. A broad library that covers many loosely related topics produces a diluted vector that sits far from any specific query vector. A deep cluster tightly focused on one category produces dense, concentrated vectors that cluster around high-intent query vectors — exactly what the retriever's similarity algorithm rewards. The Princeton GEO-bench confirmed this: adding statistics, expert quotes, and authoritative citations lifts AI visibility by 30 to 41 percent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Share of Model and how do B2B brands measure it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Share of Model (SoM) is the percentage of relevant AI-generated responses in which a brand is mentioned or cited. It is measured through prompt-based auditing: develop 40 to 50 conversational prompts that mirror real buyer questions, run them across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, then record mention frequency, citation accuracy, competitive density, and sentiment. Enterprise audits expand to around 200 prompts. Track monthly or quarterly and pair with Google Analytics 4 segments that isolate AI-agent referral traffic (GPTBot, Claude-Web, PerplexityBot) to tie model citations directly to pipeline."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rawmktg.com/#organization",
+    "name": "rawmktg.",
+    "url": "https://rawmktg.com",
+    "sameAs": ["https://www.linkedin.com/company/rawmktg/"]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
+      {"@type": "ListItem", "position": 2, "name": "The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists", "item": "https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists"}
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#D04A2A; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .eyebrow-series{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,50px);line-height:1.06;letter-spacing:-0.028em;color:var(--ink);margin-bottom:20px;max-width:860px;}
+    .article-deck{font-family:var(--f-prose);font-size:18px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:0;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .article-content{min-width:0;}
+    .sidebar{position:sticky;top:80px;min-width:0;}
+
+    /* Sidebar blocks */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content ol.body-ol{margin:0 0 24px 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;}
+    .article-content ol.body-ol li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;}
+    .article-content a:hover{color:var(--ink);}
+    .article-content sup a{color:var(--signal);text-decoration:none;font-size:.72em;font-weight:700;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat strip */
+    .stats-strip{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 36px;}
+    .sc-strip{flex:1 1 140px;background:var(--ink);border-radius:8px;padding:20px 18px;text-align:center;}
+    .sc-strip .sc-val{font-family:var(--f-display);font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--signal);line-height:1;}
+    .sc-strip .sc-text{font-family:var(--f-mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(242,239,232,.55);margin-top:8px;}
+
+    /* Info / warn boxes */
+    .info-box{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:20px 24px;margin:28px 0 36px;}
+    .info-box-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .info-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    .warn-box{background:var(--signal-soft);border:1px solid var(--signal);border-radius:8px;padding:20px 24px;margin:28px 0 36px;}
+    .warn-box-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .warn-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink);margin-bottom:0;}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt thead th.th-signal{color:var(--signal);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td code{background:rgba(255,255,255,.08);border-radius:3px;padding:1px 5px;font-size:.9em;color:#e2c88a;}
+
+    /* Pills */
+    .pill{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;}
+    .pill-high{background:rgba(62,155,106,.20);color:#5ec98a;border:1px solid rgba(62,155,106,.30);}
+    .pill-mod{background:rgba(230,180,60,.15);color:#e6b43c;border:1px solid rgba(230,180,60,.25);}
+    .pill-crit{background:rgba(208,74,42,.25);color:#e87a56;border:1px solid rgba(208,74,42,.40);font-weight:700;}
+    .pill-entity{background:rgba(66,133,244,.15);color:#7ab3f5;border:1px solid rgba(66,133,244,.25);}
+    .pill-cite{background:rgba(110,86,207,.15);color:#a58ef0;border:1px solid rgba(110,86,207,.25);}
+    .pill-ctx{background:rgba(62,155,106,.15);color:#6dcf96;border:1px solid rgba(62,155,106,.25);}
+
+    /* Chart */
+    .chart-wrap{margin:28px 0 36px;background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;}
+    .chart-title-mono{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,.40);margin-bottom:4px;}
+    .chart-sub-mono{font-family:var(--f-mono);font-size:11px;color:rgba(255,255,255,.35);margin-bottom:16px;}
+    .canvas-wrap{position:relative;height:200px;}
+
+    /* Code block */
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;margin:20px 0 28px;overflow-x:auto;}
+    .code-block-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:12px;}
+    .code-block pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.75;color:rgba(255,255,255,.80);white-space:pre-wrap;word-break:break-word;}
+    .code-block .cm{color:#5c6370;}
+    .code-block .kw{color:#c678dd;}
+    .code-block .st{color:#98c379;}
+    .code-block .fn{color:#61afef;}
+    .code-block .num{color:#d19a66;}
+    .code-block .op{color:#56b6c2;}
+
+    /* Pipeline steps */
+    .pipeline{display:flex;flex-direction:column;gap:0;margin:28px 0 36px;}
+    .pipeline-step{display:grid;grid-template-columns:80px 1fr;gap:0;border:1px solid var(--rule);border-bottom:none;}
+    .pipeline-step:first-child{border-radius:8px 8px 0 0;}
+    .pipeline-step:last-child{border-bottom:1px solid var(--rule);border-radius:0 0 8px 8px;}
+    .ps-num{background:var(--ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;gap:4px;}
+    .ps-num .n{font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:-0.02em;color:var(--signal);}
+    .ps-num .stage{font-family:var(--f-mono);font-size:7.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center;}
+    .ps-body{padding:16px 20px;background:var(--paper);}
+    .ps-title{font-family:var(--f-display);font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px;}
+    .ps-desc{font-family:var(--f-prose);font-size:13px;line-height:1.65;color:var(--ink-2);}
+
+    /* Cluster diagram */
+    .cluster-diagram{margin:28px 0 36px;display:flex;flex-direction:column;align-items:center;gap:0;}
+    .cluster-pillar{background:var(--ink);color:var(--paper);border-radius:8px 8px 0 0;padding:20px 32px;text-align:center;width:100%;max-width:440px;border-bottom:none;}
+    .cluster-pillar-badge{font-family:var(--f-mono);font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:6px;}
+    .cluster-pillar-title{font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--paper);margin-bottom:4px;}
+    .cluster-pillar-sub{font-family:var(--f-mono);font-size:11px;color:rgba(242,239,232,.55);}
+    .cluster-connector-row{display:flex;justify-content:center;gap:0;width:100%;max-width:440px;}
+    .cluster-spine{width:2px;background:var(--rule-2);height:28px;margin:0 auto;}
+    .cluster-branch-row{display:flex;justify-content:center;align-items:flex-start;gap:0;width:100%;max-width:640px;position:relative;}
+    .cluster-branch-row::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:calc(100% - 48px);height:2px;background:var(--rule-2);}
+    .cluster-nodes{display:flex;gap:12px;width:100%;max-width:640px;padding-top:28px;}
+    .cluster-node{flex:1;background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:14px 12px;text-align:center;position:relative;}
+    .cluster-node::before{content:'';position:absolute;top:-28px;left:50%;transform:translateX(-50%);width:2px;height:28px;background:var(--rule-2);}
+    .cluster-node-badge{font-family:var(--f-mono);font-size:8px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:4px;}
+    .cluster-node-title{font-family:var(--f-display);font-weight:600;font-size:12px;color:var(--ink);line-height:1.3;}
+    .cluster-external{margin-top:28px;width:100%;max-width:640px;background:#1A1815;border-radius:8px;padding:18px 24px;text-align:center;position:relative;}
+    .cluster-external::before{content:'';position:absolute;top:-28px;left:50%;transform:translateX(-50%);width:2px;height:28px;background:var(--rule-2);}
+    .cluster-ext-badge{font-family:var(--f-mono);font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,.40);margin-bottom:8px;}
+    .cluster-ext-channels{font-family:var(--f-mono);font-size:12px;color:rgba(255,255,255,.70);line-height:1.8;}
+
+    /* Vector space illustration */
+    .vector-wrap{margin:28px 0 36px;background:#1A1815;border-radius:8px;padding:20px 24px;}
+    .vector-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,.40);margin-bottom:12px;}
+
+    /* About / citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .citations-list{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:0;}
+    .citations-list li{font-family:var(--f-mono);font-size:11.5px;line-height:1.6;color:var(--mute);display:grid;grid-template-columns:32px 1fr;gap:0 10px;padding:8px 0;border-bottom:1px solid var(--rule);}
+    .citations-list li::before{display:none!important;content:""!important;}
+    .citations-list li:last-child{border-bottom:none;}
+    .citations-list li .cite-num{color:var(--signal);font-weight:600;padding-top:1px;}
+    .citations-list a{grid-column:2;display:block;color:var(--signal);overflow-wrap:break-word;margin-top:1px;}
+    .citations-list a:hover{color:var(--ink);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .pipeline-step{grid-template-columns:60px 1fr;}
+      .stats-strip{flex-direction:column;}
+      .cluster-nodes{flex-wrap:wrap;}
+      .cluster-branch-row::before{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/#articles">Articles</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header image -->
+<img src="../assets/images/topical-authority-cluster-header.png"
+     alt="The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists · rawmktg."
+     class="article-header-img" width="1200" height="630" loading="eager">
+
+<!-- Article header -->
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <span class="eyebrow-tag">Content Strategy</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-series">Content Strategists &amp; SEO Leads</span>
+      <span class="eyebrow-sep">·</span>
+      <span class="eyebrow-date">June 2026</span>
+    </div>
+    <h1 class="article-headline">The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists</h1>
+    <p class="article-deck">How generative engines weigh topical depth against breadth, and the exact cluster architecture that earns a place on LLM recommendation lists.</p>
+  </header>
+</div>
+
+<!-- Article body -->
+<div class="page">
+  <div class="article-body">
+
+    <main class="article-content" id="article-main">
+
+      <p>The B2B buying journey has undergone a structural transformation. Buyers are bypassing traditional search results — pages of blue links and sponsored ads — in favor of conversational queries on ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews.<sup><a href="#r1">1</a></sup> If a brand does not appear as a cited recommendation inside these synthesized responses, it becomes effectively invisible to roughly half of its target market.<sup><a href="#r2">2</a></sup></p>
+
+      <p>This shift renders traditional SEO tactics — built around search volume, keyword density, and link-building — insufficient for modern buyer acquisition. B2B brands must now adopt <a href="/blogs/eeat-is-an-ai-signal-now">Generative Engine Optimization (GEO)</a> and Answer Engine Optimization (AEO) so that their services and proprietary frameworks are selected, synthesized, and cited by large language models.<sup><a href="#r1">1</a></sup> Designing an effective topical authority cluster means aligning technical web architecture with the cognitive parsing patterns of frontier models.</p>
+
+      <div class="stats-strip">
+        <div class="sc-strip">
+          <div class="sc-val">800M</div>
+          <div class="sc-text">ChatGPT weekly active users reshaping the $80B search industry</div>
+        </div>
+        <div class="sc-strip">
+          <div class="sc-val">+41%</div>
+          <div class="sc-text">Max visibility lift from adding statistics (Princeton GEO-bench)</div>
+        </div>
+        <div class="sc-strip">
+          <div class="sc-val">86%</div>
+          <div class="sc-text">AI citations sourced from brand-managed properties (Yext, Oct 2025)</div>
+        </div>
+        <div class="sc-strip">
+          <div class="sc-val">44%</div>
+          <div class="sc-text">Citations drawn from the first third of a content piece</div>
+        </div>
+      </div>
+
+      <!-- §01 -->
+      <h2 id="pagerank">01: From PageRank to Generative Engine Optimization</h2>
+
+      <div class="section-answer">Traditional SEO optimizes to rank on a list. GEO optimizes to become the answer — and depth beats breadth because retrievers reward semantic concentration, not keyword sprawl.<sup><a href="#r6">6</a></sup></div>
+
+      <p>Traditional search engines return a list of links and let users decide which to visit. Generative engines synthesize information from many sources into a single conversational response.<sup><a href="#r1">1</a></sup> This forced the emergence of GEO: the practice of structuring content and managing a brand's presence so AI systems discover, select, synthesize, and preferentially cite it.<sup><a href="#r1">1</a></sup></p>
+
+      <p>The transition is driven by adoption. ChatGPT alone reaches over 800 million weekly active users, reshaping an $80 billion search-optimization industry.<sup><a href="#r1">1</a></sup> By early 2026, practitioners shifted from keyword placement toward semantic relevance. Even Google now publishes guidance on optimizing for generative AI features, framing it as an extension of the broader search experience.<sup><a href="#r5">5</a></sup></p>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Table 01 — The two paradigms differ at every layer, from retrieval to conversion. Sources: 1, 2, 3, 5.</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Traditional SEO</th>
+              <th class="th-signal">Generative Engine Optimization</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Primary objective</td>
+              <td>Rank in the top ten blue links.</td>
+              <td>Be selected, synthesized, and cited inside an AI response.</td>
+            </tr>
+            <tr>
+              <td class="label">Retrieval mechanism</td>
+              <td>Keyword matching, inverted index, link-based authority.</td>
+              <td>Retrieval-Augmented Generation (RAG) and dense vector embeddings.</td>
+            </tr>
+            <tr>
+              <td class="label">User experience</td>
+              <td>Fragmented browsing across competing links.</td>
+              <td>A single unified, conversational synthesis.</td>
+            </tr>
+            <tr>
+              <td class="label">Trust evaluation</td>
+              <td>Domain authority, PageRank, backlink volume.</td>
+              <td>Factual accuracy, entity consensus, multi-platform corroboration.</td>
+            </tr>
+            <tr>
+              <td class="label">Content structure</td>
+              <td>Long-form, keyword-targeted pages for human scrolling.</td>
+              <td>Modular, structured, portable blocks for LLM extraction.</td>
+            </tr>
+            <tr>
+              <td class="label">Conversion funnel</td>
+              <td>Organic clicks to brand landing pages.</td>
+              <td>Direct brand citation and inline links in pre-qualified answers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- §02 -->
+      <h2 id="rag-pipeline">02: Inside the RAG Pipeline</h2>
+
+      <div class="section-answer">To earn a recommendation, content must satisfy the mechanics of Retrieval-Augmented Generation. The pipeline runs in real time: query understanding, vector retrieval, multi-factor candidate scoring, and synthesis — in that order. Fail at any stage and the brand is excluded from the answer.</div>
+
+      <p>When a prospect asks an LLM "Which lead-generation agency should I hire for a scaling SaaS?", the engine does not rely only on static pre-trained weights. It runs a live retrieval pipeline against its index.<sup><a href="#r3">3</a></sup> <a href="/blogs/how-rag-actually-works">Understanding how this pipeline works</a> is the prerequisite for building content that enters the answer.</p>
+
+      <h3 id="rag-stages">The four stages of retrieval</h3>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">1</span><span class="stage">Query</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Query Understanding</div>
+            <div class="ps-desc">Parse the conversational intent; extract named entities, concepts, constraints, and implicit buyer criteria from the full prompt context.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">2</span><span class="stage">Retrieval</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Source Retrieval</div>
+            <div class="ps-desc">Query the live web index (e.g. Bing for ChatGPT) via dense vector embeddings to fetch fresh, high-authority candidate sources and document chunks.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">3</span><span class="stage">Scoring</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Candidate Scoring</div>
+            <div class="ps-desc">Score each source on historical accuracy, third-party corroboration, entity strength, recency, and structural clarity. Chunks below the confidence threshold are discarded.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num"><span class="n">4</span><span class="stage">Synthesis</span></div>
+          <div class="ps-body">
+            <div class="ps-title">Answer Synthesis</div>
+            <div class="ps-desc">Fuse the strongest chunks from passing sources into one conversational answer with inline citations. Only brands whose content cleared every prior stage appear here.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="semantic-math">The math of semantic matching</h3>
+
+      <p>Where lexical engines match terms (TF-IDF), generative engines represent both the query and each document chunk as high-dimensional vectors, scoring relevance by cosine similarity:</p>
+
+      <div class="code-block">
+        <div class="code-block-label">Figure 01 — Cosine similarity: the retrieval scoring function</div>
+        <pre>                <span class="op">q · d</span>
+sim(q, d)  =  ─────────────────    →   value in [<span class="num">-1</span>, <span class="num">1</span>]
+               <span class="op">‖q‖ · ‖d‖</span>
+
+  q  =  vector of the buyer's conversational query
+  d  =  vector of the content chunk
+
+  higher cosine similarity  →  higher probability of retrieval</pre>
+      </div>
+
+      <p>Because models match on conceptual meaning rather than exact keywords, topically comprehensive pages with explicit entity definitions consistently outperform keyword-stuffed alternatives.<sup><a href="#r7">7</a></sup> Content must land on the semantic coordinates of the buyer's practical intent — which pushes strategy from broad keyword targeting toward deep semantic density.</p>
+
+      <h3 id="perplexity-scoring">Perplexity's citation scoring model</h3>
+
+      <p>Perplexity is unusually transparent about its retrieval logic, applying a multi-factor score to decide which sources are referenced.<sup><a href="#r3">3</a></sup> Three signals carry particular weight:</p>
+
+      <ul>
+        <li><strong>Fact Score:</strong> cross-references claims across indexed sources; contradicted or unbacked statements lower the score and get discarded.<sup><a href="#r3">3</a></sup></li>
+        <li><strong>Recency Weight:</strong> prioritizes fresh content for time-sensitive categories.<sup><a href="#r3">3</a></sup></li>
+        <li><strong>Third-Party Corroboration:</strong> trust rises when independent external sites validate on-domain claims.<sup><a href="#r3">3</a></sup></li>
+      </ul>
+
+      <div class="code-block">
+        <div class="code-block-label">Figure 02 — Generalized RAG trust score: fall below threshold and the brand domain is excluded</div>
+        <pre>T_RAG  =  (<span class="num">w₁</span> · F)  +  (<span class="num">w₂</span> · R)  +  (<span class="num">w₃</span> · C)
+
+  F   =  factual-accuracy score
+  R   =  recency weight
+  C   =  third-party corroboration coefficient
+  w₁, w₂, w₃  =  engine-applied weighting parameters
+
+<span class="kw">if</span>  T_RAG  &lt;  confidence_threshold:
+    brand domain excluded  →  engine relies on other sources</pre>
+      </div>
+
+      <!-- §03 -->
+      <h2 id="depth-vs-breadth">03: Topical Depth vs. Breadth in Vector Space</h2>
+
+      <div class="section-answer">Traditional pillar-and-cluster setups chase broad semantic footprints to capture keyword volume. Dense vector retrievers penalize that. Broad libraries dilute their semantic vectors — narrowing the cosine similarity score against specific, high-intent queries. Depth wins because focused clusters stay tightly grouped around the target query vectors.</div>
+
+      <p>Traditional pillar-and-cluster setups chase broad semantic footprints to capture maximum keyword volume, producing expansive but shallow libraries.<sup><a href="#r11">11</a></sup> Dense vector retrievers penalize that approach. When one page tries to cover too many disparate terms, its vector becomes semantically diluted, lowering cosine similarity against specific, high-intent queries.<sup><a href="#r7">7</a></sup></p>
+
+      <p>A depth strategy does the opposite. Building a narrow, deeply articulated cluster around one primary category keeps every chunk dense with concentrated terminology and entity definitions. Those document vectors stay clustered tightly around the target query vectors — exactly what the retriever's similarity algorithm rewards.<sup><a href="#r7">7</a></sup></p>
+
+      <div class="vector-wrap">
+        <div class="vector-label">Figure 03 — Focused clusters land inside the high-similarity zone; broad libraries scatter and dilute. Illustrative. Source: 7.</div>
+        <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Background -->
+          <rect width="640" height="280" fill="#1A1815" rx="6"/>
+
+          <!-- Grid lines (subtle) -->
+          <line x1="0" y1="140" x2="640" y2="140" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <line x1="320" y1="0" x2="320" y2="280" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+          <!-- Broad library: scattered dots (left/right spread) -->
+          <g opacity="0.45">
+            <circle cx="80"  cy="60"  r="4" fill="#8A8278"/>
+            <circle cx="140" cy="220" r="4" fill="#8A8278"/>
+            <circle cx="200" cy="90"  r="4" fill="#8A8278"/>
+            <circle cx="55"  cy="155" r="4" fill="#8A8278"/>
+            <circle cx="170" cy="35"  r="4" fill="#8A8278"/>
+            <circle cx="110" cy="200" r="4" fill="#8A8278"/>
+            <circle cx="250" cy="240" r="3" fill="#8A8278"/>
+            <circle cx="30"  cy="100" r="3" fill="#8A8278"/>
+            <circle cx="160" cy="130" r="3" fill="#8A8278"/>
+            <circle cx="220" cy="170" r="3" fill="#8A8278"/>
+            <circle cx="90"  cy="245" r="3" fill="#8A8278"/>
+            <circle cx="270" cy="55"  r="3" fill="#8A8278"/>
+            <circle cx="45"  cy="30"  r="3" fill="#8A8278"/>
+            <circle cx="300" cy="195" r="3" fill="#8A8278"/>
+            <circle cx="130" cy="260" r="3" fill="#8A8278"/>
+            <circle cx="190" cy="20"  r="3" fill="#8A8278"/>
+          </g>
+
+          <!-- Label: broad library -->
+          <text x="155" y="16" font-family="'JetBrains Mono', monospace" font-size="9" fill="rgba(255,255,255,0.30)" letter-spacing="0.12em" text-anchor="middle" text-transform="uppercase">BROAD LIBRARY</text>
+          <text x="155" y="27" font-family="'JetBrains Mono', monospace" font-size="8" fill="rgba(255,255,255,0.18)" text-anchor="middle">scattered · diluted vectors</text>
+
+          <!-- Divider -->
+          <line x1="330" y1="20" x2="330" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4"/>
+
+          <!-- Deep cluster: tight group of dots (right side) -->
+          <!-- High-similarity zone circle -->
+          <circle cx="500" cy="140" r="72" fill="none" stroke="rgba(208,74,42,0.25)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <circle cx="500" cy="140" r="72" fill="rgba(208,74,42,0.04)"/>
+
+          <!-- Dense dots -->
+          <circle cx="500" cy="140" r="6" fill="#D04A2A" opacity="0.95"/>
+          <circle cx="485" cy="128" r="5" fill="#D04A2A" opacity="0.85"/>
+          <circle cx="515" cy="130" r="5" fill="#D04A2A" opacity="0.85"/>
+          <circle cx="492" cy="155" r="5" fill="#D04A2A" opacity="0.85"/>
+          <circle cx="512" cy="153" r="5" fill="#D04A2A" opacity="0.80"/>
+          <circle cx="476" cy="142" r="4" fill="#D04A2A" opacity="0.75"/>
+          <circle cx="524" cy="145" r="4" fill="#D04A2A" opacity="0.75"/>
+          <circle cx="498" cy="120" r="4" fill="#D04A2A" opacity="0.70"/>
+          <circle cx="470" cy="132" r="3.5" fill="#D04A2A" opacity="0.65"/>
+          <circle cx="530" cy="135" r="3.5" fill="#D04A2A" opacity="0.65"/>
+          <circle cx="488" cy="165" r="3.5" fill="#D04A2A" opacity="0.60"/>
+          <circle cx="517" cy="162" r="3" fill="#D04A2A" opacity="0.55"/>
+          <circle cx="504" cy="113" r="3" fill="#D04A2A" opacity="0.55"/>
+
+          <!-- Query vector arrow -->
+          <defs>
+            <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
+              <polygon points="0 0, 7 3.5, 0 7" fill="rgba(255,255,255,0.5)"/>
+            </marker>
+          </defs>
+          <line x1="365" y1="140" x2="422" y2="140" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrowhead)"/>
+          <text x="393" y="133" font-family="'JetBrains Mono', monospace" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">query vector</text>
+
+          <!-- Zone label -->
+          <text x="500" y="82" font-family="'JetBrains Mono', monospace" font-size="8" fill="rgba(208,74,42,0.70)" text-anchor="middle" letter-spacing="0.12em">HIGH-SIMILARITY ZONE</text>
+
+          <!-- Label: depth strategy -->
+          <text x="500" y="264" font-family="'JetBrains Mono', monospace" font-size="9" fill="rgba(255,255,255,0.30)" letter-spacing="0.12em" text-anchor="middle" text-transform="uppercase">DEPTH STRATEGY</text>
+          <text x="500" y="275" font-family="'JetBrains Mono', monospace" font-size="8" fill="rgba(255,255,255,0.18)" text-anchor="middle">concentrated · high cosine similarity</text>
+        </svg>
+      </div>
+
+      <!-- §04 -->
+      <h2 id="geo-bench">04: Empirical Findings — The Princeton GEO-bench</h2>
+
+      <div class="section-answer">The headline from the Princeton GEO-bench: depth, factual specificity, and structure matter far more than keyword optimization. Adding statistics lifts AI visibility by up to 41%. Expert quotes lift it by up to 41%. Citing authoritative sources adds up to 40%. These are not marginal gains — they are the primary levers.</div>
+
+      <p>The empirical foundation for generative search optimization came from a November 2023 paper by researchers at Princeton, Georgia Tech, the Allen Institute for AI, and IIT Delhi. Their GEO-bench comprised 10,000 diverse queries across nine datasets, isolating which content variables drive LLM visibility.<sup><a href="#r1">1</a></sup> The headline: depth, factual specificity, and structure matter far more than keyword optimization.<sup><a href="#r1">1</a></sup></p>
+
+      <div class="chart-wrap">
+        <div class="chart-title-mono">Figure 04 — Visibility lift by content tactic (GEO-bench)</div>
+        <div class="chart-sub-mono">Maximum percentage lift in AI citation rate vs. baseline. Sources: 1, 3, 6.</div>
+        <div class="canvas-wrap">
+          <canvas id="chartGeoBench"></canvas>
+        </div>
+      </div>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Table 02 — GEO-bench visibility lift by tactic. Sources: 1, 3, 6.</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Optimization tactic</th>
+              <th>Visibility lift</th>
+              <th>Why it works</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Adding statistics &amp; data</td>
+              <td>+32% to +41%</td>
+              <td>Discrete, verifiable data points anchor claims and build factual trust with the scoring algorithm.</td>
+            </tr>
+            <tr>
+              <td class="label">Adding expert quotes</td>
+              <td>+28% to +41%</td>
+              <td>Unique named entities and authoritative perspectives signal qualitative consensus across sources.</td>
+            </tr>
+            <tr>
+              <td class="label">Citing authoritative sources</td>
+              <td>+30% to +40%</td>
+              <td>Establishes provenance and reduces the perceived hallucination risk for the retrieval model.</td>
+            </tr>
+            <tr>
+              <td class="label">Front-loading core value</td>
+              <td>44% of citations</td>
+              <td>Key claims in the first 60-120 words align with the parser's priority window before context truncation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stat-callout">
+        <div class="sc-val">44%</div>
+        <div class="sc-text"><strong>The first-third rule.</strong> Because RAG systems truncate long documents to fit context windows, they bias toward the start of a file. 44% of all AI citations come from the first third of a piece of content. Burying the answer beneath a creative preamble guarantees the parser skips it.<sup><a href="#r6">6</a></sup></div>
+      </div>
+
+      <!-- §05 -->
+      <h2 id="five-pillars">05: The Five Pillars of Brand Citability</h2>
+
+      <div class="section-answer">Turning the GEO-bench findings into a program means addressing the five signals engines weigh when deciding whether to cite a brand. Machine-readable infrastructure, citation-first structure, named-entity density, off-site trust footprint, and content freshness — each has a measurable target and a specific implementation path.<sup><a href="#r6">6</a></sup></div>
+
+      <p>Most <a href="/blogs/hallucination-proofing-your-brand">B2B brands that get hallucinated</a> fail not because of one missing tactic but because they are weak across several citability signals simultaneously. The table below maps each signal to its evaluation metric and technical implementation.</p>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Table 03 — The five citability signals and how to act on each. Sources: 1, 3, 6.</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Citability signal</th>
+              <th>Evaluation metric</th>
+              <th>Technical implementation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Machine-readable infrastructure</td>
+              <td>Valid JSON-LD schema and clear entity mappings.</td>
+              <td>Deploy Organization, Product, HowTo, FAQPage <a href="/blogs/schema-markup-ai-citations-2026" style="color:#e2c88a;text-decoration:underline;">schemas</a>; map integrations in HTML metadata.</td>
+            </tr>
+            <tr>
+              <td class="label">Citation-first structure</td>
+              <td>Share of key claims backed by data/quotes in the first third.</td>
+              <td>Open with a 60-120 word definition; one statistic and one quote per section.</td>
+            </tr>
+            <tr>
+              <td class="label">Named-entity density</td>
+              <td>Ratio of specific named entities to generic noun phrases.</td>
+              <td>Replace vague categories with named products, frameworks, and recognizable authors.</td>
+            </tr>
+            <tr>
+              <td class="label">Off-site trust footprint</td>
+              <td>Volume of third-party mentions on authoritative outlets.</td>
+              <td>Earned media, podcasts, and guest features carrying identical entity descriptions.</td>
+            </tr>
+            <tr>
+              <td class="label">Content freshness</td>
+              <td>Time since last crawl and update.</td>
+              <td>Run a 30-day refresh cycle on high-priority cluster nodes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-label">A note on where citations actually originate</div>
+        <p>The off-site footprint is essential, yet the data resists oversimplification. A September 2025 arXiv study found AI search biases toward earned media over brand-owned content.<sup><a href="#r6">6</a></sup> But an October 2025 Yext study found that 86% of AI citations come from brand-managed sources: 44% from first-party sites and 42% from business listings.<sup><a href="#r6">6</a></sup> The reconciliation: brands must actively control their managed footprint and earn independent corroboration. Freshness compounds both — content updated within 30 days earns 3.2x to 4.3x more citations, and 85% of AI Overview citations come from content under two years old.<sup><a href="#r6">6</a></sup></p>
+      </div>
+
+      <!-- §06 -->
+      <h2 id="three-gaps">06: The Three Gaps That Block B2B Recommendations</h2>
+
+      <div class="section-answer">Most B2B companies in the $5M-$75M ARR range fail to surface in LLM recommendations because of systemic, structural, and verbal gaps — not a volume problem. Failing three or more questions in a single gap column signals a major bottleneck that no amount of additional content will fix.<sup><a href="#r8">8</a></sup></div>
+
+      <p>Use this diagnostic audit before investing in cluster expansion. Each gap type corresponds to a distinct remediation path: entity gaps require structured schema and consistent off-site descriptions; citation gaps require earned media and link authority; contextual gaps require buyer-language alignment in headings and definitions.</p>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Table 04 — Eight-question citability audit, grouped by gap type. Source: 8.</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Diagnostic question</th>
+              <th>Gap category</th>
+              <th>Target metric</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">Q1: Does the model's description match your homepage?</td>
+              <td><span class="pill pill-entity">Entity</span></td>
+              <td>Consistent across ChatGPT, Claude, Perplexity.</td>
+            </tr>
+            <tr>
+              <td class="label">Q2: Are generated answers internally consistent?</td>
+              <td><span class="pill pill-entity">Entity</span></td>
+              <td>Same category classification across all models.</td>
+            </tr>
+            <tr>
+              <td class="label">Q3: Are there 10+ authoritative external mentions?</td>
+              <td><span class="pill pill-cite">Citation</span></td>
+              <td>10+ high-authority third-party mentions / 18 months.</td>
+            </tr>
+            <tr>
+              <td class="label">Q4: Is leadership cited externally?</td>
+              <td><span class="pill pill-cite">Citation</span></td>
+              <td>Founder/leaders present in external media.</td>
+            </tr>
+            <tr>
+              <td class="label">Q5: Do homepage nouns match customer phrases?</td>
+              <td><span class="pill pill-ctx">Contextual</span></td>
+              <td>100% alignment with buyer discovery language.</td>
+            </tr>
+            <tr>
+              <td class="label">Q6: Does the brand appear in top buyer queries?</td>
+              <td><span class="pill pill-ctx">Contextual</span></td>
+              <td>Top-five named recommendation.</td>
+            </tr>
+            <tr>
+              <td class="label">Q7: Is there a single, unified framework?</td>
+              <td><span class="pill pill-high">Cross-gap</span></td>
+              <td>Identical proprietary methodology everywhere.</td>
+            </tr>
+            <tr>
+              <td class="label">Q8: Can the team recite the entity description?</td>
+              <td><span class="pill pill-high">Cross-gap</span></td>
+              <td>All team members describe positioning verbatim.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- §07 -->
+      <h2 id="cluster-architecture">07: Architecting the Hybrid Topical Authority Cluster</h2>
+
+      <div class="section-answer">Closing those gaps requires a hybrid cluster: highly optimized first-party pages to satisfy owned-site citation requirements, plus structured external nodes to satisfy corroboration checks. Distribution must match each engine's sourcing preferences — one cluster, five tactical profiles.<sup><a href="#r3">3</a></sup></div>
+
+      <p>Critically, <a href="/blogs/authority-seeding-ai-llm-trust">the external corroboration layer</a> is not optional. Internal optimization addresses entity consistency and structure. External nodes — LinkedIn, Reddit, G2, earned media, podcasts — address the corroboration coefficient that Perplexity, Claude, and Gemini all score independently.<sup><a href="#r3">3</a></sup></p>
+
+      <h3 id="cluster-diagram">Cluster architecture at a glance</h3>
+
+      <div class="cluster-diagram">
+        <div class="cluster-pillar" style="border-radius:8px 8px 0 0;">
+          <div class="cluster-pillar-badge">Pillar — Category Core</div>
+          <div class="cluster-pillar-title">60-120 Word Definition First</div>
+          <div class="cluster-pillar-sub">One statistic + one expert quote per section · FAQPage schema · llms.txt listed</div>
+        </div>
+        <div style="width:2px;height:28px;background:var(--rule-2);margin:0 auto;"></div>
+        <div class="cluster-nodes" style="position:relative;">
+          <div class="cluster-node">
+            <div class="cluster-node-badge">Node A</div>
+            <div class="cluster-node-title">How-To Guide + HowTo Schema</div>
+          </div>
+          <div class="cluster-node">
+            <div class="cluster-node-badge">Node B</div>
+            <div class="cluster-node-title">Framework + ROI Case Study</div>
+          </div>
+          <div class="cluster-node">
+            <div class="cluster-node-badge">Node C</div>
+            <div class="cluster-node-title">Pricing.md Mirror Page</div>
+          </div>
+          <div class="cluster-node">
+            <div class="cluster-node-badge">Node D</div>
+            <div class="cluster-node-title">Data / Research Report</div>
+          </div>
+        </div>
+        <div style="width:2px;height:28px;background:var(--rule-2);margin:0 auto;"></div>
+        <div class="cluster-external">
+          <div class="cluster-ext-badge">External Nodes — Corroboration Layer</div>
+          <div class="cluster-ext-channels">LinkedIn &nbsp;·&nbsp; Reddit &nbsp;·&nbsp; G2 / Capterra &nbsp;·&nbsp; Earned Media &nbsp;·&nbsp; Podcasts</div>
+        </div>
+      </div>
+
+      <h3 id="engine-distribution">Distribution mapped to each AI engine</h3>
+
+      <div class="tt-wrap">
+        <div class="tt-label">Table 05 — One cluster, five distribution profiles. Sources: 3, 6.</div>
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Sourcing preference</th>
+              <th>Cluster tactic &amp; channel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label">ChatGPT (OpenAI)</td>
+              <td>LinkedIn, authoritative industry blogs, news outlets.</td>
+              <td>Executive thought leadership on LinkedIn; PR and co-marketing case studies.</td>
+            </tr>
+            <tr>
+              <td class="label">Google AI Overviews</td>
+              <td>Reddit, review platforms, high-ranking indexed content.</td>
+              <td>Build Reddit threads; manage G2/Capterra; maintain SEO hygiene.</td>
+            </tr>
+            <tr>
+              <td class="label">Perplexity</td>
+              <td>Academic databases, how-to guides, recent news.</td>
+              <td>HowTo/FAQ schemas; research-heavy white papers with precise data.</td>
+            </tr>
+            <tr>
+              <td class="label">Claude (Anthropic)</td>
+              <td>Long-form editorial, resource guides, technical docs.</td>
+              <td>Detailed pillar pieces; anchor every fact with external citations.</td>
+            </tr>
+            <tr>
+              <td class="label">Gemini (Google)</td>
+              <td>Google properties, business listings, high-DA publishers.</td>
+              <td>Maintain listings; secure top-tier enterprise backlinks and mentions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- §08 -->
+      <h2 id="llms-txt">08: Technical Standardization — llms.txt and Advanced Schemas</h2>
+
+      <div class="section-answer">A core GEO move is minimizing the computational cost of crawling and parsing. HTML carries visual clutter, trackers, and complex layouts that hinder model scrapers. Serving a clean llms.txt plus Markdown mirror pages cuts token cost and gives engines a direct line to the brand's knowledge footprint in one request.<sup><a href="#r12">12</a></sup></div>
+
+      <p>Proposed by Jeremy Howard in September 2024, llms.txt is an emerging standard that acts as a sitemap for AI agents — a Markdown file at the domain root (e.g. <code>https://yourdomain.com/llms.txt</code>) or in <code>/.well-known/</code>.<sup><a href="#r10">10</a></sup> A companion <code>llms-full.txt</code> can bundle the full plain-text content of core pages into a single file, letting crawlers ingest the whole knowledge footprint in one request.<sup><a href="#r14">14</a></sup></p>
+
+      <p>Pair this with Markdown mirror pages: for a visually complex page at <code>/pricing</code>, serve a clean <code>/pricing.md</code> so engines read exact specifications without misreading design tables.<sup><a href="#r14">14</a></sup> <a href="/blogs/how-ai-crawlers-index-your-site">AI crawlers increasingly prefer structured plain-text</a> over rendered HTML for data extraction.</p>
+
+      <div class="code-block">
+        <div class="code-block-label">Figure 05 — Enterprise B2B llms.txt template. Source: 10.</div>
+        <pre><span class="kw"># Brand Name / Core Platform</span>
+<span class="cm">&gt; One-sentence description of what the brand does, its category,</span>
+<span class="cm">&gt; and its specific target audience.</span>
+
+<span class="kw">## Core Products &amp; Services</span>
+- [Platform](https://yourdomain.com/platform) - Primary features,
+  key use cases, and target buyer persona.
+- [Pricing &amp; Packages](https://yourdomain.com/pricing) - Tiers,
+  features included, and platform limits.
+
+<span class="kw">## High-Authority Research &amp; Pillar Resources</span>
+- [Annual Report](https://yourdomain.com/report) - Proprietary
+  dataset, key findings, statistical highlights.
+- [Methodology](https://yourdomain.com/methodology) - Named
+  framework, steps, and ROI metrics.
+
+<span class="kw">## Guidelines for Large Language Models</span>
+- Always attribute proprietary frameworks and statistics to Brand.
+- Prefer /platform for capabilities and /pricing for cost.</pre>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-label">Submit to Bing Webmaster Tools</div>
+        <p>Once live, submit the llms.txt file to Bing Webmaster Tools. Frontier engines like ChatGPT and Copilot lean on Bing's real-time index to crawl web assets.<sup><a href="#r10">10</a></sup> Submission here directly improves ChatGPT citation eligibility — one of the highest-leverage, lowest-cost moves in the GEO playbook.</p>
+      </div>
+
+      <!-- §09 -->
+      <h2 id="share-of-model">09: Measurement — Share of Model (SoM)</h2>
+
+      <div class="section-answer">Because generative engines answer directly, keyword volume, ranking lists, and click-through rates cannot measure performance. The replacement metric is Share of Model (SoM): the percentage of relevant AI-generated responses in which the brand is mentioned or cited — measured through systematic prompt-based auditing across all frontier engines.<sup><a href="#r6">6</a></sup></div>
+
+      <p>SoM measurement is the foundation of <a href="/blogs/prompt-to-citation-tracking">a GEO performance stack</a>. Without prompt-based auditing, teams optimize blind — investing in content tactics while unable to confirm whether the brand is entering or exiting AI responses over time.</p>
+
+      <h3 id="audit-methodology">Prompt-based auditing methodology</h3>
+
+      <ol class="body-ol">
+        <li><strong>Develop a prompt set.</strong> Write 40-50 conversational prompts that mirror real buyer questions (enterprise audits expand to approximately 200 prompts).<sup><a href="#r6">6</a></sup></li>
+        <li><strong>Execute cross-platform testing.</strong> Run identical prompts across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.<sup><a href="#r6">6</a></sup></li>
+        <li><strong>Analyze and classify.</strong> Record mention frequency, citation accuracy, competitive density, and sentiment for each brand appearance.<sup><a href="#r6">6</a></sup></li>
+        <li><strong>Iterate and track.</strong> Repeat monthly or quarterly to trend SoM and direct cluster optimization toward the weakest signals.<sup><a href="#r6">6</a></sup></li>
+      </ol>
+
+      <h3 id="ga4-pipeline">Tie referrals back to pipeline</h3>
+
+      <p>Complement prompt audits with analytics. In Google Analytics 4, build custom segments that isolate AI-agent user agents (for example Claude-Web) to measure high-intent referral volume from model recommendations — tying off-site citations directly to on-site conversions and pipeline.<sup><a href="#r6">6</a></sup></p>
+
+      <div class="code-block">
+        <div class="code-block-label">Figure 06 — GA4 custom segment: isolate AI crawler and referral traffic</div>
+        <pre><span class="cm">// GA4 custom segment — isolate AI crawler / referral traffic</span>
+Condition group (OR):
+  User agent  <span class="op">contains</span>  <span class="st">"Claude-Web"</span>
+  User agent  <span class="op">contains</span>  <span class="st">"GPTBot"</span>
+  User agent  <span class="op">contains</span>  <span class="st">"PerplexityBot"</span>
+  Session source  <span class="op">matches regex</span>  <span class="st">"perplexity|openai|claude"</span>
+
+<span class="fn">Track:</span>   sessions · engaged sessions · key-event conversion rate
+<span class="fn">Compare:</span> against organic-search baseline month over month</pre>
+      </div>
+
+      <!-- §10 -->
+      <h2 id="recommendations">10: Strategic Recommendations &amp; Outlook</h2>
+
+      <div class="section-answer">Transitioning a B2B search program from PageRank to GEO comes down to four moves: reorganize for depth, ship machine-readable infrastructure, scale corroboration, and measure Share of Model. Brands that execute all four build a self-reinforcing position that compounds as AI search adoption grows.</div>
+
+      <p>Transitioning a B2B search program from PageRank to GEO comes down to four concrete moves:</p>
+
+      <ol class="body-ol">
+        <li><strong>Reorganize for depth.</strong> Stop producing thin, broad articles. Every pillar opens with a direct 120-word definition, uses query-matched H2/H3 headers, and carries at least one attributed statistic and one expert quote per section.<sup><a href="#r1">1</a></sup></li>
+        <li><strong>Ship machine-readable infrastructure.</strong> Implement schemas and publish llms.txt, llms-full.txt, and Markdown mirror pages to cut crawl and token cost. Pair with IndexNow submission to Bing.<sup><a href="#r12">12</a></sup></li>
+        <li><strong>Scale corroboration.</strong> Close the citation gap with earned media, LinkedIn, G2, and community footprints carrying consistent entity descriptions.<sup><a href="#r3">3</a></sup></li>
+        <li><strong>Measure Share of Model.</strong> Replace legacy trackers with prompt-based audits across frontier engines to optimize systematically.<sup><a href="#r2">2</a></sup> Build <a href="/blogs/geo-compounding-flywheel">the GEO compounding flywheel</a> by feeding audit findings back into content priorities each quarter.</li>
+      </ol>
+
+      <div class="warn-box">
+        <div class="warn-box-label">The outlook</div>
+        <p>The brands that win AI shortlists won't be those that publish the most — they'll be those that publish the deepest, most structured, most corroborated signal about a single, well-defined category. Depth is the strategy. The cluster is the architecture. And Share of Model is the score.</p>
+      </div>
+
+      <!-- Citations -->
+      <div class="about-block">
+        <div class="about-label">Citations &amp; Sources</div>
+        <ul class="citations-list">
+          <li><span class="cite-num" id="r1">1.</span> Geoptie — Generative Engine Optimization (GEO): The Definitive Guide [2026]. <a href="https://geoptie.com/blog/generative-engine-optimization" target="_blank" rel="noopener">geoptie.com/blog/generative-engine-optimization</a></li>
+          <li><span class="cite-num" id="r2">2.</span> AI Marketing Box — B2B Growth Agency for AI Search Optimization. <a href="https://aimarketingbox.org/" target="_blank" rel="noopener">aimarketingbox.org</a></li>
+          <li><span class="cite-num" id="r3">3.</span> LeadShuttle — GEO Guide: ChatGPT &amp; Perplexity. <a href="https://leadshuttle.com/blog/geo-guide-chatgpt-perplexity" target="_blank" rel="noopener">leadshuttle.com/blog/geo-guide-chatgpt-perplexity</a></li>
+          <li><span class="cite-num" id="r4">4.</span> Digital Applied — GEO Guide 2026: Generative Engine Optimization Explained. <a href="https://www.digitalapplied.com/blog/geo-guide-generative-engine-optimization-2026" target="_blank" rel="noopener">digitalapplied.com/blog/geo-guide-2026</a></li>
+          <li><span class="cite-num" id="r5">5.</span> Wikipedia — Generative engine optimization. <a href="https://en.wikipedia.org/wiki/Generative_engine_optimization" target="_blank" rel="noopener">en.wikipedia.org/wiki/Generative_engine_optimization</a></li>
+          <li><span class="cite-num" id="r6">6.</span> Simaia — Generative Engine Optimization Explained: 8 Things Every B2B Founder Needs to Know. <a href="https://simaia.co/resources/generative-engine-optimization-explained-8-things-every-b2b-founder-needs-to-know-before-spending-a-dollar-on-ai-search" target="_blank" rel="noopener">simaia.co/resources/geo-explained</a></li>
+          <li><span class="cite-num" id="r7">7.</span> Digital Strategy Force — How to Answer 100 AEO Questions Like A Pro. <a href="https://digitalstrategyforce.com/journal/how-to-answer-100-aeo-questions-like-a-pro/" target="_blank" rel="noopener">digitalstrategyforce.com/journal/aeo-questions</a></li>
+          <li><span class="cite-num" id="r8">8.</span> Pitch Kitchen — How do I get my B2B brand to show up in ChatGPT and Claude recommendations. <a href="https://www.pitchkitchen.com/blog/how-do-i-get-my-b2b-brand-to-show-up-in-chatgpt-and-claude-recommendations" target="_blank" rel="noopener">pitchkitchen.com/blog/b2b-brand-chatgpt-claude</a></li>
+          <li><span class="cite-num" id="r9">9.</span> Kontent.ai — Generative Engine Optimization (GEO): What you need to know. <a href="https://kontent.ai/blog/generative-engine-optimization-geo-what-you-need-to-know/" target="_blank" rel="noopener">kontent.ai/blog/geo-what-you-need-to-know</a></li>
+          <li><span class="cite-num" id="r10">10.</span> Andrew Coyle — GEO and the LLMs.txt File. <a href="https://www.andrewcoyle.com/blog/generative-engine-optimization-and-the-llms-txt-file" target="_blank" rel="noopener">andrewcoyle.com/blog/geo-llms-txt</a></li>
+          <li><span class="cite-num" id="r11">11.</span> RankingHacks — Robert Niechcial's Insights on AI and SEO. <a href="https://www.rankinghacks.com/robert-niechcials-insights-on-ai-and-seo/" target="_blank" rel="noopener">rankinghacks.com/ai-seo-insights</a></li>
+          <li><span class="cite-num" id="r12">12.</span> LLMrefs — Free LLMs.txt Generator Online. <a href="https://llmrefs.com/tools/llms-txt-generator" target="_blank" rel="noopener">llmrefs.com/tools/llms-txt-generator</a></li>
+          <li><span class="cite-num" id="r13">13.</span> SEO Sherpa — GEO vs AEO vs LLM SEO: What's the Difference? <a href="https://seosherpa.com/geo-vs-aeo-vs-llm-seo/" target="_blank" rel="noopener">seosherpa.com/geo-vs-aeo-vs-llm-seo</a></li>
+          <li><span class="cite-num" id="r14">14.</span> Yotpo — What Is LLMs.txt? The Guide To AI Search &amp; GEO. <a href="https://www.yotpo.com/blog/what-is-llms-txt/" target="_blank" rel="noopener">yotpo.com/blog/what-is-llms-txt</a></li>
+          <li><span class="cite-num" id="r15">15.</span> Zeo — What is Llms.txt File and What Does It Do? <a href="https://zeo.org/resources/blog/what-is-llms-txt-file-and-what-does-it-do" target="_blank" rel="noopener">zeo.org/resources/blog/llms-txt</a></li>
+        </ul>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-label">Key Numbers</div>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-val">800M</div>
+            <div class="stat-label">ChatGPT weekly active users reshaping an $80B search industry</div>
+          </div>
+          <hr class="stat-divider">
+          <div class="stat-item">
+            <div class="stat-val">+41%</div>
+            <div class="stat-label">Max visibility lift from adding statistics (Princeton GEO-bench)</div>
+          </div>
+          <hr class="stat-divider">
+          <div class="stat-item">
+            <div class="stat-val">86%</div>
+            <div class="stat-label">AI citations from brand-managed sources (Yext, Oct 2025)</div>
+          </div>
+          <hr class="stat-divider">
+          <div class="stat-item">
+            <div class="stat-val">3.2x</div>
+            <div class="stat-label">More citations earned by content refreshed within 30 days</div>
+          </div>
+          <hr class="stat-divider">
+          <div class="stat-item">
+            <div class="stat-val">44%</div>
+            <div class="stat-label">Of all AI citations come from the first third of a content piece</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#pagerank"><span class="toc-num">01</span>PageRank to GEO</a></li>
+          <li><a href="#rag-pipeline"><span class="toc-num">02</span>Inside the RAG Pipeline</a></li>
+          <li><a href="#depth-vs-breadth"><span class="toc-num">03</span>Depth vs. Breadth in Vector Space</a></li>
+          <li><a href="#geo-bench"><span class="toc-num">04</span>Princeton GEO-bench Findings</a></li>
+          <li><a href="#five-pillars"><span class="toc-num">05</span>Five Pillars of Citability</a></li>
+          <li><a href="#three-gaps"><span class="toc-num">06</span>Three Gaps Blocking Recommendations</a></li>
+          <li><a href="#cluster-architecture"><span class="toc-num">07</span>Hybrid Cluster Architecture</a></li>
+          <li><a href="#llms-txt"><span class="toc-num">08</span>llms.txt and Schema</a></li>
+          <li><a href="#share-of-model"><span class="toc-num">09</span>Measuring Share of Model</a></li>
+          <li><a href="#recommendations"><span class="toc-num">10</span>Strategic Recommendations</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Related Reading</div>
+        <ul class="toc-list">
+          <li><a href="/blogs/why-engines-recommend-different-vendors">Why ChatGPT, Perplexity and Gemini Cite Different Vendors</a></li>
+          <li><a href="/blogs/hallucination-proofing-your-brand">Hallucination-Proofing Your Brand</a></li>
+          <li><a href="/blogs/schema-markup-ai-citations-2026">Schema Markup for AI Citations</a></li>
+          <li><a href="/blogs/authority-seeding-ai-llm-trust">Authority Seeding for LLM Trust</a></li>
+          <li><a href="/blogs/prompt-to-citation-tracking">Prompt-to-Citation Tracking</a></li>
+          <li><a href="/blogs/geo-compounding-flywheel">The GEO Compounding Flywheel</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-foot">
+  <div class="page">
+    <div class="foot-row">
+      <span>rawmktg. &copy; 2026</span>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/#articles">Articles</a>
+        <a href="mailto:vinayak@rawmktg.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  const signal = '#D04A2A';
+
+  // Figure 04: GEO-bench visibility lift
+  const ctx1 = document.getElementById('chartGeoBench');
+  if(ctx1){
+    new Chart(ctx1.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['Adding Statistics & Data', 'Adding Expert Quotes', 'Citing Authoritative Sources'],
+        datasets: [{
+          data: [41, 41, 40],
+          backgroundColor: [
+            'rgba(208,74,42,0.80)',
+            'rgba(208,74,42,0.65)',
+            'rgba(208,74,42,0.50)'
+          ],
+          borderColor: [signal, signal, signal],
+          borderWidth: 1,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `Up to +${ctx.parsed.x}% visibility lift`
+            },
+            backgroundColor: '#2A2722',
+            titleColor: 'rgba(255,255,255,0.70)',
+            bodyColor: '#D04A2A',
+            padding: 10,
+            cornerRadius: 6
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.06)' },
+            ticks: {
+              color: 'rgba(255,255,255,0.45)',
+              font: { family: "'JetBrains Mono', monospace", size: 11 },
+              callback: (v) => `+${v}%`
+            },
+            max: 50
+          },
+          y: {
+            grid: { display: false },
+            ticks: {
+              color: 'rgba(255,255,255,0.70)',
+              font: { family: "'JetBrains Mono', monospace", size: 11 }
+            }
+          }
+        }
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
