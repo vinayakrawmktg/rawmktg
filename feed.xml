@@ -7,7 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 31 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title><![CDATA[How We Run a GEO Foundation Audit · rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/geo-foundation-audit</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/geo-foundation-audit</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A repeatable five-step diagnostic for mapping brand citation visibility across ChatGPT, Perplexity, Gemini, and Claude. Covers query mapping with buyer-intent prompts, multi-model execution, citation gap scoring, technical AI crawlability, and content restructuring using Princeton-validated operators. AI-referred traffic converts at 11x organic. Only 11% of domains are cited by both ChatGPT and Perplexity.]]></description>
+    </item>
 
     <item>
       <title><![CDATA[The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists · rawmktg.]]></title>
