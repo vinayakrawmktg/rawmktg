@@ -231,6 +231,18 @@
       .stat-callout{flex-direction:column;gap:12px;}
       .pipeline-step{grid-template-columns:60px 1fr;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
@@ -954,6 +966,24 @@ Sitemap: https://example.com/sitemap.xml</pre></div>
 
       <p>Execute these six principles systematically and you build the kind of machine-readable, entity-verified, structurally coherent domain that AI engines cite by default, not by accident. Use a <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a> to baseline your citation share before and after the rollout. For a sector-level snapshot of what the absence of these principles looks like in live data, see our <a href="/blogs/aec-ai-visibility-gap">AEC software AI visibility analysis</a>.</p>
 
+
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">Does schema markup directly improve AI citation rankings?</h3>
+        <p class="faq-a">Schema markup does not directly improve citation rankings for already-visible pages. However, it acts as an attention mechanism during crawl and indexation, helping AI parsers accurately extract structured facts that are otherwise missed in natural language prose. For pages below the top 10, schema can shift citation eligibility by clarifying entity relationships that retrieval models use to score passage relevance.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is the most important schema type for B2B SaaS AI citations?</h3>
+        <p class="faq-a">FAQPage schema delivers the highest citation ROI for B2B SaaS. It structures content as Q&A pairs matching the query format generative engines process, enabling schema-aware chunking that keeps question-answer pairs semantically intact during RAG ingestion. 53% of AI-cited pages carry valid schema markup, making cited pages nearly 3x more likely to have JSON-LD than non-cited pages.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How does @graph architecture improve AI crawl efficiency?</h3>
+        <p class="faq-a">A single consolidated @graph JSON-LD block per page allows AI parsers to resolve entity relationships across Organization, Article, FAQPage, and SoftwareApplication types in one pass. Fragmented multi-script schema forces the parser to reconstruct relationships across disconnected data blocks, introducing errors. Single-script @graph architecture improves crawl efficiency by approximately 67% compared to fragmented implementations.</p>
+      </div>
+        </div>
+      </div>
 
       <div class="about-block">
         <div class="about-label">Sources and Research Base</div>

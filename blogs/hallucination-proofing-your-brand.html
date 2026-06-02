@@ -254,6 +254,18 @@
       .stats-strip{flex-direction:column;}
       .compare-wrap{grid-template-columns:1fr;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
 
   <!-- Organization schema -->
@@ -889,6 +901,24 @@
       <p>Before restructuring individual pages, use a <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a> to identify which queries are generating the most hallucinations. Then start with a single high-traffic product page and apply the four Claim-Anchoring components. Run the same buyer query through ChatGPT before and after the changes. The delta will be immediately visible, and so will the path forward for every remaining page on your site.</p>
 
       <!-- Citations -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">What is brand hallucination in AI search engines?</h3>
+        <p class="faq-a">Brand hallucination occurs when a generative AI system (such as ChatGPT, Perplexity, or Gemini) produces factually incorrect information about a brand during a synthesized response. Common hallucinations include misquoting pricing tiers, attributing missing certifications, confusing products with competitors, or citing outdated feature sets. Hallucinations originate in the RAG pipeline's chunking stage: if a 120-180 word content chunk lacks unambiguous brand association and verifiable proof, the model fills the factual gap with parametric training data, which may be months or years out of date.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How does Schema.org JSON-LD reduce AI hallucinations about a brand?</h3>
+        <p class="faq-a">Schema.org JSON-LD translates web content into machine-readable structured data that AI retrieval systems can parse with high confidence. Using a unified @graph architecture (nesting Organization, SoftwareApplication, and FAQPage entities) creates unambiguous entity definitions that LLMs use as a ground-truth reference. According to Schema App's research, using structured knowledge graphs as reference layers for LLMs improves overall model accuracy by up to 54%, significantly reducing hallucinations. Populating sameAs properties with Wikidata and Wikipedia links further anchors the entity to verified external records, reducing the model's reliance on uncertain parametric memory.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is the Claim-Anchoring Content Engineering Framework?</h3>
+        <p class="faq-a">The Claim-Anchoring Content Engineering Framework is a four-component writing system designed to make content reliably retrievable and accurately cited by RAG-based AI engines. The four components are: (1) Answer Capsule: a 40-60 word paragraph directly answering each H2 or H3 heading placed immediately below it; (2) Section Autonomy: each 120-180 word section must be fully self-contained, avoiding relative pronouns and context-dependent references; (3) Proof-Pairing Density Ratio: every marketing assertion must be paired with quantitative data, attributed expert quotes, or verifiable documents in the same or following sentence, targeting a ratio of 0.70 or higher; (4) Unambiguous Brand Association: the brand name and product name must appear alongside every key claim, since a retrieved chunk may be the only text the model sees from your domain.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Citations &amp; Sources</div>
         <ul class="citations-list">

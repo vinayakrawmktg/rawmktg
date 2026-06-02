@@ -255,6 +255,18 @@
       .stats-strip{flex-direction:column;}
       .engine-badges{gap:6px;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
 
   <!-- Organization schema -->
@@ -699,6 +711,24 @@
       </div>
 
       <!-- Citations -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">Why do ChatGPT, Perplexity, and Gemini cite different vendors for the same query?</h3>
+        <p class="faq-a">Each engine uses a structurally different retrieval architecture. ChatGPT Search uses Microsoft's Bing Web Index and applies a strict context filter that selects only 15% of initially retrieved pages. Perplexity operates as a real-time RAG engine that scores passages dynamically based on comprehensiveness, recency, and structural clarity. Google Gemini resolves queries against the Knowledge Graph to map entities before fetching source documents, weighting E-E-A-T signals and Search Console CTR data. A tactic that earns a citation in one engine can be completely invisible to another.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is the highest-ROI GEO tactic for B2B SaaS brands with a limited content budget?</h3>
+        <p class="faq-a">For resource-constrained teams, the highest-ROI first move is configuring Bing Webmaster Tools and enabling the IndexNow protocol (ultra-low cost, 24-hour time-to-value window). This directly improves ChatGPT citation eligibility since ChatGPT Search is powered by the Bing index. Second priority is FAQ and micro-answer formatting (low-to-moderate cost, 14-day impact) which produces High impact across all three engines simultaneously. Organisation Schema with sameAs nodes is Critical for Gemini but Low impact on ChatGPT and Perplexity, so it should follow those two foundational steps.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How do you optimise B2B SaaS content specifically for Perplexity AI citations?</h3>
+        <p class="faq-a">Perplexity uses a five-factor citation probability formula: Content Comprehensiveness (25%), Source Authority (20%), Content Recency (18%), Structural Clarity (15%), and Factual Verifiable Data (10%). Practically, this means: publish comprehensive guides that address a topic and all related sub-intents on one URL; build authoritative backlinks; update content within a 30-day freshness cycle; use clean H2/H3 hierarchies with comparison tables; and embed specific statistics and named expert quotes. Partner ecosystem content is disproportionately powerful: PartnerStack research found that 43% of AI-generated vendor citations originate from partner ecosystem sources.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Citations &amp; Sources</div>
         <ul class="citations-list">

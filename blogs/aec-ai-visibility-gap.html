@@ -287,6 +287,18 @@
       .compare-grid{grid-template-columns:1fr;}
       .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
@@ -769,6 +781,24 @@ MEP engineers, BIM coordinators, structural detailing teams
       <p>The question is not whether AI will influence AEC software buying decisions. It already does. The question is which companies will be part of the answer when buyers ask, and which ones will remain invisible in a conversation that increasingly shapes where the market's attention goes.</p>
 
       <!-- Methodology -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">Why don't AEC software companies show up in AI search results?</h3>
+        <p class="faq-a">Most AEC software companies lack the editorial footprint, structured data infrastructure, and community discussion that AI platforms use as citation signals. 4 of 6 companies analyzed had fewer than 2 total AI citations across ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, and Grok combined. High organic traffic and domain rating do not predict AI citation visibility.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Which AI platform is easiest for AEC software companies to get cited on?</h3>
+        <p class="faq-a">Perplexity is the most accessible platform for near-term GEO investment. It rewards direct, well-organized product content and documentation: FAQ-style, clear-language pages that any AEC software company can build. Google AI Overviews and Grok together account for 77% of AEC software citations but require long-term editorial authority and community presence respectively.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is llms.txt and why does it matter for AEC software companies?</h3>
+        <p class="faq-a">llms.txt is an emerging standard similar to robots.txt that lets a company explicitly communicate to AI crawlers what content to index and how to understand the brand. None of the 6 AEC software companies analyzed had published an llms.txt file at the time of the audit, representing a uniform, low-effort, high-leverage gap across the entire segment.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Methodology</div>
         <p>AI citation data sourced from Ahrefs (June 1, 2026) across six AEC technology companies: Revizto, Alice Technologies, Solibri, Endra.ai, Augmenta, and Vavetek. Six AI platforms tracked: Google AI Overviews, ChatGPT, Gemini, Perplexity, Microsoft Copilot, and Grok. Technical infrastructure checks performed via direct HTTP analysis of company websites on the same date. Total citation universe: 375 citations. Companies were selected to represent a cross-section of the AEC software market by stage, product category, and domain authority range (7–65). Citation counts reflect indexed references as reported by Ahrefs at the time of the audit; real-time retrieval platforms such as Perplexity may update more frequently than training-based platforms such as ChatGPT and Gemini.</p>

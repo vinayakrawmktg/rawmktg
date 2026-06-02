@@ -240,6 +240,18 @@
       .pipeline-step{grid-template-columns:60px 1fr;}
       .stats-strip{flex-direction:column;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
 
   <!-- Organization schema -->
@@ -868,6 +880,24 @@ Include  Search Appearance = AI_OVERVIEW
       <p>Do this, and you demystify the generative search ecosystem, prove the tangible ROI of AI-ready content, and run an agile, data-driven strategy built for the next generation of discovery. The citation baseline that populates your prompt portfolio starts with a <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a>.</p>
 
       <!-- Works Cited -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">How do you track AI citations from ChatGPT and Perplexity in GA4?</h3>
+        <p class="faq-a">Create a custom AI Search channel group in GA4 under Admin > Data Display > Channel Groups. Add a regex rule matching AI referrer hostnames: ^(chatgpt|perplexity|gemini|copilot|claude|you|phind|grok|deepseek|chat\.mistral)\.. Critically, drag this channel to the top of the evaluation order above Referral and Organic Search. Use a dual setup that keeps Google's native AI Assistant channel alongside your custom grouping for maximum coverage and retroactive classification.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is a prompt portfolio in GEO measurement?</h3>
+        <p class="faq-a">A prompt portfolio is a controlled set of 50-150 queries run across AI engines on a recurring schedule to measure citation visibility. Prompts are sorted into three buckets: Money prompts (high-intent commercial evaluation queries), Problem prompts (top-of-funnel pain and solution discovery), and Proof prompts (bottom-of-funnel trust and validation). The portfolio is run against your brand and 3-5 competitors simultaneously, tracking six metrics: Citation Rate, Citation Share, Citation Prominence, Source Gap, Source Diversity, and Volatility.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is Revenue per Citation and how is it calculated?</h3>
+        <p class="faq-a">Revenue per Citation (RPC) is a Looker Studio calculated field that quantifies the financial return of each AI citation won. It is calculated as SUM(Revenue) divided by SUM(Citation Count), using blended data from GA4 (on-site revenue) joined to a prompt-portfolio Google Sheet (citation counts) on the date and page dimensions. RPC is the headline metric that proves GEO ROI to the C-suite.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Works Cited</div>
         <ol class="citations-list">

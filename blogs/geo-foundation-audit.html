@@ -310,6 +310,18 @@
       .case-metrics{grid-template-columns:repeat(2,1fr);}
       .pipeline-step{grid-template-columns:60px 1fr;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
@@ -761,6 +773,24 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <p>The full diagnostic toolkit for measuring progress is in our article on <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a>. For the schema and structured-data layer that underpins Step 5, see our guide to <a href="/blogs/schema-markup-ai-citations-2026">schema markup and AI citations</a>. For the <a href="/blogs/hallucination-proofing-your-brand">hallucination-proofing</a> work that protects brand accuracy once citations are established, the Claim-Anchoring Framework applies from day one.</p>
 
       <!-- Methodology note -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">What is a GEO Foundation Audit?</h3>
+        <p class="faq-a">A GEO Foundation Audit is a five-step diagnostic that maps a brand's citation visibility across AI engines: query mapping with buyer-intent prompts, multi-model execution across ChatGPT, Gemini, Claude, and Perplexity, citation gap scoring, technical crawlability analysis, and content restructuring using Princeton-validated optimization operators.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How does AI-referred traffic compare to organic search traffic in conversion rate?</h3>
+        <p class="faq-a">AI-referred traffic converts at approximately 11x the rate of standard organic search: a 1.66% sign-up rate versus a 0.15% organic baseline. Buyers arriving via AI recommendations have been pre-qualified by the model's reasoning, which accounts for the significantly higher intent.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Why do different AI engines cite different sources?</h3>
+        <p class="faq-a">Only 11% of domains are cited by both ChatGPT and Perplexity for the same query, and 71% of cited sources appear on a single platform. Each engine has a distinct retrieval architecture and Gini concentration coefficient: ChatGPT (0.164, most democratic), Perplexity (0.244), Claude (0.288), and Gemini (0.351, most concentrated). A GEO strategy must be engine-specific.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Methodology and Data Sources</div>
         <p>Citation overlap figures (11% ChatGPT/Perplexity overlap, 71% single-platform sources) and Gini coefficients are drawn from Yext's analysis of 17.2 million AI citations in Q4 2025. Page speed vs. citation correlation data is from Dr. Robert Li's citation attention research. Princeton formula and operator lift estimates (30–40%, 55–120% for Statistics Addition) are from Aggarwal et al., arXiv 2311.09735. Engine-specific behavior figures are compiled from Discovered Labs, Trakkr, and Whitehat SEO cross-platform analyses. All statistics link to primary sources in the citations section.</p>

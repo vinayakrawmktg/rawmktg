@@ -201,6 +201,18 @@
       .stat-callout{flex-direction:column;gap:12px;}
       .pipeline-step{grid-template-columns:60px 1fr;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
@@ -621,6 +633,24 @@
       <p>The research is clear, the buyer data is clear, and the mechanics are now explained. The only remaining question is whether your content architecture is ready to be retrieved.</p>
 
       <!-- About -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">How does RAG work in AI search engines?</h3>
+        <p class="faq-a">RAG (Retrieval-Augmented Generation) operates in five stages: query decomposition (breaking the question into sub-queries), parallel retrieval (fetching candidate passages from indexed sources), content chunking and embedding (converting passages into vectors for similarity matching), relevance re-ranking (scoring chunks against the query intent), and answer synthesis (generating a cited response from the top-ranked passages).</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What content format performs best for RAG retrieval?</h3>
+        <p class="faq-a">The formats with the highest RAG retrieval rates are: question-format headings that match likely queries, a direct answer placed in the first sentence of each section, named source citations within the body text, FAQPage JSON-LD schema, and passage lengths of 40 to 60 words that fully resolve a single specific question. Long paragraphs that answer multiple questions in one block consistently underperform in chunk-level retrieval.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Why is RAG the most important GEO lever for B2B marketers?</h3>
+        <p class="faq-a">RAG powers every major AI search engine (ChatGPT, Perplexity, Claude, and Gemini), meaning citation eligibility is determined at the retrieval stage before the model writes a single word. Optimising content for RAG retrieval (passage structure, schema, entity clarity) directly improves citation rates regardless of organic search ranking, making it the highest-leverage GEO action available.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Sources</div>
         <p><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Princeton/Georgia Tech GEO Study</a> &nbsp;·&nbsp; <a href="https://learn.g2.com/g2-2026-ai-search-insight-report" target="_blank" rel="noopener">G2 Answer Economy Report 2026</a> &nbsp;·&nbsp; <a href="https://6sense.com/science-of-b2b/buyer-experience-report-2025/" target="_blank" rel="noopener">6sense B2B Buyer Experience Report 2025</a> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2603.29979" target="_blank" rel="noopener">arXiv GEO-SFE Research 2026</a>. Data presented as published; rawmktg. makes no representation as to subsequent changes in these figures.</p>
