@@ -493,6 +493,18 @@
       .platform-grid { grid-template-columns: 1fr 1fr; }
       .ba-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <script type="application/ld+json">
   {
@@ -511,6 +523,54 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
       {"@type": "ListItem", "position": 2, "name": "Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers", "item": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What percentage of AI-cited URLs also rank in the top 10 organically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "38% of AI-cited URLs rank in the top 10 organic results for the same query. This means 62% of AI citations go to pages that do not rank in the top 10 — pages ranking between positions 11 and 50, or beyond. AI engines evaluate content structure and factual density independently of organic rank, creating citation opportunities for pages that would otherwise drive minimal search traffic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where on a page do most AI citations originate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "55% of all AI citations originate from the first 30% of a page. Citation distribution follows a ski ramp pattern: concentrated at the top, decaying sharply through the middle, and sparse at the end. The primary finding, core statistic, and brand claim must appear in the opening section. Pages that bury key assertions after extensive context-setting are systematically under-cited regardless of total content quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What heading structure do high-citation pages share?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High-citation pages use question-format H2 and H3 headings at a rate of 60% or more, phrasing headings as the exact queries buyers type into AI engines. This structure aligns content chunks with the query-understanding stage of the RAG pipeline, improving retrieval precision. Declarative headings like 'Our Approach' score significantly lower in citation audits than interrogative ones like 'How does X work for enterprise teams?'"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the BLUF protocol and why do AI engines prefer it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BLUF (Bottom Line Up Front) is a writing protocol where the primary answer appears in the first sentence of every section, before supporting evidence. AI retrieval engines operate within constrained context windows and prioritize blocks where the answer is immediately visible. A BLUF-formatted section can be extracted and cited without surrounding context. A narrative-format section requires the model to read to the end before identifying the core claim, reducing citation probability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should pages be refreshed to maintain AI citation eligibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pages not updated within 90 days are 3.2× more likely to lose AI citations entirely. Perplexity and Google AI Overviews apply aggressive recency weighting — pages older than 30 days lose citation priority for time-sensitive queries. A programmatic refresh system updating at least one verifiable statistic, the dateModified schema field, and one section heading every 60 to 90 days is sufficient to maintain citation window eligibility."
+      }
+    }
     ]
   }
   </script>

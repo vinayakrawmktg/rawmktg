@@ -253,6 +253,18 @@
       .sg-item:last-child{border-bottom:none;}
       .case-metrics{grid-template-columns:repeat(2,1fr);}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
@@ -263,6 +275,54 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
       {"@type": "ListItem", "position": 2, "name": "The GEO Compounding Flywheel: How to Build AI Visibility That Gets Harder to Dislodge", "item": "https://rawmktg.com/blogs/geo-compounding-flywheel"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the GEO compounding flywheel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The GEO compounding flywheel is a seven-step self-reinforcing loop — Build, Crawl, Train/Retrieve, Rate, Recommend, Validate, Re-signal — that determines which B2B brands earn AI citations. Each rotation compounds: citations generate behavioral signals, signals improve retrieval ranking, improved retrieval generates more citations. Brands that start the loop first accumulate structural advantages that become progressively harder for competitors to dislodge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many B2B procurement managers use AI for vendor discovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "73% of B2B procurement managers now use ChatGPT, Claude, or Perplexity for vendor discovery. 95% of B2B deals go to vendors already on the buyer's Day One consideration list, and AI-generated recommendations increasingly determine who reaches that list before human evaluation begins. Brands absent from AI answers are excluded from consideration before any sales interaction occurs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Share of Citation and why does it matter more than Share of Voice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Share of Citation (SOC) measures the percentage of generative AI answers that cite your owned content or earned media as evidence. Unlike Share of Voice, which tracks brand mentions, SOC measures actual attribution. Modern LLMs construct answers around 3 to 5 linked sources. Being named but not cited means the buyer sees your brand but does not visit your site — SOC is the metric that separates brand noise from pipeline contribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What three workstreams must run in parallel for the GEO flywheel to spin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technical, content, and authority workstreams must run simultaneously. Technical covers robots.txt configuration, llms.txt deployment, and JSON-LD schema. Content covers answer-lead formatting, entity density, and verified statistics. Authority covers earned media, niche directories, and sameAs knowledge graph links. Starting with content and adding technical and authority later breaks the flywheel — Step 04 (Rate) and Step 06 (Validate) fail silently until all three are active."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see measurable GEO results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Case studies show measurable citation presence within 2 to 3 months when all three workstreams run in parallel. A B2B project management SaaS grew AI citation rate from 8% to 24% in 90 days. A global manufacturer grew inbound lead volume 10× within 2 months. The compounding effect accelerates in months 4 through 12 as citation authority reinforces retrieval ranking across successive query rotations."
+      }
+    }
     ]
   }
   </script>
@@ -797,6 +857,32 @@
 
       <p>The seven steps are not aspirational. The case studies are not outliers. The Princeton evidence is not contested. What remains is the most boring lever in the world: <em>do the work, and do it before everyone else does</em>. That's the entire compounding thesis. The flywheel rewards whoever spins it first, and punishes, with increasing severity each quarter, whoever spins it last. Our <a href="/blogs/aec-ai-visibility-gap">AEC software AI visibility analysis</a> shows this dynamic in live Ahrefs data: 77% of citations in one industry go to a single vendor, while 4 of 6 companies have fewer than 2 total citations.</p>
 
+
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">What is the GEO compounding flywheel?</h3>
+        <p class="faq-a">The GEO compounding flywheel is a seven-step self-reinforcing loop — Build, Crawl, Train/Retrieve, Rate, Recommend, Validate, Re-signal — that determines which B2B brands earn AI citations. Each rotation compounds: citations generate behavioral signals, signals improve retrieval ranking, improved retrieval generates more citations. Brands that start the loop first accumulate structural advantages that become progressively harder for competitors to dislodge.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How many B2B procurement managers use AI for vendor discovery?</h3>
+        <p class="faq-a">73% of B2B procurement managers now use ChatGPT, Claude, or Perplexity for vendor discovery. 95% of B2B deals go to vendors already on the buyer's Day One consideration list, and AI-generated recommendations increasingly determine who reaches that list before human evaluation begins. Brands absent from AI answers are excluded from consideration before any sales interaction occurs.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is Share of Citation and why does it matter more than Share of Voice?</h3>
+        <p class="faq-a">Share of Citation (SOC) measures the percentage of generative AI answers that cite your owned content or earned media as evidence. Unlike Share of Voice, which tracks brand mentions, SOC measures actual attribution. Modern LLMs construct answers around 3 to 5 linked sources. Being named but not cited means the buyer sees your brand but does not visit your site — SOC is the metric that separates brand noise from pipeline contribution.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What three workstreams must run in parallel for the GEO flywheel to spin?</h3>
+        <p class="faq-a">Technical, content, and authority workstreams must run simultaneously. Technical covers robots.txt configuration, llms.txt deployment, and JSON-LD schema. Content covers answer-lead formatting, entity density, and verified statistics. Authority covers earned media, niche directories, and sameAs knowledge graph links. Starting with content and adding technical and authority later breaks the flywheel — Step 04 (Rate) and Step 06 (Validate) fail silently until all three are active.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How long does it take to see measurable GEO results?</h3>
+        <p class="faq-a">Case studies show measurable citation presence within 2 to 3 months when all three workstreams run in parallel. A B2B project management SaaS grew AI citation rate from 8% to 24% in 90 days. A global manufacturer grew inbound lead volume 10× within 2 months. The compounding effect accelerates in months 4 through 12 as citation authority reinforces retrieval ranking across successive query rotations.</p>
+      </div>
+        </div>
+      </div>
 
       <div class="about-block">
         <div class="about-label">Works Cited</div>

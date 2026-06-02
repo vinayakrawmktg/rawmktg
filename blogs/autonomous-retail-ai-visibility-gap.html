@@ -178,6 +178,18 @@
       .sidebar{position:static;}
       .nav-links{display:none;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
@@ -198,6 +210,46 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
       {"@type": "ListItem", "position": 2, "name": "The Autonomous Retail Industry Has a Visibility Problem Nobody Is Talking About", "item": "https://rawmktg.com/blogs/autonomous-retail-ai-visibility-gap"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How large is the autonomous retail market and which companies lead it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The autonomous retail market is projected to grow from $27 billion to $74 billion by 2035, driven by cashierless checkout, smart vending, and AI-powered inventory management. Key players include AiFi, Standard AI, GetZippin, Neuroshop, and Digit7. Despite significant venture capital and enterprise deployments at major retailers and stadiums, most companies have minimal organic search presence and near-zero AI citation visibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which autonomous retail company has the most AI citations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neuroshop, with a Domain Rating of just 16, leads the competitive set in ChatGPT citations, outperforming AiFi (DR 60), Standard AI (DR 55), and GetZippin despite having a fraction of their domain authority. Neuroshop's citation advantage comes from content architecture: its pages are structured as retrievable answer units, with specific claim-level sourcing that AI engines can verify and cite independently of domain authority signals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do AiFi and Standard AI have low AI visibility despite high domain authority?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AiFi (DR 60) has 4 Google AI Overview citations and zero ChatGPT citations despite a partnership with Aldi and global deployments. Standard AI (DR 55) has zero AI citations across all platforms. Both companies' sites rely on narrative marketing copy and client-side rendering — content human readers understand but that AI retrieval crawlers cannot parse. High domain authority does not transfer to AI citation eligibility without structural content optimization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important content fix for autonomous retail vendors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest-ROI fix is rebuilding product and use-case pages as answer-lead content that begins with a direct response to the buyer's question in the first 60 words. Category queries like 'what is cashierless checkout technology' and 'how does autonomous retail work' represent the entry point of the buying journey. Vendors not appearing in AI answers to these queries are absent from consideration before the sales cycle begins."
+      }
+    }
     ]
   }
   </script>
@@ -461,6 +513,28 @@
       <p>The buyers are searching. They are asking AI assistants. They are reading the content that appears. The question is simply who wrote it.</p>
 
       <!-- About -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">How large is the autonomous retail market and which companies lead it?</h3>
+        <p class="faq-a">The autonomous retail market is projected to grow from $27 billion to $74 billion by 2035, driven by cashierless checkout, smart vending, and AI-powered inventory management. Key players include AiFi, Standard AI, GetZippin, Neuroshop, and Digit7. Despite significant venture capital and enterprise deployments at major retailers and stadiums, most companies have minimal organic search presence and near-zero AI citation visibility.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Which autonomous retail company has the most AI citations?</h3>
+        <p class="faq-a">Neuroshop, with a Domain Rating of just 16, leads the competitive set in ChatGPT citations, outperforming AiFi (DR 60), Standard AI (DR 55), and GetZippin despite having a fraction of their domain authority. Neuroshop's citation advantage comes from content architecture: its pages are structured as retrievable answer units, with specific claim-level sourcing that AI engines can verify and cite independently of domain authority signals.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Why do AiFi and Standard AI have low AI visibility despite high domain authority?</h3>
+        <p class="faq-a">AiFi (DR 60) has 4 Google AI Overview citations and zero ChatGPT citations despite a partnership with Aldi and global deployments. Standard AI (DR 55) has zero AI citations across all platforms. Both companies' sites rely on narrative marketing copy and client-side rendering — content human readers understand but that AI retrieval crawlers cannot parse. High domain authority does not transfer to AI citation eligibility without structural content optimization.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is the most important content fix for autonomous retail vendors?</h3>
+        <p class="faq-a">The highest-ROI fix is rebuilding product and use-case pages as answer-lead content that begins with a direct response to the buyer's question in the first 60 words. Category queries like 'what is cashierless checkout technology' and 'how does autonomous retail work' represent the entry point of the buying journey. Vendors not appearing in AI answers to these queries are absent from consideration before the sales cycle begins.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">About rawmktg.</div>
         <p>rawmktg. publishes data-driven research on B2B marketing strategy, SEO, GEO, and AI search visibility for SaaS companies. Contact: <a href="mailto:vinayak@epicslope.partners" style="color:var(--signal);">vinayak@epicslope.partners</a></p>

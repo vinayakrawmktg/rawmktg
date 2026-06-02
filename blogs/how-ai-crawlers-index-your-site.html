@@ -223,6 +223,18 @@
       .nav-links{display:none;}
       .stat-callout{flex-direction:column;gap:12px;}
     }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
   </style>
   <script type="application/ld+json">
   {
@@ -241,6 +253,54 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"},
       {"@type": "ListItem", "position": 2, "name": "OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site", "item": "https://rawmktg.com/blogs/how-ai-crawlers-index-your-site"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do AI search crawlers execute JavaScript?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. None of the three primary AI crawlers — OAI-SearchBot (ChatGPT Search), PerplexityBot, or CCBot (Common Crawl) — execute JavaScript. They retrieve raw HTML only. Sites relying on client-side rendering to deliver page content are effectively invisible to AI search engines, regardless of organic SEO performance. Server-side rendering or incremental static regeneration is required for AI crawl coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between OAI-SearchBot and GPTBot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OAI-SearchBot indexes pages for real-time citations in ChatGPT Search answers. GPTBot harvests content to update OpenAI's foundational training data. Blocking GPTBot prevents content from appearing in future model training but does not affect real-time citations. Blocking OAI-SearchBot eliminates citation eligibility in ChatGPT entirely. For most B2B brands, allowing OAI-SearchBot while blocking GPTBot is the correct configuration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you verify that OAI-SearchBot or PerplexityBot is legitimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verify OAI-SearchBot by reverse DNS — the crawling IP must resolve to a subdomain of openai.com. Verify PerplexityBot by cross-referencing the IP against Perplexity's published JSON feed at perplexity.com/perplexitybot.json. CCBot verification uses forward-confirmed reverse DNS resolving to *.crawl.commoncrawl.org. Spoofed crawlers mimicking these user-agents are common — IP verification prevents fraudulent crawl requests from bypassing content access controls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What robots.txt configuration maximizes AI citation share?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Allow OAI-SearchBot, PerplexityBot, and Google-Extended while blocking GPTBot and CCBot. This ensures real-time retrieval crawlers can index content for citations while training harvesters that feed open corpora without attribution are excluded. The configuration takes effect within 24 hours of deployment and should be validated by running curl with each user-agent string against your highest-value pages to confirm raw HTML is returned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is llms.txt and how does it improve AI citation coverage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The llms.txt file is a markdown-formatted directory placed at your domain root that gives AI crawlers a curated map of your highest-value pages. Unlike XML sitemaps designed for Googlebot, llms.txt is optimized for context-constrained AI parsing — it explicitly signals which pages contain definitive answers to category queries. Zero of six AEC companies in our June 2026 analysis had published an llms.txt, and their citation rates reflected the gap."
+      }
+    }
     ]
   }
   </script>
@@ -875,6 +935,32 @@ curl -s <span class="str">"https://example.com/sitemap.xml"</span> \
       <p>Citation share is now the easiest variable to move in technical SEO, because most competitors have not done any of the above. The configuration in this article covers most of the gap. Use a <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a> to measure citation impact before and after each change. For the content architecture layer, see <a href="/blogs/topical-authority-cluster-ai-shortlists">The Topical Authority Cluster</a>. For off-site authority signals, see <a href="/blogs/authority-seeding-ai-llm-trust">Authority Seeding for AI</a>.</p>
 
       <!-- Sources -->
+      <div class="faq-section">
+        <div class="faq-section-label">Frequently Asked Questions</div>
+        <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">Do AI search crawlers execute JavaScript?</h3>
+        <p class="faq-a">No. None of the three primary AI crawlers — OAI-SearchBot (ChatGPT Search), PerplexityBot, or CCBot (Common Crawl) — execute JavaScript. They retrieve raw HTML only. Sites relying on client-side rendering to deliver page content are effectively invisible to AI search engines, regardless of organic SEO performance. Server-side rendering or incremental static regeneration is required for AI crawl coverage.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is the difference between OAI-SearchBot and GPTBot?</h3>
+        <p class="faq-a">OAI-SearchBot indexes pages for real-time citations in ChatGPT Search answers. GPTBot harvests content to update OpenAI's foundational training data. Blocking GPTBot prevents content from appearing in future model training but does not affect real-time citations. Blocking OAI-SearchBot eliminates citation eligibility in ChatGPT entirely. For most B2B brands, allowing OAI-SearchBot while blocking GPTBot is the correct configuration.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How do you verify that OAI-SearchBot or PerplexityBot is legitimate?</h3>
+        <p class="faq-a">Verify OAI-SearchBot by reverse DNS — the crawling IP must resolve to a subdomain of openai.com. Verify PerplexityBot by cross-referencing the IP against Perplexity's published JSON feed at perplexity.com/perplexitybot.json. CCBot verification uses forward-confirmed reverse DNS resolving to *.crawl.commoncrawl.org. Spoofed crawlers mimicking these user-agents are common — IP verification prevents fraudulent crawl requests from bypassing content access controls.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What robots.txt configuration maximizes AI citation share?</h3>
+        <p class="faq-a">Allow OAI-SearchBot, PerplexityBot, and Google-Extended while blocking GPTBot and CCBot. This ensures real-time retrieval crawlers can index content for citations while training harvesters that feed open corpora without attribution are excluded. The configuration takes effect within 24 hours of deployment and should be validated by running curl with each user-agent string against your highest-value pages to confirm raw HTML is returned.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is llms.txt and how does it improve AI citation coverage?</h3>
+        <p class="faq-a">The llms.txt file is a markdown-formatted directory placed at your domain root that gives AI crawlers a curated map of your highest-value pages. Unlike XML sitemaps designed for Googlebot, llms.txt is optimized for context-constrained AI parsing — it explicitly signals which pages contain definitive answers to category queries. Zero of six AEC companies in our June 2026 analysis had published an llms.txt, and their citation rates reflected the gap.</p>
+      </div>
+        </div>
+      </div>
+
       <div class="about-block">
         <div class="about-label">Sources</div>
         <ul class="sources-list">
