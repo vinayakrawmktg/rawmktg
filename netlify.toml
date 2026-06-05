@@ -12,6 +12,10 @@
 [build.processing.html]
   pretty_urls = true
 
+# Custom 404 page
+[build.processing.errors]
+  not_found = "/404.html"
+
 # X-Robots-Tag for all pages
 [[headers]]
   for = "/*"
