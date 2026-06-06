@@ -34,9 +34,9 @@
   <style>
     :root {
       --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
-      --ink:#2A2722; --ink-2:#4D4742; --mute:#8A8278; --faint:#C5BFB4;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
       --rule:#D6D0C5; --rule-2:#B4ADA2;
-      --signal:#D04A2A; --signal-soft:#F1D9CC;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC;
       --f-display:'Space Grotesk', system-ui, sans-serif;
       --f-prose:'Azeret Mono', ui-monospace, monospace;
       --f-mono:'JetBrains Mono', ui-monospace, monospace;
@@ -73,7 +73,7 @@
     .topic-kicker { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.20em; text-transform:uppercase; color:var(--signal); margin-bottom:14px; }
     .topic-title { font-family:var(--f-display); font-weight:700; font-size:clamp(30px,4.5vw,46px); line-height:1.06; letter-spacing:-0.03em; color:var(--ink); margin-bottom:18px; max-width:780px; }
     .topic-frame { font-family:var(--f-prose); font-size:16px; line-height:1.65; color:var(--ink-2); max-width:680px; }
-    .topic-count { font-family:var(--f-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--faint); margin-top:22px; }
+    .topic-count { font-family:var(--f-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); margin-top:22px; }
 
     .listing { padding:48px 0 72px; }
     .article-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
@@ -97,6 +97,7 @@
     @media (max-width:900px) { .article-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width:768px) { .page { padding:0 20px; } .article-grid { grid-template-columns:1fr; } .nav-links { display:none; } }
       .nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -124,6 +125,7 @@
     </div>
   </div>
 </nav>
+<main id="main">
 
 <header class="topic-hero">
   <div class="page">
@@ -173,6 +175,7 @@
   </div>
 </section>
 
+</main>
 <footer class="site-foot" aria-label="Site footer">
   <div class="page">
     <div class="foot-row">
