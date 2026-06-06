@@ -29,10 +29,71 @@
   status = 301
   force  = true
 
-# Old /posts/ URL already indexed by Google (301)
+# Old Typeflow /posts/:slug URLs → new /blogs/ canonical (301)
+# Full map of all 11 legacy slugs decommissioned in the June 2026 migration.
 [[redirects]]
   from   = "/posts/eeat-ai-signal-llm-brand-authority"
   to     = "/blogs/eeat-is-an-ai-signal-now"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/authority-seeding-ai-llm-trust"
+  to     = "/blogs/authority-seeding-ai-llm-trust"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/ai-crawler-robots-txt-strategy"
+  to     = "/blogs/how-ai-crawlers-index-your-site"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/geo-compounding-flywheel"
+  to     = "/blogs/geo-compounding-flywheel"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/schema-markup-structured-data-ai-citations"
+  to     = "/blogs/schema-markup-ai-citations-2026"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/content-freshness-ai-search-recency"
+  to     = "/blogs/30-day-content-half-life-recency-ai-ranking-signal"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/india-senior-living-seo-geo-gap"
+  to     = "/blogs/india-senior-living-ai-visibility-gap"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/cx-saas-seo"
+  to     = "/blogs/cx-saas-seo-discoverability-analysis"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/rag-geo-b2b-search"
+  to     = "/blogs/how-rag-actually-works"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/container-tracking-ai-visibility"
+  to     = "/blogs/container-tracking-saas-seo-geo-analysis"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/posts/ai-search-visibility-autonomous-retail"
+  to     = "/blogs/autonomous-retail-ai-visibility-gap"
   status = 301
   force  = true
 
