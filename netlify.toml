@@ -5,6 +5,10 @@
 
 [build]
   publish = "."
+  # Regenerate LLM Markdown twins / index.md / llms-full.txt from the HTML on every
+  # deploy so they never drift. Non-fatal: if generation fails, the committed .md
+  # files are published instead, so a generator hiccup can never break a deploy.
+  command = "python3 -m pip install --quiet -r requirements.txt && python3 scripts/generate_llm_md.py || echo 'LLM md generation skipped — publishing committed artifacts'"
 
 [build.processing]
   skip_processing = false

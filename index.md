@@ -6,7 +6,6 @@ Raw thinking on B2B marketing , SEO, GEO, AI search visibility, and what actuall
 
 *Source: https://rawmktg.com/ · by Vinayak Ravi*
 
-
 ## Articles
 
 - [When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room](https://rawmktg.com/blogs/aec-ai-visibility-gap)
