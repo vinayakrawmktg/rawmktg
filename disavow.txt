@@ -1,0 +1,70 @@
+# rawmktg.com — Disavow file
+# Generated: 2026-06-02
+# Source: Ahrefs referring domains export
+# All 62 domains: zero traffic, flagged as spam or clearly spam link farms
+#
+# Instructions: upload this file at
+# https://search.google.com/search-console/disavow-links
+#
+domain:itxoft-seo-for-modern-business.site
+domain:factmags.com
+domain:boost-instant.website
+domain:fiverr-affordable-seo-services.site
+domain:seodaro.com
+domain:linkrankpro.shop
+domain:rankxlinks.shop
+domain:ranklinkerpro.shop
+domain:buyseobacklinks.shop
+domain:seorankflow.shop
+domain:pbnseolinks.shop
+domain:toplinkranker.shop
+domain:linkseopro.shop
+domain:premiumseolinks.shop
+domain:seolinkpro.shop
+domain:authoritybacklinks.shop
+domain:ranklinkx.shop
+domain:linkrankboost.shop
+domain:ranklinkpro.shop
+domain:linkrankseo.shop
+domain:dsnylu.com
+domain:sitescooponline.com
+domain:goooogla.com
+domain:zoldexlinks.shop
+domain:rglinks.org
+domain:sideenhancer.online
+domain:seogeko.shop
+domain:nettools.guru
+domain:premium-backlinks-usa.shop
+domain:rankforce.shop
+domain:ranklegacy.shop
+domain:rankdominant.shop
+domain:getwebsiteworth.com
+domain:alljobs.info
+domain:websiterace.com
+domain:cybertoolbox.shop
+domain:quantumwares.shop
+domain:digitalgearshop.shop
+domain:technomarkethq.shop
+domain:booksreadr.org
+domain:ycm.info
+domain:way2check.cv
+domain:globalecommerce.org
+domain:indexaward.com
+domain:pudhe.com
+domain:tunca.org
+domain:leonlinks.org
+domain:egyptiandirectory.com
+domain:domainsc.com
+domain:bestwebstats.com
+domain:read.org.in
+domain:sporstcenter.com
+domain:linksnatcher.com
+domain:wallpapers.pro
+domain:allwebsitesdirectory.com
+domain:indians.cc
+domain:domainanalysis.org
+domain:wonvision.com
+domain:domain.com.lc
+domain:getonline.co.in
+domain:upwork-seo-solutions-for-startups.site
+domain:marathiladies.com
