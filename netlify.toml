@@ -16,11 +16,18 @@
 [build.processing.errors]
   not_found = "/404.html"
 
-# X-Robots-Tag for all pages
+# Security + indexing response headers for all pages
 [[headers]]
   for = "/*"
   [headers.values]
     X-Robots-Tag = "index, follow"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # CSP starts in report-only because the site serves Google AdSense + Chart.js;
+    # observe violations in the browser console, then promote to an enforcing
+    # Content-Security-Policy header once confirmed nothing (esp. ads) breaks.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.googleadservices.com https://*.google.com https://*.doubleclick.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://*.doubleclick.net https://*.google.com; connect-src 'self' https://*.google-analytics.com https://*.googlesyndication.com https://*.doubleclick.net; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 
 # www → apex (301)
 [[redirects]]
