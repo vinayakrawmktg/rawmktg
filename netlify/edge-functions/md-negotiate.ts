@@ -47,7 +47,7 @@ export default async function (request: Request, context: { next: () => Promise<
   // Map a page URL to its Markdown twin.
   const mdPath = path === "/"
     ? "/index.md"
-    : "/blogs/" + path.replace(/^\/blogs\//, "").replace(/\/+$/, "") + ".md";
+    : path.replace(/\/+$/, "") + ".md";
   const htmlLink = `<${path}>; rel="alternate"; type="text/html"`;
   const mdLink = `<${mdPath}>; rel="alternate"; type="text/markdown"`;
 

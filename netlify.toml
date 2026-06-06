@@ -147,3 +147,21 @@
 [[edge_functions]]
   path = "/blogs/*"
   function = "md-negotiate"
+
+[[headers]]
+  for = "/glossary/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/glossary.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[edge_functions]]
+  path = "/glossary"
+  function = "md-negotiate"
+
+[[edge_functions]]
+  path = "/glossary/*"
+  function = "md-negotiate"
