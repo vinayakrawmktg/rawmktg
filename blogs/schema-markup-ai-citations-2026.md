@@ -613,5 +613,5 @@ Sources and Research Base
 - [A Beginner's Guide to JSON-LD Schema for SEOs](https://salt.agency/blog/json-ld-structured-data-beginners-guide-for-seos/) - SALT.agency
 - [Schema Markup for AI: Structured Data Tools and Techniques](https://geoptie.com/blog/schema-markup-for-ai) - Geoptie
 - [Preparing Your Website for AI Search Results in 2026](https://www.321webmarketing.com/blog/preparing-your-website-for-ai-search-results-in-2026/) - 321 Web Marketing
-- [Google Search Central — SEO Starter Guide (technical SEO fundamentals)](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) - Discovered Labs
+- [Google Search Central, SEO Starter Guide (technical SEO fundamentals)](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) - Discovered Labs
 - [Schema Markup for AI Citations: The Technical Implementation Guide](https://www.averi.ai/blog/schema-markup-for-ai-citations-the-technical-implementation-guide) - Averi AI

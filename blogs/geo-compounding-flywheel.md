@@ -326,7 +326,7 @@ Frequently Asked Questions
 
 ### What is the GEO compounding flywheel?
 
-The GEO compounding flywheel is a seven-step self-reinforcing loop — Build, Crawl, Train/Retrieve, Rate, Recommend, Validate, Re-signal — that determines which B2B brands earn AI citations. Each rotation compounds: citations generate behavioral signals, signals improve retrieval ranking, improved retrieval generates more citations. Brands that start the loop first accumulate structural advantages that become progressively harder for competitors to dislodge.
+The GEO compounding flywheel is a seven-step self-reinforcing loop, Build, Crawl, Train/Retrieve, Rate, Recommend, Validate, Re-signal, that determines which B2B brands earn AI citations. Each rotation compounds: citations generate behavioral signals, signals improve retrieval ranking, improved retrieval generates more citations. Brands that start the loop first accumulate structural advantages that become progressively harder for competitors to dislodge.
 
 ### How many B2B procurement managers use AI for vendor discovery?
 
@@ -334,11 +334,11 @@ The GEO compounding flywheel is a seven-step self-reinforcing loop — Build, Cr
 
 ### What is Share of Citation and why does it matter more than Share of Voice?
 
-Share of Citation (SOC) measures the percentage of generative AI answers that cite your owned content or earned media as evidence. Unlike Share of Voice, which tracks brand mentions, SOC measures actual attribution. Modern LLMs construct answers around 3 to 5 linked sources. Being named but not cited means the buyer sees your brand but does not visit your site — SOC is the metric that separates brand noise from pipeline contribution.
+Share of Citation (SOC) measures the percentage of generative AI answers that cite your owned content or earned media as evidence. Unlike Share of Voice, which tracks brand mentions, SOC measures actual attribution. Modern LLMs construct answers around 3 to 5 linked sources. Being named but not cited means the buyer sees your brand but does not visit your site, SOC is the metric that separates brand noise from pipeline contribution.
 
 ### What three workstreams must run in parallel for the GEO flywheel to spin?
 
-Technical, content, and authority workstreams must run simultaneously. Technical covers robots.txt configuration, llms.txt deployment, and JSON-LD schema. Content covers answer-lead formatting, entity density, and verified statistics. Authority covers earned media, niche directories, and sameAs knowledge graph links. Starting with content and adding technical and authority later breaks the flywheel — Step 04 (Rate) and Step 06 (Validate) fail silently until all three are active.
+Technical, content, and authority workstreams must run simultaneously. Technical covers robots.txt configuration, llms.txt deployment, and JSON-LD schema. Content covers answer-lead formatting, entity density, and verified statistics. Authority covers earned media, niche directories, and sameAs knowledge graph links. Starting with content and adding technical and authority later breaks the flywheel, Step 04 (Rate) and Step 06 (Validate) fail silently until all three are active.
 
 ### How long does it take to see measurable GEO results?
 

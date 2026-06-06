@@ -324,6 +324,17 @@
       line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
     .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
       color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
   </style>
   <!-- Google AdSense -->
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
@@ -353,7 +364,7 @@
 </head>
 
 <body>
-<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/geo-foundation-audit.md — optimized for AI and LLM tools.</div>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/geo-foundation-audit.md. Optimized for AI and LLM tools.</div>
 
 <!-- Nav -->
 <nav class="site-nav" aria-label="Site navigation">
@@ -361,7 +372,17 @@
     <div class="nav-row">
       <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
       <div class="nav-links">
-        <a href="/#articles">Articles</a>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+          </div>
+        </div>
+        <a href="/#about">About</a>
         <a href="/#newsletter" class="cta">Subscribe</a>
       </div>
     </div>
@@ -409,7 +430,7 @@
       </div>
 
       <!-- Fig 1: Conversion rate chart -->
-      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 1 — Conversion Rate: AI-Referred vs. Organic Search</div>
+      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 1: Conversion Rate: AI-Referred vs. Organic Search</div>
       <div class="chart-wrap">
         <canvas id="conversionChart" height="160"></canvas>
       </div>
@@ -427,7 +448,7 @@
       <p><a href="https://arxiv.org/pdf/2311.09735" target="_blank" rel="noopener">The academic foundation was established in late 2023 by researchers from Princeton and Georgia Tech</a>. Their paper framed GEO as a black-box optimization problem: original content <em>c</em> is transformed by a function into optimized content <em>c</em>'. Inclusion alone is too crude a metric, so they score a Position-Adjusted Word Count impression that gives more weight to citations that appear earlier in the synthesized answer.</p>
 
       <div class="formula-wrap">
-        <div class="formula-label">Fig. 2 — Position-Adjusted Word Count impression formula (Princeton / Georgia Tech, 2023)</div>
+        <div class="formula-label">Fig. 2: Position-Adjusted Word Count impression formula (Princeton / Georgia Tech, 2023)</div>
         <div class="formula-block">
           <pre><span class="cm"># Position-Adjusted Word Count impression for source s in response r</span>
 <span class="cm">#   S_c(s) = sentences in r that cite source s</span>
@@ -464,7 +485,7 @@
       <p><a href="https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/" target="_blank" rel="noopener">Citation overlap between engines is strikingly low</a>: only 11% of domains are cited by both ChatGPT and Perplexity for the same query, and 71% of cited sources appear on a single platform. Concentration differs sharply too, measured by the Gini coefficient of citation distribution: a Gini of 0 means every source gets equal citations; a Gini of 1 means one source takes everything.</p>
 
       <!-- Fig 2 (renumbered): Gini coefficient chart -->
-      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 3 — Source Concentration by Engine (Gini Coefficient, Aug 2024–Jun 2025)</div>
+      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 3: Source Concentration by Engine (Gini Coefficient, Aug 2024–Jun 2025)</div>
       <div class="chart-wrap">
         <canvas id="giniChart" height="220"></canvas>
       </div>
@@ -484,45 +505,45 @@
       <p>The fragmentation is easiest to see in the raw distribution of citations across the three highest-volume engines (Aug 2024–Jun 2025). The leading cited domains differ almost entirely: community and reference sites dominate where brand content is largely absent.</p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 1 — Leading cited domains by engine (Aug 2024–Jun 2025)</div>
+        <div class="tt-label">Table 1: Leading cited domains by engine (Aug 2024–Jun 2025)</div>
         <table class="tt">
           <thead>
             <tr>
-              <th>ChatGPT — Top Sources</th>
+              <th>ChatGPT, Top Sources</th>
               <th>Google AI Overviews</th>
               <th>Perplexity</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="label">Wikipedia — 7.8%</td>
-              <td class="label">Reddit — 2.2%</td>
-              <td class="label">Reddit — 6.6%</td>
+              <td class="label">Wikipedia, 7.8%</td>
+              <td class="label">Reddit, 2.2%</td>
+              <td class="label">Reddit, 6.6%</td>
             </tr>
             <tr>
-              <td>Reddit — 1.8%</td>
-              <td>YouTube — 1.9%</td>
-              <td>YouTube — 2.0%</td>
+              <td>Reddit, 1.8%</td>
+              <td>YouTube, 1.9%</td>
+              <td>YouTube, 2.0%</td>
             </tr>
             <tr>
-              <td>Forbes — 1.1%</td>
-              <td>Quora — 1.5%</td>
-              <td>Gartner — 1.0%</td>
+              <td>Forbes, 1.1%</td>
+              <td>Quora, 1.5%</td>
+              <td>Gartner, 1.0%</td>
             </tr>
             <tr>
-              <td>G2 — 1.1%</td>
-              <td>LinkedIn — 1.3%</td>
-              <td>Yelp — 0.8%</td>
+              <td>G2, 1.1%</td>
+              <td>LinkedIn, 1.3%</td>
+              <td>Yelp, 0.8%</td>
             </tr>
             <tr>
-              <td>TechRadar — 0.9%</td>
-              <td>Gartner — 0.7%</td>
-              <td>LinkedIn — 0.8%</td>
+              <td>TechRadar, 0.9%</td>
+              <td>Gartner, 0.7%</td>
+              <td>LinkedIn, 0.8%</td>
             </tr>
             <tr>
-              <td>NerdWallet — 0.8%</td>
-              <td>NerdWallet — 0.6%</td>
-              <td>Forbes — 0.7%</td>
+              <td>NerdWallet, 0.8%</td>
+              <td>NerdWallet, 0.6%</td>
+              <td>Forbes, 0.7%</td>
             </tr>
           </tbody>
         </table>
@@ -581,7 +602,7 @@
       <h3>Sample buyer-intent prompt (Step 1)</h3>
 
       <div class="code-wrap">
-        <div class="code-label">Representative discovery prompt — healthcare billing, mid-market ICP</div>
+        <div class="code-label">Representative discovery prompt, healthcare billing, mid-market ICP</div>
         <div class="code-block">
           <pre>Which enterprise billing platform is best for a mid-market
 healthcare company that requires HIPAA compliance, natively
@@ -594,14 +615,14 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <p>After computing SoV across all engines, we score each gap along three dimensions. The matrix drives the downstream remediation plan.</p>
 
       <!-- Fig 4: SoV chart -->
-      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 4 — Share of Voice Readout (vs. 35% Target Line)</div>
+      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 4: Share of Voice Readout (vs. 35% Target Line)</div>
       <div class="chart-wrap">
         <canvas id="sovChart" height="220"></canvas>
       </div>
       <div class="chart-caption">A SoV readout makes the gap to the 35% target obvious at a glance. The brand here must nearly triple its citation presence to reach parity.</div>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 2 — The RawMktg. citation-gap scoring matrix</div>
+        <div class="tt-label">Table 2: The RawMktg. citation-gap scoring matrix</div>
         <table class="tt">
           <thead>
             <tr>
@@ -637,7 +658,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <h3>Step 4 in detail: page speed and llms.txt</h3>
 
       <!-- Fig 5: speed chart -->
-      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 5 — Average Citations per Query vs. Page Speed (FCP Bucket)</div>
+      <div class="chart-title" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;">Fig. 5: Average Citations per Query vs. Page Speed (FCP Bucket)</div>
       <div class="chart-wrap">
         <canvas id="speedChart" height="200"></canvas>
       </div>
@@ -646,12 +667,12 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <p>A modern technical layer adds an <a href="https://aioseo.com/what-is-llms-txt/" target="_blank" rel="noopener">llms.txt file</a> at the site root: a lightweight Markdown map of the highest-value pages, built specifically for RAG ingestion. RawMktg. deploys a dual hierarchy: a lightweight <code>llms.txt</code> summarizing high-value posts, and a comprehensive <code>llms-full.txt</code> containing the complete content database in clean Markdown with link controls to protect server performance.</p>
 
       <div class="code-wrap">
-        <div class="code-label">Minimal llms.txt template — enterprise billing example</div>
+        <div class="code-label">Minimal llms.txt template, enterprise billing example</div>
         <div class="code-block">
           <span class="code-lang">llms.txt</span>
           <pre><span class="cm"># https://example.com/llms.txt</span>
 
-<span class="cm"># Acme Billing — enterprise usage-based billing for healthcare &amp; SaaS</span>
+<span class="cm"># Acme Billing, enterprise usage-based billing for healthcare &amp; SaaS</span>
 <span class="tg">&gt;</span> HIPAA-compliant billing with native Salesforce integration.
 
 <span class="at">## Core pages</span>
@@ -704,7 +725,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <p><a href="https://www.yext.com/research/ai-citation-behavior-across-models" target="_blank" rel="noopener">Yext's analysis of 17.2 million AI citations</a> across six B2B-relevant verticals reveals that the highest-performing brands in each category have adapted their content and distribution strategy to match their engine's retrieval pattern: not a universal GEO playbook, but a vertical-specific one.</p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 3 — Citation dynamics and brand behavior across six B2B-relevant verticals (Q4 2025, 17.2M citations)</div>
+        <div class="tt-label">Table 3: Citation dynamics and brand behavior across six B2B-relevant verticals (Q4 2025, 17.2M citations)</div>
         <table class="tt">
           <thead>
             <tr>
@@ -755,7 +776,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
         </table>
       </div>
 
-      <p>The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources — so off-site seeding and review platform presence matter more than on-page optimization.</p>
+      <p>The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so off-site seeding and review platform presence matter more than on-page optimization.</p>
 
       <!-- §06 Capturing the Synthesized Pipeline -->
       <h2 id="synthesized-pipeline"><span class="section-num">06</span>Capturing the Synthesized Pipeline</h2>
@@ -769,7 +790,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <div class="case-card">
         <div class="case-card-head">
           <span class="case-num">Case Study 01</span>
-          <span class="case-title">B2B Healthcare SaaS — Billing Platform</span>
+          <span class="case-title">B2B Healthcare SaaS, Billing Platform</span>
         </div>
         <div class="case-body">
           <p>A mid-market healthcare billing SaaS had strong organic rankings but was absent from AI answers for its highest-intent queries. The GEO Foundation Audit revealed three issues: GPTBot was being blocked by an inherited CDN rule, key product pages were client-side rendered, and no original benchmark data existed to satisfy the Mention-Source Divide. The remediation ran the RAID pipeline on six core pages, deployed llms.txt, fixed the CDN rule, and seeded one proprietary benchmark report across targeted publications. Full details on the <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a> methodology used are in our companion article.</p>
@@ -784,7 +805,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <div class="case-card">
         <div class="case-card-head">
           <span class="case-num">Case Study 02</span>
-          <span class="case-title">Global B2B Manufacturer — Industrial Equipment</span>
+          <span class="case-title">Global B2B Manufacturer, Industrial Equipment</span>
         </div>
         <div class="case-body">
           <p>A global manufacturer competing against Fortune 100 incumbents ran all five audit steps. Technical fixes came first: render blocking on product specification pages, missing <a href="/blogs/how-ai-crawlers-index-your-site">AI crawler access</a>, and zero structured schema on the highest-traffic product category pages. Content restructuring followed: product descriptions were rewritten into atomic knowledge blocks with verified compliance statistics and expert quotes. <a href="/blogs/authority-seeding-ai-llm-trust">Authority seeding</a> across niche industrial directories sealed the off-site gap.</p>
@@ -826,27 +847,27 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <div class="about-block">
         <div class="about-label">Citations</div>
         <ol class="citations-list">
-          <li><span class="cite-num">1.</span> Simaia — Generative Engine Optimization Explained: 8 Things Every B2B Founder Needs to Know. <a href="https://simaia.co/resources/generative-engine-optimization-explained-8-things-every-b2b-founder-needs-to-know-before-spending-a-dollar-on-ai-search" target="_blank" rel="noopener">simaia.co/resources/generative-engine-optimization-explained</a></li>
-          <li><span class="cite-num">2.</span> Groundfog — Generative Engine Optimization (GEO): Stay Visible in AI Answers. <a href="https://groundfog.cloud/en/generative-engine-optimization" target="_blank" rel="noopener">groundfog.cloud/en/generative-engine-optimization</a></li>
-          <li><span class="cite-num">3.</span> arXiv — GEO: Generative Engine Optimization (Aggarwal et al.). <a href="https://arxiv.org/pdf/2311.09735" target="_blank" rel="noopener">arxiv.org/pdf/2311.09735</a></li>
-          <li><span class="cite-num">4.</span> Emarketed — Gartner Predicts 25% Search Volume Drop by 2026. <a href="https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/" target="_blank" rel="noopener">emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026</a></li>
-          <li><span class="cite-num">5.</span> Walker Sands — 7 GEO Metrics That Show B2B Marketing Impact. <a href="https://www.walkersands.com/about/blog/generative-engine-optimization-metrics/" target="_blank" rel="noopener">walkersands.com/about/blog/generative-engine-optimization-metrics</a></li>
-          <li><span class="cite-num">6.</span> Clipatize — Generative Engine Optimization (GEO) for B2B Marketing. <a href="https://www.clipatize.com/b2b-marketing-blog/how-to-increase-b2b-marketing-content-visibility-with-ai" target="_blank" rel="noopener">clipatize.com/b2b-marketing-blog/generative-engine-optimization-geo-b2b</a></li>
-          <li><span class="cite-num">7.</span> LLMrefs — Generative Engine Optimization (GEO): The 2026 Guide to AI. <a href="https://llmrefs.com/generative-engine-optimization" target="_blank" rel="noopener">llmrefs.com/generative-engine-optimization</a></li>
-          <li><span class="cite-num">8.</span> Geoptie — Generative Engine Optimization (GEO): The Definitive Guide [2026]. <a href="https://geoptie.com/blog/generative-engine-optimization" target="_blank" rel="noopener">geoptie.com/blog/generative-engine-optimization</a></li>
-          <li><span class="cite-num">9.</span> ZipTie — How Different AI Platforms Cite the Same Source Differently. <a href="https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/" target="_blank" rel="noopener">ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently</a></li>
-          <li><span class="cite-num">10.</span> Emergent Mind — Generative Engine Optimization (GEO). <a href="https://www.emergentmind.com/topics/generative-engine-optimization-geo" target="_blank" rel="noopener">emergentmind.com/topics/generative-engine-optimization-geo</a></li>
-          <li><span class="cite-num">11.</span> Medium (Sourin) — GEO Lessons From the Original Research Paper. <a href="https://heysourin.medium.com/generative-engine-optimization-geo-lessons-from-the-original-research-paper-simple-beginner-fb69efee389a" target="_blank" rel="noopener">heysourin.medium.com — GEO Lessons From the Original Research Paper</a></li>
-          <li><span class="cite-num">12.</span> Trakkr — Gemini Citation Analysis: How Google Gemini Chooses Sources (2026). <a href="https://trakkr.ai/article/deep-citation-analysis-for-gemini" target="_blank" rel="noopener">trakkr.ai/article/deep-citation-analysis-for-gemini</a></li>
-          <li><span class="cite-num">13.</span> GrackerAI — GEO: Generative Engine Optimization (ACM SIGKDD 2024). <a href="https://gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024" target="_blank" rel="noopener">gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024</a></li>
-          <li><span class="cite-num">14.</span> Yext — AI Citation Behavior Across Models: Evidence from 17.2 Million Citations. <a href="https://www.yext.com/research/ai-citation-behavior-across-models" target="_blank" rel="noopener">yext.com/research/ai-citation-behavior-across-models</a></li>
-          <li><span class="cite-num">15.</span> Whitehat SEO — Perplexity vs ChatGPT vs Gemini: AI Citations. <a href="https://whitehat-seo.co.uk/blog/ai-engines-comparison-citations" target="_blank" rel="noopener">whitehat-seo.co.uk/blog/ai-engines-comparison-citations</a></li>
-          <li><span class="cite-num">16.</span> BrightEdge — How Google AI Overviews and ChatGPT Cite Sources Differently. <a href="https://www.brightedge.com/resources/weekly-ai-search-insights/how-google-ai-overviews-and-chatgpt-cite-wikipedia-differently" target="_blank" rel="noopener">brightedge.com/resources/weekly-ai-search-insights</a></li>
-          <li><span class="cite-num">17.</span> Profound — AI Platform Citation Patterns. <a href="https://www.tryprofound.com/blog/ai-platform-citation-patterns" target="_blank" rel="noopener">tryprofound.com/blog/ai-platform-citation-patterns</a></li>
-          <li><span class="cite-num">18.</span> Dr. Robert Li — AI Citation Attention Patterns and User Discovery. <a href="https://drli.blog/posts/citation-attention/" target="_blank" rel="noopener">drli.blog/posts/citation-attention</a></li>
-          <li><span class="cite-num">19.</span> Oltre AI — How to Get Cited by Gemini: Complete Guide 2026. <a href="https://www.oltre.ai/blog/how-to-get-cited-by-gemini" target="_blank" rel="noopener">oltre.ai/blog/how-to-get-cited-by-gemini</a></li>
-          <li><span class="cite-num">20.</span> HubSpot — Generative Engine Optimization KPIs That Actually Matter. <a href="https://blog.hubspot.com/marketing/geo-kpis" target="_blank" rel="noopener">blog.hubspot.com/marketing/geo-kpis</a></li>
-          <li><span class="cite-num">21.</span> AIOSEO — What Is LLMs.txt? Plus, Why You Need It On Your Site. <a href="https://aioseo.com/what-is-llms-txt/" target="_blank" rel="noopener">aioseo.com/what-is-llms-txt</a></li>
+          <li><span class="cite-num">1.</span> Simaia, Generative Engine Optimization Explained: 8 Things Every B2B Founder Needs to Know. <a href="https://simaia.co/resources/generative-engine-optimization-explained-8-things-every-b2b-founder-needs-to-know-before-spending-a-dollar-on-ai-search" target="_blank" rel="noopener">simaia.co/resources/generative-engine-optimization-explained</a></li>
+          <li><span class="cite-num">2.</span> Groundfog, Generative Engine Optimization (GEO): Stay Visible in AI Answers. <a href="https://groundfog.cloud/en/generative-engine-optimization" target="_blank" rel="noopener">groundfog.cloud/en/generative-engine-optimization</a></li>
+          <li><span class="cite-num">3.</span> arXiv, GEO: Generative Engine Optimization (Aggarwal et al.). <a href="https://arxiv.org/pdf/2311.09735" target="_blank" rel="noopener">arxiv.org/pdf/2311.09735</a></li>
+          <li><span class="cite-num">4.</span> Emarketed, Gartner Predicts 25% Search Volume Drop by 2026. <a href="https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/" target="_blank" rel="noopener">emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026</a></li>
+          <li><span class="cite-num">5.</span> Walker Sands, 7 GEO Metrics That Show B2B Marketing Impact. <a href="https://www.walkersands.com/about/blog/generative-engine-optimization-metrics/" target="_blank" rel="noopener">walkersands.com/about/blog/generative-engine-optimization-metrics</a></li>
+          <li><span class="cite-num">6.</span> Clipatize, Generative Engine Optimization (GEO) for B2B Marketing. <a href="https://www.clipatize.com/b2b-marketing-blog/how-to-increase-b2b-marketing-content-visibility-with-ai" target="_blank" rel="noopener">clipatize.com/b2b-marketing-blog/generative-engine-optimization-geo-b2b</a></li>
+          <li><span class="cite-num">7.</span> LLMrefs, Generative Engine Optimization (GEO): The 2026 Guide to AI. <a href="https://llmrefs.com/generative-engine-optimization" target="_blank" rel="noopener">llmrefs.com/generative-engine-optimization</a></li>
+          <li><span class="cite-num">8.</span> Geoptie, Generative Engine Optimization (GEO): The Definitive Guide [2026]. <a href="https://geoptie.com/blog/generative-engine-optimization" target="_blank" rel="noopener">geoptie.com/blog/generative-engine-optimization</a></li>
+          <li><span class="cite-num">9.</span> ZipTie, How Different AI Platforms Cite the Same Source Differently. <a href="https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/" target="_blank" rel="noopener">ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently</a></li>
+          <li><span class="cite-num">10.</span> Emergent Mind, Generative Engine Optimization (GEO). <a href="https://www.emergentmind.com/topics/generative-engine-optimization-geo" target="_blank" rel="noopener">emergentmind.com/topics/generative-engine-optimization-geo</a></li>
+          <li><span class="cite-num">11.</span> Medium (Sourin), GEO Lessons From the Original Research Paper. <a href="https://heysourin.medium.com/generative-engine-optimization-geo-lessons-from-the-original-research-paper-simple-beginner-fb69efee389a" target="_blank" rel="noopener">heysourin.medium.com, GEO Lessons From the Original Research Paper</a></li>
+          <li><span class="cite-num">12.</span> Trakkr, Gemini Citation Analysis: How Google Gemini Chooses Sources (2026). <a href="https://trakkr.ai/article/deep-citation-analysis-for-gemini" target="_blank" rel="noopener">trakkr.ai/article/deep-citation-analysis-for-gemini</a></li>
+          <li><span class="cite-num">13.</span> GrackerAI, GEO: Generative Engine Optimization (ACM SIGKDD 2024). <a href="https://gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024" target="_blank" rel="noopener">gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024</a></li>
+          <li><span class="cite-num">14.</span> Yext, AI Citation Behavior Across Models: Evidence from 17.2 Million Citations. <a href="https://www.yext.com/research/ai-citation-behavior-across-models" target="_blank" rel="noopener">yext.com/research/ai-citation-behavior-across-models</a></li>
+          <li><span class="cite-num">15.</span> Whitehat SEO, Perplexity vs ChatGPT vs Gemini: AI Citations. <a href="https://whitehat-seo.co.uk/blog/ai-engines-comparison-citations" target="_blank" rel="noopener">whitehat-seo.co.uk/blog/ai-engines-comparison-citations</a></li>
+          <li><span class="cite-num">16.</span> BrightEdge, How Google AI Overviews and ChatGPT Cite Sources Differently. <a href="https://www.brightedge.com/resources/weekly-ai-search-insights/how-google-ai-overviews-and-chatgpt-cite-wikipedia-differently" target="_blank" rel="noopener">brightedge.com/resources/weekly-ai-search-insights</a></li>
+          <li><span class="cite-num">17.</span> Profound, AI Platform Citation Patterns. <a href="https://www.tryprofound.com/blog/ai-platform-citation-patterns" target="_blank" rel="noopener">tryprofound.com/blog/ai-platform-citation-patterns</a></li>
+          <li><span class="cite-num">18.</span> Dr. Robert Li, AI Citation Attention Patterns and User Discovery. <a href="https://drli.blog/posts/citation-attention/" target="_blank" rel="noopener">drli.blog/posts/citation-attention</a></li>
+          <li><span class="cite-num">19.</span> Oltre AI, How to Get Cited by Gemini: Complete Guide 2026. <a href="https://www.oltre.ai/blog/how-to-get-cited-by-gemini" target="_blank" rel="noopener">oltre.ai/blog/how-to-get-cited-by-gemini</a></li>
+          <li><span class="cite-num">20.</span> HubSpot, Generative Engine Optimization KPIs That Actually Matter. <a href="https://blog.hubspot.com/marketing/geo-kpis" target="_blank" rel="noopener">blog.hubspot.com/marketing/geo-kpis</a></li>
+          <li><span class="cite-num">21.</span> AIOSEO, What Is LLMs.txt? Plus, Why You Need It On Your Site. <a href="https://aioseo.com/what-is-llms-txt/" target="_blank" rel="noopener">aioseo.com/what-is-llms-txt</a></li>
         </ol>
       </div>
 
@@ -947,7 +968,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
     }
   });
 
-  // Fig 1 — Conversion rate horizontal bar
+  // Fig 1: Conversion rate horizontal bar
   const c1 = document.getElementById('conversionChart');
   if(c1){
     new Chart(c1, {
@@ -988,7 +1009,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
     });
   }
 
-  // Fig 3 (Gini) — vertical bar chart
+  // Fig 3 (Gini), vertical bar chart
   const c2 = document.getElementById('giniChart');
   if(c2){
     new Chart(c2, {
@@ -1026,7 +1047,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
     });
   }
 
-  // Fig 4 — Share of Voice bar with target line
+  // Fig 4: Share of Voice bar with target line
   const c3 = document.getElementById('sovChart');
   if(c3){
     new Chart(c3, {
@@ -1087,7 +1108,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
     });
   }
 
-  // Fig 5 — Page speed vs citations bar
+  // Fig 5: Page speed vs citations bar
   const c4 = document.getElementById('speedChart');
   if(c4){
     new Chart(c4, {

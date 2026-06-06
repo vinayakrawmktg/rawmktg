@@ -221,7 +221,7 @@ Across Primus Senior Living, Antara Senior Care, and Ashiana Housing, the ChatGP
 
 ### What is the most dangerous AI visibility risk for senior living brands?
 
-Misclassification, not invisibility, is the highest-risk scenario. ChatGPT described Primus Senior Living as an 'assisted living' provider across test queries — a fundamental brand error, since Primus positions as luxury independent senior living. Assisted living connotes medical dependency and institutional care. When ChatGPT tells an NRI buyer's family that Primus is assisted living, it actively contradicts years of brand positioning at the moment of highest buyer intent.
+Misclassification, not invisibility, is the highest-risk scenario. ChatGPT described Primus Senior Living as an 'assisted living' provider across test queries, a fundamental brand error, since Primus positions as luxury independent senior living. Assisted living connotes medical dependency and institutional care. When ChatGPT tells an NRI buyer's family that Primus is assisted living, it actively contradicts years of brand positioning at the moment of highest buyer intent.
 
 ### Who is the typical buyer for premium senior living in India?
 
@@ -229,7 +229,7 @@ The primary buyer is a 45 to 60-year-old NRI or affluent urban professional rese
 
 ### What is the TOFU traffic trap for senior living SEO?
 
-The TOFU traffic trap occurs when a brand's top organic keywords drive high traffic volume but zero commercial intent. Primus's largest traffic-driving keyword, 'senior citizen card benefits,' drives 222 visits per month from people researching government benefit schemes, not luxury retirement communities. This inflates traffic metrics while the brand remains invisible for queries like 'best luxury senior living India' — the queries that actually drive bookings.
+The TOFU traffic trap occurs when a brand's top organic keywords drive high traffic volume but zero commercial intent. Primus's largest traffic-driving keyword, 'senior citizen card benefits,' drives 222 visits per month from people researching government benefit schemes, not luxury retirement communities. This inflates traffic metrics while the brand remains invisible for queries like 'best luxury senior living India', the queries that actually drive bookings.
 
 ### How does the backlink profile gap affect AI citation visibility in senior living?
 

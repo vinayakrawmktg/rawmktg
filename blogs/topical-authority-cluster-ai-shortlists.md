@@ -291,7 +291,7 @@ Complement prompt audits with analytics. In Google Analytics 4, build custom seg
 Figure 06: GA4 custom segment: isolate AI crawler and referral traffic
 
 ```
-// GA4 custom segment — isolate AI crawler / referral traffic
+// GA4 custom segment, isolate AI crawler / referral traffic
 Condition group (OR):
   User agent  contains  "Claude-Web"
   User agent  contains  "GPTBot"

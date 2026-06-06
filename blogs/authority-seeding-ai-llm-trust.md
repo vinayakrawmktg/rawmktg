@@ -17,7 +17,7 @@ Language models learn from statistical patterns across the global web text corpu
 
 The relative correlation between organic visibility and digital signals reflects this architectural shift. [Empirical data from keyword.com](https://keyword.com/blog/brand-mentions-vs-citations-vs-backlinks-for-llm-discoverability/) demonstrates the divergence clearly:
 
-Table 01 — Authority metric correlations with AI citation visibility · Cross-platform synthesis 2026
+Table 01: Authority metric correlations with AI citation visibility · Cross-platform synthesis 2026
 
 | Authority Metric | Correlation (r) | Core Role in Model Processing | vs Backlinks |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@ This divergence occurs because [language models learn from statistical patterns]
 
 Traditional link-building attempts to manipulate the structural web graph. Authority seeding operates at the semantic layer the model actually reads and weights.
 
-Fig. 01 — Signal correlation spectrum vs AI citation visibility (indexed to Unlinked Mentions = 1.0)
+Fig. 01: Signal correlation spectrum vs AI citation visibility (indexed to Unlinked Mentions = 1.0)
 
 ## The Dual-Pathway Architecture of Generative Search
 
@@ -41,7 +41,7 @@ Modern generative search engines operate on two distinct pathways: the parametri
 
 To build an off-site signal stack that models trust, search leads must understand [the dual-pathway architecture of modern generative search engines](/blogs/how-rag-actually-works) as documented in the RAG technical breakdown.
 
-Table 02 — Dual-pathway architecture: parametric vs RAG seeding
+Table 02: Dual-pathway architecture: parametric vs RAG seeding
 
 | Pathway | How It Works | Seeding Asset Type | Timeline to Impact |
 | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ For a seeded digital asset to secure a citation in a real-time conversational re
 
 Every seeded asset must clear five sequential filters before reaching the generated response. [Perplexity's documented architecture](https://ziptie.dev/blog/how-perplexity-ai-answers-work/) provides the clearest public specification of this pipeline:
 
-Table 03 — The Five-Gate Citation Gauntlet: filter mechanism and optimisation requirement
+Table 03: The Five-Gate Citation Gauntlet: filter mechanism and optimisation requirement
 
 | Gate | Pipeline Stage | Filter Mechanism | Optimisation Requirement |
 | --- | --- | --- | --- |
@@ -83,7 +83,7 @@ Placing a direct, highly extractable answer within the first 100 words of any pa
 
 ChatGPT, Claude, Perplexity, and Google AI Overviews retrieve content differently, weight recency differently, and prefer different content formats. A single content strategy cannot optimise for all four simultaneously. Platform-specific asset mapping is required.
 
-Table 04 — Platform citation profiles and optimisation targets · 2026
+Table 04: Platform citation profiles and optimisation targets · 2026
 
 | Variable | ChatGPT Search | Claude (RAG) | Perplexity | Google AI Overviews |
 | --- | --- | --- | --- | --- |
@@ -106,13 +106,13 @@ Perplexity prioritises structured data, specific numbers, and timely updates. It
 
 Google's generative model relies heavily on its existing search index and rewards traditional [E-E-A-T and domain authority signals](/blogs/eeat-is-an-ai-signal-now). According to [Google's Search Central documentation](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), optimising for generative search remains a component of optimising for the overall search experience. Concise, directly extractable answers via FAQPage or HowTo schema drive substantial citation lifts.
 
-Fig. 02 — Citation rate by content format (average across ChatGPT, Claude, Perplexity · 2026)
+Fig. 02: Citation rate by content format (average across ChatGPT, Claude, Perplexity · 2026)
 
 ## Vertical-Specific Seeding Playbooks
 
 Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because comparison queries are structurally multi-source. YMYL verticals require intensive credentialing to pass Gate 4.
 
-Table 05 — Vertical seeding playbooks: citation rate, format, and channel prioritisation
+Table 05: Vertical seeding playbooks: citation rate, format, and channel prioritisation
 
 | Vertical | Avg. Citation Rate | Primary Seeding Format | Critical Success Metric | Key Distribution Channels |
 | --- | --- | --- | --- | --- |

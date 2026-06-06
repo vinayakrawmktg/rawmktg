@@ -19,7 +19,7 @@ The economics are compelling. [AI-referred traffic converts at approximately 11 
 
 AI-referred buyers convert at a 1.66% sign-up rate versus 0.15% for standard organic search. The visitor arriving via an AI recommendation has already been through the model's qualification loop before reaching your site.
 
-Fig. 1 — Conversion Rate: AI-Referred vs. Organic Search
+Fig. 1: Conversion Rate: AI-Referred vs. Organic Search
 
 AI-referred buyers arrive pre-qualified and convert far above the organic baseline.
 
@@ -33,7 +33,7 @@ Optimizing for machine synthesis requires understanding [RAG architectures](/blo
 
 [The academic foundation was established in late 2023 by researchers from Princeton and Georgia Tech](https://arxiv.org/pdf/2311.09735). Their paper framed GEO as a black-box optimization problem: original content *c* is transformed by a function into optimized content *c*'. Inclusion alone is too crude a metric, so they score a Position-Adjusted Word Count impression that gives more weight to citations that appear earlier in the synthesized answer.
 
-Fig. 2 — Position-Adjusted Word Count impression formula (Princeton / Georgia Tech, 2023)
+Fig. 2: Position-Adjusted Word Count impression formula (Princeton / Georgia Tech, 2023)
 
 ```
 # Position-Adjusted Word Count impression for source s in response r
@@ -67,7 +67,7 @@ Only 11% of domains are cited by both ChatGPT and Perplexity for the same query,
 
 [Citation overlap between engines is strikingly low](https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/): only 11% of domains are cited by both ChatGPT and Perplexity for the same query, and 71% of cited sources appear on a single platform. Concentration differs sharply too, measured by the Gini coefficient of citation distribution: a Gini of 0 means every source gets equal citations; a Gini of 1 means one source takes everything.
 
-Fig. 3 — Source Concentration by Engine (Gini Coefficient, Aug 2024–Jun 2025)
+Fig. 3: Source Concentration by Engine (Gini Coefficient, Aug 2024–Jun 2025)
 
 Higher Gini = a smaller set of domains wins the citations. Gemini is winner-takes-all; ChatGPT is most democratic.
 
@@ -82,16 +82,16 @@ Higher Gini = a smaller set of domains wins the citations. Gemini is winner-take
 
 The fragmentation is easiest to see in the raw distribution of citations across the three highest-volume engines (Aug 2024–Jun 2025). The leading cited domains differ almost entirely: community and reference sites dominate where brand content is largely absent.
 
-Table 1 — Leading cited domains by engine (Aug 2024–Jun 2025)
+Table 1: Leading cited domains by engine (Aug 2024–Jun 2025)
 
-| ChatGPT — Top Sources | Google AI Overviews | Perplexity |
+| ChatGPT, Top Sources | Google AI Overviews | Perplexity |
 | --- | --- | --- |
-| Wikipedia — 7.8% | Reddit — 2.2% | Reddit — 6.6% |
-| Reddit — 1.8% | YouTube — 1.9% | YouTube — 2.0% |
-| Forbes — 1.1% | Quora — 1.5% | Gartner — 1.0% |
-| G2 — 1.1% | LinkedIn — 1.3% | Yelp — 0.8% |
-| TechRadar — 0.9% | Gartner — 0.7% | LinkedIn — 0.8% |
-| NerdWallet — 0.8% | NerdWallet — 0.6% | Forbes — 0.7% |
+| Wikipedia, 7.8% | Reddit, 2.2% | Reddit, 6.6% |
+| Reddit, 1.8% | YouTube, 1.9% | YouTube, 2.0% |
+| Forbes, 1.1% | Quora, 1.5% | Gartner, 1.0% |
+| G2, 1.1% | LinkedIn, 1.3% | Yelp, 0.8% |
+| TechRadar, 0.9% | Gartner, 0.7% | LinkedIn, 0.8% |
+| NerdWallet, 0.8% | NerdWallet, 0.6% | Forbes, 0.7% |
 
 The implication for B2B brands: appearing only on your own domain is not enough. You need presence on the community, review, and reference platforms each engine trusts most. The audit maps exactly which platforms are missing.
 
@@ -141,7 +141,7 @@ Output: Prioritized rewrite queue with per-page edit briefs, Princeton operator 
 
 ### Sample buyer-intent prompt (Step 1)
 
-Representative discovery prompt — healthcare billing, mid-market ICP
+Representative discovery prompt, healthcare billing, mid-market ICP
 
 ```
 Which enterprise billing platform is best for a mid-market
@@ -153,11 +153,11 @@ integrates with Salesforce, and supports usage-based pricing?
 
 After computing SoV across all engines, we score each gap along three dimensions. The matrix drives the downstream remediation plan.
 
-Fig. 4 — Share of Voice Readout (vs. 35% Target Line)
+Fig. 4: Share of Voice Readout (vs. 35% Target Line)
 
 A SoV readout makes the gap to the 35% target obvious at a glance. The brand here must nearly triple its citation presence to reach parity.
 
-Table 2 — The RawMktg. citation-gap scoring matrix
+Table 2: The RawMktg. citation-gap scoring matrix
 
 | Metric | Target | Sourcing Mechanic | RawMktg. Remediation |
 | --- | --- | --- | --- |
@@ -167,20 +167,20 @@ Table 2 — The RawMktg. citation-gap scoring matrix
 
 ### Step 4 in detail: page speed and llms.txt
 
-Fig. 5 — Average Citations per Query vs. Page Speed (FCP Bucket)
+Fig. 5: Average Citations per Query vs. Page Speed (FCP Bucket)
 
 Faster pages are cited more than three times as often. Core Web Vitals are a direct citation lever, not just a UX metric.
 
 A modern technical layer adds an [llms.txt file](https://aioseo.com/what-is-llms-txt/) at the site root: a lightweight Markdown map of the highest-value pages, built specifically for RAG ingestion. RawMktg. deploys a dual hierarchy: a lightweight `llms.txt` summarizing high-value posts, and a comprehensive `llms-full.txt` containing the complete content database in clean Markdown with link controls to protect server performance.
 
-Minimal llms.txt template — enterprise billing example
+Minimal llms.txt template, enterprise billing example
 
 llms.txt
 
 ```
 # https://example.com/llms.txt
 
-# Acme Billing — enterprise usage-based billing for healthcare & SaaS
+# Acme Billing, enterprise usage-based billing for healthcare & SaaS
 > HIPAA-compliant billing with native Salesforce integration.
 
 ## Core pages
@@ -205,7 +205,7 @@ Analysis of 17.2 million AI citations in Q4 2025 shows that citation dynamics va
 
 [Yext's analysis of 17.2 million AI citations](https://www.yext.com/research/ai-citation-behavior-across-models) across six B2B-relevant verticals reveals that the highest-performing brands in each category have adapted their content and distribution strategy to match their engine's retrieval pattern: not a universal GEO playbook, but a vertical-specific one.
 
-Table 3 — Citation dynamics and brand behavior across six B2B-relevant verticals (Q4 2025, 17.2M citations)
+Table 3: Citation dynamics and brand behavior across six B2B-relevant verticals (Q4 2025, 17.2M citations)
 
 | Vertical | Brand Diversity | Conversion & Traffic | Distinct Characteristics |
 | --- | --- | --- | --- |
@@ -216,7 +216,7 @@ Table 3 — Citation dynamics and brand behavior across six B2B-relevant vertica
 | Fashion & Apparel | High | Lowest AI-referred conversion | Driven by ethics/sustainability narratives; lowest overlap (3 brands in ChatGPT) |
 | Digital Technology | Moderate | Highly variable by segment | Incumbents dominate (Microsoft 52.9% SoV); niche category openings remain |
 
-The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources — so off-site seeding and review platform presence matter more than on-page optimization.
+The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so off-site seeding and review platform presence matter more than on-page optimization.
 
 ## 06. Capturing the Synthesized Pipeline
 
@@ -227,7 +227,7 @@ The implication for marketing leaders is direct: as search behavior shifts, cont
 Two illustrative outcomes from organizations that completed all five steps: a B2B healthcare SaaS reached 45% AI search visibility in 2.5 months; a global manufacturer grew inbound lead volume 10x within two months of launching an optimization program. Neither result required new content from scratch; both came from restructuring existing assets and fixing technical crawl access first.
 
 Case Study 01.
-B2B Healthcare SaaS — Billing Platform
+B2B Healthcare SaaS, Billing Platform
 
 A mid-market healthcare billing SaaS had strong organic rankings but was absent from AI answers for its highest-intent queries. The GEO Foundation Audit revealed three issues: GPTBot was being blocked by an inherited CDN rule, key product pages were client-side rendered, and no original benchmark data existed to satisfy the Mention-Source Divide. The remediation ran the RAID pipeline on six core pages, deployed llms.txt, fixed the CDN rule, and seeded one proprietary benchmark report across targeted publications. Full details on the [prompt-to-citation tracking](/blogs/prompt-to-citation-tracking) methodology used are in our companion article.
 
@@ -244,7 +244,7 @@ time to meaningful citation presence
 root causes fixed before any new content was written
 
 Case Study 02.
-Global B2B Manufacturer — Industrial Equipment
+Global B2B Manufacturer, Industrial Equipment
 
 A global manufacturer competing against Fortune 100 incumbents ran all five audit steps. Technical fixes came first: render blocking on product specification pages, missing [AI crawler access](/blogs/how-ai-crawlers-index-your-site), and zero structured schema on the highest-traffic product category pages. Content restructuring followed: product descriptions were rewritten into atomic knowledge blocks with verified compliance statistics and expert quotes. [Authority seeding](/blogs/authority-seeding-ai-llm-trust) across niche industrial directories sealed the off-site gap.
 
@@ -282,24 +282,24 @@ Citation overlap figures (11% ChatGPT/Perplexity overlap, 71% single-platform so
 
 Citations
 
-1. 1. Simaia — Generative Engine Optimization Explained: 8 Things Every B2B Founder Needs to Know. [simaia.co/resources/generative-engine-optimization-explained](https://simaia.co/resources/generative-engine-optimization-explained-8-things-every-b2b-founder-needs-to-know-before-spending-a-dollar-on-ai-search)
-2. 2. Groundfog — Generative Engine Optimization (GEO): Stay Visible in AI Answers. [groundfog.cloud/en/generative-engine-optimization](https://groundfog.cloud/en/generative-engine-optimization)
-3. 3. arXiv — GEO: Generative Engine Optimization (Aggarwal et al.). [arxiv.org/pdf/2311.09735](https://arxiv.org/pdf/2311.09735)
-4. 4. Emarketed — Gartner Predicts 25% Search Volume Drop by 2026. [emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026](https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/)
-5. 5. Walker Sands — 7 GEO Metrics That Show B2B Marketing Impact. [walkersands.com/about/blog/generative-engine-optimization-metrics](https://www.walkersands.com/about/blog/generative-engine-optimization-metrics/)
-6. 6. Clipatize — Generative Engine Optimization (GEO) for B2B Marketing. [clipatize.com/b2b-marketing-blog/generative-engine-optimization-geo-b2b](https://www.clipatize.com/b2b-marketing-blog/how-to-increase-b2b-marketing-content-visibility-with-ai)
-7. 7. LLMrefs — Generative Engine Optimization (GEO): The 2026 Guide to AI. [llmrefs.com/generative-engine-optimization](https://llmrefs.com/generative-engine-optimization)
-8. 8. Geoptie — Generative Engine Optimization (GEO): The Definitive Guide [2026]. [geoptie.com/blog/generative-engine-optimization](https://geoptie.com/blog/generative-engine-optimization)
-9. 9. ZipTie — How Different AI Platforms Cite the Same Source Differently. [ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently](https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/)
-10. 10. Emergent Mind — Generative Engine Optimization (GEO). [emergentmind.com/topics/generative-engine-optimization-geo](https://www.emergentmind.com/topics/generative-engine-optimization-geo)
-11. 11. Medium (Sourin) — GEO Lessons From the Original Research Paper. [heysourin.medium.com — GEO Lessons From the Original Research Paper](https://heysourin.medium.com/generative-engine-optimization-geo-lessons-from-the-original-research-paper-simple-beginner-fb69efee389a)
-12. 12. Trakkr — Gemini Citation Analysis: How Google Gemini Chooses Sources (2026). [trakkr.ai/article/deep-citation-analysis-for-gemini](https://trakkr.ai/article/deep-citation-analysis-for-gemini)
-13. 13. GrackerAI — GEO: Generative Engine Optimization (ACM SIGKDD 2024). [gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024](https://gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024)
-14. 14. Yext — AI Citation Behavior Across Models: Evidence from 17.2 Million Citations. [yext.com/research/ai-citation-behavior-across-models](https://www.yext.com/research/ai-citation-behavior-across-models)
-15. 15. Whitehat SEO — Perplexity vs ChatGPT vs Gemini: AI Citations. [whitehat-seo.co.uk/blog/ai-engines-comparison-citations](https://whitehat-seo.co.uk/blog/ai-engines-comparison-citations)
-16. 16. BrightEdge — How Google AI Overviews and ChatGPT Cite Sources Differently. [brightedge.com/resources/weekly-ai-search-insights](https://www.brightedge.com/resources/weekly-ai-search-insights/how-google-ai-overviews-and-chatgpt-cite-wikipedia-differently)
-17. 17. Profound — AI Platform Citation Patterns. [tryprofound.com/blog/ai-platform-citation-patterns](https://www.tryprofound.com/blog/ai-platform-citation-patterns)
-18. 18. Dr. Robert Li — AI Citation Attention Patterns and User Discovery. [drli.blog/posts/citation-attention](https://drli.blog/posts/citation-attention/)
-19. 19. Oltre AI — How to Get Cited by Gemini: Complete Guide 2026. [oltre.ai/blog/how-to-get-cited-by-gemini](https://www.oltre.ai/blog/how-to-get-cited-by-gemini)
-20. 20. HubSpot — Generative Engine Optimization KPIs That Actually Matter. [blog.hubspot.com/marketing/geo-kpis](https://blog.hubspot.com/marketing/geo-kpis)
-21. 21. AIOSEO — What Is LLMs.txt? Plus, Why You Need It On Your Site. [aioseo.com/what-is-llms-txt](https://aioseo.com/what-is-llms-txt/)
+1. 1. Simaia, Generative Engine Optimization Explained: 8 Things Every B2B Founder Needs to Know. [simaia.co/resources/generative-engine-optimization-explained](https://simaia.co/resources/generative-engine-optimization-explained-8-things-every-b2b-founder-needs-to-know-before-spending-a-dollar-on-ai-search)
+2. 2. Groundfog, Generative Engine Optimization (GEO): Stay Visible in AI Answers. [groundfog.cloud/en/generative-engine-optimization](https://groundfog.cloud/en/generative-engine-optimization)
+3. 3. arXiv, GEO: Generative Engine Optimization (Aggarwal et al.). [arxiv.org/pdf/2311.09735](https://arxiv.org/pdf/2311.09735)
+4. 4. Emarketed, Gartner Predicts 25% Search Volume Drop by 2026. [emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026](https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/)
+5. 5. Walker Sands, 7 GEO Metrics That Show B2B Marketing Impact. [walkersands.com/about/blog/generative-engine-optimization-metrics](https://www.walkersands.com/about/blog/generative-engine-optimization-metrics/)
+6. 6. Clipatize, Generative Engine Optimization (GEO) for B2B Marketing. [clipatize.com/b2b-marketing-blog/generative-engine-optimization-geo-b2b](https://www.clipatize.com/b2b-marketing-blog/how-to-increase-b2b-marketing-content-visibility-with-ai)
+7. 7. LLMrefs, Generative Engine Optimization (GEO): The 2026 Guide to AI. [llmrefs.com/generative-engine-optimization](https://llmrefs.com/generative-engine-optimization)
+8. 8. Geoptie, Generative Engine Optimization (GEO): The Definitive Guide [2026]. [geoptie.com/blog/generative-engine-optimization](https://geoptie.com/blog/generative-engine-optimization)
+9. 9. ZipTie, How Different AI Platforms Cite the Same Source Differently. [ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently](https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/)
+10. 10. Emergent Mind, Generative Engine Optimization (GEO). [emergentmind.com/topics/generative-engine-optimization-geo](https://www.emergentmind.com/topics/generative-engine-optimization-geo)
+11. 11. Medium (Sourin), GEO Lessons From the Original Research Paper. [heysourin.medium.com, GEO Lessons From the Original Research Paper](https://heysourin.medium.com/generative-engine-optimization-geo-lessons-from-the-original-research-paper-simple-beginner-fb69efee389a)
+12. 12. Trakkr, Gemini Citation Analysis: How Google Gemini Chooses Sources (2026). [trakkr.ai/article/deep-citation-analysis-for-gemini](https://trakkr.ai/article/deep-citation-analysis-for-gemini)
+13. 13. GrackerAI, GEO: Generative Engine Optimization (ACM SIGKDD 2024). [gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024](https://gracker.ai/data-and-research-reports/geo-generative-engine-optimization-acm-sigkdd-2024)
+14. 14. Yext, AI Citation Behavior Across Models: Evidence from 17.2 Million Citations. [yext.com/research/ai-citation-behavior-across-models](https://www.yext.com/research/ai-citation-behavior-across-models)
+15. 15. Whitehat SEO, Perplexity vs ChatGPT vs Gemini: AI Citations. [whitehat-seo.co.uk/blog/ai-engines-comparison-citations](https://whitehat-seo.co.uk/blog/ai-engines-comparison-citations)
+16. 16. BrightEdge, How Google AI Overviews and ChatGPT Cite Sources Differently. [brightedge.com/resources/weekly-ai-search-insights](https://www.brightedge.com/resources/weekly-ai-search-insights/how-google-ai-overviews-and-chatgpt-cite-wikipedia-differently)
+17. 17. Profound, AI Platform Citation Patterns. [tryprofound.com/blog/ai-platform-citation-patterns](https://www.tryprofound.com/blog/ai-platform-citation-patterns)
+18. 18. Dr. Robert Li, AI Citation Attention Patterns and User Discovery. [drli.blog/posts/citation-attention](https://drli.blog/posts/citation-attention/)
+19. 19. Oltre AI, How to Get Cited by Gemini: Complete Guide 2026. [oltre.ai/blog/how-to-get-cited-by-gemini](https://www.oltre.ai/blog/how-to-get-cited-by-gemini)
+20. 20. HubSpot, Generative Engine Optimization KPIs That Actually Matter. [blog.hubspot.com/marketing/geo-kpis](https://blog.hubspot.com/marketing/geo-kpis)
+21. 21. AIOSEO, What Is LLMs.txt? Plus, Why You Need It On Your Site. [aioseo.com/what-is-llms-txt](https://aioseo.com/what-is-llms-txt/)

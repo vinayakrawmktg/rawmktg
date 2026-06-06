@@ -41,7 +41,7 @@ Pattern 02 · Paragraph Density
 
 ## §2Paragraph density: the inverted pyramid
 
-If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff" — long narrative introductions, repetitive keyword reinforcement, personal anecdotes — to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.
+If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff", long narrative introductions, repetitive keyword reinforcement, personal anecdotes, to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.
 
 LLMs parse text looking for specific entities: verifiable concepts, numbers, named sources, and concrete definitions. If a 500-word introduction is required before a page resolves its primary question, the retrieval algorithm will skip it in favor of a 150-word block that resolves the question immediately. The signal here is "information density": the ratio of extractable entities to generic narrative filler.
 

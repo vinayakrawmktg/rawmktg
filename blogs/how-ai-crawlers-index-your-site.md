@@ -363,7 +363,7 @@ Frequently Asked Questions
 
 ### Do AI search crawlers execute JavaScript?
 
-No. None of the three primary AI crawlers — OAI-SearchBot (ChatGPT Search), PerplexityBot, or CCBot (Common Crawl) — execute JavaScript. They retrieve raw HTML only. Sites relying on client-side rendering to deliver page content are effectively invisible to AI search engines, regardless of organic SEO performance. Server-side rendering or incremental static regeneration is required for AI crawl coverage.
+No. None of the three primary AI crawlers, OAI-SearchBot (ChatGPT Search), PerplexityBot, or CCBot (Common Crawl), execute JavaScript. They retrieve raw HTML only. Sites relying on client-side rendering to deliver page content are effectively invisible to AI search engines, regardless of organic SEO performance. Server-side rendering or incremental static regeneration is required for AI crawl coverage.
 
 ### What is the difference between OAI-SearchBot and GPTBot?
 
@@ -371,7 +371,7 @@ OAI-SearchBot indexes pages for real-time citations in ChatGPT Search answers. G
 
 ### How do you verify that OAI-SearchBot or PerplexityBot is legitimate?
 
-Verify OAI-SearchBot by reverse DNS — the crawling IP must resolve to a subdomain of openai.com. Verify PerplexityBot by cross-referencing the IP against Perplexity's published JSON feed at perplexity.com/perplexitybot.json. CCBot verification uses forward-confirmed reverse DNS resolving to \*.crawl.commoncrawl.org. Spoofed crawlers mimicking these user-agents are common — IP verification prevents fraudulent crawl requests from bypassing content access controls.
+Verify OAI-SearchBot by reverse DNS, the crawling IP must resolve to a subdomain of openai.com. Verify PerplexityBot by cross-referencing the IP against Perplexity's published JSON feed at perplexity.com/perplexitybot.json. CCBot verification uses forward-confirmed reverse DNS resolving to \*.crawl.commoncrawl.org. Spoofed crawlers mimicking these user-agents are common, IP verification prevents fraudulent crawl requests from bypassing content access controls.
 
 ### What robots.txt configuration maximizes AI citation share?
 
@@ -379,7 +379,7 @@ Allow OAI-SearchBot, PerplexityBot, and Google-Extended while blocking GPTBot an
 
 ### What is llms.txt and how does it improve AI citation coverage?
 
-The llms.txt file is a markdown-formatted directory placed at your domain root that gives AI crawlers a curated map of your highest-value pages. Unlike XML sitemaps designed for Googlebot, llms.txt is optimized for context-constrained AI parsing — it explicitly signals which pages contain definitive answers to category queries. Zero of six AEC companies in our June 2026 analysis had published an llms.txt, and their citation rates reflected the gap.
+The llms.txt file is a markdown-formatted directory placed at your domain root that gives AI crawlers a curated map of your highest-value pages. Unlike XML sitemaps designed for Googlebot, llms.txt is optimized for context-constrained AI parsing, it explicitly signals which pages contain definitive answers to category queries. Zero of six AEC companies in our June 2026 analysis had published an llms.txt, and their citation rates reflected the gap.
 
 Sources
 

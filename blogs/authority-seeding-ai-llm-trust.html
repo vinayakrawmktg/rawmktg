@@ -233,6 +233,17 @@
       line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
     .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
       color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
   </style>
   <script type="application/ld+json">
   {
@@ -303,7 +314,7 @@
   <link rel="alternate" type="text/markdown" href="/blogs/authority-seeding-ai-llm-trust.md" />
 </head>
 <body>
-<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/authority-seeding-ai-llm-trust.md — optimized for AI and LLM tools.</div>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/authority-seeding-ai-llm-trust.md. Optimized for AI and LLM tools.</div>
 
 <!-- Nav -->
 <nav class="site-nav" aria-label="Site navigation">
@@ -311,7 +322,17 @@
     <div class="nav-row">
       <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
       <div class="nav-links">
-        <a href="/#articles">Articles</a>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+          </div>
+        </div>
+        <a href="/#about">About</a>
         <a href="/#newsletter" class="cta">Subscribe</a>
       </div>
     </div>
@@ -358,7 +379,7 @@
       <p>The relative correlation between organic visibility and digital signals reflects this architectural shift. <a href="https://keyword.com/blog/brand-mentions-vs-citations-vs-backlinks-for-llm-discoverability/" target="_blank" rel="noopener">Empirical data from keyword.com</a> demonstrates the divergence clearly:</p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 01 — Authority metric correlations with AI citation visibility · Cross-platform synthesis 2026</div>
+        <div class="tt-label">Table 01: Authority metric correlations with AI citation visibility · Cross-platform synthesis 2026</div>
         <table class="tt">
           <thead>
             <tr>
@@ -386,7 +407,7 @@
 
       <!-- SVG Chart: Signal correlation spectrum -->
       <div class="chart-wrap">
-        <div class="chart-title">Fig. 01 — Signal correlation spectrum vs AI citation visibility (indexed to Unlinked Mentions = 1.0)</div>
+        <div class="chart-title">Fig. 01: Signal correlation spectrum vs AI citation visibility (indexed to Unlinked Mentions = 1.0)</div>
         <svg width="100%" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" aria-label="Bar chart showing authority signal correlations">
           <defs>
             <linearGradient id="barUp" x1="0" y1="0" x2="1" y2="0">
@@ -444,7 +465,7 @@
       <p>To build an off-site signal stack that models trust, search leads must understand <a href="/blogs/how-rag-actually-works">the dual-pathway architecture of modern generative search engines</a> as documented in the RAG technical breakdown.</p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 02 — Dual-pathway architecture: parametric vs RAG seeding</div>
+        <div class="tt-label">Table 02: Dual-pathway architecture: parametric vs RAG seeding</div>
         <table class="tt">
           <thead>
             <tr>
@@ -476,7 +497,7 @@
       <p>Every seeded asset must clear five sequential filters before reaching the generated response. <a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank" rel="noopener">Perplexity's documented architecture</a> provides the clearest public specification of this pipeline:</p>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 03 — The Five-Gate Citation Gauntlet: filter mechanism and optimisation requirement</div>
+        <div class="tt-label">Table 03: The Five-Gate Citation Gauntlet: filter mechanism and optimisation requirement</div>
         <table class="tt">
           <thead>
             <tr>
@@ -513,7 +534,7 @@
       <div class="section-answer">ChatGPT, Claude, Perplexity, and Google AI Overviews retrieve content differently, weight recency differently, and prefer different content formats. A single content strategy cannot optimise for all four simultaneously. Platform-specific asset mapping is required.</div>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 04 — Platform citation profiles and optimisation targets · 2026</div>
+        <div class="tt-label">Table 04: Platform citation profiles and optimisation targets · 2026</div>
         <table class="tt">
           <thead>
             <tr>
@@ -546,7 +567,7 @@
 
       <!-- SVG: Citation rate by content format -->
       <div class="chart-wrap">
-        <div class="chart-title">Fig. 02 — Citation rate by content format (average across ChatGPT, Claude, Perplexity · 2026)</div>
+        <div class="chart-title">Fig. 02: Citation rate by content format (average across ChatGPT, Claude, Perplexity · 2026)</div>
         <svg width="100%" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg" aria-label="Bar chart showing citation rates by content format">
           <text x="178" y="22" text-anchor="end" fill="rgba(255,255,255,.65)" font-family="JetBrains Mono,monospace" font-size="11">Structured FAQs + Schema</text>
           <rect x="186" y="10" width="341" height="16" rx="2" fill="#3E9B6A" fill-opacity="0.7"/>
@@ -580,7 +601,7 @@
       <div class="section-answer">Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because comparison queries are structurally multi-source. YMYL verticals require intensive credentialing to pass Gate 4.</div>
 
       <div class="tt-wrap">
-        <div class="tt-label">Table 05 — Vertical seeding playbooks: citation rate, format, and channel prioritisation</div>
+        <div class="tt-label">Table 05: Vertical seeding playbooks: citation rate, format, and channel prioritisation</div>
         <table class="tt">
           <thead>
             <tr>
@@ -773,12 +794,12 @@ Schema Templates: https://yourdomain.com/schema-templates</pre>
           <hr class="stat-divider">
           <div class="stat-item">
             <div class="stat-val">0.664</div>
-            <div class="stat-label">Correlation (r) — unlinked mentions</div>
+            <div class="stat-label">Correlation (r), unlinked mentions</div>
           </div>
           <hr class="stat-divider">
           <div class="stat-item">
             <div class="stat-val">71%</div>
-            <div class="stat-label">Citation rate — structured FAQ + schema</div>
+            <div class="stat-label">Citation rate, structured FAQ + schema</div>
           </div>
           <hr class="stat-divider">
           <div class="stat-item">

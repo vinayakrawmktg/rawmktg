@@ -164,7 +164,7 @@ Neuroshop, with a Domain Rating of just 16, leads the competitive set in ChatGPT
 
 ### Why do AiFi and Standard AI have low AI visibility despite high domain authority?
 
-AiFi (DR 60) has 4 Google AI Overview citations and zero ChatGPT citations despite a partnership with Aldi and global deployments. Standard AI (DR 55) has zero AI citations across all platforms. Both companies' sites rely on narrative marketing copy and client-side rendering — content human readers understand but that AI retrieval crawlers cannot parse. High domain authority does not transfer to AI citation eligibility without structural content optimization.
+AiFi (DR 60) has 4 Google AI Overview citations and zero ChatGPT citations despite a partnership with Aldi and global deployments. Standard AI (DR 55) has zero AI citations across all platforms. Both companies' sites rely on narrative marketing copy and client-side rendering, content human readers understand but that AI retrieval crawlers cannot parse. High domain authority does not transfer to AI citation eligibility without structural content optimization.
 
 ### What is the most important content fix for autonomous retail vendors?
 

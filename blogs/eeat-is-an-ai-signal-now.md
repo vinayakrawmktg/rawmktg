@@ -204,7 +204,7 @@ Frequently Asked Questions
 
 ### Does E-E-A-T affect AI citation rates?
 
-Yes. 96% of Google AI Overview citations go to sources with verifiable E-E-A-T profiles. Pages ranked #5 with strong E-E-A-T signals outperform #1-ranked pages with weak E-E-A-T by 2.3× in AI citation frequency. E-E-A-T is no longer a qualitative guideline for human reviewers — it is mathematically encoded into LLM preferences through RLHF and Direct Preference Optimization training pipelines.
+Yes. 96% of Google AI Overview citations go to sources with verifiable E-E-A-T profiles. Pages ranked #5 with strong E-E-A-T signals outperform #1-ranked pages with weak E-E-A-T by 2.3× in AI citation frequency. E-E-A-T is no longer a qualitative guideline for human reviewers, it is mathematically encoded into LLM preferences through RLHF and Direct Preference Optimization training pipelines.
 
 ### How is E-E-A-T encoded into large language models?
 
@@ -216,7 +216,7 @@ The Princeton GEO benchmark identified three tactics that consistently lift AI c
 
 ### What is the 90-day E-E-A-T framework for AI search?
 
-Weeks 1 to 4 establish entity clarity — consistent brand description across website, LinkedIn, Crunchbase, Wikidata, and author bio pages. Weeks 5 to 8 restructure content for AI extraction using BLUF formatting, expert attribution, and verified statistics in every major section. Weeks 9 to 12 execute earned media and PR campaigns to build brand mentions and semantic co-occurrence across trusted publications that LLMs use for cross-source validation.
+Weeks 1 to 4 establish entity clarity, consistent brand description across website, LinkedIn, Crunchbase, Wikidata, and author bio pages. Weeks 5 to 8 restructure content for AI extraction using BLUF formatting, expert attribution, and verified statistics in every major section. Weeks 9 to 12 execute earned media and PR campaigns to build brand mentions and semantic co-occurrence across trusted publications that LLMs use for cross-source validation.
 
 Sources
 

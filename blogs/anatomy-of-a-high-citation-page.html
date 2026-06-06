@@ -507,6 +507,17 @@
       line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
     .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
       color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
   </style>
   <script type="application/ld+json">
   {
@@ -538,7 +549,7 @@
       "name": "What percentage of AI-cited URLs also rank in the top 10 organically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "38% of AI-cited URLs rank in the top 10 organic results for the same query. This means 62% of AI citations go to pages that do not rank in the top 10 — pages ranking between positions 11 and 50, or beyond. AI engines evaluate content structure and factual density independently of organic rank, creating citation opportunities for pages that would otherwise drive minimal search traffic."
+        "text": "38% of AI-cited URLs rank in the top 10 organic results for the same query. This means 62% of AI citations go to pages that do not rank in the top 10, pages ranking between positions 11 and 50, or beyond. AI engines evaluate content structure and factual density independently of organic rank, creating citation opportunities for pages that would otherwise drive minimal search traffic."
       }
     },
     {
@@ -570,7 +581,7 @@
       "name": "How often should pages be refreshed to maintain AI citation eligibility?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pages not updated within 90 days are 3.2× more likely to lose AI citations entirely. Perplexity and Google AI Overviews apply aggressive recency weighting — pages older than 30 days lose citation priority for time-sensitive queries. A programmatic refresh system updating at least one verifiable statistic, the dateModified schema field, and one section heading every 60 to 90 days is sufficient to maintain citation window eligibility."
+        "text": "Pages not updated within 90 days are 3.2× more likely to lose AI citations entirely. Perplexity and Google AI Overviews apply aggressive recency weighting, pages older than 30 days lose citation priority for time-sensitive queries. A programmatic refresh system updating at least one verifiable statistic, the dateModified schema field, and one section heading every 60 to 90 days is sufficient to maintain citation window eligibility."
       }
     }
     ]
@@ -592,16 +603,26 @@
   <link rel="alternate" type="text/markdown" href="/blogs/anatomy-of-a-high-citation-page.md" />
 </head>
 <body>
-<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/anatomy-of-a-high-citation-page.md — optimized for AI and LLM tools.</div>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/anatomy-of-a-high-citation-page.md. Optimized for AI and LLM tools.</div>
 
 <!-- NAV -->
 <nav class="site-nav" aria-label="Site navigation">
   <div class="nav-row">
     <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
     <div class="nav-links">
-      <a href="/#articles">Articles</a>
-      <a href="/#newsletter" class="cta">Subscribe</a>
-    </div>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+          </div>
+        </div>
+        <a href="/#about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
   </div>
 </nav>
 
@@ -747,7 +768,7 @@
     <div class="pattern-eyebrow">Pattern 02 &middot; Paragraph Density</div>
     <h2><span class="n">&sect;2</span>Paragraph density: the inverted pyramid</h2>
 
-    <p>If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff" — long narrative introductions, repetitive keyword reinforcement, personal anecdotes — to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.</p>
+    <p>If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff", long narrative introductions, repetitive keyword reinforcement, personal anecdotes, to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.</p>
 
     <p>LLMs parse text looking for specific entities: verifiable concepts, numbers, named sources, and concrete definitions. If a 500-word introduction is required before a page resolves its primary question, the retrieval algorithm will skip it in favor of a 150-word block that resolves the question immediately. The signal here is "information density": the ratio of extractable entities to generic narrative filler.</p>
 

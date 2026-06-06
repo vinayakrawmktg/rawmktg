@@ -53,7 +53,7 @@ def hint(mdurl):
     return (f'<div aria-hidden="true" style="position:absolute;width:1px;height:1px;'
             f'padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">'
             f'If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page '
-            f'is available at https://rawmktg.com{mdurl} — optimized for AI and LLM tools.</div>')
+            f'is available at https://rawmktg.com{mdurl}. Optimized for AI and LLM tools.</div>')
 
 def ensure_wiring(path, mdurl):
     h = open(path, encoding="utf-8").read()
@@ -79,7 +79,7 @@ for path in sorted(glob.glob("blogs/*.html")):
 soup = BeautifulSoup(open("index.html", encoding="utf-8").read(), "html.parser")
 tagline = soup.select_one(".site-tagline")
 idx = ["# rawmktg.",
-       "\n> B2B marketing intelligence for the AI era — SEO, GEO, and AI search visibility strategies for SaaS companies."]
+       "\n> B2B marketing intelligence for the AI era. SEO, GEO, and AI search visibility strategies for SaaS companies."]
 if tagline: idx.append(f"\n{tagline.get_text(' ', strip=True)}")
 idx.append("\n*Source: https://rawmktg.com/ · by Vinayak Ravi*\n\n## Articles\n")
 seen = set()
@@ -91,7 +91,7 @@ open("index.md", "w", encoding="utf-8").write("\n".join(idx) + "\n")
 ensure_wiring("index.html", "/index.md")
 
 # llms-full.txt
-full = ["# rawmktg — Full Content\n",
+full = ["# rawmktg. Full Content\n",
         "> Complete text of all rawmktg. articles for LLM ingestion. Author: Vinayak Ravi. Source: https://rawmktg.com\n"]
 for slug in slugs: full.append("\n\n---\n\n" + open(f"blogs/{slug}.md", encoding="utf-8").read())
 open("llms-full.txt", "w", encoding="utf-8").write("\n".join(full))
