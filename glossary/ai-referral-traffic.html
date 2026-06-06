@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -108,12 +117,16 @@
       <h1>What is AI referral traffic?</h1>
       <p class="capsule">AI referral traffic is the visits a website receives from AI assistants and answer engines, such as ChatGPT, Perplexity and Google AI Overviews, when a user follows a cited source into the site.</p>
       <h2>How it works</h2>
-      <p>It is a distinct channel from organic search, and a high-intent one: a visitor arriving from an AI answer has often been pre-qualified by the model's reasoning before they click. In rawmktg's analysis, AI-sourced sessions converted at roughly 4.4x the organic rate.</p>
+      <p>It is a distinct channel from organic search, and a high-intent one: a visitor arriving from an AI answer has often been pre-qualified by the model's reasoning before they click. In rawmktg's analysis, <a href="/blogs/prompt-to-citation-tracking">AI-sourced sessions converted at roughly 4.4x the organic rate</a>.</p>
       <p>It is also hard to see. Standard analytics undercount and misclassify it; in rawmktg's testing GA4 misses around 30% of AI referrers, routing them into direct or referral buckets, so it needs deliberate measurement to track accurately.</p>
       <h2>AI referral traffic vs organic traffic</h2>
       <p>Organic traffic comes from clicks on classic search results. AI referral traffic comes from clicks on citations inside AI answers. The volume is usually smaller, but the intent and conversion rate are typically much higher, and standard analytics see it far less reliably.</p>
       <h2>Why it matters for B2B</h2>
       <p>It is the bottom-of-funnel payoff of GEO. Even at lower volume, its conversion rate means a small amount of AI referral traffic can outweigh a much larger amount of generic organic, which is why measuring it correctly matters.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Reading a flat or rising <code>Direct</code> bucket in GA4 as genuinely direct. A large share of AI-assistant referrals lands there because the engine passes no referrer, so the channel that converts best (about 4.4x organic) is often the one teams cannot see.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/prompt-to-citation-tracking">Prompt-to-Citation Tracking</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/prompt-to-citation-tracking">Prompt-to-citation tracking</a><a href="/glossary/share-of-model">Share of Model</a><a href="/glossary/llm-citation">LLM citation</a></div></div>

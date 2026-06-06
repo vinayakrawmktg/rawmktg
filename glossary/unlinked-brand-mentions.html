@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -109,11 +118,15 @@
       <p class="capsule">Unlinked brand mentions are references to a brand by name across the web that do not include a hyperlink, and which AI systems still read as trust and authority signals when deciding whom to cite.</p>
       <h2>How it works</h2>
       <p>Traditional SEO valued mentions mainly when they carried a link. AI systems parse the text itself, so a brand named in a trusted article counts as a signal even with no link attached.</p>
-      <p>Their weight is striking. In rawmktg's analysis, unlinked mentions correlated with AI citation roughly three times more strongly than backlinks (r=0.664 versus r=0.218), which makes earning mentions, not just links, a primary objective.</p>
+      <p>Their weight is striking. In rawmktg's analysis, <a href="/blogs/authority-seeding-ai-llm-trust">unlinked mentions correlated with AI citation roughly three times more strongly than backlinks</a> (r=0.664 versus r=0.218), which makes earning mentions, not just links, a primary objective.</p>
       <h2>Unlinked mentions vs backlinks</h2>
       <p>A backlink is a clickable link counted by search engines. An unlinked mention is the brand named in text with no link. For classic ranking the link mattered most; for AI citation the mention itself is often the stronger signal.</p>
       <h2>Why it matters for B2B</h2>
       <p>It changes what a PR or content effort should optimise for. Getting named in the right places, even without a link, builds the off-site trust that AI engines use to decide who belongs in an answer.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Measuring a PR or content programme only by links earned. The unlinked mention, the brand named in a trusted article with no hyperlink, correlated about 3x more strongly with AI citation than backlinks (r=0.664 versus r=0.218), so a links-only scorecard undercounts the work that matters most.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/authority-seeding-ai-llm-trust">Authority Seeding for AI</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/authority-seeding">Authority seeding</a><a href="/glossary/e-e-a-t">E-E-A-T</a><a href="/glossary/citation-gap">Citation gap</a></div></div>

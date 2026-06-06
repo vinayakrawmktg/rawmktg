@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -109,11 +118,15 @@
       <p class="capsule">Content half-life is the rate at which a page loses its AI citations as it ages without being updated, reflecting that recency is now a hard ranking signal in AI search rather than a minor freshness bonus.</p>
       <h2>How it works</h2>
       <p>Generative engines, especially real-time ones, treat freshness as a retrieval factor. Content that is not refreshed decays out of the citation set even if it was once authoritative, because the engine prefers current sources.</p>
-      <p>The decay is measurable. In rawmktg's analysis, pages not updated in 90 days were 3.2x more likely to lose their AI citations entirely, which reframes maintenance from optional polish to a core part of holding visibility.</p>
+      <p>The decay is measurable. In rawmktg's analysis, <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">pages not updated in 90 days were 3.2x more likely to lose their AI citations entirely</a>, which reframes maintenance from optional polish to a core part of holding visibility.</p>
       <h2>Content half-life vs evergreen content</h2>
       <p>Evergreen content assumes a topic stays valid for years with little change. Content half-life recognises that in AI search even durable topics need a refresh cadence to keep their citations, because the engine rewards recency regardless of how timeless the subject is.</p>
       <h2>Why it matters for B2B</h2>
       <p>It turns maintenance into a ranking lever. A programmatic refresh cadence on your highest-value pages is often the cheapest way to defend AI visibility you have already earned.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Bumping the visible "updated" date without changing the content. Engines weigh actual substantive change, not the timestamp, so a cosmetic date edit does not reset the decay. Pages untouched for 90 days were 3.2x more likely to lose their citations entirely.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">The 30-Day Content Half-Life</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/topical-authority">Topical authority</a><a href="/glossary/llm-citation">LLM citation</a><a href="/glossary/e-e-a-t">E-E-A-T</a></div></div>

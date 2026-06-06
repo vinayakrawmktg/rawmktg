@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -108,12 +117,16 @@
       <h1>What is Answer Capsule?</h1>
       <p class="capsule">An Answer Capsule is a self-contained block of content, usually the opening sentences of a page or section, that states a complete, quotable answer to a single question, formatted so an AI system can lift it directly into a generated response without needing the surrounding context.</p>
       <h2>How it works</h2>
-      <p>AI systems retrieve and extract passages, not whole pages, and they lean heavily on the top of a document. In rawmktg's analysis of cited pages, roughly 55% of citations came from the first 30% of the page. An Answer Capsule exploits this by front-loading a clean, extractable answer.</p>
+      <p>AI systems retrieve and extract passages, not whole pages, and they lean heavily on the top of a document. In rawmktg's analysis of cited pages, <a href="/blogs/anatomy-of-a-high-citation-page">roughly 55% of citations came from the first 30% of the page</a>. An Answer Capsule exploits this by front-loading a clean, extractable answer.</p>
       <p>The format is strict: one question, one complete answer, no dependency on earlier text, no marketing preamble. The shape is the term, its category, and what it does. If a reader, or a model, can copy the first sentence and have it stand on its own, it is a capsule. If it needs the next paragraph to make sense, it is not.</p>
       <h2>Answer Capsule vs meta description</h2>
       <p>A meta description summarises a page to earn a click from a search snippet. An Answer Capsule is the answer itself, written to be extracted and quoted verbatim inside an AI-generated response rather than to entice a click.</p>
       <h2>Why it matters for B2B</h2>
       <p>It is the smallest unit of GEO. A page can have perfect schema and strong authority and still go uncited if the answer is buried three paragraphs down. The capsule is what gets pulled.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Example</strong></div>
+        <p>A capsule: <em>"A prompt portfolio is a fixed set of buyer-intent prompts a brand runs across AI engines on a cadence to measure citation visibility."</em></p><p>Not a capsule: <em>"In this guide we will explore why measurement matters and, eventually, get to what a prompt portfolio is."</em> The first stands alone and can be quoted verbatim; the second cannot.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/hallucination-proofing-your-brand">Hallucination-Proofing Your Brand</a><a href="/blogs/anatomy-of-a-high-citation-page">Anatomy of a High-Citation Page</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/proof-pairing-density">Proof-Pairing Density</a><a href="/glossary/answer-lead-formatting">Answer-lead formatting</a><a href="/glossary/llm-citation">LLM citation</a></div></div>

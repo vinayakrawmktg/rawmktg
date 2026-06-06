@@ -14,6 +14,10 @@ SEO optimises to rank a link in a results page. GEO optimises to be named inside
 
 ## Why it matters for B2B
 
-B2B buyers increasingly ask an AI assistant which vendor to use, then act on the names it returns. In rawmktg's analysis, 73% of B2B procurement managers already use ChatGPT, Claude, or Perplexity for vendor discovery. The vendors named in the answer get the shortlist. The rest get no second look.
+B2B buyers increasingly ask an AI assistant which vendor to use, then act on the names it returns. In rawmktg's analysis, [73% of B2B procurement managers already use ChatGPT, Claude, or Perplexity for vendor discovery](/blogs/geo-compounding-flywheel). The vendors named in the answer get the shortlist. The rest get no second look.
+
+**Common mistake**
+
+Treating GEO as SEO with schema bolted on. The on-page layer makes you eligible, but GEO also turns on off-site trust. With 73% of B2B procurement managers already using AI for vendor discovery, the brands that win are the ones the wider web vouches for, not just the ones with clean markup.
 
 *Source: https://rawmktg.com/glossary/generative-engine-optimization · rawmktg. by Vinayak Ravi*

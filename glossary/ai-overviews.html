@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -109,11 +118,15 @@
       <p class="capsule">AI Overviews are Google's AI-generated summaries that appear at the top of search results, answering a query directly and citing a small set of sources instead of only listing ranked links.</p>
       <h2>How it works</h2>
       <p>Google generates the overview by retrieving and synthesising content from pages it trusts, then names a few of them as sources. Appearing as one of those sources puts a brand above the traditional results, often before the user scrolls at all.</p>
-      <p>Inclusion leans heavily on existing trust. In rawmktg's analysis, 96% of AI Overview citations go to sources Google already trusts on E-E-A-T grounds, which means classic search authority is largely a prerequisite for being cited here.</p>
+      <p>Inclusion leans heavily on existing trust. In rawmktg's analysis, <a href="/blogs/eeat-is-an-ai-signal-now">96% of AI Overview citations go to sources Google already trusts on E-E-A-T grounds</a>, which means classic search authority is largely a prerequisite for being cited here.</p>
       <h2>AI Overviews vs featured snippets</h2>
       <p>A featured snippet lifts one passage verbatim from a single ranking page. An AI Overview synthesises an answer from multiple sources and cites several of them. The snippet rewards one well-formatted passage; the overview rewards being one of the trusted sources the model draws on.</p>
       <h2>Why it matters for B2B</h2>
       <p>AI Overviews sit at the top of the page for a growing share of informational B2B queries, and they often answer the question without a click. Being cited inside them is one of the few ways to keep visibility as zero-click results expand.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Treating AI Overviews as a new channel you can win on formatting alone. Because 96% of citations go to sources Google already trusts on E-E-A-T grounds, a page with no classic search authority almost never appears. The overview is won upstream, by earning trust, not by restructuring a single page.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/how-ai-crawlers-index-your-site">How AI Crawlers Actually Index Your Site</a><a href="/blogs/eeat-is-an-ai-signal-now">E-E-A-T Is an AI Signal Now</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/generative-engine">Generative engine</a><a href="/glossary/e-e-a-t">E-E-A-T</a><a href="/glossary/llm-citation">LLM citation</a></div></div>

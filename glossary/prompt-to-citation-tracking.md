@@ -6,7 +6,7 @@ Prompt-to-citation tracking is the practice of measuring AI visibility by runnin
 
 You build a representative set of prompts, run them across the target engines repeatedly, and log the citations. This produces a measurable read on whether you appear in AI answers and how that changes over time.
 
-It exists because AI traffic is largely invisible to default analytics. In rawmktg's testing, GA4 misses roughly 30% of AI referrers and misclassifies many of the rest, so a prompt-based method is the only reliable way to see AI presence.
+It exists because AI traffic is largely invisible to default analytics. In rawmktg's testing, [GA4 misses roughly 30% of AI referrers and misclassifies many of the rest](/blogs/prompt-to-citation-tracking), so a prompt-based method is the only reliable way to see AI presence.
 
 ## Prompt-to-citation tracking vs rank tracking
 
@@ -15,5 +15,9 @@ Rank tracking records where your pages sit in classic search results. Prompt-to-
 ## Why it matters for B2B
 
 It is how GEO becomes accountable. Without it, AI visibility is a guess; with it, you have a number you can benchmark, tie to pipeline, and report to the business.
+
+**Common mistake**
+
+Trying to read AI visibility out of GA4 alone. It misses roughly 30% of AI referrers and misclassifies many of the rest, so the only reliable read is to run a fixed prompt set against the engines and record the citations yourself.
 
 *Source: https://rawmktg.com/glossary/prompt-to-citation-tracking · rawmktg. by Vinayak Ravi*

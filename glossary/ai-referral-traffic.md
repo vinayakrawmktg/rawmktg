@@ -4,7 +4,7 @@ AI referral traffic is the visits a website receives from AI assistants and answ
 
 ## How it works
 
-It is a distinct channel from organic search, and a high-intent one: a visitor arriving from an AI answer has often been pre-qualified by the model's reasoning before they click. In rawmktg's analysis, AI-sourced sessions converted at roughly 4.4x the organic rate.
+It is a distinct channel from organic search, and a high-intent one: a visitor arriving from an AI answer has often been pre-qualified by the model's reasoning before they click. In rawmktg's analysis, [AI-sourced sessions converted at roughly 4.4x the organic rate](/blogs/prompt-to-citation-tracking).
 
 It is also hard to see. Standard analytics undercount and misclassify it; in rawmktg's testing GA4 misses around 30% of AI referrers, routing them into direct or referral buckets, so it needs deliberate measurement to track accurately.
 
@@ -15,5 +15,9 @@ Organic traffic comes from clicks on classic search results. AI referral traffic
 ## Why it matters for B2B
 
 It is the bottom-of-funnel payoff of GEO. Even at lower volume, its conversion rate means a small amount of AI referral traffic can outweigh a much larger amount of generic organic, which is why measuring it correctly matters.
+
+**Common mistake**
+
+Reading a flat or rising `Direct` bucket in GA4 as genuinely direct. A large share of AI-assistant referrals lands there because the engine passes no referrer, so the channel that converts best (about 4.4x organic) is often the one teams cannot see.
 
 *Source: https://rawmktg.com/glossary/ai-referral-traffic · rawmktg. by Vinayak Ravi*

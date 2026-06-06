@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -109,11 +118,21 @@
       <p class="capsule">llms.txt is a plain-text file placed at a website's root that gives AI systems a curated, Markdown-formatted map of the site's most important content, so models can find and parse it without crawling the full HTML.</p>
       <h2>How it works</h2>
       <p>The file lists key pages with short descriptions, in Markdown, in priority order: a deliberate, human-curated guide to what matters on the site. It was proposed by Jeremy Howard of Answer.AI in 2024 as a standard, and support depends on whether a given AI system chooses to read it.</p>
-      <p>Adoption is still early, which is the opportunity. In rawmktg's AEC teardown, zero of six companies had published an llms.txt file. Being among the first in a category to ship one is a low-cost signal almost no competitor has matched.</p>
+      <p>Adoption is still early, which is the opportunity. <a href="/blogs/aec-ai-visibility-gap">In rawmktg's AEC teardown, zero of six companies had published an llms.txt file</a>. Being among the first in a category to ship one is a low-cost signal almost no competitor has matched.</p>
       <h2>llms.txt vs robots.txt</h2>
       <p>robots.txt controls access: which crawlers may visit which paths. llms.txt guides attention: which content a model should prioritise and how to read it. One restricts, the other curates, and they are used together.</p>
       <h2>Why it matters for B2B</h2>
       <p>It is one of the cheapest GEO moves available: a single static file that makes your best content easier for models to locate and parse, in a field where most competitors have not published one.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Example</strong></div>
+        <pre># Acme
+
+&gt; Acme builds X for Y teams.
+
+## Key pages
+- [What is X](https://acme.com/x): one-line summary
+- [Pricing](https://acme.com/pricing): one-line summary</pre><p>A single static file at <code>/llms.txt</code>. In our AEC teardown, zero of six competitors had published one.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/how-ai-crawlers-index-your-site">How AI Crawlers Actually Index Your Site</a><a href="/blogs/hallucination-proofing-your-brand">Hallucination-Proofing Your Brand</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/oai-searchbot">OAI-SearchBot</a><a href="/glossary/schema-markup">Schema markup</a><a href="/glossary/common-crawl-ccbot">Common Crawl / CCBot</a></div></div>

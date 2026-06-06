@@ -4,7 +4,7 @@ Common Crawl is a large public dataset of crawled web pages, gathered by its cra
 
 ## How it works
 
-Because Common Crawl is so widely reused, being present in it means your content can flow into many downstream models and datasets at once. CCBot is the bot that collects it, and your robots.txt decides whether it may.
+Because Common Crawl is so widely reused, being present in it means your content can flow into many downstream models and datasets at once. CCBot is the bot that collects it, and [your robots.txt decides whether it may](/blogs/how-ai-crawlers-index-your-site).
 
 Allowing CCBot maximises how widely your content propagates into the AI ecosystem. Blocking it is a training-protection stance, the same trade-off as with GPTBot: wider footprint versus tighter control over training use.
 
@@ -15,5 +15,9 @@ CCBot builds a general-purpose corpus reused across many models. A search crawle
 ## Why it matters for B2B
 
 For a brand that wants the widest possible presence across AI systems, Common Crawl is a high-leverage corpus to be in. For one focused on controlling training use, CCBot is the bot to weigh most carefully.
+
+**Common mistake**
+
+Shipping a blanket `Disallow: /` or a catch-all bot block to "stop the scrapers," then wondering why the brand is absent from AI tools. That one line also removes you from Common Crawl, the corpus many downstream models reuse.
 
 *Source: https://rawmktg.com/glossary/common-crawl-ccbot · rawmktg. by Vinayak Ravi*

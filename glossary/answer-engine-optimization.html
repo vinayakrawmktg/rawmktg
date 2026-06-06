@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -111,9 +120,13 @@
       <p>Answer engines collapse a query into one response. AEO is about being that response: leading with a clean, self-contained answer, using question-shaped headings and FAQ structure, and marking content up so a machine can identify the answer unambiguously.</p>
       <p>It grew out of voice search and featured snippets, where there is room for only one answer, and now applies directly to AI Overviews and chat assistants. The core move is the same: write the answer first, in a form a model can lift without the surrounding page.</p>
       <h2>AEO vs GEO</h2>
-      <p>AEO is often used as a synonym for GEO. Where they are separated, AEO is the narrower discipline of winning direct-answer features and single-answer responses, while GEO is the broader system of getting cited and recommended across generative engines, including the off-site authority work that AEO does not cover.</p>
+      <p>AEO is often used as a synonym for GEO. Where they are separated, AEO is the narrower discipline of winning direct-answer features and single-answer responses, while GEO is the broader system of getting cited and recommended across generative engines, including <a href="/blogs/authority-seeding-ai-llm-trust">the off-site authority work that AEO does not cover</a>.</p>
       <h2>Why it matters for B2B</h2>
       <p>Most B2B questions now resolve to a single answer somewhere in the buyer journey. If a competitor owns that answer, the buyer rarely looks further. AEO is how you become the answer rather than an option on a list the buyer never scrolls.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Winning the on-page answer and stopping there. Clean answer formatting makes you eligible, but if the wider web carries no consistent signals about the brand, the engine still has little reason to name you over a better-known competitor.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/why-engines-recommend-different-vendors">Why ChatGPT, Perplexity and Gemini Recommend Different Vendors</a><a href="/blogs/schema-markup-ai-citations-2026">Schema Markup in 2026</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/generative-engine-optimization">GEO</a><a href="/glossary/answer-capsule">Answer Capsule</a><a href="/glossary/ai-overviews">AI Overviews</a></div></div>

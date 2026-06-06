@@ -6,7 +6,7 @@ E-E-A-T stands for Experience, Expertise, Authoritativeness and Trustworthiness:
 
 Originally a set of human quality-rater guidelines, the same preferences have been wired into how models choose sources. Signals like clear authorship, demonstrated expertise, and corroboration from trusted sites all feed it.
 
-Its influence on AI citation is direct. In rawmktg's analysis, 96% of AI Overview citations went to sources Google already trusts on E-E-A-T grounds, which makes it close to a prerequisite for being cited.
+Its influence on AI citation is direct. In rawmktg's analysis, [96% of AI Overview citations went to sources Google already trusts on E-E-A-T grounds](/blogs/eeat-is-an-ai-signal-now), which makes it close to a prerequisite for being cited.
 
 ## E-E-A-T vs backlinks
 
@@ -15,5 +15,9 @@ Backlinks are one input to authority. E-E-A-T is the broader judgement of whethe
 ## Why it matters for B2B
 
 Because AI systems inherit these preferences, E-E-A-T is no longer just an SEO concern; it is a citation gatekeeper. Clear authorship, real expertise and verifiable claims are what get a B2B brand into the trusted set.
+
+**Common mistake**
+
+Treating E-E-A-T as a checklist, adding an author box and a few outbound links, with no demonstrable experience behind the content. The signal models reward is real, shown expertise; the decorations alone do not move it.
 
 *Source: https://rawmktg.com/glossary/e-e-a-t · rawmktg. by Vinayak Ravi*

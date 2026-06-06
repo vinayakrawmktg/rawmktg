@@ -6,7 +6,7 @@ A brand hallucination is when an AI system states something false or misleading 
 
 Models generate the most probable answer from what they can find. Where a brand's information is thin, inconsistent or ambiguous, the model fills the gap with plausible but wrong details, sometimes at the exact moment a buyer is deciding.
 
-The fix is structural: clear claim-anchoring, consistent entity data, schema, and self-contained answers that leave little room for the model to guess. Pairing claims with proof and resolving the brand as a clean entity measurably reduces it.
+The fix is structural: [clear claim-anchoring](/blogs/hallucination-proofing-your-brand), consistent entity data, schema, and self-contained answers that leave little room for the model to guess. Pairing claims with proof and resolving the brand as a clean entity measurably reduces it.
 
 ## Brand hallucination vs misinformation
 
@@ -15,5 +15,9 @@ Misinformation is false content deliberately or carelessly published by people. 
 ## Why it matters for B2B
 
 An AI getting your brand wrong at the point of highest buyer intent is a direct revenue risk. Reducing hallucination is about controlling the inputs the model reasons from, so the answer it generates about you is accurate.
+
+**From our research**
+
+In our [senior-living teardown](/blogs/india-senior-living-ai-visibility-gap), one brand was being misclassified by AI at the moment of highest buyer intent: the engine described it as the wrong kind of provider, because the clean, structured signals needed to place it correctly were not there for the model to draw on.
 
 *Source: https://rawmktg.com/glossary/brand-hallucination · rawmktg. by Vinayak Ravi*

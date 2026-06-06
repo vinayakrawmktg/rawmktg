@@ -6,7 +6,7 @@ OAI-SearchBot is OpenAI's crawler for its search product: it fetches and indexes
 
 It is distinct from the crawler OpenAI uses to gather training data. OAI-SearchBot exists to build the live search index that feeds citations, which means allowing it is how you stay eligible to be cited in ChatGPT search results.
 
-Like other AI search crawlers, it does not execute JavaScript. In rawmktg's testing, none of the three major AI crawlers run JS, so any content that only appears after client-side rendering is effectively invisible to them.
+Like other AI search crawlers, it does not execute JavaScript. In rawmktg's testing, [none of the three major AI crawlers run JS](/blogs/how-ai-crawlers-index-your-site), so any content that only appears after client-side rendering is effectively invisible to them.
 
 ## OAI-SearchBot vs GPTBot
 
@@ -15,5 +15,9 @@ GPTBot is OpenAI's crawler for collecting training data. OAI-SearchBot is its cr
 ## Why it matters for B2B
 
 If you want to appear in ChatGPT's answers, OAI-SearchBot is the bot that has to be able to reach and read your pages. Confirming it is allowed, and that your content is in static HTML, is step zero.
+
+**Common mistake**
+
+Relying on a framework that renders the main content in the browser. OAI-SearchBot does not execute JavaScript, so content that only appears after client-side rendering is invisible to it. Allow the bot all you like and it still sees an empty shell.
 
 *Source: https://rawmktg.com/glossary/oai-searchbot · rawmktg. by Vinayak Ravi*

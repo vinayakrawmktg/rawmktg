@@ -4,7 +4,7 @@ Retrieval-Augmented Generation (RAG) is the architecture most AI search systems 
 
 ## How it works
 
-Instead of answering only from what the model memorised in training, a RAG system runs a retrieval step first. It decomposes the query, fetches candidate passages, reranks them by relevance and authority, and feeds the best ones to the model as context for the answer.
+Instead of answering only from what the model memorised in training, a RAG system runs a retrieval step first. It decomposes the query, [fetches candidate passages, reranks them by relevance and authority](/blogs/how-rag-actually-works), and feeds the best ones to the model as context for the answer.
 
 Because it competes at the passage level, your content is judged in fragments, not as a whole page. A clean, self-contained passage near the top of a page is far more likely to be retrieved and cited than the same point buried mid-article.
 
@@ -15,5 +15,9 @@ A base language model answers from its training data, with a fixed knowledge cut
 ## Why it matters for B2B
 
 RAG is the mechanism that decides whether your content is even eligible to be cited. Understanding it tells you why structure and extractability, not just authority, determine whether a model can pull your page into an answer.
+
+**Common mistake**
+
+Investing in page-level authority while burying the answer mid-article. RAG competes at the passage level: if there is no clean, self-contained passage near the top, a strong page can still be passed over for a weaker one that is easier to retrieve.
 
 *Source: https://rawmktg.com/glossary/retrieval-augmented-generation · rawmktg. by Vinayak Ravi*

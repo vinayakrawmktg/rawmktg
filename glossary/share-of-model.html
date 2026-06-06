@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -109,11 +118,15 @@
       <p class="capsule">Share of Model is a GEO metric that measures how often a brand is named or cited in AI-generated answers across a defined set of buyer prompts, relative to its competitors. It is the AI-era equivalent of share of voice.</p>
       <h2>How it works</h2>
       <p>You define a portfolio of prompts a real buyer would ask, run them across the target engines on a fixed cadence, and record which brands appear in each answer. Your share is the proportion of those answers that name you versus the competitive set.</p>
-      <p>There is no public scoreboard for it. Share of Model is something you instrument yourself, because no analytics platform reports it by default and AI traffic is largely invisible to standard analytics; in rawmktg's testing, GA4 misses roughly 30% of AI referrers.</p>
+      <p>There is no public scoreboard for it. Share of Model is something you instrument yourself, because no analytics platform reports it by default and AI traffic is largely invisible to standard analytics; in rawmktg's testing, <a href="/blogs/prompt-to-citation-tracking">GA4 misses roughly 30% of AI referrers</a>.</p>
       <h2>Share of Model vs Share of Voice</h2>
       <p>Share of Voice measures presence across traditional channels such as search rankings, ad impressions and press. Share of Model measures presence inside generated answers specifically. As buyers shift discovery to AI assistants, the second increasingly predicts pipeline the first cannot see.</p>
       <h2>Why it matters for B2B</h2>
       <p>It is the closest thing to a north-star metric for GEO. It turns the question are we showing up in AI answers from a vibe into a number you can track, benchmark against competitors, and tie to pipeline.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Example</strong></div>
+        <p>Compute it as a simple share. Across a fixed prompt set run on a cadence:</p><pre>Share of Model = answers that name your brand / total answers</pre><p>measured against your competitive set. A move from 2 of 50 to 12 of 50 is a tracked, reportable gain.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/prompt-to-citation-tracking">Prompt-to-Citation Tracking</a><a href="/blogs/topical-authority-cluster-ai-shortlists">The Topical Authority Cluster</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/prompt-portfolio">Prompt portfolio</a><a href="/glossary/ai-referral-traffic">AI referral traffic</a><a href="/glossary/citation-gap">Citation gap</a></div></div>

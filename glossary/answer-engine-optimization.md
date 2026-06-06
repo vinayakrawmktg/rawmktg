@@ -10,10 +10,14 @@ It grew out of voice search and featured snippets, where there is room for only 
 
 ## AEO vs GEO
 
-AEO is often used as a synonym for GEO. Where they are separated, AEO is the narrower discipline of winning direct-answer features and single-answer responses, while GEO is the broader system of getting cited and recommended across generative engines, including the off-site authority work that AEO does not cover.
+AEO is often used as a synonym for GEO. Where they are separated, AEO is the narrower discipline of winning direct-answer features and single-answer responses, while GEO is the broader system of getting cited and recommended across generative engines, including [the off-site authority work that AEO does not cover](/blogs/authority-seeding-ai-llm-trust).
 
 ## Why it matters for B2B
 
 Most B2B questions now resolve to a single answer somewhere in the buyer journey. If a competitor owns that answer, the buyer rarely looks further. AEO is how you become the answer rather than an option on a list the buyer never scrolls.
+
+**Common mistake**
+
+Winning the on-page answer and stopping there. Clean answer formatting makes you eligible, but if the wider web carries no consistent signals about the brand, the engine still has little reason to name you over a better-known competitor.
 
 *Source: https://rawmktg.com/glossary/answer-engine-optimization · rawmktg. by Vinayak Ravi*

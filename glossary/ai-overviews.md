@@ -6,7 +6,7 @@ AI Overviews are Google's AI-generated summaries that appear at the top of searc
 
 Google generates the overview by retrieving and synthesising content from pages it trusts, then names a few of them as sources. Appearing as one of those sources puts a brand above the traditional results, often before the user scrolls at all.
 
-Inclusion leans heavily on existing trust. In rawmktg's analysis, 96% of AI Overview citations go to sources Google already trusts on E-E-A-T grounds, which means classic search authority is largely a prerequisite for being cited here.
+Inclusion leans heavily on existing trust. In rawmktg's analysis, [96% of AI Overview citations go to sources Google already trusts on E-E-A-T grounds](/blogs/eeat-is-an-ai-signal-now), which means classic search authority is largely a prerequisite for being cited here.
 
 ## AI Overviews vs featured snippets
 
@@ -15,5 +15,9 @@ A featured snippet lifts one passage verbatim from a single ranking page. An AI 
 ## Why it matters for B2B
 
 AI Overviews sit at the top of the page for a growing share of informational B2B queries, and they often answer the question without a click. Being cited inside them is one of the few ways to keep visibility as zero-click results expand.
+
+**Common mistake**
+
+Treating AI Overviews as a new channel you can win on formatting alone. Because 96% of citations go to sources Google already trusts on E-E-A-T grounds, a page with no classic search authority almost never appears. The overview is won upstream, by earning trust, not by restructuring a single page.
 
 *Source: https://rawmktg.com/glossary/ai-overviews · rawmktg. by Vinayak Ravi*

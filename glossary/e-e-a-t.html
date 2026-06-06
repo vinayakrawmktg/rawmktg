@@ -73,6 +73,15 @@
     .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
     .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
     @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
   </style>
   <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
 </head>
@@ -109,11 +118,15 @@
       <p class="capsule">E-E-A-T stands for Experience, Expertise, Authoritativeness and Trustworthiness: Google's framework for assessing content quality, which has now become a signal AI systems use when deciding which sources to cite.</p>
       <h2>How it works</h2>
       <p>Originally a set of human quality-rater guidelines, the same preferences have been wired into how models choose sources. Signals like clear authorship, demonstrated expertise, and corroboration from trusted sites all feed it.</p>
-      <p>Its influence on AI citation is direct. In rawmktg's analysis, 96% of AI Overview citations went to sources Google already trusts on E-E-A-T grounds, which makes it close to a prerequisite for being cited.</p>
+      <p>Its influence on AI citation is direct. In rawmktg's analysis, <a href="/blogs/eeat-is-an-ai-signal-now">96% of AI Overview citations went to sources Google already trusts on E-E-A-T grounds</a>, which makes it close to a prerequisite for being cited.</p>
       <h2>E-E-A-T vs backlinks</h2>
       <p>Backlinks are one input to authority. E-E-A-T is the broader judgement of whether content is experienced, expert, authoritative and trustworthy, including authorship, accuracy and reputation. A page can have backlinks and still fail E-E-A-T if it reads as low-trust.</p>
       <h2>Why it matters for B2B</h2>
       <p>Because AI systems inherit these preferences, E-E-A-T is no longer just an SEO concern; it is a citation gatekeeper. Clear authorship, real expertise and verifiable claims are what get a B2B brand into the trusted set.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Treating E-E-A-T as a checklist, adding an author box and a few outbound links, with no demonstrable experience behind the content. The signal models reward is real, shown expertise; the decorations alone do not move it.</p>
+      </div>
       <div class="gloss-foot">
         <div><div class="row-label">Go deeper</div><div class="links"><a href="/blogs/eeat-is-an-ai-signal-now">E-E-A-T Is an AI Signal Now</a></div></div>
         <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/topical-authority">Topical authority</a><a href="/glossary/authority-seeding">Authority seeding</a><a href="/glossary/brand-hallucination">Brand hallucination</a></div></div>
