@@ -6,6 +6,8 @@ For every blogs/*.html it:
   - writes a clean blogs/<slug>.md twin (nav/ads/sidebar/images stripped)
   - idempotently ensures the <link rel="alternate" type="text/markdown"> tag
     and the hidden AI hint <div> are present in the HTML
+It does the same for every glossary/*.html entry and the glossary.html hub,
+so the glossary Markdown twins can never drift from the HTML either.
 Then it regenerates /index.md and /llms-full.txt.
 
 Run by Netlify via the build command in netlify.toml. Safe to run locally too.
@@ -65,6 +67,41 @@ def ensure_wiring(path, mdurl):
     if changed: open(path, "w", encoding="utf-8").write(h)
     return changed
 
+def glossary_entry_to_md(path, slug):
+    """One /glossary/<slug>.html entry -> clean Markdown twin (crumb/eyebrow/footer stripped)."""
+    soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+    wrap = soup.select_one("main.gloss .gloss-wrap") or soup.select_one(".gloss-wrap")
+    if not wrap: return None
+    h1 = wrap.select_one("h1")
+    title = h1.get_text(" ", strip=True) if h1 else slug
+    if h1: h1.decompose()
+    for sel in [".gloss-crumb", ".gloss-eyebrow", ".gloss-foot", "script", "style", "nav", "aside", "ins"]:
+        for el in wrap.select(sel): el.decompose()
+    body = clean(md(str(wrap), heading_style="ATX", bullets="-", strip=["span"]))
+    return (f"# {title}\n\n{body}\n\n"
+            f"*Source: https://rawmktg.com/glossary/{slug} · rawmktg. by Vinayak Ravi*\n")
+
+def glossary_hub_to_md(path):
+    """glossary.html hub -> grouped Markdown index of every term with its short definition."""
+    soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+    out = ["# The AI-Search Glossary",
+           "\n> Plain, sourced definitions of the vocabulary of AI search and GEO, "
+           "by rawmktg. (Vinayak Ravi). Source: https://rawmktg.com/glossary\n"]
+    for g in soup.select("main.gloss-body .gloss-group"):
+        label = g.select_one(".gloss-group-label")
+        if label: out.append(f"## {label.get_text(' ', strip=True)}")
+        for a in g.select("a.term-row"):
+            href = a.get("href", "")
+            url = "https://rawmktg.com" + href if href.startswith("/") else href
+            for ar in a.select(".term-arrow"): ar.decompose()
+            name_el = a.select_one(".term-name")
+            name = (name_el.get_text(" ", strip=True) if name_el else a.get_text(" ", strip=True))
+            d = a.select_one(".term-def")
+            defi = d.get_text(" ", strip=True) if d else ""
+            out.append(f"- [{name}]({url}): {defi}")
+        out.append("")
+    return "\n".join(out).rstrip() + "\n"
+
 slugs = []
 for path in sorted(glob.glob("blogs/*.html")):
     slug = os.path.basename(path)[:-5]
@@ -74,6 +111,20 @@ for path in sorted(glob.glob("blogs/*.html")):
     open(f"blogs/{slug}.md", "w", encoding="utf-8").write(out)
     ensure_wiring(path, f"/blogs/{slug}.md")
     slugs.append(slug)
+
+# glossary: per-term twins + hub twin (regenerated from HTML so they never drift)
+gloss_slugs = []
+for path in sorted(glob.glob("glossary/*.html")):
+    slug = os.path.basename(path)[:-5]
+    out = glossary_entry_to_md(path, slug)
+    if out is None:
+        print(f"  WARN: no glossary structure in {slug}, skipped", file=sys.stderr); continue
+    open(f"glossary/{slug}.md", "w", encoding="utf-8").write(out)
+    ensure_wiring(path, f"/glossary/{slug}.md")
+    gloss_slugs.append(slug)
+if os.path.exists("glossary.html"):
+    open("glossary.md", "w", encoding="utf-8").write(glossary_hub_to_md("glossary.html"))
+    ensure_wiring("glossary.html", "/glossary.md")
 
 # index.md from homepage cards
 soup = BeautifulSoup(open("index.html", encoding="utf-8").read(), "html.parser")
@@ -96,5 +147,5 @@ full = ["# rawmktg. Full Content\n",
 for slug in slugs: full.append("\n\n---\n\n" + open(f"blogs/{slug}.md", encoding="utf-8").read())
 open("llms-full.txt", "w", encoding="utf-8").write("\n".join(full))
 
-print(f"[generate_llm_md] {len(slugs)} .md twins, index.md ({len(seen)} links), "
-      f"llms-full.txt ({os.path.getsize('llms-full.txt')//1024}KB)")
+print(f"[generate_llm_md] {len(slugs)} blog twins, {len(gloss_slugs)} glossary twins + hub, "
+      f"index.md ({len(seen)} links), llms-full.txt ({os.path.getsize('llms-full.txt')//1024}KB)")
