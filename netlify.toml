@@ -117,3 +117,120 @@
   to     = "/blogs/:slug"
   status = 301
   force  = true
+
+# ── LLM visibility: advertise Markdown twins via HTTP Link header ──
+
+[[headers]]
+  for = "/blogs/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/index.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/30-day-content-half-life-recency-ai-ranking-signal"
+  [headers.values]
+    Link = "</blogs/30-day-content-half-life-recency-ai-ranking-signal.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/aec-ai-visibility-gap"
+  [headers.values]
+    Link = "</blogs/aec-ai-visibility-gap.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/anatomy-of-a-high-citation-page"
+  [headers.values]
+    Link = "</blogs/anatomy-of-a-high-citation-page.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/authority-seeding-ai-llm-trust"
+  [headers.values]
+    Link = "</blogs/authority-seeding-ai-llm-trust.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/autonomous-retail-ai-visibility-gap"
+  [headers.values]
+    Link = "</blogs/autonomous-retail-ai-visibility-gap.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/container-tracking-saas-seo-geo-analysis"
+  [headers.values]
+    Link = "</blogs/container-tracking-saas-seo-geo-analysis.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/cross-border-backlinks"
+  [headers.values]
+    Link = "</blogs/cross-border-backlinks.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/cx-saas-seo-discoverability-analysis"
+  [headers.values]
+    Link = "</blogs/cx-saas-seo-discoverability-analysis.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/eeat-is-an-ai-signal-now"
+  [headers.values]
+    Link = "</blogs/eeat-is-an-ai-signal-now.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/geo-compounding-flywheel"
+  [headers.values]
+    Link = "</blogs/geo-compounding-flywheel.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/geo-foundation-audit"
+  [headers.values]
+    Link = "</blogs/geo-foundation-audit.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/hallucination-proofing-your-brand"
+  [headers.values]
+    Link = "</blogs/hallucination-proofing-your-brand.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/how-ai-crawlers-index-your-site"
+  [headers.values]
+    Link = "</blogs/how-ai-crawlers-index-your-site.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/how-rag-actually-works"
+  [headers.values]
+    Link = "</blogs/how-rag-actually-works.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/india-senior-living-ai-visibility-gap"
+  [headers.values]
+    Link = "</blogs/india-senior-living-ai-visibility-gap.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/prompt-to-citation-tracking"
+  [headers.values]
+    Link = "</blogs/prompt-to-citation-tracking.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/schema-markup-ai-citations-2026"
+  [headers.values]
+    Link = "</blogs/schema-markup-ai-citations-2026.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/topical-authority-cluster-ai-shortlists"
+  [headers.values]
+    Link = "</blogs/topical-authority-cluster-ai-shortlists.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/blogs/why-engines-recommend-different-vendors"
+  [headers.values]
+    Link = "</blogs/why-engines-recommend-different-vendors.md>; rel=\"alternate\"; type=\"text/markdown\""
