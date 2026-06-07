@@ -61,6 +61,43 @@ Plain, sourced definitions of AI-search and GEO vocabulary. Hub: [The AI-Search 
 - [Domain Rating (DR)](https://rawmktg.com/glossary/domain-rating) - A 0-to-100 score, popularised by Ahrefs, that estimates the strength of a website's backlink profile relative to other sites, used as a rough proxy for overall.
 - [Referring domains](https://rawmktg.com/glossary/referring-domains) - The number of unique websites that link to a given site, a backlink metric that counts distinct linking sources rather than the total number of individual links.
 
+## Technical SEO Glossary
+
+Plain, sourced definitions of the technical SEO vocabulary that decides whether engines and AI systems can crawl, render, index, and cite your pages. Hub: [The B2B Search Glossary](https://rawmktg.com/glossary)
+
+- [Crawl budget](https://rawmktg.com/glossary/crawl-budget) - The number of URLs a search engine's crawler will fetch on a site within a given window, set by crawl rate and crawl demand.
+- [robots.txt](https://rawmktg.com/glossary/robots-txt) - A plain-text file at a site's root that tells crawlers which paths they may or may not request. It controls crawling, not indexing.
+- [Crawl directives](https://rawmktg.com/glossary/crawl-directives) - Instructions such as Allow and Disallow in robots.txt that tell crawlers which URL paths to fetch or skip, matched per user-agent.
+- [Log file analysis](https://rawmktg.com/glossary/log-file-analysis) - Examining a server's raw access logs to see exactly which URLs each crawler requested, when, and what status code they received.
+- [Orphan page](https://rawmktg.com/glossary/orphan-page) - A page with no internal links pointing to it, leaving crawlers and users unable to reach it through normal navigation.
+- [Indexing](https://rawmktg.com/glossary/indexing) - The process by which a search engine stores and organizes a crawled page so it can be retrieved and shown in results.
+- [noindex](https://rawmktg.com/glossary/noindex) - A directive, via meta tag or HTTP header, that tells search engines not to store a page in their index even though they may crawl it.
+- [Canonicalization](https://rawmktg.com/glossary/canonicalization) - The process of telling search engines which URL is the preferred version of a set of identical or near-identical pages, consolidating signals onto one.
+- [rel=canonical](https://rawmktg.com/glossary/rel-canonical) - A link element in a page's head that names the preferred URL for that content, used to consolidate duplicates onto one indexable version.
+- [Duplicate content](https://rawmktg.com/glossary/duplicate-content) - Substantively identical or very similar content available at more than one URL, which splits ranking signals and forces engines to pick one version.
+- [Index bloat](https://rawmktg.com/glossary/index-bloat) - A condition where a site has many low-value, thin, or duplicate URLs in the index, diluting crawl attention and the site's perceived quality.
+- [Rendering](https://rawmktg.com/glossary/rendering) - The process of turning a page's HTML, CSS, and JavaScript into the final DOM that a browser displays and a crawler reads.
+- [Client-side rendering (CSR)](https://rawmktg.com/glossary/client-side-rendering) - An approach where the server sends minimal HTML and the browser builds the page content with JavaScript after load.
+- [Server-side rendering (SSR)](https://rawmktg.com/glossary/server-side-rendering) - An approach where the server builds the full HTML of a page before sending it, so content is present in the initial response.
+- [Hydration](https://rawmktg.com/glossary/hydration) - The process where JavaScript attaches interactivity to server-rendered HTML in the browser, turning static markup into an interactive app.
+- [JavaScript SEO](https://rawmktg.com/glossary/javascript-seo) - The discipline of ensuring JavaScript-heavy sites are crawlable, renderable, and indexable, so content built by scripts is visible to engines.
+- [Site architecture](https://rawmktg.com/glossary/site-architecture) - The way a site's pages are organized and linked, determining how crawlers and users navigate from the homepage to any given page.
+- [Internal linking](https://rawmktg.com/glossary/internal-linking) - Links from one page of a site to another on the same site, used to aid discovery, distribute authority, and signal topical relationships.
+- [XML sitemap](https://rawmktg.com/glossary/xml-sitemap) - A machine-readable file listing a site's important URLs to help search engines discover and prioritize them for crawling.
+- [Breadcrumb navigation](https://rawmktg.com/glossary/breadcrumb-navigation) - A secondary navigation trail showing a page's position in the site hierarchy, typically rendered as Home / Section / Page.
+- [Faceted navigation](https://rawmktg.com/glossary/faceted-navigation) - Filtering controls (by price, color, size, etc.) that generate URL combinations, often creating large numbers of crawlable low-value pages.
+- [URL structure](https://rawmktg.com/glossary/url-structure) - The format and organization of a site's URLs, including paths, slugs, and parameters, which affects clarity, crawlability, and consolidation.
+- [Core Web Vitals](https://rawmktg.com/glossary/core-web-vitals) - A set of Google metrics measuring real-world loading, interactivity, and visual stability: LCP, INP, and CLS.
+- [Largest Contentful Paint (LCP)](https://rawmktg.com/glossary/largest-contentful-paint) - A Core Web Vital measuring how long it takes for the largest visible content element to render, used as a loading-speed proxy.
+- [Cumulative Layout Shift (CLS)](https://rawmktg.com/glossary/cumulative-layout-shift) - A Core Web Vital measuring how much a page's visible elements move around unexpectedly during loading, scoring visual stability.
+- [Interaction to Next Paint (INP)](https://rawmktg.com/glossary/interaction-to-next-paint) - A Core Web Vital measuring a page's overall responsiveness to user interactions, which replaced First Input Delay in 2024.
+- [Time to First Byte (TTFB)](https://rawmktg.com/glossary/time-to-first-byte) - The time between a request and the first byte of the server's response, a measure of server responsiveness and a component of load speed.
+- [HTTP status codes](https://rawmktg.com/glossary/http-status-codes) - Three-digit codes a server returns with each response, signaling success (200), redirection (3xx), client error (4xx), or server error (5xx).
+- [301 redirect](https://rawmktg.com/glossary/301-redirect) - A permanent redirect status code that sends users and crawlers from an old URL to a new one and passes ranking signals to the target.
+- [302 redirect](https://rawmktg.com/glossary/302-redirect) - A temporary redirect status code that points to a different URL while signaling the original should remain indexed.
+- [Redirect chain](https://rawmktg.com/glossary/redirect-chain) - A sequence of two or more redirects between the requested URL and the final destination, adding latency and risking signal loss.
+- [Soft 404](https://rawmktg.com/glossary/soft-404) - A page that shows a not-found or empty message to users but returns a 200 success status, confusing crawlers about whether it exists.
+
 ## About
 
 **Publisher:** rawmktg.

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="index, follow" />
+  <title>What is 302 redirect? &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL should stay indexed and keep its ranking signals." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="canonical" href="https://rawmktg.com/glossary/302-redirect" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/glossary/302-redirect" />
+  <meta property="og:title" content="What is 302 redirect? &middot; rawmktg." />
+  <meta property="og:description" content="A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL should stay indexed and keep its ranking signals." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/rawmktg-homepage-og.png" />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is 302 redirect? &middot; rawmktg." />
+  <meta name="twitter:description" content="A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL should stay indexed and keep its ranking signals." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/rawmktg-homepage-og.png" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "302 redirect", "description": "A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL should stay indexed and keep its ranking signals.", "url": "https://rawmktg.com/glossary/302-redirect", "inDefinedTermSet": "https://rawmktg.com/glossary", "dateModified": "2026-06-07"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a 302 redirect?", "acceptedAnswer": {"@type": "Answer", "text": "A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL stays indexed and keeps its signals."}}, {"@type": "Question", "name": "When should you use a 302 redirect?", "acceptedAnswer": {"@type": "Answer", "text": "Use a 302 only when the redirect is genuinely temporary: A/B tests, short promotions, brief maintenance, or device and geo routing. For any permanent move, use a 301 instead."}}, {"@type": "Question", "name": "What is the difference between a 301 and a 302 redirect?", "acceptedAnswer": {"@type": "Answer", "text": "A 301 is permanent and consolidates ranking signals onto the new URL; a 302 is temporary and keeps the original URL indexed. Using a 302 for a permanent move delays signal transfer."}}, {"@type": "Question", "name": "How do you change a 302 redirect to a 301?", "acceptedAnswer": {"@type": "Answer", "text": "Update the redirect rule in your server config, CMS, or CDN to return a 301 status instead of 302, then confirm the new status code with a redirect checker or your logs."}}]}</script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/glossary/302-redirect.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--paper:#F2EFE8;--paper-2:#ECE7DD;--ink:#2A2722;--ink-2:#4D4742;--mute:#6B6459;--faint:#C5BFB4;--rule:#D6D0C5;--rule-2:#B4ADA2;--signal:#BC3F1D;--signal-soft:#F1D9CC;--f-display:'Space Grotesk',system-ui,sans-serif;--f-prose:'Azeret Mono',ui-monospace,monospace;--f-mono:'JetBrains Mono',ui-monospace,monospace;--f-logo:'Geist',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}.rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;align-items:center;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links>a{transition:color 0.15s;}.nav-links>a:hover,.nav-links>a.active{color:var(--ink);}.nav-links a.cta{color:var(--signal);}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+    .nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}.nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+    .gloss{flex:1;padding:56px 0 80px;}
+    .gloss-wrap{max-width:760px;}
+    .gloss-crumb{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-bottom:18px;}
+    .gloss-crumb a{color:var(--signal);}
+    .gloss-eyebrow{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .gloss h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-0.03em;color:var(--ink);margin-bottom:24px;}
+    .capsule{font-family:var(--f-prose);font-size:18px;line-height:1.6;color:var(--ink);padding:4px 0 4px 20px;border-left:3px solid var(--signal);margin-bottom:36px;}
+    .gloss h2{font-family:var(--f-display);font-weight:700;font-size:20px;letter-spacing:-0.02em;color:var(--ink);margin:34px 0 12px;padding-top:24px;border-top:1px solid var(--rule);}
+    .gloss p{font-family:var(--f-prose);font-size:15.5px;line-height:1.72;color:var(--ink-2);margin-bottom:16px;}
+    .gloss strong{color:var(--ink);font-weight:600;}
+    .gloss-foot{margin-top:40px;padding-top:24px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:14px;}
+    .gloss-foot .row-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .gloss-foot .links{display:flex;flex-wrap:wrap;gap:10px 18px;}
+    .gloss-foot a{font-family:var(--f-prose);font-size:14px;color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:1px;transition:border-color 0.15s;}
+    .gloss-foot a:hover{border-color:var(--signal);}
+    .gloss-foot .related a{color:var(--ink-2);border-bottom-color:var(--rule);}
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a:hover{color:var(--ink);}.foot-links{display:flex;gap:20px;}
+    @media(max-width:768px){.page{padding:0 20px;}.nav-links{display:none;}}
+  
+    .gloss-callout{margin:34px 0 8px;padding:18px 20px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:8px;}
+    .gloss-callout .cl-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .gloss-callout p{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+    .gloss-callout p+p{margin-top:12px;}
+    .gloss-callout code{font-family:var(--f-mono);font-size:13px;background:var(--paper);padding:1px 5px;border-radius:4px;color:var(--ink);}
+    .gloss-callout pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.6;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0 0 10px;color:var(--ink);white-space:pre;}
+      .gloss-wrap p a,.gloss-callout a{color:var(--signal);border-bottom:1px solid var(--signal-soft);padding-bottom:0.5px;transition:border-color 0.15s;}
+    .gloss-wrap p a:hover,.gloss-callout a:hover{border-color:var(--signal);}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  </style>
+  <script>(function(){var l=false;function load(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852';s.crossOrigin='anonymous';document.head.appendChild(s);}var ev=['scroll','mousemove','touchstart','keydown','click'];ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3000);})();</script>
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/glossary/302-redirect.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page"><div class="nav-row">
+    <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+        <div class="nav-menu" role="menu">
+          <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+          <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+          <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+          <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+          <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+        </div>
+      </div>
+      <a href="/glossary" class="active">Glossary</a>
+      <a href="/#about">About</a>
+      <a href="/#newsletter" class="cta">Subscribe</a>
+    </div>
+  </div></div>
+</nav>
+
+<main class="gloss">
+  <div class="page">
+    <div class="gloss-wrap">
+      <div class="gloss-crumb"><a href="/">rawmktg.</a> / <a href="/glossary">Glossary</a></div>
+      <div class="gloss-eyebrow">Technical SEO</div>
+      <h1>What is 302 redirect?</h1>
+      <p class="capsule">A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL should stay indexed and keep its ranking signals.</p>
+      <h2>How it works</h2>
+      <p>A 302 is appropriate when a redirect is genuinely temporary: A/B tests, short-term promotions, geographic or device routing, or a page that is briefly down. Engines keep the original indexed and do not transfer authority to the temporary target.</p>
+      <p>Problems arise when 302s are used by default, often a server or CMS misconfiguration, for changes that are actually permanent. Engines may eventually treat a long-lived 302 as a 301, but that ambiguity costs time and signal clarity.</p>
+      <h2>302 vs 301</h2>
+      <p>The difference is permanence and where signals end up. A 301 says this move is final, consolidate onto the new URL; a 302 says this is temporary, keep the old URL. Choosing the wrong one either strands authority on a dead URL or fails to consolidate it where you want it.</p>
+      <h2>Why it matters for B2B</h2>
+      <p>For AI citation stability you almost always want 301s, not 302s, for real moves, because a 302 keeps the engine pointed at a URL you intend to abandon. The practical rule when restructuring the glossary: temporary routing gets a 302, but any permanent path change gets a 301, so signals and citations follow the content to its lasting home.</p>
+      <h2>Frequently asked questions</h2>
+      <p><strong>What is a 302 redirect?</strong></p>
+      <p>A 302 redirect is a temporary redirect that sends users to a different URL while telling search engines the move is provisional, so the original URL stays indexed and keeps its signals.</p>
+      <p><strong>When should you use a 302 redirect?</strong></p>
+      <p>Use a 302 only when the redirect is genuinely temporary: A/B tests, short promotions, brief maintenance, or device and geo routing. For any permanent move, use a 301 instead.</p>
+      <p><strong>What is the difference between a 301 and a 302 redirect?</strong></p>
+      <p>A 301 is permanent and consolidates ranking signals onto the new URL; a 302 is temporary and keeps the original URL indexed. Using a 302 for a permanent move delays signal transfer.</p>
+      <p><strong>How do you change a 302 redirect to a 301?</strong></p>
+      <p>Update the redirect rule in your server config, CMS, or CDN to return a 301 status instead of 302, then confirm the new status code with a redirect checker or your logs.</p>
+            <div class="gloss-callout">
+        <div class="cl-label"><strong>Common mistake</strong></div>
+        <p>Using a 302 (temporary) for a permanent move. It tells engines to keep the original URL indexed, so ranking signals never consolidate on the new one. Use a 301 for anything permanent.</p>
+      </div>
+      <div class="gloss-foot">
+        <div><div class="row-label">Go deeper</div><div class="links"><a href="/topics/technical-layer">The technical layer</a></div></div>
+        <div class="related"><div class="row-label">Related terms</div><div class="links"><a href="/glossary/301-redirect">301 redirect</a><a href="/glossary/redirect-chain">Redirect chain</a><a href="/glossary/http-status-codes">HTTP status codes</a></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/subscribed" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page"><div class="foot-row">
+    <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+    <div class="foot-links"><a href="/glossary">Glossary</a><a href="/#about">About</a><a href="mailto:vinayak@rawmktg.com">Contact</a></div>
+    <span>&copy; 2026 rawmktg.</span>
+  </div></div>
+</footer>
+</body>
+</html>
