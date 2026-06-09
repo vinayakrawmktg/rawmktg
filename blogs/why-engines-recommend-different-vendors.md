@@ -29,7 +29,7 @@ Perplexity referral traffic conversion rate vs 1.8% for organic
 
 Desktop queries ending in AI response with zero click-through in 2026
 
-But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of each engine is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy.
+But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of each engine is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy. For a worked example of how this plays out in one category, see our [teardown of which HR-software vendor AI engines actually recommend](/blogs/hr-saas-ai-visibility-gap).
 
 ## 01: How Each Engine Works
 

@@ -110,7 +110,7 @@ Fig. 02: Citation rate by content format (average across ChatGPT, Claude, Perple
 
 ## Vertical-Specific Seeding Playbooks
 
-Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because comparison queries are structurally multi-source. YMYL verticals require intensive credentialing to pass Gate 4.
+Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because [comparison queries are structurally multi-source](/blogs/hr-saas-ai-visibility-gap). YMYL verticals require intensive credentialing to pass Gate 4.
 
 Table 05: Vertical seeding playbooks: citation rate, format, and channel prioritisation
 

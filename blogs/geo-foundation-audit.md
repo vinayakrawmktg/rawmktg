@@ -201,7 +201,7 @@ The atomic knowledge block: Answer first, Proof second, Authority third. Each bl
 
 ## 05. Cross-Industry Benchmarks
 
-Analysis of 17.2 million AI citations in Q4 2025 shows that citation dynamics vary sharply by vertical. A one-size-fits-all GEO strategy underperforms because each category has different source concentration, different discovery vs. validation overlap, and different conversion behavior from AI-referred traffic.
+Analysis of 17.2 million AI citations in Q4 2025 shows that [citation dynamics vary sharply by vertical](/blogs/hr-saas-ai-visibility-gap). A one-size-fits-all GEO strategy underperforms because each category has different source concentration, different discovery vs. validation overlap, and different conversion behavior from AI-referred traffic.
 
 [Yext's analysis of 17.2 million AI citations](https://www.yext.com/research/ai-citation-behavior-across-models) across six B2B-relevant verticals reveals that the highest-performing brands in each category have adapted their content and distribution strategy to match their engine's retrieval pattern: not a universal GEO playbook, but a vertical-specific one.
 

@@ -147,7 +147,7 @@ The pages that earn consistent AI citations are not the most comprehensive, the 
 
 The high-citation page finds the middle by treating every section as a citable unit: a passage that could be lifted by a language model and presented as a complete, sourced answer to a specific question. That test, applied rigorously to every section of every content asset before publication, is the simplest operational definition of AI citation best-answer page GEO content. It does not require a new technology stack. It requires a different editorial standard.
 
-The [GEO compounding flywheel](/blogs/geo-compounding-flywheel) starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. [Vertical-specific AI visibility](/blogs/autonomous-retail-ai-visibility-gap) follows the same structural rules; the content research is domain-specific, but the architecture is universal.
+The [GEO compounding flywheel](/blogs/geo-compounding-flywheel) starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. [Vertical-specific AI visibility](/blogs/autonomous-retail-ai-visibility-gap) follows the same structural rules; the content research is domain-specific, but [the architecture is universal](/blogs/hr-saas-ai-visibility-gap).
 
 ---
 

@@ -643,7 +643,7 @@ The pages that earn consistent AI citations are not the most comprehensive, the 
 
 The high-citation page finds the middle by treating every section as a citable unit: a passage that could be lifted by a language model and presented as a complete, sourced answer to a specific question. That test, applied rigorously to every section of every content asset before publication, is the simplest operational definition of AI citation best-answer page GEO content. It does not require a new technology stack. It requires a different editorial standard.
 
-The [GEO compounding flywheel](/blogs/geo-compounding-flywheel) starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. [Vertical-specific AI visibility](/blogs/autonomous-retail-ai-visibility-gap) follows the same structural rules; the content research is domain-specific, but the architecture is universal.
+The [GEO compounding flywheel](/blogs/geo-compounding-flywheel) starts here: each citation earns brand familiarity inside the model's training signal, which increases the probability of future citations, which compounds into a durable share-of-model advantage that organic rankings alone cannot replicate. [Vertical-specific AI visibility](/blogs/autonomous-retail-ai-visibility-gap) follows the same structural rules; the content research is domain-specific, but [the architecture is universal](/blogs/hr-saas-ai-visibility-gap).
 
 ---
 
@@ -801,7 +801,7 @@ Fig. 02: Citation rate by content format (average across ChatGPT, Claude, Perple
 
 ## Vertical-Specific Seeding Playbooks
 
-Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because comparison queries are structurally multi-source. YMYL verticals require intensive credentialing to pass Gate 4.
+Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because [comparison queries are structurally multi-source](/blogs/hr-saas-ai-visibility-gap). YMYL verticals require intensive credentialing to pass Gate 4.
 
 Table 05: Vertical seeding playbooks: citation rate, format, and channel prioritisation
 
@@ -2649,7 +2649,7 @@ The atomic knowledge block: Answer first, Proof second, Authority third. Each bl
 
 ## 05. Cross-Industry Benchmarks
 
-Analysis of 17.2 million AI citations in Q4 2025 shows that citation dynamics vary sharply by vertical. A one-size-fits-all GEO strategy underperforms because each category has different source concentration, different discovery vs. validation overlap, and different conversion behavior from AI-referred traffic.
+Analysis of 17.2 million AI citations in Q4 2025 shows that [citation dynamics vary sharply by vertical](/blogs/hr-saas-ai-visibility-gap). A one-size-fits-all GEO strategy underperforms because each category has different source concentration, different discovery vs. validation overlap, and different conversion behavior from AI-referred traffic.
 
 [Yext's analysis of 17.2 million AI citations](https://www.yext.com/research/ai-citation-behavior-across-models) across six B2B-relevant verticals reveals that the highest-performing brands in each category have adapted their content and distribution strategy to match their engine's retrieval pattern: not a universal GEO playbook, but a vertical-specific one.
 
@@ -5450,7 +5450,7 @@ Perplexity referral traffic conversion rate vs 1.8% for organic
 
 Desktop queries ending in AI response with zero click-through in 2026
 
-But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of each engine is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy.
+But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of each engine is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy. For a worked example of how this plays out in one category, see our [teardown of which HR-software vendor AI engines actually recommend](/blogs/hr-saas-ai-visibility-gap).
 
 ## 01: How Each Engine Works
 
