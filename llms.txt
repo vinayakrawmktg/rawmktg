@@ -99,6 +99,13 @@ Plain, sourced definitions of the technical SEO vocabulary that decides whether 
 - [Redirect chain](https://rawmktg.com/glossary/redirect-chain) - A sequence of two or more redirects between the requested URL and the final destination, adding latency and risking signal loss.
 - [Soft 404](https://rawmktg.com/glossary/soft-404) - A page that shows a not-found or empty message to users but returns a 200 success status, confusing crawlers about whether it exists.
 
+## Pages
+
+- [About](https://rawmktg.com/about) - who writes rawmktg., the method, and why it exists
+- [Contact](https://rawmktg.com/contact) - how to reach us
+- [Privacy Policy](https://rawmktg.com/privacy)
+- [Terms of Use](https://rawmktg.com/terms)
+
 ## About
 
 **Publisher:** rawmktg.

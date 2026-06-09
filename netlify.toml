@@ -128,16 +128,19 @@
   for = "/blogs/*.md"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
+    X-Robots-Tag = "noindex"
 
 [[headers]]
   for = "/index.md"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
+    X-Robots-Tag = "noindex"
 
 [[headers]]
   for = "/llms-full.txt"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
+    X-Robots-Tag = "noindex"
 
 # Accept: text/markdown content negotiation (sets Vary + Link, serves .md, 406s)
 [[edge_functions]]
@@ -152,11 +155,13 @@
   for = "/glossary/*.md"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
+    X-Robots-Tag = "noindex"
 
 [[headers]]
   for = "/glossary.md"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
+    X-Robots-Tag = "noindex"
 
 [[edge_functions]]
   path = "/glossary"
