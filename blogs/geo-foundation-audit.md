@@ -5,9 +5,9 @@
 *Source: https://rawmktg.com/blogs/geo-foundation-audit · rawmktg. by Vinayak Ravi*
 
 
-## 01. The Transition to Conversational Discovery
+## 01. How is B2B search shifting to conversational discovery?
 
-For nearly three decades, organic visibility was mediated by search-engine crawlers that returned ranked links. That model is now under structural pressure: generative engines synthesize many sources into a single answer, frequently resolving intent inside the chat interface without a click at all.
+**From crawled links to synthesised answers.** For nearly three decades, organic visibility was mediated by search-engine crawlers that returned ranked links. That model is now under structural pressure: generative engines synthesize many sources into a single answer, frequently resolving intent inside the chat interface without a click at all.
 
 Enterprise marketing teams are navigating the rise of conversational AI assistants that don't return a list of ten blue links. They return one answer, sometimes with citations, sometimes without. [Gartner forecasts traditional organic search volume will fall roughly 25% by 2026](https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/) as buyer intent migrates toward conversational AI interfaces. The brands synthesized into that single answer win the shortlist. Everyone else is invisible.
 
@@ -25,9 +25,9 @@ AI-referred buyers arrive pre-qualified and convert far above the organic baseli
 
 The catch: AI visibility is invisible by default. Standard analytics platforms don't track impressions inside LLM environments, so organizations routinely stay unaware of severe citation gaps until a competitor has quietly captured the conversational pipeline. The remedy is a repeatable diagnostic: the RawMktg. GEO Foundation Audit.
 
-## 02. The Algorithmic Core of GEO
+## 02. What is the algorithmic core of GEO?
 
-Generative engines rely on vector databases, semantic embeddings, and real-time retrieval, not keyword density. The academic foundation was established by researchers from Princeton and Georgia Tech. Their key finding: keyword stuffing performs poorly in generative contexts. Three levers consistently produce the largest citation gains.
+**Vector databases, embeddings, and real-time retrieval.** Generative engines rely on vector databases, semantic embeddings, and real-time retrieval, not keyword density. The academic foundation was established by researchers from Princeton and Georgia Tech. Their key finding: keyword stuffing performs poorly in generative contexts. Three levers consistently produce the largest citation gains.
 
 Optimizing for machine synthesis requires understanding [RAG architectures](/blogs/how-rag-actually-works). Unlike classic ranking that leans on keyword density and backlinks, generative engines retrieve semantically similar passages, rerank them by authority signals, and synthesize an answer from the top candidates. The model never sees your page as a whole: it sees the passages most relevant to the query.
 
@@ -61,9 +61,9 @@ The Princeton research evaluated nine content transformations across multiple do
 
 RawMktg. operationalizes these via the RAID G-SEO pipeline: Content Summarization (strip markup to clean semantic entities), Intent Inference via multi-role reflection (model how each buyer persona phrases queries), Stepwise Planning (define edits from competitive-gap data), and Targeted Rewriting (apply the Princeton operators to high-value pages).
 
-## 03. Sourcing Fragmentation: AI Search Is Not a Monolith
+## 03. Why do AI engines cite such different sources?
 
-Only 11% of domains are cited by both ChatGPT and Perplexity for the same query, and 71% of cited sources appear on a single platform. A strategy built for one engine will miss the others entirely. Each engine has a distinct retrieval philosophy, concentration level, and source preference.
+**Because AI search is not a monolith.** Only 11% of domains are cited by both ChatGPT and Perplexity for the same query, and 71% of cited sources appear on a single platform. A strategy built for one engine will miss the others entirely. Each engine has a distinct retrieval philosophy, concentration level, and source preference.
 
 [Citation overlap between engines is strikingly low](https://ziptie.dev/blog/how-different-ai-platforms-cite-the-same-source-differently/): only 11% of domains are cited by both ChatGPT and Perplexity for the same query, and 71% of cited sources appear on a single platform. Concentration differs sharply too, measured by the Gini coefficient of citation distribution: a Gini of 0 means every source gets equal citations; a Gini of 1 means one source takes everything.
 
@@ -95,9 +95,9 @@ Table 1: Leading cited domains by engine (Aug 2024–Jun 2025)
 
 The implication for B2B brands: appearing only on your own domain is not enough. You need presence on the community, review, and reference platforms each engine trusts most. The audit maps exactly which platforms are missing.
 
-## 04. The RawMktg. Framework, Step by Step
+## 04. How do you run a GEO foundation audit, step by step?
 
-Mapping enterprise AI visibility is a structured diagnostic, not a guess. The sequence below moves discovery from speculative keyword work to precision engineering of citations: five steps that run in order, each one feeding data into the next.
+**As a structured diagnostic, not a guess.** Mapping enterprise AI visibility is a structured diagnostic, not a guess. The sequence below moves discovery from speculative keyword work to precision engineering of citations: five steps that run in order, each one feeding data into the next.
 
 01Query Map
 
@@ -199,9 +199,9 @@ The content restructuring step replaces narrative prose with atomic knowledge bl
 
 The atomic knowledge block: Answer first, Proof second, Authority third. Each block is self-contained and retrievable in isolation.
 
-## 05. Cross-Industry Benchmarks
+## 05. How does AI citation visibility differ by industry?
 
-Analysis of 17.2 million AI citations in Q4 2025 shows that [citation dynamics vary sharply by vertical](/blogs/hr-saas-ai-visibility-gap). A one-size-fits-all GEO strategy underperforms because each category has different source concentration, different discovery vs. validation overlap, and different conversion behavior from AI-referred traffic.
+**Sharply: citation dynamics vary by vertical.** Analysis of 17.2 million AI citations in Q4 2025 shows that [citation dynamics vary sharply by vertical](/blogs/hr-saas-ai-visibility-gap). A one-size-fits-all GEO strategy underperforms because each category has different source concentration, different discovery vs. validation overlap, and different conversion behavior from AI-referred traffic.
 
 [Yext's analysis of 17.2 million AI citations](https://www.yext.com/research/ai-citation-behavior-across-models) across six B2B-relevant verticals reveals that the highest-performing brands in each category have adapted their content and distribution strategy to match their engine's retrieval pattern: not a universal GEO playbook, but a vertical-specific one.
 
@@ -218,9 +218,9 @@ Table 3: Citation dynamics and brand behavior across six B2B-relevant verticals 
 
 The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so off-site seeding and review platform presence matter more than on-page optimization.
 
-## 06. Capturing the Synthesized Pipeline
+## 06. How do you capture the AI-synthesised pipeline?
 
-As conversational AI mediates more of the funnel, SEO has to be upgraded, not abandoned. A structured diagnostic that maps visibility gaps, fixes technical crawlability, and aligns content with machine retrieval is how B2B teams defend and grow high-intent pipeline. The brands that run the audit first will own the conversation.
+**Upgrade SEO, do not abandon it.** As conversational AI mediates more of the funnel, SEO has to be upgraded, not abandoned. A structured diagnostic that maps visibility gaps, fixes technical crawlability, and aligns content with machine retrieval is how B2B teams defend and grow high-intent pipeline. The brands that run the audit first will own the conversation.
 
 The implication for marketing leaders is direct: as search behavior shifts, content must be structured not merely to rank on a page, but to serve as the definitive, citable answer the AI engines hand to your buyers. The audit quantifies exactly where the gap is, which engine it's worst on, and which fix (technical, structural, or off-site) will close it fastest. For a sector-level illustration of how those gaps concentrate within a real industry, see our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap). The results compound when the work is done sequentially and the [GEO flywheel](/blogs/geo-compounding-flywheel) is spinning.
 

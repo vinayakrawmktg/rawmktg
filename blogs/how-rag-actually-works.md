@@ -29,9 +29,9 @@ RAG system components, technical function and marketing implication
 | Generator | The LLM that reads the retrieved passages and synthesises the final answer. | Your brand's claims are filtered through the model's summarisation logic. Clarity wins over cleverness. |
 | Groundedness | The system instruction that forces the LLM to stay within retrieved facts rather than hallucinating. | Accuracy in the retriever directly protects brand trust, if you're mis-retrieved, you're misrepresented. The [Claim-Anchoring Framework](/blogs/hallucination-proofing-your-brand) is the content architecture that stops this at the source. |
 
-## Why 'Chunking' Is the Most Underrated Concept in GEO
+## Why is chunking the most underrated concept in GEO?
 
-AI search engines do not ingest your entire page in a single pass. They process content in discrete 300–500 word segments. Only 5 to 10 chunks, from across the entire indexed web, advance to the generation stage. A single poorly structured section can cause an otherwise authoritative page to be ignored entirely.
+**Because engines retrieve passages, not whole pages.** AI search engines do not ingest your entire page in a single pass. They process content in discrete 300–500 word segments. Only 5 to 10 chunks, from across the entire indexed web, advance to the generation stage. A single poorly structured section can cause an otherwise authoritative page to be ignored entirely.
 
 Each chunk is independently vectorised and stored in the retrieval index. When a query arrives, the retriever identifies the top-k most relevant chunks and presents them to the LLM. This creates a high-stakes environment: a single poorly structured section on an otherwise authoritative page can cause that page to be ignored entirely. Conversely, a single exceptionally clear, well-cited paragraph can earn a citation even if the rest of the page is unremarkable.
 
@@ -91,9 +91,9 @@ The top-ranked passages are handed to the LLM, which synthesises them into a coh
 
 Counter-move: Frame key insights as standalone, quotable single-paragraph claims, the unit the LLM is most likely to lift and attribute.
 
-## How ChatGPT, Perplexity, and Gemini Cite Differently
+## How do ChatGPT, Perplexity, and Gemini cite differently?
 
-The five-stage pipeline is consistent in principle, but the three dominant AI search platforms each exhibit distinct retrieval behaviours and citation biases. Treating them as identical will leave significant citation share on the table. For the full technical breakdown of each engine's retrieval architecture, see [Why ChatGPT, Perplexity and Gemini Recommend Different Vendors](/blogs/why-engines-recommend-different-vendors).
+**Same pipeline, three different ranking systems.** The five-stage pipeline is consistent in principle, but the three dominant AI search platforms each exhibit distinct retrieval behaviours and citation biases. Treating them as identical will leave significant citation share on the table. For the full technical breakdown of each engine's retrieval architecture, see [Why ChatGPT, Perplexity and Gemini Recommend Different Vendors](/blogs/why-engines-recommend-different-vendors).
 
 AI search platform comparison, retrieval behaviour and B2B priority use case
 
@@ -154,9 +154,9 @@ AI governance standards, function, audience, and location
 
 An llms.txt file signals to AI crawlers which ungated resources are the most authoritative, directing them toward the latest product documentation, research, and guides while excluding archived or deprecated versions. AGENTS.md goes further: it provides machine-readable operational rules for AI agents interacting with your brand data, including certified data sources, prohibited actions, and human contacts to surface when conflicting information is encountered.
 
-## How to Measure GEO Success
+## How do you measure GEO success?
 
-The new North Star metric is Citation Share, the percentage of relevant AI answers that cite your domain as a source. This is distinct from AI Visibility, which simply tracks whether your brand is mentioned. A citation confirms the AI engine found your live content useful enough to attribute a specific fact to it.
+**With Citation Share, not keyword rankings.** The new North Star metric is Citation Share, the percentage of relevant AI answers that cite your domain as a source. This is distinct from AI Visibility, which simply tracks whether your brand is mentioned. A citation confirms the AI engine found your live content useful enough to attribute a specific fact to it.
 
 60%
 

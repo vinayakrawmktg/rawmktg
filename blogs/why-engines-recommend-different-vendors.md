@@ -31,9 +31,9 @@ Desktop queries ending in AI response with zero click-through in 2026
 
 But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of each engine is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy. For a worked example of how this plays out in one category, see our [teardown of which HR-software vendor AI engines actually recommend](/blogs/hr-saas-ai-visibility-gap).
 
-## 01: How Each Engine Works
+## 01: How does each engine actually work?
 
-The three major generative engines share no common retrieval architecture. ChatGPT runs on the Bing index with a 15% citation filter. Perplexity scores passages in real time via live crawlers. Gemini resolves entity relationships against the Knowledge Graph before fetching a single document. Optimising for one without understanding the others is structurally guaranteed to underperform.
+**They share no common retrieval architecture.** The three major generative engines share no common retrieval architecture. ChatGPT runs on the Bing index with a 15% citation filter. Perplexity scores passages in real time via live crawlers. Gemini resolves entity relationships against the Knowledge Graph before fetching a single document. Optimising for one without understanding the others is structurally guaranteed to underperform.
 
 Table 01: Architectural feature comparison, ChatGPT vs. Perplexity vs. Gemini
 
@@ -46,9 +46,9 @@ Table 01: Architectural feature comparison, ChatGPT vs. Perplexity vs. Gemini
 | Update Cycle | Bing updates + real-time API | Programmatic real-time live scrapers | Continuous Googlebot + Knowledge Graph |
 | Unique Signal | User Memory profiles, brand mentions | Focus Modes (Academic, Reddit, Writing) | Search Console CTR, Core Web Vitals, E-E-A-T |
 
-## 02: ChatGPT Search
+## 02: How does ChatGPT Search choose its sources?
 
-ChatGPT Search runs on a fine-tuned version of GPT-4o, blending pre-trained weights with live retrieval via Microsoft's Bing Web Index and OAI-Searchbot. The critical number for growth teams: only 15% of initially retrieved pages survive the citation selection filter. If your page is not in Bing's index, ChatGPT cannot see it at all.
+**A fine-tuned GPT-4o reading over Bing's index.** ChatGPT Search runs on a fine-tuned version of GPT-4o, blending pre-trained weights with live retrieval via Microsoft's Bing Web Index and OAI-Searchbot. The critical number for growth teams: only 15% of initially retrieved pages survive the citation selection filter. If your page is not in Bing's index, ChatGPT cannot see it at all.
 
 ChatGPT Search (now including GPT-5.3 Instant, launched March 4, 2026) applies five citation pillars to determine which sources survive the filter: Pattern Recognition, Credibility, Relevance, Timeliness, and Diversity.[9](#r9) In practical execution terms, this translates to four priorities:
 
@@ -85,9 +85,9 @@ fetch('https://api.indexnow.org/indexnow', {
 })
 ```
 
-## 03: Perplexity AI
+## 03: How does Perplexity rank and cite sources?
 
-Perplexity operates as a live Retrieval-Augmented Generation engine with a 97% source verification accuracy and 92% citation integration rate. Unlike PageRank-based systems, it uses a dynamic, passage-level scoring algorithm to select sources in real time. Five factors determine citation probability, each demanding a fundamentally different content strategy than traditional SEO. The [technical mechanics of RAG retrieval](/blogs/how-rag-actually-works) explain why passage-level scoring works the way it does.
+**As a live RAG engine with heavy source verification.** Perplexity operates as a live Retrieval-Augmented Generation engine with a 97% source verification accuracy and 92% citation integration rate. Unlike PageRank-based systems, it uses a dynamic, passage-level scoring algorithm to select sources in real time. Five factors determine citation probability, each demanding a fundamentally different content strategy than traditional SEO. The [technical mechanics of RAG retrieval](/blogs/how-rag-actually-works) explain why passage-level scoring works the way it does.
 
 Chart 01: Perplexity AI citation probability weight factors
 
@@ -105,9 +105,9 @@ Perplexity's Focus Modes demand targeted content types. Academic Mode prioritise
 
 Partner ecosystem content is disproportionately powerful on Perplexity. PartnerStack research found that **43% of AI-generated vendor citations originate from partner ecosystem sources**, with 21% driven by active partner activity.[2](#r2) Every integration partner blog post, co-marketing asset, and ecosystem directory listing is a live Perplexity citation candidate that most growth teams are not tracking.
 
-## 04: Google Gemini and AI Overviews
+## 04: How do Gemini and AI Overviews pick what to cite?
 
-Gemini is an entity-first retrieval system. Before fetching a single source document, Gemini resolves the query against Google's Cloud Knowledge Graph to map entities and their relationships. AI Overviews now appear on 47% of commercial queries (rising to 95.4% for comparison searches and 85.9% for product reviews). Organic authority is a prerequisite for the candidate pool, but not a guarantee of citation once inside it.
+**Entity first, source documents second.** Gemini is an entity-first retrieval system. Before fetching a single source document, Gemini resolves the query against Google's Cloud Knowledge Graph to map entities and their relationships. AI Overviews now appear on 47% of commercial queries (rising to 95.4% for comparison searches and 85.9% for product reviews). Organic authority is a prerequisite for the candidate pool, but not a guarantee of citation once inside it.
 
 38%
 The fraction of pages cited inside AI Overviews that also rank in the top 10 standard organic SERPs for the same query. Gemini applies distinct extraction criteria beyond organic rank, where entity resolution and E-E-A-T signals determine selection from the candidate pool. (Brainz Digital, 2026)[12](#r12)
@@ -149,9 +149,9 @@ Gemini vs. Standalone Gemini App
 
 AI Overviews in Google Search are tightly coupled to traditional SEO signals. The standalone Gemini App applies broader weight to third-party reviews, comparison articles, and authoritative publications. On a limited budget, both tracks require attention, as they share entity signals but diverge significantly on content source preferences.
 
-## 05: The Multi-Engine GEO Prioritisation Matrix
+## 05: How should you prioritise GEO across the three engines?
 
-Equal investment across all three engines is not viable for resource-constrained growth teams. The matrix below scores each tactic by resource cost, time-to-value, and impact per engine, so you can sequence execution by ROI rather than by instinct.
+**Not by investing equally in all three.** Equal investment across all three engines is not viable for resource-constrained growth teams. The matrix below scores each tactic by resource cost, time-to-value, and impact per engine, so you can sequence execution by ROI rather than by instinct.
 
 Chart 02: Multi-engine GEO tactic impact by engine (normalised score)
 
@@ -170,9 +170,9 @@ Table 02: Multi-Engine GEO Prioritisation Matrix
 | Proprietary Data & Benchmark Reports | High | 60 Days | Moderate | 40% Boost | High |
 | Topical Authority Content Clusters | High | 90 Days | High | High | High |
 
-## 06: The 60-Day Deployment Roadmap
+## 06: What does a 60-day multi-engine GEO rollout look like?
 
-Resource-constrained growth teams must adopt an Intelligence-squared approach, unifying Chat Intelligence (tracking Mention Rate, Share of Voice, and Citation Sources across major models) with traditional SERP Intelligence. The three-phase sequence below is ordered by dependency: structural foundations must be in place before content restructuring, and off-site signals need on-site proof before amplification produces durable citations.
+**A unified rollout across ChatGPT, Perplexity and Gemini.** Resource-constrained growth teams must adopt an Intelligence-squared approach, unifying Chat Intelligence (tracking Mention Rate, Share of Voice, and Citation Sources across major models) with traditional SERP Intelligence. The three-phase sequence below is ordered by dependency: structural foundations must be in place before content restructuring, and off-site signals need on-site proof before amplification produces durable citations.
 
 P1Days 1-15
 
@@ -192,9 +192,9 @@ Off-Site Ecosystem Amplification & Freshness Loops
 
 Claim and optimise profiles on G2, Capterra, and Trustpilot for ChatGPT's 3x citation multiplier. Seed developer discussions on Reddit and GitHub to feed Perplexity's real-time RAG crawlers. Establish a 30-day content freshness loop: update statistics and refresh tool lists on high-intent pages monthly. Activate partner ecosystem content: co-authored integration guides and partner blog posts generate 43% of AI vendor citations on Perplexity (PartnerStack, 2026).
 
-## 07: The Future
+## 07: What comes after GEO citations?
 
-GEO as a citation strategy is the short game. The mid-term structural shift is more consequential. Stripe and OpenAI have pioneered the Agentic Commerce Protocol, an open-source checkout framework enabling autonomous AI agents to browse products, evaluate configurations, and execute purchases directly without human confirmation. Brands not structuring their digital presence for machine-readable evaluation today are building the wrong infrastructure for 2027.
+**Citations are the short game; agentic discovery is next.** GEO as a citation strategy is the short game. The mid-term structural shift is more consequential. Stripe and OpenAI have pioneered the Agentic Commerce Protocol, an open-source checkout framework enabling autonomous AI agents to browse products, evaluate configurations, and execute purchases directly without human confirmation. Brands not structuring their digital presence for machine-readable evaluation today are building the wrong infrastructure for 2027.
 
 In an agentic commerce model, an AI agent will not present three CRM vendor options for a human to review. It will programmatically evaluate technical specs, pricing matrices, and sentiment profiles, then execute the SaaS subscription autonomously. The brands that have structured their schema, off-site consensus, and content architecture for machine retrieval will be selected. Those that have not will be invisible at the moment of transaction.
 
