@@ -17,9 +17,9 @@ India's senior living market is projected to reach USD 7.7 billion by 2030. The 
 
 But when you look at the digital footprint of the category's leading players, you find a sector that has built beautiful campuses and almost entirely ignored the channels that now drive first discovery.
 
-## The Three-Brand Benchmark
+## How do India's top senior-living brands compare on SEO and AI visibility?
 
-We ran an [Ahrefs](https://ahrefs.com)-based SEO and AI citation analysis across three of the most prominent players in India's luxury senior living segment: Primus Senior Living, Antara Senior Care (backed by Max Group), and Ashiana Housing. The traffic gap between Primus and Ashiana is 7.8×. The ChatGPT citation gap is 39×. The Gemini gap is 49×.
+**We benchmarked the three most prominent players.** We ran an [Ahrefs](https://ahrefs.com)-based SEO and AI citation analysis across three of the most prominent players in India's luxury senior living segment: Primus Senior Living, Antara Senior Care (backed by Max Group), and Ashiana Housing. The traffic gap between Primus and Ashiana is 7.8×. The ChatGPT citation gap is 39×. The Gemini gap is 49×.
 
 SEO and AI citation benchmark, Primus vs Antara vs Ashiana, Q2 2026
 
@@ -46,9 +46,9 @@ There are actually two parallel gaps. **Gap 1, The SEO gap:** keyword footprint,
 
 Both matter. But they're driven by different inputs and require different fixes.
 
-## The SEO Gap: It's Not About More Content
+## What is the real SEO gap for India's senior-living brands?
 
-Primus's keyword mix is 77% informational. Its biggest traffic driver is "senior citizen card benefits", a government-information query with zero commercial intent. Meanwhile, Antara has 81 transactional keywords growing at +150 traffic. Ashiana has 2,214 ranking keywords. The gap isn't volume, it's which part of the buyer journey each brand is capturing.
+**It is not about more content.** Primus's keyword mix is 77% informational. Its biggest traffic driver is "senior citizen card benefits", a government-information query with zero commercial intent. Meanwhile, Antara has 81 transactional keywords growing at +150 traffic. Ashiana has 2,214 ranking keywords. The gap isn't volume, it's which part of the buyer journey each brand is capturing.
 
 ### The TOFU Traffic Trap
 
@@ -116,9 +116,9 @@ The fix isn't a press release. It's building the citation infrastructure that gi
 
 Currently, the GEO signal inventory for most Indian senior living brands includes: Crunchbase (present), PR wires (many), Wikipedia (absent), major news outlets with editorial coverage (minimal), Q&A platforms (absent), review aggregators (thin).
 
-## The AI Citation Composition Problem
+## Why are some AI citations worth more than others?
 
-Even when a brand does appear in AI responses, not all citations are equal. LLMs assign implicit credibility weighting based on the source. Wikipedia citations and Tier-1 editorial features carry vastly more signal weight than a mention in a PR newsfeed. The path from 3 ChatGPT citations to 118 isn't more content, it's more authoritative content, on authoritative platforms, with precise brand language.
+**Not all citations are equal.** Even when a brand does appear in AI responses, not all citations are equal. LLMs assign implicit credibility weighting based on the source. Wikipedia citations and Tier-1 editorial features carry vastly more signal weight than a mention in a PR newsfeed. The path from 3 ChatGPT citations to 118 isn't more content, it's more authoritative content, on authoritative platforms, with precise brand language.
 
 This is why Ashiana, with 548 Google AI Overview citations, 118 ChatGPT citations, and 84 Perplexity citations, has built an essentially unassailable AI presence: it has the referring domain breadth, the editorial backlinks, and the entity authority to sustain consistent LLM recognition across every platform.
 

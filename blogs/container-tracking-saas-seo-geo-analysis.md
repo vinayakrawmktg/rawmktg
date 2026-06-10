@@ -14,7 +14,7 @@ We analysed six companies in this category, ranging from large, VC-backed platfo
 **Bottom line up front**
 What we found was a market that is, collectively, making the same handful of strategic mistakes, and a small number of players who have quietly figured out how to win the modern search landscape while most of their competitors are still playing a 2019 SEO game.
 
-## Finding 1: The Space Has a Catastrophic AI Visibility Problem, and Almost Nobody Knows It
+## Finding 1: How bad is the AI visibility problem in container tracking?
 
 The single most striking data point from this analysis had nothing to do with Google rankings. It had to do with ChatGPT.
 
@@ -54,7 +54,7 @@ First: companies with higher AI citation counts had built structured, use-case-s
 
 Second: companies with higher AI citation counts had more referring links from third-party, editorially independent sources. The algorithm that decides what ChatGPT cites is not fundamentally different from the one Google uses to assess authority. It is, at its core, a trust and citation graph. The brands that earn more editorial links from credible sources get cited more by AI, and that pattern held consistently across our peer group.
 
-## Finding 2: Domain Authority Is More Concentrated Than You Would Expect, and the Gap Is Widening
+## Finding 2: How concentrated is domain authority in container tracking?
 
 The Domain Rating spread across the peer group we analysed ran from the high 20s to the low 70s. That is not unusual for a B2B SaaS category of this age, but the trajectory data is where things get interesting.
 
@@ -83,7 +83,7 @@ In a market where the top few search positions capture the majority of buyer att
 
 Domain Rating is not fixed. It is a function of the number and quality of unique referring domains, weighted by their own authority and topical relevance. For companies currently sitting with a DR in the 28–50 range, the path to meaningfully improving that number in 12–18 months is clear, it just requires disciplined, sustained execution on topically relevant link acquisition.
 
-## Finding 3: Every Company in This Space Is Over-Indexed on Informational Traffic, and Almost Nobody Has Commercial Keyword Coverage
+## Finding 3: Why is every container-tracking site over-indexed on informational traffic?
 
 This was perhaps the most consistent finding across the analysis, and it speaks to a fundamental misunderstanding of how content strategy should work for B2B SaaS.
 
@@ -116,7 +116,7 @@ The commercial keyword gaps we identified were substantial. Terms like "supply c
 
 The pattern we see again and again in B2B SaaS: teams build content for the customers they already have, educational, operational, feature-specific, rather than for the buyers they are trying to acquire: commercial, evaluative, comparison-oriented. Educational content is easier to write, gets more social shares, and feels more like "thought leadership." Commercial content requires more editorial courage and a different production process. Most teams default to the path of least resistance.
 
-## Finding 4: There Is a Carrier Tracking Page Strategy That the Winners Have Figured Out, and Most Players Have Missed Entirely
+## Finding 4: What carrier-tracking-page strategy do the winners use?
 
 One of the more specific and actionable patterns we identified was what we are calling the "carrier tracking page strategy."
 
@@ -150,7 +150,7 @@ These pages are the primary source that AI tools cite when answering questions a
 
 The companies in this space that have not built these pages are leaving both organic traffic and AI citation footprint on the table, and because their competitors are claiming both, the gap is compounding.
 
-## Finding 5: A Significant Share of Organic Traffic in This Space Is Geographically Misaligned with the ICP
+## Finding 5: Is container-tracking organic traffic geographically misaligned with the ICP?
 
 This finding was unexpected, and it deserves more attention than it typically gets in B2B SaaS SEO discussions.
 
@@ -177,7 +177,7 @@ US % colour-coded: green ≥ 75% · amber 56–74% · red ≤ 55% · \* India & 
 
 Table 5. Organic traffic distribution by top geography. Source: Ahrefs Site Explorer, April 2026.
 
-## Finding 6: The Referring Domain Profiles Are Structurally Weak in the Same Way Across Almost Every Player
+## Finding 6: Why are container-tracking referring-domain profiles structurally weak?
 
 We pulled the full referring domain profiles for each company in our analysis and categorised the domains by type: logistics and freight media, B2B tech and SaaS research platforms, startup and VC ecosystem sites, job boards, PR wire services, generic tech blogs, and spam. The pattern was consistent: the referring domain profiles in this space are wide but shallow on topical relevance.
 
@@ -213,7 +213,7 @@ Topically relevant referring domains are a qualitatively different type of signa
 
 The freight and logistics media landscape is also, unlike general tech media, genuinely accessible to B2B companies in this space. FreightWaves, Supply Chain Dive, and their peers actively seek data-led contributions, expert commentary, and product news from companies operating in their coverage area. The companies in our analysis that have earned the most links from these publications have made deliberate, sustained outreach and content contribution a part of their marketing mix.
 
-## Finding 7: The Traffic Trajectory Is Diverging, and the Gap Is Accelerating
+## Finding 7: Is the container-tracking traffic gap accelerating?
 
 The last finding worth highlighting is about direction, not just current position.
 

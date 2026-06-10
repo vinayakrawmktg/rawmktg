@@ -21,9 +21,9 @@ topic clusters identified
 
 spam rate range across brands
 
-## 01. The Category at a Glance
+## 01. How should you compare cross-border payments backlink profiles?
 
-Raw backlink counts are a poor way to compare these brands, heavily distorted by spam and by differences in business scope. The fairer measure is clean, non-spam referring domains. On that basis, Cashfree leads on both volume and authority, but Xflow's position is more complicated than it first appears.
+**Not by raw counts.** Raw backlink counts are a poor way to compare these brands, heavily distorted by spam and by differences in business scope. The fairer measure is clean, non-spam referring domains. On that basis, Cashfree leads on both volume and authority, but Xflow's position is more complicated than it first appears.
 
 Table 01 · Brand backlink profiles, June 2026
 
@@ -40,9 +40,9 @@ Fig. 1 · Clean (non-spam) referring domains by brand. Cashfree leads on both vo
 
 Two things are worth reading carefully here. Cashfree's lead is real and high in quality: 525 clean referring domains at a median Domain Rating of 78, well ahead of the field. Xflow's position is more nuanced. Its raw profile is the second largest by backlinks, but almost nine in ten of those links are flagged as spam, leaving roughly 393 genuine referring domains once the noise is stripped out. The pure-play specialists, Skydo and PayGlocal, run smaller but cleaner profiles in the low hundreds.
 
-## 02. Link Quality Is the Hidden Variable
+## 02. How much do spam links distort cross-border backlink counts?
 
-Spam links inflate raw counts so heavily that quality deserves to be treated as a metric in its own right. Across these six profiles the share of backlinks flagged as spam ranges from under 2% to nearly 90%.
+**Link quality is the hidden variable.** Spam links inflate raw counts so heavily that quality deserves to be treated as a metric in its own right. Across these six profiles the share of backlinks flagged as spam ranges from under 2% to nearly 90%.
 
 Fig. 2 · Share of each brand's backlinks flagged as spam by Ahrefs. A high share signals toxic or low-value links that add little genuine authority.
 
@@ -52,9 +52,9 @@ Xflow: the spam signal
 
 A spam rate of 89.3% typically points to aggressive low-quality link acquisition or a wave of toxic links arriving from spam networks. For a brand in that position, the practical takeaway is less about earning more links and more about auditing and disavowing the ones already pointing at it, so that its genuine 393 referring domains are not drowned out. The clean links Xflow has earned, concentrated in cross-border payments (164 domains), crypto and Web3 (59) and marketing (38), represent real authority that is currently obscured.
 
-## 03. Links Spread Across Far More Than One Topic
+## 03. Which topics actually win links in cross-border payments?
 
-With spam removed, the topical picture comes into focus. Cross-border payments and remittance leads with 266 clean referring domains. But it is still a minority of the whole: roughly three out of every four topical links sit in adjacent subjects rather than in cross-border content itself.
+**Far more than just cross-border itself.** With spam removed, the topical picture comes into focus. Cross-border payments and remittance leads with 266 clean referring domains. But it is still a minority of the whole: roughly three out of every four topical links sit in adjacent subjects rather than in cross-border content itself.
 
 Fig. 3 · Topics ranked by clean referring domains across all six brands. Cross-border (highlighted) leads, but adjacent topics together account for the majority.
 
@@ -62,9 +62,9 @@ Payment-gateway and fintech content (181 clean domains), banking and personal fi
 
 This has a practical implication. A brand that publishes only about cross-border payments is optimising for a minority of the available link surface. The category's own link data makes the case for adjacent content more clearly than any content strategy framework could.
 
-## 04. Scale, Focus and One Outlier
+## 04. What are the three backlink-profile shapes in cross-border payments?
 
-The six profiles fall into three recognisably different shapes. Cashfree's breadth reflects a full-stack payments business. The pure-play specialists show deliberate adjacent strategies. Xflow is a cautionary third shape: real authority obscured by spam.
+**Scale, focus, and one outlier.** The six profiles fall into three recognisably different shapes. Cashfree's breadth reflects a full-stack payments business. The pure-play specialists show deliberate adjacent strategies. Xflow is a cautionary third shape: real authority obscured by spam.
 
 Shape A
 
@@ -86,9 +86,9 @@ Genuine links tightly concentrated in cross-border (164 clean domains), crypto/W
 
 Two specialists, two visible strategies, both reaching well beyond the core topic while keeping their profiles clean.
 
-## 05. The Adjacent Topics That Do the Work
+## 05. Which adjacent topics earn the links?
 
-A handful of secondary subjects recur across the cleaner profiles, each closely tied to who actually sends and receives international payments. Example referring domains below already link to at least one brand in this set, with Domain Rating shown for context.
+**A handful of payment-adjacent subjects do the work.** A handful of secondary subjects recur across the cleaner profiles, each closely tied to who actually sends and receives international payments. Example referring domains below already link to at least one brand in this set, with Domain Rating shown for context.
 
 ### Freelancing and the gig economy
 

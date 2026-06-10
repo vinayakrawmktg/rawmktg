@@ -11,9 +11,9 @@ AI search works differently from traditional search. Google's algorithm surfaces
 
 For the AEC software segment (spanning BIM coordination, MEP design automation, construction planning, and model checking), the question of who gets named and who gets passed over is increasingly consequential. To find out where the segment currently stands, we analyzed AI citation data across six AEC technology companies representing a cross-section of the market: established platforms with years of editorial history alongside newer entrants building their footprints now.
 
-## 01. The Visibility Gap Is Wider Than Expected
+## 01. How many AEC software vendors actually get cited by AI?
 
-The most striking finding is not that some companies have more AI citations than others. It is how concentrated that visibility is. Four of six companies registered fewer than 2 total citations across all six platforms combined. The median for the group is pulled heavily upward by two outliers.
+**Wider than expected, and starkly concentrated.** The most striking finding is not that some companies have more AI citations than others. It is how concentrated that visibility is. Four of six companies registered fewer than 2 total citations across all six platforms combined. The median for the group is pulled heavily upward by two outliers.
 
 Across the six companies in our analysis, total AI citations ranged from 0 to 310. The median for the group sits around 10, a number that significantly overstates the typical experience because it is pulled upward by two outliers at the top of the distribution.
 
@@ -42,9 +42,9 @@ Put another way: if you are an AEC buyer asking an AI platform for a software re
 
 This is the visibility gap. And unlike gaps in organic search rankings, where a well-executed content push can move results within weeks, AI citation presence is built on a different foundation with a longer lag time.
 
-## 02. High Organic Traffic Does Not Equal High AI Visibility
+## 02. Does high organic traffic mean high AI visibility?
 
-Within our analysis, domain ratings ranged from 7 to 65 and monthly organic traffic ranged from single digits to over 10,000 visits. A clean correlation with AI citations does not emerge. The signals AI platforms use to decide who to cite are fundamentally different from the signals that drive traditional rankings.
+**No, the two do not correlate.** Within our analysis, domain ratings ranged from 7 to 65 and monthly organic traffic ranged from single digits to over 10,000 visits. A clean correlation with AI citations does not emerge. The signals AI platforms use to decide who to cite are fundamentally different from the signals that drive traditional rankings.
 
 Augmenta, with a domain rating of 38 and over 500 monthly organic visits (solid metrics for an early-stage software company) had zero AI citations across all six platforms. Conversely, companies with more modest keyword footprints but stronger editorial press histories, such as Revizto and Alice Technologies, show up far more reliably in AI-generated responses.
 
@@ -72,9 +72,9 @@ AI Citation Signals (GEO)
 
 Companies that have invested in press and community presence have a head start in the AI citation era that pure SEO investment does not replicate. The overlap between the two signal sets is smaller than most AEC vendors currently assume. For a deeper explanation of [how retrieval-augmented generation actually determines which sources get pulled](/blogs/how-rag-actually-works), the mechanics are covered in our RAG explainer.
 
-## 03. The Six Platforms Behave Very Differently
+## 03. Which AI platforms cite AEC software the most?
 
-AI citation distribution is not uniform across platforms. Google AI Overviews and Grok together account for 77% of all AEC software citations in our dataset, yet they reward completely different behaviors. Perplexity is the most accessible platform for companies investing now. ChatGPT and Gemini are the longest lead-time challenges.
+**The six platforms behave very differently.** AI citation distribution is not uniform across platforms. Google AI Overviews and Grok together account for 77% of all AEC software citations in our dataset, yet they reward completely different behaviors. Perplexity is the most accessible platform for companies investing now. ChatGPT and Gemini are the longest lead-time challenges.
 
 Google AI Overviews favors editorial authority earned through recognized trade publications. Grok, powered by X (formerly Twitter), favors active brand discussion within AEC practitioner communities. Revizto leads on both, but for different reasons: years of trade press coverage and sustained practitioner community discussion feed separate citation pathways to the same outcome.
 
@@ -95,9 +95,9 @@ Fig. 4: Platform Profile: Citation Share, Key Signals and Strategy (total citati
 
 "On Grok, Revizto's citation count exceeded the combined total of all five other companies. On Perplexity, Revizto also led, but with Alice Technologies, Solibri, and Endra all within range. Platform-specific strategy matters."
 
-## 04. What the Visible Companies Have in Common
+## 04. What do the AEC vendors AI does cite have in common?
 
-Revizto and Alice Technologies (the two companies with citations across three or more platforms) share a set of common characteristics. Third-party editorial coverage is the single strongest predictor. Brand-level community presence is the second factor. Longevity matters. One gap is shared by every company in the segment without exception.
+**A shared set of off-site and content signals.** Revizto and Alice Technologies (the two companies with citations across three or more platforms) share a set of common characteristics. Third-party editorial coverage is the single strongest predictor. Brand-level community presence is the second factor. Longevity matters. One gap is shared by every company in the segment without exception.
 
 Third-party editorial coverage is the single strongest predictor of AI citation visibility. Both Revizto and Alice Technologies have been covered in publications that AI models are known to reference heavily: major business outlets, AEC-specific trade media, and technology press. It is not the volume of press mentions that matters most, but the authority of the publications doing the mentioning. A single article in a recognized trade publication carries more AI citation weight than dozens of blog posts on owned channels.
 
@@ -117,9 +117,9 @@ Fig. 5: AI Visibility Factors by Company · ✓ present, ~ partial, ✗ absent
 
 The llms.txt row is the standout finding: uniformly absent across the entire segment. This is not a gap between leaders and laggards. It is a shared gap that any company in the segment can close first.
 
-## 05. The Missing Infrastructure: llms.txt
+## 05. Why does llms.txt matter for AEC software vendors?
 
-None of the six companies had a published llms.txt file at the time of the audit. This is a low-effort, high-leverage intervention. Any company that moves first gains an uncrowded signaling advantage at a moment when these signals are still being weighted and calibrated by the platforms themselves.
+**It is the missing infrastructure, and nobody had it.** None of the six companies had a published llms.txt file at the time of the audit. This is a low-effort, high-leverage intervention. Any company that moves first gains an uncrowded signaling advantage at a moment when these signals are still being weighted and calibrated by the platforms themselves.
 
 llms.txt is an emerging standard (similar in concept to robots.txt) that lets a company explicitly communicate to [AI crawlers](/blogs/how-ai-crawlers-index-your-site) what content to index, how to understand the brand, and what the product does. A well-constructed file tells AI crawlers directly: here is what we do, here is who we serve, here is what differentiates us, and here are the pages that matter.
 
