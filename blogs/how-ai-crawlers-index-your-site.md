@@ -12,7 +12,7 @@ TL;DR
 - 03**Robots.txt blocks the bot, not the URL.** A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a `noindex` meta tag on the page itself.
 - 04**Verify before you trust the User-Agent.** Spoofed AI crawlers are common. Validate with FCrDNS or the published JSON CIDR feeds.
 
-## The Shape of the Modern Crawl Landscape
+## Which crawlers actually index your site for AI?
 
 For most of the last twenty years, technical SEO had one rendering target. Googlebot crawled your pages, queued them through the [Web Rendering Service](https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/), executed JavaScript inside a headless Chromium fleet, and emitted a populated DOM that the indexer could read. The cost of that pipeline was Google's problem.
 
@@ -43,7 +43,7 @@ v1 · 2026.05
 Source: vendor documentation, May 2026
 Three crawlers, one robots.txt slot each
 
-## How Each Crawler Actually Behaves
+## How does each AI crawler actually behave?
 
 ### OAI-SearchBot: OpenAI's citation indexer
 
@@ -67,7 +67,7 @@ Because those fetches represent synchronous human intent, **they generally ignor
 
 Fig. 02: Proactive crawl vs. user-triggered fetch
 
-## The JavaScript Rendering Gap
+## Can AI crawlers read JavaScript-rendered content?
 
 This is the single biggest source of silent indexing failure on the modern web, and the reason a site can rank well on Google but appear nowhere in ChatGPT or Perplexity. [None of the three AI crawlers executes client-side JavaScript](https://salt.agency/blog/ai-crawlers-javascript/). They are not waiting for a hydration event. They are not running a headless Chromium. They take the bytes the server returns, parse the HTML, and move on.
 
@@ -118,7 +118,7 @@ decision matrix
 Compatibility scored against OAI-SearchBot, PerplexityBot, CCBot
 Source: vendor docs + rawmktg. testing
 
-## Verifying Real Crawlers from Spoofed Ones
+## How do you tell real AI crawlers from spoofed ones?
 
 The User-Agent header is a string. A string can be set to anything. [Malicious scrapers, competitor monitors, and aggressive data harvesters routinely impersonate AI crawlers](https://datadome.co/bots/oai-searchbot/) to evade rate limits and security policies that grant AI bots a wide lane. If your only filter is the User-Agent string, you are giving that lane to everyone who asks for it.
 
@@ -202,7 +202,7 @@ server {
 
 Run the equivalent map for PerplexityBot using its JSON feed. For CCBot, layer FCrDNS on top, since Common Crawl's IP ranges shift more often than the OpenAI list and reverse DNS is the authoritative check.
 
-## A Unified robots.txt and Sitemap Strategy
+## How should you configure robots.txt and sitemaps for AI crawlers?
 
 The point of the configuration below is to express a specific policy: **[be discoverable for citation](/blogs/geo-compounding-flywheel), be invisible to training.** Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.
 
@@ -283,7 +283,7 @@ xml · /sitemap.xml
 
 [/llms.txt is an emerging convention](https://www.brightedge.com/resources/guide-for-ai-agents) for AI-specific discovery. Placed at the root of your domain as a plain markdown file, it gives the crawler a curated map of your highest-value pages, optimised for context-constrained parsing. Treat it as a complement to your sitemap, not a replacement for it. Adoption is not yet universal across the three crawlers, but the cost of publishing one is trivial and the upside is real. For data on what the configuration gap costs in practice, see our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap): zero of six companies had published an llms.txt, and citation rates reflected the gap.
 
-## The GEO Optimisations That Move the Needle
+## Which GEO optimisations actually move the needle?
 
 Once the rendering, verification, and robots configuration are correct, [three secondary optimisations consistently improve citation outcomes](/blogs/schema-markup-ai-citations-2026) across all three crawlers. None of them is novel. All three are skipped by most teams because the audit signal is weak.
 

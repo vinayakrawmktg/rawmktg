@@ -412,7 +412,7 @@
         </ul>
       </div>
 
-      <h2 id="crawl-landscape">The Shape of the Modern Crawl Landscape</h2>
+      <h2 id="crawl-landscape">Which crawlers actually index your site for AI?</h2>
 
       <p>For most of the last twenty years, technical SEO had one rendering target. Googlebot crawled your pages, queued them through the <a href="https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/" target="_blank" rel="noopener">Web Rendering Service</a>, executed JavaScript inside a headless Chromium fleet, and emitted a populated DOM that the indexer could read. The cost of that pipeline was Google's problem.</p>
 
@@ -503,7 +503,7 @@
         </div>
       </div>
 
-      <h2 id="crawler-behaviour">How Each Crawler Actually Behaves</h2>
+      <h2 id="crawler-behaviour">How does each AI crawler actually behave?</h2>
 
       <h3>OAI-SearchBot: OpenAI's citation indexer</h3>
 
@@ -576,7 +576,7 @@
         </svg>
       </div>
 
-      <h2 id="js-rendering-gap">The JavaScript Rendering Gap</h2>
+      <h2 id="js-rendering-gap">Can AI crawlers read JavaScript-rendered content?</h2>
 
       <p>This is the single biggest source of silent indexing failure on the modern web, and the reason a site can rank well on Google but appear nowhere in ChatGPT or Perplexity. <a href="https://salt.agency/blog/ai-crawlers-javascript/" target="_blank" rel="noopener">None of the three AI crawlers executes client-side JavaScript</a>. They are not waiting for a hydration event. They are not running a headless Chromium. They take the bytes the server returns, parse the HTML, and move on.</p>
 
@@ -678,7 +678,7 @@
         </div>
       </div>
 
-      <h2 id="verifying-crawlers">Verifying Real Crawlers from Spoofed Ones</h2>
+      <h2 id="verifying-crawlers">How do you tell real AI crawlers from spoofed ones?</h2>
 
       <p>The User-Agent header is a string. A string can be set to anything. <a href="https://datadome.co/bots/oai-searchbot/" target="_blank" rel="noopener">Malicious scrapers, competitor monitors, and aggressive data harvesters routinely impersonate AI crawlers</a> to evade rate limits and security policies that grant AI bots a wide lane. If your only filter is the User-Agent string, you are giving that lane to everyone who asks for it.</p>
 
@@ -814,7 +814,7 @@ server {
 
       <p>Run the equivalent map for PerplexityBot using its JSON feed. For CCBot, layer FCrDNS on top, since Common Crawl's IP ranges shift more often than the OpenAI list and reverse DNS is the authoritative check.</p>
 
-      <h2 id="robots-sitemap">A Unified robots.txt and Sitemap Strategy</h2>
+      <h2 id="robots-sitemap">How should you configure robots.txt and sitemaps for AI crawlers?</h2>
 
       <p>The point of the configuration below is to express a specific policy: <strong><a href="/blogs/geo-compounding-flywheel">be discoverable for citation</a>, be invisible to training.</strong> Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.</p>
 
@@ -906,7 +906,7 @@ Sitemap: https://example.com/sitemap.xml</pre>
 
       <p><a href="https://www.brightedge.com/resources/guide-for-ai-agents" target="_blank" rel="noopener">/llms.txt is an emerging convention</a> for AI-specific discovery. Placed at the root of your domain as a plain markdown file, it gives the crawler a curated map of your highest-value pages, optimised for context-constrained parsing. Treat it as a complement to your sitemap, not a replacement for it. Adoption is not yet universal across the three crawlers, but the cost of publishing one is trivial and the upside is real. For data on what the configuration gap costs in practice, see our <a href="/blogs/aec-ai-visibility-gap">AEC software AI visibility analysis</a>: zero of six companies had published an llms.txt, and citation rates reflected the gap.</p>
 
-      <h2 id="geo-optimisations">The GEO Optimisations That Move the Needle</h2>
+      <h2 id="geo-optimisations">Which GEO optimisations actually move the needle?</h2>
 
       <p>Once the rendering, verification, and robots configuration are correct, <a href="/blogs/schema-markup-ai-citations-2026">three secondary optimisations consistently improve citation outcomes</a> across all three crawlers. None of them is novel. All three are skipped by most teams because the audit signal is weak.</p>
 

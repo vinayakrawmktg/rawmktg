@@ -375,9 +375,9 @@
       <p>This article unpacks what is actually happening inside AI search engines, why recency has become a hard signal, how each major platform weighs freshness differently, and what a systematic refresh cadence looks like in practice.</p>
 
 
-      <h2 id="paradigm-shift">The Paradigm Shift That Most Teams Missed</h2>
+      <h2 id="paradigm-shift">Why is evergreen content losing its AI citations?</h2>
 
-      <div class="section-answer">For most of the past decade, "evergreen" content was the gold standard. Publish once, accrue authority over years. That model has broken down. AI search does not reward historical authority; it rewards present-tense relevance.</div>
+      <div class="section-answer"><strong>Recency is now a hard ranking signal.</strong> For most of the past decade, "evergreen" content was the gold standard. Publish once, accrue authority over years. That model has broken down. AI search does not reward historical authority; it rewards present-tense relevance.</div>
 
       <p>The shift is not simply that Google changed its algorithm. The deeper change is the rise of <a href="/blogs/how-rag-actually-works">retrieval-augmented generation (RAG) as the architecture powering every major AI answer engine</a>. RAG systems do not consult a cached index of historical rankings. Every time a query is processed, the engine runs parallel searches across real-time web content. Historical domain authority still provides a relevance signal, but it is filtered through a recency gate that older content increasingly fails to pass.</p>
 
@@ -386,9 +386,9 @@
       <p>The brands winning in this environment understand something important: AI search does not reward authority the same way Google does. It rewards recent, structured, citable evidence. A well-structured page published last month can outperform an authoritative piece published two years ago, if the newer page contains fresh data, structured claims, and machine-readable formatting.</p>
 
 
-      <h2 id="anatomy">The Anatomy of the 30-Day Citation Drop-Off</h2>
+      <h2 id="anatomy">How fast do AI citations decay after 30 days?</h2>
 
-      <div class="section-answer">Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources cited on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.</div>
+      <div class="section-answer"><strong>A meaningful share is lost within the first month.</strong> Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources cited on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.</div>
 
       <div class="stat-callout">
         <div class="sc-val">3.2x</div>
@@ -412,9 +412,9 @@
       </div>
 
 
-      <h2 id="technical-architecture">Why Recency Is a Hard Signal, Not a Preference: The Technical Architecture</h2>
+      <h2 id="technical-architecture">Why is recency a hard ranking signal, not a preference?</h2>
 
-      <div class="section-answer">Three distinct mechanisms work together to create structural bias toward fresh content in AI answers: live search grounding, LLM second-stage reranking, and query fan-out amplification. Understanding each one explains why "AI prefers fresh content" is not a soft preference, it is a mechanical outcome.</div>
+      <div class="section-answer"><strong>Three mechanisms structurally bias toward fresh content.</strong> Three distinct mechanisms work together to create structural bias toward fresh content in AI answers: live search grounding, LLM second-stage reranking, and query fan-out amplification. Understanding each one explains why "AI prefers fresh content" is not a soft preference, it is a mechanical outcome.</div>
 
       <h3>Live Search Grounding and Inherited Freshness Bias</h3>
       <p>Large language models have a fixed training cutoff. To answer questions about the present, including current pricing, recent product updates, and current vendor comparisons, they rely on live web retrieval. The search grounding layer inherits the freshness scoring of the underlying search engine. When Google or Bing surfaces recent results as more relevant to a query, the AI's retrieval layer inherits that signal directly. Fresh content gets higher placement in the retrieved context window, which means it gets synthesised first and weighted more heavily in the final answer.</p>
@@ -428,9 +428,9 @@
       <p>There is a third mechanism worth understanding: query fan-out. When a complex B2B query enters Google AI Mode or Perplexity, the system decomposes it into multiple sub-queries and runs them in parallel. A query like "best contract management software for mid-market" might fan out into sub-queries about pricing, integrations, compliance features, and recent user reviews simultaneously. Content that lacks machine-readable recency signals is structurally filtered out of these sub-queries during the initial retrieval pass, before any quality or relevance scoring happens.</p>
 
 
-      <h2 id="platform-breakdown">Platform-by-Platform: How Each Engine Weighs Recency</h2>
+      <h2 id="platform-breakdown">How does each AI engine weigh content freshness?</h2>
 
-      <div class="section-answer">AI search engines do not treat content freshness uniformly. ChatGPT, Perplexity, Claude, and Google AI Overviews each apply different recency heuristics and citation signals. A single refresh strategy optimised for one platform will underperform on others. The structural differences extend well beyond recency: <a href="/blogs/why-engines-recommend-different-vendors">each engine's full retrieval architecture</a> determines which optimization tactics apply.</div>
+      <div class="section-answer"><strong>They do not treat recency uniformly.</strong> AI search engines do not treat content freshness uniformly. ChatGPT, Perplexity, Claude, and Google AI Overviews each apply different recency heuristics and citation signals. A single refresh strategy optimised for one platform will underperform on others. The structural differences extend well beyond recency: <a href="/blogs/why-engines-recommend-different-vendors">each engine's full retrieval architecture</a> determines which optimization tactics apply.</div>
 
       <div class="tt-wrap">
         <div class="tt-label">Recency sensitivity and top citation signals by AI platform</div>
@@ -473,9 +473,9 @@
       </div>
 
 
-      <h2 id="zero-click">The Zero-Click Reality Changes the ROI Equation</h2>
+      <h2 id="zero-click">How does zero-click search change content ROI?</h2>
 
-      <div class="section-answer">Zero-click searches have increased significantly, meaning traditional click-through rates understate the value of AI citation presence. The right metric is not traffic: it is citation presence as a trust signal that influences buyer behaviour across the entire purchase journey.</div>
+      <div class="section-answer"><strong>Citations matter even when nobody clicks through.</strong> Zero-click searches have increased significantly, meaning traditional click-through rates understate the value of AI citation presence. The right metric is not traffic: it is citation presence as a trust signal that influences buyer behaviour across the entire purchase journey.</div>
 
       <p>For CMOs managing blended customer acquisition costs, this matters concretely. Brands cited in AI answers see reduced CAC across paid and organic channels because AI citation presence functions as ambient credibility. Buyers arrive at a sales conversation having already encountered your brand framed as an authoritative source, which shortens evaluation cycles and improves close rates on inbound.</p>
 
@@ -487,9 +487,9 @@
       </div>
 
 
-      <h2 id="on-page-blueprint">What AI-Ready Content Actually Looks Like: The On-Page Blueprint</h2>
+      <h2 id="on-page-blueprint">What does AI-ready content actually look like?</h2>
 
-      <div class="section-answer">Making existing content AI-extractable does not require rebuilding pages from scratch. Empirical testing shows that adding three or more structural elements to a single page elevates the AI citation rate to above 70% for that page. The five highest-leverage elements are heading hierarchies, direct answer boxes, entity density, AI learning notes, and schema markup.</div>
+      <div class="section-answer"><strong>Extractable, without rebuilding the page.</strong> Making existing content AI-extractable does not require rebuilding pages from scratch. Empirical testing shows that adding three or more structural elements to a single page elevates the AI citation rate to above 70% for that page. The five highest-leverage elements are heading hierarchies, direct answer boxes, entity density, AI learning notes, and schema markup.</div>
 
       <h3>1. Logical Heading Hierarchies</h3>
       <p>A single H1 tag as the primary anchor, supported by clean, sequential H2-to-H3 hierarchies, yields meaningfully higher citation rates than pages with flat or inconsistent heading structure. Retrieval models use heading hierarchies to segment pages into coherent chunks during the indexing process. A disorganised heading structure creates chunks that lack standalone meaning, making them harder to retrieve for any single sub-query.</p>
@@ -507,9 +507,9 @@
       <p>For Google AI Overviews specifically, structured JSON-LD schema is the highest-leverage technical investment available. <a href="/blogs/schema-markup-ai-citations-2026">FAQPage schema yields a documented 53% lift in AI Overview citation rates</a>. HowTo schema and Article schema with populated dateModified fields provide the recency signals that Perplexity and ChatGPT's grounding layers weight heavily during retrieval scoring.</p>
 
 
-      <h2 id="refresh-system">The Programmatic Refresh-Cadence System</h2>
+      <h2 id="refresh-system">How often should you refresh content to keep AI citations?</h2>
 
-      <div class="section-answer">B2B organisations do not need to increase publication volume to combat citation decay. The leverage is in systematic, prioritised refreshing of existing high-value pages. For an enterprise-scale site with 100 active pages, executing this system well requires approximately 18 minor content refreshes per month. That is roughly one page per working day.</div>
+      <div class="section-answer"><strong>On a programmatic cadence, not by publishing more.</strong> B2B organisations do not need to increase publication volume to combat citation decay. The leverage is in systematic, prioritised refreshing of existing high-value pages. For an enterprise-scale site with 100 active pages, executing this system well requires approximately 18 minor content refreshes per month. That is roughly one page per working day.</div>
 
       <h3>The Four-Tier Prioritisation Model</h3>
 
@@ -563,9 +563,9 @@
       </ol>
 
 
-      <h2 id="measurement">Measuring What Matters: The AI Citation Audit Framework</h2>
+      <h2 id="measurement">How do you measure AI citation performance?</h2>
 
-      <div class="section-answer">Traditional SEO dashboards track rankings and clicks. Neither metric captures AI citation health with any fidelity. B2B content teams need a parallel measurement system built around three metrics: AI Citation Rate, Citation Retention Rate, and <a href="/blogs/topical-authority-cluster-ai-shortlists">Share of Model</a>.</div>
+      <div class="section-answer"><strong>Rankings and clicks no longer capture it.</strong> Traditional SEO dashboards track rankings and clicks. Neither metric captures AI citation health with any fidelity. B2B content teams need a parallel measurement system built around three metrics: AI Citation Rate, Citation Retention Rate, and <a href="/blogs/topical-authority-cluster-ai-shortlists">Share of Model</a>.</div>
 
       <h3>The Core Query Set</h3>
       <p>Curate 20-30 queries that represent how your ICP actually searches when evaluating solutions in your category:</p>

@@ -11,9 +11,9 @@ Traditional metrics (keyword rankings, raw backlink volume) are increasingly ins
 
 To operationalize this, mature teams structure work around a **5-Layer GEO Stack** that moves a brand from basic indexation to machine-identifiable authority:[1](#r1) entity engineering, LLM training and entity injection, semantic site infrastructure, retrieval and chunk governance, and citation engineering across trusted third parties. Measurement (the focus of this guide) is what tells you whether any of those layers are working.
 
-## 01: The Paradigm Shift From SEO to GEO Measurement
+## 01: How is GEO measurement different from SEO measurement?
 
-Traditional SEO tools measure where you rank. GEO measurement tools measure whether you get cited: by which AI engine, for which query type, at what position in the answer, and whether the citation converts. These are fundamentally different questions requiring a fundamentally different data architecture.
+**You track citations, not rankings.** Traditional SEO tools measure where you rank. GEO measurement tools measure whether you get cited: by which AI engine, for which query type, at what position in the answer, and whether the citation converts. These are fundamentally different questions requiring a fundamentally different data architecture.
 
 Table 01: SEO tools vs. LLM citation-tracking platforms
 
@@ -26,9 +26,9 @@ Table 01: SEO tools vs. LLM citation-tracking platforms
 
 The stakes are concrete. If a brand's data is ingested but cited under a competitor's name, or an engine synthesizes the brand's data without a backlink, a severe **"Invisibility Gap"** opens up.[4](#r4) A dedicated prompt-to-citation tracking framework is the only viable way to diagnose and close those attribution blind spots.[2](#r2)
 
-## 02: Multi-Engine Retrieval Architectures & Citation Behavior
+## 02: How does citation behaviour differ across AI engines?
 
-Each AI engine has a structurally different home turf. ChatGPT favors encyclopedic content, Perplexity skews toward fresh community discussions, Claude demands formal technical documentation, and Google AI Overviews over-indexes on multimodal content. Optimizing for one engine while ignoring others is a losing game. The technical breakdown of [why ChatGPT, Perplexity, and Gemini cite differently](/blogs/why-engines-recommend-different-vendors), along with what to do about it, is a prerequisite for designing an effective prompt portfolio.
+**Each engine has a structurally different home turf.** Each AI engine has a structurally different home turf. ChatGPT favors encyclopedic content, Perplexity skews toward fresh community discussions, Claude demands formal technical documentation, and Google AI Overviews over-indexes on multimodal content. Optimizing for one engine while ignoring others is a losing game. The technical breakdown of [why ChatGPT, Perplexity, and Gemini cite differently](/blogs/why-engines-recommend-different-vendors), along with what to do about it, is a prerequisite for designing an effective prompt portfolio.
 
 There is a fundamental split between **citation-first** systems (Perplexity, Google AI Overviews) that synthesize real-time web results via active crawlers, and **conversation-first** systems (standard ChatGPT, Claude) that lean on pre-trained parametric memory and search the live web only when prompted.[3](#r3) Those architectures produce very distinct source biases:
 
@@ -50,9 +50,9 @@ Table 02: Retrieval architecture and referrer behavior by platform
 | Claude | Parametric cutoff + select scrapes[6](#r6) | Contextual brackets / inline links | Extremely low (strips referrers)[10](#r10) |
 | Google AIO | Search index + Knowledge Graph[5](#r5) | Grouped cards + expandable grids | Masked as `google.com/search`[10](#r10) |
 
-## 03: Designing & Executing the Prompt Portfolio
+## 03: How do you design a prompt portfolio to track citations?
 
-The first functional layer of the GEO measurement stack is off-site monitoring. Because engines produce variable, personalized responses, you measure visibility by building a controlled Prompt Portfolio: a baseline diagnostic test run on a recurring schedule.
+**It is the off-site monitoring layer of the stack.** The first functional layer of the GEO measurement stack is off-site monitoring. Because engines produce variable, personalized responses, you measure visibility by building a controlled Prompt Portfolio: a baseline diagnostic test run on a recurring schedule.
 
 Start with a 30-day playbook: assemble a representative set of **50-150 prompts** sorted into three functional buckets.[5](#r5)
 
@@ -81,9 +81,9 @@ Manual vs. Automated
 
 Small query sets can be run by hand monthly in a spreadsheet.[3](#r3) At scale, use monitoring APIs ([Gauge](https://www.withgauge.com/resources/best-ai-citation-tracking-tools-2026), Profound, Peec AI, or Otterly) to fire prompts in cookieless browsers, capture the raw LLM JSON, parse out inline links, and emit normalized destination URLs for analysis.[5](#r5)
 
-## 04: Site Auditing & Chunk Governance for AI Crawlers
+## 04: How do you make your site legible to AI crawlers?
 
-Before you can monitor citations, your infrastructure has to be machine-readable. If AI agents hit barriers while crawling or parsing, citation potential collapses at the source. Four technical checks come first.
+**Audit and govern your content chunks first.** Before you can monitor citations, your infrastructure has to be machine-readable. If AI agents hit barriers while crawling or parsing, citation potential collapses at the source. Four technical checks come first.
 
 - **User-agent allow-listing:** confirm `robots.txt` explicitly permits GPTBot, CCBot, ClaudeBot, PerplexityBot. See the full breakdown in [How AI Crawlers Index Your Site](how-ai-crawlers-index-your-site.html).
 - **Render stability:** priority pages return 200 OK, render under JavaScript, and avoid crawl waste via clean canonicals and faceted controls.
@@ -94,9 +94,9 @@ Then optimize layout with a **Chunk Governance Model**. [RAG systems split pages
 
 Pages built to these four rules cut the odds of a model attributing your claims to a competitor.[1](#r1)
 
-## 05: GA4 AI-Search Session Attribution Architecture
+## 05: How do you attribute AI-search sessions in GA4?
 
-Off-site tools show where you're cited. On-site analytics must measure the traffic and conversions those citations drive. The problem: default GA4 misclassifies AI referrals, dumping ChatGPT, Perplexity, and Claude traffic into generic Referral or Direct buckets and obscuring the real value of GEO work.
+**On-site analytics must capture what off-site tools miss.** Off-site tools show where you're cited. On-site analytics must measure the traffic and conversions those citations drive. The problem: default GA4 misclassifies AI referrals, dumping ChatGPT, Perplexity, and Claude traffic into generic Referral or Direct buckets and obscuring the real value of GEO work.
 
 ### The native channel (and why it isn't enough)
 
@@ -153,9 +153,9 @@ Table 05: GA4 attribution anomalies and workarounds
 | ChatGPT prefetching | Background fetches fire tags with 0 duration / 0 engagement[10](#r10) | Filter out zero-engagement single-pageview hits[10](#r10) |
 | Mobile app gap | OS browser isolation drops the referrer on app-to-browser hops[10](#r10) | Read Direct spikes on cited pages alongside known citation wins[13](#r13) |
 
-## 06: Looker Studio Engineering: The ESP Measurement Stack
+## 06: How do you report GEO results in Looker Studio?
 
-To present GEO datasets to stakeholders, blend qualitative off-site prompt data with quantitative on-site behavior in Looker Studio. The ESP configuration bridges citation volume to direct revenue using a multi-source blend of Google Search Console, GA4, and a Google Sheet holding the prompt-portfolio logs.
+**Blend off-site prompts with on-site analytics.** To present GEO datasets to stakeholders, blend qualitative off-site prompt data with quantitative on-site behavior in Looker Studio. The ESP configuration bridges citation volume to direct revenue using a multi-source blend of Google Search Console, GA4, and a Google Sheet holding the prompt-portfolio logs.
 
 Three sources, joined on date and page, resolve into a single AI-revenue view.[14](#r14)[15](#r15)
 
@@ -204,9 +204,9 @@ Dual-axis: citation volume (bars) against direct revenue (line). Illustrative pa
 
 A page with high citations but low click-through is the classic "answer cannibalization" signal: the LLM answered so completely the user never clicked. The fix is to add **click triggers**: downloadable templates, interactive tools, or proprietary data that require a visit.[15](#r15)
 
-## 07: The Strategic Feedback Loop
+## 07: How does GEO measurement actually drive action?
 
-A measurement stack only earns its keep if it drives action. The Source Gap List is the diagnostic entry point: when competitors are cited for high-value prompts instead of you, classify the cited domains into three buckets, each with a distinct response.
+**A stack only earns its keep if it changes the work.** A measurement stack only earns its keep if it drives action. The Source Gap List is the diagnostic entry point: when competitors are cited for high-value prompts instead of you, classify the cited domains into three buckets, each with a distinct response.
 
 Table 06: Source Gap domain classification and response
 

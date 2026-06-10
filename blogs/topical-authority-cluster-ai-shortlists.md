@@ -25,9 +25,9 @@ AI citations sourced from brand-managed properties (Yext, Oct 2025)
 
 Citations drawn from the first third of a content piece
 
-## 01: From PageRank to Generative Engine Optimization
+## 01: How is GEO different from PageRank SEO?
 
-Traditional SEO optimizes to rank on a list. GEO optimizes to become the answer, and depth beats breadth because retrievers reward semantic concentration, not keyword sprawl.[6](#r6)
+**Rank on a list versus become the recommendation.** Traditional SEO optimizes to rank on a list. GEO optimizes to become the answer, and depth beats breadth because retrievers reward semantic concentration, not keyword sprawl.[6](#r6)
 
 Traditional search engines return a list of links and let users decide which to visit. Generative engines synthesize information from many sources into a single conversational response.[1](#r1) This forced the emergence of GEO: the practice of structuring content and managing a brand's presence so AI systems discover, select, synthesize, and preferentially cite it.[1](#r1)
 
@@ -44,9 +44,9 @@ Table 01: The two paradigms differ at every layer, from retrieval to conversion.
 | Content structure | Long-form, keyword-targeted pages for human scrolling. | Modular, structured, portable blocks for LLM extraction. |
 | Conversion funnel | Organic clicks to brand landing pages. | Direct brand citation and inline links in pre-qualified answers. |
 
-## 02: Inside the RAG Pipeline
+## 02: How does the RAG pipeline decide what to recommend?
 
-To earn a recommendation, content must satisfy the mechanics of Retrieval-Augmented Generation. The pipeline runs in real time: query understanding, vector retrieval, multi-factor candidate scoring, and synthesis, in that order. Fail at any stage and the brand is excluded from the answer.
+**Content must clear each retrieval stage.** To earn a recommendation, content must satisfy the mechanics of Retrieval-Augmented Generation. The pipeline runs in real time: query understanding, vector retrieval, multi-factor candidate scoring, and synthesis, in that order. Fail at any stage and the brand is excluded from the answer.
 
 When a prospect asks an LLM "Which lead-generation agency should I hire for a scaling SaaS?", the engine does not rely only on static pre-trained weights. It runs a live retrieval pipeline against its index.[3](#r3) [Understanding how this pipeline works](/blogs/how-rag-actually-works) is the prerequisite for building content that enters the answer.
 
@@ -117,9 +117,9 @@ if  T_RAG  <  confidence_threshold:
     brand domain excluded  →  engine relies on other sources
 ```
 
-## 03: Topical Depth vs. Breadth in Vector Space
+## 03: Does topical depth or breadth win in AI search?
 
-Traditional pillar-and-cluster setups chase broad semantic footprints to capture keyword volume. Dense vector retrievers penalize that. Broad libraries dilute their semantic vectors, narrowing the cosine similarity score against specific, high-intent queries. Depth wins because focused clusters stay tightly grouped around the target query vectors.
+**Depth beats a broad semantic footprint.** Traditional pillar-and-cluster setups chase broad semantic footprints to capture keyword volume. Dense vector retrievers penalize that. Broad libraries dilute their semantic vectors, narrowing the cosine similarity score against specific, high-intent queries. Depth wins because focused clusters stay tightly grouped around the target query vectors.
 
 Traditional pillar-and-cluster setups chase broad semantic footprints to capture maximum keyword volume, producing expansive but shallow libraries.[11](#r11) Dense vector retrievers penalize that approach. When one page tries to cover too many disparate terms, its vector becomes semantically diluted, lowering cosine similarity against specific, high-intent queries.[7](#r7)
 
@@ -127,9 +127,9 @@ A depth strategy does the opposite. Building a narrow, deeply articulated cluste
 
 Figure 03: Focused clusters land inside the high-similarity zone; broad libraries scatter and dilute. Illustrative. Source: 7.
 
-## 04: Princeton GEO-bench Empirical Findings
+## 04: What did the Princeton GEO-bench actually find?
 
-The headline from the Princeton GEO-bench: depth, factual specificity, and structure matter far more than keyword optimization. Adding statistics lifts AI visibility by up to 41%. Expert quotes lift it by up to 41%. Citing authoritative sources adds up to 40%. These are not marginal gains; they are the primary levers.
+**Depth, specificity and citations drive visibility.** The headline from the Princeton GEO-bench: depth, factual specificity, and structure matter far more than keyword optimization. Adding statistics lifts AI visibility by up to 41%. Expert quotes lift it by up to 41%. Citing authoritative sources adds up to 40%. These are not marginal gains; they are the primary levers.
 
 The empirical foundation for generative search optimization came from a November 2023 paper by researchers at Princeton, Georgia Tech, the Allen Institute for AI, and IIT Delhi. Their GEO-bench comprised 10,000 diverse queries across nine datasets, isolating which content variables drive LLM visibility.[1](#r1) The headline: depth, factual specificity, and structure matter far more than keyword optimization.[1](#r1)
 
@@ -150,9 +150,9 @@ Table 02: GEO-bench visibility lift by tactic. Sources: 1, 3, 6.
 
 **The first-third rule.** Because RAG systems truncate long documents to fit context windows, they bias toward the start of a file. [44% of all AI citations come from the first third of a piece of content](/blogs/anatomy-of-a-high-citation-page). Burying the answer beneath a creative preamble guarantees the parser skips it.[6](#r6)
 
-## 05: The Five Pillars of Brand Citability
+## 05: What makes a brand citable by AI?
 
-Turning the GEO-bench findings into a program means addressing the five signals engines weigh when deciding whether to cite a brand. Machine-readable infrastructure, citation-first structure, named-entity density, off-site trust footprint, and content freshness. Each has a measurable target and a specific implementation path.[6](#r6)
+**Five pillars turn the GEO-bench findings into a program.** Turning the GEO-bench findings into a program means addressing the five signals engines weigh when deciding whether to cite a brand. Machine-readable infrastructure, citation-first structure, named-entity density, off-site trust footprint, and content freshness. Each has a measurable target and a specific implementation path.[6](#r6)
 
 Most [B2B brands that get hallucinated](/blogs/hallucination-proofing-your-brand) fail not because of one missing tactic but because they are weak across several citability signals simultaneously. The table below maps each signal to its evaluation metric and technical implementation.
 
@@ -170,9 +170,9 @@ A note on where citations actually originate
 
 The off-site footprint is essential, yet the data resists oversimplification. A September 2025 arXiv study found AI search biases toward earned media over brand-owned content.[6](#r6) But an October 2025 Yext study found that 86% of AI citations come from brand-managed sources: 44% from first-party sites and 42% from business listings.[6](#r6) The reconciliation: brands must actively control their managed footprint and earn independent corroboration. Freshness compounds both: content updated within 30 days earns 3.2x to 4.3x more citations, and 85% of AI Overview citations come from content under two years old.[6](#r6)
 
-## 06: The Three Gaps That Block B2B Recommendations
+## 06: Why do most B2B brands fail to surface in LLM answers?
 
-Most B2B companies in the $5M-$75M ARR range fail to surface in LLM recommendations because of systemic, structural, and verbal gaps, not a volume problem. Failing three or more questions in a single gap column signals a major bottleneck that no amount of additional content will fix.[8](#r8)
+**Three recurring gaps block them.** Most B2B companies in the $5M-$75M ARR range fail to surface in LLM recommendations because of systemic, structural, and verbal gaps, not a volume problem. Failing three or more questions in a single gap column signals a major bottleneck that no amount of additional content will fix.[8](#r8)
 
 Use this diagnostic audit before investing in cluster expansion. Each gap type corresponds to a distinct remediation path: entity gaps require structured schema and consistent off-site descriptions; citation gaps require earned media and link authority; contextual gaps require buyer-language alignment in headings and definitions.
 
@@ -189,9 +189,9 @@ Table 04: Eight-question citability audit, grouped by gap type. Source: 8.
 | Q7: Is there a single, unified framework? | Cross-gap | Identical proprietary methodology everywhere. |
 | Q8: Can the team recite the entity description? | Cross-gap | All team members describe positioning verbatim. |
 
-## 07: Architecting the Hybrid Topical Authority Cluster
+## 07: How do you build a topical authority cluster for AI?
 
-Closing those gaps requires a hybrid cluster: highly optimized first-party pages to satisfy owned-site citation requirements, plus structured external nodes to satisfy corroboration checks. Distribution must match each engine's sourcing preferences: one cluster, five tactical profiles.[3](#r3)
+**A hybrid of optimised first-party pages and off-site nodes.** Closing those gaps requires a hybrid cluster: highly optimized first-party pages to satisfy owned-site citation requirements, plus structured external nodes to satisfy corroboration checks. Distribution must match each engine's sourcing preferences: one cluster, five tactical profiles.[3](#r3)
 
 Critically, [the external corroboration layer](/blogs/authority-seeding-ai-llm-trust) is not optional. Internal optimization addresses entity consistency and structure. External nodes (LinkedIn, Reddit, G2, earned media, podcasts) address the corroboration coefficient that Perplexity, Claude, and Gemini all score independently.[3](#r3)
 
@@ -235,9 +235,9 @@ Table 05: One cluster, five distribution profiles. Sources: 3, 6.
 | Claude (Anthropic) | Long-form editorial, resource guides, technical docs. | Detailed pillar pieces; anchor every fact with external citations. |
 | Gemini (Google) | Google properties, business listings, high-DA publishers. | Maintain listings; secure top-tier enterprise backlinks and mentions. |
 
-## 08: Technical Standardization: llms.txt and Advanced Schemas
+## 08: How do llms.txt and schema lower the cost of being cited?
 
-A core GEO move is minimizing the computational cost of crawling and parsing. HTML carries visual clutter, trackers, and complex layouts that hinder model scrapers. Serving a clean llms.txt plus Markdown mirror pages cuts token cost and gives engines a direct line to the brand's knowledge footprint in one request.[12](#r12)
+**By minimising the compute cost of crawling you.** A core GEO move is minimizing the computational cost of crawling and parsing. HTML carries visual clutter, trackers, and complex layouts that hinder model scrapers. Serving a clean llms.txt plus Markdown mirror pages cuts token cost and gives engines a direct line to the brand's knowledge footprint in one request.[12](#r12)
 
 Proposed by Jeremy Howard in September 2024, llms.txt is an emerging standard that acts as a sitemap for AI agents: a Markdown file at the domain root (e.g. `https://yourdomain.com/llms.txt`) or in `/.well-known/`.[10](#r10) A companion `llms-full.txt` can bundle the full plain-text content of core pages into a single file, letting crawlers ingest the whole knowledge footprint in one request.[14](#r14)
 
@@ -271,9 +271,9 @@ Submit to Bing Webmaster Tools
 
 Once live, submit the llms.txt file to Bing Webmaster Tools. Frontier engines like ChatGPT and Copilot lean on Bing's real-time index to crawl web assets.[10](#r10) Submission here directly improves ChatGPT citation eligibility, one of the highest-leverage, lowest-cost moves in the GEO playbook.
 
-## 09: Measurement: Share of Model (SoM)
+## 09: How do you measure AI visibility with Share of Model?
 
-Because generative engines answer directly, keyword volume, ranking lists, and click-through rates cannot measure performance. The replacement metric is Share of Model (SoM): the percentage of relevant AI-generated responses in which the brand is mentioned or cited, measured through systematic prompt-based auditing across all frontier engines.[6](#r6)
+**Keyword volume and rankings no longer apply.** Because generative engines answer directly, keyword volume, ranking lists, and click-through rates cannot measure performance. The replacement metric is Share of Model (SoM): the percentage of relevant AI-generated responses in which the brand is mentioned or cited, measured through systematic prompt-based auditing across all frontier engines.[6](#r6)
 
 SoM measurement is the foundation of [a GEO performance stack](/blogs/prompt-to-citation-tracking). Without prompt-based auditing, teams optimize blind, investing in content tactics while unable to confirm whether the brand is entering or exiting AI responses over time.
 

@@ -388,9 +388,9 @@
       <p>This article traces the technical mechanism behind that collapse: how RLHF and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.</p>
 
 
-      <h2 id="paradigm-shift">From Search Signal to Parameter Weight: The Paradigm Shift</h2>
+      <h2 id="paradigm-shift">How did E-E-A-T move from a search signal to a model weight?</h2>
 
-      <div class="section-answer">In classical SEO, E-E-A-T was a set of diffuse, second-order signals. A website could compensate for weak authority through strong technical execution. In generative search, E-E-A-T does not function as a ranking booster. It functions as an inclusion filter.</div>
+      <div class="section-answer"><strong>It is now baked into LLM parameters.</strong> In classical SEO, E-E-A-T was a set of diffuse, second-order signals. A website could compensate for weak authority through strong technical execution. In generative search, E-E-A-T does not function as a ranking booster. It functions as an inclusion filter.</div>
 
       <p>In classical search engine optimization, E-E-A-T was a set of diffuse, second-order signals. A website could often compensate for weak authority through strong technical execution, efficient crawl budgets, and aggressive link acquisition. The ranking gradient was forgiving. <a href="https://notionhive.com/blog/eeat-vs-llms-authority-without-backlinks" target="_blank" rel="noopener">Generative Search Engines operate under entirely different mechanics</a>.</p>
 
@@ -439,9 +439,9 @@
       </div>
 
 
-      <h2 id="alignment-pipeline">The Alignment Pipeline: How Human Preferences Shape Model Weights</h2>
+      <h2 id="alignment-pipeline">How do human preferences get encoded into model trust?</h2>
 
-      <div class="section-answer">The trust hierarchy inside an LLM is the outcome of a deliberate post-training process called preference alignment. This is precisely where E-E-A-T principles are converted from qualitative guidelines into quantitative model weights, across three sequential phases.</div>
+      <div class="section-answer"><strong>Through deliberate post-training alignment.</strong> The trust hierarchy inside an LLM is the outcome of a deliberate post-training process called preference alignment. This is precisely where E-E-A-T principles are converted from qualitative guidelines into quantitative model weights, across three sequential phases.</div>
 
       <p>The trust hierarchy inside an LLM is not an accident. It is the outcome of a deliberate post-training process called preference alignment, designed to transform a raw statistical prediction engine into a system that behaves as helpfully, honestly, and harmlessly as a knowledgeable human expert would. <a href="https://medium.com/@vi.ha.engr/building-an-rlhf-pipeline-for-llms-a-beginner-friendly-tutorial-21112bfcff9b" target="_blank" rel="noopener">This multi-stage pipeline</a> is precisely where E-E-A-T principles are converted from qualitative guidelines into quantitative model weights.</p>
 
@@ -470,9 +470,9 @@
       </div>
 
 
-      <h2 id="factuality-layer">The Factuality Layer: F-DPO and TI-DPO</h2>
+      <h2 id="factuality-layer">How do models learn to prefer factual sources?</h2>
 
-      <div class="section-answer">Standard DPO contains a structural vulnerability: human annotators tend to prefer confident, fluent responses, which can teach models to produce persuasive misinformation. Two research advances directly address this, and both have direct implications for how content is scored and cited.</div>
+      <div class="section-answer"><strong>Through factuality-aware preference tuning.</strong> Standard DPO contains a structural vulnerability: human annotators tend to prefer confident, fluent responses, which can teach models to produce persuasive misinformation. Two research advances directly address this, and both have direct implications for how content is scored and cited.</div>
 
       <p>Standard DPO contains a structural vulnerability that matters enormously for content creators. Because human annotators tend to prefer confident, fluent responses, standard preference optimization can inadvertently teach models to produce persuasive misinformation rather than accurate but less stylistically polished answers. Two recent research advances directly address this problem.</p>
 
@@ -481,9 +481,9 @@
       <p><strong>Token-Importance Guided DPO (TI-DPO)</strong> addresses a different flaw: standard DPO treats all tokens equally, wasting optimization budget on filler words rather than on the critical factual entities and statistics that determine whether a response is trustworthy. <a href="https://openreview.net/forum?id=cMEnMVvMw9" target="_blank" rel="noopener">TI-DPO uses gradient-based token attribution</a> to assign high optimization weight to critical semantic units (specific numbers, named entities, verifiable claims) and downweight background stylistic noise. The practical consequence: models trained with TI-DPO are specifically tuned to notice and reproduce accurate factual entities, the exact elements that distinguish authoritative content from generic filler.</p>
 
 
-      <h2 id="activation-space">Where Trustworthiness Lives: Inside the Model's Activation Space</h2>
+      <h2 id="activation-space">Where does trustworthiness actually live inside an LLM?</h2>
 
-      <div class="section-answer">Preference alignment does not merely change what a model says. It changes the geometric structure of how the model internally represents information. Two research paradigms explain this: Representation Engineering and Contrast-Consistent Search. Both have a direct, concrete implication for content creators.</div>
+      <div class="section-answer"><strong>In the model's activation space, not just its outputs.</strong> Preference alignment does not merely change what a model says. It changes the geometric structure of how the model internally represents information. Two research paradigms explain this: Representation Engineering and Contrast-Consistent Search. Both have a direct, concrete implication for content creators.</div>
 
       <p>Preference alignment does not merely change what a model says. It changes the geometric structure of how the model internally represents information. Two complementary research paradigms illuminate this: Representation Engineering (RepE) and Contrast-Consistent Search (CCS).</p>
 
@@ -499,9 +499,9 @@
       </div>
 
 
-      <h2 id="content-warehouse">Google's Automated Quality Machine: Signals from the Content Warehouse Leak</h2>
+      <h2 id="content-warehouse">How does Google score content quality automatically?</h2>
 
-      <div class="section-answer">While LLMs encode E-E-A-T through preference alignment, Google's traditional search stack evaluates it through automated ML classifiers. The architecture of this system was exposed via the leak of Google's internal Content Warehouse API documentation and confirmed through DOJ antitrust trial testimony.</div>
+      <div class="section-answer"><strong>Through signals stored in its Content Warehouse.</strong> While LLMs encode E-E-A-T through preference alignment, Google's traditional search stack evaluates it through automated ML classifiers. The architecture of this system was exposed via the leak of Google's internal Content Warehouse API documentation and confirmed through DOJ antitrust trial testimony.</div>
 
       <p>While LLMs encode E-E-A-T through preference alignment, Google's traditional search stack evaluates it through automated machine learning classifiers. The architecture of this system was exposed via the leak of <a href="https://www.bubblehub.ie/blog/on-page-seo" target="_blank" rel="noopener">Google's internal Content Warehouse API documentation</a> and confirmed through DOJ antitrust trial testimony from Google's VP of Search, Pandu Nayak. The system evaluates every indexed page and domain along two primary dimensions: static Quality (Q*) and dynamic Popularity (P*).</p>
 
@@ -522,9 +522,9 @@
       <p>Static quality assessments are validated by the NavBoost system, which monitors a rolling 13-month window of user interaction data from search clicks and Chrome browser telemetry. NavBoost categorizes interactions into three explicit verification vectors: <strong>goodClicks</strong> (significant dwell time, no return to search results), <strong>badClicks</strong> (rapid bounces), and <strong>lastLongestClicks</strong> (the final result a user selects before ending a search session, a strong signal of query resolution). A page receiving algorithmic demotions from classifiers like the scamness score, GibberishScore, or copycatScore requires strong positive NavBoost signals to override those classifications.</p>
 
 
-      <h2 id="quality-rater-guidelines">The 2025 Quality Rater Guidelines Update: AI Content Gets a Hard Line</h2>
+      <h2 id="quality-rater-guidelines">How do Google's 2025 rater guidelines treat AI content?</h2>
 
-      <div class="section-answer">Google's 2025 updates to its Search Quality Rater Guidelines removed any remaining ambiguity about how AI-generated content is treated. If all or almost all of the main content on a page is AI-generated with little to no added value, raters must apply the "Lowest" quality rating.</div>
+      <div class="section-answer"><strong>They draw a hard line on low-effort AI content.</strong> Google's 2025 updates to its Search Quality Rater Guidelines removed any remaining ambiguity about how AI-generated content is treated. If all or almost all of the main content on a page is AI-generated with little to no added value, raters must apply the "Lowest" quality rating.</div>
 
       <p>Google's <a href="https://originality.ai/blog/google-search-quality-rater-guidelines-ai" target="_blank" rel="noopener">2025 updates to its Search Quality Rater Guidelines</a> (used by approximately 16,000 external evaluators) removed any remaining ambiguity about how AI-generated content is treated. The updated guidelines state clearly: if all or almost all of the main content on a page is AI-generated with little to no added value, raters must apply the "Lowest" quality rating.</p>
 
@@ -533,9 +533,9 @@
       <p>Two additional updates deserve attention. First, guest contributions and syndicated content face stricter scrutiny: if guest content is irrelevant to the host domain's primary audience, it can negatively affect the entire site's quality classification. Second, evaluators are now required to disable ad blockers when assessing pages, ensuring they evaluate the full user experience, including any intrusive advertising or deceptive layouts that might compromise perceived trustworthiness.</p>
 
 
-      <h2 id="mageo">Next-Generation GEO: MAGEO, DSV-CF, and the Research Frontier</h2>
+      <h2 id="mageo">What is next at the GEO research frontier?</h2>
 
-      <div class="section-answer">As GEO matures, the field is moving from manual, page-level adjustments to automated multi-agent frameworks. MAGEO coordinates three dedicated agents to continuously learn and apply engine-specific optimization skills. DSV-CF introduces a dual-axis metric that penalizes spurious citations alongside raw citation volume.</div>
+      <div class="section-answer"><strong>Automated, multi-agent optimisation methods.</strong> As GEO matures, the field is moving from manual, page-level adjustments to automated multi-agent frameworks. MAGEO coordinates three dedicated agents to continuously learn and apply engine-specific optimization skills. DSV-CF introduces a dual-axis metric that penalizes spurious citations alongside raw citation volume.</div>
 
       <p>As generative engine optimization matures, the field is moving from manual, page-level adjustments to automated, multi-agent frameworks and sophisticated evaluation metrics.</p>
 
@@ -544,9 +544,9 @@
       <p>To measure the effectiveness of these optimization loops, researchers have developed the Dual-axis Semantic Visibility and Citation Fidelity (DSV-CF) metric. Traditional metrics often measure simple exposure; DSV-CF evaluates two axes: the Semantic Visibility Axis (position, word count, and visual prominence of citations within generated responses) and the Citation Fidelity Axis (which penalizes "spurious citations" where a model attributes a claim to a source that does not actually support it). The <a href="https://arxiv.org/html/2509.05607v2" target="_blank" rel="noopener">CC-GSEO-Bench framework</a> extends this with a content-centric benchmark evaluating creator influence across three dimensions: Exposure, Faithful Credit, and Causal Impact.</p>
 
 
-      <h2 id="geo-trinity">The On-Page Playbook: The GEO Holy Trinity</h2>
+      <h2 id="geo-trinity">Which on-page tactics most increase AI citations?</h2>
 
-      <div class="section-answer"><a href="/blogs/geo-compounding-flywheel">The original KDD 2024 GEO study from Princeton University</a> evaluated nine distinct content modifications. Three tactics consistently delivered the largest gains in AI citation frequency, now collectively referred to as the "Holy Trinity" of GEO: Quotation Addition, Statistics Addition, and Cite Sources.</div>
+      <div class="section-answer"><strong>Statistics, quotations and source citations.</strong> <a href="/blogs/geo-compounding-flywheel">The original KDD 2024 GEO study from Princeton University</a> evaluated nine distinct content modifications. Three tactics consistently delivered the largest gains in AI citation frequency, now collectively referred to as the "Holy Trinity" of GEO: Quotation Addition, Statistics Addition, and Cite Sources.</div>
 
       <p>The <a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener">original KDD 2024 Generative Engine Optimization study from Princeton University</a> evaluated nine distinct content modifications to measure their impact on AI citation frequency. Three tactics consistently delivered the largest gains:</p>
 
@@ -606,9 +606,9 @@
       <p>While traditional SEO treats inbound links as votes of confidence, GEO uses outbound links to primary sources as verification signals. <a href="https://www.bbehmermedia.com/holy-trinity-geo-citations-quotes-stats" target="_blank" rel="noopener">Every substantive assertion should be supported by an outbound citation</a> pointing to an authoritative, primary domain such as government databases, academic institutions, or established industry research bodies. Use descriptive inline anchor text rather than generic links, so the citation relationship is unambiguous to the model.</p>
 
 
-      <h2 id="off-page">Building Off-Page Semantic Authority and Entity Footprints</h2>
+      <h2 id="off-page">How do you build off-page authority for AI search?</h2>
 
-      <div class="section-answer">In generative search, off-page authority is no longer determined by backlink volume. Generative models are representation engines that evaluate credibility by analyzing semantic relationships and co-occurrence patterns across high-dimensional vector spaces. Four off-page factors correlate most strongly with AI citation probability.</div>
+      <div class="section-answer"><strong>With entity footprints, not backlinks alone.</strong> In generative search, off-page authority is no longer determined by backlink volume. Generative models are representation engines that evaluate credibility by analyzing semantic relationships and co-occurrence patterns across high-dimensional vector spaces. Four off-page factors correlate most strongly with AI citation probability.</div>
 
       <p>In generative search, off-page authority is no longer determined by backlink volume. <a href="https://notionhive.com/blog/eeat-vs-llms-authority-without-backlinks" target="_blank" rel="noopener">Generative models are representation engines</a> that evaluate credibility by analyzing semantic relationships and co-occurrence patterns across high-dimensional vector spaces. Four off-page factors correlate most strongly with AI citation probability:</p>
 

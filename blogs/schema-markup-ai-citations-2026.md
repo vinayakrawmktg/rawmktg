@@ -20,9 +20,9 @@ The zero-click and AI referral landscape: key metrics
 
 Traffic referred from citations within AI-generated responses is disproportionately valuable. Users who click a citation link have already been pre-qualified by the model's answer. They arrive knowing what you do and having heard your brand name in context.
 
-## How Modern Search Architectures Process Queries
+## How do modern AI search architectures process a query?
 
-Modern generative search decomposes a single query into multiple parallel semantic sub-queries, merges keyword and vector scoring channels, and uses schema markup as a translation layer that prevents hallucination by declaring facts explicitly.
+**By decomposing it into parallel sub-queries.** Modern generative search decomposes a single query into multiple parallel semantic sub-queries, merges keyword and vector scoring channels, and uses schema markup as a translation layer that prevents hallucination by declaring facts explicitly.
 
 Modern search processes complex queries through query fan-out. Rather than a single keyword lookup, the generative processor decomposes a query into multiple parallel semantic sub-queries and runs targeted searches across diverse knowledge sources.
 
@@ -38,9 +38,9 @@ Within this pipeline, structured schema markup functions as a translation layer.
 
 of all AI-cited pages contain valid schema markup, making cited pages nearly 3x more likely to have JSON-LD than non-cited pages. But the schema itself is not a direct ranking factor. It is an ingestion accuracy layer.
 
-## Empirical Analysis of Schema Impact: Deconstructing the Ahrefs Study
+## Does schema markup actually increase AI citations?
 
-The Ahrefs study on 1,885 pages is the most rigorous empirical data available. The headline finding: schema produced no immediate, statistically significant uplift in citations for already-visible pages. But it revealed two critical indirect mechanisms that matter enormously.
+**Not as a direct boost, but cited pages carry it far more often.** The Ahrefs study on 1,885 pages is the most rigorous empirical data available. The headline finding: schema produced no immediate, statistically significant uplift in citations for already-visible pages. But it revealed two critical indirect mechanisms that matter enormously.
 
 The [Ahrefs study that tracked 1,885 pages adding JSON-LD schema](https://ahrefs.com/blog/schema-ai-citations/) between August 2025 and March 2026 is the most rigorous empirical data available. The study compared citation performance across Google AI Overviews, Google AI Mode, and ChatGPT against a control group of 4,000 matched pages, applying a Difference-in-Differences (DiD) estimator to isolate the pure effect of schema.
 
@@ -58,9 +58,9 @@ Because AI engines cross-reference structured data with on-page body copy, absol
 
 **Rule of thumb:** Every claim in your schema must appear verbatim in your visible body copy. No exceptions.
 
-## Ingestion Mechanics: How RAG Pipelines Parse and Chunk Structured Metadata
+## How do RAG pipelines parse and chunk structured data?
 
-RAG systems improve accuracy by up to 300% compared to models working from raw unstructured text. The ingestion sequence follows six strict steps, and schema markup shapes the outcome at four of them.
+**Structured metadata can lift accuracy by up to 300%.** RAG systems improve accuracy by up to 300% compared to models working from raw unstructured text. The ingestion sequence follows six strict steps, and schema markup shapes the outcome at four of them.
 
 [RAG systems improve accuracy by up to 300% compared to models working from raw unstructured text alone](https://contentgecko.io/blog/structuring-data-for-llm-retrieval/). The technical ingestion process follows this strict sequence:
 
@@ -105,9 +105,9 @@ Once chunked, each segment is embedded into a dense vector representation. Becau
 
 of all citations are extracted from the first 30% of a web document. Front-loading your primary claims is not an editorial preference. It is a retrieval architecture requirement.
 
-## The Programmatic Blueprint: Single-Script @graph Architecture
+## How should you structure schema with a single @graph block?
 
-The 2026 standard is one JSON-LD script block per page, representing all content as a fully connected semantic @graph. "Schema drift," where a single page contains four disjointed script tags, forces AI parsers to reconstruct relationships between disconnected data blocks, introducing errors and reducing extraction confidence.
+**One JSON-LD @graph script per page.** The 2026 standard is one JSON-LD script block per page, representing all content as a fully connected semantic @graph. "Schema drift," where a single page contains four disjointed script tags, forces AI parsers to reconstruct relationships between disconnected data blocks, introducing errors and reducing extraction confidence.
 
 Historically, SEO implementations suffered from "schema drift," where a single web page contained multiple disjointed `script type="application/ld+json"` tags. This forces AI parsers to reconstruct relationships between disconnected data blocks, introducing errors and reducing extraction confidence.
 
@@ -339,9 +339,9 @@ HowTo schema: multi-step deployment guide implementation
 }
 ```
 
-## Multi-Platform Optimization: ChatGPT, Gemini, Perplexity, and SearchGPT
+## How do you optimise schema across ChatGPT, Gemini and Perplexity?
 
-Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode. A strategy optimized solely for Google misses the majority of citations available across the full AI search landscape.
+**They barely overlap: only ~11% of cited URLs do.** Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode. A strategy optimized solely for Google misses the majority of citations available across the full AI search landscape.
 
 B2B brands cannot rely on a single-platform strategy. Empirical tracking reveals a critical insight: only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode. A strategy optimized solely for Google misses the majority of citations available across the full AI search landscape.
 
@@ -553,9 +553,9 @@ Performance benchmarks by schema type
 | HowTo | High for instructional query retrieval | 4-6 weeks |
 | Organization.sameAs | Prerequisite for Knowledge Graph entity confidence | 6-16 weeks |
 
-## The Comparison Page Tactic: Owning Evaluation-Stage AI Citations
+## How do comparison pages win evaluation-stage AI citations?
 
-For B2B software companies, "compare [Product A] vs [Product B] for [use case]" queries represent high-intent, bottom-of-funnel evaluations. Whoever publishes the best-structured comparison content owns the AI citation for these queries. The HTML comparison table is the core citation trigger.
+**By owning 'A vs B' queries with structured comparisons.** For B2B software companies, "compare [Product A] vs [Product B] for [use case]" queries represent high-intent, bottom-of-funnel evaluations. Whoever publishes the best-structured comparison content owns the AI citation for these queries. The HTML comparison table is the core citation trigger.
 
 Comparison queries represent the highest commercial intent in B2B software purchase cycles. Whoever publishes the best-structured comparison content owns the AI citation for these queries. Execution checklist for comparison pages:
 

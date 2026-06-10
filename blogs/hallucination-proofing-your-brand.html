@@ -430,9 +430,9 @@
       <p>The techniques are not speculative. They are the specific structural interventions that make your content machine-readable enough for AI engines to cite accurately, and reliably enough for buyers to trust what those engines say about you.</p>
 
       <!-- §1 -->
-      <h2 id="paradigm">01: The New Search Paradigm: SEO, AEO, and GEO</h2>
+      <h2 id="paradigm">01: How do SEO, AEO and GEO differ?</h2>
 
-      <div class="section-answer">Three optimization disciplines now coexist, and they optimize for fundamentally different systems. Tactics that work for SEO (keyword density, anchor text diversity, click-through optimization) can actively harm GEO performance. Understanding the architecture of each is a prerequisite to hallucination-proofing your brand.</div>
+      <div class="section-answer"><strong>They optimise for fundamentally different goals.</strong> Three optimization disciplines now coexist, and they optimize for fundamentally different systems. Tactics that work for SEO (keyword density, anchor text diversity, click-through optimization) can actively harm GEO performance. Understanding the architecture of each is a prerequisite to hallucination-proofing your brand.</div>
 
       <p>Traditional <strong>Search Engine Optimization (SEO)</strong> was built for a world where humans click links. Its success metrics (organic rankings, click-through rates, domain authority) reflect a system where Google's crawler indexes content and a human selects from ten blue links. The entire optimization logic flows from that single user action: the click.</p>
 
@@ -493,9 +493,9 @@
       </div>
 
       <!-- §2 -->
-      <h2 id="hallucination-anatomy">02: The Anatomy of a Brand Hallucination</h2>
+      <h2 id="hallucination-anatomy">02: Why does AI hallucinate about your brand?</h2>
 
-      <div class="section-answer">AI hallucinations about your brand are not random errors: they are predictable outputs of a specific failure point in the RAG pipeline. The hallucination emerges when a retrieved content chunk is too vague or too context-dependent for the model to synthesize accurately. Fix the chunk, fix the hallucination.</div>
+      <div class="section-answer"><strong>Not randomly: it fills gaps in your data.</strong> AI hallucinations about your brand are not random errors: they are predictable outputs of a specific failure point in the RAG pipeline. The hallucination emerges when a retrieved content chunk is too vague or too context-dependent for the model to synthesize accurately. Fix the chunk, fix the hallucination.</div>
 
       <p>Most generative AI systems (including ChatGPT's browsing mode, Perplexity, and Google AI Overviews) operate on a five-stage Retrieval-Augmented Generation pipeline. Understanding each stage reveals exactly where brand accuracy breaks down.</p>
 
@@ -551,9 +551,9 @@
       </div>
 
       <!-- §3 -->
-      <h2 id="research">03: What the Research Actually Says</h2>
+      <h2 id="research">03: What does the GEO research actually say?</h2>
 
-      <div class="section-answer">The Princeton/Georgia Tech GEO study is the empirical foundation for everything in this article. It tested nine content-level optimization strategies across 10,000 queries and 25 domains. Three strategies produced statistically significant citation lifts of +28% to +41%. Keyword stuffing (the cornerstone of legacy SEO) produced a measurable performance degradation.</div>
+      <div class="section-answer"><strong>The Princeton GEO study is the empirical foundation.</strong> The Princeton/Georgia Tech GEO study is the empirical foundation for everything in this article. It tested nine content-level optimization strategies across 10,000 queries and 25 domains. Three strategies produced statistically significant citation lifts of +28% to +41%. Keyword stuffing (the cornerstone of legacy SEO) produced a measurable performance degradation.</div>
 
       <p>In November 2023, a research team from Princeton University, Georgia Tech, the Allen Institute for AI, and IIT Delhi published <em>GEO: Generative Engine Optimization</em>, the first empirical framework for optimizing content for AI-synthesized answers.<sup><a href="#r1">1</a></sup> The researchers developed GEO-bench, a dataset of 10,000 queries spanning 25 domains (80% informational, 10% transactional, 10% navigational), and measured the citation lift from nine distinct content optimization strategies.</p>
 
@@ -620,9 +620,9 @@
       </div>
 
       <!-- §4 -->
-      <h2 id="schema">04: Schema.org JSON-LD: Your Brand's Machine-Readable DNA</h2>
+      <h2 id="schema">04: How does Schema.org make your brand machine-readable?</h2>
 
-      <div class="section-answer">Schema.org JSON-LD is not an SEO nice-to-have. It is the primary mechanism by which AI retrieval systems interpret what your brand is, what it does, and how to distinguish it from competitors. Using structured knowledge graphs as LLM reference layers improves model accuracy by up to 54%, preventing the parametric drift that produces hallucinations.</div>
+      <div class="section-answer"><strong>It is the primary structured-data signal AI parses.</strong> Schema.org JSON-LD is not an SEO nice-to-have. It is the primary mechanism by which AI retrieval systems interpret what your brand is, what it does, and how to distinguish it from competitors. Using structured knowledge graphs as LLM reference layers improves model accuracy by up to 54%, preventing the parametric drift that produces hallucinations.</div>
 
       <p>To prevent brand hallucinations, your web content must be translated into an unambiguous, machine-readable format. Schema.org JSON-LD (JavaScript Object Notation for Linked Data) accomplishes this by embedding structured definitions of your brand, products, and certifications directly into page source code, a layer that AI crawlers parse alongside the visible HTML.</p>
 
@@ -728,9 +728,9 @@
       </div>
 
       <!-- §5 -->
-      <h2 id="llms-txt">05: The /llms.txt File: Telling AI Crawlers Who You Are</h2>
+      <h2 id="llms-txt">05: What does /llms.txt tell AI crawlers about you?</h2>
 
-      <div class="section-answer">While Schema.org provides structured data for semantic parsers, the /llms.txt standard offers a dedicated interface for LLM web crawlers and active RAG agents. Unlike robots.txt (which dictates crawling permissions), /llms.txt defines context, corporate intent, and interpretation boundaries. It gives AI systems a vetted, first-party narrative to work from.</div>
+      <div class="section-answer"><strong>Who you are, in a format models read first.</strong> While Schema.org provides structured data for semantic parsers, the /llms.txt standard offers a dedicated interface for LLM web crawlers and active RAG agents. Unlike robots.txt (which dictates crawling permissions), /llms.txt defines context, corporate intent, and interpretation boundaries. It gives AI systems a vetted, first-party narrative to work from.</div>
 
       <p>The <code>/llms.txt</code> standard is a plain-text, markdown-based file placed at the root of your domain, served at <code>yourbrand.com/llms.txt</code>. LLM crawlers and RAG agents actively request this file when indexing a domain, treating it as a ground-truth disambiguation source.<sup><a href="#r7">7</a></sup></p>
 
@@ -765,9 +765,9 @@
       <p>The file linked assets should be structured markdown documents (not HTML pages), since LLM crawlers process plain text more reliably than rendered HTML. Each linked document should itself follow the Claim-Anchoring principles in the next section: answer-first structure, explicit brand naming, and proof-paired assertions.</p>
 
       <!-- §6 -->
-      <h2 id="claim-anchoring">06: The Claim-Anchoring Content Engineering Framework</h2>
+      <h2 id="claim-anchoring">06: How do you anchor claims so AI quotes them accurately?</h2>
 
-      <div class="section-answer">Schema and /llms.txt handle the structural layer. The document layer requires a fundamentally different writing approach. In RAG systems, your content is vectorized, indexed, and retrieved as 120-180 word chunks, in complete isolation from the rest of your page. Each chunk must stand alone as a reliable factual statement about your brand, or it becomes a hallucination source.</div>
+      <div class="section-answer"><strong>By pairing every claim with verifiable proof.</strong> Schema and /llms.txt handle the structural layer. The document layer requires a fundamentally different writing approach. In RAG systems, your content is vectorized, indexed, and retrieved as 120-180 word chunks, in complete isolation from the rest of your page. Each chunk must stand alone as a reliable factual statement about your brand, or it becomes a hallucination source.</div>
 
       <p>The Claim-Anchoring Framework has four components, each targeting a specific failure mode in RAG pipeline processing.</p>
 
@@ -814,9 +814,9 @@
       <p>Repeat your brand name and product name alongside every key claim. Do not rely on context. A retrieved chunk may be the only text the model sees from your domain. "Our platform achieves 99.99% uptime" becomes unattributable in a RAG pipeline. "The Brand Core Platform achieves 99.99% uptime, verified by StatusPage.io's independent monitoring since Q2 2024" is machine-attributable at retrieval time.</p>
 
       <!-- §7 -->
-      <h2 id="before-after">07: Before &amp; After: Real Content Reconstruction</h2>
+      <h2 id="before-after">07: What does claim-anchored content look like, before and after?</h2>
 
-      <div class="section-answer">The delta between unoptimized marketing copy and claim-anchored GEO content is not subtle. The following case study (based on the empirical test framework from the Princeton GEO paper) shows the exact AI response produced by each version of the same content. The hallucination is not an edge case; it is the predictable output of vague, unanchored prose.</div>
+      <div class="section-answer"><strong>The delta between marketing copy and GEO copy is stark.</strong> The delta between unoptimized marketing copy and claim-anchored GEO content is not subtle. The following case study (based on the empirical test framework from the Princeton GEO paper) shows the exact AI response produced by each version of the same content. The hallucination is not an edge case; it is the predictable output of vague, unanchored prose.</div>
 
       <div class="tt-wrap">
         <div class="tt-label">Table 03: Before &amp; After content reconstruction: security and compliance copy</div>
@@ -853,9 +853,9 @@
       </div>
 
       <!-- §8 -->
-      <h2 id="monitoring">08: Monitoring Your GEO Performance</h2>
+      <h2 id="monitoring">08: How do you monitor GEO performance?</h2>
 
-      <div class="section-answer">Because generative search engines are non-deterministic, you cannot simply check rankings. Dedicated GEO monitoring platforms track citation frequency, brand share of voice, and sentiment accuracy across actual AI-synthesized responses. The entry price is lower than most teams expect, and the diagnostic value is immediate.</div>
+      <div class="section-answer"><strong>By sampling non-deterministic answers repeatedly.</strong> Because generative search engines are non-deterministic, you cannot simply check rankings. Dedicated GEO monitoring platforms track citation frequency, brand share of voice, and sentiment accuracy across actual AI-synthesized responses. The entry price is lower than most teams expect, and the diagnostic value is immediate.</div>
 
       <p>You cannot manage what you cannot measure. GEO monitoring requires running a structured prompt portfolio (the same queries your target buyers ask AI engines) on a recurring cadence, then tracking whether your brand is cited, at what position, and with what accuracy. Manual prompt testing at launch should transition to automated platform monitoring within 60 days. Because <a href="/blogs/why-engines-recommend-different-vendors">ChatGPT, Perplexity, and Gemini use structurally different retrieval architectures</a>, monitoring should segment citation performance by engine rather than aggregate it.</p>
 
@@ -908,9 +908,9 @@
       <p>The primary metric to track is <strong>Citation Accuracy Rate</strong>: the percentage of AI responses citing your brand that reproduce your claims correctly. A high citation rate with a low accuracy rate is a hallucination problem. A low citation rate with high accuracy is a retrieval visibility problem. Each requires a different intervention.</p>
 
       <!-- §9 -->
-      <h2 id="roadmap">09: The 4-Phase Implementation Roadmap</h2>
+      <h2 id="roadmap">09: What does a 4-phase GEO rollout look like?</h2>
 
-      <div class="section-answer">Transitioning to a hallucination-resistant content architecture is a phased project, not a one-time rewrite. The roadmap below organizes the work in dependency order: structural foundations must be in place before template refactoring, and off-page consensus must align with on-page claims before citation monitoring produces reliable signal.</div>
+      <div class="section-answer"><strong>A phased transition to hallucination-resistant content.</strong> Transitioning to a hallucination-resistant content architecture is a phased project, not a one-time rewrite. The roadmap below organizes the work in dependency order: structural foundations must be in place before template refactoring, and off-page consensus must align with on-page claims before citation monitoring produces reliable signal.</div>
 
       <div class="stats-strip">
         <div class="sc-strip">

@@ -11,9 +11,9 @@ That game is over. Modern generative engines process information through **high-
 
 The primary driver of visibility has shifted from link equity to semantic consensus. Generative search engines evaluate brand credibility by measuring the frequency, proximity, and structural context of unlinked mentions across highly trusted training datasets and real-time retrieval sources. Search programme directors who continue to optimise primarily for Domain Rating are optimising for a signal the model cannot read.
 
-## The Paradigm Shift: From Link Graphs to Semantic Networks
+## How has authority shifted from link graphs to semantic networks?
 
-Language models learn from statistical patterns across the global web text corpus. When a brand name consistently co-occurs with industry-specific keywords across distributed publications, the neural network constructs a strong associative link without any HTML hyperlink being present. Authority seeding directly optimises these internal probability distributions.
+**Models learn from how the whole web describes you.** Language models learn from statistical patterns across the global web text corpus. When a brand name consistently co-occurs with industry-specific keywords across distributed publications, the neural network constructs a strong associative link without any HTML hyperlink being present. Authority seeding directly optimises these internal probability distributions.
 
 The relative correlation between organic visibility and digital signals reflects this architectural shift. [Empirical data from keyword.com](https://keyword.com/blog/brand-mentions-vs-citations-vs-backlinks-for-llm-discoverability/) demonstrates the divergence clearly:
 
@@ -35,9 +35,9 @@ Traditional link-building attempts to manipulate the structural web graph. Autho
 
 Fig. 01: Signal correlation spectrum vs AI citation visibility (indexed to Unlinked Mentions = 1.0)
 
-## The Dual-Pathway Architecture of Generative Search
+## What are the two pathways generative search uses to cite you?
 
-Modern generative search engines operate on two distinct pathways: the parametric pre-training pathway (static datasets baked into model weights at training time) and the non-parametric real-time retrieval pathway (live RAG). Authority seeding must address both, with different asset types and different distribution timelines for each.
+**Pre-trained memory and real-time retrieval.** Modern generative search engines operate on two distinct pathways: the parametric pre-training pathway (static datasets baked into model weights at training time) and the non-parametric real-time retrieval pathway (live RAG). Authority seeding must address both, with different asset types and different distribution timelines for each.
 
 To build an off-site signal stack that models trust, search leads must understand [the dual-pathway architecture of modern generative search engines](/blogs/how-rag-actually-works) as documented in the RAG technical breakdown.
 
@@ -53,9 +53,9 @@ Because [RAG engines do not execute JavaScript during real-time retrieval](https
 14.2%
 Conversion rate of referral traffic from real-time AI citations. This is a 5x multiplier over Google's standard organic conversion rate of 2.8%, making citation acquisition one of the highest-ROI channels in B2B demand generation.
 
-## The Five-Gate Citation Gauntlet
+## What does content pass through to earn an AI citation?
 
-For a seeded digital asset to secure a citation in a real-time conversational response, it must pass through five sequential filters. Gate 4, the ML reranking layer, eliminates the most candidates. Understanding which gate your content fails at determines your entire optimisation strategy.
+**A five-gate citation gauntlet.** For a seeded digital asset to secure a citation in a real-time conversational response, it must pass through five sequential filters. Gate 4, the ML reranking layer, eliminates the most candidates. Understanding which gate your content fails at determines your entire optimisation strategy.
 
 Every seeded asset must clear five sequential filters before reaching the generated response. [Perplexity's documented architecture](https://ziptie.dev/blog/how-perplexity-ai-answers-work/) provides the clearest public specification of this pipeline:
 
@@ -79,9 +79,9 @@ The BLUF Rule (Gate 5 Optimisation)
 
 Placing a direct, highly extractable answer within the first 100 words of any page accounts for 90% of top citations. A high information density score (five or more verifiable facts per 100 words) yields a 71% citation rate. Low-density promotional content (one or fewer facts per 100 words) achieves only 34%.
 
-## Platform-Specific Citation Profiles
+## How differently do ChatGPT, Claude, Perplexity and AI Overviews cite?
 
-ChatGPT, Claude, Perplexity, and Google AI Overviews retrieve content differently, weight recency differently, and prefer different content formats. A single content strategy cannot optimise for all four simultaneously. Platform-specific asset mapping is required.
+**Each retrieves and trusts sources differently.** ChatGPT, Claude, Perplexity, and Google AI Overviews retrieve content differently, weight recency differently, and prefer different content formats. A single content strategy cannot optimise for all four simultaneously. Platform-specific asset mapping is required.
 
 Table 04: Platform citation profiles and optimisation targets · 2026
 
@@ -108,9 +108,9 @@ Google's generative model relies heavily on its existing search index and reward
 
 Fig. 02: Citation rate by content format (average across ChatGPT, Claude, Perplexity · 2026)
 
-## Vertical-Specific Seeding Playbooks
+## How should authority seeding differ by industry?
 
-Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because [comparison queries are structurally multi-source](/blogs/hr-saas-ai-visibility-gap). YMYL verticals require intensive credentialing to pass Gate 4.
+**Each vertical needs a tailored seeding strategy.** Earning AI citations requires a tailored seeding strategy that addresses the specific search dynamics of each industry vertical. SaaS leads at 58% citation rate because [comparison queries are structurally multi-source](/blogs/hr-saas-ai-visibility-gap). YMYL verticals require intensive credentialing to pass Gate 4.
 
 Table 05: Vertical seeding playbooks: citation rate, format, and channel prioritisation
 
@@ -134,9 +134,9 @@ YMYL searches undergo strict evaluation; models require verification of accuracy
 
 This vertical relies on proprietary data to earn citations. Because services are custom, models favour structured frameworks and industry benchmark data over generic thought leadership. Publish original surveys, research reports, and strategic frameworks. Structure methodology pages using clear H2/H3 hierarchies. Distribute these insights via digital PR campaigns to earn plain-text co-citations in authoritative B2B publications.
 
-## Execution Blueprint: The Five-Phase Signal Stack
+## How do you build an off-site signal stack, phase by phase?
 
-A robust off-site signal stack requires five coordinated phases executed in sequence. Phases 1 through 3 establish structural access to the citation pipeline. Phase 4 is where citation volume builds. Phase 5 defends and compounds the position.
+**Through five coordinated phases.** A robust off-site signal stack requires five coordinated phases executed in sequence. Phases 1 through 3 establish structural access to the citation pipeline. Phase 4 is where citation volume builds. Phase 5 defends and compounds the position.
 
 01Semantic Core
 
