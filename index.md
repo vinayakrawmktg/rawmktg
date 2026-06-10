@@ -6,12 +6,12 @@
 
 ## Articles
 
+- [What Noterro Gets Right About AI Search](https://rawmktg.com/blogs/noterro-ai-search-teardown)
 - [When Buyers Ask AI Which HR Software to Use, One Brand Owns the Answer](https://rawmktg.com/blogs/hr-saas-ai-visibility-gap)
 - [Beyond Cross-Border: Where India's Global-Payments Brands Actually Earn Their Backlinks](https://rawmktg.com/blogs/cross-border-backlinks)
 - [When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room](https://rawmktg.com/blogs/aec-ai-visibility-gap)
 - [India's Senior Living Sector Has an AI Problem Nobody Is Talking About](https://rawmktg.com/blogs/india-senior-living-ai-visibility-gap)
 - [The Autonomous Retail Industry Has a Visibility Problem Nobody Is Talking About](https://rawmktg.com/blogs/autonomous-retail-ai-visibility-gap)
-- [We Analysed the SEO of 6 Leading CX SaaS Companies. The Patterns Were Identical.](https://rawmktg.com/blogs/cx-saas-seo-discoverability-analysis)
 - [How We Run a GEO Foundation Audit](https://rawmktg.com/blogs/geo-foundation-audit)
 - [Why ChatGPT, Perplexity and Gemini Recommend Different Vendors (and How to Win All Three)](https://rawmktg.com/blogs/why-engines-recommend-different-vendors)
 - [The GEO Compounding Flywheel: How to Build AI Visibility That Gets Harder to Dislodge](https://rawmktg.com/blogs/geo-compounding-flywheel)
