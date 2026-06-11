@@ -6,7 +6,7 @@
 
 ## Articles
 
-- [The Authority Paradox](https://rawmktg.com/blogs/property-vista-authority-paradox)
+- [The Authority Paradox of Property Vista](https://rawmktg.com/blogs/property-vista-authority-paradox)
 - [What Noterro Gets Right About AI Search](https://rawmktg.com/blogs/noterro-ai-search-teardown)
 - [When Buyers Ask AI Which HR Software to Use, One Brand Owns the Answer](https://rawmktg.com/blogs/hr-saas-ai-visibility-gap)
 - [Beyond Cross-Border: Where India's Global-Payments Brands Actually Earn Their Backlinks](https://rawmktg.com/blogs/cross-border-backlinks)

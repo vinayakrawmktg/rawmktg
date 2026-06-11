@@ -1,4 +1,4 @@
-# The Authority Paradox
+# The Authority Paradox of Property Vista
 
 > How a DR-63 brand with G2, Gartner and Crunchbase backlinks became nearly invisible on ChatGPT and Perplexity.
 
