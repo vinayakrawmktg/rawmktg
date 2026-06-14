@@ -109,7 +109,7 @@
 /* scorecard output */
 .toolpage .panel-out{position:sticky;top:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px;}
 .toolpage .scorewrap{display:flex;align-items:baseline;gap:8px;margin:8px 0 6px;}
-.toolpage .score{font-family:var(--f-display);font-weight:700;font-size:70px;line-height:1;color:#fff;letter-spacing:-.03em;}
+.toolpage .scorewrap .score{font-family:var(--f-display);font-weight:700;font-size:70px;line-height:1;color:#fff;letter-spacing:-.03em;}
 .toolpage .score-d{font-family:var(--f-display);font-weight:600;font-size:22px;color:rgba(255,255,255,.4);}
 .toolpage .scoreband{display:inline-block;font-family:var(--f-display);font-weight:700;font-size:13px;padding:6px 12px;border-radius:6px;letter-spacing:.02em;}
 .toolpage .gauge{height:10px;border-radius:5px;background:rgba(255,255,255,.10);overflow:hidden;margin:18px 0 6px;position:relative;}
