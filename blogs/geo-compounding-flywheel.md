@@ -41,7 +41,7 @@ The loop starts with the creation of [entity-dense, citation-first digital asset
 
 ### 02 · Crawl
 
-Built assets are useless until they are reachable. [Robots.txt, XML sitemaps, and server architecture must explicitly grant access to search-retrieval crawlers](https://www.botrank.ai/technical-doc/robots-txt), while strategically governing the training harvesters. The trap most teams fall into here is symmetric blocking - accidentally banning the very bots that produce citations.
+Built assets are useless until they are reachable. [Robots.txt, XML sitemaps, and server architecture must explicitly grant access to search-retrieval crawlers](https://www.botrank.ai/technical-doc/robots-txt), while strategically governing the training harvesters. The trap most teams fall into here is symmetric blocking - accidentally banning the very bots that produce [citation](/tools/geo-lift-calculator "GEO Lift Calculator")s.
 
 ### 03 · Train / Retrieve
 
@@ -61,7 +61,7 @@ Before the model commits to recommending you, it cross-references its synthesis 
 
 ### 07 · Re-signal
 
-This is the step that turns a process into a flywheel. Buyers click on the citation, run follow-up branded queries on Google, and visit your site. [Those behavioral signals get recorded, the team updates the source pages with fresh statistics](https://www.mersel.ai/generative-engine-optimization), and the [freshness pings trigger immediate re-crawling](/blogs/30-day-content-half-life-recency-ai-ranking-signal), which expands your vector footprint, which makes you easier to retrieve in step 04 next time. *The loop tightens on itself.*
+This is the step that turns a process into a flywheel. Buyers click on the citation, run follow-up branded queries on Google, and visit your site. [Those behavioral signals get recorded, the team updates the source pages with fresh statistics](https://www.mersel.ai/generative-engine-optimization), and the [[freshness](/tools/content-recency-decay "Content Recency Decay Estimator") pings trigger immediate re-crawling](/blogs/30-day-content-half-life-recency-ai-ranking-signal), which expands your vector footprint, which makes you easier to retrieve in step 04 next time. *The loop tightens on itself.*
 
 Seven-step flywheel: stage objectives, KPIs, and strategic focus
 
@@ -321,6 +321,55 @@ Waiting to implement a GEO strategy means competing against entrenched category 
 For a CMO, this reframes the budget question from "how much of our SEO line do we redirect?" to "how much faster can we start the loop than our nearest competitor?" For a founder, the strategic stake is even higher: GEO is one of the rare growth motions that produces an asset on the balance sheet - a position in model knowledge that competitors cannot acquire by spending more next quarter. For an investor evaluating B2B portfolio companies, AI Share of Citation is becoming a leading indicator that belongs alongside payback period and net revenue retention.
 
 The seven steps are not aspirational. The case studies are not outliers. The Princeton evidence is not contested. What remains is the most boring lever in the world: *do the work, and do it before everyone else does*. That's the entire compounding thesis. The flywheel rewards whoever spins it first, and punishes, with increasing severity each quarter, whoever spins it last. Our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap) shows this dynamic in live Ahrefs data: 77% of citations in one industry go to a single vendor, while 4 of 6 companies have fewer than 2 total citations.
+
+Free interactive tool
+
+Estimate your zero-click exposure
+
+See how much of your organic traffic is at risk as AI Overviews and AI Mode answer more queries without a click.
+
+Monthly organic clicks
+
+Your current monthly clicks from organic search (Search Console → total clicks).
+
+AI-answerable share of queries 45%
+
+The slice of your traffic from informational, "explain / compare / best-X" queries , the type AI answers directly. Branded and transactional traffic is more protected.
+
+AI surface scenario
+
+AI Overviews**83% zero-click**
+AI Mode**93% zero-click**
+
+Today, ~58% of searches are already zero-click. These scenarios model the rate on exposed queries as each AI surface takes over.
+
+Value per visit optional
+
+$
+
+Revenue or pipeline value per organic visit, to translate risk into dollars.
+
+Organic clicks at risk / month
+
+0
+
+under the AI Overviews scenario
+
+Today**0**
+
+Retained**0**
+
+0%
+
+Of total at risk
+
+$0
+
+Value at risk / mo
+
+A scenario estimate, not a forecast. Assumes a ~58% baseline zero-click rate today and models the exposed-query survival rate against the selected AI surface. Branded/transactional traffic is treated as protected. Actual impact varies by query mix, brand strength, and how fast each surface rolls out.
+
+A free rawmktg tool. [Open the full tool →](/tools/zero-click-traffic-risk) · [see all tools](/tools)
 
 Frequently Asked Questions
 

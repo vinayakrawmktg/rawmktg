@@ -7,7 +7,7 @@
 
 At rawmktg., we spend a lot of time inside [Ahrefs](https://ahrefs.com) pulling apart how B2B SaaS companies grow, or fail to grow, their organic and AI-driven search presence. We do this for clients, but we also do it for our own education, because competitive landscapes tend to reveal patterns that are bigger than any single company's situation.
 
-A few weeks ago, we turned our attention to the container tracking and supply chain visibility software space. It is a market that sits at an interesting intersection: technically complex, deeply operational, and increasingly dominated by software-first companies replacing the manual port tracking workflows that importers and logistics managers have been running on spreadsheets for years.
+A few weeks ago, we turned our attention to the container tracking and supply chain [visibility](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") software space. It is a market that sits at an interesting intersection: technically complex, deeply operational, and increasingly dominated by software-first companies replacing the manual port tracking workflows that importers and logistics managers have been running on spreadsheets for years.
 
 We analysed six companies in this category, ranging from large, VC-backed platforms with enterprise contracts to lean, API-first products targeting smaller importers and freight forwarders. We looked at their organic search performance, AI citation footprint, referring domain profiles, keyword strategy, and traffic trajectories using Ahrefs Site Explorer, Brand Radar, Keywords Explorer, and Link Intersect.
 
@@ -230,7 +230,7 @@ SEO is not a linear game. The company that is growing its organic traffic today 
 
 Drawing across all seven findings, the pattern of what separates the highest-performing players from the rest is relatively consistent:
 
-- Content architectureWinners have built content for every stage: educational and definitional content for the top of funnel, use-case and comparison content for the middle, and product-specific and commercial content for the bottom. Laggards have built almost exclusively for the top of funnel.
+- Content architectureWinners have built content for every stage: educational and definitional content for the top of [funnel](/tools/saas-funnel-gap-analyzer "B2B SaaS Funnel Gap Analyzer"), use-case and comparison content for the middle, and product-specific and commercial content for the bottom. Laggards have built almost exclusively for the top of funnel.
 - Carrier page librariesThe companies that perform best on both organic search and AI citations have invested in building structured, specific pages at scale, carrier tracking pages, port pages, and integration pages, rather than relying on a small number of high-level pillar pages.
 - Industry mediaThe top performers have editorial coverage in the publications their buyers read. This is not accidental, it is the result of deliberate, ongoing outreach to freight and logistics journalists and editors.
 - GEO strategyThe companies with the highest AI citation counts are producing content that is structured in the way [LLMs are trained to cite](/blogs/eeat-is-an-ai-signal-now): clear, factual, specific, well-structured, and supported by credible third-party references.

@@ -379,6 +379,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/geo-compounding-flywheel.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 
 <body>
@@ -539,7 +540,7 @@
       <p>The loop starts with the creation of <a href="https://www.mersel.ai/generative-engine-optimization" target="_blank" rel="noopener">entity-dense, citation-first digital assets</a> that lead with the direct answer to a category query in the first 60-120 words. This is not the same as writing a "good blog post." It is <a href="/blogs/topical-authority-cluster-ai-shortlists">structured knowledge engineering</a>: clustering named entities - brands, people, studies, numbers - into passages that an LLM can lift, attribute, and cite without rewriting.</p>
 
       <h3>02 · Crawl</h3>
-      <p>Built assets are useless until they are reachable. <a href="https://www.botrank.ai/technical-doc/robots-txt" target="_blank" rel="noopener">Robots.txt, XML sitemaps, and server architecture must explicitly grant access to search-retrieval crawlers</a>, while strategically governing the training harvesters. The trap most teams fall into here is symmetric blocking - accidentally banning the very bots that produce citations.</p>
+      <p>Built assets are useless until they are reachable. <a href="https://www.botrank.ai/technical-doc/robots-txt" target="_blank" rel="noopener">Robots.txt, XML sitemaps, and server architecture must explicitly grant access to search-retrieval crawlers</a>, while strategically governing the training harvesters. The trap most teams fall into here is symmetric blocking - accidentally banning the very bots that produce <a href="/tools/geo-lift-calculator" title="GEO Lift Calculator">citation</a>s.</p>
 
       <h3>03 · Train / Retrieve</h3>
       <p>Crawled content enters two parallel pipelines simultaneously. In the long run, pages are ingested into <a href="https://medium.com/@somanathtv/from-seo-to-geo-part-2-the-new-rules-of-ai-visibility-in-2026-5dd00712e4b5" target="_blank" rel="noopener">foundational model training runs, embedding your brand into the next generation of weights</a>. In the short run, pages are indexed as <a href="https://medium.com/@upadhya.saumya/types-of-retrieval-in-rag-bb4e4a914e7c" target="_blank" rel="noopener">high-dimensional vectors inside the RAG systems</a> that ground real-time answers in live web data.</p>
@@ -554,7 +555,7 @@
       <p>Before the model commits to recommending you, it cross-references its synthesis against <a href="https://authoritytech.io/curated/share-of-ai-voice-wrong-metric-citation-2026" target="_blank" rel="noopener">independent external nodes in its knowledge graph</a>. If your claim about being the leader in X cannot be corroborated by an authoritative third party - a trade publication, an industry registry, a major analyst - the citation gets dropped to protect the model from hallucination.</p>
 
       <h3>07 · Re-signal</h3>
-      <p>This is the step that turns a process into a flywheel. Buyers click on the citation, run follow-up branded queries on Google, and visit your site. <a href="https://www.mersel.ai/generative-engine-optimization" target="_blank" rel="noopener">Those behavioral signals get recorded, the team updates the source pages with fresh statistics</a>, and the <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">freshness pings trigger immediate re-crawling</a>, which expands your vector footprint, which makes you easier to retrieve in step 04 next time. <em>The loop tightens on itself.</em></p>
+      <p>This is the step that turns a process into a flywheel. Buyers click on the citation, run follow-up branded queries on Google, and visit your site. <a href="https://www.mersel.ai/generative-engine-optimization" target="_blank" rel="noopener">Those behavioral signals get recorded, the team updates the source pages with fresh statistics</a>, and the <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal"><a href="/tools/content-recency-decay" title="Content Recency Decay Estimator">freshness</a> pings trigger immediate re-crawling</a>, which expands your vector footprint, which makes you easier to retrieve in step 04 next time. <em>The loop tightens on itself.</em></p>
 
       <div class="tt-wrap">
         <div class="tt-label">Seven-step flywheel: stage objectives, KPIs, and strategic focus</div>
@@ -924,7 +925,97 @@
       <p>The seven steps are not aspirational. The case studies are not outliers. The Princeton evidence is not contested. What remains is the most boring lever in the world: <em>do the work, and do it before everyone else does</em>. That's the entire compounding thesis. The flywheel rewards whoever spins it first, and punishes, with increasing severity each quarter, whoever spins it last. Our <a href="/blogs/aec-ai-visibility-gap">AEC software AI visibility analysis</a> shows this dynamic in live Ahrefs data: 77% of citations in one industry go to a single vendor, while 4 of 6 companies have fewer than 2 total citations.</p>
 
 
-      <div class="faq-section">
+      
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Estimate your zero-click exposure</div><div class="embed-deck">See how much of your organic traffic is at risk as AI Overviews and AI Mode answer more queries without a click.</div></div>
+<section class="card" id="tool">
+    <div class="grid zero">
+      <div class="controls">
+        <div class="fld">
+          <div class="lab">Monthly organic clicks</div>
+          <div class="ipt"><input type="number" id="tClicks" value="50000" min="0" step="1000" aria-label="Monthly organic clicks"></div>
+          <p class="hint">Your current monthly clicks from organic search (Search Console &rarr; total clicks).</p>
+        </div>
+
+        <div class="fld">
+          <div class="lab">AI-answerable share of queries <span class="val" id="tShareVal">45%</span></div>
+          <input type="range" id="tShare" min="10" max="90" value="45" aria-label="Share of AI-answerable queries">
+          <p class="hint">The slice of your traffic from informational, "explain / compare / best-X" queries ,  the type AI answers directly. Branded and transactional traffic is more protected.</p>
+        </div>
+
+        <div class="fld">
+          <div class="lab">AI surface scenario</div>
+          <div class="seg" id="tScenario">
+            <button data-z="0.83" class="sel">AI Overviews<b>83% zero-click</b></button>
+            <button data-z="0.93">AI Mode<b>93% zero-click</b></button>
+          </div>
+          <p class="hint">Today, ~58% of searches are already zero-click. These scenarios model the rate on exposed queries as each AI surface takes over.</p>
+        </div>
+
+        <div class="fld">
+          <div class="lab">Value per visit <span class="val" style="color:var(--steel)">optional</span></div>
+          <div class="ipt"><span class="pfx">$</span><input type="number" id="tValue" value="0" min="0" step="0.5" aria-label="Value per visit"></div>
+          <p class="hint">Revenue or pipeline value per organic visit, to translate risk into dollars.</p>
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="o-eyebrow">Organic clicks at risk / month</div>
+        <div class="o-big" id="tRisk">0</div>
+        <div class="o-sub" id="tRiskSub">under the AI Overviews scenario</div>
+
+        <div class="barrow"><span class="l">Today</span><div class="track"><div class="fill now" id="tNowFill" style="width:100%"></div></div><b id="tNowVal">0</b></div>
+        <div class="barrow"><span class="l">Retained</span><div class="track"><div class="fill risk" id="tRetFill"></div></div><b id="tRetVal">0</b></div>
+
+        <div class="statrow">
+          <div class="stat" style="--c:var(--signal)"><div class="n" id="tPct">0%</div><div class="k">Of total at risk</div></div>
+          <div class="stat" id="tDollarBox" style="--c:var(--mute);display:none"><div class="n" id="tDollar">$0</div><div class="k">Value at risk / mo</div></div>
+        </div>
+
+        <div class="interp" id="tInterp"></div>
+        <p class="caveat">A scenario estimate, not a forecast. Assumes a ~58% baseline zero-click rate today and models the exposed-query survival rate against the selected AI surface. Branded/transactional traffic is treated as protected. Actual impact varies by query mix, brand strength, and how fast each surface rolls out.</p>
+      </div>
+    </div>
+  </section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/zero-click-traffic-risk">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var clicks=document.getElementById('tClicks'),share=document.getElementById('tShare'),value=document.getElementById('tValue');
+  var BASE=0.58;
+  function fmt(n){return Math.round(n).toLocaleString('en-US');}
+  function scenarioZ(){var s=document.querySelector('#tScenario button.sel');return s?parseFloat(s.dataset.z):0.83;}
+  function compute(){
+    var T=Math.max(0,parseFloat(clicks.value)||0);
+    var s=parseInt(share.value,10)/100; document.getElementById('tShareVal').textContent=share.value+'%';
+    var z=scenarioZ();
+    var exposed=T*s;
+    var survivingFactor=(1-z)/(1-BASE);          // fraction of exposed clicks that survive
+    var atRisk=exposed*(1-survivingFactor);
+    var retained=T-atRisk;
+    var pct=T>0?(atRisk/T):0;
+    document.getElementById('tRisk').textContent=fmt(atRisk);
+    document.getElementById('tRiskSub').textContent='under the '+(z===0.93?'AI Mode':'AI Overviews')+' scenario';
+    document.getElementById('tNowVal').textContent=fmt(T);
+    document.getElementById('tRetVal').textContent=fmt(retained);
+    document.getElementById('tNowFill').style.width='100%';
+    document.getElementById('tRetFill').style.width=(T>0?(retained/T*100):0)+'%';
+    document.getElementById('tPct').textContent=Math.round(pct*100)+'%';
+    var v=Math.max(0,parseFloat(value.value)||0);
+    var box=document.getElementById('tDollarBox');
+    if(v>0){box.style.display='block';document.getElementById('tDollar').textContent='$'+fmt(atRisk*v);}
+    else{box.style.display='none';}
+    document.getElementById('tInterp').innerHTML = T>0
+      ? ('That's about <b>'+Math.round(pct*100)+'%</b> of your organic clicks exposed to erosion'+(v>0?(', or <b>$'+fmt(atRisk*v)+'</b> in monthly value'):'')+' ,  concentrated in the informational queries you can defend with GEO.')
+      : 'Enter your monthly organic clicks to size the exposure.';
+  }
+  clicks.addEventListener('input',compute);share.addEventListener('input',compute);value.addEventListener('input',compute);
+  document.getElementById('tScenario').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');compute();});
+  compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

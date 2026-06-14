@@ -25,7 +25,7 @@ The technology has matured in parallel. Computer vision systems can now track pr
 
 The convergence of economic pressure and technological readiness has created a classic adoption window. Several well-funded companies are racing to establish category leadership. The race is being fought in boardrooms, at trade shows, and through enterprise sales teams, while the digital channel, the place where the buyer's journey now begins, has been almost entirely abandoned.
 
-## What does the autonomous-retail AI-visibility data actually show?
+## What does the autonomous-retail AI-[visibility](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") data actually show?
 
 **It is striking.** AiFi has a DR of 60 and 636 referring domains. It generates ~820 monthly organic visits and has zero ChatGPT citations. Neuroshop has a DR of 16. It generates ~1,800 monthly visits and 62 ChatGPT citations. Domain authority is a precondition for ranking, not a guarantee of it.
 
@@ -33,7 +33,7 @@ Five leading players in the autonomous checkout and smart retail space: AiFi, St
 
 **AiFi** is arguably the most credentialed company in the group. DR of 60, 636 referring domains, a partnership with Aldi, and deployments across stadiums and workplaces globally. In traffic terms: approximately 820 visits per month, 19 keywords ranked, 4 AI Overview citations, zero ChatGPT citations.
 
-**Standard AI**, with a DR of 55 and over 1,100 referring domains built up over years, generates around 174 organic visits per month and ranks for 7 keywords. Traffic has been in measurable decline for the past 12 months, dropping from roughly 280 visits/month toward 170. Zero AI citations across any platform.
+**Standard AI**, with a DR of 55 and over 1,100 referring domains built up over years, generates around 174 organic visits per month and ranks for 7 keywords. Traffic has been in measurable decline for the past 12 months, dropping from roughly 280 visits/month toward 170. Zero [AI citations](/tools/page-citability-analyzer "Page Citability Analyzer") across any platform.
 
 **GetZippin**, the checkout-free technology firm that has powered cashierless concessions in stadiums, airports, and universities across five continents, pulls in approximately 170 organic visits per month and ranks for 22 keywords. Also in decline, from a peak of around 340 visits/month a year ago. One AI Overview citation. Two on ChatGPT.
 

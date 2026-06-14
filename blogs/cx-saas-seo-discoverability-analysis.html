@@ -298,6 +298,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/cx-saas-seo-discoverability-analysis.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 
 <body>
@@ -353,7 +354,7 @@
     <!-- Main content -->
     <main class="article-content" id="article-main">
 
-      <p>Over the past few months, we audited six leading B2B SaaS companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.</p>
+      <p>Over the past few months, we <a href="/tools/geo-readiness-scorecard" title="GEO Readiness Scorecard">audit</a>ed six leading B2B SaaS companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.</p>
 
       <p>The patterns were remarkably consistent. Across technical infrastructure, content strategy, backlink quality, and AI visibility, the same structural mistakes appeared again and again, made at scale by companies with every resource available to avoid them.</p>
 
@@ -559,7 +560,7 @@
 
       <p>This is perhaps the most forward-looking finding in our analysis, and the one with the longest tail of strategic implications.</p>
 
-      <p>A procurement manager at a 500-person company asks ChatGPT, Perplexity, or Google AI Overviews: "What is the best customer feedback tool for a mid-market SaaS company?" and uses the response as a starting framework. The companies that appear in those AI-generated responses are not selected at random. Large language models pull from a specific set of trusted signals:</p>
+      <p>A procurement manager at a 500-person company asks ChatGPT, Perplexity, or Google <a href="/tools/zero-click-traffic-risk" title="Zero-Click Traffic-at-Risk Estimator">AI Overviews</a>: "What is the best customer feedback tool for a mid-market SaaS company?" and uses the response as a starting framework. The companies that appear in those AI-generated responses are not selected at random. Large language models pull from a specific set of trusted signals:</p>
 
       <ul>
         <li>Domain authority and breadth of referring domains, particularly from review aggregators and tech publications the model has been trained on most heavily</li>
@@ -615,7 +616,61 @@
       <p>The data suggests the latter is still the norm. But the gap is closable. It just requires starting with the right problems, in the right order, with the right level of investment.</p>
 
       <!-- About -->
-      <div class="faq-section">
+      
+
+
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Analyze your content funnel balance</div><div class="embed-deck">Enter your page counts by stage to see how your funnel compares to a citation-optimized SaaS split.</div></div>
+<section class="card" id="fgTool">
+  <div class="grid calc">
+    <div class="controls">
+      <p class="hint" style="margin-top:0">How many published pages/assets do you have at each funnel stage?</p>
+      <div class="num-grid">
+        <div class="fld"><div class="lab">TOFU</div><div class="ipt"><input type="number" id="fgT" value="40" min="0"></div></div>
+        <div class="fld"><div class="lab">MOFU</div><div class="ipt"><input type="number" id="fgM" value="12" min="0"></div></div>
+        <div class="fld"><div class="lab">BOFU</div><div class="ipt"><input type="number" id="fgB" value="6" min="0"></div></div>
+      </div>
+      <p class="hint">TOFU = awareness/explainer, MOFU = comparison/consideration, BOFU = pricing/decision. Most SaaS sites over-index TOFU and starve BOFU, the exact layer where AI sends ready-to-buy queries.</p>
+    </div>
+    <div class="output">
+      <div class="o-eyebrow">Funnel balance</div>
+      <div class="o-big" id="fgVerdict">-</div>
+      <div class="o-sub" id="fgSub"></div>
+      <div class="funnel-row"><div class="funnel-lab"><span>Your mix (T / M / B)</span><span id="fgYourTxt"></span></div><div class="stacked" id="fgYour"></div></div>
+      <div class="funnel-row"><div class="funnel-lab"><span>Recommended</span><span>40 / 35 / 25</span></div><div class="stacked" id="fgRec"></div></div>
+      <div class="chips" id="fgChips"></div>
+      <p class="caveat">Benchmarked against a citation-optimized SaaS split (TOFU 40 / MOFU 35 / BOFU 25). The CX SaaS analysis found every player over-built awareness content and left ~430,000 monthly searches of MOFU/BOFU demand largely uncaptured. Directional.</p>
+    </div>
+  </div>
+</section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/saas-funnel-gap-analyzer">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById('fgTool'); if(!root) return;
+  var T=document.getElementById('fgT'),M=document.getElementById('fgM'),B=document.getElementById('fgB');
+  var REC=[40,35,25], COL=['#8A8278','#B4ADA2','#BC3F1D'];
+  function bars(el,arr){el.innerHTML='';arr.forEach(function(v,i){var s=document.createElement('span');s.style.background=COL[i];s.style.width=v+'%';el.appendChild(s);});}
+  function compute(){
+    var t=Math.max(0,parseFloat(T.value)||0),m=Math.max(0,parseFloat(M.value)||0),b=Math.max(0,parseFloat(B.value)||0);
+    var tot=t+m+b||1, pc=[t/tot*100,m/tot*100,b/tot*100];
+    bars(document.getElementById('fgYour'),pc); bars(document.getElementById('fgRec'),REC);
+    document.getElementById('fgYourTxt').textContent=Math.round(pc[0])+' / '+Math.round(pc[1])+' / '+Math.round(pc[2]);
+    var need=[Math.round(REC[0]/100*tot),Math.round(REC[1]/100*tot),Math.round(REC[2]/100*tot)];
+    var defM=Math.max(0,need[1]-m), defB=Math.max(0,need[2]-b), inverted=pc[0]>55;
+    document.getElementById('fgVerdict').textContent=inverted?'Inverted':(pc[2]>=20?'Balanced':'Bottom-light');
+    document.getElementById('fgSub').textContent=inverted?'too top-heavy for AI buying queries':(pc[2]>=20?'healthy decision-stage coverage':'thin at the decision stage');
+    var br=document.getElementById('fgChips'); br.innerHTML='';
+    function chip(x,m){var c=document.createElement('span');c.className='chip'+(m?' muted':'');c.textContent=x;br.appendChild(c);}
+    if(defB>0) chip('Add ~'+defB+' BOFU pieces'); else chip('BOFU coverage on target');
+    if(defM>0) chip('Add ~'+defM+' MOFU pieces', true);
+    chip(Math.round(tot)+' pages total', true);
+  }
+  [T,M,B].forEach(function(el){el.addEventListener('input',compute);}); compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

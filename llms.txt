@@ -33,6 +33,11 @@
 - [GEO Content-Mix Planner](https://rawmktg.com/tools/content-mix-planner) - Turn monthly content capacity into a citation-optimized mix (flagship research, derivative, product, news) with cadence and anchor-to-amplify ratio.
 - [Zero-Click Traffic-at-Risk Estimator](https://rawmktg.com/tools/zero-click-traffic-risk) - Estimate how much organic traffic is exposed to zero-click erosion under AI Overviews (83%) and AI Mode (93%) scenarios.
 - [GEO Lift Calculator](https://rawmktg.com/tools/geo-lift-calculator) - Model citation lift on your Share of Model from authority links, expert quotes, and statistics using the Princeton/KDD GEO coefficients, with diminishing returns.
+- [Content Recency Decay Estimator](https://rawmktg.com/tools/content-recency-decay) - Estimate how fast a page's AI citations decay by engine (Perplexity ~30d to ChatGPT ~90d) and get a refresh-by date, grounded in the 30-day content half-life research.
+- [Page Citability Analyzer](https://rawmktg.com/tools/page-citability-analyzer) - Paste a page and score its citability against high-citation benchmarks: question headings, front-loaded claims, statistic density, quotes, and structure.
+- [Claim-Anchoring Validator](https://rawmktg.com/tools/claim-anchoring-validator) - Validate a page against the Claim-Anchoring framework, answer capsules, section autonomy, proof-pairing ratio, brand association, and get a hallucination-risk score.
+- [AI Platform Optimization Matrix](https://rawmktg.com/tools/ai-platform-optimizer) - Pick your target AI engines and content type to get per-engine recommendations on structure, schema, freshness cadence, and citation depth.
+- [B2B SaaS Funnel Gap Analyzer](https://rawmktg.com/tools/saas-funnel-gap-analyzer) - Enter your content counts by funnel stage to see your TOFU/MOFU/BOFU balance against a citation-optimized split and the gaps to close.
 - [All tools](https://rawmktg.com/tools)
 
 ## AI-Search Glossary

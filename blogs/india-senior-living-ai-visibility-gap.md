@@ -116,7 +116,7 @@ The fix isn't a press release. It's building the citation infrastructure that gi
 
 Currently, the GEO signal inventory for most Indian senior living brands includes: Crunchbase (present), PR wires (many), Wikipedia (absent), major news outlets with editorial coverage (minimal), Q&A platforms (absent), review aggregators (thin).
 
-## Why are some AI citations worth more than others?
+## Why are some [AI citations](/tools/page-citability-analyzer "Page Citability Analyzer") worth more than others?
 
 **Not all citations are equal.** Even when a brand does appear in AI responses, not all citations are equal. LLMs assign implicit credibility weighting based on the source. Wikipedia citations and Tier-1 editorial features carry vastly more signal weight than a mention in a PR newsfeed. The path from 3 ChatGPT citations to 118 isn't more content, it's more authoritative content, on authoritative platforms, with precise brand language.
 
@@ -152,7 +152,7 @@ Prioritise "near me" and location+intent queries. These drive actual tours and e
 
 SEO, 02
 
-Backlink quality audit
+Backlink quality [audit](/tools/geo-readiness-scorecard "GEO Readiness Scorecard")
 
 Disavow spam. Identify and pursue the specific DR50+ editorial properties where category-relevant coverage is achievable: personal finance publications covering retirement planning, real estate desks at Tier-1 newspapers, NRI-focused media.
 

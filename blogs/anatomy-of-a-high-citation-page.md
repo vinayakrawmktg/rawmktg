@@ -23,7 +23,7 @@ of citations sourced from the first 30% of a page
 
 conversion rate multiplier for AI-referred vs. organic traffic
 
-Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual claim-level retrieval. Where classical search asked *"does this domain deserve to rank?"*, AI retrieval asks *"does this specific passage deserve to be cited?"*
+Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual [claim](/tools/claim-anchoring-validator "Claim-Anchoring Validator")-level retrieval. Where classical search asked *"does this domain deserve to rank?"*, AI retrieval asks *"does this specific passage deserve to be cited?"*
 
 Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time [Retrieval-Augmented Generation (RAG)](/blogs/how-rag-actually-works) frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.
 

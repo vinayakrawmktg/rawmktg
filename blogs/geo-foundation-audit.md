@@ -163,7 +163,7 @@ Table 2: The RawMktg. citation-gap scoring matrix
 | --- | --- | --- | --- |
 | Share of Voice | > 35% across platforms | High vector similarity to query embeddings | Run the RAID pipeline; restructure pages into semantic entity definitions |
 | Mention-Source Overlap | > 25% of top brands | AI retrieves from official brand domains for validation queries | Publish original benchmark reports and proprietary datasets |
-| Citation Position | First-position | Top index ranking and high factual recency | Optimize Core Web Vitals; cut server-render delay |
+| Citation Position | First-position | Top index ranking and high factual [recency](/tools/content-recency-decay "Content Recency Decay Estimator") | Optimize Core Web Vitals; cut server-render delay |
 
 ### Step 4 in detail: page speed and llms.txt
 
@@ -261,6 +261,80 @@ time to measurable lead impact
 citation in Google AI Overviews for core product queries
 
 The full diagnostic toolkit for measuring progress is in our article on [prompt-to-citation tracking](/blogs/prompt-to-citation-tracking). For the schema and structured-data layer that underpins Step 5, see our guide to [schema markup and AI citations](/blogs/schema-markup-ai-citations-2026). For the [hallucination-proofing](/blogs/hallucination-proofing-your-brand) work that protects brand accuracy once citations are established, the Claim-Anchoring Framework applies from day one.
+
+Free interactive tool
+
+Score your GEO readiness
+
+Rate your brand across the four levers that decide AI citation, crawlability, authority, [Information Gain](/tools/page-citability-analyzer "Page Citability Analyzer") and structure, and get your gaps ranked.
+
+Crawlability & access 25 pts
+
+llms.txt + llms-full.txt published
+
+NoPartialYes
+
+Server-rendered, no JS walls for bots
+
+NoPartialYes
+
+Fast load / good first contentful paint
+
+NoPartialYes
+
+Authority signals 30 pts
+
+Earned media / third-party citations
+
+NoPartialYes
+
+Outbound links to high-authority sources
+
+NoPartialYes
+
+Named expert quotes with credentials
+
+NoPartialYes
+
+Information Gain 28 pts
+
+Original first-party data / surveys
+
+NoPartialYes
+
+Proprietary framework or benchmark
+
+NoPartialYes
+
+Hard statistics throughout content
+
+NoPartialYes
+
+Structure & entity 17 pts
+
+Scannable formatting (headers, tables, TL;DRs)
+
+NoPartialYes
+
+Schema markup (FAQ, SoftwareApp)
+
+NoPartialYes
+
+Consistent entity naming across the web
+
+NoPartialYes
+
+GEO readiness score
+
+0/100
+
+, 
+
+At riskDevelopingCited-ready
+
+A weighted self-assessment across the signals that drive AI citation. Weights reflect each signal's relative pull on Share of Model; your real-world results depend on execution quality and competitive context.
+
+A free rawmktg tool. [Open the full tool →](/tools/geo-readiness-scorecard) · [see all tools](/tools)
 
 Frequently Asked Questions
 

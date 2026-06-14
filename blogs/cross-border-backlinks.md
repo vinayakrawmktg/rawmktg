@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/cross-border-backlinks · rawmktg. by Vinayak Ravi*
 
 
-India has quietly become one of the most competitive markets in the world for cross-border payments. A cluster of companies now competes to help Indian exporters, freelancers, startups and platforms move money across borders, and that competition increasingly plays out in content and search visibility as much as in product and pricing. To understand how these brands build authority online, we analysed the full backlink profile of each of six players and classified every link by topic and by quality.
+India has quietly become one of the most competitive markets in the world for cross-border payments. A cluster of companies now competes to help Indian exporters, freelancers, startups and platforms move money across borders, and that competition increasingly plays out in content and search visibility as much as in product and pricing. To understand how these brands build [authority](/tools/geo-lift-calculator "GEO Lift Calculator") online, we analysed the full backlink profile of each of six players and classified every link by topic and by quality.
 
 The data comes from six Ahrefs backlink exports captured in June 2026, one per brand, covering every referring page and subdomain Ahrefs has discovered for Cashfree, PayGlocal, Skydo, Infinity, Eximpay and Xflow. Together they span more than 25,000 backlinks. We grouped each link into one of roughly fifteen topics, and separated genuine links from those Ahrefs flags as spam. Two findings stand out: the category earns the majority of its links outside the core cross-border topic, and the quality of those links varies enormously from one brand to the next.
 

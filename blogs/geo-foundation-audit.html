@@ -378,6 +378,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/geo-foundation-audit.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 
 <body>
@@ -667,7 +668,7 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
             <tr>
               <td class="label">Citation Position</td>
               <td class="metric">First-position</td>
-              <td>Top index ranking and high factual recency</td>
+              <td>Top index ranking and high factual <a href="/tools/content-recency-decay" title="Content Recency Decay Estimator">recency</a></td>
               <td>Optimize Core Web Vitals; cut server-render delay</td>
             </tr>
           </tbody>
@@ -839,7 +840,135 @@ integrates with Salesforce, and supports usage-based pricing?</pre>
       <p>The full diagnostic toolkit for measuring progress is in our article on <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a>. For the schema and structured-data layer that underpins Step 5, see our guide to <a href="/blogs/schema-markup-ai-citations-2026">schema markup and AI citations</a>. For the <a href="/blogs/hallucination-proofing-your-brand">hallucination-proofing</a> work that protects brand accuracy once citations are established, the Claim-Anchoring Framework applies from day one.</p>
 
       <!-- Methodology note -->
-      <div class="faq-section">
+      
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Score your GEO readiness</div><div class="embed-deck">Rate your brand across the four levers that decide AI citation, crawlability, authority, <a href="/tools/page-citability-analyzer" title="Page Citability Analyzer">Information Gain</a> and structure, and get your gaps ranked.</div></div>
+<section class="card">
+    <div class="grid score">
+      <div class="checklist" id="checklist">
+
+        <div class="cat">
+          <div class="cat-h">Crawlability &amp; access <span>25 pts</span></div>
+          <div class="item" data-w="8" data-act="Publish llms.txt + llms-full.txt mapping your canonical pages and facts.">
+            <span class="iname">llms.txt + llms-full.txt published</span>
+            <div class="iseg"><button data-m="0" class="sel">No</button><button data-m="0.5">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+          <div class="item" data-w="9" data-act="Serve key content server-side so AI crawlers don't hit JavaScript walls.">
+            <span class="iname">Server-rendered, no JS walls for bots</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5">Partial</button><button data-m="1" class="sel">Yes</button></div>
+          </div>
+          <div class="item" data-w="8" data-act="Cut load time; AI crawlers favor pages with fast first contentful paint.">
+            <span class="iname">Fast load / good first contentful paint</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5" class="sel">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+        </div>
+
+        <div class="cat">
+          <div class="cat-h">Authority signals <span>30 pts</span></div>
+          <div class="item" data-w="12" data-act="Earn placements in high-authority trade press ,  the single biggest citation source.">
+            <span class="iname">Earned media / third-party citations</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5" class="sel">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+          <div class="item" data-w="8" data-act="Cite .edu/.gov and primary sources in your content as authority anchors.">
+            <span class="iname">Outbound links to high-authority sources</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5">Partial</button><button data-m="1" class="sel">Yes</button></div>
+          </div>
+          <div class="item" data-w="10" data-act="Add attributed quotes from named, credentialed experts.">
+            <span class="iname">Named expert quotes with credentials</span>
+            <div class="iseg"><button data-m="0" class="sel">No</button><button data-m="0.5">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+        </div>
+
+        <div class="cat">
+          <div class="cat-h">Information Gain <span>28 pts</span></div>
+          <div class="item" data-w="12" data-act="Run an original survey or publish proprietary benchmarks AI can only get from you.">
+            <span class="iname">Original first-party data / surveys</span>
+            <div class="iseg"><button data-m="0" class="sel">No</button><button data-m="0.5">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+          <div class="item" data-w="8" data-act="Package your method as a named, ownable framework.">
+            <span class="iname">Proprietary framework or benchmark</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5" class="sel">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+          <div class="item" data-w="8" data-act="Quantify claims with hard figures, dates, and percentages.">
+            <span class="iname">Hard statistics throughout content</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5" class="sel">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+        </div>
+
+        <div class="cat">
+          <div class="cat-h">Structure &amp; entity <span>17 pts</span></div>
+          <div class="item" data-w="6" data-act="Restructure with clear headers, tables, and TL;DR summaries.">
+            <span class="iname">Scannable formatting (headers, tables, TL;DRs)</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5">Partial</button><button data-m="1" class="sel">Yes</button></div>
+          </div>
+          <div class="item" data-w="6" data-act="Add FAQ and SoftwareApplication schema to key pages.">
+            <span class="iname">Schema markup (FAQ, SoftwareApp)</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5" class="sel">Partial</button><button data-m="1">Yes</button></div>
+          </div>
+          <div class="item" data-w="5" data-act="Use one consistent brand name across every property and profile.">
+            <span class="iname">Consistent entity naming across the web</span>
+            <div class="iseg"><button data-m="0">No</button><button data-m="0.5">Partial</button><button data-m="1" class="sel">Yes</button></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="panel-out">
+        <div class="o-eyebrow">GEO readiness score</div>
+        <div class="scorewrap"><span class="score" id="sScore">0</span><span class="score-d">/100</span></div>
+        <span class="scoreband" id="sBand">, </span>
+        <div class="gauge"><div class="gfill" id="sFill"></div></div>
+        <div class="gscale"><span>At risk</span><span>Developing</span><span>Cited-ready</span></div>
+
+        <div class="gaps" id="sGaps"></div>
+        <p class="caveat">A weighted self-assessment across the signals that drive AI citation. Weights reflect each signal's relative pull on Share of Model; your real-world results depend on execution quality and competitive context.</p>
+      </div>
+    </div>
+  </section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/geo-readiness-scorecard">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var list=document.getElementById('checklist');
+  var BANDS=[{max:40,label:'At risk',color:'#BC3F1D'},{max:70,label:'Developing',color:'#8A8278'},{max:100,label:'Cited-ready',color:'#3E9B6A'}];
+  function bandFor(s){for(var i=0;i<BANDS.length;i++){if(s<=BANDS[i].max)return BANDS[i];}return BANDS[2];}
+  function compute(){
+    var score=0, gaps=[];
+    list.querySelectorAll('.item').forEach(function(it){
+      var w=parseFloat(it.dataset.w);
+      var sel=it.querySelector('.iseg button.sel');
+      var m=sel?parseFloat(sel.dataset.m):0;
+      score+=w*m;
+      var unrealized=w*(1-m);
+      if(unrealized>0) gaps.push({name:it.querySelector('.iname').textContent, act:it.dataset.act, pts:unrealized});
+    });
+    score=Math.round(score);
+    var band=bandFor(score);
+    document.getElementById('sScore').textContent=score;
+    var bEl=document.getElementById('sBand'); bEl.textContent=band.label;
+    bEl.style.background='rgba('+hexToRgb(band.color)+',.18)'; bEl.style.color=band.color;
+    var f=document.getElementById('sFill'); f.style.width=score+'%'; f.style.background=band.color;
+    gaps.sort(function(a,b){return b.pts-a.pts;});
+    var top=gaps.slice(0,3);
+    var g=document.getElementById('sGaps');
+    if(!top.length){ g.innerHTML='<div class="gaps-h">Priority fixes</div><div class="allset">Every signal covered. Maintain the lead ,  refresh data and earned media quarterly.</div>'; return; }
+    var html='<div class="gaps-h">Priority fixes ,  biggest unrealized points</div>';
+    top.forEach(function(gp,i){
+      html+='<div class="gap"><span class="rk">'+(i+1)+'</span><div style="flex:1"><div class="gt">'+gp.name+'</div><div class="ga">'+gp.act+'</div></div><span class="pts">+'+Math.round(gp.pts)+'</span></div>';
+    });
+    g.innerHTML=html;
+  }
+  function hexToRgb(h){h=h.replace('#','');return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)].join(',');}
+  list.addEventListener('click',function(e){
+    var b=e.target.closest('.iseg button'); if(!b) return;
+    b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');});
+    b.classList.add('sel'); compute();
+  });
+  compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

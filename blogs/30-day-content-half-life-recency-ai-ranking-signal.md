@@ -23,7 +23,7 @@ The brands winning in this environment understand something important: AI search
 
 ## How fast do AI citations decay after 30 days?
 
-**A meaningful share is lost within the first month.** Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources cited on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.
+**A meaningful share is lost within the first month.** Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources [cited](/tools/page-citability-analyzer "Page Citability Analyzer") on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.
 
 3.2x
 
@@ -235,6 +235,44 @@ The teams that adapt fastest are not the ones with the largest content libraries
 For content strategists, that means a systematic refresh calendar that keeps revenue-adjacent pages inside the citation window, a measurement framework built around AI Citation Rate and Citation Retention Rate, and a budget reallocation toward proprietary data and technical GEO infrastructure.
 
 The search result page that buyers see is increasingly generated, not ranked. The brands that appear in those generated answers are the ones that will define category leadership over the next three to five years. The system to get there is manageable, measurable, and starts with a single refresh audit this week.
+
+Free interactive tool
+
+Estimate your content's citation decay
+
+Enter a page's last-updated date and engine to see how fast its AI citations fade, and when to refresh.
+
+Page last updated
+
+When the page's main content (and its dateModified) last changed.
+
+AI engine
+
+ChatGPTGoogle AIOGeminiPerplexity
+
+Each engine weights freshness differently. Perplexity has the tightest window (~30 days); ChatGPT the widest (~90).
+
+Current monthly AI citations optional
+
+Used to translate retention into citations at risk.
+
+Citation retention today
+
+100%
+
+freshness still in window
+
+Now**100%**
+
++30 days**-**
+
++60 days**-**
+
++90 days**-**
+
+Models an exponential freshness half-life per engine (Perplexity ~30d, Gemini ~60d, Google AIO ~75d, ChatGPT ~90d), grounded in the 30-day-half-life research: pages unrefreshed for 90+ days are ~3.2x more likely to lose citations. Directional, not a forecast.
+
+A free rawmktg tool. [Open the full tool →](/tools/content-recency-decay) · [see all tools](/tools)
 
 Frequently Asked Questions
 

@@ -16,7 +16,7 @@ The zero-click and AI referral landscape: key metrics
 | Queries resolving as zero-click searches | ~60% |
 | CTR drop on top organic listing when AI Overview is present | 2.6% avg |
 | Growth in chatbot referral traffic to commercial sites (2024-2025) | +520% |
-| Qualification multiplier of AI-cited visitors vs standard search | 4.4x |
+| Qualification multiplier of AI-[cited](/tools/page-citability-analyzer "Page Citability Analyzer") visitors vs standard search | 4.4x |
 
 Traffic referred from citations within AI-generated responses is disproportionately valuable. Users who click a citation link have already been pre-qualified by the model's answer. They arrive knowing what you do and having heard your brand name in context.
 
@@ -248,7 +248,7 @@ Schema type separation for B2B SaaS product and commercial pages
 
 | Schema Type | What It Defines | Query Intent Served |
 | --- | --- | --- |
-| SoftwareApplication | Functional capabilities, category, platform compatibility | "What does [product] do?" queries |
+| SoftwareApplication | Functional capabilities, category, [platform](/tools/ai-platform-optimizer "AI Platform Optimization Matrix") compatibility | "What does [product] do?" queries |
 | Product | Commercial offers, pricing models, contract structures | "How much does [product] cost?" queries |
 | Offer | Specific pricing tier, billing cycle, availability | Bottom-of-funnel comparison queries |
 

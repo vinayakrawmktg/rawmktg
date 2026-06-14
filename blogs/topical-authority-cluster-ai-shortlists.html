@@ -385,6 +385,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/topical-authority-cluster-ai-shortlists.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 <body>
 <div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists.md. Optimized for AI and LLM tools.</div>
@@ -440,7 +441,7 @@
 
     <main class="article-content" id="article-main">
 
-      <p>The B2B buying journey has undergone a structural transformation. Buyers are bypassing traditional search results (pages of blue links and sponsored ads) in favor of conversational queries on ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews.<sup><a href="#r1">1</a></sup> If a brand does not appear as a cited recommendation inside these synthesized responses, it becomes effectively invisible to roughly half of its target market.<sup><a href="#r2">2</a></sup></p>
+      <p>The B2B buying journey has undergone a structural transformation. Buyers are bypassing traditional search results (pages of blue links and sponsored ads) in favor of conversational queries on ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews.<sup><a href="#r1">1</a></sup> If a brand does not appear as a <a href="/tools/page-citability-analyzer" title="Page Citability Analyzer">cited</a> recommendation inside these synthesized responses, it becomes effectively invisible to roughly half of its target market.<sup><a href="#r2">2</a></sup></p>
 
       <p>This shift renders traditional SEO tactics (built around search volume, keyword density, and link-building) insufficient for modern buyer acquisition. B2B brands must now adopt <a href="/blogs/eeat-is-an-ai-signal-now">Generative Engine Optimization (GEO)</a> and Answer Engine Optimization (AEO) so that their services and proprietary frameworks are selected, synthesized, and cited by large language models.<sup><a href="#r1">1</a></sup> Designing an effective topical authority cluster means aligning technical web architecture with the cognitive parsing patterns of frontier models.</p>
 
@@ -1024,7 +1025,91 @@ Condition group (OR):
       </div>
 
       <!-- Citations -->
-      <div class="faq-section">
+      
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Plan a citation-optimized content mix</div><div class="embed-deck">Turn your monthly content capacity into a flagship / derivative / product / news split built for AI citations.</div></div>
+<section class="card" id="tool">
+    <div class="grid mix">
+      <div class="controls">
+        <div class="fld">
+          <div class="lab">Pieces per month <span class="val" id="mTotalVal">20</span></div>
+          <input type="range" id="mTotal" min="4" max="60" value="20" aria-label="Pieces per month">
+          <p class="hint">Total publishable assets your team ships monthly ,  articles, posts, pages, decks.</p>
+        </div>
+        <div class="fld">
+          <div class="lab">Strategy</div>
+          <div class="seg-v" id="mPreset">
+            <button data-k="standard" class="sel">Balanced<small>20 / 50 / 20 / 10 · the default</small></button>
+            <button data-k="authority">Authority-push<small>30 / 45 / 15 / 10 · maximize citations</small></button>
+            <button data-k="demand">Demand-capture<small>15 / 45 / 30 / 10 · convert intent</small></button>
+          </div>
+          <p class="hint">The Balanced split follows the 2026 GEO content model. The other two tilt toward authority-building or bottom-funnel capture.</p>
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="stacked" id="mStacked"></div>
+        <div class="alloc" id="mAlloc"></div>
+        <div class="cadence">
+          <div class="cad"><div class="n" id="mCadence">, </div><div class="k">Flagship cadence</div></div>
+          <div class="cad"><div class="n" id="mAnchor">, </div><div class="k">Anchor &amp; amplify ratio</div></div>
+        </div>
+        <p class="caveat">A planning guide built on the 2026 GEO content model. Flagship pieces are the citation anchors; derivative content amplifies them; product and news capture intent and recency. Adjust to your team's reality ,  the ratios matter more than the exact counts.</p>
+      </div>
+    </div>
+  </section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/content-mix-planner">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var BUCKETS=[
+    {key:'flagship',name:'Flagship high-info-gain',color:'#BC3F1D',desc:'Original surveys, benchmarks, proprietary frameworks ,  your anchor citations.'},
+    {key:'derivative',name:'Derivative',color:'#8A8278',desc:'Summaries, posts, decks that reference the flagship and feed the citation ecosystem.'},
+    {key:'product',name:'Product &amp; solution',color:'#B4ADA2',desc:'Pricing, integrations, use cases that capture transactional queries.'},
+    {key:'news',name:'News &amp; commentary',color:'#D6D0C5',desc:'Rapid takes that ride recency bias on engines like Perplexity.'}
+  ];
+  var PRESETS={standard:[20,50,20,10],authority:[30,45,15,10],demand:[15,45,30,10]};
+  var total=document.getElementById('mTotal');
+  function lr(totalN,shares){ // largest remainder
+    var raw=shares.map(function(s){return totalN*s/100;});
+    var base=raw.map(Math.floor); var used=base.reduce(function(a,b){return a+b;},0);
+    var rem=totalN-used;
+    var order=raw.map(function(r,i){return {i:i,f:r-Math.floor(r)};}).sort(function(a,b){return b.f-a.f;});
+    for(var k=0;k<rem;k++){ base[order[k%order.length].i]++; }
+    return base;
+  }
+  function compute(){
+    var T=parseInt(total.value,10); document.getElementById('mTotalVal').textContent=T;
+    var key=document.querySelector('#mPreset button.sel').dataset.k;
+    var shares=PRESETS[key];
+    var counts=lr(T,shares);
+    // stacked
+    var st=document.getElementById('mStacked'); st.innerHTML='';
+    BUCKETS.forEach(function(b,i){var s=document.createElement('span');s.style.background=b.color;s.style.width=(counts[i]/T*100)+'%';st.appendChild(s);});
+    // rows
+    var al=document.getElementById('mAlloc'); al.innerHTML='';
+    BUCKETS.forEach(function(b,i){
+      var pctv=Math.round(counts[i]/T*100);
+      var row=document.createElement('div'); row.className='arow'; row.style.setProperty('--c',b.color);
+      row.innerHTML='<span class="swatch"></span><div class="meta"><div class="nm">'+b.name+'</div><div class="ds">'+b.desc+'</div></div>'+
+        '<div class="cnt"><div class="c">'+counts[i]+'</div><div class="p">'+pctv+'% \u00b7 /mo</div></div>';
+      al.appendChild(row);
+    });
+    // cadence
+    var flag=counts[0];
+    var weeks=flag>0?(4.345/flag):0;
+    var cad=document.getElementById('mCadence');
+    cad.innerHTML = flag>0 ? ('~1 every <b>'+(weeks>=1?weeks.toFixed(1)+' wks':Math.round(weeks*7)+' days')+'</b>') : '<b>none</b>';
+    var amp=flag>0?(counts[1]/flag):0;
+    document.getElementById('mAnchor').innerHTML='<b>'+amp.toFixed(1)+'\u00d7</b> derivative';
+  }
+  total.addEventListener('input',compute);
+  document.getElementById('mPreset').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');compute();});
+  compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

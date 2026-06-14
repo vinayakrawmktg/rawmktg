@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/cx-saas-seo-discoverability-analysis · rawmktg. by Vinayak Ravi*
 
 
-Over the past few months, we audited six leading B2B SaaS companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.
+Over the past few months, we [audit](/tools/geo-readiness-scorecard "GEO Readiness Scorecard")ed six leading B2B SaaS companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.
 
 The patterns were remarkably consistent. Across technical infrastructure, content strategy, backlink quality, and AI visibility, the same structural mistakes appeared again and again, made at scale by companies with every resource available to avoid them.
 
@@ -119,7 +119,7 @@ The companies with the strongest organic performance in our analysis had signifi
 
 This is perhaps the most forward-looking finding in our analysis, and the one with the longest tail of strategic implications.
 
-A procurement manager at a 500-person company asks ChatGPT, Perplexity, or Google AI Overviews: "What is the best customer feedback tool for a mid-market SaaS company?" and uses the response as a starting framework. The companies that appear in those AI-generated responses are not selected at random. Large language models pull from a specific set of trusted signals:
+A procurement manager at a 500-person company asks ChatGPT, Perplexity, or Google [AI Overviews](/tools/zero-click-traffic-risk "Zero-Click Traffic-at-Risk Estimator"): "What is the best customer feedback tool for a mid-market SaaS company?" and uses the response as a starting framework. The companies that appear in those AI-generated responses are not selected at random. Large language models pull from a specific set of trusted signals:
 
 - Domain authority and breadth of referring domains, particularly from review aggregators and tech publications the model has been trained on most heavily
 - Structured comparison content, X vs Y, best tools for Z, alternatives to X, explicitly designed for evaluation
@@ -168,6 +168,34 @@ The leaders are found, by Google, by AI models, by buyers doing their own resear
 The challengers are building the same infrastructure now. The question is whether they are doing it with the structural clarity and sequencing the data suggests, or whether they are investing heavily in the visible things (brand content, paid search, event sponsorships) while the compounding, organic infrastructure remains underdeveloped.
 
 The data suggests the latter is still the norm. But the gap is closable. It just requires starting with the right problems, in the right order, with the right level of investment.
+
+Free interactive tool
+
+Analyze your content funnel balance
+
+Enter your page counts by stage to see how your funnel compares to a citation-optimized SaaS split.
+
+How many published pages/assets do you have at each funnel stage?
+
+TOFU
+
+MOFU
+
+BOFU
+
+TOFU = awareness/explainer, MOFU = comparison/consideration, BOFU = pricing/decision. Most SaaS sites over-index TOFU and starve BOFU, the exact layer where AI sends ready-to-buy queries.
+
+Funnel balance
+
+-
+
+Your mix (T / M / B)
+
+Recommended40 / 35 / 25
+
+Benchmarked against a citation-optimized SaaS split (TOFU 40 / MOFU 35 / BOFU 25). The CX SaaS analysis found every player over-built awareness content and left ~430,000 monthly searches of MOFU/BOFU demand largely uncaptured. Directional.
+
+A free rawmktg tool. [Open the full tool →](/tools/saas-funnel-gap-analyzer) · [see all tools](/tools)
 
 Frequently Asked Questions
 

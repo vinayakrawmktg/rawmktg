@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/authority-seeding-ai-llm-trust · rawmktg. by Vinayak Ravi*
 
 
-For nearly three decades, organic search visibility was governed by [Google's PageRank paradigm](https://en.wikipedia.org/wiki/PageRank), which treated hyperlinks as explicit votes of confidence between web documents. A backlink functioned as a directional pipeline transferring mathematical equity and domain authority. The game was clear: earn more links from more authoritative domains and rank higher.
+For nearly three decades, organic search visibility was governed by [Google's PageRank paradigm](https://en.wikipedia.org/wiki/PageRank), which treated hyperlinks as explicit votes of confidence between web documents. A backlink functioned as a directional pipeline transferring mathematical equity and domain [authority](/tools/geo-lift-calculator "GEO Lift Calculator"). The game was clear: earn more links from more authoritative domains and rank higher.
 
 That game is over. Modern generative engines process information through **high-dimensional semantic vector spaces** rather than static crawling of hyperlinked nodes. To a language model, a traditional hyperlink is structurally invisible. The underlying computational mechanisms of tokenisation strip raw HTML attributes and anchor tag metadata, leaving only the surrounding textual corpus for inference.
 
@@ -23,7 +23,7 @@ Table 01: Authority metric correlations with AI citation visibility · Cross-pla
 | --- | --- | --- | --- |
 | Unlinked Brand Mentions | 0.664 | Probabilistic token co-occurrence in high-dimensional vector spaces | +205% |
 | Structured Data (Schema) | 0.571 | Provides machine-readable ground truth for model extraction | +162% |
-| Co-citation Patterns | 0.490 | Brands cited alongside competitors signal category membership to the model | +125% |
+| Co-citation Patterns | 0.490 | Brands [cited](/tools/page-citability-analyzer "Page Citability Analyzer") alongside competitors signal category membership to the model | +125% |
 | Review Platform Signals | 0.382 | Category-specific quality signals from trusted aggregators (G2, TrustPilot) | +75% |
 | Wikidata / Knowledge Graph | 0.341 | Entity grounding in pre-trained parametric knowledge bases | +56% |
 | Traditional Backlinks (DR) | 0.218 | Baseline crawl discovery path; minimal direct weight in model synthesis | n/a |

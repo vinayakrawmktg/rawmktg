@@ -54,7 +54,7 @@ The risk is structural. When organic search mostly recaptures demand the brand a
 
 **Not on vendor sites.** MoFu (consideration) traffic is just 2-13% of the total at every brand. The "best HR software" and "X vs Y" queries, where buyers actually choose, are owned by G2, Capterra and Forbes Advisor, not the vendors.
 
-Map every keyword to a funnel stage and the same shape appears six times: a reasonable top (awareness), a heavy bottom (brand and decision), and almost nothing in the middle. The consideration layer, comparison terms, "best," "alternatives," "vs," is where buyers narrow their shortlist, and it is precisely where these vendors are absent.
+Map every keyword to a [funnel](/tools/saas-funnel-gap-analyzer "B2B SaaS Funnel Gap Analyzer") stage and the same shape appears six times: a reasonable top (awareness), a heavy bottom (brand and decision), and almost nothing in the middle. The consideration layer, comparison terms, "best," "alternatives," "vs," is where buyers narrow their shortlist, and it is precisely where these vendors are absent.
 
 That real estate has not vanished, it has been ceded to third-party review aggregators. And here the two stories connect: those same aggregators (G2, Capterra, software-roundup media) are exactly the sources AI engines lean on when recommending tools. So the empty middle is not only lost consideration-stage traffic; it is lost AI citations too. The funnel inversion and the AI-visibility gap are the same problem viewed from two angles.
 

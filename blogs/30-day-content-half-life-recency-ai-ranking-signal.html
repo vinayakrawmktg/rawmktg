@@ -314,6 +314,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/30-day-content-half-life-recency-ai-ranking-signal.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 
 <body>
@@ -388,7 +389,7 @@
 
       <h2 id="anatomy">How fast do AI citations decay after 30 days?</h2>
 
-      <div class="section-answer"><strong>A meaningful share is lost within the first month.</strong> Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources cited on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.</div>
+      <div class="section-answer"><strong>A meaningful share is lost within the first month.</strong> Research tracking AI citation rates over rolling 30-day windows shows consistent decay patterns. Of all targeted sources <a href="/tools/page-citability-analyzer" title="Page Citability Analyzer">cited</a> on Day 1, a meaningful share had already lost their citation by Day 30. By Day 90, the majority of originally cited sources had been displaced by fresher content.</div>
 
       <div class="stat-callout">
         <div class="sc-val">3.2x</div>
@@ -744,7 +745,71 @@
 
       <p>The search result page that buyers see is increasingly generated, not ranked. The brands that appear in those generated answers are the ones that will define category leadership over the next three to five years. The system to get there is manageable, measurable, and starts with a single refresh audit this week.</p>
 
-      <div class="faq-section">
+      
+
+
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Estimate your content's citation decay</div><div class="embed-deck">Enter a page's last-updated date and engine to see how fast its AI citations fade, and when to refresh.</div></div>
+<section class="card" id="rcTool">
+  <div class="grid calc">
+    <div class="controls">
+      <div class="fld"><div class="lab">Page last updated</div>
+        <input type="date" id="rcDate">
+        <p class="hint">When the page's main content (and its dateModified) last changed.</p></div>
+      <div class="fld"><div class="lab">AI engine</div>
+        <div class="seg" id="rcEngine"><button data-h="90" class="sel">ChatGPT</button><button data-h="75">Google AIO</button><button data-h="60">Gemini</button><button data-h="30">Perplexity</button></div>
+        <p class="hint">Each engine weights freshness differently. Perplexity has the tightest window (~30 days); ChatGPT the widest (~90).</p></div>
+      <div class="fld"><div class="lab">Current monthly AI citations <span class="val" style="color:rgba(255,255,255,.5)">optional</span></div>
+        <div class="ipt"><input type="number" id="rcCites" value="40" min="0" step="1"></div>
+        <p class="hint">Used to translate retention into citations at risk.</p></div>
+    </div>
+    <div class="output">
+      <div class="o-eyebrow">Citation retention today</div>
+      <div class="o-lift" id="rcRet">100%</div>
+      <div class="o-sub" id="rcSub">freshness still in window</div>
+      <div class="barrow"><span class="l">Now</span><div class="track"><div class="fill proj" id="rcF0"></div></div><b id="rcV0">100%</b></div>
+      <div class="barrow"><span class="l">+30 days</span><div class="track"><div class="fill proj" id="rcF30"></div></div><b id="rcV30">-</b></div>
+      <div class="barrow"><span class="l">+60 days</span><div class="track"><div class="fill proj" id="rcF60"></div></div><b id="rcV60">-</b></div>
+      <div class="barrow"><span class="l">+90 days</span><div class="track"><div class="fill proj" id="rcF90"></div></div><b id="rcV90">-</b></div>
+      <div class="chips" id="rcChips"></div>
+      <p class="caveat">Models an exponential freshness half-life per engine (Perplexity ~30d, Gemini ~60d, Google AIO ~75d, ChatGPT ~90d), grounded in the 30-day-half-life research: pages unrefreshed for 90+ days are ~3.2x more likely to lose citations. Directional, not a forecast.</p>
+    </div>
+  </div>
+</section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/content-recency-decay">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById('rcTool'); if(!root) return;
+  var dateEl=document.getElementById('rcDate'), citesEl=document.getElementById('rcCites');
+  var d=new Date(); d.setDate(d.getDate()-60); dateEl.value=d.toISOString().slice(0,10);
+  function H(){var s=root.querySelector('#rcEngine button.sel');return s?parseFloat(s.dataset.h):90;}
+  function ageDays(){var t=new Date(dateEl.value); if(isNaN(t)) return 0; return Math.max(0,Math.round((Date.now()-t)/86400000));}
+  function ret(age,h){return Math.pow(0.5, age/h);}
+  function setBar(f,v,val){document.getElementById(f).style.width=Math.round(val*100)+'%';document.getElementById(v).textContent=Math.round(val*100)+'%';}
+  function compute(){
+    var h=H(), age=ageDays();
+    var r0=ret(age,h), r30=ret(age+30,h), r60=ret(age+60,h), r90=ret(age+90,h);
+    document.getElementById('rcRet').textContent=Math.round(r0*100)+'%';
+    setBar('rcF0','rcV0',r0); setBar('rcF30','rcV30',r30); setBar('rcF60','rcV60',r60); setBar('rcF90','rcV90',r90);
+    var urgency=Math.max(1,Math.min(10,Math.round((1-r0)*12)));
+    var sub=r0>=0.7?'fresh, comfortably in window':(r0>=0.45?'decaying, refresh soon':'stale, refresh now');
+    document.getElementById('rcSub').textContent=sub+' \u00b7 age '+age+'d';
+    var cites=Math.max(0,parseFloat(citesEl.value)||0), lost30=Math.round(cites*(r0-r30));
+    var br=document.getElementById('rcChips'); br.innerHTML='';
+    function chip(t,m){var c=document.createElement('span');c.className='chip'+(m?' muted':'');c.textContent=t;br.appendChild(c);}
+    chip('Refresh urgency '+urgency+'/10');
+    if(cites>0) chip('~'+lost30+' citations lost in 30d', true);
+    var nd=new Date(dateEl.value); nd.setDate(nd.getDate()+Math.round(0.7*h));
+    chip('Refresh by '+nd.toISOString().slice(0,10), true);
+  }
+  dateEl.addEventListener('input',compute); citesEl.addEventListener('input',compute);
+  root.querySelector('#rcEngine').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');compute();});
+  compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

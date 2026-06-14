@@ -314,6 +314,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/how-rag-actually-works.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 
 <body>
@@ -430,7 +431,7 @@
 
       <div class="section-answer"><strong>Because engines retrieve passages, not whole pages.</strong> AI search engines do not ingest your entire page in a single pass. They process content in discrete 300–500 word segments. Only 5 to 10 chunks, from across the entire indexed web, advance to the generation stage. A single poorly structured section can cause an otherwise authoritative page to be ignored entirely.</div>
 
-      <p>Each chunk is independently vectorised and stored in the retrieval index. When a query arrives, the retriever identifies the top-k most relevant chunks and presents them to the LLM. This creates a high-stakes environment: a single poorly structured section on an otherwise authoritative page can cause that page to be ignored entirely. Conversely, a single exceptionally clear, well-cited paragraph can earn a citation even if the rest of the page is unremarkable.</p>
+      <p>Each chunk is independently vectorised and stored in the retrieval index. When a query arrives, the retriever identifies the top-k most relevant chunks and presents them to the LLM. This creates a high-stakes environment: a single poorly structured section on an otherwise authoritative page can cause that page to be ignored entirely. Conversely, a single exceptionally clear, well-<a href="/tools/page-citability-analyzer" title="Page Citability Analyzer">cited</a> paragraph can earn a citation even if the rest of the page is unremarkable.</p>
 
       <div class="info-box">
         <div class="info-box-label">The Chunking Implication</div>
@@ -690,7 +691,55 @@
       <p>The research is clear, the buyer data is clear, and the mechanics are now explained. The only remaining question is whether your content architecture is ready to be retrieved.</p>
 
       <!-- About -->
-      <div class="faq-section">
+      
+
+
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Optimize for each AI engine</div><div class="embed-deck">Choose your target engines and content type to see the structure and schema each one rewards.</div></div>
+<section class="card" id="amTool">
+  <div class="controls" style="margin-bottom:22px">
+    <div class="fld"><div class="lab">Content type</div>
+      <div class="seg" id="amType"><button data-k="product" class="sel">Product page</button><button data-k="guide">Educational guide</button><button data-k="compare">Comparison</button><button data-k="news">News</button></div></div>
+    <div class="fld"><div class="lab">Target engines</div>
+      <div class="ptoggles" id="amPlat"><button class="ptog on" data-p="chatgpt">ChatGPT</button><button class="ptog on" data-p="perplexity">Perplexity</button><button class="ptog on" data-p="gemini">Gemini</button><button class="ptog on" data-p="claude">Claude</button><button class="ptog on" data-p="aio">Google AIO</button></div></div>
+  </div>
+  <div class="mx-grid" id="amOut"></div>
+  <p class="caveat">Recommendations synthesize per-engine retrieval behavior from the RAG and recency research: citation depth, freshness windows, and structure/schema preferences. Directional guidance, not engine documentation.</p>
+</section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/ai-platform-optimizer">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById('amTool'); if(!root) return;
+  var P={
+    chatgpt:{name:'ChatGPT',depth:'~5 citations / response',recency:'~90-day freshness window',structure:'Comparison & scenario tables, broad consensus',schema:'FAQPage, Product',top:'Wikipedia-grade consensus'},
+    perplexity:{name:'Perplexity',depth:'~8 citations / response',recency:'Near real-time (~30 days)',structure:'Fresh, dated data tables & updated stats',schema:'dateModified, Article',top:'Recent news & forums'},
+    gemini:{name:'Gemini',depth:'~8 citations / response',recency:'~60-day window',structure:'Community sentiment & clear summaries',schema:'FAQPage, HowTo',top:'Reddit & community'},
+    claude:{name:'Claude',depth:'~13 citations / response',recency:'~6-month window',structure:'Long-form depth (2,000+ words), methodology',schema:'Article, citations',top:'PubMed / primary sources'},
+    aio:{name:'Google AI Overviews',depth:'High, schema-dependent',recency:'Driven by dateModified',structure:'Scannable, direct answers',schema:'FAQPage (+lift), HowTo, dateModified',top:'Top-10 authority publishers'}
+  };
+  var TYPE={product:'Lead with specs, pricing and a comparison table; add Product + FAQPage schema.',
+    guide:'Open with a 40-60 word answer, use question headings, pair one stat + one quote per section.',
+    compare:'Use an "A vs B" table with explicit criteria, engines lift comparison structures directly.',
+    news:'Stamp a visible date + dateModified; prioritise Perplexity and AI Overviews for recency.'};
+  function compute(){
+    var tBtn=root.querySelector('#amType button.sel'), type=tBtn.dataset.k;
+    var on={}; root.querySelectorAll('#amPlat .ptog').forEach(function(b){on[b.dataset.p]=b.classList.contains('on');});
+    var cards=Object.keys(P).filter(function(k){return on[k];}).map(function(k){var p=P[k];
+      return '<div class="mx-card"><div class="mx-h"><span class="mx-name">'+p.name+'</span><span class="mx-badge">'+p.depth+'</span></div>'+
+      '<div class="mx-row"><span class="k">Freshness</span><span class="v">'+p.recency+'</span></div>'+
+      '<div class="mx-row"><span class="k">Structure</span><span class="v">'+p.structure+'</span></div>'+
+      '<div class="mx-row"><span class="k">Schema</span><span class="v">'+p.schema+'</span></div>'+
+      '<div class="mx-row"><span class="k">Leans on</span><span class="v">'+p.top+'</span></div></div>';}).join('');
+    document.getElementById('amOut').innerHTML='<div class="flag ok" style="margin-bottom:4px">For a '+tBtn.textContent.toLowerCase()+': '+TYPE[type]+'</div>'+(cards||'<div class="flag">Select at least one engine.</div>');
+  }
+  root.querySelector('#amType').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');compute();});
+  root.querySelector('#amPlat').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;b.classList.toggle('on');compute();});
+  compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

@@ -15,7 +15,7 @@ The teardown in 30 seconds
 
 **The culprit:** a JavaScript bot-protection wall that serves every AI crawler a challenge page instead of content.
 
-**The lesson:** authority you block is authority you waste. In the AI era, crawlability is the whole game.
+**The lesson:** authority you block is authority you waste. In the AI era, [crawlability](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") is the whole game.
 
 Property Vista is enterprise multifamily property-management software, big in Canada and growing in the US. On paper it is a healthy, established brand: the kind of domain that should be the default answer when a property operator asks an AI assistant which software to use to run their buildings. It isn't. And the reason it isn't is so common, and so fixable, that it makes Property Vista a near-perfect teaching case. Nearly everything most teams obsess over, links, schema, site structure, is already done. The one thing almost nobody checks is the thing quietly undoing all of it. We pulled the data from Ahrefs and inspected the live site. Here is the autopsy.
 
@@ -28,7 +28,7 @@ High-authority referring domains
 | Source | Authority | Why it matters for AI |
 | --- | --- | --- |
 | Gartner | DR 92 | Category authority models lean on |
-| Crunchbase | DR 91 | Entity record, cited since 2018 |
+| Crunchbase | DR 91 | Entity record, [cited](/tools/page-citability-analyzer "Page Citability Analyzer") since 2018 |
 | G2 | DR 91 | The review site AI trusts on "which tool" questions |
 | TrustRadius | DR 84 | Software reviews and ratings |
 | BetaKit | DR 77 | Canadian tech press, news-grade signal |

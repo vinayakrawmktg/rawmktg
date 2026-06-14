@@ -33,7 +33,7 @@ RAG system components, technical function and marketing implication
 
 **Because engines retrieve passages, not whole pages.** AI search engines do not ingest your entire page in a single pass. They process content in discrete 300–500 word segments. Only 5 to 10 chunks, from across the entire indexed web, advance to the generation stage. A single poorly structured section can cause an otherwise authoritative page to be ignored entirely.
 
-Each chunk is independently vectorised and stored in the retrieval index. When a query arrives, the retriever identifies the top-k most relevant chunks and presents them to the LLM. This creates a high-stakes environment: a single poorly structured section on an otherwise authoritative page can cause that page to be ignored entirely. Conversely, a single exceptionally clear, well-cited paragraph can earn a citation even if the rest of the page is unremarkable.
+Each chunk is independently vectorised and stored in the retrieval index. When a query arrives, the retriever identifies the top-k most relevant chunks and presents them to the LLM. This creates a high-stakes environment: a single poorly structured section on an otherwise authoritative page can cause that page to be ignored entirely. Conversely, a single exceptionally clear, well-[cited](/tools/page-citability-analyzer "Page Citability Analyzer") paragraph can earn a citation even if the rest of the page is unremarkable.
 
 The Chunking Implication
 
@@ -190,6 +190,24 @@ The era of the ten blue links is functionally over. In its place, the Answer Eco
 For B2B marketing teams, this is not a new channel to add to the mix. It is a new physics for the entire discovery layer of the buying journey. The brands that emerge as the definitive answers to their buyers' AI queries in 2026 will be the ones that compound that authority into durable competitive moats over the following years. For a live data set on how this divide plays out across a single vertical, see our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap).
 
 The research is clear, the buyer data is clear, and the mechanics are now explained. The only remaining question is whether your content architecture is ready to be retrieved.
+
+Free interactive tool
+
+Optimize for each AI engine
+
+Choose your target engines and content type to see the structure and schema each one rewards.
+
+Content type
+
+Product pageEducational guideComparisonNews
+
+Target engines
+
+ChatGPTPerplexityGeminiClaudeGoogle AIO
+
+Recommendations synthesize per-engine retrieval behavior from the RAG and recency research: citation depth, freshness windows, and structure/schema preferences. Directional guidance, not engine documentation.
+
+A free rawmktg tool. [Open the full tool →](/tools/ai-platform-optimizer) · [see all tools](/tools)
 
 Frequently Asked Questions
 

@@ -368,6 +368,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/hallucination-proofing-your-brand.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 <body>
 <div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/hallucination-proofing-your-brand.md. Optimized for AI and LLM tools.</div>
@@ -438,7 +439,7 @@
 
       <p><strong>Answer Engine Optimization (AEO)</strong> emerged when Google and voice assistants began extracting direct answers. The goal shifted from "rank for a keyword" to "own a featured snippet." Schema.org markup and direct-answer HTML formatting became the primary levers, and the success metric became snippet ownership rather than click volume.</p>
 
-      <p><strong>Generative Engine Optimization (GEO)</strong> is the newest discipline, and the focus of this article. The target system is not a search index; it is a large language model synthesizing information from multiple sources into a single, opinionated answer. Your brand does not appear in a list. It is either cited, ignored, or misrepresented. The stakes are categorically different.</p>
+      <p><strong>Generative Engine Optimization (GEO)</strong> is the newest discipline, and the focus of this article. The target system is not a search index; it is a large language model synthesizing information from multiple sources into a single, opinionated answer. Your brand does not appear in a list. It is either <a href="/tools/page-citability-analyzer" title="Page Citability Analyzer">cited</a>, ignored, or misrepresented. The stakes are categorically different.</p>
 
       <div class="tt-wrap">
         <div class="tt-label">Table 01: Architectural distinctions between SEO, AEO, and GEO</div>
@@ -957,7 +958,85 @@
       <p>Before restructuring individual pages, use a <a href="/blogs/geo-foundation-audit">GEO Foundation Audit</a> to identify which queries are generating the most hallucinations. Then start with a single high-traffic product page and apply the four Claim-Anchoring components. Run the same buyer query through ChatGPT before and after the changes. The delta will be immediately visible, and so will the path forward for every remaining page on your site.</p>
 
       <!-- Citations -->
-      <div class="faq-section">
+      
+
+
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Validate your content against hallucination risk</div><div class="embed-deck">Paste a page to score it on the four Claim-Anchoring signals and see which sections AI is most likely to mis-quote.</div></div>
+<section class="card" id="caTool">
+  <div class="grid calc">
+    <div class="controls">
+      <div class="fld"><div class="lab">Your brand / product name</div><div class="ipt"><input type="text" id="caBrand" placeholder="e.g. Acme Robotics"></div></div>
+      <div class="fld"><div class="lab">Paste your page content</div>
+        <textarea class="ta" id="caText" placeholder="Paste your article HTML or plain text..."></textarea>
+        <p class="hint">Checks the four parts of the Claim-Anchoring framework. Runs in your browser.</p></div>
+    </div>
+    <div class="output">
+      <div class="o-eyebrow">Hallucination-risk score</div>
+      <div class="o-lift" id="caScore">-</div>
+      <div class="o-sub" id="caSub">paste content to analyze</div>
+      <div class="metrics" id="caMetrics"></div>
+      <div class="flags" id="caFlags"></div>
+      <p class="caveat">Scores content against the Claim-Anchoring framework: answer capsules (40-60 words under each heading), self-contained sections (120-180 words), a proof-pairing ratio of 0.70+ (evidence per claim), and brand-name co-location with key claims. Heuristic and directional.</p>
+    </div>
+  </div>
+</section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/claim-anchoring-validator">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById('caTool'); if(!root) return;
+  var ta=document.getElementById('caText'), brandEl=document.getElementById('caBrand');
+  function sections(raw){
+    raw=(raw||'').trim(); var secs=[];
+    if(/<h[1-6]/i.test(raw)){ try{var doc=new DOMParser().parseFromString(raw,'text/html');
+      var cur=null; doc.body.querySelectorAll('h1,h2,h3,p,li').forEach(function(n){
+        if(/^H[1-3]$/.test(n.tagName)){ if(cur)secs.push(cur); cur={h:n.textContent.trim(),t:''};}
+        else if(cur){cur.t+=' '+n.textContent.trim();}});
+      if(cur)secs.push(cur);}catch(e){} }
+    if(!secs.length){ raw.split(/\n\s*\n/).forEach(function(b){var lines=b.split(/\n/),h='',t=b;
+      if(lines[0]&&lines[0].trim().split(/\s+/).length<=12&&!/[.!?]$/.test(lines[0].trim())){h=lines[0].trim().replace(/^#+\s*/,'');t=lines.slice(1).join(' ');}
+      secs.push({h:h,t:t.trim()});}); }
+    return secs.filter(function(s){return s.t||s.h;});
+  }
+  function wc(s){return (s||'').split(/\s+/).filter(Boolean).length;}
+  function compute(){
+    var raw=(ta.value||'').trim(), brand=(brandEl.value||'').trim();
+    var mEl=document.getElementById('caMetrics'), fEl=document.getElementById('caFlags');
+    if(!raw){document.getElementById('caScore').textContent='-';document.getElementById('caSub').textContent='paste content to analyze';mEl.innerHTML='';fEl.innerHTML='';return;}
+    var secs=sections(raw), capOK=0, autoOK=0, brOK=0, flags=[];
+    secs.forEach(function(s){
+      var w=wc(s.t), fs=((s.t.split(/[.!?]\s/)[0])||'').split(/\s+/).filter(Boolean).length;
+      var cap=fs>=25&&fs<=70; if(cap)capOK++;
+      var auto=w>=80&&w<=260&&!/^\s*(this|that|it|these|those|here|they)\b/i.test(s.t); if(auto)autoOK++;
+      var hb=brand&&((s.t+' '+s.h).toLowerCase().indexOf(brand.toLowerCase())>=0); if(hb)brOK++;
+      if(s.h&&!cap) flags.push('No clear answer capsule under: "'+s.h+'"');
+      else if(s.h&&!auto) flags.push('Section not self-contained: "'+s.h+'"');
+    });
+    var n=Math.max(1,secs.length);
+    var sents=raw.replace(/<[^>]+>/g,' ').split(/[.!?]+\s+/).filter(function(x){return x.split(/\s+/).length>3;});
+    var evid=sents.filter(function(x){return /\d+(\.\d+)?%|\b\d{2,}\b|\$\d|according to|["\u201c\u201d]|https?:\/\//i.test(x);}).length;
+    var ratio=sents.length?evid/sents.length:0;
+    var capPct=capOK/n, autoPct=autoOK/n;
+    var ratioScore=Math.min(1,ratio/0.7), brandScore=brand?Math.min(1,(brOK/n)/0.6):0.5;
+    var comp=capPct*0.28+autoPct*0.24+ratioScore*0.30+brandScore*0.18, risk=Math.round((1-comp)*100);
+    document.getElementById('caScore').textContent=risk;
+    document.getElementById('caSub').textContent=(risk<=35?'low risk':(risk<=60?'moderate risk':'high risk'))+' \u00b7 '+secs.length+' sections';
+    var M=[
+      {n:'Answer capsules',v:capPct,f:'Open each section with a 40-60 word direct answer to its heading.'},
+      {n:'Section autonomy',v:autoPct,f:'Make each section 120-180 words and self-contained; avoid "this/it" openings.'},
+      {n:'Proof-pairing ratio',v:ratioScore,f:'Pair every claim with a stat, quote or source. Target 0.70+ ('+(Math.round(ratio*100)/100)+' now).'},
+      {n:'Brand association',v:brandScore,f:brand?'Name the brand alongside each key claim.':'Enter your brand name to score co-location.'}
+    ];
+    mEl.innerHTML=M.map(function(m){var v=Math.round(m.v*100);var vd=m.v>=0.7?'good':(m.v>=0.4?'warn':'bad');
+      return '<div class="metric"><div class="metric-top"><span class="metric-name">'+m.n+'</span><span class="verdict '+vd+'">'+(vd==='good'?'solid':vd==='warn'?'partial':'weak')+'</span></div><div class="metric-bar"><i style="width:'+v+'%"></i></div><div class="metric-fix">'+m.f+'</div></div>';}).join('');
+    fEl.innerHTML=flags.slice(0,4).map(function(f){return '<div class="flag">'+f.replace(/</g,'&lt;')+'</div>';}).join('')||'<div class="flag ok">No structural flags, sections are well anchored.</div>';
+  }
+  ta.addEventListener('input',compute); brandEl.addEventListener('input',compute); compute();
+})();
+</script>
+
+<div class="faq-section">
         <div class="faq-section-label">Frequently Asked Questions</div>
         <div class="faq-list">
       <div class="faq-item">

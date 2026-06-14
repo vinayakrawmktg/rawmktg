@@ -155,3 +155,60 @@
   .toolpage .item{flex-wrap:wrap;gap:8px;}
 }
 @media(max-width:680px){.toolpage .tools-grid{grid-template-columns:1fr;}}
+
+/* ============ components for analyzer / matrix / funnel tools ============ */
+/* textarea + date/select inputs */
+.toolpage textarea.ta{width:100%;min-height:210px;resize:vertical;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:6px;color:#fff;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;padding:14px 16px;outline:none;}
+.toolpage textarea.ta:focus{border-color:var(--signal);}
+.toolpage textarea.ta::placeholder{color:rgba(255,255,255,.32);}
+.toolpage select.sel-input,.toolpage input[type=date]{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:6px;color:#fff;font-family:var(--f-display);font-weight:600;font-size:15px;padding:12px 14px;outline:none;}
+.toolpage input[type=date]{color-scheme:dark;}
+.toolpage select.sel-input:focus,.toolpage input[type=date]:focus{border-color:var(--signal);}
+
+/* analyzer metric rows */
+.toolpage .metrics{display:flex;flex-direction:column;gap:11px;}
+.toolpage .metric{border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:13px 15px;background:rgba(255,255,255,.03);}
+.toolpage .metric-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.toolpage .metric-name{font-family:var(--f-display);font-weight:600;font-size:13px;color:#fff;}
+.toolpage .verdict{font-family:var(--f-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:600;flex:none;}
+.toolpage .verdict.good{background:rgba(62,155,106,.20);color:var(--up);}
+.toolpage .verdict.warn{background:rgba(255,255,255,.10);color:var(--faint);}
+.toolpage .verdict.bad{background:rgba(188,63,29,.20);color:var(--signal);}
+.toolpage .metric-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.10);overflow:hidden;margin:10px 0 7px;}
+.toolpage .metric-bar i{display:block;height:100%;border-radius:3px;background:var(--signal);transition:width .4s;}
+.toolpage .metric-fix{font-family:var(--f-mono);font-size:10.5px;line-height:1.5;color:rgba(255,255,255,.5);}
+.toolpage .metric-fix b{color:rgba(255,255,255,.8);font-weight:600;}
+
+/* flagged sections */
+.toolpage .flags{display:flex;flex-direction:column;gap:7px;margin-top:8px;}
+.toolpage .flag{font-family:var(--f-mono);font-size:11px;line-height:1.5;color:rgba(255,255,255,.72);background:rgba(255,255,255,.04);border-left:2px solid var(--signal);border-radius:0 4px 4px 0;padding:8px 11px;}
+.toolpage .flag.ok{border-left-color:var(--up);}
+
+/* platform matrix */
+.toolpage .ptoggles{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.toolpage .ptog{font-family:var(--f-mono);font-size:11px;padding:7px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.14);background:transparent;color:rgba(255,255,255,.55);cursor:pointer;transition:all .15s;}
+.toolpage .ptog.on{background:rgba(188,63,29,.18);border-color:var(--signal);color:#fff;}
+.toolpage .mx-grid{display:flex;flex-direction:column;gap:12px;}
+.toolpage .mx-card{border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:16px 18px;background:rgba(255,255,255,.03);}
+.toolpage .mx-card.off{display:none;}
+.toolpage .mx-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.toolpage .mx-name{font-family:var(--f-display);font-weight:700;font-size:15px;color:#fff;}
+.toolpage .mx-badge{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);}
+.toolpage .mx-row{display:flex;gap:10px;font-family:var(--f-mono);font-size:11px;line-height:1.55;padding:6px 0;border-top:1px solid rgba(255,255,255,.07);}
+.toolpage .mx-row .k{color:rgba(255,255,255,.45);width:92px;flex:none;text-transform:uppercase;letter-spacing:.06em;font-size:9px;padding-top:2px;}
+.toolpage .mx-row .v{color:#fff;flex:1;}
+
+/* funnel compare */
+.toolpage .funnel-row{margin-bottom:18px;}
+.toolpage .funnel-lab{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:7px;}
+.toolpage .num-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.toolpage .num-grid .fld .lab{font-size:12px;margin-bottom:6px;}
+
+/* embedded-in-article tool wrapper */
+.toolpage.tool-embed{margin:36px 0;}
+.tool-embed .embed-head{margin-bottom:14px;}
+.tool-embed .embed-eyebrow{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin-bottom:8px;}
+.tool-embed .embed-title{font-family:var(--f-display);font-weight:700;font-size:21px;letter-spacing:-.01em;color:var(--ink);margin-bottom:6px;line-height:1.15;}
+.tool-embed .embed-deck{font-family:var(--f-prose);font-size:14px;line-height:1.6;color:var(--ink-2);}
+.tool-embed .embed-foot{font-family:var(--f-mono);font-size:11px;color:var(--mute);margin-top:12px;}
+.tool-embed .embed-foot a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--signal);}

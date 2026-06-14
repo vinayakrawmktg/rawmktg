@@ -29,7 +29,7 @@ Perplexity referral traffic conversion rate vs 1.8% for organic
 
 Desktop queries ending in AI response with zero click-through in 2026
 
-But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of each engine is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy. For a worked example of how this plays out in one category, see our [teardown of which HR-software vendor AI engines actually recommend](/blogs/hr-saas-ai-visibility-gap).
+But here is the strategic problem: ChatGPT, Perplexity, and Gemini pull from different data sources, apply different retrieval logic, and weight different credibility signals. A tactic that earns you a citation in Perplexity may be completely invisible to Gemini. Understanding the technical architecture of [each engine](/tools/ai-platform-optimizer "AI Platform Optimization Matrix") is no longer optional for B2B growth teams: it is the prerequisite for building a defensible AI visibility strategy. For a worked example of how this plays out in one category, see our [teardown of which HR-software vendor AI engines actually recommend](/blogs/hr-saas-ai-visibility-gap).
 
 ## 01: How does each engine actually work?
 
@@ -110,7 +110,7 @@ Partner ecosystem content is disproportionately powerful on Perplexity. PartnerS
 **Entity first, source documents second.** Gemini is an entity-first retrieval system. Before fetching a single source document, Gemini resolves the query against Google's Cloud Knowledge Graph to map entities and their relationships. AI Overviews now appear on 47% of commercial queries (rising to 95.4% for comparison searches and 85.9% for product reviews). Organic authority is a prerequisite for the candidate pool, but not a guarantee of citation once inside it.
 
 38%
-The fraction of pages cited inside AI Overviews that also rank in the top 10 standard organic SERPs for the same query. Gemini applies distinct extraction criteria beyond organic rank, where entity resolution and E-E-A-T signals determine selection from the candidate pool. (Brainz Digital, 2026)[12](#r12)
+The fraction of pages [cited](/tools/page-citability-analyzer "Page Citability Analyzer") inside AI Overviews that also rank in the top 10 standard organic SERPs for the same query. Gemini applies distinct extraction criteria beyond organic rank, where entity resolution and E-E-A-T signals determine selection from the candidate pool. (Brainz Digital, 2026)[12](#r12)
 
 ### Building the Knowledge Graph Bridge
 

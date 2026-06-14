@@ -8,9 +8,9 @@
 TL;DR
 
 - 01**None of the three execute JavaScript.** Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.
-- 02**Crawl logic differs by mission.** OAI-SearchBot indexes for citations, [PerplexityBot for RAG](/blogs/how-rag-actually-works), CCBot for archival training. Same User-Agent header, three different scopes.
+- 02**[Crawl](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") logic differs by mission.** OAI-SearchBot indexes for citations, [PerplexityBot for RAG](/blogs/how-rag-actually-works), CCBot for archival training. Same User-Agent header, three different scopes.
 - 03**Robots.txt blocks the bot, not the URL.** A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a `noindex` meta tag on the page itself.
-- 04**Verify before you trust the User-Agent.** Spoofed AI crawlers are common. Validate with FCrDNS or the published JSON CIDR feeds.
+- 04**Verify before you trust the User-Agent.** Spoofed AI [crawler](/tools/ai-platform-optimizer "AI Platform Optimization Matrix")s are common. Validate with FCrDNS or the published JSON CIDR feeds.
 
 ## Which crawlers actually index your site for AI?
 

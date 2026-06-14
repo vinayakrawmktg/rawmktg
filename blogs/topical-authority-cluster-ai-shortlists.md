@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists · rawmktg. by Vinayak Ravi*
 
 
-The B2B buying journey has undergone a structural transformation. Buyers are bypassing traditional search results (pages of blue links and sponsored ads) in favor of conversational queries on ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews.[1](#r1) If a brand does not appear as a cited recommendation inside these synthesized responses, it becomes effectively invisible to roughly half of its target market.[2](#r2)
+The B2B buying journey has undergone a structural transformation. Buyers are bypassing traditional search results (pages of blue links and sponsored ads) in favor of conversational queries on ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews.[1](#r1) If a brand does not appear as a [cited](/tools/page-citability-analyzer "Page Citability Analyzer") recommendation inside these synthesized responses, it becomes effectively invisible to roughly half of its target market.[2](#r2)
 
 This shift renders traditional SEO tactics (built around search volume, keyword density, and link-building) insufficient for modern buyer acquisition. B2B brands must now adopt [Generative Engine Optimization (GEO)](/blogs/eeat-is-an-ai-signal-now) and Answer Engine Optimization (AEO) so that their services and proprietary frameworks are selected, synthesized, and cited by large language models.[1](#r1) Designing an effective topical authority cluster means aligning technical web architecture with the cognitive parsing patterns of frontier models.
 
@@ -316,6 +316,36 @@ Transitioning a B2B search program from PageRank to GEO comes down to four concr
 The outlook
 
 The brands that win AI shortlists won't be those that publish the most; they'll be those that publish the deepest, most structured, most corroborated signal about a single, well-defined category. Depth is the strategy. The cluster is the architecture. And Share of Model is the score.
+
+Free interactive tool
+
+Plan a citation-optimized content mix
+
+Turn your monthly content capacity into a flagship / derivative / product / news split built for AI citations.
+
+Pieces per month 20
+
+Total publishable assets your team ships monthly , articles, posts, pages, decks.
+
+Strategy
+
+Balanced20 / 50 / 20 / 10 · the default
+Authority-push30 / 45 / 15 / 10 · maximize citations
+Demand-capture15 / 45 / 30 / 10 · convert intent
+
+The Balanced split follows the 2026 GEO content model. The other two tilt toward authority-building or bottom-funnel capture.
+
+,
+
+Flagship cadence
+
+,
+
+Anchor & amplify ratio
+
+A planning guide built on the 2026 GEO content model. Flagship pieces are the citation anchors; derivative content amplifies them; product and news capture intent and recency. Adjust to your team's reality , the ratios matter more than the exact counts.
+
+A free rawmktg tool. [Open the full tool →](/tools/content-mix-planner) · [see all tools](/tools)
 
 Frequently Asked Questions
 

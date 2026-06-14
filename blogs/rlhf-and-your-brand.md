@@ -110,7 +110,7 @@ Once a brand is the default, every retraining cycle reinforces it as statistical
 
 ## 03. Who did the model learn to believe?
 
-**Calibrated expert raters, trained to reward verifiable, attributed claims, not hype.** If preferences come from human judgment, it is worth knowing how that judgment is collected. Serious labs do not crowdsource to the cheapest bidder; they recruit [calibrated expert annotators](https://www.secondtalent.com/resources/data-annotation-for-llm-fine-tuning-rlhf-and-instruction-tuning-guide/), route critical samples to three to five reviewers, and hold inter-annotator agreement high.
+**Calibrated expert raters, trained to reward [verifiable](/tools/claim-anchoring-validator "Claim-Anchoring Validator"), attributed claims, not hype.** If preferences come from human judgment, it is worth knowing how that judgment is collected. Serious labs do not crowdsource to the cheapest bidder; they recruit [calibrated expert annotators](https://www.secondtalent.com/resources/data-annotation-for-llm-fine-tuning-rlhf-and-instruction-tuning-guide/), route critical samples to three to five reviewers, and hold inter-annotator agreement high.
 
 Their instructions matter to you directly. OpenAI's [Model Spec](https://model-spec.openai.com/) commands models to avoid sycophancy, hold an objective point of view, and express calibrated uncertainty, and raters are explicitly told to penalize models that agree with a user's misconceptions. The takeaway for brand teams is the opposite of legacy marketing instinct.
 
@@ -120,7 +120,7 @@ You cannot flatter, hype, or keyword-stuff your way into the answer. The model h
 
 ## 04. What replaces ranking as the metric that matters?
 
-**[Share of Model](/blogs/prompt-to-citation-tracking): the probability your brand is the cited source.** As the results page becomes an answer, the metric that matters shifts from rank to Share of Model, the probability your brand is selected as a grounding source when the model synthesizes its reply. That selection runs through retrieval: the query becomes a vector, rerankers score candidate chunks on contextual cohesion, factual density, and Information Gain. Under Google's information-gain patent, content judged genuinely novel is [cited 3-6x more often](https://thesmarketers.com/blogs/information-gain-seo/) than keyword-matched pages with no new signal.
+**[Share of Model](/blogs/prompt-to-citation-tracking): the probability your brand is the cited source.** As the results page becomes an answer, the metric that matters shifts from rank to Share of Model, the probability your brand is selected as a grounding source when the model synthesizes its reply. That selection runs through retrieval: the query becomes a vector, rerankers score candidate chunks on contextual cohesion, factual density, and [Information Gain](/tools/page-citability-analyzer "Page Citability Analyzer"). Under Google's information-gain patent, content judged genuinely novel is [cited 3-6x more often](https://thesmarketers.com/blogs/information-gain-seo/) than keyword-matched pages with no new signal.
 
 User query
 

@@ -7,7 +7,7 @@
 
 Search is splitting in two. One half still looks like the ten blue links we have used for twenty years. The other half is a chat window: a person asks ChatGPT, Gemini, or Perplexity which practice-management tool they should buy, and an answer comes back already filtered, summarized, and recommended. For most software companies, that second half is a blind spot. They have no idea whether the models can see them, and most of the time the answer is that they cannot.
 
-Noterro is an exception, and an instructive one. It is a practice-management platform for allied-health clinics: physiotherapists, massage therapists, chiropractors, and naturopaths. It is bootstrapped, profitable, and has taken no outside capital. It is not the kind of company you would expect to be winning a technology race against venture-funded competitors. Yet when we mapped its footprint across the AI surfaces that increasingly mediate buying decisions, Noterro was cited on every single one.
+Noterro is an exception, and an instructive one. It is a practice-management platform for allied-health clinics: physiotherapists, massage therapists, chiropractors, and naturopaths. It is bootstrapped, profitable, and has taken no outside capital. It is not the kind of company you would expect to be winning a technology race against venture-funded competitors. Yet when we mapped its footprint across the AI surfaces that increasingly mediate buying decisions, Noterro was [cited](/tools/page-citability-analyzer "Page Citability Analyzer") on every single one.
 
 Getting cited is not magic; it is a pipeline. A page has to be [crawlable, then self-describing, then authoritative](/blogs/how-rag-actually-works), before a model will name it in an answer.
 
@@ -92,7 +92,7 @@ Practice management software for allied health clinics.
 
 The striking thing is not that Noterro implemented it perfectly, but that the company bothered at all. It signals a team paying attention to where discovery is heading rather than only optimizing for where it has been. The lesson is less about the file itself and more about posture: the companies that win in AI search treat it as a live, fast-moving surface and ship small experiments early, rather than waiting for a settled best practice that may never fully arrive.
 
-### 4. The fundamentals are boringly, completely correct
+### 4. The [fundamentals](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") are boringly, completely correct
 
 It is easy to get excited about llms.txt and forget that AI visibility still rests on traditional technical hygiene. Noterro's is close to flawless.
 

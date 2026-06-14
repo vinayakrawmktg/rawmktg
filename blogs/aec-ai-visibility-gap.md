@@ -13,7 +13,7 @@ For the AEC software segment (spanning BIM coordination, MEP design automation, 
 
 ## 01. How many AEC software vendors actually get cited by AI?
 
-**Wider than expected, and starkly concentrated.** The most striking finding is not that some companies have more AI citations than others. It is how concentrated that visibility is. Four of six companies registered fewer than 2 total citations across all six platforms combined. The median for the group is pulled heavily upward by two outliers.
+**Wider than expected, and starkly concentrated.** The most striking finding is not that some companies have more [AI citations](/tools/page-citability-analyzer "Page Citability Analyzer") than others. It is how concentrated that visibility is. Four of six companies registered fewer than 2 total citations across all six platforms combined. The median for the group is pulled heavily upward by two outliers.
 
 Across the six companies in our analysis, total AI citations ranged from 0 to 310. The median for the group sits around 10, a number that significantly overstates the typical experience because it is pulled upward by two outliers at the top of the distribution.
 
@@ -40,7 +40,7 @@ Put another way: if you are an AEC buyer asking an AI platform for a software re
 
 "Four of six AEC software companies in our analysis had fewer than 2 total AI citations across all six platforms combined."
 
-This is the visibility gap. And unlike gaps in organic search rankings, where a well-executed content push can move results within weeks, AI citation presence is built on a different foundation with a longer lag time.
+This is the [visibility gap](/tools/geo-readiness-scorecard "GEO Readiness Scorecard"). And unlike gaps in organic search rankings, where a well-executed content push can move results within weeks, AI citation presence is built on a different foundation with a longer lag time.
 
 ## 02. Does high organic traffic mean high AI visibility?
 

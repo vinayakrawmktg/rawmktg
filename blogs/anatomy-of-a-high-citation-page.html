@@ -617,6 +617,7 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="alternate" type="text/markdown" href="/blogs/anatomy-of-a-high-citation-page.md" />
+  <link rel="stylesheet" href="/assets/tools.css" />
 </head>
 <body>
 <div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/anatomy-of-a-high-citation-page.md. Optimized for AI and LLM tools.</div>
@@ -699,7 +700,7 @@
   <!-- INTRO -->
   <section class="prose">
 
-    <p>Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual claim-level retrieval. Where classical search asked <em>"does this domain deserve to rank?"</em>, AI retrieval asks <em>"does this specific passage deserve to be cited?"</em></p>
+    <p>Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual <a href="/tools/claim-anchoring-validator" title="Claim-Anchoring Validator">claim</a>-level retrieval. Where classical search asked <em>"does this domain deserve to rank?"</em>, AI retrieval asks <em>"does this specific passage deserve to be cited?"</em></p>
 
     <p>Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time <a href="/blogs/how-rag-actually-works">Retrieval-Augmented Generation (RAG)</a> frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.</p>
 
@@ -986,7 +987,7 @@
       <div class="tt-head">
         <div class="lhs">
           <span class="eyebrow">Table 04</span>
-          <span class="title">Schema type vs. citation lift</span>
+          <span class="title">Schema type vs. <a href="/tools/geo-lift-calculator" title="GEO Lift Calculator">citation lift</a></span>
         </div>
         <span class="ts">Ahrefs schema-to-citation study, n = 1,885</span>
       </div>
@@ -1299,6 +1300,8 @@
 </article>
 
 <!-- FOOTER -->
+
+
 <section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
   <div class="page">
     <div class="newsletter-inner">
@@ -1317,6 +1320,78 @@
     </div>
   </div>
 </section>
+
+
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Score your page's citability</div><div class="embed-deck">Paste your content to see how it measures up against the high-citation benchmarks in this article.</div></div>
+<section class="card" id="pcTool">
+  <div class="grid calc">
+    <div class="controls">
+      <div class="fld"><div class="lab">Primary topic / keyword <span class="val" style="color:rgba(255,255,255,.5)">optional</span></div>
+        <div class="ipt"><input type="text" id="pcKw" placeholder="e.g. chiropractic software"></div></div>
+      <div class="fld"><div class="lab">Paste your page content</div>
+        <textarea class="ta" id="pcText" placeholder="Paste your article HTML or plain text, including your headings..."></textarea>
+        <p class="hint">Works with HTML or plain text. For plain text, keep each heading on its own line. Nothing is uploaded, analysis runs in your browser.</p></div>
+    </div>
+    <div class="output">
+      <div class="o-eyebrow">Citability score</div>
+      <div class="o-lift" id="pcScore">0</div>
+      <div class="o-sub" id="pcSub">paste content to analyze</div>
+      <div class="metrics" id="pcMetrics"></div>
+      <p class="caveat">Heuristic analysis against high-citation benchmarks: ~55% of AI citations come from the first 30% of a page, ~60% of cited pages use question-format headings, and cited sections pair a statistic with a quote. Directional.</p>
+    </div>
+  </div>
+</section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/page-citability-analyzer">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById('pcTool'); if(!root) return;
+  var ta=document.getElementById('pcText'), kw=document.getElementById('pcKw');
+  var QW=/^(how|what|why|when|which|where|who|does|do|is|are|can|should|will)\b/i;
+  function parse(raw){
+    raw=(raw||'').trim(); if(!raw) return null;
+    var headings=[], text=raw;
+    if(/<h[1-6]/i.test(raw)){ try{var doc=new DOMParser().parseFromString(raw,'text/html');
+      doc.querySelectorAll('h1,h2,h3').forEach(function(h){var t=h.textContent.trim(); if(t) headings.push(t);});
+      text=doc.body.textContent||raw;}catch(e){} }
+    else { raw.split(/\n+/).forEach(function(ln){var t=ln.trim().replace(/^#+\s*/,'');
+      if(t && t.split(/\s+/).length<=12 && !/[.!?:]$/.test(t)) headings.push(t);}); }
+    return {headings:headings, text:text};
+  }
+  function compute(){
+    var p=parse(ta.value), out=document.getElementById('pcMetrics');
+    if(!p){document.getElementById('pcScore').textContent='0';document.getElementById('pcSub').textContent='paste content to analyze';out.innerHTML='';return;}
+    var words=p.text.split(/\s+/).filter(Boolean), wc=words.length;
+    var qh=p.headings.length? p.headings.filter(function(h){return /\?$/.test(h)||QW.test(h);}).length/p.headings.length : 0;
+    var first=words.slice(0,Math.max(1,Math.round(wc*0.3))).join(' ').toLowerCase();
+    var statRe=/\d+(\.\d+)?%|\$\d|\b\d{2,}\b/;
+    var kwv=(kw.value||'').trim().toLowerCase();
+    var front=Math.min(1,(statRe.test(first)?0.6:0)+(kwv?(first.indexOf(kwv)>=0?0.4:0):0.4));
+    var stats=(p.text.match(/\d+(\.\d+)?%|\$\d[\d,\.]*|\b\d{2,}\b/g)||[]).length;
+    var statScore=Math.min(1,(wc?stats/(wc/100):0)/1.5);
+    var quotes=(p.text.match(/["\u201c\u201d]/g)||[]).length/2+(p.text.match(/according to|says|said/gi)||[]).length;
+    var quoteScore=Math.min(1,quotes/Math.max(1,p.headings.length||3));
+    var avgSec=p.headings.length? wc/p.headings.length : wc;
+    var secScore=(avgSec>=90&&avgSec<=320)?1:(avgSec<90?0.5:0.4);
+    var scan=/(^|\n)\s*[-*\u2022]|\|.*\|/.test(ta.value)?1:0.3;
+    var M=[
+      {n:'Question-format headings',v:qh,b:'60%+ of headings',f:'Rewrite section headings as the questions buyers ask ("How does X work for enterprise?").'},
+      {n:'Front-loaded key claim',v:front,b:'claim/stat in first 30%',f:'Put your core answer and a hard number up top, ~55% of citations come from the first third.'},
+      {n:'Statistic density',v:statScore,b:'~1+ stat / 100 words',f:'Add concrete figures, dates and percentages throughout.'},
+      {n:'Quotes & attribution',v:quoteScore,b:'a quote per section',f:'Add attributed expert quotes; they measurably lift citation rates.'},
+      {n:'Section length',v:secScore,b:'~120-300 words / section',f:'Keep sections self-contained and citable, neither thin nor sprawling.'},
+      {n:'Scannable structure',v:scan,b:'lists / tables present',f:'Add bullet lists or comparison tables an engine can lift cleanly.'}
+    ];
+    var W=[22,22,18,14,12,12], score=0; M.forEach(function(m,i){score+=m.v*W[i];}); score=Math.round(score);
+    document.getElementById('pcScore').textContent=score;
+    document.getElementById('pcSub').textContent=(score>=70?'cited-ready':(score>=45?'developing':'at risk'))+' \u00b7 '+wc+' words \u00b7 '+p.headings.length+' headings';
+    out.innerHTML=M.map(function(m){var v=Math.round(m.v*100);var vd=m.v>=0.7?'good':(m.v>=0.4?'warn':'bad');
+      return '<div class="metric"><div class="metric-top"><span class="metric-name">'+m.n+'</span><span class="verdict '+vd+'">'+(vd==='good'?'strong':vd==='warn'?'partial':'weak')+'</span></div><div class="metric-bar"><i style="width:'+v+'%"></i></div><div class="metric-fix"><b>'+m.b+'.</b> '+m.f+'</div></div>';}).join('');
+  }
+  ta.addEventListener('input',compute); kw.addEventListener('input',compute); compute();
+})();
+</script>
 
 </main>
 <footer class="site-foot">
