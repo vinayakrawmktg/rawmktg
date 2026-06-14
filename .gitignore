@@ -13,3 +13,6 @@ design/
 
 # Claude settings
 .claude/
+
+preview-topic-teardowns.html
+*.preview.html

@@ -114,6 +114,13 @@ Plain, sourced definitions of the technical SEO vocabulary that decides whether 
 - [Redirect chain](https://rawmktg.com/glossary/redirect-chain) - A sequence of two or more redirects between the requested URL and the final destination, adding latency and risking signal loss.
 - [Soft 404](https://rawmktg.com/glossary/soft-404) - A page that shows a not-found or empty message to users but returns a 200 success status, confusing crawlers about whether it exists.
 
+## Topic Hubs
+- [The industry teardowns](https://rawmktg.com/topics/industry-teardowns) - Single-brand and vertical GEO teardowns showing where AI-visibility gaps are.
+- [How AI search actually works](https://rawmktg.com/topics/how-ai-search-works) - The mechanics of retrieval, RAG, and how engines choose what to cite.
+- [The technical layer](https://rawmktg.com/topics/technical-layer) - Crawlability, rendering, schema and the plumbing AI engines need.
+- [Content & authority architecture](https://rawmktg.com/topics/content-authority) - Information Gain, topical authority, and earned-media authority for citations.
+- [Ranking signals & measurement](https://rawmktg.com/topics/ranking-signals) - Recency, E-E-A-T, Share of Model and measuring AI citations.
+
 ## Pages
 
 - [About](https://rawmktg.com/about) - who writes rawmktg., the method, and why it exists
