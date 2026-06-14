@@ -146,6 +146,31 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://rawmktg.com/tools</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/geo-readiness-scorecard</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/content-mix-planner</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/zero-click-traffic-risk</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/geo-lift-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://rawmktg.com/glossary</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -494,6 +519,11 @@
     <loc>https://rawmktg.com/privacy</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/blogs/rlhf-and-your-brand</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://rawmktg.com/blogs/property-vista-authority-paradox</loc>

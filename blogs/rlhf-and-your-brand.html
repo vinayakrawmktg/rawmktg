@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>RLHF and Your Brand: How Human Rater Preferences Decide Who AI Recommends &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How RLHF and DPO post-training quietly decide which brands AI recommends. The mathematics of preference, why it compounds into a moat, who the raters were trained to trust, and the GEO playbook to win Share of Model." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/rlhf-and-your-brand" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/rlhf-and-your-brand" />
+  <meta property="og:title" content="RLHF and Your Brand" />
+  <meta property="og:description" content="How RLHF and DPO post-training quietly decide which brands AI recommends. The mathematics of preference, why it compounds into a moat, who the raters were trained to trust, and the GEO playbook to win Share of Model." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/rlhf-and-your-brand-header.webp" />
+  <meta property="article:published_time" content="2026-06-12T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-06-12T00:00:00Z" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RLHF and Your Brand" />
+  <meta name="twitter:description" content="How RLHF and DPO post-training quietly decide which brands AI recommends. The mathematics of preference, why it compounds into a moat, who the raters were trained to trust, and the GEO playbook to win Share of Model." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/rlhf-and-your-brand-header.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "RLHF and Your Brand", "description": "How RLHF and DPO post-training quietly decide which brands AI recommends. The mathematics of preference, why it compounds into a moat, who the raters were trained to trust, and the GEO playbook to win Share of Model.", "image": "https://rawmktg.com/assets/images/rlhf-and-your-brand-header.webp", "url": "https://rawmktg.com/blogs/rlhf-and-your-brand", "datePublished": "2026-06-12", "dateModified": "2026-06-12", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/rlhf-and-your-brand"}, "keywords": ["RLHF", "DPO", "post-training", "AI search", "GEO", "Share of Model", "AI citations", "preference optimization", "alignment", "Information Gain", "llms.txt", "Princeton GEO"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/rlhf-and-your-brand"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "RLHF and Your Brand", "item": "https://rawmktg.com/blogs/rlhf-and-your-brand"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is RLHF, and why does it matter for marketing?", "acceptedAnswer": {"@type": "Answer", "text": "RLHF (Reinforcement Learning from Human Feedback) is a post-training stage where human raters rank a model's competing answers, a reward model learns to predict their preference, and the model is optimized toward it. For marketing it matters because this is where a model learns which sources and brands to prefer when it answers a question. If your brand was in the answers raters marked better, the model is more likely to recommend you, and that preference is decided in training, not at query time."}}, {"@type": "Question", "name": "What is Share of Model?", "acceptedAnswer": {"@type": "Answer", "text": "Share of Model is the probability that your brand is selected as a grounding source when an AI model synthesizes its answer. As AI answers replace the ranked results page, Share of Model replaces rank position as the metric that matters. It is won through retrieval: the model vectorizes the query and a reranker scores candidate passages on factual density, contextual cohesion, and Information Gain, novelty that keyword-matched pages lack."}}, {"@type": "Question", "name": "How do you increase your brand's Share of Model?", "acceptedAnswer": {"@type": "Answer", "text": "Build machine-readable authority around genuine Information Gain. Publish original first-party research and statistics, include attributed expert quotations, and earn third-party media (the source of 84% of AI citations). Princeton's GEO study measured the lift: high-authority outbound links add 40-115%, statistics 22-41%, and expert quotes 28-37%. Then ship an llms.txt so crawlers can find your canonical facts. You cannot hype or keyword-stuff your way in; raters trained the model to reward verifiable, corroborated claims."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/rlhf-and-your-brand.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  
+    /* GEO lift calculator */
+    .calc-wrap{background:#1A1815;border-radius:8px;padding:26px 24px 22px;margin:28px 0 8px;}
+    .calc-head{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin-bottom:5px;}
+    .calc-subt{font-family:var(--f-display);font-weight:600;font-size:17px;letter-spacing:-.01em;color:#fff;margin-bottom:20px;}
+    .calc-grid{display:grid;grid-template-columns:1fr 290px;gap:26px;}
+    .calc-base label{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:rgba(255,255,255,.72);margin-bottom:10px;}
+    .calc-baseval{color:var(--signal);font-weight:600;}
+    input.calc-range{width:100%;accent-color:var(--signal);height:4px;}
+    .calc-hint{font-family:var(--f-mono);font-size:10px;color:rgba(255,255,255,.4);margin:8px 0 6px;line-height:1.5;}
+    .calc-tactic{border-top:1px solid rgba(255,255,255,.10);padding:15px 0 4px;}
+    .calc-tactic.off{opacity:.42;}
+    .calc-trow{display:flex;align-items:center;gap:11px;margin-bottom:10px;}
+    .calc-switch{width:34px;height:18px;border-radius:9px;border:0;background:rgba(255,255,255,.22);position:relative;cursor:pointer;flex:0 0 auto;padding:0;}
+    .calc-switch.on{background:var(--signal);}
+    .calc-switch::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .15s;}
+    .calc-switch.on::after{left:18px;}
+    .calc-tname{font-family:var(--f-prose);font-size:13px;color:#fff;flex:1;}
+    .calc-band{font-family:var(--f-mono);font-size:10px;color:rgba(255,255,255,.5);}
+    .calc-seg{display:inline-flex;gap:5px;margin-left:45px;}
+    .calc-seg button{font-family:var(--f-mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;padding:5px 13px;border:1px solid rgba(255,255,255,.16);background:transparent;color:rgba(255,255,255,.6);border-radius:4px;cursor:pointer;}
+    .calc-seg button.sel{background:var(--signal);border-color:var(--signal);color:#fff;}
+    .calc-output{background:rgba(255,255,255,.04);border-radius:8px;padding:22px 20px;align-self:start;}
+    .calc-out-eyebrow{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+    .calc-lift{font-family:var(--f-display);font-weight:700;font-size:50px;letter-spacing:-.03em;color:var(--signal);line-height:1.02;margin:6px 0 2px;}
+    .calc-liftsub{font-family:var(--f-mono);font-size:10px;color:rgba(255,255,255,.5);margin-bottom:20px;}
+    .calc-barrow{display:flex;align-items:center;gap:9px;margin-bottom:11px;}
+    .calc-barrow .lbl{font-family:var(--f-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);width:64px;}
+    .calc-track{flex:1;height:8px;background:rgba(255,255,255,.10);border-radius:4px;overflow:hidden;}
+    .calc-fill{height:100%;border-radius:4px;transition:width .2s;}
+    .calc-fill.now{background:rgba(255,255,255,.42);}
+    .calc-fill.proj{background:var(--signal);}
+    .calc-barrow b{font-family:var(--f-mono);font-size:11px;color:#fff;width:40px;text-align:right;}
+    .calc-break{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0 4px;}
+    .calc-chip{font-family:var(--f-mono);font-size:9.5px;background:rgba(208,74,42,.20);color:var(--signal);padding:4px 9px;border-radius:4px;}
+    .calc-chip.muted{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);}
+    .calc-caveat{font-family:var(--f-mono);font-size:9.5px;line-height:1.65;color:rgba(255,255,255,.4);margin-top:12px;}
+    /* sources list */
+    .sources-block{border-top:1px solid var(--rule);margin:40px 0 0;padding-top:22px;}
+    .sources-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;}
+    .sources-list{list-style:none;padding:0;margin:0;display:grid;gap:9px;}
+    .sources-list li{font-family:var(--f-mono);font-size:11.5px;line-height:1.5;color:var(--ink-2);padding-left:16px;position:relative;}
+    .sources-list li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .sources-list a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--signal);}
+    @media(max-width:680px){.calc-grid{grid-template-columns:1fr;}.calc-seg{margin-left:0;}}
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/rlhf-and-your-brand.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/rlhf-and-your-brand-header.webp" srcset="/assets/images/rlhf-and-your-brand-header-800.webp 800w, /assets/images/rlhf-and-your-brand-header-1200.webp 1200w, /assets/images/rlhf-and-your-brand-header-1600.webp 1600w, /assets/images/rlhf-and-your-brand-header.webp 2400w" sizes="100vw" alt="RLHF and Your Brand - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Post-Training Teardown &middot; Ranking Signals</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">June 2026</span></div>
+    <h1 class="article-headline">RLHF and Your Brand</h1>
+    <p class="article-deck">How human rater preferences are quietly deciding who AI recommends, and why your share of voice now lives in the alignment layer, not the index.</p>
+    <p class="article-data-note">Synthesis of post-training research (RLHF, DPO, and newer methods), the Princeton GEO citation-lift coefficients, and the Muck Rack 'What Is AI Reading?' citation study, June 2026. Example code and the lift calculator are illustrative.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p class="lead">For twenty years the job was simple to describe even if it was hard to do: rank on the results page, earn the click. Search has quietly changed shape underneath that job. The interface is moving from Boolean lexical retrieval to neural generative synthesis, the model reads, decides, and writes one answer, and most of the time the user never sees a list of links at all.</p>
+<p>That shift produced what analysts call the Great Decoupling: conversational search volume is climbing while referral traffic to the open web collapses. Roughly <a href="https://www.cracklepr.com/insights/ai-search-runs-on-earned-media" target="_blank" rel="noopener">58% of Google searches now end without a click</a>, rising to 83% when AI Overviews fire and 93% inside AI Mode. With traditional search volume projected to fall about 25%, the place where your brand gets chosen is no longer the index. It is the model.</p>
+<div class="chart-wrap"><canvas id="rlhfDecouplingChart" height="230"></canvas></div><div class="chart-caption">Figure 1 - the Great Decoupling: share of searches that end without a click. Source: Crackle PR</div>
+<p>So the strategic question changes. It is no longer only how do I rank. It is what did the model learn to prefer, and how do I become the preferred answer? The answer lives in a layer most marketers have never audited: <a href="https://www.sundeepteki.org/advice/the-complete-guide-to-post-training-llms-how-sft-rlhf-dpo-and-grpo-shape-llms" target="_blank" rel="noopener">post-training alignment</a>, Reinforcement Learning from Human Feedback (RLHF) and Direct Preference Optimization (DPO). It is now a brand-discovery channel.</p>
+<h2 id="machinery"><span class="section-num">01</span>How does a model actually learn what to prefer?</h2>
+<div class="section-answer"><strong>In post-training: SFT teaches tone, RLHF and DPO teach judgment.</strong> A raw base model knows how tokens relate, but it does not yet behave like an assistant. Three stages turn it into one, and each stage is a chance for a brand to be upweighted or quietly buried.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Base Model</div><div class="pl-desc">pre-trained weights</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Supervised Fine-Tuning</div><div class="pl-desc">imitates format &amp; tone</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">RLHF / DPO</div><div class="pl-desc">preference alignment</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Aligned Model</div><div class="pl-desc">recommends brands</div></div></div><div class="chart-caption">Figure 2 - from raw weights to an opinionated recommender. SFT teaches behavior; RLHF and DPO teach judgment. Sources: Sundeep Teki, Red Hat</div>
+<h3 id="sft">Supervised fine-tuning sets the table</h3>
+<p>SFT trains the model on curated instruction-response pairs. It absorbs syntax, formatting, and the structural template of a helpful answer, but it <a href="https://www.digitaldividedata.com/blog/why-human-preference-optimization-rlhf-dpo-still-matters" target="_blank" rel="noopener">cannot resolve subjective trade-offs</a> between several plausible responses, and it is prone to confidently stating things that are not true. It teaches the model how to talk, not whom to trust.</p>
+<h3 id="rlhf-dpo">RLHF and DPO set the preferences</h3>
+<p>RLHF collects human rankings of competing outputs, trains a separate reward model to predict the human-preferred score, then optimizes the model with PPO or GRPO, held in place by a KL-divergence penalty so it does not drift too far from the SFT baseline. DPO skips the reward model entirely, treating alignment as a <a href="https://www.digitaldividedata.com/blog/why-human-preference-optimization-rlhf-dpo-still-matters" target="_blank" rel="noopener">binary classification problem</a>: push up the probability of the chosen response, push down the rejected one. The catch marketers should circle: DPO has no concept of semantic equivalence. If your brand name appears as the chosen answer, the model learns your literal name, not a vendor like you.</p>
+<div class="code-wrap"><div class="code-label">preference_objectives.py</div><div class="code-block"><span class="code-lang">python</span><pre># RLHF - maximize reward, but stay anchored to the SFT model
+maximize  E[ r(x, y) ]  -  B * KL( pi(y|x) || pi_ref(y|x) )
+#            ^ learned reward     ^ regularizer, B ~ 0.1-0.5 (no policy collapse)
+
+# DPO - same preference signal, expressed as one classification loss
+L_DPO = -E[ log sigma( B*log pi(y_w|x)/pi_ref(y_w|x)
+                     -  B*log pi(y_l|x)/pi_ref(y_l|x) ) ]
+#  y_w = chosen  -&gt;  your brand        y_l = rejected  -&gt;  the competitor</pre></div></div>
+<p>Newer methods compress the pipeline further, <a href="https://snorkel.ai/blog/llm-alignment-techniques-4-post-training-approaches/" target="_blank" rel="noopener">ORPO folds SFT and alignment into one loss, and KTO drops pairwise rankings for simple good/bad labels</a>, but the brand-relevant mechanic is constant: somewhere in training, a judge marked one answer better than another, and your brand was in one of those answers.</p>
+<div class="tt-wrap"><div class="tt-label">Table 1 - alignment methods, decoded for marketers</div><table class="tt"><thead><tr><th>Method</th><th>What it optimizes</th><th>Overhead</th><th>Brand-relevant risk</th></tr></thead><tbody><tr><td class="label">SFT</td><td>Cross-entropy on prompt-response pairs</td><td>Low</td><td>Teaches tone, not trust; can hallucinate</td></tr><tr><td class="label">RLHF</td><td>Reward model + PPO/GRPO policy update</td><td>Very high</td><td>Controllable but unstable; reward hacking</td></tr><tr><td class="label">DPO</td><td>Binary log-likelihood, chosen vs rejected</td><td>Moderate</td><td>Overfits literal tokens; no semantic equivalence</td></tr><tr><td class="label">ORPO</td><td>SFT loss + odds-ratio penalty, unified</td><td>Low-moderate</td><td>Needs clean, contrastive preference signals</td></tr><tr><td class="label">KTO</td><td>Utility loss on binary good/bad labels</td><td>Low</td><td>Robust to noisy labelers; needs more data</td></tr></tbody></table></div>
+<h2 id="compounding"><span class="section-num">02</span>Why does AI preference harden into a moat?</h2>
+<div class="section-answer"><strong>Preference optimization amplifies incumbents with every retraining cycle.</strong> Here is where it gets uncomfortable for challenger brands. Preference optimization does not just record what raters liked, it <a href="https://arxiv.org/html/2603.22335v2" target="_blank" rel="noopener">systematically amplifies</a> existing advantages over time.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Popularity in SFT data</div><div class="pl-desc">historical dominance</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">DPO over-corrects</div><div class="pl-desc">suppresses long tail</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Incumbents become default</div><div class="pl-desc">the safe answer</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Output = next training set</div><div class="pl-desc">loop repeats</div></div></div><div class="chart-caption">Figure 3 - the incumbency loop: a self-consuming performative loop where each cycle raises the wall. Sources: CausalDPO, Self-Consuming Performative Loop (arXiv)</div>
+<p>Three forces stack. First, popularity-induced bias: historical brand dominance is baked into SFT data, and during alignment the optimizer overcorrects toward those popular associations, suppressing long-tail competitors to minimize entropy. Second, the <a href="https://arxiv.org/html/2601.05184v1" target="_blank" rel="noopener">self-consuming performative loop</a>: as models generate the web's text, later models train on that synthetic output, amplifying their own biases and flattening conceptual diversity. Third, source bias: fine-tuning induces a measurable preference for <a href="https://arxiv.org/html/2602.10833v1" target="_blank" rel="noopener">low-perplexity, machine-clean text over equivalent human writing</a>.</p>
+<div class="pull-quote">Once a brand is the default, every retraining cycle reinforces it as statistical truth. You are not fighting a ranking, you are fighting a feedback loop.</div>
+<h2 id="juror"><span class="section-num">03</span>Who did the model learn to believe?</h2>
+<div class="section-answer"><strong>Calibrated expert raters, trained to reward verifiable, attributed claims, not hype.</strong> If preferences come from human judgment, it is worth knowing how that judgment is collected. Serious labs do not crowdsource to the cheapest bidder; they recruit <a href="https://www.secondtalent.com/resources/data-annotation-for-llm-fine-tuning-rlhf-and-instruction-tuning-guide/" target="_blank" rel="noopener">calibrated expert annotators</a>, route critical samples to three to five reviewers, and hold inter-annotator agreement high.</div>
+<p>Their instructions matter to you directly. OpenAI's <a href="https://model-spec.openai.com/" target="_blank" rel="noopener">Model Spec</a> commands models to avoid sycophancy, hold an objective point of view, and express calibrated uncertainty, and raters are explicitly told to penalize models that agree with a user's misconceptions. The takeaway for brand teams is the opposite of legacy marketing instinct.</p>
+<div class="callout-box"><div class="callout-box-label">What this rules out</div><p>You cannot flatter, hype, or keyword-stuff your way into the answer. The model has been actively trained to resist persuasion and to reward claims that are verifiable, attributed, and externally corroborated. <a href="/blogs/eeat-is-an-ai-signal-now">Trust is the ranking signal now</a>, which is exactly why the next section is about evidence, not adjectives.</p></div>
+<h2 id="share-of-model"><span class="section-num">04</span>What replaces ranking as the metric that matters?</h2>
+<div class="section-answer"><strong><a href="/blogs/prompt-to-citation-tracking">Share of Model</a>: the probability your brand is the cited source.</strong> As the results page becomes an answer, the metric that matters shifts from rank to Share of Model, the probability your brand is selected as a grounding source when the model synthesizes its reply. That selection runs through retrieval: the query becomes a vector, rerankers score candidate chunks on contextual cohesion, factual density, and Information Gain. Under Google's information-gain patent, content judged genuinely novel is <a href="https://thesmarketers.com/blogs/information-gain-seo/" target="_blank" rel="noopener">cited 3-6x more often</a> than keyword-matched pages with no new signal.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">User query</div><div class="pl-desc">intent</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Vector retriever</div><div class="pl-desc">scans trusted DB</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Neural reranker</div><div class="pl-desc">factual density, cohesion, information gain</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Share of Model</div><div class="pl-desc">cited as grounding</div></div></div><div class="chart-caption">Figure 4 - the retrieval gauntlet behind every AI answer. Source selection rewards novelty and structure over keyword overlap. Sources: The Smarketers, GEO (arXiv)</div>
+<p>Who actually gets cited? <a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" target="_blank" rel="noopener">Muck Rack's May 2026 study of 25M citations</a> found that earned media drives 84% of all generative AI citations, independent journalism makes up 27%, and paid or advertorial content is a rounding error at 0.3%. And the engines diverge sharply in how they cite.</p>
+<div class="chart-wrap"><canvas id="rlhfPlatformChart" height="230"></canvas></div><div class="chart-caption">Figure 5 - three engines, three citation personalities. ChatGPT ~5 cites/response (top domain Wikipedia); Gemini ~8 (Reddit); Claude ~13 (PubMed Central). Source: Muck Rack, June 2026</div>
+<p>Authority is also brutally concentrated: in Google AI Overviews, just three publishers capture nearly a third of all news citations, and the top ten take roughly 80%. Which means the comms desk, not the ad budget, holds the primary lever. And the structural moves that lift citation rates are now <a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener">measured</a>.</p>
+<div class="chart-wrap"><canvas id="rlhfLiftChart" height="210"></canvas></div><div class="chart-caption">Figure 6 - GEO citation-lift coefficients (Princeton, KDD 2024). Outbound links to .edu/.gov, attributed expert quotes, and hard statistics act as low-perplexity authority anchors.</div>
+<p>Coefficients are abstract until you point them at your own footprint. Toggle the levers below to model the lift on your brand's Share of Model. The math applies diminishing returns, because real-world signals do not stack cleanly.</p>
+<div class="calc-wrap" id="rlhfCalc"><div class="calc-head">Interactive &middot; GEO lift calculator</div><div class="calc-subt">Model the citation lift on your own brand</div><div class="calc-grid"><div class="calc-controls"><div class="calc-base"><label>Your brand's current Share of Model <span class="calc-baseval" id="cBaseVal">10%</span></label><input type="range" class="calc-range" id="cBaseline" min="1" max="40" value="10" aria-label="Current Share of Model"><p class="calc-hint">Roughly how often you are cited in relevant AI answers today.</p></div><div class="calc-tactic on" data-key="authority" data-lo="40" data-hi="115"><div class="calc-trow"><button class="calc-switch on" aria-pressed="true" aria-label="Toggle high-authority links"></button><span class="calc-tname">High-authority outbound links</span><span class="calc-band">+40-115%</span></div><div class="calc-seg"><button data-lvl="0">Min</button><button data-lvl="0.5" class="sel">Mid</button><button data-lvl="1">Max</button></div></div><div class="calc-tactic on" data-key="quotes" data-lo="28" data-hi="37"><div class="calc-trow"><button class="calc-switch on" aria-pressed="true" aria-label="Toggle expert quotations"></button><span class="calc-tname">Expert quotations (attributed)</span><span class="calc-band">+28-37%</span></div><div class="calc-seg"><button data-lvl="0">Min</button><button data-lvl="0.5" class="sel">Mid</button><button data-lvl="1">Max</button></div></div><div class="calc-tactic on" data-key="stats" data-lo="22" data-hi="41"><div class="calc-trow"><button class="calc-switch on" aria-pressed="true" aria-label="Toggle statistics and data"></button><span class="calc-tname">Statistics &amp; data</span><span class="calc-band">+22-41%</span></div><div class="calc-seg"><button data-lvl="0">Min</button><button data-lvl="0.5" class="sel">Mid</button><button data-lvl="1">Max</button></div></div></div><div class="calc-output"><div class="calc-out-eyebrow">Modeled citation lift</div><div class="calc-lift" id="cLift">+0%</div><div class="calc-liftsub" id="cLiftSub">vs. doing nothing</div><div class="calc-barrow"><span class="lbl">Now</span><div class="calc-track"><div class="calc-fill now" id="cNowFill" style="width:17%"></div></div><b id="cNowVal">10%</b></div><div class="calc-barrow"><span class="lbl">Projected</span><div class="calc-track"><div class="calc-fill proj" id="cProjFill" style="width:17%"></div></div><b id="cProjVal">10%</b></div><div class="calc-break" id="cBreak"></div><p class="calc-caveat">Modeled from the Princeton/KDD GEO coefficients, with diminishing returns on stacked signals (full weight on the strongest, then 70% and 50%). Directional, a planning aid, not a guarantee.</p></div></div></div><div class="chart-caption">Interactive - built on the lift ranges above. Source: Princeton GEO</div>
+<h2 id="playbook"><span class="section-num">05</span>What is the playbook to become the preferred answer?</h2>
+<div class="section-answer"><strong>Build machine-readable authority around genuine Information Gain.</strong> If preference is the channel and <a href="/blogs/anatomy-of-a-high-citation-page">Information Gain is the currency</a>, the budget has to move. Four shifts do most of the work.</div>
+<p><strong>Rebuild the content mix around novelty.</strong> Anchor on original signal, then amplify it. <strong>Hire a research analyst into the content team.</strong> Generalist copywriters cannot manufacture first-party data; an analyst running surveys and querying proprietary datasets ensures every asset introduces non-redundant Information Gain. <strong>Treat PR as a referencing engine.</strong> Because models favor third-party authority, <a href="https://carma.com/tms/earned-media-is-the-engine-of-ai-search/" target="_blank" rel="noopener">earned placements seed the retrieval databases</a> that LLMs draw from. <strong>Ship a brand hub with llms.txt.</strong> Hand crawlers a compressed map of your verified facts.</p>
+<div class="chart-wrap"><div class="donut-box" style="max-width:320px;margin:6px auto;"><canvas id="rlhfContentMixChart" height="260"></canvas></div></div><div class="chart-caption">Figure 7 - the 2026 content mix: allocate for citations, not just clicks. Twenty percent original signal feeds the other eighty. Source: The Smarketers</div>
+<p>The <a href="https://ahrefs.com/blog/what-is-llms-txt/" target="_blank" rel="noopener">llms.txt standard</a> is a public Markdown file that points crawlers like GPTBot, ClaudeBot, and Google-Extended straight at your canonical facts, with llms-full.txt aggregating the deeper documentation. It is the cheapest high-leverage move on this list.</p>
+<div class="code-wrap"><div class="code-label">llms.txt</div><div class="code-block"><span class="code-lang">llms.txt</span><pre># Acme Robotics - llms.txt
+
+&gt; Industrial inspection robots for regulated environments.
+
+## Core Brand
+- [Brand Hub](https://acme.com/brand-hub): canonical facts, naming, positioning
+- [Product Specs](https://acme.com/specs): models, payloads, certifications
+
+## Primary Research &amp; Benchmarks
+- [2026 Field-Reliability Report](https://acme.com/research/2026): first-party, n=1,200
+- [Implementation Framework](https://acme.com/framework): proprietary methodology
+
+## Proof &amp; Press
+- [Earned Media](https://acme.com/press): third-party coverage &amp; citations</pre></div></div>
+<h2 id="horizon"><span class="section-num">06</span>Where does this leave marketing leaders?</h2>
+<div class="section-answer"><strong>Stop optimizing the interface your customers are abandoning.</strong> The move from keyword-based search to probabilistic representation inside a model is permanent.</div>
+<p>CMOs who keep optimizing for density and page-rank are tuning an interface their customers are leaving. The durable position belongs to brands that understand the alignment layer, restructure content around genuine Information Gain, and <a href="/blogs/authority-seeding-ai-llm-trust">earn the third-party authority</a> that seeds every model's memory. Preference is being decided in training runs you will never see, but the signals it rewards are entirely within your control. Build the evidence, and become the answer.</p>
+<div class="faq-section"><div class="faq-section-label">Frequently Asked Questions</div><div class="faq-list"><div class="faq-item"><h3 class="faq-q">What is RLHF, and why does it matter for marketing?</h3><p class="faq-a">RLHF (Reinforcement Learning from Human Feedback) is a post-training stage where human raters rank a model's competing answers, a reward model learns to predict their preference, and the model is optimized toward it. For marketing it matters because this is where a model learns which sources and brands to prefer when it answers a question. If your brand was in the answers raters marked better, the model is more likely to recommend you, and that preference is decided in training, not at query time.</p></div><div class="faq-item"><h3 class="faq-q">What is Share of Model?</h3><p class="faq-a">Share of Model is the probability that your brand is selected as a grounding source when an AI model synthesizes its answer. As AI answers replace the ranked results page, Share of Model replaces rank position as the metric that matters. It is won through retrieval: the model vectorizes the query and a reranker scores candidate passages on factual density, contextual cohesion, and Information Gain, novelty that keyword-matched pages lack.</p></div><div class="faq-item"><h3 class="faq-q">How do you increase your brand's Share of Model?</h3><p class="faq-a">Build machine-readable authority around genuine Information Gain. Publish original first-party research and statistics, include attributed expert quotations, and earn third-party media (the source of 84% of AI citations). Princeton's GEO study measured the lift: high-authority outbound links add 40-115%, statistics 22-41%, and expert quotes 28-37%. Then <a href="/glossary/llms-txt">ship an llms.txt</a> so crawlers can find your canonical facts. You cannot hype or keyword-stuff your way in; raters trained the model to reward verifiable, corroborated claims.</p></div></div></div>
+<div class="sources-block"><div class="sources-label">Sources & further reading</div><ul class="sources-list"><li><a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener">Princeton GEO: Generative Engine Optimization (KDD 2024)</a></li><li><a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" target="_blank" rel="noopener">Muck Rack, What Is AI Reading? (25M citations, May 2026)</a></li><li><a href="https://model-spec.openai.com/" target="_blank" rel="noopener">OpenAI Model Spec</a></li><li><a href="https://www.cracklepr.com/insights/ai-search-runs-on-earned-media" target="_blank" rel="noopener">Crackle PR, AI Search Runs on Earned Media</a></li><li><a href="https://www.sundeepteki.org/advice/the-complete-guide-to-post-training-llms-how-sft-rlhf-dpo-and-grpo-shape-llms" target="_blank" rel="noopener">Sundeep Teki, The Complete Guide to Post-Training LLMs</a></li><li><a href="https://snorkel.ai/blog/llm-alignment-techniques-4-post-training-approaches/" target="_blank" rel="noopener">Snorkel AI, LLM Alignment Techniques</a></li><li><a href="https://arxiv.org/html/2601.05184v1" target="_blank" rel="noopener">CausalDPO and the Self-Consuming Performative Loop (arXiv)</a></li><li><a href="https://thesmarketers.com/blogs/information-gain-seo/" target="_blank" rel="noopener">The Smarketers, Information Gain: AI's Key SEO Metric</a></li></ul></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns of how AI search decides what to recommend, pulling AI-citation and SEO data to show where the visibility gaps are. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">93%</div><div class="stat-label">Zero-click searches, Google AI Mode</div></div><hr class="stat-divider"><div><div class="stat-val">84%</div><div class="stat-label">Of AI citations are earned media</div></div><hr class="stat-divider"><div><div class="stat-val">+115%</div><div class="stat-label">Peak citation lift from authority signals</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this teardown</div><ul class="toc-list"><li><a href="#machinery"><span class="toc-num">01</span>The machinery of preference</a></li><li><a href="#compounding"><span class="toc-num">02</span>Why preference compounds</a></li><li><a href="#juror"><span class="toc-num">03</span>Who the model believes</a></li><li><a href="#share-of-model"><span class="toc-num">04</span>Share of Model</a></li><li><a href="#playbook"><span class="toc-num">05</span>The playbook</a></li><li><a href="#horizon"><span class="toc-num">06</span>The horizon</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/subscribed" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint =(css.getPropertyValue('--faint') ||'#C5BFB4').trim();
+  var mono="'JetBrains Mono', monospace";
+  var text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.45);
+
+  var d=document.getElementById('rlhfDecouplingChart');
+  if(d){new Chart(d,{type:'bar',data:{labels:['Classic search','AI Overviews','AI Mode'],
+    datasets:[{data:[58,83,93],backgroundColor:[neutral,neutral,signal],borderRadius:4,barThickness:54}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% end without a click';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},
+              y:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var pf=document.getElementById('rlhfPlatformChart');
+  if(pf){new Chart(pf,{type:'bar',data:{labels:['ChatGPT','Gemini','Claude'],
+    datasets:[{data:[96,82,55],backgroundColor:[neutral,neutral,neutral],borderRadius:4,barThickness:20}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' cites in '+c.raw+'% of responses';}}}},
+      scales:{x:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}},
+              y:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}}}}});}
+
+  var lf=document.getElementById('rlhfLiftChart');
+  if(lf){new Chart(lf,{type:'bar',data:{labels:['High-authority links','Statistics & data','Expert quotations'],
+    datasets:[{data:[[40,115],[22,41],[28,37]],backgroundColor:[signal,rgba(signal,0.6),rgba(signal,0.6)],borderRadius:4,barThickness:22}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' +'+c.raw[0]+' to +'+c.raw[1]+'% citation lift';}}}},
+      scales:{x:{beginAtZero:true,max:120,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return '+'+v+'%';}},grid:{color:grid}},
+              y:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}}}}});}
+
+  var cm=document.getElementById('rlhfContentMixChart');
+  if(cm){new Chart(cm,{type:'doughnut',data:{labels:['Flagship high-info-gain (20%)','Derivative (50%)','Product & solution (20%)','News & commentary (10%)'],
+    datasets:[{data:[20,50,20,10],backgroundColor:[signal,rgba(faint,0.5),rgba(faint,0.3),rgba(faint,0.18)],borderColor:'#1A1815',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{color:text,font:{family:mono,size:10},boxWidth:10,boxHeight:10,padding:12}},
+      tooltip:{callbacks:{label:function(c){return ' '+c.label;}}}}}});}
+})();
+</script>
+<script>
+/* GEO lift calculator */
+(function(){
+  var root=document.getElementById('rlhfCalc'); if(!root) return;
+  var baseline=document.getElementById('cBaseline');
+  var WEIGHTS=[1,0.7,0.5], CAP=0.60;
+  function pct(x){return Math.round(x*100);}
+  function compute(){
+    var base=parseInt(baseline.value,10)/100;
+    document.getElementById('cBaseVal').textContent=baseline.value+'%';
+    var active=[];
+    root.querySelectorAll('.calc-tactic').forEach(function(t){
+      if(!t.classList.contains('on')) return;
+      var lo=parseFloat(t.dataset.lo), hi=parseFloat(t.dataset.hi);
+      var sel=t.querySelector('.calc-seg button.sel'); var lvl=sel?parseFloat(sel.dataset.lvl):0.5;
+      active.push({key:t.dataset.key,name:t.querySelector('.calc-tname').textContent,lift:(lo+lvl*(hi-lo))/100});
+    });
+    active.sort(function(a,b){return b.lift-a.lift;});
+    var mult=1;
+    active.forEach(function(a,i){var w=WEIGHTS[i]!==undefined?WEIGHTS[i]:0.4;a.effective=a.lift*w;mult*=(1+a.effective);});
+    var combined=mult-1, projected=Math.min(base*mult,CAP);
+    document.getElementById('cLift').textContent='+'+pct(combined)+'%';
+    document.getElementById('cLiftSub').textContent=active.length?('across '+active.length+' signal'+(active.length>1?'s':'')+' \u00b7 vs. doing nothing'):'no signals selected';
+    document.getElementById('cNowVal').textContent=pct(base)+'%';
+    document.getElementById('cProjVal').textContent=pct(projected)+'%';
+    document.getElementById('cNowFill').style.width=(base/CAP*100)+'%';
+    document.getElementById('cProjFill').style.width=(projected/CAP*100)+'%';
+    var br=document.getElementById('cBreak'); br.innerHTML='';
+    if(!active.length){var c=document.createElement('span');c.className='calc-chip muted';c.textContent='Toggle a signal to see its contribution';br.appendChild(c);}
+    else{active.forEach(function(a){var s={authority:'Authority links',quotes:'Expert quotes',stats:'Statistics'}[a.key]||a.name;
+      var c=document.createElement('span');c.className='calc-chip';c.textContent=s+'  +'+pct(a.effective)+'%';br.appendChild(c);});}
+  }
+  baseline.addEventListener('input',compute);
+  root.querySelectorAll('.calc-switch').forEach(function(sw){sw.addEventListener('click',function(){
+    var t=sw.closest('.calc-tactic'); var on=t.classList.toggle('on'); sw.classList.toggle('on',on);
+    t.classList.toggle('off',!on); sw.setAttribute('aria-pressed',on?'true':'false'); compute();});});
+  root.querySelectorAll('.calc-seg').forEach(function(seg){seg.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    seg.querySelectorAll('button').forEach(function(x){x.classList.remove('sel');}); b.classList.add('sel'); compute();});});
+  compute();
+})();
+</script>
+</body>
+</html>

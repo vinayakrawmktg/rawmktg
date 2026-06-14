@@ -22,6 +22,7 @@
 - [Hallucination-Proofing Your Brand: The Content Architecture That Stops AI Getting You Wrong](https://rawmktg.com/blogs/hallucination-proofing-your-brand)
 - [Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers](https://rawmktg.com/blogs/anatomy-of-a-high-citation-page)
 - [Authority Seeding for AI: Building the Off-Site Signal Stack That LLMs Actually Trust](https://rawmktg.com/blogs/authority-seeding-ai-llm-trust)
+- [RLHF and Your Brand](https://rawmktg.com/blogs/rlhf-and-your-brand)
 - [Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero](https://rawmktg.com/blogs/prompt-to-citation-tracking)
 - [E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences](https://rawmktg.com/blogs/eeat-is-an-ai-signal-now)
 - [The 30-Day Content Half-Life: Why Recency Is Now a Hard Ranking Signal for AI Answers](https://rawmktg.com/blogs/30-day-content-half-life-recency-ai-ranking-signal)
