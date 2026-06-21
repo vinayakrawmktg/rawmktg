@@ -42,7 +42,7 @@ Table 01: Architectural feature comparison, ChatGPT vs. Perplexity vs. Gemini
 | Core Model | GPT-4o / GPT-5.3 Instant | Custom RAG-Optimised LLMs | Google Gemini Enterprise |
 | Index Source | Bing Web Index + OAI-Searchbot | Real-time live web scrapers (PerplexityBot) | Google Web Index + Knowledge Graph |
 | Citation Filter | Strict context filter (~15% selection rate) | Real-time RAG passage scoring | Entity mapping + organic rank validation |
-| Preferred Sources | G2, Capterra, high-authority media, Reddit | Technical blogs, GitHub, Reddit, dev docs | Top 20 organic pages, Wikipedia, Wikidata |
+| Preferred Sources | G2, Capterra, high-authority media, [Reddit](/blogs/why-ai-cites-reddit-g2-analysts) | Technical blogs, GitHub, Reddit, dev docs | Top 20 organic pages, Wikipedia, Wikidata |
 | Update Cycle | Bing updates + real-time API | Programmatic real-time live scrapers | Continuous Googlebot + Knowledge Graph |
 | Unique Signal | User Memory profiles, brand mentions | Focus Modes (Academic, Reddit, Writing) | Search Console CTR, Core Web Vitals, E-E-A-T |
 

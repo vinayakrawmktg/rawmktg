@@ -9,7 +9,7 @@ The rules of digital visibility are being rewritten. For nearly two decades, Goo
 
 Today, those same human-defined quality preferences are mathematically encoded into the parameter weights of large language models (LLMs) through a process called preference alignment. When a generative AI system like Perplexity, Google AI Overviews, or ChatGPT Search decides which sources to cite, it is not running a fresh keyword match. It is [executing a policy baked in during training](/blogs/how-rag-actually-works), a policy that mirrors, with striking precision, the criteria Google trained its human raters to apply. The gap between "writing for E-E-A-T" and "writing for AI citation" has effectively collapsed to zero.
 
-This article traces the technical mechanism behind that collapse: how RLHF and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.
+This article traces the technical mechanism behind that collapse: how [RLHF](/blogs/rlhf-and-your-brand) and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.
 
 ## How did E-E-A-T move from a search signal to a model weight?
 

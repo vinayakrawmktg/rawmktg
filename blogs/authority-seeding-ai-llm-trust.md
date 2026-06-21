@@ -46,7 +46,7 @@ Table 02: Dual-pathway architecture: parametric vs RAG seeding
 | Pathway | How It Works | Seeding Asset Type | Timeline to Impact |
 | --- | --- | --- | --- |
 | Parametric Pre-training | Static datasets (Common Crawl C4, ~750 GB) baked into model weights at training time. Heuristic filters apply PageRank thresholds and social verification metrics to discard noise. | Wikipedia / Wikidata entries, academic papers, high-DR editorial mentions, Crunchbase profiles | 6-18 months (next training cycle) |
-| Non-Parametric RAG | Real-time web retrieval triggered per query. Systems like Perplexity index hundreds of billions of pages with rapid secondary updates. Uses pplx-embed-v1 dense vector embeddings. | Fresh benchmark reports, structured data pages, review platform entries, third-party blog mentions | 2-6 weeks (next crawl cycle) |
+| Non-Parametric RAG | Real-time web retrieval triggered per query. Systems like Perplexity index hundreds of billions of pages with rapid secondary updates. Uses pplx-embed-v1 dense vector embeddings. | Fresh benchmark reports, structured data pages, review platform entries, [third-party](/blogs/why-ai-cites-reddit-g2-analysts) blog mentions | 2-6 weeks (next crawl cycle) |
 
 Because [RAG engines do not execute JavaScript during real-time retrieval](https://llmrefs.com/llm-seo), any brand mentions, links, or data elements rendered via client-side code are invisible to these systems. All seeded off-site assets must exist within raw, server-side rendered HTML. This eliminates the majority of modern SPA frameworks from the citation equation entirely.
 

@@ -6,18 +6,20 @@
 
 ## Articles
 
+- [Why AI Cites Domo Over Databricks](https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks)
 - [The Authority Paradox of Property Vista](https://rawmktg.com/blogs/property-vista-authority-paradox)
 - [What Noterro Gets Right About AI Search](https://rawmktg.com/blogs/noterro-ai-search-teardown)
 - [When Buyers Ask AI Which HR Software to Use, One Brand Owns the Answer](https://rawmktg.com/blogs/hr-saas-ai-visibility-gap)
 - [Beyond Cross-Border: Where India's Global-Payments Brands Actually Earn Their Backlinks](https://rawmktg.com/blogs/cross-border-backlinks)
 - [When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room](https://rawmktg.com/blogs/aec-ai-visibility-gap)
-- [India's Senior Living Sector Has an AI Problem Nobody Is Talking About](https://rawmktg.com/blogs/india-senior-living-ai-visibility-gap)
 - [How We Run a GEO Foundation Audit](https://rawmktg.com/blogs/geo-foundation-audit)
 - [Why ChatGPT, Perplexity and Gemini Recommend Different Vendors (and How to Win All Three)](https://rawmktg.com/blogs/why-engines-recommend-different-vendors)
 - [The GEO Compounding Flywheel: How to Build AI Visibility That Gets Harder to Dislodge](https://rawmktg.com/blogs/geo-compounding-flywheel)
 - [How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter](https://rawmktg.com/blogs/how-rag-actually-works)
+- [Internal Linking for AI Retrieval](https://rawmktg.com/blogs/internal-linking-for-ai-retrieval)
 - [Schema Markup in 2026: The Structured-Data Playbook Every B2B Brand Needs for AI Citations](https://rawmktg.com/blogs/schema-markup-ai-citations-2026)
 - [OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site](https://rawmktg.com/blogs/how-ai-crawlers-index-your-site)
+- [Why AI Cites Reddit, G2 & Analysts Over Your Website](https://rawmktg.com/blogs/why-ai-cites-reddit-g2-analysts)
 - [The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists](https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists)
 - [Hallucination-Proofing Your Brand: The Content Architecture That Stops AI Getting You Wrong](https://rawmktg.com/blogs/hallucination-proofing-your-brand)
 - [Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers](https://rawmktg.com/blogs/anatomy-of-a-high-citation-page)

@@ -108,7 +108,7 @@ But Grabango's failure does sharpen one point. A business that depends entirely 
 
 ## The Review Platform Gap
 
-There is one more dimension to this visibility gap that does not show up in traditional SEO metrics but is increasingly consequential for AI citation volume: the presence (or absence) of a brand on review and comparison platforms.
+There is one more dimension to this [visibility gap](/blogs/india-senior-living-ai-visibility-gap) that does not show up in traditional SEO metrics but is increasingly consequential for AI citation volume: the presence (or absence) of a brand on review and comparison platforms.
 
 [G2](https://www.g2.com), [Capterra](https://www.capterra.com), and [GetApp](https://www.getapp.com) collectively function as primary citation sources for AI responses about B2B technology products. When someone asks ChatGPT "what is the best autonomous checkout solution," the models pull heavily from these platforms because they contain structured, verified information about products in comparative context.
 

@@ -128,7 +128,7 @@ Content refresh prioritisation framework by tier
 | --- | --- | --- | --- |
 | Tier 1 | Revenue-adjacent pages (pricing, comparisons, use cases) | 8-12 weeks | Direct conversion risk if citations drop. These pages are actively consulted during vendor evaluation. |
 | Tier 2 | Thought leadership and category authority content | 12-16 weeks | Anchors brand positioning in AI answers. Loss here reduces competitive presence in awareness-stage queries. |
-| Tier 3 | Supporting informational content and FAQs | 6 months | Supports Tier 1 and 2 via entity coverage and internal linking density. |
+| Tier 3 | Supporting informational content and FAQs | 6 months | Supports Tier 1 and 2 via entity coverage and [internal link](/blogs/internal-linking-for-ai-retrieval)ing density. |
 | Tier 4 | Archive candidates | Evaluate for retirement | Consolidate or redirect. Do not invest refresh resources in pages with no pipeline value. |
 
 ### The Five-Step Refresh Workflow
@@ -775,7 +775,7 @@ Table 02: Dual-pathway architecture: parametric vs RAG seeding
 | Pathway | How It Works | Seeding Asset Type | Timeline to Impact |
 | --- | --- | --- | --- |
 | Parametric Pre-training | Static datasets (Common Crawl C4, ~750 GB) baked into model weights at training time. Heuristic filters apply PageRank thresholds and social verification metrics to discard noise. | Wikipedia / Wikidata entries, academic papers, high-DR editorial mentions, Crunchbase profiles | 6-18 months (next training cycle) |
-| Non-Parametric RAG | Real-time web retrieval triggered per query. Systems like Perplexity index hundreds of billions of pages with rapid secondary updates. Uses pplx-embed-v1 dense vector embeddings. | Fresh benchmark reports, structured data pages, review platform entries, third-party blog mentions | 2-6 weeks (next crawl cycle) |
+| Non-Parametric RAG | Real-time web retrieval triggered per query. Systems like Perplexity index hundreds of billions of pages with rapid secondary updates. Uses pplx-embed-v1 dense vector embeddings. | Fresh benchmark reports, structured data pages, review platform entries, [third-party](/blogs/why-ai-cites-reddit-g2-analysts) blog mentions | 2-6 weeks (next crawl cycle) |
 
 Because [RAG engines do not execute JavaScript during real-time retrieval](https://llmrefs.com/llm-seo), any brand mentions, links, or data elements rendered via client-side code are invisible to these systems. All seeded off-site assets must exist within raw, server-side rendered HTML. This eliminates the majority of modern SPA frameworks from the citation equation entirely.
 
@@ -1109,7 +1109,7 @@ But Grabango's failure does sharpen one point. A business that depends entirely 
 
 ## The Review Platform Gap
 
-There is one more dimension to this visibility gap that does not show up in traditional SEO metrics but is increasingly consequential for AI citation volume: the presence (or absence) of a brand on review and comparison platforms.
+There is one more dimension to this [visibility gap](/blogs/india-senior-living-ai-visibility-gap) that does not show up in traditional SEO metrics but is increasingly consequential for AI citation volume: the presence (or absence) of a brand on review and comparison platforms.
 
 [G2](https://www.g2.com), [Capterra](https://www.capterra.com), and [GetApp](https://www.getapp.com) collectively function as primary citation sources for AI responses about B2B technology products. When someone asks ChatGPT "what is the best autonomous checkout solution," the models pull heavily from these platforms because they contain structured, verified information about products in comparative context.
 
@@ -1190,7 +1190,7 @@ At rawmktg., we spend a lot of time inside [Ahrefs](https://ahrefs.com) pulling 
 
 A few weeks ago, we turned our attention to the container tracking and supply chain [visibility](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") software space. It is a market that sits at an interesting intersection: technically complex, deeply operational, and increasingly dominated by software-first companies replacing the manual port tracking workflows that importers and logistics managers have been running on spreadsheets for years.
 
-We analysed six companies in this category, ranging from large, VC-backed platforms with enterprise contracts to lean, API-first products targeting smaller importers and freight forwarders. We looked at their organic search performance, AI citation footprint, referring domain profiles, keyword strategy, and traffic trajectories using Ahrefs Site Explorer, Brand Radar, Keywords Explorer, and Link Intersect.
+We analysed six companies in this category, ranging from large, VC-backed platforms with enterprise contracts to lean, API-first products targeting smaller importers and freight forwarders. We looked at their organic search performance, AI citation footprint, [referring domain](/blogs/why-ai-cites-domo-over-databricks) profiles, keyword strategy, and traffic trajectories using Ahrefs Site Explorer, Brand Radar, Keywords Explorer, and Link Intersect.
 
 **Bottom line up front**
 What we found was a market that is, collectively, making the same handful of strategic mistakes, and a small number of players who have quietly figured out how to win the modern search landscape while most of their competitors are still playing a 2019 SEO game.
@@ -1411,7 +1411,7 @@ SEO is not a linear game. The company that is growing its organic traffic today 
 
 Drawing across all seven findings, the pattern of what separates the highest-performing players from the rest is relatively consistent:
 
-- Content architectureWinners have built content for every stage: educational and definitional content for the top of [funnel](/tools/saas-funnel-gap-analyzer "B2B SaaS Funnel Gap Analyzer"), use-case and comparison content for the middle, and product-specific and commercial content for the bottom. Laggards have built almost exclusively for the top of funnel.
+- Content architectureWinners have built content for every stage: educational and definitional content for the top of [funnel](/tools/saas-funnel-gap-analyzer "B2B SaaS Funnel Gap Analyzer"), use-case and comparison content for the middle, and product-specific and commercial content for the bottom. Laggards have built almost exclusively for the top of [funnel](/blogs/cx-saas-seo-discoverability-analysis).
 - Carrier page librariesThe companies that perform best on both organic search and AI citations have invested in building structured, specific pages at scale, carrier tracking pages, port pages, and integration pages, rather than relying on a small number of high-level pillar pages.
 - Industry mediaThe top performers have editorial coverage in the publications their buyers read. This is not accidental, it is the result of deliberate, ongoing outreach to freight and logistics journalists and editors.
 - GEO strategyThe companies with the highest AI citation counts are producing content that is structured in the way [LLMs are trained to cite](/blogs/eeat-is-an-ai-signal-now): clear, factual, specific, well-structured, and supported by credible third-party references.
@@ -1652,7 +1652,7 @@ Methodology and Caveats
 *Source: https://rawmktg.com/blogs/cx-saas-seo-discoverability-analysis · rawmktg. by Vinayak Ravi*
 
 
-Over the past few months, we [audit](/tools/geo-readiness-scorecard "GEO Readiness Scorecard")ed six leading B2B SaaS companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.
+Over the past few months, we [audit](/tools/geo-readiness-scorecard "GEO Readiness Scorecard")ed six leading B2B [SaaS](/blogs/container-tracking-saas-seo-geo-analysis) companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.
 
 The patterns were remarkably consistent. Across technical infrastructure, content strategy, backlink quality, and AI visibility, the same structural mistakes appeared again and again, made at scale by companies with every resource available to avoid them.
 
@@ -1881,7 +1881,7 @@ The rules of digital visibility are being rewritten. For nearly two decades, Goo
 
 Today, those same human-defined quality preferences are mathematically encoded into the parameter weights of large language models (LLMs) through a process called preference alignment. When a generative AI system like Perplexity, Google AI Overviews, or ChatGPT Search decides which sources to cite, it is not running a fresh keyword match. It is [executing a policy baked in during training](/blogs/how-rag-actually-works), a policy that mirrors, with striking precision, the criteria Google trained its human raters to apply. The gap between "writing for E-E-A-T" and "writing for AI citation" has effectively collapsed to zero.
 
-This article traces the technical mechanism behind that collapse: how RLHF and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.
+This article traces the technical mechanism behind that collapse: how [RLHF](/blogs/rlhf-and-your-brand) and DPO training pipelines encode trust preferences into model weights, which on-page and off-page signals shift your brand's position in those weight distributions, and what a 90-day execution plan looks like for a marketing team ready to compete in generative search.
 
 ## How did E-E-A-T move from a search signal to a model weight?
 
@@ -3380,7 +3380,7 @@ Citations & Sources
 
 TL;DR
 
-- 01**None of the three execute JavaScript.** Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.
+- 01**None of the three execute [JavaScript](/blogs/property-vista-authority-paradox).** Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.
 - 02**[Crawl](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") logic differs by mission.** OAI-SearchBot indexes for citations, [PerplexityBot for RAG](/blogs/how-rag-actually-works), CCBot for archival training. Same User-Agent header, three different scopes.
 - 03**Robots.txt blocks the bot, not the URL.** A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a `noindex` meta tag on the page itself.
 - 04**Verify before you trust the User-Agent.** Spoofed AI [crawler](/tools/ai-platform-optimizer "AI Platform Optimization Matrix")s are common. Validate with FCrDNS or the published JSON CIDR feeds.
@@ -3463,7 +3463,7 @@ html · GET /products/atlas-x9
 </html>
 ```
 
-That payload is functionally empty. It has a title and a script tag. It has no body copy, no schema markup, no internal links, no navigation. For OAI-SearchBot and PerplexityBot, the URL is effectively a blank page that cannot be cited. For CCBot, it becomes a near-useless row in a WARC archive. [The failure modes compound in predictable ways](https://visively.com/kb/ai/ai-crawlers-javascript-rendering):
+That payload is functionally empty. It has a title and a script tag. It has no body copy, no schema markup, no [internal link](/blogs/internal-linking-for-ai-retrieval)s, no navigation. For OAI-SearchBot and PerplexityBot, the URL is effectively a blank page that cannot be cited. For CCBot, it becomes a near-useless row in a WARC archive. [The failure modes compound in predictable ways](https://visively.com/kb/ai/ai-crawlers-javascript-rendering):
 
 - **Empty indexing shells.** No text content reaches the index. The URL is registered but cannot be surfaced as a citation.
 - **Invisible navigation paths.** If internal links are rendered client-side, the crawler cannot follow them. Crawl depth collapses to one.
@@ -4062,7 +4062,7 @@ The risk is structural. When organic search mostly recaptures demand the brand a
 
 ## 04. Where do HR buyers actually compare software?
 
-**Not on vendor sites.** MoFu (consideration) traffic is just 2-13% of the total at every brand. The "best HR software" and "X vs Y" queries, where buyers actually choose, are owned by G2, Capterra and Forbes Advisor, not the vendors.
+**Not on vendor sites.** MoFu (consideration) traffic is just 2-13% of the total at every brand. The "best HR software" and "X vs Y" queries, where buyers actually choose, are owned by [G2](/blogs/why-ai-cites-domo-over-databricks), Capterra and Forbes Advisor, not the vendors.
 
 Map every keyword to a [funnel](/tools/saas-funnel-gap-analyzer "B2B SaaS Funnel Gap Analyzer") stage and the same shape appears six times: a reasonable top (awareness), a heavy bottom (brand and decision), and almost nothing in the middle. The consideration layer, comparison terms, "best," "alternatives," "vs," is where buyers narrow their shortlist, and it is precisely where these vendors are absent.
 
@@ -4395,6 +4395,471 @@ Ashiana has 1,098 referring domains including 18 DR70+ editorial links and cover
 Data and Methodology
 
 This analysis draws on [Ahrefs](https://ahrefs.com) SEO data, AI citation tracking across ChatGPT, Perplexity, Gemini, Google AI Overviews, and Microsoft Copilot, and direct LLM query testing across representative buyer search terms. Data reflects conditions as of Q2 2026.
+
+
+
+---
+
+# Internal Linking for AI Retrieval
+
+> How hub pages, anchor-text density, and crawl-depth rules decide whether your key pages are retrieved in a RAG query chain.
+
+*Source: https://rawmktg.com/blogs/internal-linking-for-ai-retrieval · rawmktg. by Vinayak Ravi*
+
+
+For two decades the search index was a deterministic, page-centric machine. Crawlers built inverted indexes, lexical models like BM25 scored whole documents on term frequency, and optimization meant keyword placement and passing authority across flat link graphs. LLM answer engines broke that model. Modern search runs on Retrieval-Augmented Generation (RAG): a pipeline that retrieves passages, re-ranks them by semantic relevance, and feeds them to a model as grounding context.
+
+TL;DR, what changes when retrieval goes neural
+
+**RAG retrieves passages, not pages.** It pulls self-contained chunks and re-ranks them by meaning. Content that is mathematically isolated from your site graph is invisible to AI retrievers, no matter how good it is.
+
+**Three levers move the needle:** a Vector-Cluster topology (Anchor Entities, Contextual Bridges, Nuance Nodes), entity-rich anchor text that doubles as a retrieval signal, and a flat crawl depth of 2-3 hops so real-time agents reach your pages before they time out.
+
+**Internal links are the edges** graph-augmented retrievers traverse to compute authority. Optimizing them is now an information-retrieval problem, not a PageRank-plumbing exercise.
+
+## 01. From inverted indexes to vector spaces, what actually changed?
+
+**Search now runs on RAG, which retrieves and re-ranks passages, not pages.** Where SEO optimized for a rank position, Generative Engine Optimization (GEO) optimizes the upstream retrieval phase: getting specific text chunks injected into the model's context window.
+
+The consequence for architecture is blunt. RAG systems do not retrieve whole pages, they retrieve discrete, self-contained passages. If an enterprise page holds exceptional content but is structurally isolated from the rest of the site graph, it is effectively invisible to AI retrievers.
+
+Query
+
+user question
+
+→
+
+Retrieve
+
+top passages by vector match
+
+→
+
+Re-rank
+
+by semantic relevance
+
+→
+
+Synthesize
+
+LLM grounds its answer
+
+Figure 1 - legacy whole-page keyword matching gives way to a multi-stage RAG retrieval pipeline that scores passages, not documents.
+
+This also rewrites measurement. AI search introduces AI Dark Traffic, valuable interactions legacy analytics struggle to attribute because they happen inside conversational interfaces via zero-click synthesis or assisted citation clicks. Across finance, technology and travel, AI experiences are estimated to displace 15-68% of traditional organic clicks.
+
+Figure 2 - estimated displacement of traditional organic clicks by AI search, by vertical. Source: industry analyses, 2026
+
+## 02. How does anchor text behave in neural retrieval?
+
+**As a query surrogate, late-interaction models match it token by token.** Early dense retrievers compressed a whole page into one vector, which washes out fine detail in long documents. Late-interaction architectures like ColBERT instead keep token-level representations and score relevance with the MaxSim operator: the sum of maximum cosine similarities between each query token and all document tokens.
+
+MaxSim relevance (ColBERT late interaction)
+
+neural-ir
+
+```
+S(q, d) =  SUM   max ( E[q_i] . E[d_j] )
+           i in q  j in d
+
+  E[q_i] = contextual embedding of query token i
+  E[d_j] = contextual embedding of document token j
+  .      = cosine similarity between token embeddings
+
+# Every query token "votes" for its best-matching
+# document token; the votes sum into the final score.
+```
+
+Token-level matching changes what anchor text is. Under legacy SEO, anchors passed PageRank and matched literal strings. In neural IR they are a direct semantic signal: research on the [Anchor-DR framework](https://arxiv.org/abs/2305.05834) shows web anchors behave as natural query surrogates, contrastive learning aligns the anchor's embedding with the embedding of the page it links to, so the retriever forms a semantic expectation of the target before it reads the body.
+
+### Managing anchor-text density: dilution vs saturation
+
+This reframes the old over-optimization worry. The neural-IR concern is not penalty risk; it is semantic dilution versus semantic saturation. Generic anchors like "click here" pass no context, so the target's MaxSim score declines. Hammering one exact-match keyword across every link constrains the document's vector boundaries and makes it harder to retrieve for long-tail queries. The fix is a diverse anchor-text density: semantic variants, related terms, and conversational questions that describe the precise relationship between source and target.
+
+Figure 3 - retrievability peaks at moderate anchor diversity and collapses under both exact-match saturation and generic dilution.
+
+## 03. How do you design a Vector-Cluster architecture?
+
+**Three page types: Anchor Entities, Contextual Bridges, and Nuance Nodes.** Organize content around its semantic relationships in vector space, not just shared keywords. The Vector-Clustering blueprint replaces the flat star structure with tightly woven semantic neighborhoods that signal deep, cohesive expertise to retrievers.
+
+Anchor Entity
+
+the hub: defines the topic's ontology
+
+→
+
+Nuance Nodes
+
+long-tail, high-info-gain spokes
+
+→
+
+Contextual Bridge
+
+connects to an adjacent cluster
+
+Figure 4 - a Vector-Cluster: an Anchor Entity hub linked to Nuance Nodes and bridged to an adjacent cluster.
+
+**Anchor Entity (the hub).** The semantic center of gravity. Unlike a generic "ultimate guide," it defines the topic's ontology, vocabulary, core concepts, relationships, and leans on JSON-LD plus clean definitions near the top for easy parsing. **Contextual Bridges.** Connectors that reduce semantic distance between clusters, letting models trace cross-topic logic. **Nuance Nodes.** Long-tail, high-density spokes built on [Information Gain](/blogs/anatomy-of-a-high-citation-page), original data, proprietary research, unique case studies that yield clear, quotable, citable facts.
+
+Legacy silo vs Vector-Cluster, side by side
+
+| Criterion | Legacy flat / silo IA | Vector-Cluster IA |
+| --- | --- | --- |
+| Organizing principle | Shared keywords & manual categories | Semantic proximity in vector space |
+| Hub role | Category page passing PageRank | Anchor Entity defining topic ontology |
+| Cross-topic links | Avoided to keep silos clean | Contextual Bridges encouraged |
+| Anchor text | Exact-match for ranking | Diverse, entity-rich, relationship-describing |
+| Unit of value | The ranked page | The retrievable passage / chunk |
+| Retrieval outcome | Whole-page ranking | Passage injected into LLM context |
+
+Implementation rule: every Nuance Node links back to its Anchor Entity with descriptive anchors, and Contextual Bridges link across hubs. That structured linking lets RAG systems trace and retrieve relevant passages across your entire domain. This is the on-page side of building [topical authority](/blogs/topical-authority-cluster-ai-shortlists).
+
+## 04. Why does crawl depth now decide what gets retrieved?
+
+**Real-time agents have seconds; keep key pages within 2-3 hops.** Before content can be retrieved it must be reachable. In 2026, AI crawlers split into two camps with opposite incentives.
+
+Training scrapers (throttle / block)
+
+- GPTBot, ClaudeBot, CCBot
+- Pull bulk data for future foundation models
+- Can consume up to ~40% of server bandwidth
+- Often bypass CDN caches; return no referral clicks
+
+Real-time retrieval agents (keep open)
+
+- OAI-SearchBot, ChatGPT-User, PerplexityBot
+- Fetch fresh content for active queries
+- Respect robots.txt
+- Drive the citation traffic that matters
+
+Figure 5 - the 2026 AI crawler taxonomy: bulk training scrapers vs real-time retrieval agents.
+
+That second group is why crawl depth is now a hard constraint. Traditional crawlers index asynchronously over days, so deep hierarchies eventually surface. Real-time agents have seconds to discover, scrape and filter URLs before the model responds. Content buried 4-5 clicks deep is often timed out or discarded before it is reached. This is the same access problem we cover in [how AI crawlers index your site](/blogs/how-ai-crawlers-index-your-site).
+
+Keep every key asset within 2-3 hops of the homepage. Past depth 3, real-time retrieval probability falls off a cliff.
+
+Figure 6 - modeled real-time retrieval probability by crawl depth. The safe zone ends at 3 hops; depth 4-5 is frequently timed out.
+
+Crawl budget also leaks. An enterprise study of 100,000-plus page domains found bots spend roughly 18% of crawl budget on redundant parameter URLs (session IDs, sort filters) when they are not explicitly blocked. Clear robots.txt exclusions steer that budget toward high-signal hubs.
+
+robots.txt, selective AI crawler control (2026)
+
+robots.txt
+
+```
+# Goal: keep referral-driving agents in; push bulk
+# scrapers and parameter URLs out.
+
+# --- Real-time retrieval agents: ALLOW ---
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+Allow: /
+
+# --- Bulk training scrapers: throttle / block ---
+User-agent: GPTBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+
+# --- Protect crawl budget from parameter sprawl ---
+User-agent: *
+Disallow: /*?sessionid=
+Disallow: /*?sort=
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml
+```
+
+Block only what you mean to. Blocking a training bot forfeits potential model exposure; allowing it spends bandwidth for zero referral traffic. Decide per business goal, and keep retrieval agents fully unblocked.
+
+## 05. What is GraphRAG, and why are internal links the edges?
+
+**It fuses vector search with graph traversal, and your links are the graph.** Enterprise retrieval increasingly augments dense vectors with knowledge graphs. [Graph-Augmented RAG (GraphRAG)](https://learn.microsoft.com/en-us/azure/horizondb/ai/graph-rag) pairs vector search with graph traversal to solve multi-hop reasoning, modeling relationships as explicit nodes and edges so the retriever can trace connections across pages.
+
+Dense vector rank
+
+semantic similarity
+
+→
+
+Graph citation rank
+
+in-degree authority
+
+→
+
+Reciprocal Rank Fusion
+
+blend both signals
+
+→
+
+Fused context
+
+sent to the LLM
+
+Figure 7 - GraphRAG fuses vector relevance and graph traversal via Reciprocal Rank Fusion.
+
+Engineers model assets as Entity-Attribute-Value triples (Subject, Predicate, Object). The pipeline runs extraction (pull JSON-LD and triples), deduplication (normalize entity names so "PostgreSQL," "Postgres" and "PG" resolve to one node), and graph construction (load relationships into a graph database). With the graph built, an Authority Boosting query counts each node's in-degree, its citation count, to find the most authoritative hubs.
+
+Authority boosting: in-degree as a hub signal
+
+cypher
+
+```
+-- Cypher: rank pages by internal citation count
+MATCH (target:Page)<-[r:LINKS_TO]-(:Page)
+RETURN target.url AS page,
+       count(r)   AS in_degree     -- citation count
+ORDER BY in_degree DESC
+LIMIT 20;
+```
+
+Reciprocal Rank Fusion of vector + graph
+
+python
+
+```
+# r_dense = rank from dense vector search
+# r_graph = rank from graph citation density
+# k       = smoothing constant (typically 4)
+
+def rrf(doc, r_dense, r_graph, k=4):
+    return 1.0/(k + r_dense) + 1.0/(k + r_graph)
+
+# Authoritative-but-distinct AND relevant-but-less-linked
+# documents both survive into the final context.
+```
+
+The payoff is measurable
+
+In controlled tests, adding a graph-augmented overlay to a dense retriever raised the mean cosine similarity of retrieved passages from 0.673 to 0.694 while sharply cutting similarity dispersion. Separately, the Princeton GEO-BENCH study found RAG-optimized content earns up to +40% citation visibility versus unoptimized content. The architectural takeaway: your internal links are the edges graph-augmented retrievers use to map authority.
+
+## 06. What is the B2A layer and the llms.txt standard?
+
+**A machine-readable index agents read instead of parsing your HTML.** Sites are adding Business-to-Agent (B2A) interfaces. The [llms.txt standard](/glossary/llms-txt) is an emerging protocol: a clean, machine-readable index of your most important resources at the domain root, a curated master index (/llms.txt) plus a concatenated full-text bundle (/llms-full.txt).
+
+/llms.txt
+
+markdown
+
+```
+# BrandName
+
+> BrandName provides enterprise-grade AI search
+> tracking and optimization platforms.
+
+## Core Resources
+
+- [Pricing](https://brand.com/pricing): Startup and
+  Enterprise tier structures.
+- [Integration Guide](https://brand.com/docs): REST
+  API deployment documentation.
+- [Vector-Cluster Playbook](https://brand.com/playbook):
+  How to structure content for AI retrieval.
+
+## About
+
+- [Company](https://brand.com/about): Who we are and
+  why AI visibility matters.
+```
+
+The structure is strict: one H1 with the exact brand name, a blockquote summary, H2 groupings, and bullet links in exact - [Title](URL): Description syntax. But set expectations with data: [Ahrefs' analysis of 137,000-plus domains](https://ahrefs.com/blog/llmstxt-study/) shows publishing is rising while reads remain vanishingly rare.
+
+Figure 8 - llms.txt is widely published but rarely read. Source: Ahrefs 137K-domain study
+
+Direct crawler traffic to /llms.txt is still low, but the file is low-effort, high-upside: a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing, specs, or brand facts in generated answers.
+
+## 07. Does GEO actually work? The evidence.
+
+**Up to +40% citation visibility on GEO-BENCH, with field case studies to match.** A landmark study from [Princeton, Georgia Tech and IIT Delhi](https://arxiv.org/abs/2311.09735) evaluated these tactics on the GEO-BENCH benchmark and found that optimizing content for RAG pipelines, verifiable facts, direct answers, structured data, boosted citation visibility by up to 40% versus unoptimized content.
+
+Documented GEO outcomes
+
+| Brand / sector | Strategy | Core outcome |
+| --- | --- | --- |
+| EdTech platform | GEO intent optimization | +1,041% revenue in 5 months; 3x conversion efficiency |
+| Auto insurance | Structured FAQ + schema markup | +447% AI Overview mentions in 6 months |
+| SEO agency | Semantic SEO & IA optimization | +8,337% ChatGPT sessions; +2,527% engagement time |
+
+In the EdTech case the brand hit a "crocodile mouth" effect: lead volume stayed flat while revenue and conversion efficiency surged. By targeting high-intent transactional terms, optimization filtered out low-quality traffic and surfaced the brand in high-value queries. To evaluate RAG quality, teams use the GTS (Generative Trust Score) framework, scoring retrieval quality, answer relevance, and groundedness.
+
+The core GEO metric set
+
+| Metric | What it captures | Tracking method |
+| --- | --- | --- |
+| Citation Rate | How often AI tools cite you | Monthly audits across ChatGPT, Perplexity, Gemini |
+| Semantic Reach | Breadth of long-tail coverage | Impressions on long-tail query variants |
+| Referral Traffic | Assisted clicks from AI answers | UTM tags + AI referrer parsing |
+| Brand Sentiment | How AI describes your brand | NLP audits of generated responses |
+
+## 08. What does a retrieval-optimized page look like?
+
+**Answer block and schema up top, entity tables and links in the body, FAQ at the base.** Translate the theory into a build spec, engineered so retrieval agents can extract a clean answer, parse your entities, and follow your links, top to bottom.
+
+Retrieval-optimized page blueprint
+
+**Top:** one H1 naming the primary entity, a 2-3 sentence answer block agents can lift verbatim, and JSON-LD schema.
+
+**Body:** question-format H2/H3s each opening with a direct answer; pricing, specs and comparisons as HTML tables (crawlers parse tables far better than prose); entity-rich contextual links.
+
+**Base:** an FAQ section that mirrors the questions buyers actually ask.
+
+Frame headings as the questions users ask and lead each section with an answer block. Implement schema.org markup (Article, FAQPage, Product, Organization) to give agents a clean semantic layer, the same [structured-data discipline](/blogs/schema-markup-ai-citations-2026) that lifts citations.
+
+Entity schema (JSON-LD)
+
+json
+
+```
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Internal Linking for AI Retrieval",
+  "about": { "@type": "Thing", "name": "Generative Engine Optimization" },
+  "mentions": [
+    { "@type": "Thing", "name": "Retrieval-Augmented Generation" },
+    { "@type": "Thing", "name": "Vector-Cluster Architecture" }
+  ],
+  "author": { "@type": "Organization", "name": "rawmktg." }
+}
+</script>
+```
+
+Replace "click here" with descriptive, entity-rich anchors. Hubs link to every relevant spoke; spokes link back to the hub and laterally to related nodes. Serve content via SSR or clean static HTML so it is visible without heavy JavaScript, keep response times low to avoid crawl timeouts, and fix broken links, redirect chains and stray noindex tags that amputate parts of your topical network.
+
+Map
+
+cluster by vector proximity
+
+→
+
+Structure
+
+schema + answer blocks
+
+→
+
+Link
+
+entity-rich anchors
+
+→
+
+Gate crawl
+
+robots.txt + depth
+
+→
+
+Expose
+
+llms.txt
+
+→
+
+Measure
+
+citations + GTS
+
+Figure 9 - the six-step implementation loop: map, structure, link, gate crawl access, expose machine-readable indexes, measure, repeat.
+
+## 09. What should you actually build?
+
+**Retire authority-passing structures; build a retrievable semantic network.** RAG and GraphRAG engines do not read a site as a flat bag of keywords, they read it as an interconnected semantic network. Shifting to a passage-centric, vector-aligned structure makes your content both retrievable and authoritative.
+
+The roadmap, in five moves
+
+**1. Map content around vector proximity.** Build clusters of Anchor Entities, Contextual Bridges and Nuance Nodes for comprehensive topic coverage.
+
+**2. Strengthen the entity graph.** Use entity-rich contextual anchors and structured schema to make relationships machine-readable.
+
+**3. Optimize crawl accessibility.** Selective robots.txt rules block bandwidth-heavy trainers while keeping referral-driving agents open; hold key assets within 2-3 hops.
+
+**4. Enhance machine readability.** Deploy clean llms.txt and llms-full.txt as a standardized markdown directory.
+
+**5. Focus on Information Gain.** Lead with answer blocks, HTML data tables and FAQs grounded in unique data to secure accurate citations.
+
+Do this and you stop chasing algorithm updates. You build a machine-readable, semantic, highly retrievable knowledge base that performs consistently across every generative engine.
+
+Free interactive tool
+
+Estimate your page's retrieval probability
+
+Enter how many clicks a page sits from your homepage to see whether real-time AI agents can reach it in time.
+
+Clicks from the homepage 3 hops
+
+How many clicks a crawler needs to reach this page from your homepage.
+
+Page is in your sitemap & llms.txt
+
+Discovery files help real-time agents reach deeper pages, worth roughly one hop.
+
+Real-time retrieval probability
+
+70%
+
+depth 3 from the homepage
+
+AT RISK
+
+Reachability
+
+Models real-time retrieval probability by crawl depth (100 / 96 / 88 / 70 / 42 / 20% at depths 0-5), grounded in the internal-linking-for-AI-retrieval research. Real-time agents have seconds to fetch a URL; past depth 3 retrieval falls off a cliff. Directional.
+
+A free rawmktg tool. [Open the full tool →](/tools/crawl-depth-retrieval-estimator) · [see all tools](/tools)
+
+Frequently Asked Questions
+
+### Does internal linking still matter if AI retrieves passages, not pages?
+
+More than ever. RAG retrieves passages, but a passage in a structurally isolated page is hard to discover and re-rank. Internal links are the explicit edges graph-augmented retrievers traverse to compute authority and trace multi-hop relationships, so linking determines whether your best passages are even in the candidate set.
+
+### What is the ideal crawl depth for AI retrieval?
+
+Keep key assets within 2-3 hops of the homepage. Real-time retrieval agents have only seconds to find and scrape URLs; content at depth 4-5 is frequently timed out or discarded before it is reached.
+
+### How is anchor text different in neural IR versus classic SEO?
+
+In classic SEO anchors passed PageRank and matched literal keywords. In neural IR (ColBERT, Anchor-DR) the anchor's embedding is aligned with the target document's embedding, so anchor text acts as a query surrogate that shapes retrievability. Aim for diverse, descriptive anchors, and avoid both generic phrases and exact-match repetition.
+
+### Should I block GPTBot and ClaudeBot in robots.txt?
+
+It depends on your goal. Training scrapers can consume up to ~40% of bandwidth without driving referral traffic, so many sites throttle or block them. But never block real-time retrieval agents like OAI-SearchBot or PerplexityBot, those drive citation traffic.
+
+### Is llms.txt worth implementing given near-zero read rates?
+
+Yes, as cheap insurance. Ahrefs found 97% of llms.txt files get zero monthly requests, but the file is trivial to produce and serves as a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing or specs.
+
+### What is GraphRAG and why should technical SEOs care?
+
+GraphRAG augments vector search with knowledge-graph traversal to answer multi-hop questions. It models content relationships as nodes and edges and uses in-degree (citation count) for authority boosting via Reciprocal Rank Fusion. Your internal links are those edges, which makes link topology a direct ranking input.
+
+### How do I measure whether GEO is working?
+
+Track four metrics: Citation Rate (audits across AI tools), Semantic Reach (long-tail impressions), Referral Traffic (UTM tags + AI referrer parsing), and Brand Sentiment (NLP audits). For RAG quality, use the GTS framework: retrieval quality, answer relevance, and groundedness.
+
+Sources & further reading
+
+- [ColBERT: Efficient Passage Search via Late Interaction (arXiv)](https://arxiv.org/abs/2004.12832)
+- [Anchor-DR: Dense Retrieval Training with Web Anchors (arXiv)](https://arxiv.org/abs/2305.05834)
+- [GEO: Generative Engine Optimization, GEO-BENCH (arXiv)](https://arxiv.org/abs/2311.09735)
+- [Graph-Augmented RAG patterns (Microsoft Learn)](https://learn.microsoft.com/en-us/azure/horizondb/ai/graph-rag)
+- [The Vector-Clustering Blueprint (SteakHouse)](https://blog.trysteakhouse.com/blog/vector-clustering-blueprint-organizing-content)
+- [We analyzed 137K sites: 97% of llms.txt files never get read (Ahrefs)](https://ahrefs.com/blog/llmstxt-study/)
+- [Why Internal Linking Matters More in AI Search (Quattr)](https://www.quattr.com/blog/internal-linking-overlooked-signal-in-ai)
+- [GTS Scoring: a framework to evaluate RAG systems (Sprinklr)](https://engineering.sprinklr.com/gts-scoring-a-practical-actionable-framework-to-evaluate-rag-systems-4e6602d9154a)
+
+About rawmktg.
+
+rawmktg. publishes technical teardowns of how AI search retrieves, ranks and cites content. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com
 
 
 
@@ -5483,7 +5948,7 @@ Schema acts as an attention mechanism that helps crawlers accurately extract and
 
 ### 2. Guarding Against Hallucination via Content Parity
 
-Because AI engines cross-reference structured data with on-page body copy, absolute parity between visible text and metadata is required. If JSON-LD contains pricing tiers, software versions, or review counts missing from visible HTML, the parser flags it as a trust violation, lowering the document's retrieval weight.
+Because AI engines cross-reference [structured data](/blogs/noterro-ai-search-teardown) with on-page body copy, absolute parity between visible text and metadata is required. If JSON-LD contains pricing tiers, software versions, or review counts missing from visible HTML, the parser flags it as a trust violation, lowering the document's retrieval weight.
 
 **Rule of thumb:** Every claim in your schema must appear verbatim in your visible body copy. No exceptions.
 
@@ -6434,6 +6899,845 @@ Citations & Sources
 
 ---
 
+# Why AI Cites Domo Over Databricks
+
+> The GEO hygiene gap deciding which data-analytics brands AI assistants surface when buyers ask, a six-platform teardown.
+
+*Source: https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks · rawmktg. by Vinayak Ravi*
+
+
+Six data-analytics platforms, the same six-stage visibility engine, and a result that should reset how you think about authority: Domo, the lowest-authority brand here at DR 70, posts the highest aggregate AI citations, out-citing DR-88 Databricks, which blocks crawlers at the access layer. Authority and AI visibility are correlated but not the same engine, and the gap between them is where the opportunity sits.
+
+The divergence that drives this teardown
+
+Domo, the lowest-DR brand (70), posts the highest aggregate AI citations. Databricks, the highest-traffic brand, under-converts. The cause is GEO hygiene, not authority, and it builds directly on [the authority paradox](/blogs/property-vista-authority-paradox) we documented in proptech.
+
+## 01. How does the visibility engine work?
+
+**Six stages gate demand; a failure low in the stack caps everything above.** Every brand here runs the same six-stage engine. Demand is captured only if all six stages hold, which is why a DR-70 brand can out-cite a DR-88 brand that blocks crawlers at the access layer.
+
+Access
+
+bot can reach the content
+
+→
+
+Discovery
+
+llms.txt, sitemap, robots
+
+→
+
+Structured data
+
+JSON-LD entity
+
+→
+
+Content
+
+quotable non-branded material
+
+→
+
+Authority
+
+trusted referring domains
+
+→
+
+Citation
+
+surfaced & quoted by AI
+
+Figure 1 - the GEO citation funnel. Each stage gates the next; a brand fails at the first broken link, and access/discovery gate everything above them.
+
+## 02. What does the category scoreboard show?
+
+**Authority and AI-citation share diverge sharply across the six.** Every brand normalized on one row. Traffic value is the monthly PPC-equivalent of organic visits; AI citations sum responses across six engines.
+
+The category scoreboard
+
+| Company | DR | Traffic/mo | Value/mo | Ref dom | DR70+ | Spam | AI cites |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Databricks | 88 | 1.3M | $2.3M | 31.9K | 2.8K | 24.8% | 629 |
+| Splunk | 91 | 847K | $1.41M | 30.4K | 3.2K | 22.2% | 1,131 |
+| Domo | 70 | 163K | $292K | 14.6K | 1.7K | 38.4% | 1,084 |
+| Alteryx | 79 | 153K | $363K | 20.4K | 1.6K | 52.8% | 139 |
+| Baremetrics | 77 | 34.8K | $31.2K | 4.2K | 605 | 23% | 118 |
+| Sisense | 78 | 28.1K | $42.8K | 8.6K | 921 | 43.2% | 75 |
+
+Figure 2 - aggregate AI citations across six engines. Domo and Splunk lead; Databricks is third despite far more traffic. Source: Ahrefs Brand Radar, June 2026
+
+Figure 3 - Domain Rating benchmark. Domo (signal) is the lowest-authority brand yet leads on citations, the divergence in one chart.
+
+## 03. The six engines, torn down
+
+**One forensic card per brand: how it works, what to copy, where to attack.**
+
+### Databricks - Category Leader
+
+**The engine.** A definitional-content flywheel on an enormous, clean backlink base, partly throttled by a hostile WAF.
+
+By the numbers
+
+| DR | Traffic/mo | Value/mo | AI cites | Branded | Spam |
+| --- | --- | --- | --- | --- | --- |
+| 88 | 1.3M | $2.3M | 629 | 58.6% | 24.8% |
+
+**Content engine.** The deepest definitional library in the set. It owns the canonical 'what is X' queries (data warehouse, vector database, data lake) and pairs them with product-led pages. 41% non-branded across 31.2K keywords, 13.3K in the top three, the exact content shape AI engines summarize.
+
+**Link engine.** 31.9K referring domains, 2,844 DR70+, at a clean 25% spam ratio. The differentiator is depth in developer ecosystems: GitHub links from over 2,000 pages, a co-citation moat no marketing campaign can fake.
+
+**GEO configuration.** Strong on-page signals but two GEO holes: a WAF that returns 403 to non-browser agents on robots.txt and sitemap.xml, and no fetchable llms.txt. The result is an AI-citation share that under-indexes its traffic dominance.
+
+Evidence: top organic keywords
+
+| Keyword | Volume | Traffic | Pos |
+| --- | --- | --- | --- |
+| databricks | 485,660 | 455,720 | 1 |
+| what is a data warehouse | 297,290 | 23,653 | 4.4 |
+| what is a vector database | 320,000 | 19,228 | 4.2 |
+| machine learning models | 161,610 | 20,221 | 2.6 |
+| databricks careers | 20,350 | 16,947 | 1 |
+
+**What's working:** Definitional 'what is' pages that map 1:1 to AI-answer queries; A developer co-citation moat (2,000+ GitHub linking pages); The largest, cleanest commercial footprint in the set.
+
+**Playbook, what to copy:** Build a canonical 'what is X' library for every category concept; Pursue developer-ecosystem links for durable technical authority; Treat certification and community pages as link magnets.
+
+Attack angle, where to win
+
+Databricks taxes itself at the access layer. Where it blocks GPTBot/PerplexityBot and skips llms.txt, a fully-open competitor shipping FAQ schema over the same definitional terms can intercept the long-tail AI citations it leaves unconverted. Hard to beat on authority, easy to out-cite on hygiene.
+
+### Splunk - Authority Leader
+
+**The engine.** A breadth-of-education content machine on the cleanest, highest-authority link base in the set.
+
+By the numbers
+
+| DR | Traffic/mo | Value/mo | AI cites | Branded | Spam |
+| --- | --- | --- | --- | --- | --- |
+| 91 | 847K | $1.41M | 1,131 | 43.5% | 22.2% |
+
+**Content engine.** Publishes across the entire security and observability syllabus: risk frameworks, distributed systems, SIEM, hash functions. 56% non-branded, 38.4K keywords with 20.8K in positions 4-10, feeding a long tail of AI eligibility.
+
+**Link engine.** The strongest profile here: ~30.4K referring domains, 3,193 DR70+, and the lowest spam exposure at 22%. Authority compounds because the profile stays clean.
+
+**GEO configuration.** Technically the benchmark: valid robots.txt and sitemap, canonical, full Open Graph and Twitter, three JSON-LD blocks including VideoObject. Two blemishes: no llms.txt, and a templating bug leaking a broken hreflang token into the markup.
+
+Evidence: top organic keywords
+
+| Keyword | Volume | Traffic | Pos |
+| --- | --- | --- | --- |
+| splunk | 212,030 | 149,834 | 1.1 |
+| risk management frameworks | 267,300 | 35,671 | 2.8 |
+| software testing basics | 335,540 | 23,675 | 28.3 |
+| what is a distributed system | 223,040 | 14,836 | 5 |
+| hash functions | 165,490 | 10,876 | 5.4 |
+
+**What's working:** Syllabus-wide content covering the whole category vocabulary; The cleanest link base in the set (22% spam); Benchmark technical hygiene.
+
+**Playbook, what to copy:** Own the full category glossary, not just bottom-funnel pages; Protect link hygiene as a KPI; Add VideoObject and rich JSON-LD to multiply entity signals.
+
+Attack angle, where to win
+
+Splunk is hard to displace on authority; the opening is GEO hygiene. No llms.txt and no FAQ schema over a massive glossary. A challenger that wraps the same definitional content in FAQPage markup and ships llms.txt can win definitional citations before Splunk closes the gap.
+
+### Domo - GEO Overperformer
+
+**The engine.** A disciplined GEO configuration that converts modest authority into category-leading AI citations.
+
+By the numbers
+
+| DR | Traffic/mo | Value/mo | AI cites | Branded | Spam |
+| --- | --- | --- | --- | --- | --- |
+| 70 | 163K | $292K | 1,084 | 31.3% | 38.4% |
+
+**Content engine.** Markets directly at the AI-agent buyer ('Governed Data for AI Agents') and ranks across BI terms plus a quirky high-traffic cluster (strip chart). 69% non-branded with a strong 6.6K Top-3 footprint on 12.6K keywords.
+
+**Link engine.** 14.6K referring domains, 1,686 DR70+, but a 38% spam ratio hinting at historic low-quality accumulation. Authority is the lowest here (DR 70), which makes its citation lead all the more notable.
+
+**GEO configuration.** The reason it over-performs: the richest llms.txt in the set (16KB of curated description), which tracks with category-leading citations (432 Grok, 336 AI Overviews, 302 AI Mode). The irony is broken basic metadata: no canonical, no meta description, only og:type on the homepage, and a sitemap served as application/rss+xml.
+
+Evidence: top organic keywords
+
+| Keyword | Volume | Traffic | Pos |
+| --- | --- | --- | --- |
+| domo | 136,440 | 34,947 | 2.9 |
+| domo ai | 51,860 | 9,527 | 2.5 |
+| strip chart data | 26,000 | 5,816 | 1 |
+| business intelligence tools | 261,090 | 2,233 | 4 |
+| strip chart meaning | 41,350 | 5,478 | 1.3 |
+
+**What's working:** The richest llms.txt in the set, the clearest cause of its over-performance; Buyer-aligned positioning (AI agents, BI category); A strong Top-3 footprint for a mid-authority domain.
+
+**Playbook, what to copy:** Copy the llms.txt discipline, the single highest-ROI GEO move; Align positioning to the emerging buyer and build content around it; Use Domo as the internal case study: low DR, high citations.
+
+Attack angle, where to win
+
+Do not fight Domo on GEO mechanics; fight it on authority. With only DR 70 and 38% spam, a competitor with cleaner DR70+ links can out-rank it on commercial BI queries while matching its schema discipline. Its broken homepage metadata is a quick credibility wedge.
+
+### Alteryx - Branded-Dependent
+
+**The engine.** A powerful brand-SERP harvester with almost no non-branded discovery engine behind it.
+
+By the numbers
+
+| DR | Traffic/mo | Value/mo | AI cites | Branded | Spam |
+| --- | --- | --- | --- | --- | --- |
+| 79 | 153K | $363K | 139 | 73.9% | 52.8% |
+
+**Content engine.** 74% of traffic is branded (alteryx, certification, community, designer, download). The non-branded layer is thin and softening, a demand-harvesting engine, not a demand-generation one.
+
+**Link engine.** Second-largest footprint (20.4K referring domains, 1,555 DR70+) but the worst spam exposure in the set at 53%; more than half its referring domains add risk rather than authority. A disavow program is overdue.
+
+**GEO configuration.** WordPress with full Open Graph and clean headings, but two faults: no llms.txt, and the conventional /sitemap.xml returns 404 (the real index hides at /sitemap\_index.xml), so crawlers probing standard paths can miss it.
+
+Evidence: top organic keywords
+
+| Keyword | Volume | Traffic | Pos |
+| --- | --- | --- | --- |
+| alteryx | 94,720 | 75,390 | 1.2 |
+| alteryx certification | 3,910 | 3,588 | 1 |
+| alteryx community | 2,900 | 2,638 | 1 |
+| trifacta | 2,080 | 1,706 | 1.2 |
+| alteryx designer | 2,780 | 1,589 | 1.1 |
+
+**What's working:** Total ownership of its brand SERP; Healthy traffic value ($363K/mo) and full Open Graph; A large raw link footprint to build on once cleaned.
+
+**Playbook, what to copy:** Treat brand-SERP completeness as table stakes, then layer non-branded content; Use full Open Graph everywhere for rich entity signals.
+
+Attack angle, where to win
+
+Alteryx is wide open on non-branded discovery. A competitor publishing strong how-to and comparison content for analytics-automation queries intercepts buyers Alteryx never reaches. Combine that with 53% spam and a missing/locked sitemap, and it is the most structurally exposed enterprise brand in the set.
+
+### Baremetrics - Niche Content Specialist
+
+**The engine.** A pure editorial content engine that ranks enormous finance terms but lacks the authority to fully cash them in.
+
+By the numbers
+
+| DR | Traffic/mo | Value/mo | AI cites | Branded | Spam |
+| --- | --- | --- | --- | --- | --- |
+| 77 | 34.8K | $31.2K | 118 | 4.6% | 23% |
+
+**Content engine.** The most content-led model here: 95% non-branded. It ranks for genuinely huge educational terms (churn rate analysis at 263K, what is a burn rate at 180K, MRR, cohort analysis). Editorial depth is real and category-relevant.
+
+**Link engine.** The smallest authority base: DR 77 but only 4.2K referring domains, 605 DR70+, at a clean 23% spam. Stripe, Shopify and Medium links lend ecosystem relevance, but the base is too thin to lift it past more authoritative sources.
+
+**GEO configuration.** Clean foundations: valid llms.txt, sitemap, canonical, and JSON-LD including SoftwareApplication. The gap is a missing og:image, so widely-shared finance guides render without a preview card, suppressing the social amplification that builds AI authority.
+
+Evidence: top organic keywords
+
+| Keyword | Volume | Traffic | Pos |
+| --- | --- | --- | --- |
+| churn rate analysis | 263,200 | 10,392 | 4.3 |
+| what is a burn rate | 180,200 | 4,856 | 10.4 |
+| baremetrics | 1,290 | 1,357 | 1 |
+| startup financial modeling | 38,000 | 742 | 12 |
+| mrr | 37,930 | 444 | 8.8 |
+
+**What's working:** The purest content engine: ranks 263K-volume terms on a tiny domain; A clean technical base with llms.txt and commerce schema; Topically relevant ecosystem links (Stripe, Shopify).
+
+**Playbook, what to copy:** Target enormous-volume educational terms adjacent to the product; Add FAQ/HowTo schema to calculators and guides; Earn topically-relevant ecosystem links, not just high-DR links.
+
+Attack angle, where to win
+
+Baremetrics wins on editorial depth and loses on authority. A competitor with more DR70+ links can out-rank its finance guides on the exact high-volume terms it depends on. Its missing og:image is a free amplification gap to exploit.
+
+### Sisense - Contracting Challenger
+
+**The engine.** A decent SQL-tutorial niche engine that is actively decaying because its crawl infrastructure is broken.
+
+By the numbers
+
+| DR | Traffic/mo | Value/mo | AI cites | Branded | Spam |
+| --- | --- | --- | --- | --- | --- |
+| 78 | 28.1K | $42.8K | 75 | 28.5% | 43.2% |
+
+**Content engine.** Owns a focused SQL-tutorial niche (order of execution in sql, group by in sql, python data analysis) with a 72% non-branded mix. But the footprint is shrinking to just 2.1K keywords, the smallest active library in the set, and traffic is contracting.
+
+**Link engine.** 8.6K referring domains, 921 DR70+, but a 43% spam ratio (second-worst). DR 78 is respectable; the problem is decay, not raw authority.
+
+**GEO configuration.** Has an llms.txt, but the rest of discovery is broken: /sitemap.xml returns a 301 to an empty 0-byte response, and there is no hreflang. Crawlers cannot enumerate the site, the mechanical reason the keyword footprint is collapsing.
+
+Evidence: top organic keywords
+
+| Keyword | Volume | Traffic | Pos |
+| --- | --- | --- | --- |
+| sisense | 9,730 | 6,944 | 1.1 |
+| order of execution in sql | 2,880 | 1,820 | 1.5 |
+| python data analysis | 92,100 | 1,051 | 13.3 |
+| group by in sql | 12,390 | 616 | 5.1 |
+| mtd full form | 8,340 | 814 | 1.3 |
+
+**What's working:** A focused SQL-tutorial niche with a good non-branded mix; A respectable DR 78 to rebuild from; It has published an llms.txt.
+
+**Playbook, what to copy:** Even a struggling brand should ship llms.txt, discovery hygiene is cheap insurance; Defend a focused niche rather than spreading thin.
+
+Attack angle, where to win
+
+Sisense is the most beatable peer: a declining curve plus a broken sitemap means crawlers cannot index it properly. Consistent publishing on a working crawl stack would overtake it on embedded-analytics queries within two quarters, the lowest-effort share grab in the set.
+
+## 04. What do the cross-cutting patterns reveal?
+
+**GEO hygiene predicts citations more than authority, and the best combo is unclaimed.** AI engines select sources, they do not rank pages, and the clearest predictor of selection here is GEO hygiene rather than raw authority. Grok and Google AI Overviews carry most citation volume; Gemini barely cites anyone. The [llms.txt](/glossary/llms-txt) divide is the sharpest line in the data: only Domo, Sisense and Baremetrics publish one, and Domo's richest-in-set file tracks with its citation lead.
+
+Figure 4 - spam exposure by brand. Alteryx (53%) and Sisense (43%) carry the dirtiest profiles, inviting algorithmic discounting.
+
+Figure 5 - non-branded share of traffic. Alteryx harvests existing demand; Baremetrics generates it; Splunk and Databricks own the GEO-optimal definitional middle.
+
+Two opposite strategies bracket the set. Alteryx (74% branded) harvests existing demand; Baremetrics (95% non-branded) generates demand but cannot fully cash it without authority. The GEO-optimal middle is the [definitional libraries](/blogs/internal-linking-for-ai-retrieval) of Splunk and Databricks. Nobody has yet layered FAQPage schema over those glossaries, the single softest spot in the category.
+
+The technical stack, scored
+
+| Element | Databricks | Splunk | Domo | Alteryx | Baremetrics | Sisense |
+| --- | --- | --- | --- | --- | --- | --- |
+| llms.txt | N | N | Y | N | Y | Y |
+| Valid sitemap.xml | ~ | Y | Y | ~ | Y | N |
+| AI-crawler access | N | Y | Y | Y | Y | Y |
+| JSON-LD schema | Y | Y | Y | Y | Y | Y |
+| Full Open Graph | Y | Y | N | Y | ~ | Y |
+| Canonical tag | Y | Y | N | Y | Y | Y |
+| hreflang | ~ | ~ | Y | Y | Y | N |
+| Meta description | Y | Y | N | Y | Y | Y |
+
+Legend: Y implemented, ~ partial or misconfigured, N missing or blocked. The three highest-leverage fixes across the set: add a canonical and meta description (Domo), allowlist AI crawlers at the WAF (Databricks), and wrap glossaries in FAQPage [schema](/blogs/schema-markup-ai-citations-2026) (everyone).
+
+High-leverage fixes, copy-paste ready
+
+html
+
+```
+<!-- 1. Canonical (Domo) -->
+<link rel="canonical" href="https://www.example.com/" />
+
+<!-- 2. AI-crawler allowlist in robots.txt (Databricks) -->
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+<!-- 3. FAQPage schema over glossary (everyone) -->
+<script type="application/ld+json">{"@context":"https://schema.org",
+ "@type":"FAQPage","mainEntity":[{"@type":"Question", ... }]}</script>
+```
+
+## 05. What's the synthesized playbook?
+
+**Eight reusable plays, ordered by leverage-to-effort.** Pulled from what the leaders do and the gaps the laggards leave.
+
+The synthesized playbook
+
+| Play | Why it works | Effort |
+| --- | --- | --- |
+| Ship a rich llms.txt | Half the market has none; Domo proves it converts authority into citations | ~2h |
+| Wrap glossaries in FAQPage schema | No one has done it; it is what engines extract for 'what is' answers | ~3h |
+| Build a definitional 'what is X' library | Maps 1:1 to AI-answer queries; Splunk and Databricks win this way | Ongoing |
+| Allowlist GPTBot / PerplexityBot | Crawler blocking silently caps citation eligibility | ~3h |
+| Fix canonical + meta + Open Graph | Cheap entity-signal hygiene | ~2h |
+| Pursue developer-ecosystem links | GitHub/docs co-citation is a durable technical-trust moat | Ongoing |
+| Guard link hygiene as a KPI | Clean profiles compound; 22% beats 53% over time | Quarterly |
+| Track AI share-of-voice separately from rankings | Authority and citation share diverge | Monthly |
+
+llms.txt, the GEO file half this market is missing
+
+llms.txt
+
+```
+# <Company> - <one-line positioning>
+> A concise description of what the company does and who it serves.
+
+## Products
+- [Platform](https://example.com/product): overview and core capabilities
+
+## Learn
+- [Glossary](https://example.com/glossary): definitions engines can quote
+- [Guides](https://example.com/guides): how-to content for category queries
+```
+
+## 06. Where's the fastest share? (the attack plan)
+
+**Sisense and Alteryx are the cheapest share; Databricks and Splunk are hardest.** Each competitor ranked by how cheaply share can be taken, with the specific weakness and the move that exploits it.
+
+The attack plan
+
+| Target | Exposed weakness | The move | Ease |
+| --- | --- | --- | --- |
+| Sisense | Broken sitemap, contracting 2.1K-keyword footprint, 43% spam | Publish consistently on a working crawl stack; target SQL/embedded-analytics queries | Easiest |
+| Alteryx | 74% branded, no llms.txt, sitemap 404s, 53% spam | Own non-branded analytics-automation how-to and comparison content | Easy |
+| Baremetrics | Smallest authority base; missing og:image | Out-authority it on the high-volume finance terms it ranks | Moderate |
+| Domo | DR 70 (lowest), 38% spam, broken homepage metadata | Out-rank on commercial BI queries with cleaner DR70+ links | Moderate |
+| Splunk | No llms.txt, no FAQ schema, broken hreflang | Win definitional security citations with FAQ content + llms.txt | Hard |
+| Databricks | WAF blocks crawlers; no llms.txt; under-converts | Be fully crawler-open and FAQ-structured to capture long-tail citations | Hard |
+
+Bottom line
+
+**Easiest share:** Sisense (broken sitemap, contracting) and Alteryx (74% branded, dirtiest links, no llms.txt).
+
+**Hardest to displace:** Databricks and Splunk on authority, but both wide open on GEO hygiene.
+
+**The universal opening:** nobody pairs a definitional glossary with FAQPage schema and llms.txt. That combination is unclaimed, and non-branded definitional content plus flawless crawl infrastructure beats raw authority for AI citations.
+
+Frequently Asked Questions
+
+### Why does Domo out-cite Databricks despite far lower authority?
+
+Because AI citation is gated by GEO hygiene, not just Domain Rating. Domo publishes the richest llms.txt in the set (16KB) and markets directly at the AI-agent buyer, while Databricks blocks simple crawlers at its WAF and ships no fetchable llms.txt. Domo (DR 70) posts 1,084 aggregate AI citations versus Databricks' 629 (DR 88), because access and discovery gate everything above them.
+
+### What is the single highest-ROI GEO move for a data-analytics brand?
+
+Ship a rich llms.txt. Only three of the six brands publish one, and Domo's detailed file tracks directly with its citation lead. It is roughly two hours of work and converts existing authority into citations, especially for mid-authority domains that can't win on Domain Rating alone.
+
+### Which brand is the most exposed to competitive attack?
+
+Sisense. Its /sitemap.xml returns a 301 to an empty response so crawlers can't enumerate the site, its keyword footprint is contracting to 2.1K terms, and 43% of its referring domains are spam. Consistent publishing on a working crawl stack could overtake it on embedded-analytics queries within one to two quarters.
+
+### What's the unclaimed opportunity across the whole category?
+
+Pairing a definitional 'what is X' glossary with FAQPage schema and a working llms.txt. The leaders (Splunk, Databricks) own the definitional content but have no FAQ schema or llms.txt; the GEO-disciplined brands (Domo) lack the authority. No one has combined all three, so non-branded definitional content plus flawless crawl infrastructure is the fastest path to AI citations.
+
+About rawmktg.
+
+rawmktg. publishes data-driven teardowns of B2B verticals and brands, pulling AI-citation and SEO data to show exactly where the visibility gaps are. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com
+
+Data source: Ahrefs (organic keywords, referring domains, Brand Radar AI citations) plus a live technical crawl of all six domains, captured June 2026.
+
+
+
+---
+
+# Why AI Cites Reddit, G2 & Analysts Over Your Website
+
+> The off-site authority stack AI engines actually pull from when buyers ask, and the tactics to seed G2 reviews, Reddit presence, and analyst mentions so they feed LLM answers.
+
+*Source: https://rawmktg.com/blogs/why-ai-cites-reddit-g2-analysts · rawmktg. by Vinayak Ravi*
+
+
+Large language models do not trust your marketing copy. They behave as consensus engines: before recommending a product, they cross-reference your claims across neutral, third-party sources. That is why review directories, Reddit threads, and analyst review pages now drive more AI recommendations than your own domain.
+
+TL;DR, the bottom line up front
+
+**AI engines are consensus engines.** They cross-reference claims across neutral third-party sources before recommending. Aggregate review sites alone account for up to 85% of citations on broad B2B category queries.
+
+**Fewer clicks, far higher value.** AI-citation visitors convert at roughly 14.2% versus 2.8% for traditional organic, about 5x.
+
+**The playbook:** seed G2 and the review ecosystem, realign analyst relations toward crawlable review assets, build authentic Reddit presence, apply the CITABLE content framework, then anchor it all with entity schema on your own site.
+
+## 01. Why did your website stop being enough?
+
+**AI engines trust third-party corroboration, not self-published copy.** For two decades, B2B marketing optimized a direct channel between your domain and the buyer. Then generative engines began answering inside the interface, and the link started to disappear. Zero-click searches have climbed from 45% in 2016 to a projected 68% in 2026, and AI Overviews are associated with a 34-58% CTR decline for the top organic position.
+
+Here is the twist that reframes the conversation: the traffic that does arrive from a generative engine is dramatically higher intent. Visitors who click an inline citation inside an AI answer convert at roughly 14.2%, about five times the 2.8% that standard organic converts at.
+
+Figure 1 - fewer clicks, but each one is worth far more: AI-citation traffic converts ~5x higher than standard organic.
+
+Why your website stopped being enough
+
+LLMs do not evaluate authority from self-published, promotional copy. They function as consensus engines, using dense vector search and Retrieval-Augmented Generation to cross-reference your claims across a distributed web of neutral, third-party sources.
+
+If your claims about capability, pricing or category leadership exist only on your own domain, the engine treats them as biased and unverified. To be cited, your brand must be mentioned, validated and corroborated across an off-site authority stack: independent review platforms, structured knowledge bases, community discussions, and analyst reports.
+
+Figure 2 - the off-site authority stack for the query "best B2B SaaS tool for ops teams." Your website is the smallest signal. Source: Ahrefs Brand Radar, June 2026
+
+This is the strategic core of authority seeding: optimizing your own website is necessary but no longer sufficient. The decisive battleground has moved off your domain, and it builds on the same idea as [authority seeding for AI trust](/blogs/authority-seeding-ai-llm-trust).
+
+## 02. How do generative engines choose what to cite?
+
+**A RAG pipeline retrieves third-party passages and scores them by position and quality.** A generative engine ingests a query and synthesizes an answer through a modular pipeline that pairs a language model with a retrieval system, the same [RAG mechanics](/blogs/how-rag-actually-works) behind every AI answer.
+
+Query reformulation
+
+strip noise, map to search expressions
+
+→
+
+Hybrid search
+
+lexical + vector retrieval
+
+→
+
+Summarize
+
+extract relevant passages
+
+→
+
+Generate
+
+compile an answer with citations
+
+Figure 3 - the real-time RAG pipeline. Off-site platforms feed the retrieval step, which is where citation decisions are made.
+
+Researchers measure a brand's visibility with two metrics. Position-Adjusted Word Count (PAWC) counts the words attributed to your source, weighted by a positional decay factor, so being mentioned early and substantively is mathematically rewarded. Subjective Impression (a G-Eval score) judges quality across seven dimensions: relevance, logical influence, uniqueness, positional prominence, volume contributed, click likelihood, and information diversity.
+
+### What the data says actually works
+
+The [KDD GEO benchmark](https://arxiv.org/abs/2311.09735) tested nine content strategies across a 10,000-query benchmark. The results are a near-perfect inversion of legacy SEO instincts.
+
+Figure 4 - lift in Position-Adjusted Word Count vs baseline. Precise, attributable additions win; keyword stuffing is actively penalized.
+
+GEO content strategies, ranked by citation lift
+
+| Strategy | PAWC lift | Mechanism |
+| --- | --- | --- |
+| Quotation addition | +41% | Attributed quotes from credentialed experts and neutral third parties |
+| Statistics addition | +31% | Replacing qualitative claims with precise, named numerical data |
+| Fluency optimization | +28% | Cleaner syntax so the model can parse and summarize |
+| Cite sources | +28% | Outbound links to authoritative references (.edu, .gov, journals) |
+| Technical terms | +18% | Domain-specific terminology aligned to professional queries |
+| Authoritative tone | +10% | Framing claims with evidence-backed confidence |
+| Keyword stuffing | -8% | Ineffective, triggers active deprioritization by LLMs |
+
+Three principles to take away
+
+**Precision and attributability win.** Specific statistics and named quotes give the model discrete, verifiable units it can lift directly. Vague prose gives it nothing.
+
+**Fluency is a ranking factor.** Improving readability lifted visibility 28% without adding a single new fact.
+
+**Quality lets underdogs leapfrog.** Optimized content gave rank-5 pages a 115% visibility increase, letting smaller brands bypass incumbents' domain-authority advantage.
+
+## 03. Why are off-site platforms hard-wired into the models?
+
+**Training-data licensing deals make Reddit, G2 and publishers paid gatekeepers of truth.** Off-site dominance is not just an algorithmic preference, it is wired into the AI industry's finances. Facing copyright litigation and data depletion, frontier labs are buying legal, high-quality, real-time training data through multi-million-dollar licensing deals.
+
+AI training-data licensing deals (reported)
+
+| Platform | AI partner | Reported value | Strategic utility |
+| --- | --- | --- | --- |
+| Reddit | Google | $60M / year | Real-time threads, peer sentiment, natural language |
+| Reddit | OpenAI | Undisclosed | Live discussions, user product comparisons |
+| News Corp | OpenAI | ~$50M / yr | High-authority news archives (WSJ, NY Post) |
+| Dotdash Meredith | OpenAI | $16M+ / year | Lifestyle, technical, consumer-intent content |
+| Axel Springer | OpenAI | $13M / year | European news, business journalism |
+| Financial Times | OpenAI | $5-10M / year | Gated macro and corporate intelligence |
+
+Crucially, these contracts are shifting from flat training fees to usage-based real-time retrieval pricing: platforms get paid when an engine accesses and displays their content to ground a live answer. That turns Reddit, G2 and elite publishers into licensed gatekeepers of factual truth. If your product isn't indexed, discussed and validated inside those partner datasets, you are structurally excluded from the retrieval context.
+
+## 04. Tier 1: how do you seed G2 and the review ecosystem?
+
+**Treat a review profile as a structured dataset, ecosystem-wide and descriptive.** In an AI-first world, a review profile is not a sales landing page, it is a structured semantic dataset engines crawl, parse and cite. Because aggregate review sites drive up to 85% of citations on broad B2B category queries, optimizing these directories is non-negotiable.
+
+Adopt an ecosystem approach, not a single profile. Maintaining verified, consistent profiles across G2, Capterra, TrustRadius and Clutch supplies a multi-platform consensus signal that can make a model up to three times more likely to cite you. Acquire reviews compliantly and make them descriptive, full of real use cases, concrete metrics and precise comparisons, the exact material engines lift.
+
+**Trigger on success milestones** (clean onboarding, a positive QBR, a resolved ticket). **Reduce friction** with direct review links. **Never incentivize**, G2 enforces strict compliance and can suspend profiles. **Integrate into core workflows** like renewal check-ins for a steady, compliant influx.
+
+Engines use G2's category mappings to retrieve the definitive competitor set for categorical prompts, so accurate mapping is a visibility lever. In March 2026, G2 expanded its taxonomy with AI-era categories including AI Search Visibility Optimization Tools and AI Search & Retrieval Infrastructure.
+
+CRM tie-in
+
+G2 now connects first-party buyer-intent and customer-voice data directly into CRM via partnerships such as HubSpot Breeze Agents, so reps can see which competitors a prospect is researching on G2 inside their own workspace.
+
+## 05. Tier 2: how should analyst relations change?
+
+**Chase open, crawlable review directories, not gated Magic Quadrants.** Analyst relations has long chased prestige placements. But citation-pattern analysis reveals a stark mismatch between classic AR priorities and what engines actually retrieve.
+
+The Gartner Paradox: an analysis of over a million cited URLs found [Gartner accounts for 81.7% of all analyst-site citations](https://otterly.ai/blog/gartner-ai-citations/), despite Gartner blocking major AI crawlers in robots.txt. It is retrieved anyway through the Bing index, third-party citation chains, pre-block historical caches, and Google AI integration. The most important finding is what gets cited: gated flagship reports like the Magic Quadrant account for under 1% of Gartner's AI citations. Fully 96% come from its open Reviews product.
+
+Figure 5 - the Gartner Paradox: gated flagship research is almost never cited; open, structured review directories dominate.
+
+Flagship reports (Magic Quadrant)
+
+- Gated behind paywalls and logins
+- Under 1% of analyst citations
+- Freeform, narrative, editorial
+- Analyst view on strategy & roadmap
+
+Public review directories
+
+- Openly crawlable and indexable
+- 96% of analyst citations
+- Standardized, machine-readable comparisons
+- Direct "best tools in category X" resolution
+
+Figure 6 - flagship vs open review directories, on the dimensions that decide AI citation.
+
+Flagship placements still matter for prestige and late-stage enablement, but they are practically ineffective for top-of-funnel AI visibility. Pursue open, un-gated analyst content; keep analyst review profiles fresh like G2; and when you earn an accolade, publish a structured, declarative summary on your own crawlable site so models can extract and verify it.
+
+## 06. Tier 3: how do you seed Reddit authentically?
+
+**Build real account authority and structure comments the way engines extract.** Reddit's citation rates make community engagement a core pillar: 46.7% in Perplexity and 21% in Google AI Overviews. But Reddit punishes inauthenticity, automated spam and thinly veiled promotion are removed fast.
+
+Figure 7 - Reddit commands an outsized share of citations in B2B AI answers, especially on Perplexity.
+
+Scoring subreddits for GEO priority
+
+| Subreddit | Domain | Engagement | GEO priority |
+| --- | --- | --- | --- |
+| r/SaaS | B2B software, startups, growth | High (~50/day) | 9/10 |
+| r/sysadmin | IT infra, security, hardware | Very high (~150/day) | 8/10 |
+| r/CRM | Pipeline ops, sales-tech | Low (~5/day) | 8/10 |
+| r/marketing | Demand gen, brand, strategy | High (~40/day) | 7/10 |
+| r/startups | VC, scaling, ops models | High (~30/day) | 6/10 |
+
+Build account authority before you mention anything: aged accounts with real posting history, organic karma from genuinely answering questions, expert flairs, and employee subject-matter experts posting from authentic personal accounts, never a corporate handle. Then build comments the way engines extract them.
+
+Direct answer
+
+name the pick, up front
+
+→
+
+Credentials
+
+who you are, real context
+
+→
+
+Measurable outcome
+
+hard numbers
+
+→
+
+Honest caveat
+
+a balanced limitation
+
+Figure 8 - the four-part comment architecture engines preferentially cite: answer, credentials, outcome, caveat.
+
+Worked example, a citation-ready comment
+
+"For growing sales teams managing complex pipelines, HubSpot wins because of its advanced pipeline automation. As an operations director managing a 25-person team, I migrated from Salesforce nine months ago. Within the first quarter, our average close rate improved 18% and manual data entry dropped 30%. The main limitation: advanced custom reporting has a steeper learning curve for non-technical staff."
+
+Why it works: direct answer first, credentialed context, hard numbers, and a balanced caveat that signals authenticity, engines preferentially cite balanced, non-promotional perspectives.
+
+## 07. What does citation-ready content look like? (CITABLE)
+
+**Seven parts engineered around how RAG systems extract and verify information.** To produce content engines can retrieve, parse and cite, apply the seven-part CITABLE framework. It is the on-page complement to [anatomy of a high-citation page](/blogs/anatomy-of-a-high-citation-page).
+
+The CITABLE framework
+
+**C** - Clear entity & structure · **I** - Intent architecture · **T** - Third-party validation · **A** - Answer grounding · **B** - Block-structured for RAG · **L** - Latest & consistent · **E** - Entity graph & schema
+
+**Clear entity & structure.** Open with a Bottom-Line-Up-Front summary under 120 words; format your H1 as a direct question and add a source-linked Key Facts box of three to five stats. **Intent architecture.** Answer five to seven adjacent intents (alternatives, integrations, pricing, limits, benchmarks) under H2/H3 headers, linked hub-and-spoke. **Third-party validation.** Back claims with neutral comparisons and reviews; self-congratulatory copy actively hurts citation rates.
+
+**Answer grounding.** Begin each answer with a 40-60 word direct response, add inline citations, and close each section with a standalone quotable fact; original statistics can lift LLM visibility 30-40%. **Block-structured for RAG.** Break content into self-contained 200-400 word blocks under descriptive headers; block formatting can cut failed retrievals by up to 49%. **Latest & consistent.** Keep every metric identical across your site, docs, review profiles and press; inconsistency makes models skip you. **Entity graph & schema.** State relationships ("alternative to X," "integrates with Y") in copy and mirror them in schema.
+
+## 08. How do you anchor your entity on-site?
+
+**Entity SEO plus JSON-LD sameAs/about/mentions make off-site mentions resolve to you.** Off-site authority is decisive, but your website remains the canonical source of truth for your core entity. If engines can't connect fragmented off-site mentions back to you, they may ignore your brand, or hallucinate a competitor as the source. The sameAs property links your entity to high-authority profiles (LinkedIn, Wikipedia, G2, Crunchbase, Wikidata); about defines a page's subject; mentions maps secondary topics. This is the [structured-data layer](/blogs/schema-markup-ai-citations-2026) that resolves your entity.
+
+Organization + WebPage entity anchor (JSON-LD)
+
+json
+
+```
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.example.com/#organization",
+      "name": "EnterpriseFlow",
+      "url": "https://www.example.com",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q12345678",
+        "https://www.linkedin.com/company/enterpriseflow",
+        "https://www.g2.com/products/enterpriseflow",
+        "https://crunchbase.com/organization/enterpriseflow"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "about": [{ "@type": "Thing", "name": "Workflow Automation" }],
+      "mentions": [{ "@type": "Thing", "name": "Cloud Computing" }]
+    }
+  ]
+}
+```
+
+Make your content easy to ingest: serve a clean markdown version to AI user-agents, add a root-level [llms.txt](/glossary/llms-txt) mapping your core pages, and keep robots.txt, canonicals and redirects clean so AI crawlers aren't blocked from key pages.
+
+llms.txt, root directory example
+
+markdown
+
+```
+# EnterpriseFlow
+> Cloud-native B2B workflow automation for enterprise operations.
+
+## Core pages
+- [Product overview](https://www.example.com/product): capabilities & modules
+- [Pricing](https://www.example.com/pricing): plans, limits, enterprise tiers
+- [Integrations](https://www.example.com/integrations): Snowflake, Salesforce, HubSpot
+
+## Documentation
+- [Docs](https://docs.example.com): setup, API, admin
+- [Security & compliance](https://www.example.com/security): SOC 2, GDPR
+```
+
+## 09. How do you operationalize and measure GEO?
+
+**AI-first metrics, a manual prompt matrix, and a cross-functional loop.** Without tracking and an execution plan, teams misallocate budget on obsolete tactics. Replace classic metrics with AI-first indicators: Reference Rate (AI share of voice), Citation Frequency, Sentiment Alignment, and AI Referral Traffic via GA4 referral groupings, the kind of [prompt-to-citation tracking](/blogs/prompt-to-citation-tracking) that closes the loop.
+
+Build a manual Prompt Matrix before buying tools: freeze 8-12 conversational prompts spanning the buyer journey, then query them monthly across ChatGPT, Perplexity, Claude and Gemini, logging your visibility share, competitor mentions, cited sources and sentiment as a baseline.
+
+Customer Success
+
+triggers reviews
+
+→
+
+PR
+
+seeds unlinked mentions
+
+→
+
+Product Marketing
+
+builds citable assets
+
+→
+
+Engineering
+
+schema + llms.txt
+
+Figure 9 - GEO governance is a loop across Customer Success, PR, Product Marketing and Engineering, not one team's job.
+
+The 30-day Reddit GEO engagement calendar
+
+| Phase | Subreddit activity | Editorial support | Focus |
+| --- | --- | --- | --- |
+| Days 1-7 | Identify targets; audit discussions | Map buyer intents; add BLUF | Community mapping |
+| Days 8-14 | 3-5 non-promotional threads for karma | JSON-LD sameAs on core pages | Credibility & tech |
+| Days 15-21 | Contextual, balanced brand mentions | Use-case guides & comparison tables | Authority seeding |
+| Days 22-30 | Address sentiment; launch an AMA | First Prompt Matrix audit | Measurement |
+
+The 60-minute GEO reset
+
+**1. Run the Verdict Test (10 min).** Query your brand + category on ChatGPT and Perplexity. Note which competitors and sources are cited, and where you're missing.
+
+**2. Optimize a key page (30 min).** Replace three vague claims with quantified, source-linked stats, add one comparison table, and write a 2-3 sentence BLUF under 120 words.
+
+**3. Anchor your entity (20 min).** Implement or verify homepage JSON-LD and add sameAs links to your verified G2 and LinkedIn profiles.
+
+## 10. What should executives do?
+
+**Reallocate budget to seeding, stand up governance, and commit to answer grounding.** Managing discoverability as search shifts from rankings to recommendations means adapting budgets, roles and content together.
+
+**Reallocate budget to seeding platforms.** Trim keyword-focused SEO and some performance spend; fund G2 review campaigns, Reddit community seeding, and partnerships with open, crawlable analyst firms. **Stand up GEO governance.** Align PR, product marketing, customer success and engineering. **Commit to answer grounding.** Move from superficial posts to data-rich resources, original research, specific customer metrics, expert case studies, so engines can extract, verify and cite you.
+
+In the post-search era, you don't win the recommendation by talking about yourself on your own website. You win it by being independently corroborated everywhere else, in a format machines can lift. Seed the consensus, then anchor it.
+
+Free interactive tool
+
+Score your off-site authority stack
+
+Rate your presence across review sites, analysts, Reddit and entity schema to find the gaps capping your AI citations.
+
+Tier 1, review ecosystem 40 pts
+
+G2 profile complete & review-rich
+
+NoPartialYes
+
+Profiles across G2, Capterra, TrustRadius, Clutch
+
+NoPartialYes
+
+Mapped to the right (and newest) G2 categories
+
+NoPartialYes
+
+Tier 2, analyst relations 25 pts
+
+Open, crawlable analyst review profiles kept fresh
+
+NoPartialYes
+
+Vendor-hosted, structured accolade pages
+
+NoPartialYes
+
+Tier 3, community presence 20 pts
+
+Authentic, aged Reddit presence
+
+NoPartialYes
+
+Citation-ready, structured comments
+
+NoPartialYes
+
+Entity & consistency 15 pts
+
+Entity schema with sameAs to off-site profiles
+
+NoPartialYes
+
+Consistent metrics across every surface
+
+NoPartialYes
+
+Off-site authority score
+
+0/100
+
+-
+
+InvisibleDevelopingCited-ready
+
+A weighted self-assessment across the off-site authority stack AI engines pull from: review ecosystem, analyst relations, community presence, and entity consistency. Weights reflect each tier's pull on AI citations; real results depend on execution and competitive context.
+
+A free rawmktg tool. [Open the full tool →](/tools/off-site-authority-scorecard) · [see all tools](/tools)
+
+Frequently Asked Questions
+
+### Is traditional SEO dead?
+
+No, but its role narrowed. Classic SEO still gets you crawled and indexed, which underpins the Bing and Google pipelines engines rely on. What changed is that on-page keyword optimization no longer determines whether you're recommended. Authority now comes from third-party corroboration and citation-ready structure, not keyword density, which is actively penalized.
+
+### If AI sends far fewer clicks, why invest at all?
+
+Because the few clicks convert about 5x higher (14.2% vs 2.8%), and most of the influence happens with no click at all, the AI's recommendation shapes the buyer's shortlist before they ever reach your site. You're optimizing for being named in the answer, not just for referral traffic.
+
+### We're a small brand. Can we realistically out-cite incumbents?
+
+Yes, this is the most encouraging finding. Optimized content gave rank-5 pages a 115% visibility increase, because engines reward precision and machine-readability over raw domain authority. Disciplined seeding and CITABLE content let smaller players leapfrog incumbents who still rely on legacy SEO.
+
+### Isn't seeding Reddit and reviews just astroturfing?
+
+It becomes astroturfing when it's inauthentic, incentivized or hidden, and engines and moderators punish that. The compliant approach uses real employee experts, aged authentic accounts, honest balanced comments with caveats, and reviews earned at genuine success milestones with no incentives. Authenticity is the strategy.
+
+### Should we abandon Gartner Magic Quadrant placements?
+
+No. They retain prestige and late-stage sales-enablement value. But for top-of-funnel AI visibility they're nearly invisible (under 1% of citations), so don't let them absorb the AR budget. Shift weight toward open analyst content and crawlable review directories, which drive 96% of analyst citations.
+
+### How do we even measure this?
+
+Start manual and free: freeze 8-12 buyer-journey prompts and query them monthly across ChatGPT, Perplexity, Claude and Gemini, logging Reference Rate, Citation Frequency, sentiment and cited sources. Add GA4 AI-referral tracking. Only graduate to paid AI-visibility platforms once you have a baseline.
+
+### What's the single fastest thing we can do this week?
+
+The 60-minute reset: run the Verdict Test on your brand, quantify and source-link three claims on your top page plus add a comparison table and BLUF, then anchor your homepage with JSON-LD sameAs links to G2 and LinkedIn. It touches content, structure and entity in an hour.
+
+### How long until authority seeding shows results?
+
+Treat it as a quarterly program, not a campaign. The 30-day calendar builds the foundation, but compounding citation gains come from sustained consistency: fresh reviews, ongoing community presence, and updated facts across every surface engines cross-reference.
+
+Sources & further reading
+
+- [GEO: Generative Engine Optimization, KDD benchmark (arXiv)](https://arxiv.org/abs/2311.09735)
+- [How Gartner dominates 81.7% of analyst citations while blocking AI crawlers (Otterly.ai)](https://otterly.ai/blog/gartner-ai-citations/)
+- [Mastering AI Citations: the GEO playbook (Frase)](https://www.frase.io/)
+- [LLM SEO: the B2B guide to getting cited (Virayo)](https://virayo.com/blog/generative-engine-optimization-strategies)
+- [Third-party validation and authority signals (Discovered Labs)](https://www.discoveredlabs.com/)
+- [The price of AI training data, $5M to $250M (Quartz)](https://qz.com/)
+- [The new SEO is GEO: optimize your Reddit presence (Single Grain)](https://www.singlegrain.com/)
+- [9 marketing trends in 2026, with data (Ahrefs)](https://ahrefs.com/blog/)
+
+About rawmktg.
+
+rawmktg. publishes data-driven teardowns of how AI search decides what to recommend. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com
+
+
+
+---
+
 # Why ChatGPT, Perplexity and Gemini Recommend Different Vendors (and How to Win All Three)
 
 > A technical breakdown of each engine's retrieval and ranking logic, with a practical prioritisation matrix for B2B SaaS brands operating on limited content budgets.
@@ -6478,7 +7782,7 @@ Table 01: Architectural feature comparison, ChatGPT vs. Perplexity vs. Gemini
 | Core Model | GPT-4o / GPT-5.3 Instant | Custom RAG-Optimised LLMs | Google Gemini Enterprise |
 | Index Source | Bing Web Index + OAI-Searchbot | Real-time live web scrapers (PerplexityBot) | Google Web Index + Knowledge Graph |
 | Citation Filter | Strict context filter (~15% selection rate) | Real-time RAG passage scoring | Entity mapping + organic rank validation |
-| Preferred Sources | G2, Capterra, high-authority media, Reddit | Technical blogs, GitHub, Reddit, dev docs | Top 20 organic pages, Wikipedia, Wikidata |
+| Preferred Sources | G2, Capterra, high-authority media, [Reddit](/blogs/why-ai-cites-reddit-g2-analysts) | Technical blogs, GitHub, Reddit, dev docs | Top 20 organic pages, Wikipedia, Wikidata |
 | Update Cycle | Bing updates + real-time API | Programmatic real-time live scrapers | Continuous Googlebot + Knowledge Graph |
 | Unique Signal | User Memory profiles, brand mentions | Focus Modes (Academic, Reddit, Writing) | Search Console CTR, Core Web Vitals, E-E-A-T |
 

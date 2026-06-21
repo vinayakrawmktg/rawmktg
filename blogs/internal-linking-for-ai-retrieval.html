@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Internal Linking for AI Retrieval: A Technical Deep Dive &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A technical deep dive on internal linking for AI retrieval: late-interaction anchor text, the Vector-Cluster architecture, a flat 2-3 hop crawl depth, GraphRAG authority, and llms.txt, the link topology that decides whether your passages get retrieved and cited." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/internal-linking-for-ai-retrieval" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/internal-linking-for-ai-retrieval" />
+  <link rel="alternate" hreflang="en-IN" href="https://rawmktg.com/blogs/internal-linking-for-ai-retrieval" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/internal-linking-for-ai-retrieval" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/internal-linking-for-ai-retrieval" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/internal-linking-for-ai-retrieval" />
+  <meta property="og:title" content="Internal Linking for AI Retrieval" />
+  <meta property="og:description" content="A technical deep dive on internal linking for AI retrieval: late-interaction anchor text, the Vector-Cluster architecture, a flat 2-3 hop crawl depth, GraphRAG authority, and llms.txt, the link topology that decides whether your passages get retrieved and cited." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/internal-linking-for-ai-retrieval-header.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Internal Linking for AI Retrieval" />
+  <meta name="twitter:description" content="A technical deep dive on internal linking for AI retrieval: late-interaction anchor text, the Vector-Cluster architecture, a flat 2-3 hop crawl depth, GraphRAG authority, and llms.txt, the link topology that decides whether your passages get retrieved and cited." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/internal-linking-for-ai-retrieval-header.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Internal Linking for AI Retrieval", "description": "A technical deep dive on internal linking for AI retrieval: late-interaction anchor text, the Vector-Cluster architecture, a flat 2-3 hop crawl depth, GraphRAG authority, and llms.txt, the link topology that decides whether your passages get retrieved and cited.", "image": "https://rawmktg.com/assets/images/internal-linking-for-ai-retrieval-header.webp", "url": "https://rawmktg.com/blogs/internal-linking-for-ai-retrieval", "datePublished": "2026-06-13", "dateModified": "2026-06-13", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/internal-linking-for-ai-retrieval"}, "keywords": ["internal linking", "AI retrieval", "RAG", "GraphRAG", "ColBERT", "anchor text", "vector cluster", "crawl depth", "GEO", "llms.txt", "neural IR", "information retrieval"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/internal-linking-for-ai-retrieval"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Internal Linking for AI Retrieval", "item": "https://rawmktg.com/blogs/internal-linking-for-ai-retrieval"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does internal linking still matter if AI retrieves passages, not pages?", "acceptedAnswer": {"@type": "Answer", "text": "More than ever. RAG retrieves passages, but a passage in a structurally isolated page is hard to discover and re-rank. Internal links are the explicit edges graph-augmented retrievers traverse to compute authority and trace multi-hop relationships, so linking determines whether your best passages are even in the candidate set."}}, {"@type": "Question", "name": "What is the ideal crawl depth for AI retrieval?", "acceptedAnswer": {"@type": "Answer", "text": "Keep key assets within 2-3 hops of the homepage. Real-time retrieval agents have only seconds to find and scrape URLs; content at depth 4-5 is frequently timed out or discarded before it is reached."}}, {"@type": "Question", "name": "How is anchor text different in neural IR versus classic SEO?", "acceptedAnswer": {"@type": "Answer", "text": "In classic SEO anchors passed PageRank and matched literal keywords. In neural IR (ColBERT, Anchor-DR) the anchor's embedding is aligned with the target document's embedding, so anchor text acts as a query surrogate that shapes retrievability. Aim for diverse, descriptive anchors, and avoid both generic phrases and exact-match repetition."}}, {"@type": "Question", "name": "Should I block GPTBot and ClaudeBot in robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your goal. Training scrapers can consume up to ~40% of bandwidth without driving referral traffic, so many sites throttle or block them. But never block real-time retrieval agents like OAI-SearchBot or PerplexityBot, those drive citation traffic."}}, {"@type": "Question", "name": "Is llms.txt worth implementing given near-zero read rates?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as cheap insurance. Ahrefs found 97% of llms.txt files get zero monthly requests, but the file is trivial to produce and serves as a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing or specs."}}, {"@type": "Question", "name": "What is GraphRAG and why should technical SEOs care?", "acceptedAnswer": {"@type": "Answer", "text": "GraphRAG augments vector search with knowledge-graph traversal to answer multi-hop questions. It models content relationships as nodes and edges and uses in-degree (citation count) for authority boosting via Reciprocal Rank Fusion. Your internal links are those edges, which makes link topology a direct ranking input."}}, {"@type": "Question", "name": "How do I measure whether GEO is working?", "acceptedAnswer": {"@type": "Answer", "text": "Track four metrics: Citation Rate (audits across AI tools), Semantic Reach (long-tail impressions), Referral Traffic (UTM tags + AI referrer parsing), and Brand Sentiment (NLP audits). For RAG quality, use the GTS framework: retrieval quality, answer relevance, and groundedness."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/internal-linking-for-ai-retrieval.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/assets/tools.css" />
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/internal-linking-for-ai-retrieval.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/internal-linking-for-ai-retrieval-header.webp" srcset="/assets/images/internal-linking-for-ai-retrieval-header-800.webp 800w, /assets/images/internal-linking-for-ai-retrieval-header-1200.webp 1200w, /assets/images/internal-linking-for-ai-retrieval-header-1600.webp 1600w, /assets/images/internal-linking-for-ai-retrieval-header.webp 2400w" sizes="100vw" alt="Internal Linking for AI Retrieval - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Technical GEO Teardown</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">June 2026</span></div>
+    <h1 class="article-headline">Internal Linking for AI Retrieval</h1>
+    <p class="article-deck">How hub pages, anchor-text density, and crawl-depth rules decide whether your key pages are retrieved in a RAG query chain.</p>
+    <p class="article-data-note">A technical GEO teardown for SEOs and site architects, synthesizing neural-IR research (ColBERT, Anchor-DR), the Princeton/Georgia Tech/IIT-Delhi GEO-BENCH study, GraphRAG patterns, and the Ahrefs llms.txt analysis. Figures are illustrative models; example code is illustrative.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p class="lead">For two decades the search index was a deterministic, page-centric machine. Crawlers built inverted indexes, lexical models like BM25 scored whole documents on term frequency, and optimization meant keyword placement and passing authority across flat link graphs. LLM answer engines broke that model. Modern search runs on Retrieval-Augmented Generation (RAG): a pipeline that retrieves passages, re-ranks them by semantic relevance, and feeds them to a model as grounding context.</p>
+<div class="callout-box"><div class="callout-box-label">TL;DR, what changes when retrieval goes neural</div><p><strong>RAG retrieves passages, not pages.</strong> It pulls self-contained chunks and re-ranks them by meaning. Content that is mathematically isolated from your site graph is invisible to AI retrievers, no matter how good it is.</p><p><strong>Three levers move the needle:</strong> a Vector-Cluster topology (Anchor Entities, Contextual Bridges, Nuance Nodes), entity-rich anchor text that doubles as a retrieval signal, and a flat crawl depth of 2-3 hops so real-time agents reach your pages before they time out.</p><p><strong>Internal links are the edges</strong> graph-augmented retrievers traverse to compute authority. Optimizing them is now an information-retrieval problem, not a PageRank-plumbing exercise.</p></div>
+<h2 id="neural"><span class="section-num">01</span>From inverted indexes to vector spaces, what actually changed?</h2>
+<div class="section-answer"><strong>Search now runs on RAG, which retrieves and re-ranks passages, not pages.</strong> Where SEO optimized for a rank position, Generative Engine Optimization (GEO) optimizes the upstream retrieval phase: getting specific text chunks injected into the model's context window.</div>
+<p>The consequence for architecture is blunt. RAG systems do not retrieve whole pages, they retrieve discrete, self-contained passages. If an enterprise page holds exceptional content but is structurally isolated from the rest of the site graph, it is effectively invisible to AI retrievers.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Query</div><div class="pl-desc">user question</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Retrieve</div><div class="pl-desc">top passages by vector match</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Re-rank</div><div class="pl-desc">by semantic relevance</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Synthesize</div><div class="pl-desc">LLM grounds its answer</div></div></div><div class="chart-caption">Figure 1 - legacy whole-page keyword matching gives way to a multi-stage RAG retrieval pipeline that scores passages, not documents.</div>
+<p>This also rewrites measurement. AI search introduces AI Dark Traffic, valuable interactions legacy analytics struggle to attribute because they happen inside conversational interfaces via zero-click synthesis or assisted citation clicks. Across finance, technology and travel, AI experiences are estimated to displace 15-68% of traditional organic clicks.</p>
+<div class="chart-wrap"><canvas id="ilDisplacement" height="200"></canvas></div><div class="chart-caption">Figure 2 - estimated displacement of traditional organic clicks by AI search, by vertical. Source: industry analyses, 2026</div>
+<h2 id="anchors"><span class="section-num">02</span>How does anchor text behave in neural retrieval?</h2>
+<div class="section-answer"><strong>As a query surrogate, late-interaction models match it token by token.</strong> Early dense retrievers compressed a whole page into one vector, which washes out fine detail in long documents. Late-interaction architectures like ColBERT instead keep token-level representations and score relevance with the MaxSim operator: the sum of maximum cosine similarities between each query token and all document tokens.</div>
+<div class="code-wrap"><div class="code-label">MaxSim relevance (ColBERT late interaction)</div><div class="code-block"><span class="code-lang">neural-ir</span><pre>S(q, d) =  SUM   max ( E[q_i] . E[d_j] )
+           i in q  j in d
+
+  E[q_i] = contextual embedding of query token i
+  E[d_j] = contextual embedding of document token j
+  .      = cosine similarity between token embeddings
+
+# Every query token &quot;votes&quot; for its best-matching
+# document token; the votes sum into the final score.</pre></div></div>
+<p>Token-level matching changes what anchor text is. Under legacy SEO, anchors passed PageRank and matched literal strings. In neural IR they are a direct semantic signal: research on the <a href="https://arxiv.org/abs/2305.05834" target="_blank" rel="noopener">Anchor-DR framework</a> shows web anchors behave as natural query surrogates, contrastive learning aligns the anchor's embedding with the embedding of the page it links to, so the retriever forms a semantic expectation of the target before it reads the body.</p>
+<h3>Managing anchor-text density: dilution vs saturation</h3>
+<p>This reframes the old over-optimization worry. The neural-IR concern is not penalty risk; it is semantic dilution versus semantic saturation. Generic anchors like "click here" pass no context, so the target's MaxSim score declines. Hammering one exact-match keyword across every link constrains the document's vector boundaries and makes it harder to retrieve for long-tail queries. The fix is a diverse anchor-text density: semantic variants, related terms, and conversational questions that describe the precise relationship between source and target.</p>
+<div class="chart-wrap"><canvas id="ilAnchorCurve" height="220"></canvas></div><div class="chart-caption">Figure 3 - retrievability peaks at moderate anchor diversity and collapses under both exact-match saturation and generic dilution.</div>
+<h2 id="cluster"><span class="section-num">03</span>How do you design a Vector-Cluster architecture?</h2>
+<div class="section-answer"><strong>Three page types: Anchor Entities, Contextual Bridges, and Nuance Nodes.</strong> Organize content around its semantic relationships in vector space, not just shared keywords. The Vector-Clustering blueprint replaces the flat star structure with tightly woven semantic neighborhoods that signal deep, cohesive expertise to retrievers.</div>
+<div class="pipeline"><div class="pl-node is-goal"><div class="pl-title">Anchor Entity</div><div class="pl-desc">the hub: defines the topic's ontology</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Nuance Nodes</div><div class="pl-desc">long-tail, high-info-gain spokes</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Contextual Bridge</div><div class="pl-desc">connects to an adjacent cluster</div></div></div><div class="chart-caption">Figure 4 - a Vector-Cluster: an Anchor Entity hub linked to Nuance Nodes and bridged to an adjacent cluster.</div>
+<p><strong>Anchor Entity (the hub).</strong> The semantic center of gravity. Unlike a generic "ultimate guide," it defines the topic's ontology, vocabulary, core concepts, relationships, and leans on JSON-LD plus clean definitions near the top for easy parsing. <strong>Contextual Bridges.</strong> Connectors that reduce semantic distance between clusters, letting models trace cross-topic logic. <strong>Nuance Nodes.</strong> Long-tail, high-density spokes built on <a href="/blogs/anatomy-of-a-high-citation-page">Information Gain</a>, original data, proprietary research, unique case studies that yield clear, quotable, citable facts.</p>
+<div class="tt-wrap"><div class="tt-label">Legacy silo vs Vector-Cluster, side by side</div><table class="tt"><thead><tr><th>Criterion</th><th>Legacy flat / silo IA</th><th>Vector-Cluster IA</th></tr></thead><tbody><tr><td class="label">Organizing principle</td><td>Shared keywords &amp; manual categories</td><td class="up">Semantic proximity in vector space</td></tr><tr><td class="label">Hub role</td><td>Category page passing PageRank</td><td class="up">Anchor Entity defining topic ontology</td></tr><tr><td class="label">Cross-topic links</td><td>Avoided to keep silos clean</td><td class="up">Contextual Bridges encouraged</td></tr><tr><td class="label">Anchor text</td><td>Exact-match for ranking</td><td class="up">Diverse, entity-rich, relationship-describing</td></tr><tr><td class="label">Unit of value</td><td>The ranked page</td><td class="up">The retrievable passage / chunk</td></tr><tr><td class="label">Retrieval outcome</td><td>Whole-page ranking</td><td class="up">Passage injected into LLM context</td></tr></tbody></table></div>
+<p>Implementation rule: every Nuance Node links back to its Anchor Entity with descriptive anchors, and Contextual Bridges link across hubs. That structured linking lets RAG systems trace and retrieve relevant passages across your entire domain. This is the on-page side of building <a href="/blogs/topical-authority-cluster-ai-shortlists">topical authority</a>.</p>
+<h2 id="crawl-depth"><span class="section-num">04</span>Why does crawl depth now decide what gets retrieved?</h2>
+<div class="section-answer"><strong>Real-time agents have seconds; keep key pages within 2-3 hops.</strong> Before content can be retrieved it must be reachable. In 2026, AI crawlers split into two camps with opposite incentives.</div>
+<div class="compare-grid"><div class="compare-col"><div class="compare-col-label seo">Training scrapers (throttle / block)</div><ul><li>GPTBot, ClaudeBot, CCBot</li><li>Pull bulk data for future foundation models</li><li>Can consume up to ~40% of server bandwidth</li><li>Often bypass CDN caches; return no referral clicks</li></ul></div><div class="compare-col"><div class="compare-col-label geo">Real-time retrieval agents (keep open)</div><ul><li>OAI-SearchBot, ChatGPT-User, PerplexityBot</li><li>Fetch fresh content for active queries</li><li>Respect robots.txt</li><li>Drive the citation traffic that matters</li></ul></div></div><div class="chart-caption">Figure 5 - the 2026 AI crawler taxonomy: bulk training scrapers vs real-time retrieval agents.</div>
+<p>That second group is why crawl depth is now a hard constraint. Traditional crawlers index asynchronously over days, so deep hierarchies eventually surface. Real-time agents have seconds to discover, scrape and filter URLs before the model responds. Content buried 4-5 clicks deep is often timed out or discarded before it is reached. This is the same access problem we cover in <a href="/blogs/how-ai-crawlers-index-your-site">how AI crawlers index your site</a>.</p>
+<div class="pull-quote">Keep every key asset within 2-3 hops of the homepage. Past depth 3, real-time retrieval probability falls off a cliff.</div>
+<div class="chart-wrap"><canvas id="ilCrawlDepth" height="260"></canvas></div><div class="chart-caption">Figure 6 - modeled real-time retrieval probability by crawl depth. The safe zone ends at 3 hops; depth 4-5 is frequently timed out.</div>
+<p>Crawl budget also leaks. An enterprise study of 100,000-plus page domains found bots spend roughly 18% of crawl budget on redundant parameter URLs (session IDs, sort filters) when they are not explicitly blocked. Clear robots.txt exclusions steer that budget toward high-signal hubs.</p>
+<div class="code-wrap"><div class="code-label">robots.txt, selective AI crawler control (2026)</div><div class="code-block"><span class="code-lang">robots.txt</span><pre># Goal: keep referral-driving agents in; push bulk
+# scrapers and parameter URLs out.
+
+# --- Real-time retrieval agents: ALLOW ---
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+Allow: /
+
+# --- Bulk training scrapers: throttle / block ---
+User-agent: GPTBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+
+# --- Protect crawl budget from parameter sprawl ---
+User-agent: *
+Disallow: /*?sessionid=
+Disallow: /*?sort=
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml</pre></div></div>
+<p>Block only what you mean to. Blocking a training bot forfeits potential model exposure; allowing it spends bandwidth for zero referral traffic. Decide per business goal, and keep retrieval agents fully unblocked.</p>
+<h2 id="graphrag"><span class="section-num">05</span>What is GraphRAG, and why are internal links the edges?</h2>
+<div class="section-answer"><strong>It fuses vector search with graph traversal, and your links are the graph.</strong> Enterprise retrieval increasingly augments dense vectors with knowledge graphs. <a href="https://learn.microsoft.com/en-us/azure/horizondb/ai/graph-rag" target="_blank" rel="noopener">Graph-Augmented RAG (GraphRAG)</a> pairs vector search with graph traversal to solve multi-hop reasoning, modeling relationships as explicit nodes and edges so the retriever can trace connections across pages.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Dense vector rank</div><div class="pl-desc">semantic similarity</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Graph citation rank</div><div class="pl-desc">in-degree authority</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Reciprocal Rank Fusion</div><div class="pl-desc">blend both signals</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Fused context</div><div class="pl-desc">sent to the LLM</div></div></div><div class="chart-caption">Figure 7 - GraphRAG fuses vector relevance and graph traversal via Reciprocal Rank Fusion.</div>
+<p>Engineers model assets as Entity-Attribute-Value triples (Subject, Predicate, Object). The pipeline runs extraction (pull JSON-LD and triples), deduplication (normalize entity names so "PostgreSQL," "Postgres" and "PG" resolve to one node), and graph construction (load relationships into a graph database). With the graph built, an Authority Boosting query counts each node's in-degree, its citation count, to find the most authoritative hubs.</p>
+<div class="code-wrap"><div class="code-label">Authority boosting: in-degree as a hub signal</div><div class="code-block"><span class="code-lang">cypher</span><pre>-- Cypher: rank pages by internal citation count
+MATCH (target:Page)&lt;-[r:LINKS_TO]-(:Page)
+RETURN target.url AS page,
+       count(r)   AS in_degree     -- citation count
+ORDER BY in_degree DESC
+LIMIT 20;</pre></div></div>
+<div class="code-wrap"><div class="code-label">Reciprocal Rank Fusion of vector + graph</div><div class="code-block"><span class="code-lang">python</span><pre># r_dense = rank from dense vector search
+# r_graph = rank from graph citation density
+# k       = smoothing constant (typically 4)
+
+def rrf(doc, r_dense, r_graph, k=4):
+    return 1.0/(k + r_dense) + 1.0/(k + r_graph)
+
+# Authoritative-but-distinct AND relevant-but-less-linked
+# documents both survive into the final context.</pre></div></div>
+<div class="callout-box"><div class="callout-box-label">The payoff is measurable</div><p>In controlled tests, adding a graph-augmented overlay to a dense retriever raised the mean cosine similarity of retrieved passages from 0.673 to 0.694 while sharply cutting similarity dispersion. Separately, the Princeton GEO-BENCH study found RAG-optimized content earns up to +40% citation visibility versus unoptimized content. The architectural takeaway: your internal links are the edges graph-augmented retrievers use to map authority.</p></div>
+<h2 id="llms-txt"><span class="section-num">06</span>What is the B2A layer and the llms.txt standard?</h2>
+<div class="section-answer"><strong>A machine-readable index agents read instead of parsing your HTML.</strong> Sites are adding Business-to-Agent (B2A) interfaces. The <a href="/glossary/llms-txt">llms.txt standard</a> is an emerging protocol: a clean, machine-readable index of your most important resources at the domain root, a curated master index (/llms.txt) plus a concatenated full-text bundle (/llms-full.txt).</div>
+<div class="code-wrap"><div class="code-label">/llms.txt</div><div class="code-block"><span class="code-lang">markdown</span><pre># BrandName
+
+&gt; BrandName provides enterprise-grade AI search
+&gt; tracking and optimization platforms.
+
+## Core Resources
+
+- [Pricing](https://brand.com/pricing): Startup and
+  Enterprise tier structures.
+- [Integration Guide](https://brand.com/docs): REST
+  API deployment documentation.
+- [Vector-Cluster Playbook](https://brand.com/playbook):
+  How to structure content for AI retrieval.
+
+## About
+
+- [Company](https://brand.com/about): Who we are and
+  why AI visibility matters.</pre></div></div>
+<p>The structure is strict: one H1 with the exact brand name, a blockquote summary, H2 groupings, and bullet links in exact - [Title](URL): Description syntax. But set expectations with data: <a href="https://ahrefs.com/blog/llmstxt-study/" target="_blank" rel="noopener">Ahrefs' analysis of 137,000-plus domains</a> shows publishing is rising while reads remain vanishingly rare.</p>
+<div class="chart-wrap"><canvas id="ilAdoption" height="230"></canvas></div><div class="chart-caption">Figure 8 - llms.txt is widely published but rarely read. Source: Ahrefs 137K-domain study</div>
+<p>Direct crawler traffic to /llms.txt is still low, but the file is low-effort, high-upside: a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing, specs, or brand facts in generated answers.</p>
+<h2 id="evidence"><span class="section-num">07</span>Does GEO actually work? The evidence.</h2>
+<div class="section-answer"><strong>Up to +40% citation visibility on GEO-BENCH, with field case studies to match.</strong> A landmark study from <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Princeton, Georgia Tech and IIT Delhi</a> evaluated these tactics on the GEO-BENCH benchmark and found that optimizing content for RAG pipelines, verifiable facts, direct answers, structured data, boosted citation visibility by up to 40% versus unoptimized content.</div>
+<div class="tt-wrap"><div class="tt-label">Documented GEO outcomes</div><table class="tt"><thead><tr><th>Brand / sector</th><th>Strategy</th><th>Core outcome</th></tr></thead><tbody><tr><td class="label">EdTech platform</td><td>GEO intent optimization</td><td class="up">+1,041% revenue in 5 months; 3x conversion efficiency</td></tr><tr><td class="label">Auto insurance</td><td>Structured FAQ + schema markup</td><td class="up">+447% AI Overview mentions in 6 months</td></tr><tr><td class="label">SEO agency</td><td>Semantic SEO &amp; IA optimization</td><td class="up">+8,337% ChatGPT sessions; +2,527% engagement time</td></tr></tbody></table></div>
+<p>In the EdTech case the brand hit a "crocodile mouth" effect: lead volume stayed flat while revenue and conversion efficiency surged. By targeting high-intent transactional terms, optimization filtered out low-quality traffic and surfaced the brand in high-value queries. To evaluate RAG quality, teams use the GTS (Generative Trust Score) framework, scoring retrieval quality, answer relevance, and groundedness.</p>
+<div class="tt-wrap"><div class="tt-label">The core GEO metric set</div><table class="tt"><thead><tr><th>Metric</th><th>What it captures</th><th>Tracking method</th></tr></thead><tbody><tr><td class="label">Citation Rate</td><td>How often AI tools cite you</td><td>Monthly audits across ChatGPT, Perplexity, Gemini</td></tr><tr><td class="label">Semantic Reach</td><td>Breadth of long-tail coverage</td><td>Impressions on long-tail query variants</td></tr><tr><td class="label">Referral Traffic</td><td>Assisted clicks from AI answers</td><td>UTM tags + AI referrer parsing</td></tr><tr><td class="label">Brand Sentiment</td><td>How AI describes your brand</td><td>NLP audits of generated responses</td></tr></tbody></table></div>
+<h2 id="blueprint"><span class="section-num">08</span>What does a retrieval-optimized page look like?</h2>
+<div class="section-answer"><strong>Answer block and schema up top, entity tables and links in the body, FAQ at the base.</strong> Translate the theory into a build spec, engineered so retrieval agents can extract a clean answer, parse your entities, and follow your links, top to bottom.</div>
+<div class="callout-box"><div class="callout-box-label">Retrieval-optimized page blueprint</div><p><strong>Top:</strong> one H1 naming the primary entity, a 2-3 sentence answer block agents can lift verbatim, and JSON-LD schema.</p><p><strong>Body:</strong> question-format H2/H3s each opening with a direct answer; pricing, specs and comparisons as HTML tables (crawlers parse tables far better than prose); entity-rich contextual links.</p><p><strong>Base:</strong> an FAQ section that mirrors the questions buyers actually ask.</p></div>
+<p>Frame headings as the questions users ask and lead each section with an answer block. Implement schema.org markup (Article, FAQPage, Product, Organization) to give agents a clean semantic layer, the same <a href="/blogs/schema-markup-ai-citations-2026">structured-data discipline</a> that lifts citations.</p>
+<div class="code-wrap"><div class="code-label">Entity schema (JSON-LD)</div><div class="code-block"><span class="code-lang">json</span><pre>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;headline&quot;: &quot;Internal Linking for AI Retrieval&quot;,
+  &quot;about&quot;: { &quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;Generative Engine Optimization&quot; },
+  &quot;mentions&quot;: [
+    { &quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;Retrieval-Augmented Generation&quot; },
+    { &quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;Vector-Cluster Architecture&quot; }
+  ],
+  &quot;author&quot;: { &quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;rawmktg.&quot; }
+}
+&lt;/script&gt;</pre></div></div>
+<p>Replace "click here" with descriptive, entity-rich anchors. Hubs link to every relevant spoke; spokes link back to the hub and laterally to related nodes. Serve content via SSR or clean static HTML so it is visible without heavy JavaScript, keep response times low to avoid crawl timeouts, and fix broken links, redirect chains and stray noindex tags that amputate parts of your topical network.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Map</div><div class="pl-desc">cluster by vector proximity</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Structure</div><div class="pl-desc">schema + answer blocks</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Link</div><div class="pl-desc">entity-rich anchors</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Gate crawl</div><div class="pl-desc">robots.txt + depth</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Expose</div><div class="pl-desc">llms.txt</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Measure</div><div class="pl-desc">citations + GTS</div></div></div><div class="chart-caption">Figure 9 - the six-step implementation loop: map, structure, link, gate crawl access, expose machine-readable indexes, measure, repeat.</div>
+<h2 id="summary"><span class="section-num">09</span>What should you actually build?</h2>
+<div class="section-answer"><strong>Retire authority-passing structures; build a retrievable semantic network.</strong> RAG and GraphRAG engines do not read a site as a flat bag of keywords, they read it as an interconnected semantic network. Shifting to a passage-centric, vector-aligned structure makes your content both retrievable and authoritative.</div>
+<div class="callout-box"><div class="callout-box-label">The roadmap, in five moves</div><p><strong>1. Map content around vector proximity.</strong> Build clusters of Anchor Entities, Contextual Bridges and Nuance Nodes for comprehensive topic coverage.</p><p><strong>2. Strengthen the entity graph.</strong> Use entity-rich contextual anchors and structured schema to make relationships machine-readable.</p><p><strong>3. Optimize crawl accessibility.</strong> Selective robots.txt rules block bandwidth-heavy trainers while keeping referral-driving agents open; hold key assets within 2-3 hops.</p><p><strong>4. Enhance machine readability.</strong> Deploy clean llms.txt and llms-full.txt as a standardized markdown directory.</p><p><strong>5. Focus on Information Gain.</strong> Lead with answer blocks, HTML data tables and FAQs grounded in unique data to secure accurate citations.</p></div>
+<p>Do this and you stop chasing algorithm updates. You build a machine-readable, semantic, highly retrievable knowledge base that performs consistently across every generative engine.</p>
+
+<section class="toolpage tool-embed">
+  <div class="embed-head"><div class="embed-eyebrow">Free interactive tool</div><div class="embed-title">Estimate your page's retrieval probability</div><div class="embed-deck">Enter how many clicks a page sits from your homepage to see whether real-time AI agents can reach it in time.</div></div>
+<section class="card" id="cdTool">
+  <div class="grid calc">
+    <div class="controls">
+      <div class="fld"><div class="lab">Clicks from the homepage <span class="val" id="cdDepthVal">3 hops</span></div>
+        <input type="range" id="cdDepth" min="0" max="6" value="3">
+        <p class="hint">How many clicks a crawler needs to reach this page from your homepage.</p></div>
+      <div class="tactic on" id="cdMappedWrap"><div class="trow">
+        <button class="switch on" id="cdMapped" aria-pressed="true" aria-label="In sitemap and llms.txt"></button>
+        <span class="tname">Page is in your sitemap &amp; llms.txt</span></div>
+        <p class="hint" style="margin-top:8px">Discovery files help real-time agents reach deeper pages, worth roughly one hop.</p></div>
+    </div>
+    <div class="output">
+      <div class="o-eyebrow">Real-time retrieval probability</div>
+      <div class="o-lift" id="cdProb">70%</div>
+      <div class="o-sub" id="cdSub">depth 3 from the homepage</div>
+      <div style="margin:2px 0 16px"><span class="verdict warn" id="cdVerdict">AT RISK</span></div>
+      <div class="barrow"><span class="l">Reachability</span><div class="track"><div class="fill proj" id="cdFill"></div></div></div>
+      <div class="chips" id="cdChips"></div>
+      <p class="caveat">Models real-time retrieval probability by crawl depth (100 / 96 / 88 / 70 / 42 / 20% at depths 0-5), grounded in the internal-linking-for-AI-retrieval research. Real-time agents have seconds to fetch a URL; past depth 3 retrieval falls off a cliff. Directional.</p>
+    </div>
+  </div>
+</section>
+  <div class="embed-foot">A free rawmktg tool. <a href="/tools/crawl-depth-retrieval-estimator">Open the full tool &rarr;</a> &middot; <a href="/tools">see all tools</a></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById('cdTool'); if(!root) return;
+  var depth=document.getElementById('cdDepth');
+  var CURVE={0:100,1:96,2:88,3:70,4:42,5:20,6:8};
+  function verdict(p){if(p>=95)return['REACHED','good'];if(p>=85)return['SAFE','good'];if(p>=60)return['AT RISK','warn'];if(p>=35)return['TIMEOUT','warn'];return['DROPPED','bad'];}
+  function compute(){
+    var d=parseInt(depth.value,10);
+    document.getElementById('cdDepthVal').textContent=d+(d===1?' hop':' hops');
+    var mapped=document.getElementById('cdMapped').classList.contains('on');
+    document.getElementById('cdMappedWrap').classList.toggle('off',!mapped);
+    var eff=Math.max(0,d-(mapped?1:0));
+    var p=CURVE[eff]!==undefined?CURVE[eff]:Math.max(2,Math.round(8*Math.pow(0.5,eff-6)));
+    document.getElementById('cdProb').textContent=p+'%';
+    var v=verdict(p); var pill=document.getElementById('cdVerdict'); pill.textContent=v[0]; pill.className='verdict '+v[1];
+    document.getElementById('cdFill').style.width=p+'%';
+    document.getElementById('cdSub').textContent=mapped?('effective depth '+eff+' with sitemap + llms.txt'):('depth '+d+' from the homepage');
+    var br=document.getElementById('cdChips'); br.innerHTML='';
+    function chip(t,m){var c=document.createElement('span');c.className='chip'+(m?' muted':'');c.textContent=t;br.appendChild(c);}
+    if(d>3) chip('Flatten to 3 hops or fewer'); else chip('Within the safe zone');
+    if(!mapped) chip('Add to sitemap + llms.txt', true);
+  }
+  depth.addEventListener('input',compute);
+  document.getElementById('cdMapped').addEventListener('click',function(){this.classList.toggle('on');compute();});
+  compute();
+})();
+</script>
+
+<div class="faq-section"><div class="faq-section-label">Frequently Asked Questions</div><div class="faq-list"><div class="faq-item"><h3 class="faq-q">Does internal linking still matter if AI retrieves passages, not pages?</h3><p class="faq-a">More than ever. RAG retrieves passages, but a passage in a structurally isolated page is hard to discover and re-rank. Internal links are the explicit edges graph-augmented retrievers traverse to compute authority and trace multi-hop relationships, so linking determines whether your best passages are even in the candidate set.</p></div><div class="faq-item"><h3 class="faq-q">What is the ideal crawl depth for AI retrieval?</h3><p class="faq-a">Keep key assets within 2-3 hops of the homepage. Real-time retrieval agents have only seconds to find and scrape URLs; content at depth 4-5 is frequently timed out or discarded before it is reached.</p></div><div class="faq-item"><h3 class="faq-q">How is anchor text different in neural IR versus classic SEO?</h3><p class="faq-a">In classic SEO anchors passed PageRank and matched literal keywords. In neural IR (ColBERT, Anchor-DR) the anchor's embedding is aligned with the target document's embedding, so anchor text acts as a query surrogate that shapes retrievability. Aim for diverse, descriptive anchors, and avoid both generic phrases and exact-match repetition.</p></div><div class="faq-item"><h3 class="faq-q">Should I block GPTBot and ClaudeBot in robots.txt?</h3><p class="faq-a">It depends on your goal. Training scrapers can consume up to ~40% of bandwidth without driving referral traffic, so many sites throttle or block them. But never block real-time retrieval agents like OAI-SearchBot or PerplexityBot, those drive citation traffic.</p></div><div class="faq-item"><h3 class="faq-q">Is llms.txt worth implementing given near-zero read rates?</h3><p class="faq-a">Yes, as cheap insurance. Ahrefs found 97% of llms.txt files get zero monthly requests, but the file is trivial to produce and serves as a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing or specs.</p></div><div class="faq-item"><h3 class="faq-q">What is GraphRAG and why should technical SEOs care?</h3><p class="faq-a">GraphRAG augments vector search with knowledge-graph traversal to answer multi-hop questions. It models content relationships as nodes and edges and uses in-degree (citation count) for authority boosting via Reciprocal Rank Fusion. Your internal links are those edges, which makes link topology a direct ranking input.</p></div><div class="faq-item"><h3 class="faq-q">How do I measure whether GEO is working?</h3><p class="faq-a">Track four metrics: Citation Rate (audits across AI tools), Semantic Reach (long-tail impressions), Referral Traffic (UTM tags + AI referrer parsing), and Brand Sentiment (NLP audits). For RAG quality, use the GTS framework: retrieval quality, answer relevance, and groundedness.</p></div></div></div>
+<div class="sources-block"><div class="sources-label">Sources & further reading</div><ul class="sources-list"><li><a href="https://arxiv.org/abs/2004.12832" target="_blank" rel="noopener">ColBERT: Efficient Passage Search via Late Interaction (arXiv)</a></li><li><a href="https://arxiv.org/abs/2305.05834" target="_blank" rel="noopener">Anchor-DR: Dense Retrieval Training with Web Anchors (arXiv)</a></li><li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">GEO: Generative Engine Optimization, GEO-BENCH (arXiv)</a></li><li><a href="https://learn.microsoft.com/en-us/azure/horizondb/ai/graph-rag" target="_blank" rel="noopener">Graph-Augmented RAG patterns (Microsoft Learn)</a></li><li><a href="https://blog.trysteakhouse.com/blog/vector-clustering-blueprint-organizing-content" target="_blank" rel="noopener">The Vector-Clustering Blueprint (SteakHouse)</a></li><li><a href="https://ahrefs.com/blog/llmstxt-study/" target="_blank" rel="noopener">We analyzed 137K sites: 97% of llms.txt files never get read (Ahrefs)</a></li><li><a href="https://www.quattr.com/blog/internal-linking-overlooked-signal-in-ai" target="_blank" rel="noopener">Why Internal Linking Matters More in AI Search (Quattr)</a></li><li><a href="https://engineering.sprinklr.com/gts-scoring-a-practical-actionable-framework-to-evaluate-rag-systems-4e6602d9154a" target="_blank" rel="noopener">GTS Scoring: a framework to evaluate RAG systems (Sprinklr)</a></li></ul></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes technical teardowns of how AI search retrieves, ranks and cites content. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">2-3</div><div class="stat-label">Max crawl hops for real-time retrieval</div></div><hr class="stat-divider"><div><div class="stat-val">+40%</div><div class="stat-label">Citation lift from GEO-optimized content</div></div><hr class="stat-divider"><div><div class="stat-val">18%</div><div class="stat-label">Crawl budget lost to depth &amp; parameters</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this teardown</div><ul class="toc-list"><li><a href="#neural"><span class="toc-num">01</span>The neural shift</a></li><li><a href="#anchors"><span class="toc-num">02</span>Anchor text as a signal</a></li><li><a href="#cluster"><span class="toc-num">03</span>Vector-Cluster architecture</a></li><li><a href="#crawl-depth"><span class="toc-num">04</span>Crawl depth & retrieval</a></li><li><a href="#graphrag"><span class="toc-num">05</span>GraphRAG & authority</a></li><li><a href="#llms-txt"><span class="toc-num">06</span>The llms.txt layer</a></li><li><a href="#evidence"><span class="toc-num">07</span>The evidence</a></li><li><a href="#blueprint"><span class="toc-num">08</span>The page blueprint</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/subscribed" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint =(css.getPropertyValue('--faint') ||'#C5BFB4').trim();
+  var up    =(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace";
+  var text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.45);
+
+  var dp=document.getElementById('ilDisplacement');
+  if(dp){new Chart(dp,{type:'bar',data:{labels:['Finance','Technology','Travel'],
+    datasets:[{data:[[15,55],[22,60],[30,68]],backgroundColor:signal,borderRadius:4,barThickness:20}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw[0]+'-'+c.raw[1]+'% of clicks displaced';}}}},
+      scales:{x:{beginAtZero:true,max:80,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}},
+              y:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}}}}});}
+
+  var ac=document.getElementById('ilAnchorCurve');
+  if(ac){var xs=['saturation','','','','optimal','','','','dilution'];var ys=[6,14,40,78,100,86,52,22,9];
+    new Chart(ac,{type:'line',data:{labels:xs,datasets:[{data:ys,borderColor:signal,backgroundColor:rgba(signal,0.12),fill:true,tension:0.45,borderWidth:2,pointRadius:0}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},
+              y:{display:false,beginAtZero:true,max:115}}}});}
+
+  var cd=document.getElementById('ilCrawlDepth');
+  if(cd){var v=[100,96,88,70,42,20];
+    new Chart(cd,{type:'bar',data:{labels:['Depth 0 (home)','Depth 1','Depth 2','Depth 3','Depth 4','Depth 5'],
+    datasets:[{data:v,backgroundColor:v.map(function(_,i){return i<=2?up:signal;}),borderRadius:4,barThickness:20}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% real-time retrieval probability';}}}},
+      scales:{x:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(x){return x+'%';}},grid:{color:grid}},
+              y:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}}}}});}
+
+  var ad=document.getElementById('ilAdoption');
+  if(ad){new Chart(ad,{type:'bar',data:{labels:['Publish llms.txt','Files never read','Bot traffic','From named AI tools','From diagnostic tools'],
+    datasets:[{data:[28,97,96,19.5,3.6],backgroundColor:['rgba(255,255,255,0.5)',signal,'rgba(255,255,255,0.5)','rgba(255,255,255,0.5)','rgba(255,255,255,0.5)'],borderRadius:4,barThickness:20}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'%';}}}},
+      scales:{x:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(x){return x+'%';}},grid:{color:grid}},
+              y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+})();
+</script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 
 TL;DR
 
-- 01**None of the three execute JavaScript.** Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.
+- 01**None of the three execute [JavaScript](/blogs/property-vista-authority-paradox).** Client-rendered React, Vue, and Angular pages are invisible to OAI-SearchBot, PerplexityBot, and CCBot. Ship SSR, SSG, or ISR.
 - 02**[Crawl](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") logic differs by mission.** OAI-SearchBot indexes for citations, [PerplexityBot for RAG](/blogs/how-rag-actually-works), CCBot for archival training. Same User-Agent header, three different scopes.
 - 03**Robots.txt blocks the bot, not the URL.** A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a `noindex` meta tag on the page itself.
 - 04**Verify before you trust the User-Agent.** Spoofed AI [crawler](/tools/ai-platform-optimizer "AI Platform Optimization Matrix")s are common. Validate with FCrDNS or the published JSON CIDR feeds.
@@ -90,7 +90,7 @@ html · GET /products/atlas-x9
 </html>
 ```
 
-That payload is functionally empty. It has a title and a script tag. It has no body copy, no schema markup, no internal links, no navigation. For OAI-SearchBot and PerplexityBot, the URL is effectively a blank page that cannot be cited. For CCBot, it becomes a near-useless row in a WARC archive. [The failure modes compound in predictable ways](https://visively.com/kb/ai/ai-crawlers-javascript-rendering):
+That payload is functionally empty. It has a title and a script tag. It has no body copy, no schema markup, no [internal link](/blogs/internal-linking-for-ai-retrieval)s, no navigation. For OAI-SearchBot and PerplexityBot, the URL is effectively a blank page that cannot be cited. For CCBot, it becomes a near-useless row in a WARC archive. [The failure modes compound in predictable ways](https://visively.com/kb/ai/ai-crawlers-javascript-rendering):
 
 - **Empty indexing shells.** No text content reaches the index. The URL is registered but cannot be surfaced as a citation.
 - **Invisible navigation paths.** If internal links are rendered client-side, the crawler cannot follow them. Crawl depth collapses to one.

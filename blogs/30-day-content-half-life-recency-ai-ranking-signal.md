@@ -120,7 +120,7 @@ Content refresh prioritisation framework by tier
 | --- | --- | --- | --- |
 | Tier 1 | Revenue-adjacent pages (pricing, comparisons, use cases) | 8-12 weeks | Direct conversion risk if citations drop. These pages are actively consulted during vendor evaluation. |
 | Tier 2 | Thought leadership and category authority content | 12-16 weeks | Anchors brand positioning in AI answers. Loss here reduces competitive presence in awareness-stage queries. |
-| Tier 3 | Supporting informational content and FAQs | 6 months | Supports Tier 1 and 2 via entity coverage and internal linking density. |
+| Tier 3 | Supporting informational content and FAQs | 6 months | Supports Tier 1 and 2 via entity coverage and [internal link](/blogs/internal-linking-for-ai-retrieval)ing density. |
 | Tier 4 | Archive candidates | Evaluate for retirement | Consolidate or redirect. Do not invest refresh resources in pages with no pipeline value. |
 
 ### The Five-Step Refresh Workflow

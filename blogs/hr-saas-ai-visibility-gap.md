@@ -52,7 +52,7 @@ The risk is structural. When organic search mostly recaptures demand the brand a
 
 ## 04. Where do HR buyers actually compare software?
 
-**Not on vendor sites.** MoFu (consideration) traffic is just 2-13% of the total at every brand. The "best HR software" and "X vs Y" queries, where buyers actually choose, are owned by G2, Capterra and Forbes Advisor, not the vendors.
+**Not on vendor sites.** MoFu (consideration) traffic is just 2-13% of the total at every brand. The "best HR software" and "X vs Y" queries, where buyers actually choose, are owned by [G2](/blogs/why-ai-cites-domo-over-databricks), Capterra and Forbes Advisor, not the vendors.
 
 Map every keyword to a [funnel](/tools/saas-funnel-gap-analyzer "B2B SaaS Funnel Gap Analyzer") stage and the same shape appears six times: a reasonable top (awareness), a heavy bottom (brand and decision), and almost nothing in the middle. The consideration layer, comparison terms, "best," "alternatives," "vs," is where buyers narrow their shortlist, and it is precisely where these vendors are absent.
 

@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/cx-saas-seo-discoverability-analysis · rawmktg. by Vinayak Ravi*
 
 
-Over the past few months, we [audit](/tools/geo-readiness-scorecard "GEO Readiness Scorecard")ed six leading B2B SaaS companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.
+Over the past few months, we [audit](/tools/geo-readiness-scorecard "GEO Readiness Scorecard")ed six leading B2B [SaaS](/blogs/container-tracking-saas-seo-geo-analysis) companies operating in the customer experience and survey software space, a market that spans NPS tools, customer feedback platforms, employee engagement software, and CX management suites. The companies ranged from dominant market incumbents to well-funded challengers.
 
 The patterns were remarkably consistent. Across technical infrastructure, content strategy, backlink quality, and AI visibility, the same structural mistakes appeared again and again, made at scale by companies with every resource available to avoid them.
 
