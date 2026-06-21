@@ -7,7 +7,7 @@
 
 ## 01. How is B2B search shifting to conversational discovery?
 
-**From crawled links to synthesised answers.** For nearly three decades, organic visibility was mediated by search-engine crawlers that returned ranked links. That model is now under structural pressure: generative engines synthesize many sources into a single answer, frequently resolving intent inside the chat interface without a click at all.
+**From [crawl](/tools/crawl-depth-retrieval-estimator)ed links to synthesised answers.** For nearly three decades, organic visibility was mediated by search-engine crawlers that returned ranked links. That model is now under structural pressure: generative engines synthesize many sources into a single answer, frequently resolving intent inside the chat interface without a click at all.
 
 Enterprise marketing teams are navigating the rise of conversational AI assistants that don't return a list of ten blue links. They return one answer, sometimes with citations, sometimes without. [Gartner forecasts traditional organic search volume will fall roughly 25% by 2026](https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/) as buyer intent migrates toward conversational AI interfaces. The brands synthesized into that single answer win the shortlist. Everyone else is invisible.
 
@@ -216,7 +216,7 @@ Table 3: Citation dynamics and brand behavior across six B2B-relevant verticals 
 | Fashion & Apparel | High | Lowest AI-referred conversion | Driven by ethics/sustainability narratives; lowest overlap (3 brands in ChatGPT) |
 | Digital Technology | Moderate | Highly variable by segment | Incumbents dominate (Microsoft 52.9% SoV); niche category openings remain |
 
-The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so off-site seeding and review platform presence matter more than on-page optimization.
+The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so [off-site](/tools/off-site-authority-scorecard) seeding and review platform presence matter more than on-page optimization.
 
 ## 06. How do you capture the AI-synthesised pipeline?
 

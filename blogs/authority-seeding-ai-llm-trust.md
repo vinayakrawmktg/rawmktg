@@ -39,7 +39,7 @@ Fig. 01: Signal correlation spectrum vs AI citation visibility (indexed to Unlin
 
 **Pre-trained memory and real-time retrieval.** Modern generative search engines operate on two distinct pathways: the parametric pre-training pathway (static datasets baked into model weights at training time) and the non-parametric real-time retrieval pathway (live RAG). Authority seeding must address both, with different asset types and different distribution timelines for each.
 
-To build an off-site signal stack that models trust, search leads must understand [the dual-pathway architecture of modern generative search engines](/blogs/how-rag-actually-works) as documented in the RAG technical breakdown.
+To build an [off-site](/tools/off-site-authority-scorecard) signal stack that models trust, search leads must understand [the dual-pathway architecture of modern generative search engines](/blogs/how-rag-actually-works) as documented in the RAG technical breakdown.
 
 Table 02: Dual-pathway architecture: parametric vs RAG seeding
 

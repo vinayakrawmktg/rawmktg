@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks · rawmktg. by Vinayak Ravi*
 
 
-Six data-analytics platforms, the same six-stage visibility engine, and a result that should reset how you think about authority: Domo, the lowest-authority brand here at DR 70, posts the highest aggregate AI citations, out-citing DR-88 Databricks, which blocks crawlers at the access layer. Authority and AI visibility are correlated but not the same engine, and the gap between them is where the opportunity sits.
+Six data-analytics platforms, the same six-stage visibility engine, and a result that should reset how you think about [authority](/tools/off-site-authority-scorecard): Domo, the lowest-authority brand here at DR 70, posts the highest aggregate AI citations, out-citing DR-88 Databricks, which blocks crawlers at the access layer. Authority and AI visibility are correlated but not the same engine, and the gap between them is where the opportunity sits.
 
 The divergence that drives this teardown
 

@@ -768,7 +768,7 @@ Fig. 01: Signal correlation spectrum vs AI citation visibility (indexed to Unlin
 
 **Pre-trained memory and real-time retrieval.** Modern generative search engines operate on two distinct pathways: the parametric pre-training pathway (static datasets baked into model weights at training time) and the non-parametric real-time retrieval pathway (live RAG). Authority seeding must address both, with different asset types and different distribution timelines for each.
 
-To build an off-site signal stack that models trust, search leads must understand [the dual-pathway architecture of modern generative search engines](/blogs/how-rag-actually-works) as documented in the RAG technical breakdown.
+To build an [off-site](/tools/off-site-authority-scorecard) signal stack that models trust, search leads must understand [the dual-pathway architecture of modern generative search engines](/blogs/how-rag-actually-works) as documented in the RAG technical breakdown.
 
 Table 02: Dual-pathway architecture: parametric vs RAG seeding
 
@@ -2570,7 +2570,7 @@ Works Cited
 
 ## 01. How is B2B search shifting to conversational discovery?
 
-**From crawled links to synthesised answers.** For nearly three decades, organic visibility was mediated by search-engine crawlers that returned ranked links. That model is now under structural pressure: generative engines synthesize many sources into a single answer, frequently resolving intent inside the chat interface without a click at all.
+**From [crawl](/tools/crawl-depth-retrieval-estimator)ed links to synthesised answers.** For nearly three decades, organic visibility was mediated by search-engine crawlers that returned ranked links. That model is now under structural pressure: generative engines synthesize many sources into a single answer, frequently resolving intent inside the chat interface without a click at all.
 
 Enterprise marketing teams are navigating the rise of conversational AI assistants that don't return a list of ten blue links. They return one answer, sometimes with citations, sometimes without. [Gartner forecasts traditional organic search volume will fall roughly 25% by 2026](https://emarketed.com/ai/gartner-predicts-25-percent-search-volume-drop-2026/) as buyer intent migrates toward conversational AI interfaces. The brands synthesized into that single answer win the shortlist. Everyone else is invisible.
 
@@ -2779,7 +2779,7 @@ Table 3: Citation dynamics and brand behavior across six B2B-relevant verticals 
 | Fashion & Apparel | High | Lowest AI-referred conversion | Driven by ethics/sustainability narratives; lowest overlap (3 brands in ChatGPT) |
 | Digital Technology | Moderate | Highly variable by segment | Incumbents dominate (Microsoft 52.9% SoV); niche category openings remain |
 
-The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so off-site seeding and review platform presence matter more than on-page optimization.
+The pattern beneath the numbers: in regulated sectors like financial services, high mention-source overlap means discovery and validation align, so brand authority maps almost directly to AI recommendations. In fashion, low overlap means the model discovers through community sentiment but validates through separate sources, so [off-site](/tools/off-site-authority-scorecard) seeding and review platform presence matter more than on-page optimization.
 
 ## 06. How do you capture the AI-synthesised pipeline?
 
@@ -3385,7 +3385,7 @@ TL;DR
 - 03**Robots.txt blocks the bot, not the URL.** A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a `noindex` meta tag on the page itself.
 - 04**Verify before you trust the User-Agent.** Spoofed AI [crawler](/tools/ai-platform-optimizer "AI Platform Optimization Matrix")s are common. Validate with FCrDNS or the published JSON CIDR feeds.
 
-## Which crawlers actually index your site for AI?
+## Which [crawl](/tools/crawl-depth-retrieval-estimator)ers actually index your site for AI?
 
 For most of the last twenty years, technical SEO had one rendering target. Googlebot crawled your pages, queued them through the [Web Rendering Service](https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/), executed JavaScript inside a headless Chromium fleet, and emitted a populated DOM that the indexer could read. The cost of that pipeline was Google's problem.
 
@@ -5408,7 +5408,7 @@ The teardown in 30 seconds
 
 **Near-zero payoff:** 80 organic keywords, zero citations on ChatGPT and Perplexity, organic traffic down 53% in a year.
 
-**The culprit:** a JavaScript bot-protection wall that serves every AI crawler a challenge page instead of content.
+**The culprit:** a [JavaScript bot](/tools/crawl-depth-retrieval-estimator)-protection wall that serves every AI crawler a challenge page instead of content.
 
 **The lesson:** authority you block is authority you waste. In the AI era, [crawlability](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") is the whole game.
 
@@ -5480,7 +5480,7 @@ What the AI crawlers actually get
 
 AI citations by platform - one engine carries the brand, the rest sit at zero - Source: Ahrefs Brand Radar, June 2026
 
-Of 15 tracked citations, 13 are on Grok, which leans heavily on real-time X data and third-party mentions, so it can cite a brand without crawling its site. That is exactly why it still works here. The engines that must fetch and read the live page, ChatGPT and Perplexity, return nothing. Worse, the trend is negative nearly everywhere: AI Overviews down 3, ChatGPT down 2, AI Mode down 1. The one number propping up the brand's AI presence is the one it controls least.
+Of 15 tracked citations, 13 are on Grok, which leans heavily on real-time X data and [third-party](/tools/off-site-authority-scorecard) mentions, so it can cite a brand without crawling its site. That is exactly why it still works here. The engines that must fetch and read the live page, ChatGPT and Perplexity, return nothing. Worse, the trend is negative nearly everywhere: AI Overviews down 3, ChatGPT down 2, AI Mode down 1. The one number propping up the brand's AI presence is the one it controls least.
 
 ## 04. Is Property Vista ranking for anything but its own name?
 
@@ -6906,7 +6906,7 @@ Citations & Sources
 *Source: https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks · rawmktg. by Vinayak Ravi*
 
 
-Six data-analytics platforms, the same six-stage visibility engine, and a result that should reset how you think about authority: Domo, the lowest-authority brand here at DR 70, posts the highest aggregate AI citations, out-citing DR-88 Databricks, which blocks crawlers at the access layer. Authority and AI visibility are correlated but not the same engine, and the gap between them is where the opportunity sits.
+Six data-analytics platforms, the same six-stage visibility engine, and a result that should reset how you think about [authority](/tools/off-site-authority-scorecard): Domo, the lowest-authority brand here at DR 70, posts the highest aggregate AI citations, out-citing DR-88 Databricks, which blocks crawlers at the access layer. Authority and AI visibility are correlated but not the same engine, and the gap between them is where the opportunity sits.
 
 The divergence that drives this teardown
 

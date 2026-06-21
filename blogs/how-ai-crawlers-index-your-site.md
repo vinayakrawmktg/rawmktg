@@ -12,7 +12,7 @@ TL;DR
 - 03**Robots.txt blocks the bot, not the URL.** A page disallowed in robots.txt can still appear as a bare title in ChatGPT Search. Use a `noindex` meta tag on the page itself.
 - 04**Verify before you trust the User-Agent.** Spoofed AI [crawler](/tools/ai-platform-optimizer "AI Platform Optimization Matrix")s are common. Validate with FCrDNS or the published JSON CIDR feeds.
 
-## Which crawlers actually index your site for AI?
+## Which [crawl](/tools/crawl-depth-retrieval-estimator)ers actually index your site for AI?
 
 For most of the last twenty years, technical SEO had one rendering target. Googlebot crawled your pages, queued them through the [Web Rendering Service](https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/), executed JavaScript inside a headless Chromium fleet, and emitted a populated DOM that the indexer could read. The cost of that pipeline was Google's problem.
 

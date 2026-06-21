@@ -13,7 +13,7 @@ The teardown in 30 seconds
 
 **Near-zero payoff:** 80 organic keywords, zero citations on ChatGPT and Perplexity, organic traffic down 53% in a year.
 
-**The culprit:** a JavaScript bot-protection wall that serves every AI crawler a challenge page instead of content.
+**The culprit:** a [JavaScript bot](/tools/crawl-depth-retrieval-estimator)-protection wall that serves every AI crawler a challenge page instead of content.
 
 **The lesson:** authority you block is authority you waste. In the AI era, [crawlability](/tools/geo-readiness-scorecard "GEO Readiness Scorecard") is the whole game.
 
@@ -85,7 +85,7 @@ What the AI crawlers actually get
 
 AI citations by platform - one engine carries the brand, the rest sit at zero - Source: Ahrefs Brand Radar, June 2026
 
-Of 15 tracked citations, 13 are on Grok, which leans heavily on real-time X data and third-party mentions, so it can cite a brand without crawling its site. That is exactly why it still works here. The engines that must fetch and read the live page, ChatGPT and Perplexity, return nothing. Worse, the trend is negative nearly everywhere: AI Overviews down 3, ChatGPT down 2, AI Mode down 1. The one number propping up the brand's AI presence is the one it controls least.
+Of 15 tracked citations, 13 are on Grok, which leans heavily on real-time X data and [third-party](/tools/off-site-authority-scorecard) mentions, so it can cite a brand without crawling its site. That is exactly why it still works here. The engines that must fetch and read the live page, ChatGPT and Perplexity, return nothing. Worse, the trend is negative nearly everywhere: AI Overviews down 3, ChatGPT down 2, AI Mode down 1. The one number propping up the brand's AI presence is the one it controls least.
 
 ## 04. Is Property Vista ranking for anything but its own name?
 
