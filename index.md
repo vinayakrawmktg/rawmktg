@@ -6,6 +6,7 @@
 
 ## Articles
 
+- [Winning Google Isn't Winning AI](https://rawmktg.com/blogs/winning-google-isnt-winning-ai)
 - [Why AI Cites Razorpay Over Airpay](https://rawmktg.com/blogs/why-ai-cites-razorpay-over-airpay)
 - [Why AI Cites Domo Over Databricks](https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks)
 - [The Authority Paradox of Property Vista](https://rawmktg.com/blogs/property-vista-authority-paradox)
