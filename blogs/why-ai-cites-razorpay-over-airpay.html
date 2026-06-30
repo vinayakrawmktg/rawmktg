@@ -425,11 +425,12 @@
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+(c.raw/1000000>=1?(c.raw/1000000).toFixed(2)+'M':(c.raw/1000).toFixed(0)+'K')+' monthly searches';}}}},
       scales:{x:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v>=1000000?(v/1000000)+'M':(v/1000)+'K';}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
 
-  function donutc(id,vals,colors,center,centerColor){var el=document.getElementById(id);if(!el)return;
-    new Chart(el,{type:'doughnut',data:{labels:vals.map(function(v){return v[0];}),datasets:[{data:vals.map(function(v){return v[1];}),backgroundColor:colors,borderColor:'#1A1815',borderWidth:3}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'66%',plugins:{legend:{position:'bottom',labels:{color:text,font:{family:mono,size:10},boxWidth:10,boxHeight:10,padding:12}},tooltip:{callbacks:{label:function(c){return ' '+c.label+': '+c.raw+'%';}}}}}});}
-  donutc('payBranded',[['Branded',99.6],['Non-branded',0.4]],[signal,neutral]);
-  donutc('paySpam',[['Spam-flagged',94],['Clean',6]],[signal,up]);
+  function donutc(id,vals,colors,big,small,bigColor){var el=document.getElementById(id);if(!el)return;
+    var centerPlugin={id:'center_'+id,afterDatasetsDraw:function(ch){var a=ch.chartArea;if(!a)return;var ctx=ch.ctx,x=(a.left+a.right)/2,y=(a.top+a.bottom)/2;ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=bigColor;ctx.font='700 30px '+mono;ctx.fillText(big,x,y-7);ctx.fillStyle=text;ctx.font='9px '+mono;ctx.fillText(small,x,y+15);ctx.restore();}};
+    new Chart(el,{type:'doughnut',data:{labels:vals.map(function(v){return v[0]+' '+v[1]+'%';}),datasets:[{data:vals.map(function(v){return v[1];}),backgroundColor:colors,borderColor:'#1A1815',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'66%',plugins:{legend:{position:'bottom',labels:{color:text,font:{family:mono,size:10},boxWidth:10,boxHeight:10,padding:12}},tooltip:{callbacks:{label:function(c){return ' '+c.label.replace(/ [0-9.]+%$/,'')+': '+c.raw+'%';}}}},plugins:[centerPlugin]});}
+  donutc('payBranded',[['Branded',99.6],['Non-branded',0.4]],[signal,neutral],'100%','brand-name',signal);
+  donutc('paySpam',[['Spam-flagged',94],['Clean',6]],[signal,up],'94%','spam-flagged',signal);
 })();
 </script>
 </body>
