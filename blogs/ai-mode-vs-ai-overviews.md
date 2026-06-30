@@ -175,7 +175,7 @@ After every target H2, lead with a direct, self-contained answer of [40 to 55 wo
 
 ### Lever 02 - Build off-site co-citation
 
-Participate in relevant Reddit, Quora and Stack Overflow threads, AI Mode leans on UGC for real-world reviews, so mentions in high-engagement threads convert directly into citation rate. Build YouTube guides (Gemini treats transcripts as text, so speak your brand and methodology terms clearly). And keep LinkedIn, Crunchbase, G2 and Capterra profiles detailed and current, because the Knowledge Graph and Shopping Graph use them to verify entity relationships during comparisons.
+Participate in relevant [Reddit, Quora and Stack Overflow threads](/blogs/reddit-geo-playbook), AI Mode leans on UGC for real-world reviews, so mentions in high-engagement threads convert directly into citation rate. Build YouTube guides (Gemini treats transcripts as text, so speak your brand and methodology terms clearly). And keep LinkedIn, Crunchbase, G2 and Capterra profiles detailed and current, because the Knowledge Graph and Shopping Graph use them to verify entity relationships during comparisons.
 
 ### Lever 03 - Measure the right thing
 

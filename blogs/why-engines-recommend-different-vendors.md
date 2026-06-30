@@ -101,7 +101,7 @@ Weighting of each signal in Perplexity's passage-level scoring algorithm (ALM Co
 
 ### Perplexity-Specific Tactics
 
-Perplexity's Focus Modes demand targeted content types. Academic Mode prioritises peer-reviewed research and primary data, so publish original benchmark reports or platform telemetry. Reddit and Social Modes crawl community sentiment, which requires that customer reviews on G2, LinkedIn, and Reddit consistently reference your brand's specific capabilities rather than generic praise.
+Perplexity's Focus Modes demand targeted content types. Academic Mode prioritises peer-reviewed research and primary data, so publish original benchmark reports or platform telemetry. [Reddit](/blogs/reddit-geo-playbook) and Social Modes crawl community sentiment, which requires that customer reviews on G2, LinkedIn, and Reddit consistently reference your brand's specific capabilities rather than generic praise.
 
 Partner ecosystem content is disproportionately powerful on Perplexity. PartnerStack research found that **43% of AI-generated vendor citations originate from partner ecosystem sources**, with 21% driven by active partner activity.[2](#r2) Every integration partner blog post, co-marketing asset, and ecosystem directory listing is a live Perplexity citation candidate that most growth teams are not tracking.
 

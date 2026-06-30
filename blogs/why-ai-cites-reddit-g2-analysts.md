@@ -104,7 +104,7 @@ AI training-data licensing deals (reported)
 | Axel Springer | OpenAI | $13M / year | European news, business journalism |
 | Financial Times | OpenAI | $5-10M / year | Gated macro and corporate intelligence |
 
-Crucially, these contracts are shifting from flat training fees to usage-based real-time retrieval pricing: platforms get paid when an engine accesses and displays their content to ground a live answer. That turns Reddit, G2 and elite publishers into licensed gatekeepers of factual truth. If your product isn't indexed, discussed and validated inside those partner datasets, you are structurally excluded from the retrieval context.
+Crucially, these contracts are shifting from flat training fees to usage-based real-time retrieval pricing: platforms get paid when an engine accesses and displays their content to ground a live answer. That turns [Reddit](/blogs/reddit-geo-playbook), G2 and elite publishers into licensed gatekeepers of factual truth. If your product isn't indexed, discussed and validated inside those partner datasets, you are structurally excluded from the retrieval context.
 
 ## 04. Tier 1: how do you seed G2 and the review ecosystem?
 

@@ -180,7 +180,7 @@ Deliverable: Monthly AI SOV report, hallucination log, and competitor citation s
 
 ## Technical Configuration: robots.txt and llms.txt
 
-Two configuration files form the technical handshake between your site and AI retrieval systems. Both must be correctly configured before off-site seeding begins; without them, seeded mentions may drive crawlers to a site that actively blocks them.
+Two configuration files form the technical handshake between your site and AI retrieval systems. Both must be correctly configured before [off-site seeding](/blogs/reddit-geo-playbook) begins; without them, seeded mentions may drive crawlers to a site that actively blocks them.
 
 Target robots.txt configuration for AI crawler access
 

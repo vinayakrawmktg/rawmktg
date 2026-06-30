@@ -22,6 +22,7 @@
 - [Internal Linking for AI Retrieval](https://rawmktg.com/blogs/internal-linking-for-ai-retrieval)
 - [Schema Markup in 2026: The Structured-Data Playbook Every B2B Brand Needs for AI Citations](https://rawmktg.com/blogs/schema-markup-ai-citations-2026)
 - [OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site](https://rawmktg.com/blogs/how-ai-crawlers-index-your-site)
+- [The Reddit GEO Playbook](https://rawmktg.com/blogs/reddit-geo-playbook)
 - [Why AI Cites Reddit, G2 & Analysts Over Your Website](https://rawmktg.com/blogs/why-ai-cites-reddit-g2-analysts)
 - [The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists](https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists)
 - [Hallucination-Proofing Your Brand: The Content Architecture That Stops AI Getting You Wrong](https://rawmktg.com/blogs/hallucination-proofing-your-brand)
