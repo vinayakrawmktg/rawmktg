@@ -147,7 +147,7 @@ Organization Schema JSON-LD: Gemini entity resolution foundation
 
 Gemini vs. Standalone Gemini App
 
-AI Overviews in Google Search are tightly coupled to traditional SEO signals. The standalone Gemini App applies broader weight to third-party reviews, comparison articles, and authoritative publications. On a limited budget, both tracks require attention, as they share entity signals but diverge significantly on content source preferences.
+[AI Overviews in Google Search](/blogs/ai-mode-vs-ai-overviews) are tightly coupled to traditional SEO signals. The standalone Gemini App applies broader weight to third-party reviews, comparison articles, and authoritative publications. On a limited budget, both tracks require attention, as they share entity signals but diverge significantly on content source preferences.
 
 ## 05: How should you prioritise GEO across the three engines?
 

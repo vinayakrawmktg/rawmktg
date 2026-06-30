@@ -169,7 +169,7 @@ The structural patterns are consistent across verticals. [Vertical-specific AI v
 
 Limitations & Caveats
 
-We cannot observe internal LLM retrieval mechanics directly; we infer from observed citation outcomes. Platform algorithms change: Perplexity and Google AI Mode in particular have shifted citation behavior across 2025–2026. The 90-day update cadence is a working hypothesis, not a guaranteed floor. Sample size is n = 10 pages across 8 verticals over a 90-day window; findings should be validated against your specific category and query set.
+We cannot observe internal LLM retrieval mechanics directly; we infer from observed citation outcomes. Platform algorithms change: Perplexity and [Google AI Mode](/blogs/ai-mode-vs-ai-overviews) in particular have shifted citation behavior across 2025–2026. The 90-day update cadence is a working hypothesis, not a guaranteed floor. Sample size is n = 10 pages across 8 verticals over a 90-day window; findings should be validated against your specific category and query set.
 
 References
 
