@@ -232,7 +232,7 @@ The 30-day content half-life is not a temporary phenomenon that will correct its
 
 The teams that adapt fastest are not the ones with the largest content libraries or the highest domain authority scores. They are the ones that treat content freshness as an operational system, with defined tiers, scheduled refresh cycles, measurable citation metrics, and a budget model aligned to where AI citation value actually accrues.
 
-For content strategists, that means a systematic refresh calendar that keeps revenue-adjacent pages inside the citation window, a measurement framework built around AI Citation Rate and Citation Retention Rate, and a budget reallocation toward proprietary data and technical GEO infrastructure.
+For content strategists, that means a systematic refresh calendar that keeps revenue-adjacent pages inside the citation window, a measurement framework built around AI Citation Rate and Citation Retention Rate, and a budget reallocation toward proprietary data and technical GEO infrastructure. In fast-moving categories, freshness becomes a moat: see how it reshuffles the [AI presentation-tools race](/blogs/winning-google-isnt-winning-ai).
 
 The search result page that buyers see is increasingly generated, not ranked. The brands that appear in those generated answers are the ones that will define category leadership over the next three to five years. The system to get there is manageable, measurable, and starts with a single refresh audit this week.
 

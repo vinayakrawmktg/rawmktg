@@ -114,7 +114,7 @@ Adopt an ecosystem approach, not a single profile. Maintaining verified, consist
 
 **Trigger on success milestones** (clean onboarding, a positive QBR, a resolved ticket). **Reduce friction** with direct review links. **Never incentivize**, G2 enforces strict compliance and can suspend profiles. **Integrate into core workflows** like renewal check-ins for a steady, compliant influx.
 
-Engines use G2's category mappings to retrieve the definitive competitor set for categorical prompts, so accurate mapping is a visibility lever. In March 2026, G2 expanded its taxonomy with AI-era categories including AI Search Visibility Optimization Tools and AI Search & Retrieval Infrastructure.
+Engines use G2's category mappings to retrieve the definitive competitor set for categorical prompts, so accurate mapping is a visibility lever. In March 2026, G2 expanded its taxonomy with AI-era categories including AI Search Visibility Optimization Tools and AI Search & Retrieval Infrastructure. The pull of directories and review sites shows up category by category, including the [AI presentation-tools teardown](/blogs/winning-google-isnt-winning-ai).
 
 CRM tie-in
 

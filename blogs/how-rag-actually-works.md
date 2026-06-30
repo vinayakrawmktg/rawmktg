@@ -185,7 +185,7 @@ Identify the content prospects use to form their shortlists, pricing, technical 
 
 ## Conclusion: The Physics of AI Search Have Changed
 
-The era of the ten blue links is functionally over. In its place, the Answer Economy operates by the logic of Retrieval-Augmented Generation, a five-stage pipeline that retrieves, re-ranks, and synthesises content into a verdict the buyer trusts as authoritative.
+The era of the ten blue links is functionally over. In its place, the Answer Economy operates by the logic of Retrieval-Augmented Generation, a five-stage pipeline that retrieves, re-ranks, and synthesises content into a verdict the buyer trusts as authoritative. The gap this opens is measurable: in the [AI presentation-tools teardown](/blogs/winning-google-isnt-winning-ai), the Google leader is only mid-pack inside AI answers.
 
 For B2B marketing teams, this is not a new channel to add to the mix. It is a new physics for the entire discovery layer of the buying journey. The brands that emerge as the definitive answers to their buyers' AI queries in 2026 will be the ones that compound that authority into durable competitive moats over the following years. For a live data set on how this divide plays out across a single vertical, see our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap).
 

@@ -127,7 +127,7 @@ Figure 6 - of 40 questions, how many each assistant backed with a link to a bran
 
 **The same quiet engine behind both Google rank and AI citations, and it is uneven here.** Behind both Google rankings and AI citations sits the same engine: trust signals from other websites. Links from respected sites, directory listings, reviews and press all tell engines and AI models that a tool is real and worth recommending.
 
-The established players sit inside the places buyers and AI models both look: AI tool directories, software review sites and tech media. Newer entrants often show a large raw number of linking sites, but most are low-value auto-generated or [scraper pages](/blogs/cross-border-backlinks) that add little trust. The gap that matters is not the count of links, it is the count of links from places that carry weight.
+The established players sit inside the places buyers and AI models both look: AI tool directories, software review sites and tech media, the [off-site authority stack](/blogs/why-ai-cites-reddit-g2-analysts). Newer entrants often show a large raw number of linking sites, but most are low-value auto-generated or [scraper pages](/blogs/cross-border-backlinks) that add little trust. The gap that matters is not the count of links, it is the count of links from places that carry weight.
 
 The link sources that move the needle in this category
 
@@ -164,7 +164,7 @@ tuned over time
 
 The three layers behind an AI recommendation. Training is slow but durable; live retrieval is the fastest lever; reinforcement compounds with reviews and citations.
 
-The practical reading is simple. Classic SEO has not gone away, it feeds all three layers. Fast, clearly structured, well-linked pages are what AI engines retrieve and trust. The work that earns a Google ranking is much of the same work that earns an AI citation. The difference is that AI rewards clarity and [freshness](/blogs/30-day-content-half-life-recency-ai-ranking-signal) even more, and it rewards being the obvious answer to a specific question.
+The practical reading is simple. Classic SEO has not gone away, it feeds all three layers. Fast, clearly structured, well-linked pages are what [AI engines retrieve and trust](/blogs/how-rag-actually-works). The work that earns a Google ranking is much of the same work that earns an AI citation. The difference is that AI rewards clarity and [freshness](/blogs/30-day-content-half-life-recency-ai-ranking-signal) even more, and it rewards being the obvious answer to a specific question.
 
 ## 07. Where is this heading?
 

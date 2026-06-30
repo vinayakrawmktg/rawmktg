@@ -143,7 +143,7 @@ Deconstructing high-citation pages is an exercise in pattern recognition. Implem
 
 ## §8What editorial standard separates cited pages from invisible ones?
 
-The pages that earn consistent AI citations are not the most comprehensive, the most eloquent, or the highest-ranked by traditional SEO metrics. They are the most structurally cooperative: built to be retrieved, chunked, and extracted by systems that have never been asked to appreciate good writing.
+The pages that earn consistent AI citations are not the most comprehensive, the most eloquent, or the highest-ranked by traditional SEO metrics. They are the most structurally cooperative: built to be retrieved, chunked, and extracted by systems that have never been asked to appreciate good writing. That is why fast, clearly structured pages out-cite higher-ranked rivals, as the [AI presentation-tools teardown](/blogs/winning-google-isnt-winning-ai) shows.
 
 The high-citation page finds the middle by treating every section as a citable unit: a passage that could be lifted by a language model and presented as a complete, sourced answer to a specific question. That test, applied rigorously to every section of every content asset before publication, is the simplest operational definition of AI citation best-answer page GEO content. It does not require a new technology stack. It requires a different editorial standard.
 
