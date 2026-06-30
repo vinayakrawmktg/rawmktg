@@ -590,4 +590,10 @@
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://rawmktg.com/blogs/why-ai-cites-razorpay-over-airpay</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

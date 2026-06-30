@@ -46,7 +46,7 @@ Two things are worth reading carefully here. Cashfree's lead is real and high in
 
 Fig. 2 · Share of each brand's backlinks flagged as spam by Ahrefs. A high share signals toxic or low-value links that add little genuine authority.
 
-Cashfree sits at the healthy end, with just 1.5% of its links flagged, a profile consistent with steady earned coverage over many years. Skydo, PayGlocal, Infinity and Eximpay cluster in the 9% to 17% range, normal for active link-building. Xflow is the clear outlier at around 89%.
+Cashfree sits at the healthy end, with just 1.5% of its links flagged, a profile consistent with steady earned coverage over many years. Skydo, PayGlocal, Infinity and Eximpay cluster in the 9% to 17% range, normal for active link-building. Xflow is the clear outlier at around 89%. The same spam-heavy profile recurs across Indian fintech: in our [payment-gateway teardown](/blogs/why-ai-cites-razorpay-over-airpay), about 94% of Airpay's backlinks are flagged as spam.
 
 Xflow: the spam signal
 

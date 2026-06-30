@@ -9,7 +9,7 @@ For nearly three decades, organic search visibility was governed by [Google's Pa
 
 That game is over. Modern generative engines process information through **high-dimensional semantic vector spaces** rather than static crawling of hyperlinked nodes. To a language model, a traditional hyperlink is structurally invisible. The underlying computational mechanisms of tokenisation strip raw HTML attributes and anchor tag metadata, leaving only the surrounding textual corpus for inference.
 
-The primary driver of visibility has shifted from link equity to semantic consensus. Generative search engines evaluate brand credibility by measuring the frequency, proximity, and structural context of unlinked mentions across highly trusted training datasets and real-time retrieval sources. Search programme directors who continue to optimise primarily for Domain Rating are optimising for a signal the model cannot read.
+The primary driver of visibility has shifted from link equity to semantic consensus. Generative search engines evaluate brand credibility by measuring the frequency, proximity, and structural context of unlinked mentions across highly trusted training datasets and real-time retrieval sources. Search programme directors who continue to optimise primarily for Domain Rating are optimising for a signal the model cannot read. A [payment-gateway teardown](/blogs/why-ai-cites-razorpay-over-airpay) makes the point concretely: Airpay holds a Domain Rating of 59 yet appears in just 3% of AI answers.
 
 ## How has authority shifted from link graphs to semantic networks?
 

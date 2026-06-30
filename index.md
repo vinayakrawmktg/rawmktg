@@ -6,6 +6,7 @@
 
 ## Articles
 
+- [Why AI Cites Razorpay Over Airpay](https://rawmktg.com/blogs/why-ai-cites-razorpay-over-airpay)
 - [Why AI Cites Domo Over Databricks](https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks)
 - [The Authority Paradox of Property Vista](https://rawmktg.com/blogs/property-vista-authority-paradox)
 - [What Noterro Gets Right About AI Search](https://rawmktg.com/blogs/noterro-ai-search-teardown)

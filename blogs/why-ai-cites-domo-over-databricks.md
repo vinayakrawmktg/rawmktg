@@ -106,7 +106,7 @@ Evidence: top organic keywords
 
 Attack angle, where to win
 
-Databricks taxes itself at the access layer. Where it blocks GPTBot/PerplexityBot and skips llms.txt, a fully-open competitor shipping FAQ schema over the same definitional terms can intercept the long-tail AI citations it leaves unconverted. Hard to beat on authority, easy to out-cite on hygiene.
+Databricks taxes itself at the access layer. Where it blocks GPTBot/PerplexityBot and skips llms.txt, a fully-open competitor shipping FAQ schema over the same definitional terms can intercept the long-tail AI citations it leaves unconverted. Hard to beat on authority, easy to out-cite on hygiene. The same split runs through [payments](/blogs/why-ai-cites-razorpay-over-airpay), where Razorpay and Stripe dominate AI answers while a DR-59 challenger stays invisible.
 
 ### Splunk - Authority Leader
 

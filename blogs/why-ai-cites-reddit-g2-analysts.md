@@ -27,7 +27,7 @@ Why your website stopped being enough
 
 LLMs do not evaluate authority from self-published, promotional copy. They function as consensus engines, using dense vector search and Retrieval-Augmented Generation to cross-reference your claims across a distributed web of neutral, third-party sources.
 
-If your claims about capability, pricing or category leadership exist only on your own domain, the engine treats them as biased and unverified. To be cited, your brand must be mentioned, validated and corroborated across an off-site authority stack: independent review platforms, structured knowledge bases, community discussions, and analyst reports.
+If your claims about capability, pricing or category leadership exist only on your own domain, the engine treats them as biased and unverified. To be cited, your brand must be mentioned, validated and corroborated across an off-site authority stack: independent review platforms, structured knowledge bases, community discussions, and analyst reports. The cost of skipping that stack is visible in [payments](/blogs/why-ai-cites-razorpay-over-airpay), where a challenger whose claims live mostly on its own domain appears in just 3% of AI answers.
 
 Figure 2 - the off-site authority stack for the query "best B2B SaaS tool for ops teams." Your website is the smallest signal. Source: Ahrefs Brand Radar, June 2026
 
