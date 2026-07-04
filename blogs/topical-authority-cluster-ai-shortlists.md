@@ -306,7 +306,7 @@ Compare: against organic-search baseline month over month
 
 Transitioning a B2B search program from PageRank to GEO comes down to four moves: reorganize for depth, ship machine-readable infrastructure, scale corroboration, and measure Share of Model. Brands that execute all four build a self-reinforcing position that compounds as AI search adoption grows.
 
-Transitioning a B2B search program from PageRank to GEO comes down to four concrete moves:
+Transitioning a B2B search program [from PageRank to GEO](/blogs/why-traditional-seo-is-no-longer-enough) comes down to four concrete moves:
 
 1. **Reorganize for depth.** Stop producing thin, broad articles. Every pillar opens with a direct 120-word definition, uses query-matched H2/H3 headers, and carries at least one attributed statistic and one expert quote per section.[1](#r1)
 2. **Ship machine-readable infrastructure.** Implement schemas and publish llms.txt, llms-full.txt, and Markdown mirror pages to cut crawl and token cost. Pair with IndexNow submission to Bing.[12](#r12)

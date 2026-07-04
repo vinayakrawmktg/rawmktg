@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/how-rag-actually-works · rawmktg. by Vinayak Ravi*
 
 
-Traditional SEO optimised for a ranked list of ten hyperlinks. The game was simple: rank higher, get clicked. RAG has replaced that game with something categorically different. The AI does not present a list, it presents a verdict. A single synthesised answer, built from a handful of retrieved passages, delivered with the confidence of a trusted advisor. If your content is not in those retrieved passages, you are not in the verdict.
+[Traditional SEO](/blogs/why-traditional-seo-is-no-longer-enough) optimised for a ranked list of ten hyperlinks. The game was simple: rank higher, get clicked. RAG has replaced that game with something categorically different. The AI does not present a list, it presents a verdict. A single synthesised answer, built from a handful of retrieved passages, delivered with the confidence of a trusted advisor. If your content is not in those retrieved passages, you are not in the verdict.
 
 ## What Is RAG, and Why Does It Replace Keyword Strategy?
 

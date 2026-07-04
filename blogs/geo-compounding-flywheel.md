@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/geo-compounding-flywheel · rawmktg. by Vinayak Ravi*
 
 
-A B2B buyer in 2026 no longer types "best CRM" into Google and works through ten blue links. She opens ChatGPT, describes her stack in three sentences, and accepts the synthesized recommendation it returns. By the time her sales team picks up the phone, the shortlist is set; and if your brand wasn't woven into the model's answer, you were never in the running.
+A B2B buyer in 2026 no longer types "best CRM" into Google and works through [ten blue links](/blogs/why-traditional-seo-is-no-longer-enough). She opens ChatGPT, describes her stack in three sentences, and accepts the synthesized recommendation it returns. By the time her sales team picks up the phone, the shortlist is set; and if your brand wasn't woven into the model's answer, you were never in the running.
 
 This isn't a hypothetical shift. [Industry projections indicate that traditional organic search engine volume will decline by 25% by late 2026](https://www.mersel.ai/generative-engine-optimization) as user intent moves decisively toward conversational AI interfaces. [73% of B2B procurement managers now actively use generative AI search platforms](https://www.unrealdigitalgroup.com/generative-engine-optimization-geo-b2b-marketing) - ChatGPT, Claude, and Perplexity - during initial vendor discovery, and [51% of enterprise buyers initiate research directly with a chatbot](https://www.mersel.ai/generative-engine-optimization) rather than a search engine.
 
