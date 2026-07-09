@@ -38,7 +38,7 @@ Fig. 2b: Authority vs Traffic, six HR SaaS brands · Source: Ahrefs, June 2026
 | BambooHR | 90 | 19.1K | 42.0K | 585K | $1.3M |
 | Rippling | 83 | 8.9K | 33.6K | 500K | $1.1M |
 
-ADP alone draws more organic traffic, and more traffic value ($17.9M a month), than the other five combined. Authority, in other words, is the ticket into the game, not the score. What separates these brands is what they choose to point that authority at. ADP points it at calculators. Workday points it at its own brand name. Those two choices explain most of the table above, and they are the subject of the next three findings.
+ADP alone draws more organic traffic, and more traffic value ($17.9M a month), than the other five combined. Authority, in other words, is [the ticket into the game, not the score](/blogs/authority-isnt-demand). What separates these brands is what they choose to point that authority at. ADP points it at calculators. Workday points it at its own brand name. Those two choices explain most of the table above, and they are the subject of the next three findings.
 
 ## 03. How much HR SaaS organic traffic is just branded search?
 

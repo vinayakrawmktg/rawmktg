@@ -174,7 +174,7 @@ Evidence: top organic keywords
 
 Attack angle, where to win
 
-Do not fight Domo on GEO mechanics; fight it on authority. With only DR 70 and 38% spam, a competitor with cleaner DR70+ links can out-rank it on commercial BI queries while matching its schema discipline. Its broken homepage metadata is a quick credibility wedge.
+Do not fight Domo on GEO mechanics; [fight it on authority](/blogs/authority-isnt-demand). With only DR 70 and 38% spam, a competitor with cleaner DR70+ links can out-rank it on commercial BI queries while matching its schema discipline. Its broken homepage metadata is a quick credibility wedge.
 
 ### Alteryx - Branded-Dependent
 

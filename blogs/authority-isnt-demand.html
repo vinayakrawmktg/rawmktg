@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Authority Isn't Demand: The B2B Identity Cohort Teardown &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A data-backed teardown of the B2B identity cohort (Okta, Auth0, Ping, WorkOS, Stytch, Frontegg, Descope, AWS Cognito): why an 82x traffic gap and DR-75 authority still leave Descope with almost no buyer demand, why AI tools name MojoAuth and LoginRadius over Okta, and the demand engine that turns authority into pipeline." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/authority-isnt-demand" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/authority-isnt-demand" />
+  <link rel="alternate" hreflang="en-IN" href="https://rawmktg.com/blogs/authority-isnt-demand" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/authority-isnt-demand" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/authority-isnt-demand" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/authority-isnt-demand" />
+  <meta property="og:title" content="Authority Isn&#x27;t Demand" />
+  <meta property="og:description" content="A data-backed teardown of the B2B identity cohort (Okta, Auth0, Ping, WorkOS, Stytch, Frontegg, Descope, AWS Cognito): why an 82x traffic gap and DR-75 authority still leave Descope with almost no buyer demand, why AI tools name MojoAuth and LoginRadius over Okta, and the demand engine that turns authority into pipeline." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/authority-isnt-demand-header.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Authority Isn&#x27;t Demand" />
+  <meta name="twitter:description" content="A data-backed teardown of the B2B identity cohort (Okta, Auth0, Ping, WorkOS, Stytch, Frontegg, Descope, AWS Cognito): why an 82x traffic gap and DR-75 authority still leave Descope with almost no buyer demand, why AI tools name MojoAuth and LoginRadius over Okta, and the demand engine that turns authority into pipeline." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/authority-isnt-demand-header.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Authority Isn't Demand", "description": "A data-backed teardown of the B2B identity cohort (Okta, Auth0, Ping, WorkOS, Stytch, Frontegg, Descope, AWS Cognito): why an 82x traffic gap and DR-75 authority still leave Descope with almost no buyer demand, why AI tools name MojoAuth and LoginRadius over Okta, and the demand engine that turns authority into pipeline.", "image": "https://rawmktg.com/assets/images/authority-isnt-demand-header.webp", "url": "https://rawmktg.com/blogs/authority-isnt-demand", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/authority-isnt-demand"}, "keywords": ["identity", "authentication", "Okta", "Auth0", "WorkOS", "Stytch", "Descope", "AWS Cognito", "GEO", "SEO teardown", "AI citations", "B2B SaaS"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/authority-isnt-demand"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Authority Isn't Demand", "item": "https://rawmktg.com/blogs/authority-isnt-demand"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does Descope get so little buyer traffic despite high authority?", "acceptedAnswer": {"@type": "Answer", "text": "Because authority and demand are different things. Descope carries a DR of 75, higher than Stytch (74) and Frontegg (71), but earns the least buyer traffic of the three because it never built the buyer-intent pages, category, pricing, alternatives and \"vs\" pages, that turn authority into pipeline. Nearly a third of its free visits come from one off-topic \"claude vs chatgpt\" blog post, while high-intent terms like sso and ciam bring almost none. The authority is real; the demand engine is unfinished."}}, {"@type": "Question", "name": "Which identity vendors do AI tools recommend most?", "acceptedAnswer": {"@type": "Answer", "text": "Across a 40-prompt scan of ChatGPT, Google AI, Claude and Gemini, the most-named identity vendors were MojoAuth (37), Oloid (24) and LoginRadius (22), all a fraction of Okta's size on Google, followed by ScaleKit (15), Ping Identity (14), FusionAuth and WorkOS (13 each), Stytch (12) and Okta (11). AI answers do not rank by domain authority; they reward the clearest, most structured answer to the exact question asked."}}, {"@type": "Question", "name": "How can a challenger brand beat an incumbent in AI answers?", "acceptedAnswer": {"@type": "Answer", "text": "By writing the clearest, most structured answer to the specific question a buyer asks. AI engines barely weigh domain authority when they pick who to cite, they retrieve candidate pages, rank by clarity, and quote the page that states the answer plainly. A DR-40 vendor with a disciplined library of comparison, pricing and security pages (each leading with a 40-60 word direct answer and FAQ schema) can be cited beside a DR-90 incumbent. That window is open in most B2B categories right now."}}, {"@type": "Question", "name": "What makes content 'answer-shaped' for AI?", "acceptedAnswer": {"@type": "Answer", "text": "Two moves. First, lead each key page with the buyer's question as a heading and a tight, 40-to-60 word self-contained answer the model can lift verbatim, before any narrative. Second, wrap the page in FAQ or Article schema so machines can parse the question-and-answer pairs without guessing. Together they turn a page an AI ignores into one an AI quotes with your name attached."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/authority-isnt-demand.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/authority-isnt-demand.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/authority-isnt-demand-header.webp" srcset="/assets/images/authority-isnt-demand-header-800.webp 800w, /assets/images/authority-isnt-demand-header-1200.webp 1200w, /assets/images/authority-isnt-demand-header-1600.webp 1600w, /assets/images/authority-isnt-demand-header.webp 2400w" sizes="100vw" alt="Authority Isn&#x27;t Demand - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">GEO &amp; SEO Teardown &middot; Identity</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Jul 2026</span></div>
+    <h1 class="article-headline">Authority Isn't Demand</h1>
+    <p class="article-deck">Eight identity companies, Okta to Cognito, fight for the same buyers on Google and inside AI answers. Who built a demand engine, who is renting traffic, and who is about to be re-sorted by AI search.</p>
+    <p class="article-data-note">A category teardown of eight B2B identity vendors, built from Ahrefs Site Explorer (organic, paid and backlink data, pulled 9 July 2026) and a 40-prompt AI visibility scan across ChatGPT, Google AI, Claude and Gemini. Traffic and spend figures are estimates and move over time; the pattern, not the decimal, is the point.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p class="lead">Customer identity is one of the most instructive categories in B2B software right now. It sits at the crossroads of two audiences that rarely overlap: developers who integrate authentication in an afternoon, and security and IT leaders who sign the enterprise contract. It has decades-old incumbents and venture-backed challengers fighting in the same search results, and it is being reshaped, in real time, by the <a href="/blogs/why-traditional-seo-is-no-longer-enough">shift from Google to AI answers</a>.</p>
+<p>We pulled organic, paid and backlink data for eight players on 9 July 2026, the incumbents Okta, Auth0 (now owned by Okta) and Ping Identity; the developer-first challengers Stytch, WorkOS, Frontegg and Descope; and the platform-embedded outlier, AWS Cognito, then ran a 40-question AI visibility scan across ChatGPT, Google AI, Claude and Gemini. The picture that emerges is not big versus small. It is about who has built a demand engine, who is renting traffic, and who is about to be caught out by the next platform shift.</p>
+<h2 id="scoreboard"><span class="section-num">01</span>Who wins the identity search war?</h2>
+<div class="section-answer"><strong>Okta owns authority; WorkOS owns buyer intent; Descope and Cognito have authority but almost no demand.</strong> Free visits is estimated organic traffic. Top-3 terms is the count of search terms where a site holds one of the first three positions. Traffic value is what those visits would cost through ads, a fair proxy for commercial weight.</div>
+<div class="tt-wrap"><div class="tt-label">The cohort scoreboard, monthly (Ahrefs, 9 Jul 2026)</div><table class="tt"><thead><tr><th>Company</th><th>Trust (DR)</th><th>Free visits</th><th>Top-3 terms</th><th>Traffic value</th><th>Ad spend</th></tr></thead><tbody><tr class="now-row"><td class="label">Okta [incumbent]</td><td>91</td><td>1,579,900</td><td>15,440</td><td>~$1.65M</td><td class="mute">~$133,800</td></tr><tr class="now-row"><td class="label">Auth0 [incumbent]</td><td>90</td><td>430,900</td><td>4,954</td><td>~$285,000</td><td class="mute">~$59,400</td></tr><tr class="now-row"><td class="label">Ping Identity [incumbent]</td><td>82</td><td>137,900</td><td>2,535</td><td>~$202,000</td><td class="mute">~$26,300</td></tr><tr><td class="label">Frontegg [challenger]</td><td>71</td><td>37,800</td><td>572</td><td>~$65,700</td><td class="mute">~$5,500</td></tr><tr><td class="label">Stytch [challenger]</td><td>74</td><td>37,200</td><td>410</td><td>~$22,600</td><td class="mute">$0</td></tr><tr><td class="label">WorkOS [challenger]</td><td>82</td><td>32,300</td><td>1,083</td><td>~$62,400</td><td class="mute">~$15,100</td></tr><tr><td class="label">Descope [challenger]</td><td>75</td><td>19,300</td><td>448</td><td>~$19,300</td><td class="mute">~$2,100</td></tr><tr><td class="label">AWS Cognito [embedded]</td><td>~96</td><td>17,400</td><td>72</td><td>~$17,000</td><td class="mute">$0</td></tr></tbody></table></div>
+<p>Three things jump out. The gap between incumbents and everyone else is enormous, Okta alone pulls more free traffic than the other seven combined, several times over. <a href="/blogs/why-ai-cites-domo-over-databricks">Trust score does not decide the race</a> among challengers: Descope (75) outscores Stytch (74) and Frontegg (71), yet earns the least buyer traffic of the three. And ad spend does not track with size.</p>
+<div class="chart-wrap"><canvas id="identScatter" height="320"></canvas></div><div class="chart-caption">Figure 1 - link authority (trust score) against monthly free visits, log scale. Okta and Auth0 sit top-right, strong on both. Descope and Cognito sit bottom-right: real authority, almost no buyer traffic. That quadrant is where stored potential goes to waste.</div>
+<div class="pull-quote">The clearest divide in the cohort is not big versus small. It is authority versus demand, and they are not the same thing.</div>
+<h2 id="teardown"><span class="section-num">02</span>What does each company do well, and not?</h2>
+<div class="section-answer"><strong>Auth0 owns the language; WorkOS owns buyer intent; Descope and Cognito banked authority they never converted.</strong> The cohort splits into distinct playbooks. Some own the vocabulary, some own the commercial phrases, and some have authority with no buyer-facing pages to spend it on.</div>
+<h3>Okta and Ping: the incumbents who own the shelf</h3>
+<p>Okta is the category's gravity well, 1.5 million-plus free visits a month and over 15,000 top-three terms, built over a decade across every identity topic a buyer could search. It owns the enterprise vocabulary: single sign-on, lifecycle management, zero trust. Ping plays a similar game one tier down on compliance-heavy terms. The weakness is inertia: incumbent content is broad but dated, and it ranks on accumulated authority, not because it is the clearest answer, which matters more now that AI answer engines reward the plainest answer, not the oldest, most-linked page. Okta's acquisition of Auth0 is a tell, it bought the developer demand engine it could not build organically.</p>
+<h3>Auth0: the content engine everyone should study</h3>
+<p>If you study one company here, make it Auth0: 11,000-plus ranking terms, nearly 5,000 in the top three, 430,000-plus free visits a month, all on developer education that compounds. It did not win by writing about Auth0, it won by owning the language of the category, what a JWT is, how OAuth works, what a magic link does, and built tools developers link to reflexively (nearly 34,000 referring domains from the real developer web). The move that built the moat is almost embarrassingly simple: take the concept every developer has to learn, and publish the clearest explanation on the internet.</p>
+<div class="code-wrap"><div class="code-label">The page that anchors thousands of searches</div><div class="code-block"><span class="code-lang">jwt</span><pre><span class="cm">// A JSON Web Token is three base64 parts joined by dots:</span>
+header.payload.signature
+
+<span class="cm">// Decoded payload of a login token:</span>
+{
+  <span class="st">"sub"</span>: <span class="st">"user_8f3a9c"</span>,       <span class="cm">// who the user is</span>
+  <span class="st">"iss"</span>: <span class="st">"https://auth.acme.com"</span>,  <span class="cm">// who issued it</span>
+  <span class="st">"iat"</span>: <span class="kw">1752000000</span>,           <span class="cm">// issued-at</span>
+  <span class="st">"exp"</span>: <span class="kw">1752003600</span>            <span class="cm">// expires in one hour</span>
+}</pre></div></div>
+<p>Every developer who learns the concept on Auth0's page arrives at the buying decision already inside Auth0's frame. Educational content is not a cost center, it is a moat, the <a href="/blogs/internal-linking-for-ai-retrieval">definitional library</a> that wins citations. The risk now is the same one facing all the incumbents: much of that library was built for Google's ten blue links, not for an AI box that summarizes the concept without ever sending the click.</p>
+<h3>Stytch and WorkOS: the efficient challengers</h3>
+<p>Stytch and WorkOS are the clearest proof that focus beats volume. Stytch ranks for barely 1,000 terms yet earns 37,000 free visits a month on $0 of ads. WorkOS is sharper on commercial intent: of its ~2,000 ranking terms, more than half sit in the top three, a hit rate the incumbents cannot match, and it owns buyer phrases like "sso provider" at position one.</p>
+<div class="chart-wrap"><canvas id="identTop3" height="240"></canvas></div><div class="chart-caption">Figure 2 - top-3 hit rate: the share of a site's ranking terms that reach Google's top 3. WorkOS turns a small footprint into the highest quality-of-ranking in the cohort; Descope and Frontegg rank broad but shallow.</div>
+<p>The tradeoff is ceiling: a tightly focused footprint captures buyers who already know what they want but does less to create demand among developers still learning. The strongest position would combine WorkOS-style commercial discipline with an Auth0-style education layer. Right now, no challenger has both.</p>
+<h3>Frontegg and Descope: strong products, unfinished demand engines</h3>
+<p>Both have genuinely good products and healthy authority, yet neither has converted it into buyer-facing search presence. Descope is the sharpest example of the trap, <a href="/blogs/property-vista-authority-paradox">the authority paradox</a>: a trust score of 75, higher than Stytch and Frontegg, but the least buyer traffic in the group. The reason is instructive, its single largest source of free traffic is a blog post about Claude versus ChatGPT, a topic with nothing to do with buying identity software.</p>
+<div class="chart-wrap"><canvas id="identDescope" height="210"></canvas></div><div class="chart-caption">Figure 3 - where Descope's visits actually come from. Nearly a third arrive from one off-topic "claude vs chatgpt" post; the high-intent buyer terms (sso, ciam) bring almost none.</div>
+<p>The authority is real; the buyer pages that would turn it into pipeline have not been built. This is the most common failure mode in B2B: mistaking traffic for demand, a visit from someone comparing chatbots is not a lead. Descope's paid strategy shows the same half-built pattern: it spends ~$2,100/month bidding on rival brand names with a clean "try Descope instead" message, but points those ads at a thin destination while the same terms sit wide open on free search where it ranks near zero. Conquest advertising only pays off when a strong comparison page and organic presence sit behind it.</p>
+<h3>AWS Cognito: distribution without a demand engine</h3>
+<p>Cognito ranks for ~125 terms and publishes almost no marketing content, yet still pulls 17,000 visits a month because it rides one of the highest-authority domains on the internet and shows up wherever a developer already lives inside AWS. Distribution, not marketing, does the work, until the AI scan exposes the ceiling. When buyers ask an AI tool which platform to choose, Cognito is largely absent, because it has published nothing to be cited. A distribution moat wins acquisition; it does not win preference.</p>
+<h2 id="reshuffle"><span class="section-num">03</span>How does AI search reshuffle the cohort?</h2>
+<div class="section-answer"><strong>It scrambles the Google hierarchy: AI names MojoAuth and LoginRadius over Okta, rewarding the clearest answer.</strong> The most forward-looking finding has nothing to do with Google rankings. Across 40 buyer questions on four engines, the brands the AI tools named most were not only the incumbents, smaller, sharper vendors appeared again and again, the same split behind <a href="/blogs/winning-google-isnt-winning-ai">why the Google leader is not the AI leader</a>.</div>
+<div class="chart-wrap"><canvas id="identAI" height="300"></canvas></div><div class="chart-caption">Figure 4 - brands named across the 40-prompt AI scan. MojoAuth, Oloid and LoginRadius are a fraction of Okta's size on Google, yet the AI tools recommend them more often. AI answers do not rank by domain authority.</div>
+<p>The pattern within a single brand makes the point concrete. Descope showed up in AI answers only where it had published direct, comparison-style content, and vanished everywhere else.</p>
+<div class="tt-wrap"><div class="tt-label">Descope's AI visibility by buyer question type (out of 5 prompts each)</div><table class="tt"><thead><tr><th>Buyer question type</th><th>Appeared</th><th>Why</th></tr></thead><tbody><tr><td class="label">Pricing &amp; packaging</td><td class="up">40%</td><td>Its best topic; appeared for "best passwordless login"</td></tr><tr><td class="label">Alternatives to vendors</td><td class="mid">20%</td><td>Appeared for "alternatives to Auth0"</td></tr><tr><td class="label">Implementation / setup</td><td class="mid">20%</td><td>Appeared for "integrating magic links"</td></tr><tr><td class="label">Proof &amp; credibility</td><td class="mid">20%</td><td>One review-style mention</td></tr><tr><td class="label">Comparisons (X vs Y)</td><td class="neg">0%</td><td>No compare page for AI to lift</td></tr><tr><td class="label">Security &amp; compliance</td><td class="neg">0%</td><td>A core buyer worry, absent</td></tr><tr><td class="label">Integrations / workflow fit</td><td class="neg">0%</td><td>Nothing published to cite</td></tr><tr><td class="label">Which tool to pick</td><td class="neg">0%</td><td>The final question; others named every time</td></tr></tbody></table></div>
+<h3>How an AI engine decides who to cite</h3>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Buyer asks</div><div class="pl-desc">best passwordless auth?</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Engine retrieves</div><div class="pl-desc">candidate pages, live web</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Ranks by clarity</div><div class="pl-desc">direct, answer-shaped text</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Synthesizes</div><div class="pl-desc">one answer, names a few</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Cites the brand</div><div class="pl-desc">clearest page wins</div></div></div><div class="chart-caption">Domain authority barely enters at step 3. What matters is whether your page states the answer plainly enough for the model to quote it, which is why a DR-40 vendor can beat a DR-90 incumbent in an AI answer.</div>
+<h3>What answer-shaped content actually looks like</h3>
+<p>Pages should be built to be quoted, the <a href="/blogs/anatomy-of-a-high-citation-page">anatomy of a high-citation page</a>. Two moves do most of the work. First, lead each key page with the question as a heading and a tight, 40-to-60 word direct answer the model can lift verbatim.</p>
+<div class="code-wrap"><div class="code-label">Lead with a liftable answer</div><div class="code-block"><span class="code-lang">html</span><pre><span class="kw">&lt;h2&gt;</span>What is an authentication service?<span class="kw">&lt;/h2&gt;</span>
+<span class="kw">&lt;p</span> <span class="st">class="answer"</span><span class="kw">&gt;</span>
+  An authentication service verifies that users are who they
+  claim to be, then issues a secure token their apps can trust.
+  It handles login, multi-factor, sessions, and social or SSO
+  sign-in, so teams do not build and maintain that themselves.
+<span class="kw">&lt;/p&gt;</span></pre></div></div>
+<p>Second, wrap the page in <a href="/blogs/schema-markup-ai-citations-2026">structured data</a> so machines can parse the question-and-answer pairs without guessing. A small block of FAQ schema turns an ordinary page into a clean, citable source.</p>
+<div class="code-wrap"><div class="code-label">FAQ schema makes a page citable</div><div class="code-block"><span class="code-lang">json-ld</span><pre>{
+  <span class="st">"@context"</span>: <span class="st">"https://schema.org"</span>,
+  <span class="st">"@type"</span>: <span class="st">"FAQPage"</span>,
+  <span class="st">"mainEntity"</span>: [{
+    <span class="st">"@type"</span>: <span class="st">"Question"</span>,
+    <span class="st">"name"</span>: <span class="st">"How much does a passwordless auth platform cost?"</span>,
+    <span class="st">"acceptedAnswer"</span>: {
+      <span class="st">"@type"</span>: <span class="st">"Answer"</span>,
+      <span class="st">"text"</span>: <span class="st">"Priced per monthly active user, with a free tier to ~7,500 MAUs and paid plans from ~$0.02 to $0.05 per MAU beyond that."</span>
+    }
+  }]
+}</pre></div></div>
+<div class="callout-box"><div class="callout-box-label">The strategic window</div><p>For fifteen years, domain authority protected incumbents and made challenger content a slow, uphill grind. AI answers weaken that protection. A challenger that builds a disciplined library of clear comparison, pricing and security pages can be cited next to companies fifty times its size. The brands that recognize this in 2026 will look prescient in 2028.</p></div>
+<h2 id="engine"><span class="section-num">04</span>What does the B2B demand engine look like?</h2>
+<div class="section-answer"><strong>One loop: own the language, build buyer pages, earn links, get AI-cited, and pipeline follows.</strong> Every company that wins this cohort runs some version of the same loop. The strivers are missing one or more links in it.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Own the language</div><div class="pl-desc">definitive explainers</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Build buyer pages</div><div class="pl-desc">category, pricing, vs</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Earn real links</div><div class="pl-desc">dev tools, data reports</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Get AI-cited</div><div class="pl-desc">answer-shaped pages</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Pipeline</div><div class="pl-desc">buyers in your frame</div></div></div><div class="chart-caption">Where each sits: Auth0 nails 1 and 3; WorkOS nails 2; Descope and Frontegg have the authority for 3 but skipped 2, so the engine never turns over; Cognito relies on distribution and runs none of it.</div>
+<p>If you are the challenger reading this, the sequence matters as much as the parts. Fix the foundation first, then buyer pages, then trust, and you turn authority into demand inside a single quarter.</p>
+<div class="tt-wrap"><div class="tt-label">The same engine, as a build order</div><table class="tt"><thead><tr><th>Step</th><th>Window</th><th>The work</th></tr></thead><tbody><tr><td class="label">1, Fix the foundation</td><td>Weeks 1-4</td><td>Clear the technical debt that blocks crawling and AI parsing: hidden pages, heavy assets, missing structured data, thin titles.</td></tr><tr><td class="label">2, Ship buyer pages</td><td>Weeks 2-8</td><td>Build the category, pricing, alternatives and "vs" pages rivals already rank for. The step Descope and Frontegg skipped.</td></tr><tr><td class="label">3, Make pages answer-shaped</td><td>Weeks 2-8</td><td>Lead with the question and a liftable answer, add FAQ schema, keep prose clean. This is what gets you AI-cited.</td></tr><tr><td class="label">4, Earn expertise links</td><td>Weeks 6-12</td><td>Publish one flagship data report and a developer tool worth linking to. Lifts rank, backlinks and citations at once.</td></tr><tr><td class="label">5, Measure demand, not traffic</td><td>Ongoing</td><td>Track buyer-intent rankings, AI mention rate and pipeline separately from vanity traffic. Re-run the scan quarterly.</td></tr></tbody></table></div>
+<h2 id="lessons"><span class="section-num">05</span>What are the seven lessons for any B2B company?</h2>
+<div class="section-answer"><strong>Authority is table stakes; measure buyer traffic; own the language; focus beats breadth; treat AI as a reset.</strong> Strip away the identity specifics and this cohort teaches a set of lessons that apply to any B2B company competing for demand.</div>
+<div class="tt-wrap"><div class="tt-label">Seven lessons</div><table class="tt"><thead><tr><th>#</th><th>Lesson</th><th>Why</th></tr></thead><tbody><tr><td>1</td><td class="label">Authority is table stakes, not a strategy</td><td>A strong trust score earns the right to compete, nothing more. Descope outranks peers on authority and still earns the least buyer traffic.</td></tr><tr><td>2</td><td class="label">Measure buyer traffic, not total traffic</td><td>The most dangerous number in a dashboard is a big traffic figure made of the wrong visits. Segment by intent and judge each separately.</td></tr><tr><td>3</td><td class="label">Own the language of your category</td><td>Auth0 built its position by teaching the concepts buyers search before they look for a vendor. Write the definitive page on each.</td></tr><tr><td>4</td><td class="label">Focus beats breadth on a challenger budget</td><td>WorkOS holds half its terms in the top three by targeting commercial phrases with discipline. If you cannot outspend, out-focus.</td></tr><tr><td>5</td><td class="label">Paid and organic must work as one system</td><td>Descope pays for rival-brand clicks that land on thin pages while the same terms sit unclaimed on free search. Build the page, then own it.</td></tr><tr><td>6</td><td class="label">Distribution wins acquisition, not preference</td><td>Cognito's default-in-AWS advantage carries it until the buyer starts comparing, then absence from AI answers costs the deal.</td></tr><tr><td>7</td><td class="label">Treat AI answers as a reset, and move first</td><td>AI rewards the clearest answer, not the biggest domain. A structured library written to be quoted gets cited beside far larger companies.</td></tr></tbody></table></div>
+<div class="pull-quote">Authority is earned, demand is built, and the clearest answer, not the oldest one, is what gets chosen.</div>
+<div class="callout-box"><div class="callout-box-label">The bottom line</div><p>The identity cohort is not a story about who has the most links. It is about who has turned authority into demand, and who is about to be re-sorted by AI. Okta and Auth0 built demand engines that still lead but were designed for a search era that is ending. Stytch and WorkOS prove focus and clarity can beat scale. Descope, Frontegg and Cognito each have a real asset they have not yet converted into a buyer-facing presence.</p></div>
+<div class="callout-box"><div class="callout-box-label">Method &amp; data</div><p>Organic, paid and backlink metrics from Ahrefs Site Explorer (subdomains mode), pulled 9 July 2026; AWS Cognito measured at the aws.amazon.com/cognito path, its trust score inherited from the wider Amazon domain. AI visibility from a 40-prompt scan across ChatGPT, Google AI, Claude and Gemini. Traffic and spend figures are estimates and will move over time.</p></div>
+<div class="faq-section"><div class="faq-section-label">Frequently Asked Questions</div><div class="faq-list"><div class="faq-item"><h3 class="faq-q">Why does Descope get so little buyer traffic despite high authority?</h3><p class="faq-a">Because authority and demand are different things. Descope carries a DR of 75, higher than Stytch (74) and Frontegg (71), but earns the least buyer traffic of the three because it never built the buyer-intent pages, category, pricing, alternatives and "vs" pages, that turn authority into pipeline. Nearly a third of its free visits come from one off-topic "claude vs chatgpt" blog post, while high-intent terms like sso and ciam bring almost none. The authority is real; the demand engine is unfinished.</p></div><div class="faq-item"><h3 class="faq-q">Which identity vendors do AI tools recommend most?</h3><p class="faq-a">Across a 40-prompt scan of ChatGPT, Google AI, Claude and Gemini, the most-named identity vendors were MojoAuth (37), Oloid (24) and LoginRadius (22), all a fraction of Okta's size on Google, followed by ScaleKit (15), Ping Identity (14), FusionAuth and WorkOS (13 each), Stytch (12) and Okta (11). AI answers do not rank by domain authority; they reward the clearest, most structured answer to the exact question asked.</p></div><div class="faq-item"><h3 class="faq-q">How can a challenger brand beat an incumbent in AI answers?</h3><p class="faq-a">By writing the clearest, most structured answer to the specific question a buyer asks. AI engines barely weigh domain authority when they pick who to cite, they retrieve candidate pages, rank by clarity, and quote the page that states the answer plainly. A DR-40 vendor with a disciplined library of comparison, pricing and security pages (each leading with a 40-60 word direct answer and FAQ schema) can be cited beside a DR-90 incumbent. That window is open in most B2B categories right now.</p></div><div class="faq-item"><h3 class="faq-q">What makes content 'answer-shaped' for AI?</h3><p class="faq-a">Two moves. First, lead each key page with the buyer's question as a heading and a tight, 40-to-60 word self-contained answer the model can lift verbatim, before any narrative. Second, wrap the page in FAQ or Article schema so machines can parse the question-and-answer pairs without guessing. Together they turn a page an AI ignores into one an AI quotes with your name attached.</p></div></div></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns of B2B verticals and brands, pulling AI-citation and SEO data to show exactly where the visibility gaps are. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Data source: Ahrefs Site Explorer (organic, paid, referring domains) plus a 40-prompt AI visibility scan across ChatGPT, Google AI, Claude and Gemini for eight identity vendors, captured 9 July 2026.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">82x</div><div class="stat-label">Free-traffic gap between Okta and Descope</div></div><hr class="stat-divider"><div><div class="stat-val">54%</div><div class="stat-label">Of WorkOS terms rank in Google's top 3</div></div><hr class="stat-divider"><div><div class="stat-val">5/40</div><div class="stat-label">Buyer questions where AI names Descope</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this teardown</div><ul class="toc-list"><li><a href="#scoreboard"><span class="toc-num">01</span>The scoreboard</a></li><li><a href="#teardown"><span class="toc-num">02</span>Each company, torn down</a></li><li><a href="#reshuffle"><span class="toc-num">03</span>The AI reshuffle</a></li><li><a href="#engine"><span class="toc-num">04</span>The demand engine</a></li><li><a href="#lessons"><span class="toc-num">05</span>Seven lessons</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/subscribed" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var amber='#C99A2E';
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4);
+
+  var sc=document.getElementById('identScatter');
+  if(sc){var pts=[{x:91,y:1579900,label:'Okta',c:neutral},{x:90,y:430900,label:'Auth0',c:neutral},{x:82,y:137900,label:'Ping',c:neutral},{x:82,y:32300,label:'WorkOS',c:up},{x:74,y:37200,label:'Stytch',c:up},{x:71,y:37800,label:'Frontegg',c:up},{x:75,y:19300,label:'Descope',c:signal},{x:96,y:17400,label:'Cognito',c:signal}];
+    var lp={id:'lpS',afterDatasetsDraw:function(ch){var ctx=ch.ctx;var m=ch.getDatasetMeta(0);m.data.forEach(function(pt,i){var t=pts[i].label;ctx.save();ctx.fillStyle=text;ctx.font='11px '+mono;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(t,pt.x+9,pt.y);ctx.restore();});}};
+    new Chart(sc,{type:'scatter',data:{datasets:[{data:pts,pointBackgroundColor:pts.map(function(p){return p.c;}),pointRadius:7,pointHoverRadius:9}]},
+    options:{responsive:true,maintainAspectRatio:false,layout:{padding:{right:60}},plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw.label+': DR '+c.raw.x+', '+c.raw.y.toLocaleString()+' visits';}}}},
+      scales:{x:{min:68,max:100,title:{display:true,text:'Link authority (trust score)',color:text,font:{family:mono,size:10}},ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}},y:{type:'logarithmic',title:{display:true,text:'Monthly free visits (log)',color:text,font:{family:mono,size:10}},ticks:{color:text,font:{family:mono,size:9},callback:function(v){return (v>=1e6?(v/1e6)+'M':v>=1e3?(v/1e3)+'k':v);}},grid:{color:grid}}}},plugins:[lp]});}
+
+  function hbar(id,labels,data,colors,max,suffix){var el=document.getElementById(id);if(!el)return;
+    new Chart(el,{type:'bar',data:{labels:labels,datasets:[{data:data,backgroundColor:colors,borderRadius:4,barThickness:18}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+(suffix||'');}}}},
+      scales:{x:{beginAtZero:true,max:max,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+
+  hbar('identTop3',['WorkOS','Okta','Auth0','Ping Identity','Stytch','Descope','Frontegg'],[54,48,44,41,40,25,22],
+    [up,neutral,neutral,neutral,neutral,signal,signal],60,'% of terms in top 3');
+  hbar('identDescope',['"claude vs chatgpt"','otp / jwt explainers','"authentication"','"sso" (buyer)','"ciam" (buyer)'],[6000,1300,216,20,20],
+    [signal,amber,neutral,rgba(signal,0.6),rgba(signal,0.6)],6500,' monthly visits');
+  hbar('identAI',['MojoAuth','Oloid','LoginRadius','ScaleKit','Ping Identity','FusionAuth','WorkOS','Stytch','Okta'],[37,24,22,15,14,13,13,12,11],
+    [signal,signal,signal,up,neutral,up,up,up,neutral],40,' of 40 prompts');
+})();
+</script>
+</body>
+</html>

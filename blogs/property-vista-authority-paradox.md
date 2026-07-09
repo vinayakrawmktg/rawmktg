@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/property-vista-authority-paradox · rawmktg. by Vinayak Ravi*
 
 
-Property Vista has the backlinks, the schema, and the brand authority to dominate AI search in multifamily proptech. It shows up on almost none of it. Here is what is working, what is quietly breaking, and the one lesson every B2B brand should take to heart.
+Property Vista has the backlinks, the schema, and [the brand authority](/blogs/authority-isnt-demand) to dominate AI search in multifamily proptech. It shows up on almost none of it. Here is what is working, what is quietly breaking, and the one lesson every B2B brand should take to heart.
 
 The teardown in 30 seconds
 
