@@ -38,7 +38,7 @@ Within this pipeline, structured schema markup functions as a translation layer.
 
 of all AI-cited pages contain valid schema markup, making cited pages nearly 3x more likely to have JSON-LD than non-cited pages. But the schema itself is not a direct ranking factor. It is an ingestion accuracy layer.
 
-## Does schema markup actually increase AI citations?
+## How does schema markup impact AI citations?
 
 **Not as a direct boost, but cited pages carry it far more often.** The Ahrefs study on 1,885 pages is the most rigorous empirical data available. The headline finding: schema produced no immediate, statistically significant uplift in citations for already-visible pages. But it revealed two critical indirect mechanisms that matter enormously.
 
@@ -147,7 +147,9 @@ WebPage --(isPartOf)--> WebSite [/#website]
 SoftwareApplication --(provider)--> Organization [/#organization]
 ```
 
-## JSON-LD Playbook: The Four Core B2B Schema Types
+## The four core B2B schema types: FAQPage, Article, Product, HowTo
+
+**Four schema types carry most B2B AI-citation value.** FAQPage marks up question-answer pairs, Article signals author and publish date, Product exposes pricing and features, and HowTo lays out setup steps. Article schema in particular tells engines who wrote a page and when, the author and freshness signals E-E-A-T rewards.
 
 ### 1. Article Schema
 
@@ -394,7 +396,9 @@ Perplexity prioritizes highly factual, data-rich, and cited research. To maximiz
 - Build on-page HTML comparison tables paired with matching JSON-LD Product markup
 - Include your own citations; link to primary research and authoritative data sources within body copy
 
-## Advanced Technical Infrastructure: llms.txt and Bot Governance
+## How do llms.txt and bot governance affect AI citations?
+
+**An llms.txt file is a high-priority index for AI crawlers.** Placed at your root, it points them straight at your most fact-dense pages, while bot governance in robots.txt decides which agents may read them. Together they control access: a page a crawler cannot reach or prioritise is a page it cannot cite.
 
 ### The llms.txt File Standard
 
@@ -486,7 +490,9 @@ Disallow: /admin/
 Sitemap: https://example.com/sitemap.xml
 ```
 
-## Validation: Catching Errors Before They Become Trust Violations
+## How do you validate schema before errors cost you citations?
+
+**Validate every block before it ships.** A single malformed JSON-LD property can make an engine discard the whole schema, so run each page through Google's Rich Results Test and the Schema.org validator. Silent schema errors are common and cost citations with no visible warning on the page itself.
 
 Validation tools and what they check
 
@@ -507,7 +513,9 @@ Common schema errors and their AI citation impact
 | Multiple disjointed script blocks | Schema Markup Validator | Relationship reconstruction error, confidence reduced |
 | dateModified not updated after content changes | Manual audit | Content treated as stale, deprioritized for time-sensitive queries |
 
-## Strategic Implementation Roadmap
+## What's the schema implementation roadmap?
+
+**Sequence it by intent, not by schema type.** Fix crawl access and fielded errors first, deploy FAQPage and Article schema on your highest-intent pages next, then extend to Product, HowTo and a single @graph entity block. Ship where buyers evaluate you before the long tail, so the schema lands where citations convert.
 
 Phase 1  ·  Weeks 1-2
 

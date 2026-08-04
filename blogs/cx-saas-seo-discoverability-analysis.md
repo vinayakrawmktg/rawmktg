@@ -129,7 +129,9 @@ When we analysed citation source coverage across our six companies, the results 
 
 The challengers were largely absent, not because AI models have explicitly excluded them, but because the underlying signal infrastructure that feeds AI citation decisions simply does not include them. As AI-mediated discovery grows, this gap compounds. Businesses [building GEO infrastructure today](/blogs/geo-compounding-flywheel), structured comparison content, deep review site presence, editorial mentions in AI-trusted publications, are building a moat that will be significantly more expensive to replicate in two to three years.
 
-## What the Data Tells Us About B2B SaaS Growth in 2026
+## What does the data tell us about B2B SaaS growth?
+
+**Three patterns generalise beyond CX.** Authority does not equal demand; informational traffic hides an empty consideration layer; and AI citations are the emerging moat. The brands that win pair clean technical SEO with buyer-intent content the models can lift, and most of the category has done neither.
 
 Pulling back from the specifics of the CX space, several patterns in this data generalise to B2B SaaS more broadly.
 
@@ -158,6 +160,8 @@ Based on what the data shows, here is our recommended sequence for any growth-st
 **6. Pursue niche editorial links before volume links.** One link from a CX-specialist publication, an HR analytics blog, or a UX research platform is worth more, in both SEO and GEO terms, than fifty generic directory links. Build a target list of 30–50 niche-relevant domains and develop a genuine content relationship with each one.
 
 ## Closing Thought
+
+**It is a discoverability gap, not a product gap.** The distance between category leaders and challengers in CX SaaS is not about product; whoever builds the answer-shaped, buyer-intent library first becomes the name AI recommends, regardless of who has the bigger brand or balance sheet today.
 
 The gap between category leaders and challengers in CX SaaS is not fundamentally a product gap, a funding gap, or a sales gap. In most cases, the products are comparable. The funding is real. The sales teams are capable.
 

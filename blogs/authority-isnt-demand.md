@@ -77,7 +77,7 @@ Both have genuinely good products and healthy authority, yet neither has convert
 
 Figure 3 - where Descope's visits actually come from. Nearly a third arrive from one off-topic "claude vs chatgpt" post; the high-intent buyer terms (sso, ciam) bring almost none.
 
-The authority is real; the buyer pages that would turn it into pipeline have not been built. This is the most common failure mode in B2B: mistaking traffic for demand, a visit from someone comparing chatbots is not a lead. Descope's paid strategy shows the same half-built pattern: it spends ~$2,100/month bidding on rival brand names with a clean "try Descope instead" message, but points those ads at a thin destination while the same terms sit wide open on free search where it ranks near zero. Conquest advertising only pays off when a strong comparison page and organic presence sit behind it.
+The authority is real; the buyer pages that would turn it into pipeline have not been built. This is the most common failure mode in B2B: [mistaking traffic for demand](/blogs/ranking-isnt-visibility), a visit from someone comparing chatbots is not a lead. Descope's paid strategy shows the same half-built pattern: it spends ~$2,100/month bidding on rival brand names with a clean "try Descope instead" message, but points those ads at a thin destination while the same terms sit wide open on free search where it ranks near zero. Conquest advertising only pays off when a strong comparison page and organic presence sit behind it.
 
 ### AWS Cognito: distribution without a demand engine
 

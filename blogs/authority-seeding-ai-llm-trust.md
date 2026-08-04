@@ -178,7 +178,9 @@ Deploy monitoring platforms like [AI share-of-voice tracking tools](https://www.
 
 Deliverable: Monthly AI SOV report, hallucination log, and competitor citation source analysis feeding the next seeding sprint.
 
-## Technical Configuration: robots.txt and llms.txt
+## How should you configure robots.txt and llms.txt for seeding?
+
+**They are the handshake with AI retrieval.** Admit the real-time agents you want citing you in robots.txt, and publish an llms.txt pointing them at your fact-dense pages. Get this wrong and every off-site mention you seed drives crawlers to a page they cannot read, wasting the effort.
 
 Two configuration files form the technical handshake between your site and AI retrieval systems. Both must be correctly configured before [off-site seeding](/blogs/reddit-geo-playbook) begins; without them, seeded mentions may drive crawlers to a site that actively blocks them.
 
@@ -214,7 +216,9 @@ Case Studies: https://yourdomain.com/case-studies
 Schema Templates: https://yourdomain.com/schema-templates
 ```
 
-## Strategic Recommendations for Search Programme Directors
+## What should search programme directors prioritise?
+
+**Shift budget from link volume to semantic consensus.** Index-based SEO optimised a signal the model barely reads; generative discovery rewards being mentioned, corroborated and cited across trusted third-party sources. Fund review presence, community seeding and entity consistency over another round of keyword pages.
 
 The transition from traditional index-based search to generative discovery requires search programme directors to fundamentally reallocate operational budgets and resources. Four reallocation priorities stand out from the research:
 

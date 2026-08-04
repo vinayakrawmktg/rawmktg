@@ -47,7 +47,9 @@ Agentic retrieval uses the LLM itself as a reasoning agent that decomposes the o
 
 The implication for content architecture is significant. Your pages must not just answer one question in isolation. They must interlink in a way that allows an autonomous AI agent to traverse the topic and gather a complete picture. A product page that does not link to your security documentation, compliance certifications, and relevant case studies is invisible to an agentic query about security.
 
-## The Five-Stage AI Search Pipeline Every Marketer Must Understand
+## What are the five stages of the AI search pipeline?
+
+**Query expansion, retrieval, re-ranking, synthesis, citation.** Every query fans out into sub-questions, pulls candidate passages, scores them for relevance, synthesises one answer, and credits the sources used. Your content has to survive each stage, and most pages fall out at retrieval or re-ranking, never reaching the citation.
 
 Every query submitted to ChatGPT, Perplexity, or Gemini passes through a five-stage pipeline before an answer is generated. This pipeline is the definitive filter that decides whether your content is cited or rendered invisible.
 
@@ -169,7 +171,9 @@ The supporting metrics that build toward Citation Share:
 - **Click-Through to Source (CTS):** Highly platform-dependent, Perplexity averages 15–25%, Google AIO sits at 1–3%. Understand which platform is driving which behaviour.
 - **Recency Window:** AI answers shift rapidly. A 30-day-old citation score is historical data; a 14-day window is the operational standard.
 
-## The Three-Phase GEO Action Plan for This Quarter
+## What's the three-phase GEO action plan?
+
+**Audit, then engineer passages, then build authority.** Phase one aligns crawl access, schema and entity naming; phase two rewrites priority pages into answer-first chunks with question headings; phase three earns off-site citations and measures them. Sequence it so each phase compounds the next, foundation before content before authority.
 
 Phase 1, Audit and Entity Alignment
 
@@ -184,6 +188,8 @@ Phase 3, Open the Content Wall and Build Your AI Governance Layer
 Identify the content prospects use to form their shortlists, pricing, technical specs, comparison guides, ROI frameworks, and remove all gates from these pages. A lead-gen form is a retrieval blocker: if the AI crawler cannot read your white paper, it cannot recommend your brand. Deploy an llms.txt file at your domain root and prepare an AGENTS.md file to provide operational guidance for autonomous agents. Establish a 14-day Citation Share reporting cadence to measure the compounding effect of each change. The off-site authority layer that amplifies on-page work is covered in [Authority Seeding for AI](/blogs/authority-seeding-ai-llm-trust).
 
 ## Conclusion: The Physics of AI Search Have Changed
+
+**Optimise to be the passage, not the page.** The era of ten blue links is over. The Answer Economy runs on retrieval-augmented generation, which rewards clear, chunked, well-linked passages over long authoritative documents. Win by being the block a model retrieves and quotes, not the page a human clicks.
 
 The era of the ten blue links is functionally over. In its place, the Answer Economy operates by the logic of Retrieval-Augmented Generation, a five-stage pipeline that retrieves, re-ranks, and synthesises content into a verdict the buyer trusts as authoritative. The gap this opens is measurable: in the [AI presentation-tools teardown](/blogs/winning-google-isnt-winning-ai), the Google leader is only mid-pack inside AI answers.
 

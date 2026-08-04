@@ -37,7 +37,9 @@ Figure 1 · How a page becomes an AI citation
 
 The things Noterro did right along that pipeline are not expensive, not proprietary, and not dependent on a large marketing budget. They are choices any disciplined team can copy. The things it has not yet done are equally instructive, because they show where the frontier is moving next. We will take the wins first.
 
-## Part One: What Noterro Gets Right
+## What does Noterro get right about AI search?
+
+**Breadth, built on fundamentals.** Noterro is cited across all seven AI surfaces we track, more than competitors many times its size, because it nails the basics: clean crawlable pages, structured data, an llms.txt, and real earned authority. Ask an AI about clinic or massage software and the models reach for it.
 
 ### 1. It shows up everywhere the models look
 
@@ -126,7 +128,9 @@ These are exactly the sources assistants cite when they recommend a product, so 
 
 A brilliant schema block on a site the crawlers cannot navigate is a stereo in a car with no engine. Do the unglamorous work first.
 
-## Part Two: The Gaps Worth Closing
+## What gaps should Noterro close?
+
+**Its visibility is almost entirely branded.** About 82% of traffic is people already searching "Noterro"; the non-brand comparison, pricing and alternatives pages that win new buyers are thin; roughly 29% of its backlinks are spam; and it ships no hreflang. The demand engine is only half-built.
 
 If the story stopped there, the takeaway would be simple: do the fundamentals, add schema and llms.txt, earn good links. But Noterro is interesting precisely because a company can do all of that and still leave its biggest opportunity on the table. The gaps below are not failures. They are the natural next frontier for a brand that has already won the technical race.
 
@@ -207,7 +211,9 @@ The lesson generalizes to any company selling across borders: if your product is
 
 Technical optimization makes you eligible for AI citation. Content is what gets you cited.
 
-## The Synthesis
+## What's the lesson for every B2B brand?
+
+**Foundation done, demand engine barely started.** Noterro finished the first half of the AI-search playbook, technical hygiene and authority, better than almost anyone, and hardly began the second, buyer-intent content and off-site consensus. That is the most common shape in B2B: the foundation is cheaper to build, so most brands stop once it is done.
 
 The most useful way to read Noterro is as a company that has finished the first half of the AI-search playbook better than almost anyone, with the entire second half still in front of it.
 

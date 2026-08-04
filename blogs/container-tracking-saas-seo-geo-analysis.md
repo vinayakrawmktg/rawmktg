@@ -56,6 +56,8 @@ Second: companies with higher AI citation counts had more referring links from t
 
 ## Finding 2: How concentrated is domain authority in container tracking?
 
+**Less concentrated than you'd expect.** Domain Rating runs from the high 20s to the low 70s across the peer group, a normal spread that does not predict AI visibility. Authority is not concentrated enough to explain who gets cited, so the citation winners are winning on content, not link equity.
+
 The Domain Rating spread across the peer group we analysed ran from the high 20s to the low 70s. That is not unusual for a B2B SaaS category of this age, but the trajectory data is where things get interesting.
 
 Table 2Core Organic Search Metrics, Peer Group
@@ -84,6 +86,8 @@ In a market where the top few search positions capture the majority of buyer att
 Domain Rating is not fixed. It is a function of the number and quality of unique referring domains, weighted by their own authority and topical relevance. For companies currently sitting with a DR in the 28–50 range, the path to meaningfully improving that number in 12–18 months is clear, it just requires disciplined, sustained execution on topically relevant link acquisition.
 
 ## Finding 3: Why is every container-tracking site over-indexed on informational traffic?
+
+**Because they optimised for volume, not buyers.** Nearly every site pours content into top-of-funnel informational terms and starves the comparison, pricing and integration pages buyers convert on. The traffic charts look healthy while the pages that win deals, and AI citations, barely exist.
 
 This was perhaps the most consistent finding across the analysis, and it speaks to a fundamental misunderstanding of how content strategy should work for B2B SaaS.
 
@@ -152,6 +156,8 @@ The companies in this space that have not built these pages are leaving both org
 
 ## Finding 5: Is container-tracking organic traffic geographically misaligned with the ICP?
 
+**Yes, badly.** Several companies draw most of their organic traffic from regions that are not their ideal customer, importers and consumers rather than the logistics buyers they sell to. High traffic from the wrong geography inflates totals while adding almost nothing to pipeline or AI relevance.
+
 This finding was unexpected, and it deserves more attention than it typically gets in B2B SaaS SEO discussions.
 
 Several of the companies we analysed are receiving a meaningful portion of their organic traffic from countries that do not represent their primary commercial market. We saw traffic profiles where 25–35% of visits originated from India, Pakistan, or Southeast Asia, for platforms that primarily sell to North American and European logistics companies and importers.
@@ -178,6 +184,8 @@ US % colour-coded: green ≥ 75% · amber 56–74% · red ≤ 55% · \* India & 
 Table 5. Organic traffic distribution by top geography. Source: Ahrefs Site Explorer, April 2026.
 
 ## Finding 6: Why are container-tracking referring-domain profiles structurally weak?
+
+**Because the links come from the wrong places.** Profiles lean on generic directories and low-relevance domains instead of logistics and freight media, B2B tech press and industry bodies, the sources AI engines trust here. Raw link counts look fine; the category-relevant authority that earns citations is thin.
 
 We pulled the full referring domain profiles for each company in our analysis and categorised the domains by type: logistics and freight media, B2B tech and SaaS research platforms, startup and VC ecosystem sites, job boards, PR wire services, generic tech blogs, and spam. The pattern was consistent: the referring domain profiles in this space are wide but shallow on topical relevance.
 
@@ -226,7 +234,9 @@ When we plotted 12-month traffic trends across the peer group, we saw three dist
 **The compounding effect**
 SEO is not a linear game. The company that is growing its organic traffic today is also growing its keyword coverage, its referring domain diversity, and its topical authority signals. Each of those improvements makes the next piece of content easier to rank, which attracts more links, which raises Domain Rating, which makes the next keyword easier to win.
 
-## What the Winners Are Doing Differently
+## What are the winners doing differently?
+
+**Three things, consistently.** The winners publish answer-shaped buyer-intent content (comparisons, carrier pages, integrations) instead of informational filler, earn links from logistics-relevant sources, and structure pages so AI engines can lift them. The same demand engine, pointed at the buyer rather than the browser.
 
 Drawing across all seven findings, the pattern of what separates the highest-performing players from the rest is relatively consistent:
 

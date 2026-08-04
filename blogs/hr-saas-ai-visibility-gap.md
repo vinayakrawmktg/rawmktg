@@ -78,7 +78,9 @@ These signals reinforce one another, which is why the gaps here are structural r
 
 For Rippling, the implication is concrete: closing even half the referring-domain gap to its peers would lift its authority ceiling across rankings and AI citations simultaneously. For everyone, the 17-26% spam load is a shared, immediate disavow opportunity.
 
-## What the Data Says About HR SaaS Visibility in 2026
+## What does the data say about HR SaaS visibility?
+
+**AI visibility is a present moat, not a future one.** Sage's citation lead was not won this quarter, it compounded over years of the right content, and the gap to rivals is already wide. The hierarchy is set now, and it will be expensive to overturn once the engines settle on who to cite.
 
 **AI visibility is a present moat, not a future one.** Sage's lead was not won this quarter, it was built over years of authoritative, well-cited content. The brands absent from AI answers today face a catch-up that gets more expensive every quarter the gap compounds.
 
@@ -90,7 +92,9 @@ For Rippling, the implication is concrete: closing even half the referring-domai
 
 **Links set the ceiling; everything else decides whether you hit it.** Referring-domain quality underwrites rankings and AI citations alike. Rippling's thin profile caps its upside no matter how good its content gets.
 
-## What HR SaaS Companies Should Actually Do
+## What should HR SaaS companies actually do?
+
+**Build the empty middle funnel, in order.** Fix crawl and schema first, then ship the comparison, alternatives, pricing and integration pages every brand here is missing, then earn third-party reviews and mentions. The fastest gains sit in the consideration layer buyers read right before they shortlist.
 
 Based on what the data shows, here is the sequence we would recommend for any HR or payroll platform that wants to close the discoverability gap with the category's visibility leaders.
 
@@ -102,6 +106,8 @@ Based on what the data shows, here is the sequence we would recommend for any HR
 - **Get into the sources AI trusts.** Depth of presence on G2, Capterra and editorial software media is not just referral traffic, it is the citation infrastructure that decides whether AI recommends you at all.
 
 ## Closing Thought
+
+**The moat is made of pages, not payroll.** The visibility hierarchy in HR SaaS has almost nothing to do with product quality or funding, and almost everything to do with who published answer-shaped, buyer-intent content first. That is good news for challengers: pages can be built.
 
 The visibility hierarchy in HR SaaS has almost nothing to do with product quality, funding, or even brand size. Workday is the category's most valuable brand and one of its least visible in AI search. Sage is far from the obvious leader and owns the AI answer. ADP turns the same authority everyone else has into ten times the traffic, off a handful of calculators.
 

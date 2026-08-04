@@ -87,7 +87,7 @@ Difficulty spread across category search terms (rounded)
 
 Figure 2 - category search terms each player ranks for, in the top 10 and top 3. Gamma ranks for 673 terms (349 in the top 3); Deckary just 62.
 
-Gamma's lead did not come from a single page. It came from publishing many focused, fast, clearly structured pages, each aimed at one buyer question, and earning the links to back them. That is the textbook way to win Google, and the lesson for challengers is not that Google is closed, it is that Google rewards [depth](/blogs/topical-authority-cluster-ai-shortlists), and depth takes time.
+Gamma's lead did not come from a single page. It came from publishing many focused, fast, clearly structured pages, each aimed at one buyer question, and earning the links to back them. That is the textbook way to [win Google](/blogs/ranking-isnt-visibility), and the lesson for challengers is not that Google is closed, it is that Google rewards [depth](/blogs/topical-authority-cluster-ai-shortlists), and depth takes time.
 
 The takeaway from Google
 

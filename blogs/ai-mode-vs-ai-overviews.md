@@ -7,7 +7,7 @@
 
 Google did not add AI to search. It split search into two AI products that share a query box, and they disagree about which sources deserve a citation almost nine times out of ten. For anyone doing GEO, that disagreement is the whole story: you cannot optimize for "Google AI" as a single target. There are two targets, they reward different work, they pull from different places, and a page that wins one can be invisible in the other.
 
-The first surface is [AI Overviews](#architecture): the boxed summary above the blue links. You never ask for it, it fires automatically on roughly a quarter of queries. The second is AI Mode: a separate tab you deliberately select, where search becomes a conversation that remembers what you asked three turns ago. Same box, same brand, two retrieval engines with their own logic, update cadence and citation habits. Across 730,000 paired responses, the same query produces two completely different source lists 86.3% of the time.
+The first surface is [AI Overviews](#architecture): the boxed summary above the [blue links](/blogs/why-traditional-seo-is-no-longer-enough). You never ask for it, it fires automatically on roughly a quarter of queries. The second is AI Mode: a separate tab you deliberately select, where search becomes a conversation that remembers what you asked three turns ago. Same box, same brand, two retrieval engines with their own logic, update cadence and citation habits. Across 730,000 paired responses, the same query produces two completely different source lists 86.3% of the time.
 
 ## 01. What's behind Google's two AI surfaces?
 

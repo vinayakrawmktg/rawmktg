@@ -14,6 +14,8 @@ TL;DR
 
 ## Which [crawl](/tools/crawl-depth-retrieval-estimator)ers actually index your site for AI?
 
+**Three kinds, and they behave nothing alike.** Training crawlers (GPTBot, ClaudeBot, CCBot) bulk-collect data for future models; real-time retrieval agents (OAI-SearchBot, PerplexityBot) fetch live pages the moment a user asks; and Google runs its own stack. Each obeys different rules, so one blanket robots.txt policy cannot serve all of them.
+
 For most of the last twenty years, technical SEO had one rendering target. Googlebot crawled your pages, queued them through the [Web Rendering Service](https://www.seo-kreativ.de/en/blog/javascript-seo-rendering/), executed JavaScript inside a headless Chromium fleet, and emitted a populated DOM that the indexer could read. The cost of that pipeline was Google's problem.
 
 That model does not generalise to the new wave. [OAI-SearchBot](https://developers.openai.com/api/docs/bots), [PerplexityBot](https://docs.perplexity.ai/docs/resources/perplexity-crawlers), and [CCBot](https://commoncrawl.org/ccbot) are high-velocity HTML parsers. They fetch raw markup as quickly as the network allows, extract structured text, and move on. None of them runs your bundle.js. None of them waits for hydration. **If your content depends on client-side execution to appear, it does not exist as far as these three are concerned.**
@@ -45,6 +47,8 @@ Three crawlers, one robots.txt slot each
 
 ## How does each AI crawler actually behave?
 
+**They differ on frequency, rendering and honesty.** GPTBot and CCBot pull in bulk and can eat heavy bandwidth; OAI-SearchBot and PerplexityBot fetch a few live pages per query; most execute no JavaScript, and some agents ignore robots.txt entirely. Treat each by the job it does, not by one shared label.
+
 ### OAI-SearchBot: OpenAI's citation indexer
 
 [OAI-SearchBot](https://developers.openai.com/api/docs/bots) is OpenAI's proactive retrieval bot. It exists to discover, index, and cache pages for inclusion in ChatGPT Search and Atlas. Functionally, it behaves like a traditional search spider: it prioritises well-structured semantic text that can be summarised and cited with an active link in the user-facing response.
@@ -68,6 +72,8 @@ Because those fetches represent synchronous human intent, **they generally ignor
 Fig. 02: Proactive crawl vs. user-triggered fetch
 
 ## Can AI crawlers read JavaScript-rendered content?
+
+**Mostly no.** Unlike Googlebot, which renders pages in a headless browser, most AI crawlers read only the raw HTML returned on the first request. Content injected by client-side JavaScript is invisible to them, so if your text is not in the server response, it cannot be retrieved or cited.
 
 This is the single biggest source of silent indexing failure on the modern web, and the reason a site can rank well on Google but appear nowhere in ChatGPT or Perplexity. [None of the three AI crawlers executes client-side JavaScript](https://salt.agency/blog/ai-crawlers-javascript/). They are not waiting for a hydration event. They are not running a headless Chromium. They take the bytes the server returns, parse the HTML, and move on.
 
@@ -119,6 +125,8 @@ Compatibility scored against OAI-SearchBot, PerplexityBot, CCBot
 Source: vendor docs + rawmktg. testing
 
 ## How do you tell real AI crawlers from spoofed ones?
+
+**By reverse-DNS and published IP ranges, not the user-agent string.** Anyone can forge a GPTBot label. OpenAI, Perplexity and Google publish official crawler IP lists; verify that a request's IP resolves back to the stated operator. Spoofed bots wearing a real crawler's name are common and should be rate-limited, not trusted.
 
 The User-Agent header is a string. A string can be set to anything. [Malicious scrapers, competitor monitors, and aggressive data harvesters routinely impersonate AI crawlers](https://datadome.co/bots/oai-searchbot/) to evade rate limits and security policies that grant AI bots a wide lane. If your only filter is the User-Agent string, you are giving that lane to everyone who asks for it.
 
@@ -202,7 +210,9 @@ server {
 
 Run the equivalent map for PerplexityBot using its JSON feed. For CCBot, layer FCrDNS on top, since Common Crawl's IP ranges shift more often than the OpenAI list and reverse DNS is the authoritative check.
 
-## How should you configure robots.txt and sitemaps for AI crawlers?
+## How should you set crawler directives in robots.txt and sitemaps?
+
+**Set explicit crawler directives, then keep the paths clean.** Allow the real-time retrieval agents you want citing you (OAI-SearchBot, PerplexityBot, ClaudeBot), decide separately on training crawlers, and maintain a clean XML sitemap plus an llms.txt pointing at your fact-dense pages. A stale disallow rule silently removes you from AI answers.
 
 The point of the configuration below is to express a specific policy: **[be discoverable for citation](/blogs/geo-compounding-flywheel), be invisible to training.** Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.
 
@@ -284,6 +294,8 @@ xml · /sitemap.xml
 [/llms.txt is an emerging convention](https://www.brightedge.com/resources/guide-for-ai-agents) for AI-specific discovery. Placed at the root of your domain as a plain markdown file, it gives the crawler a curated map of your highest-value pages, optimised for context-constrained parsing. Treat it as a complement to your sitemap, not a replacement for it. Adoption is not yet universal across the three crawlers, but the cost of publishing one is trivial and the upside is real. For data on what the configuration gap costs in practice, see our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap): zero of six companies had published an llms.txt, and citation rates reflected the gap.
 
 ## Which GEO optimisations actually move the needle?
+
+**Rendering access and clean structure, over volume.** Server-rendered HTML, a crawlable sitemap and llms.txt, explicit robots directives, and answer-shaped pages that state the fact in the first paragraph. A crawler that cannot read or parse your page cannot cite it, no matter how authoritative your domain is.
 
 Once the rendering, verification, and robots configuration are correct, [three secondary optimisations consistently improve citation outcomes](/blogs/schema-markup-ai-citations-2026) across all three crawlers. None of them is novel. All three are skipped by most teams because the audit signal is weak.
 

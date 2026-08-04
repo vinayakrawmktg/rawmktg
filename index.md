@@ -6,6 +6,7 @@
 
 ## Articles
 
+- [Ranking Isn't Visibility](https://rawmktg.com/blogs/ranking-isnt-visibility)
 - [Authority Isn't Demand](https://rawmktg.com/blogs/authority-isnt-demand)
 - [Winning Google Isn't Winning AI](https://rawmktg.com/blogs/winning-google-isnt-winning-ai)
 - [Why AI Cites Razorpay Over Airpay](https://rawmktg.com/blogs/why-ai-cites-razorpay-over-airpay)

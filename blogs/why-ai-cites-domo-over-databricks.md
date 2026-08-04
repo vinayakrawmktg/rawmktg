@@ -70,7 +70,7 @@ Figure 2 - aggregate AI citations across six engines. Domo and Splunk lead; Data
 
 Figure 3 - Domain Rating benchmark. Domo (signal) is the lowest-authority brand yet leads on citations, the divergence in one chart.
 
-## 03. The six engines, torn down
+## 03. How does each of the six engines score?
 
 **One forensic card per brand: how it works, what to copy, where to attack.**
 

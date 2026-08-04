@@ -48,7 +48,7 @@
     "image": "https://rawmktg.com/assets/images/anatomy-of-a-high-citation-header.webp",
     "url": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page",
     "datePublished": "2026-05-29",
-    "dateModified": "2026-05-29",
+    "dateModified": "2026-07-17",
     "author":    { "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"] },
     "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/anatomy-of-a-high-citation-page" },
@@ -535,7 +535,8 @@
     .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
     @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
       .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
-  </style>
+  .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -716,6 +717,7 @@
   <section class="prose">
     <div class="pattern-eyebrow">Pattern 01 &middot; Heading Structure</div>
     <h2><span class="n">&sect;1</span>How do you engineer headings for query fan-out?</h2>
+<div class="section-answer"><strong>Phrase each heading as the exact question a buyer would type, then answer it directly beneath.</strong> AI Mode decomposes a query into parallel sub-questions, so a page whose H2s map one-to-one onto those sub-questions hands the model a clean passage to retrieve for each, and a far higher chance of being cited.</div>
 
     <p>When a user inputs a conversational query into Perplexity or Gemini, the system does not search for pages containing those words. It decomposes the query into multiple parallel sub-queries, a mechanism Google has confirmed as "Query Fan-Out," and retrieves pages from the SERPs for each sub-query to synthesize a composite response.</p>
 
@@ -789,8 +791,9 @@
   <section class="prose">
     <div class="pattern-eyebrow">Pattern 02 &middot; Paragraph Density</div>
     <h2><span class="n">&sect;2</span>What paragraph density gets content cited?</h2>
+<div class="section-answer"><strong>Short, self-contained paragraphs win.</strong> Cited passages tend to run 40 to 90 words, one idea each, front-loaded with the claim. Dense walls of text and buried conclusions get skipped, because the retriever scores tight, extractable chunks over long prose no matter how thorough the page is.</div>
 
-    <p>If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff", long narrative introductions, repetitive keyword reinforcement, personal anecdotes, to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.</p>
+    <p>If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. <a href="/blogs/why-traditional-seo-is-no-longer-enough">Traditional SEO</a> encouraged "fluff", long narrative introductions, repetitive keyword reinforcement, personal anecdotes, to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.</p>
 
     <p>LLMs parse text looking for specific entities: verifiable concepts, numbers, named sources, and concrete definitions. If a 500-word introduction is required before a page resolves its primary question, the retrieval algorithm will skip it in favor of a 150-word block that resolves the question immediately. The signal here is "information density": the ratio of extractable entities to generic narrative filler.</p>
 
@@ -814,6 +817,7 @@
   <section class="prose">
     <div class="pattern-eyebrow">Pattern 03 &middot; Spatial Optimization</div>
     <h2><span class="n">&sect;3</span>Where on the page do AI citations come from?</h2>
+<div class="section-answer"><strong>Overwhelmingly the top.</strong> The passage that answers the query in the first third of a section is what gets lifted; attention and retrieval weight decay down the page on a power-law. Lead every section with the answer, then expand, rather than building toward a conclusion the model never reaches.</div>
 
     <p>How a page is physically structured determines where citations come from. The distribution of citations across document depth is not uniform; it follows a "ski ramp" pattern: steep at the top, decaying sharply through the middle, and trickling at the end.</p>
 
@@ -879,6 +883,7 @@
   <section class="prose">
     <div class="pattern-eyebrow">Pattern 04 &middot; Source Linking</div>
     <h2><span class="n">&sect;4</span>How do claim-level citations build trust?</h2>
+<div class="section-answer"><strong>By pairing each claim with a verifiable number, source or date.</strong> Specific, attributable statements are safer for a model to quote than vague ones, so engines prefer them. A page of concrete, sourced claims is cited far more often than one of confident but uncheckable assertions.</div>
 
     <p>Citing external, authoritative sources creates a credibility loop. When an LLM evaluates a web page, the presence of explicit, claim-level attributions acts as a TrustRank signal; it tells the algorithm the page's assertions are grounded in verifiable reality rather than marketing speculation. The Princeton team validated that the "Cite Sources" tactic applied to pages ranking fifth in standard organic produced a <strong>+115.1% visibility boost</strong> in synthesized answers.</p>
 
@@ -938,6 +943,7 @@
   <section class="prose">
     <div class="pattern-eyebrow">Pattern 05 &middot; Technical Architecture</div>
     <h2><span class="n">&sect;5</span>What role does schema play in getting cited?</h2>
+<div class="section-answer"><strong>Schema removes ambiguity.</strong> FAQPage and Article markup label your question-and-answer pairs so the model parses them without guessing, and consistent entity schema resolves who you are across the web. It does not force a citation, but it lowers the cost of quoting you, which raises the odds.</div>
 
     <p>Schema serves two distinct functions in a RAG pipeline. First, it provides direct, unrendered access to page data, exposing full Q&amp;A pairs and article metadata directly in the raw HTML payload. Second, it establishes entity clarity: a brand becomes a recognized node in the LLM's internal knowledge representation rather than floating generic text.</p>
 
@@ -1034,6 +1040,7 @@
   <section class="prose">
     <div class="pattern-eyebrow">Pattern 06 &middot; Multi-Platform Calibration</div>
     <h2><span class="n">&sect;6</span>How do platforms diverge, and why do citations have commercial value?</h2>
+<div class="section-answer"><strong>Each engine weights sources differently, so citation is won platform by platform.</strong> Perplexity favours forums, Gemini structured data, ChatGPT authority. It matters commercially because an AI citation lands at the moment of evaluation, pre-qualified: a named brand inside the answer makes the shortlist before the buyer visits a single site.</div>
 
     <p>Optimizing for citations requires understanding that different generative engines operate with distinct retrieval parameters. Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode, meaning a strategy optimized for one platform misses the majority of citations available across the full landscape. The technical reason for this, along with platform-specific playbooks for each engine, is in <a href="/blogs/why-engines-recommend-different-vendors">Why ChatGPT, Perplexity and Gemini Recommend Different Vendors</a>.</p>
 
@@ -1240,6 +1247,7 @@
 <article class="article">
   <section class="prose">
     <h2><span class="n">&sect;8</span>What editorial standard separates cited pages from invisible ones?</h2>
+<div class="section-answer"><strong>Clarity over comprehensiveness.</strong> Cited pages are the most structurally cooperative, not the longest or most eloquent: they lead with the answer, keep claims specific and sourced, and are built to be chunked and extracted by a machine that was never asked to appreciate good writing.</div>
 
     <p>The pages that earn consistent AI citations are not the most comprehensive, the most eloquent, or the highest-ranked by traditional SEO metrics. They are the most structurally cooperative: built to be retrieved, chunked, and extracted by systems that have never been asked to appreciate good writing. That is why fast, clearly structured pages out-cite higher-ranked rivals, as the <a href="/blogs/winning-google-isnt-winning-ai">AI presentation-tools teardown</a> shows.</p>
 

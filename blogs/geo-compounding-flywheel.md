@@ -243,7 +243,9 @@ A useful mental shift: stop asking "is this article good?" and start asking *"ca
 
 Because retrieval engines validate synthesized answers against the broader knowledge graph, GEO is, at its heart, an [authority-building challenge dressed up as an on-site SEO task](https://www.cracklepr.com/insights/what-is-geo-why-it-matters-b2b-tech). When ChatGPT or Perplexity encounters your brand referenced across multiple reputable external sources, it infers authority and is markedly more likely to cite you, regardless of whether those external mentions contain backlinks. The earned media loop is the engine of step 06. The full tactical playbook for this workstream is in [Authority Seeding for AI](/blogs/authority-seeding-ai-llm-trust).
 
-## 06. The Flywheel in Practice: Three B2B Case Studies
+## 06. What does the flywheel look like in practice?
+
+**The loop turning, across three B2B cases.** Original data earns AI citations, citations bring human links, links lift authority, and authority earns more citations, each turn cheaper than the last. The pattern holds across categories: brands that seed the loop early get harder to dislodge every quarter.
 
 Illustrative Scenario 01.
 Enterprise Project Management SaaS (representative profile)

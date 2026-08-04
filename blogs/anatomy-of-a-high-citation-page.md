@@ -33,6 +33,8 @@ Pattern 01 · Heading Structure
 
 ## §1How do you engineer headings for query fan-out?
 
+**Phrase each heading as the exact question a buyer would type, then answer it directly beneath.** AI Mode decomposes a query into parallel sub-questions, so a page whose H2s map one-to-one onto those sub-questions hands the model a clean passage to retrieve for each, and a far higher chance of being cited.
+
 When a user inputs a conversational query into Perplexity or Gemini, the system does not search for pages containing those words. It decomposes the query into multiple parallel sub-queries, a mechanism Google has confirmed as "Query Fan-Out," and retrieves pages from the SERPs for each sub-query to synthesize a composite response.
 
 Pages designed as Topical Authority Clusters, covering the primary query alongside several plausible fan-out sub-queries, [earn up to 161% more citations](https://threelayerapproach.com/learn/geo), with 51.2% of those pages successfully captured in final synthesized answers. The practical implication for any content architecture decision is direct: a page covering one question earns one citation opportunity. A page covering the primary question plus five related sub-queries earns six.
@@ -41,7 +43,9 @@ Pattern 02 · Paragraph Density
 
 ## §2What paragraph density gets content cited?
 
-If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. Traditional SEO encouraged "fluff", long narrative introductions, repetitive keyword reinforcement, personal anecdotes, to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.
+**Short, self-contained paragraphs win.** Cited passages tend to run 40 to 90 words, one idea each, front-loaded with the claim. Dense walls of text and buried conclusions get skipped, because the retriever scores tight, extractable chunks over long prose no matter how thorough the page is.
+
+If heading structure determines whether a page gets retrieved, paragraph density determines how much of it gets cited. [Traditional SEO](/blogs/why-traditional-seo-is-no-longer-enough) encouraged "fluff", long narrative introductions, repetitive keyword reinforcement, personal anecdotes, to satisfy arbitrary word count targets. Generative engines treat this structure as a retrieval liability.
 
 LLMs parse text looking for specific entities: verifiable concepts, numbers, named sources, and concrete definitions. If a 500-word introduction is required before a page resolves its primary question, the retrieval algorithm will skip it in favor of a 150-word block that resolves the question immediately. The signal here is "information density": the ratio of extractable entities to generic narrative filler.
 
@@ -63,6 +67,8 @@ Pattern 03 · Spatial Optimization
 
 ## §3Where on the page do AI citations come from?
 
+**Overwhelmingly the top.** The passage that answers the query in the first third of a section is what gets lifted; attention and retrieval weight decay down the page on a power-law. Lead every section with the answer, then expand, rather than building toward a conclusion the model never reaches.
+
 How a page is physically structured determines where citations come from. The distribution of citations across document depth is not uniform; it follows a "ski ramp" pattern: steep at the top, decaying sharply through the middle, and trickling at the end.
 
 There is one documented exception to the top-30% concentration: **structured FAQ blocks.** Deep-page citations (in the 60%–100% zone) are disproportionately driven by FAQ sections because each question-and-answer pair functions as a self-contained standalone answer unit. Each pair acts as a micro-article. To earn a citation from this spatial bracket, each FAQ question must be answered directly and completely within the first sentence of its answer, which reapplies the same inverted pyramid logic at the micro level.
@@ -73,6 +79,8 @@ Pattern 04 · Source Linking
 
 ## §4How do claim-level citations build trust?
 
+**By pairing each claim with a verifiable number, source or date.** Specific, attributable statements are safer for a model to quote than vague ones, so engines prefer them. A page of concrete, sourced claims is cited far more often than one of confident but uncheckable assertions.
+
 Citing external, authoritative sources creates a credibility loop. When an LLM evaluates a web page, the presence of explicit, claim-level attributions acts as a TrustRank signal; it tells the algorithm the page's assertions are grounded in verifiable reality rather than marketing speculation. The Princeton team validated that the "Cite Sources" tactic applied to pages ranking fifth in standard organic produced a **+115.1% visibility boost** in synthesized answers.
 
 The distinction between a "vague reference" and a "citation-ready claim" is precise:
@@ -80,6 +88,8 @@ The distinction between a "vague reference" and a "citation-ready claim" is prec
 Pattern 05 · Technical Architecture
 
 ## §5What role does schema play in getting cited?
+
+**Schema removes ambiguity.** FAQPage and Article markup label your question-and-answer pairs so the model parses them without guessing, and consistent entity schema resolves who you are across the web. It does not force a citation, but it lowers the cost of quoting you, which raises the odds.
 
 Schema serves two distinct functions in a RAG pipeline. First, it provides direct, unrendered access to page data, exposing full Q&A pairs and article metadata directly in the raw HTML payload. Second, it establishes entity clarity: a brand becomes a recognized node in the LLM's internal knowledge representation rather than floating generic text.
 
@@ -90,6 +100,8 @@ The recommended implementation is a single `@graph` JSON-LD block combining `Art
 Pattern 06 · Multi-Platform Calibration
 
 ## §6How do platforms diverge, and why do citations have commercial value?
+
+**Each engine weights sources differently, so citation is won platform by platform.** Perplexity favours forums, Gemini structured data, ChatGPT authority. It matters commercially because an AI citation lands at the moment of evaluation, pre-qualified: a named brand inside the answer makes the shortlist before the buyer visits a single site.
 
 Optimizing for citations requires understanding that different generative engines operate with distinct retrieval parameters. Only 10.7% of URLs and 16% of domains overlap between citations generated by Google AI Overviews and Google AI Mode, meaning a strategy optimized for one platform misses the majority of citations available across the full landscape. The technical reason for this, along with platform-specific playbooks for each engine, is in [Why ChatGPT, Perplexity and Gemini Recommend Different Vendors](/blogs/why-engines-recommend-different-vendors).
 
@@ -142,6 +154,8 @@ Deconstructing high-citation pages is an exercise in pattern recognition. Implem
 - Days 81–90Execute the first citation gap analysis: identify queries where competitors earn citations but your brand does not. [The 30-day content half-life](/blogs/30-day-content-half-life-recency-ai-ranking-signal) means pages left unrefreshed beyond 90 days lose citation eligibility regardless of structural quality. Closing topic-level gaps requires the full [topical cluster architecture](/blogs/topical-authority-cluster-ai-shortlists).
 
 ## §8What editorial standard separates cited pages from invisible ones?
+
+**Clarity over comprehensiveness.** Cited pages are the most structurally cooperative, not the longest or most eloquent: they lead with the answer, keep claims specific and sourced, and are built to be chunked and extracted by a machine that was never asked to appreciate good writing.
 
 The pages that earn consistent AI citations are not the most comprehensive, the most eloquent, or the highest-ranked by traditional SEO metrics. They are the most structurally cooperative: built to be retrieved, chunked, and extracted by systems that have never been asked to appreciate good writing. That is why fast, clearly structured pages out-cite higher-ranked rivals, as the [AI presentation-tools teardown](/blogs/winning-google-isnt-winning-ai) shows.
 
