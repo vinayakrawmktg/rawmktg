@@ -1,0 +1,18 @@
+# Files/folders Cloudflare should NOT upload as website assets.
+# The website itself (HTML, CSS, images, .md twins, sitemap, llms.txt) lives at the
+# repo root and is served normally — these are just repo/build files that are not part
+# of the site. Excluding .git fixes the "Asset too large" build error (the .git pack
+# file exceeds Cloudflare's 25 MiB asset limit).
+
+.git
+.gitignore
+.assetsignore
+node_modules
+scripts
+netlify
+netlify.toml
+requirements.txt
+MIGRATION-CLOUDFLARE.md
+*.py
+*.pyc
+__pycache__
