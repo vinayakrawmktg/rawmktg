@@ -1,0 +1,23 @@
+# Cloudflare Pages redirects (mirrors the former netlify.toml [[redirects]] blocks).
+# Cloudflare Pages reads this file natively; Netlify also honours it.
+# NOTE: the www -> apex redirect is NOT here because Pages _redirects matches on
+# path only, not hostname. Set it as a Cloudflare Redirect Rule in the dashboard
+# (see MIGRATION-CLOUDFLARE.md), or add www.rawmktg.com as a custom domain that
+# redirects to the apex.
+
+# ── Legacy /posts/:slug (Typeflow) -> new /blogs/ canonical (301) ──
+/posts/eeat-ai-signal-llm-brand-authority          /blogs/eeat-is-an-ai-signal-now                               301
+/posts/authority-seeding-ai-llm-trust              /blogs/authority-seeding-ai-llm-trust                         301
+/posts/ai-crawler-robots-txt-strategy              /blogs/how-ai-crawlers-index-your-site                        301
+/posts/geo-compounding-flywheel                    /blogs/geo-compounding-flywheel                               301
+/posts/schema-markup-structured-data-ai-citations  /blogs/schema-markup-ai-citations-2026                        301
+/posts/content-freshness-ai-search-recency         /blogs/30-day-content-half-life-recency-ai-ranking-signal     301
+/posts/india-senior-living-seo-geo-gap             /blogs/india-senior-living-ai-visibility-gap                  301
+/posts/cx-saas-seo                                 /blogs/cx-saas-seo-discoverability-analysis                   301
+/posts/rag-geo-b2b-search                          /blogs/how-rag-actually-works                                 301
+/posts/container-tracking-ai-visibility            /blogs/container-tracking-saas-seo-geo-analysis               301
+/posts/ai-search-visibility-autonomous-retail      /blogs/autonomous-retail-ai-visibility-gap                    301
+
+# ── Old uppercase /Blogs/ -> lowercase /blogs/ (301). Clean-URL serving then
+#    resolves /blogs/slug.html to /blogs/slug automatically. ──
+/Blogs/*   /blogs/:splat   301
