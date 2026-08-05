@@ -7,6 +7,9 @@
 .git
 .gitignore
 .assetsignore
+_worker.js
+wrangler.jsonc
+.wrangler
 node_modules
 scripts
 netlify

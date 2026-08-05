@@ -1,0 +1,21 @@
+{
+  // Cloudflare Worker config for the rawmktg site (static assets + newsletter endpoint).
+  // Git-connected Workers read bindings from this file, not the dashboard.
+  "name": "rawmktg",
+  "main": "_worker.js",
+  "compatibility_date": "2025-01-01",
+
+  // Serve the committed site (HTML, images, .md twins, sitemap, llms.txt) as static
+  // assets. The Worker (_worker.js) runs only for requests that don't match a file,
+  // so normal page traffic is untouched. env.ASSETS is how the Worker reads files.
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+
+  // Newsletter subscriber store. env.SUBSCRIBERS in _worker.js writes here.
+  "kv_namespaces": [
+    { "binding": "SUBSCRIBERS", "id": "7ce4dfd725fb4efe94fac5f68b12b35a" }
+  ]
+}
