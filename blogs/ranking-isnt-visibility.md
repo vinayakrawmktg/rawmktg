@@ -231,7 +231,7 @@ Almost no lending brand has done the specific, unglamorous work that wins the mo
 
 The opportunity hiding in the gap
 
-Read one way, the audit is a catalogue of problems. Read the way an ambitious marketer should, it is a map of open ground. The formula is not secret and the tools are not exotic; the scarce thing is the discipline to make the site readable, chase intent instead of volume, earn the proof that persuades both humans and machines, convert honestly, and keep the customers acquisition worked so hard to win. The brands that internalise this will not just rank. They will be the answer.
+Read one way, the audit is a catalogue of problems. Read the way an ambitious marketer should, it is a map of open ground. The formula is not secret and the tools are not exotic; the scarce thing is the discipline to make the site readable, chase intent instead of volume, the same trap that strands [payments and fintech brands](/blogs/payments-getting-found-google-ai), earn the proof that persuades both humans and machines, convert honestly, and keep the customers acquisition worked so hard to win. The brands that internalise this will not just rank. They will be the answer.
 
 Frequently Asked Questions
 

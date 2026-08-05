@@ -7,7 +7,7 @@
 
 For most of the internet's history, getting found meant ranking on Google. That game still matters. But a second game has begun, and it is reshaping how buyers in India choose a payment gateway: many no longer scroll ten blue links, they ask an assistant. ChatGPT, a Google AI Overview, Gemini or Claude replies with a short answer that names a few brands. If a brand sits inside that answer it makes the shortlist; if not, it is invisible, no matter how good the product is.
 
-To see how this plays out in payments, we used one mid-market Indian gateway, Airpay, as a lens, and compared it against the market leaders across 40 common buyer questions on four AI engines, alongside search, content and link data from June 2026. The patterns are not unique to one company; they describe the whole market.
+To see how this plays out in payments, we used one mid-market Indian gateway, Airpay, as a lens, and compared it against the market leaders across 40 common buyer questions on four AI engines, alongside search, content and link data from June 2026. The patterns are not unique to one company; they describe the whole market, the same gaps we mapped across [48 payments companies](/blogs/payments-getting-found-google-ai).
 
 ## 01. Why is getting found changing?
 

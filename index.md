@@ -6,6 +6,7 @@
 
 ## Articles
 
+- [Getting Found on Google and AI](https://rawmktg.com/blogs/payments-getting-found-google-ai)
 - [Ranking Isn't Visibility](https://rawmktg.com/blogs/ranking-isnt-visibility)
 - [Authority Isn't Demand](https://rawmktg.com/blogs/authority-isnt-demand)
 - [Winning Google Isn't Winning AI](https://rawmktg.com/blogs/winning-google-isnt-winning-ai)
