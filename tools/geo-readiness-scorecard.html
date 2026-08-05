@@ -422,7 +422,7 @@
         <h2 class="newsletter-title">Get the next article in your inbox</h2>
         <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
       </div>
-      <form class="newsletter-form" name="newsletter" method="POST" action="/subscribed" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
         <input type="hidden" name="form-name" value="newsletter" />
         <p style="display:none"><input name="bot-field" /></p>
         <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
