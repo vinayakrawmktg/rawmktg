@@ -212,3 +212,36 @@
 .tool-embed .embed-deck{font-family:var(--f-prose);font-size:14px;line-height:1.6;color:var(--ink-2);}
 .tool-embed .embed-foot{font-family:var(--f-mono);font-size:11px;color:var(--mute);margin-top:12px;}
 .tool-embed .embed-foot a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--signal);}
+
+/* ============ llms.txt tool cluster (generator / log analyzer / validator / robots) ============ */
+.toolpage .tin{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:6px;color:#fff;font-family:var(--f-mono);font-size:12.5px;padding:10px 12px;outline:none;}
+.toolpage .tin:focus{border-color:var(--signal);}
+.toolpage .tin::placeholder{color:rgba(255,255,255,.3);}
+.toolpage .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.toolpage .tbtn{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;transition:all .15s;-webkit-appearance:none;appearance:none;}
+.toolpage .tbtn:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3);}
+.toolpage .tbtn.primary{background:var(--signal);border-color:var(--signal);}
+.toolpage .tbtn.primary:hover{background:#a5350f;}
+.toolpage .tbtn.is-done{background:rgba(62,155,106,.2);border-color:var(--up);color:var(--up);}
+.toolpage .lrow{border:1px solid rgba(255,255,255,.10);border-radius:6px;padding:12px;margin-bottom:10px;background:rgba(255,255,255,.02);}
+.toolpage .lrow-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:10px;}
+.toolpage .lrow-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.toolpage .lrow-grid .full{grid-column:1 / -1;}
+.toolpage .rm-x{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:17px;line-height:1;padding:2px 7px;border-radius:4px;}
+.toolpage .rm-x:hover{color:var(--signal);background:rgba(188,63,29,.15);}
+.toolpage .opt-tag{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.55);cursor:pointer;user-select:none;}
+.toolpage .opt-tag input{accent-color:var(--signal);}
+.toolpage .codeout{position:relative;}
+.toolpage .codeout pre{white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto;}
+.toolpage .lt-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px;}
+.toolpage .lt-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:14px 16px;}
+.toolpage .lt-stat .n{font-family:var(--f-display);font-weight:700;font-size:26px;color:#fff;line-height:1;}
+.toolpage .lt-stat .n.warn{color:var(--signal);}
+.toolpage .lt-stat .n.good{color:var(--up);}
+.toolpage .lt-stat .k{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:5px;line-height:1.4;}
+.toolpage .agrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07);}
+.toolpage .agrow .an{flex:1;font-family:var(--f-mono);font-size:12px;color:#fff;}
+.toolpage .agrow .ac{font-family:var(--f-display);font-weight:700;font-size:15px;color:#fff;}
+.toolpage .agrow .as{font-family:var(--f-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;}
+.toolpage .agrow .as.blocked{background:rgba(188,63,29,.2);color:var(--signal);}
+.toolpage .agrow .as.ok{background:rgba(62,155,106,.18);color:var(--up);}

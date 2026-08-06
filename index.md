@@ -6,6 +6,7 @@
 
 ## Articles
 
+- [Does llms.txt Actually Do Anything Yet?](https://rawmktg.com/blogs/does-llms-txt-do-anything-yet)
 - [Getting Found on Google and AI](https://rawmktg.com/blogs/payments-getting-found-google-ai)
 - [Ranking Isn't Visibility](https://rawmktg.com/blogs/ranking-isnt-visibility)
 - [Authority Isn't Demand](https://rawmktg.com/blogs/authority-isnt-demand)

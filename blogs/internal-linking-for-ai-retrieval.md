@@ -271,7 +271,7 @@ The structure is strict: one H1 with the exact brand name, a blockquote summary,
 
 Figure 8 - llms.txt is widely published but rarely read. Source: Ahrefs 137K-domain study
 
-Direct crawler traffic to /llms.txt is still low, but the file is low-effort, high-upside: a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing, specs, or brand facts in generated answers.
+[Direct crawler traffic to /llms.txt is still low](/blogs/does-llms-txt-do-anything-yet), but the file is low-effort, high-upside: a machine-readable source of truth that helps prevent AI engines from misrepresenting your pricing, specs, or brand facts in generated answers.
 
 ## 07. Does GEO actually work? The evidence.
 

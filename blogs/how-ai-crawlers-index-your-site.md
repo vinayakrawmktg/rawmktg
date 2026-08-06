@@ -212,7 +212,7 @@ Run the equivalent map for PerplexityBot using its JSON feed. For CCBot, layer F
 
 ## How should you set crawler directives in robots.txt and sitemaps?
 
-**Set explicit crawler directives, then keep the paths clean.** Allow the real-time retrieval agents you want citing you (OAI-SearchBot, PerplexityBot, ClaudeBot), decide separately on training crawlers, and maintain a clean XML sitemap plus an llms.txt pointing at your fact-dense pages. A stale disallow rule silently removes you from AI answers.
+**Set explicit crawler directives, then keep the paths clean.** Allow the real-time retrieval agents you want citing you (OAI-SearchBot, PerplexityBot, ClaudeBot), decide separately on training crawlers, and maintain a clean XML sitemap plus [an llms.txt](/blogs/does-llms-txt-do-anything-yet) pointing at your fact-dense pages. A stale disallow rule silently removes you from AI answers.
 
 The point of the configuration below is to express a specific policy: **[be discoverable for citation](/blogs/geo-compounding-flywheel), be invisible to training.** Allow OAI-SearchBot and PerplexityBot full access. Disallow GPTBot, which builds OpenAI's foundation-model training set, and CCBot, which feeds downstream open-source training pipelines. Declare the sitemap once so all three of the crawlers you do allow can find it.
 
