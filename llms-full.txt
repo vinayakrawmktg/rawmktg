@@ -885,7 +885,7 @@ conversion rate multiplier for AI-referred vs. organic traffic
 
 Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual [claim](/tools/claim-anchoring-validator "Claim-Anchoring Validator")-level retrieval. Where classical search asked *"does this domain deserve to rank?"*, AI retrieval asks *"does this specific passage deserve to be cited?"*
 
-Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time [Retrieval-Augmented Generation (RAG)](/blogs/how-rag-actually-works) frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.
+Generative systems do not digest web pages as holistic narratives. They [retrieve and parse them](/blogs/how-your-page-gets-retrieved) through real-time [Retrieval-Augmented Generation (RAG)](/blogs/how-rag-actually-works) frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.
 
 This analysis deconstructs the six structural patterns shared by 10 pages that consistently earned AI citations across ChatGPT, Gemini, and Perplexity over a 90-day observation window. Each pattern is presented with the mechanism behind it, an audit framework, and an implementation checklist.
 
@@ -7229,7 +7229,7 @@ The AI-citation number deserves special mention: it is simply the share of your 
 
 In a category where the buyer now discovers you twice, pointing the traffic and authority you already have at the buyers ready to act is the whole game.
 
-Fix the leaks, build the buyer hub, and earn the trust signals that Google and the AI engines both reward. Do those three things in order and the same work pays off twice, once in classic search, once in the AI answer. The same pattern shows up in every category we audit, [ranking is not the same as visibility](/blogs/ranking-isnt-visibility), and payments is no exception.
+Fix the leaks, build the buyer hub, and earn the trust signals that Google and the AI engines both reward. Do those three things in order and the same work pays off twice, once in classic search, once in the AI answer. The same pattern shows up in every category we audit, from [autonomous retail](/blogs/autonomous-retail-ai-visibility-gap) and [container tracking](/blogs/container-tracking-saas-seo-geo-analysis) to [CX platforms](/blogs/cx-saas-seo-discoverability-analysis), [senior living](/blogs/india-senior-living-ai-visibility-gap), and [allied-health software](/blogs/noterro-ai-search-teardown), [ranking is not the same as visibility](/blogs/ranking-isnt-visibility), and payments is no exception.
 
 Frequently Asked Questions
 
@@ -11325,7 +11325,7 @@ Figure 6 - of 40 questions, how many each assistant backed with a link to a bran
 
 ## 05. What about links and trust (the authority layer)?
 
-**The same quiet engine behind both Google rank and AI citations, and it is uneven here.** Behind both Google rankings and AI citations sits the same engine: trust signals from other websites. Links from respected sites, directory listings, reviews and press all tell engines and AI models that a tool is real and worth recommending.
+**The same quiet engine behind both Google rank and AI citations, and it is uneven here.** Behind both Google rankings and AI citations sits the same engine: trust signals from other websites. Links from respected sites, directory listings, reviews and press all tell engines and AI models that a tool is real and [worth recommending](/blogs/rlhf-and-your-brand).
 
 The established players sit inside the places buyers and AI models both look: AI tool directories, software review sites and tech media, the [off-site authority stack](/blogs/why-ai-cites-reddit-g2-analysts). Newer entrants often show a large raw number of linking sites, but most are low-value auto-generated or [scraper pages](/blogs/cross-border-backlinks) that add little trust. The gap that matters is not the count of links, it is the count of links from places that carry weight.
 

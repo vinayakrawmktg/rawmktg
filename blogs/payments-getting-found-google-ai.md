@@ -233,7 +233,7 @@ The AI-citation number deserves special mention: it is simply the share of your 
 
 In a category where the buyer now discovers you twice, pointing the traffic and authority you already have at the buyers ready to act is the whole game.
 
-Fix the leaks, build the buyer hub, and earn the trust signals that Google and the AI engines both reward. Do those three things in order and the same work pays off twice, once in classic search, once in the AI answer. The same pattern shows up in every category we audit, [ranking is not the same as visibility](/blogs/ranking-isnt-visibility), and payments is no exception.
+Fix the leaks, build the buyer hub, and earn the trust signals that Google and the AI engines both reward. Do those three things in order and the same work pays off twice, once in classic search, once in the AI answer. The same pattern shows up in every category we audit, from [autonomous retail](/blogs/autonomous-retail-ai-visibility-gap) and [container tracking](/blogs/container-tracking-saas-seo-geo-analysis) to [CX platforms](/blogs/cx-saas-seo-discoverability-analysis), [senior living](/blogs/india-senior-living-ai-visibility-gap), and [allied-health software](/blogs/noterro-ai-search-teardown), [ranking is not the same as visibility](/blogs/ranking-isnt-visibility), and payments is no exception.
 
 Frequently Asked Questions
 

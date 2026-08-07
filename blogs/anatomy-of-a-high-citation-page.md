@@ -25,7 +25,7 @@ conversion rate multiplier for AI-referred vs. organic traffic
 
 Traditional SEO optimized for domain-level link equity. Generative engine optimization requires something different: optimizing for individual [claim](/tools/claim-anchoring-validator "Claim-Anchoring Validator")-level retrieval. Where classical search asked *"does this domain deserve to rank?"*, AI retrieval asks *"does this specific passage deserve to be cited?"*
 
-Generative systems do not digest web pages as holistic narratives. They retrieve and parse them through real-time [Retrieval-Augmented Generation (RAG)](/blogs/how-rag-actually-works) frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.
+Generative systems do not digest web pages as holistic narratives. They [retrieve and parse them](/blogs/how-your-page-gets-retrieved) through real-time [Retrieval-Augmented Generation (RAG)](/blogs/how-rag-actually-works) frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.
 
 This analysis deconstructs the six structural patterns shared by 10 pages that consistently earned AI citations across ChatGPT, Gemini, and Perplexity over a 90-day observation window. Each pattern is presented with the mechanism behind it, an audit framework, and an implementation checklist.
 

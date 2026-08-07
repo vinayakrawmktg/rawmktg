@@ -125,7 +125,7 @@ Figure 6 - of 40 questions, how many each assistant backed with a link to a bran
 
 ## 05. What about links and trust (the authority layer)?
 
-**The same quiet engine behind both Google rank and AI citations, and it is uneven here.** Behind both Google rankings and AI citations sits the same engine: trust signals from other websites. Links from respected sites, directory listings, reviews and press all tell engines and AI models that a tool is real and worth recommending.
+**The same quiet engine behind both Google rank and AI citations, and it is uneven here.** Behind both Google rankings and AI citations sits the same engine: trust signals from other websites. Links from respected sites, directory listings, reviews and press all tell engines and AI models that a tool is real and [worth recommending](/blogs/rlhf-and-your-brand).
 
 The established players sit inside the places buyers and AI models both look: AI tool directories, software review sites and tech media, the [off-site authority stack](/blogs/why-ai-cites-reddit-g2-analysts). Newer entrants often show a large raw number of linking sites, but most are low-value auto-generated or [scraper pages](/blogs/cross-border-backlinks) that add little trust. The gap that matters is not the count of links, it is the count of links from places that carry weight.
 
