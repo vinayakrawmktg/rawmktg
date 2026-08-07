@@ -345,7 +345,7 @@ CHARTS=r"""
   var gr=document.getElementById('entGrowth');
   if(gr){new Chart(gr,{type:'bar',data:{labels:['Entities 2012','Entities 2026','Facts 2012','Facts 2026'],datasets:[{data:[570000000,8000000000,18000000000,800000000000],backgroundColor:[neutral,signal,neutral,up],borderRadius:4,barThickness:38}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){var v=c.raw;return ' '+(v>=1e9?(v/1e9)+'B':(v/1e6)+'M');}}}},
-      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{type:'logarithmic',ticks:{color:text,font:{family:mono,size:9},callback:function(v){return v>=1e9?(v/1e9)+'B':v>=1e6?(v/1e6)+'M':v;}},grid:{color:grid}}}}});}
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{type:'logarithmic',min:100000000,max:1000000000000,ticks:{color:text,font:{family:mono,size:9},autoSkip:false,callback:function(v){var l=Math.log10(v);if(Math.abs(l-Math.round(l))>0.001)return '';return v>=1e12?'1T':v>=1e9?(v/1e9)+'B':(v/1e6)+'M';}},grid:{color:grid}}}}});}
 
   var mu=document.getElementById('entMult');
   if(mu){new Chart(mu,{type:'bar',data:{labels:['No linked entities','15+ linked entities'],datasets:[{data:[1,4.8],backgroundColor:[neutral,signal],borderRadius:4,barThickness:60}]},
