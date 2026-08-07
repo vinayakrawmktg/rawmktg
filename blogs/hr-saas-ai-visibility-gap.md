@@ -105,7 +105,7 @@ Based on what the data shows, here is the sequence we would recommend for any HR
 - **Treat non-brand traffic as the real scoreboard.** Branded traffic flatters the dashboard. Track non-brand visits and non-brand keyword growth as the true measure of whether search is adding demand or just reflecting it.
 - **Get into the sources AI trusts.** Depth of presence on G2, Capterra and editorial software media is not just referral traffic, it is the citation infrastructure that decides whether AI recommends you at all.
 
-## Closing Thought
+## What is the takeaway?
 
 **The moat is made of pages, not payroll.** The visibility hierarchy in HR SaaS has almost nothing to do with product quality or funding, and almost everything to do with who published answer-shaped, buyer-intent content first. That is good news for challengers: pages can be built.
 

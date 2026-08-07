@@ -187,7 +187,7 @@ Phase 3, Open the Content Wall and Build Your AI Governance Layer
 
 Identify the content prospects use to form their shortlists, pricing, technical specs, comparison guides, ROI frameworks, and remove all gates from these pages. A lead-gen form is a retrieval blocker: if the AI crawler cannot read your white paper, it cannot recommend your brand. Deploy an llms.txt file at your domain root and prepare an AGENTS.md file to provide operational guidance for autonomous agents. Establish a 14-day Citation Share reporting cadence to measure the compounding effect of each change. The off-site authority layer that amplifies on-page work is covered in [Authority Seeding for AI](/blogs/authority-seeding-ai-llm-trust).
 
-## Conclusion: The Physics of AI Search Have Changed
+## What has changed about AI search?
 
 **Optimise to be the passage, not the page.** The era of ten blue links is over. The Answer Economy runs on retrieval-augmented generation, which rewards clear, chunked, well-linked passages over long authoritative documents. Win by being the block a model retrieves and quotes, not the page a human clicks.
 

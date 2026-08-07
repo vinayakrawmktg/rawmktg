@@ -174,13 +174,13 @@ Page-level citation readiness scoring framework
 | 10-14 | Low Readiness | Long-form narrative structure without logical chunking. Restructure with heading hierarchy and extract key claims into direct-answer format. |
 | Under 10 | Not Citation Ready | Subjective or narrative content lacking factual claims, data, or structure. Full rewrite or consolidation required before investing in refresh cadence. |
 
-## The 90-Day Operational Rollout Plan
+## What does the 90-day rollout plan look like?
 
 For content leaders implementing this system from scratch, a phased 90-day rollout provides enough time for crawlers to re-index refreshed pages and for citation recovery to become measurable. The three phases are Foundation, Content Optimisation, and Authority Building.
 
 Phase 1: Foundation
 
-#### Days 1-30: Make the domain maximally AI-accessible
+### Days 1-30: Make the domain maximally AI-accessible
 
 Objective: make the existing domain maximally accessible to AI crawlers and establish a measurement baseline.
 
@@ -193,7 +193,7 @@ Objective: make the existing domain maximally accessible to AI crawlers and esta
 
 Phase 2: Content Optimisation
 
-#### Days 31-60: Execute substantive on-page updates
+### Days 31-60: Execute substantive on-page updates
 
 Objective: execute substantive on-page updates across high-priority content templates.
 
@@ -205,7 +205,7 @@ Objective: execute substantive on-page updates across high-priority content temp
 
 Phase 3: Authority and Persistent Citation
 
-#### Days 61-90+: Build off-site validation
+### Days 61-90+: Build off-site validation
 
 Objective: build off-site validation and secure third-party brand mentions.
 
@@ -213,7 +213,7 @@ Objective: build off-site validation and secure third-party brand mentions.
 - Days 76-85: Participate in Reddit and community forums with factual, helpful answers that feed the UGC layers used by AI systems for corroboration
 - Days 86-90: Re-run core query set across ChatGPT, Perplexity, and Gemini; structure refresh queue for the next 90-day cycle
 
-## The Budget Model That Supports This Strategy
+## What budget model supports this strategy?
 
 The 0/50/30/20 content budget model is a response to a specific market condition: as AI-assisted generation drives the cost of producing commodity content toward zero, the marginal value of publishing another generic guide approaches zero simultaneously. Budget must shift toward content that AI systems cannot synthesise from existing sources.
 
@@ -234,7 +234,7 @@ Second, traditional ranking is no longer a protective moat. Roughly 60% of AI Ov
 
 Third, AI-referred traffic converts at a higher rate. AI-referred sessions demonstrate meaningfully higher commercial intent than sessions from traditional organic search, because buyers using AI search are typically further along in their evaluation process and searching with more specific, decision-stage queries.
 
-## The Strategic Conclusion
+## What is the strategic takeaway?
 
 The 30-day content half-life is not a temporary phenomenon that will correct itself as AI search matures. It is a structural feature of how retrieval-augmented generation works, baked into the architecture of every major platform.
 
@@ -500,7 +500,7 @@ Fig. 7: Vendor AI Visibility Action Plan (Prioritized by Effort-to-Impact Ratio)
 
 For AEC software companies at any stage, the full [GEO Foundation Audit](/blogs/geo-foundation-audit) methodology provides the structured five-step diagnostic for mapping citation gaps and building the remediation plan. The technical infrastructure layer (including [AI crawler access](/blogs/how-ai-crawlers-index-your-site), [structured schema](/blogs/schema-markup-ai-citations-2026), and llms.txt) is where every company in this segment should start, because it is the only layer with zero editorial prerequisite and immediate implementation impact.
 
-## 08. The Bottom Line
+## 08. What is the bottom line?
 
 AI visibility in the AEC software segment is nascent, concentrated, and increasingly consequential. The companies that appear when buyers ask AI for recommendations today did not get there by accident. The visibility gap between the category leaders and everyone else is real and growing, but it is not yet unbridgeable.
 
@@ -985,7 +985,7 @@ These metrics reframe the purpose of citation optimization. It is not a traffic-
 
 Implementation · 90-Day Rollout
 
-## §7The 90-day rollout: sequencing the structural changes
+## §7How do you sequence the 90-day rollout?
 
 Deconstructing high-citation pages is an exercise in pattern recognition. Implementing those patterns at scale is a sequenced operational problem. The rollout divides into three phases, each of which must be started before the next begins, since crawler propagation and index freshness signals take 4–8 weeks to stabilize.
 
@@ -2587,19 +2587,19 @@ This has a practical implication. A brand that publishes only about cross-border
 
 Shape A
 
-#### Cashfree: full-stack breadth
+### Cashfree: full-stack breadth
 
 525 clean domains, median DR 78. Strongest clusters: payment-gateway and fintech (135 domains), cross-border (49), e-commerce (43), banking (37) and software (34). Breadth reflects an API-and-integrations business with wide editorial reach.
 
 Shape B
 
-#### Specialists: deliberate adjacency
+### Specialists: deliberate adjacency
 
 Skydo spreads across cross-border (42), freelancing (20), e-commerce (13) and exports (9). PayGlocal focuses on cross-border (29), payment-gateway (18), banking (13) and news/PR (7). Two brands, two visible strategies, both clean.
 
 Shape C
 
-#### Xflow: real authority, hidden by spam
+### Xflow: real authority, hidden by spam
 
 Genuine links tightly concentrated in cross-border (164 clean domains), crypto/Web3 (59), marketing (38) and startups (28). 89.3% spam rate means this authority is largely invisible. Cleanup is a higher priority than new link acquisition.
 
@@ -2880,7 +2880,7 @@ Based on what the data shows, here is our recommended sequence for any growth-st
 
 **6. Pursue niche editorial links before volume links.** One link from a CX-specialist publication, an HR analytics blog, or a UX research platform is worth more, in both SEO and GEO terms, than fifty generic directory links. Build a target list of 30–50 niche-relevant domains and develop a genuine content relationship with each one.
 
-## Closing Thought
+## What is the takeaway?
 
 **It is a discoverability gap, not a product gap.** The distance between category leaders and challengers in CX SaaS is not about product; whoever builds the answer-shaped, buyer-intent library first becomes the name AI recommends, regardless of who has the bigger brand or balance sheet today.
 
@@ -3523,29 +3523,29 @@ In generative search, off-page authority is no longer determined by backlink vol
 - **Wikidata and Wikipedia Entity Mapping:** Establish and maintain verified listings on Wikidata. Because Wikidata serves as a primary training corpus and retrieval layer for foundational LLMs, having a structured, queryable entity record cements your brand's existence in the semantic layer of the web, making it verifiable and citable by default.
 - **PR-Driven Co-occurrence and Earned Media:** Traditional SEO link acquisition often targets cheap, low-traffic blogs. In generative search, this approach is largely ineffective. [Earned media placements drive over 90% of all AI citations](https://ziptie.dev/blog/eeat-for-ai-search/), and because LLM knowledge bases are frozen for extended periods, a single high-quality placement on a trusted platform continues to drive AI citations for 18 to 24 months post-publication.
 
-## The 90-Day Execution Framework
+## What does the 90-day execution framework look like?
 
 Translating this technical understanding into operational practice requires a structured, phased approach. The following 90-day framework builds semantic authority, optimizes on-page structure, and maximizes citation visibility across generative search engines.
 
 Phase 1: Foundation
 
-#### Weeks 1-4: Build verifiable identity infrastructure
+### Weeks 1-4: Build verifiable identity infrastructure
 
 Begin with a rigorous site-wide [E-E-A-T audit](https://ahrefs.com/blog/eeat-audit/), removing anonymous or generic "by admin" bylines and replacing them with verified author profiles that include credentials, publication history, and external links to professional profiles. Deploy comprehensive Organization and Person schema markup across your top organic pages, linking authors to third-party profiles using `sameAs` and `knowsAbout` properties. Query Google's Knowledge Graph API to verify entity recognition status for your brand and key authors. Primary metrics: schema compliance rates, Knowledge Graph entity ID verification, and branded organic search volume.
 
 Phase 2: On-Page GEO Injection
 
-#### Weeks 5-8: Restructure content for extraction
+### Weeks 5-8: Restructure content for extraction
 
 Restructure existing content into self-contained, 150-to-300-word passages that directly answer high-intent queries. Implement the GEO Holy Trinity across your highest-value pages: add authoritative outbound citations to primary sources, integrate verbatim expert quotes with explicit attribution, and convert qualitative assertions into structured, tabular statistics with year-specific data points. [Target a 30-to-40% increase in citation frequency](https://www.elementera.com/blog/generative-engine-optimization-what-geo-aeo-ai-search-paper-shows-your-business) across ChatGPT, Perplexity, and Google AI Overviews as your primary success metric.
 
 Phase 3: Authority Amplification
 
-#### Weeks 9-12: Build off-site semantic authority
+### Weeks 9-12: Build off-site semantic authority
 
 Execute [high-tier PR and earned media campaigns](/blogs/authority-seeding-ai-llm-trust) on trusted platforms to build brand mentions and semantic co-occurrence. Focus placements on mainstream news outlets, respected industry publications, and established digital communities where your target audience already has high trust. Simultaneously, monitor site-wide [topical focus](/blogs/topical-authority-cluster-ai-shortlists) by analyzing siteRadius metrics and removing or redirecting off-topic content that dilutes domain authority. Deploy automated tracking to monitor brand visibility across target generative search prompts, using citation frequency and conversion rate of AI referral visitors as your north-star metrics.
 
-## Conclusion: The Convergence of Human Judgment and Algorithmic Truth
+## So, is E-E-A-T really an AI signal now?
 
 The central insight of this analysis is that E-E-A-T has always been a proxy for a deeper truth: information is more valuable when it comes from sources with genuine knowledge, real-world experience, and verifiable credibility. For years, search engines approximated this truth through signals like backlinks and engagement metrics. Preference alignment has now encoded that approximation directly into model weights, with mathematical precision.
 
@@ -4788,7 +4788,7 @@ Standardize your brand description across G2, Capterra, LinkedIn, Crunchbase, an
 
 Optimize page rendering to achieve First Contentful Paint under 0.4 seconds: high-latency pages are bypassed by real-time AI crawlers regardless of content quality. Implement a 30-day recency cycle for high-priority pages, refreshing the `dateModified` timestamp and adding at least one new statistic, quote, or data point per refresh cycle. Run your prompt portfolio on a weekly cadence and flag any response where your brand is cited inaccurately: each hallucination is a specific content gap you can close with a targeted page edit.
 
-## Conclusion
+## What is the takeaway?
 
 The shift to generative search has changed what it means for your brand to be "findable." Being indexed by Google is no longer enough. To be accurately represented in the AI-synthesized answers that now drive enterprise vendor discovery, your content must be structured for [machine retrieval](/blogs/how-rag-actually-works), self-contained at the chunk level, and verified by a multi-source consensus of third-party mentions that all tell the same story. Building that topical depth at scale requires the [cluster architecture](/blogs/topical-authority-cluster-ai-shortlists) that signals category authority to retrieval engines.
 
@@ -5459,7 +5459,7 @@ Phase 3, Open the Content Wall and Build Your AI Governance Layer
 
 Identify the content prospects use to form their shortlists, pricing, technical specs, comparison guides, ROI frameworks, and remove all gates from these pages. A lead-gen form is a retrieval blocker: if the AI crawler cannot read your white paper, it cannot recommend your brand. Deploy an llms.txt file at your domain root and prepare an AGENTS.md file to provide operational guidance for autonomous agents. Establish a 14-day Citation Share reporting cadence to measure the compounding effect of each change. The off-site authority layer that amplifies on-page work is covered in [Authority Seeding for AI](/blogs/authority-seeding-ai-llm-trust).
 
-## Conclusion: The Physics of AI Search Have Changed
+## What has changed about AI search?
 
 **Optimise to be the passage, not the page.** The era of ten blue links is over. The Answer Economy runs on retrieval-augmented generation, which rewards clear, chunked, well-linked passages over long authoritative documents. Win by being the block a model retrieves and quotes, not the page a human clicks.
 
@@ -5959,7 +5959,7 @@ Based on what the data shows, here is the sequence we would recommend for any HR
 - **Treat non-brand traffic as the real scoreboard.** Branded traffic flatters the dashboard. Track non-brand visits and non-brand keyword growth as the true measure of whether search is adding demand or just reflecting it.
 - **Get into the sources AI trusts.** Depth of presence on G2, Capterra and editorial software media is not just referral traffic, it is the citation infrastructure that decides whether AI recommends you at all.
 
-## Closing Thought
+## What is the takeaway?
 
 **The moat is made of pages, not payroll.** The visibility hierarchy in HR SaaS has almost nothing to do with product quality or funding, and almost everything to do with who published answer-shaped, buyer-intent content first. That is good news for challengers: pages can be built.
 
@@ -7481,7 +7481,7 @@ Wire these diagnostics into a cadenced workflow so tracking data continuously fe
 
 Weekly evaluation → monthly audit → quarterly sprint keeps the stack tied to the marketing calendar.[3](#r3)
 
-## Strategic Conclusions
+## What are the strategic takeaways?
 
 Building a GEO measurement stack is not a tweak to an SEO program: it is a fundamental reconfiguration of how organizations attribute and value digital visibility.[2](#r2) With AI-sourced sessions converting at up to 4.4x organic, failing to attribute that traffic is a high-stakes risk that leads to misallocated budget and under-investment in the highest-yield channel you have.[12](#r12) Four moves to make now:
 
@@ -8754,7 +8754,7 @@ WebPage --(isPartOf)--> WebSite [/#website]
 SoftwareApplication --(provider)--> Organization [/#organization]
 ```
 
-## The four core B2B schema types: FAQPage, Article, Product, HowTo
+## What are the four core B2B schema types?
 
 **Four schema types carry most B2B AI-citation value.** FAQPage marks up question-answer pairs, Article signals author and publish date, Product exposes pricing and features, and HowTo lays out setup steps. Article schema in particular tells engines who wrote a page and when, the author and freshness signals E-E-A-T rewards.
 
@@ -9126,7 +9126,7 @@ Common schema errors and their AI citation impact
 
 Phase 1  ·  Weeks 1-2
 
-#### Foundation: Brand Entity Layer and Governance Infrastructure
+### Foundation: Brand Entity Layer and Governance Infrastructure
 
 Goal: establish the site-wide entity layer before adding any page-level schema.
 
@@ -9138,7 +9138,7 @@ Goal: establish the site-wide entity layer before adding any page-level schema.
 
 Phase 2  ·  Weeks 3-4
 
-#### Conversational Content Layer: FAQ and Article Schema Coverage
+### Conversational Content Layer: FAQ and Article Schema Coverage
 
 Goal: maximize FAQPage and Article schema coverage across existing high-traffic content.
 
@@ -9149,7 +9149,7 @@ Goal: maximize FAQPage and Article schema coverage across existing high-traffic 
 
 Phase 3  ·  Weeks 5-6
 
-#### Product and Technical Workflow Layer: Transactions and Documentation
+### Product and Technical Workflow Layer: Transactions and Documentation
 
 Goal: cover the commercial and documentation layers that drive bottom-of-funnel AI citations.
 
@@ -9183,7 +9183,7 @@ Comparison queries represent the highest commercial intent in B2B software purch
 
 **Note:** The HTML comparison table is the core citation trigger. Perplexity and SearchGPT preferentially extract structured tabular comparisons when answering "vs." queries.
 
-## Conclusion: Schema as Machine Trust Infrastructure
+## What is the takeaway on schema for AI?
 
 Schema markup in 2026 is not a search ranking shortcut. It is machine trust infrastructure. The brands that earn consistent AI citations are not necessarily those with the most schema; they are the ones whose schema most accurately reflects a technically authoritative, content-rich, entity-verified domain.
 
@@ -9539,7 +9539,7 @@ Track:   sessions · engaged sessions · key-event conversion rate
 Compare: against organic-search baseline month over month
 ```
 
-## 10: Strategic Recommendations & Outlook
+## 10: What should you do next?
 
 Transitioning a B2B search program from PageRank to GEO comes down to four moves: reorganize for depth, ship machine-readable infrastructure, scale corroboration, and measure Share of Model. Brands that execute all four build a self-reinforcing position that compounds as AI search adoption grows.
 

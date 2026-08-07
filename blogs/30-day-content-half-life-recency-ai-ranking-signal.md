@@ -166,13 +166,13 @@ Page-level citation readiness scoring framework
 | 10-14 | Low Readiness | Long-form narrative structure without logical chunking. Restructure with heading hierarchy and extract key claims into direct-answer format. |
 | Under 10 | Not Citation Ready | Subjective or narrative content lacking factual claims, data, or structure. Full rewrite or consolidation required before investing in refresh cadence. |
 
-## The 90-Day Operational Rollout Plan
+## What does the 90-day rollout plan look like?
 
 For content leaders implementing this system from scratch, a phased 90-day rollout provides enough time for crawlers to re-index refreshed pages and for citation recovery to become measurable. The three phases are Foundation, Content Optimisation, and Authority Building.
 
 Phase 1: Foundation
 
-#### Days 1-30: Make the domain maximally AI-accessible
+### Days 1-30: Make the domain maximally AI-accessible
 
 Objective: make the existing domain maximally accessible to AI crawlers and establish a measurement baseline.
 
@@ -185,7 +185,7 @@ Objective: make the existing domain maximally accessible to AI crawlers and esta
 
 Phase 2: Content Optimisation
 
-#### Days 31-60: Execute substantive on-page updates
+### Days 31-60: Execute substantive on-page updates
 
 Objective: execute substantive on-page updates across high-priority content templates.
 
@@ -197,7 +197,7 @@ Objective: execute substantive on-page updates across high-priority content temp
 
 Phase 3: Authority and Persistent Citation
 
-#### Days 61-90+: Build off-site validation
+### Days 61-90+: Build off-site validation
 
 Objective: build off-site validation and secure third-party brand mentions.
 
@@ -205,7 +205,7 @@ Objective: build off-site validation and secure third-party brand mentions.
 - Days 76-85: Participate in Reddit and community forums with factual, helpful answers that feed the UGC layers used by AI systems for corroboration
 - Days 86-90: Re-run core query set across ChatGPT, Perplexity, and Gemini; structure refresh queue for the next 90-day cycle
 
-## The Budget Model That Supports This Strategy
+## What budget model supports this strategy?
 
 The 0/50/30/20 content budget model is a response to a specific market condition: as AI-assisted generation drives the cost of producing commodity content toward zero, the marginal value of publishing another generic guide approaches zero simultaneously. Budget must shift toward content that AI systems cannot synthesise from existing sources.
 
@@ -226,7 +226,7 @@ Second, traditional ranking is no longer a protective moat. Roughly 60% of AI Ov
 
 Third, AI-referred traffic converts at a higher rate. AI-referred sessions demonstrate meaningfully higher commercial intent than sessions from traditional organic search, because buyers using AI search are typically further along in their evaluation process and searching with more specific, decision-stage queries.
 
-## The Strategic Conclusion
+## What is the strategic takeaway?
 
 The 30-day content half-life is not a temporary phenomenon that will correct itself as AI search matures. It is a structural feature of how retrieval-augmented generation works, baked into the architecture of every major platform.
 

@@ -125,7 +125,7 @@ These metrics reframe the purpose of citation optimization. It is not a traffic-
 
 Implementation · 90-Day Rollout
 
-## §7The 90-day rollout: sequencing the structural changes
+## §7How do you sequence the 90-day rollout?
 
 Deconstructing high-citation pages is an exercise in pattern recognition. Implementing those patterns at scale is a sequenced operational problem. The rollout divides into three phases, each of which must be started before the next begins, since crawler propagation and index freshness signals take 4–8 weeks to stabilize.
 

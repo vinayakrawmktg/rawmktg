@@ -194,7 +194,7 @@ Fig. 7: Vendor AI Visibility Action Plan (Prioritized by Effort-to-Impact Ratio)
 
 For AEC software companies at any stage, the full [GEO Foundation Audit](/blogs/geo-foundation-audit) methodology provides the structured five-step diagnostic for mapping citation gaps and building the remediation plan. The technical infrastructure layer (including [AI crawler access](/blogs/how-ai-crawlers-index-your-site), [structured schema](/blogs/schema-markup-ai-citations-2026), and llms.txt) is where every company in this segment should start, because it is the only layer with zero editorial prerequisite and immediate implementation impact.
 
-## 08. The Bottom Line
+## 08. What is the bottom line?
 
 AI visibility in the AEC software segment is nascent, concentrated, and increasingly consequential. The companies that appear when buyers ask AI for recommendations today did not get there by accident. The visibility gap between the category leaders and everyone else is real and growing, but it is not yet unbridgeable.
 

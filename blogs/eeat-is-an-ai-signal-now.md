@@ -170,29 +170,29 @@ In generative search, off-page authority is no longer determined by backlink vol
 - **Wikidata and Wikipedia Entity Mapping:** Establish and maintain verified listings on Wikidata. Because Wikidata serves as a primary training corpus and retrieval layer for foundational LLMs, having a structured, queryable entity record cements your brand's existence in the semantic layer of the web, making it verifiable and citable by default.
 - **PR-Driven Co-occurrence and Earned Media:** Traditional SEO link acquisition often targets cheap, low-traffic blogs. In generative search, this approach is largely ineffective. [Earned media placements drive over 90% of all AI citations](https://ziptie.dev/blog/eeat-for-ai-search/), and because LLM knowledge bases are frozen for extended periods, a single high-quality placement on a trusted platform continues to drive AI citations for 18 to 24 months post-publication.
 
-## The 90-Day Execution Framework
+## What does the 90-day execution framework look like?
 
 Translating this technical understanding into operational practice requires a structured, phased approach. The following 90-day framework builds semantic authority, optimizes on-page structure, and maximizes citation visibility across generative search engines.
 
 Phase 1: Foundation
 
-#### Weeks 1-4: Build verifiable identity infrastructure
+### Weeks 1-4: Build verifiable identity infrastructure
 
 Begin with a rigorous site-wide [E-E-A-T audit](https://ahrefs.com/blog/eeat-audit/), removing anonymous or generic "by admin" bylines and replacing them with verified author profiles that include credentials, publication history, and external links to professional profiles. Deploy comprehensive Organization and Person schema markup across your top organic pages, linking authors to third-party profiles using `sameAs` and `knowsAbout` properties. Query Google's Knowledge Graph API to verify entity recognition status for your brand and key authors. Primary metrics: schema compliance rates, Knowledge Graph entity ID verification, and branded organic search volume.
 
 Phase 2: On-Page GEO Injection
 
-#### Weeks 5-8: Restructure content for extraction
+### Weeks 5-8: Restructure content for extraction
 
 Restructure existing content into self-contained, 150-to-300-word passages that directly answer high-intent queries. Implement the GEO Holy Trinity across your highest-value pages: add authoritative outbound citations to primary sources, integrate verbatim expert quotes with explicit attribution, and convert qualitative assertions into structured, tabular statistics with year-specific data points. [Target a 30-to-40% increase in citation frequency](https://www.elementera.com/blog/generative-engine-optimization-what-geo-aeo-ai-search-paper-shows-your-business) across ChatGPT, Perplexity, and Google AI Overviews as your primary success metric.
 
 Phase 3: Authority Amplification
 
-#### Weeks 9-12: Build off-site semantic authority
+### Weeks 9-12: Build off-site semantic authority
 
 Execute [high-tier PR and earned media campaigns](/blogs/authority-seeding-ai-llm-trust) on trusted platforms to build brand mentions and semantic co-occurrence. Focus placements on mainstream news outlets, respected industry publications, and established digital communities where your target audience already has high trust. Simultaneously, monitor site-wide [topical focus](/blogs/topical-authority-cluster-ai-shortlists) by analyzing siteRadius metrics and removing or redirecting off-topic content that dilutes domain authority. Deploy automated tracking to monitor brand visibility across target generative search prompts, using citation frequency and conversion rate of AI referral visitors as your north-star metrics.
 
-## Conclusion: The Convergence of Human Judgment and Algorithmic Truth
+## So, is E-E-A-T really an AI signal now?
 
 The central insight of this analysis is that E-E-A-T has always been a proxy for a deeper truth: information is more valuable when it comes from sources with genuine knowledge, real-world experience, and verifiable credibility. For years, search engines approximated this truth through signals like backlinks and engagement metrics. Preference alignment has now encoded that approximation directly into model weights, with mathematical precision.
 

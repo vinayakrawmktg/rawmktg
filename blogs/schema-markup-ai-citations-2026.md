@@ -147,7 +147,7 @@ WebPage --(isPartOf)--> WebSite [/#website]
 SoftwareApplication --(provider)--> Organization [/#organization]
 ```
 
-## The four core B2B schema types: FAQPage, Article, Product, HowTo
+## What are the four core B2B schema types?
 
 **Four schema types carry most B2B AI-citation value.** FAQPage marks up question-answer pairs, Article signals author and publish date, Product exposes pricing and features, and HowTo lays out setup steps. Article schema in particular tells engines who wrote a page and when, the author and freshness signals E-E-A-T rewards.
 
@@ -519,7 +519,7 @@ Common schema errors and their AI citation impact
 
 Phase 1  ·  Weeks 1-2
 
-#### Foundation: Brand Entity Layer and Governance Infrastructure
+### Foundation: Brand Entity Layer and Governance Infrastructure
 
 Goal: establish the site-wide entity layer before adding any page-level schema.
 
@@ -531,7 +531,7 @@ Goal: establish the site-wide entity layer before adding any page-level schema.
 
 Phase 2  ·  Weeks 3-4
 
-#### Conversational Content Layer: FAQ and Article Schema Coverage
+### Conversational Content Layer: FAQ and Article Schema Coverage
 
 Goal: maximize FAQPage and Article schema coverage across existing high-traffic content.
 
@@ -542,7 +542,7 @@ Goal: maximize FAQPage and Article schema coverage across existing high-traffic 
 
 Phase 3  ·  Weeks 5-6
 
-#### Product and Technical Workflow Layer: Transactions and Documentation
+### Product and Technical Workflow Layer: Transactions and Documentation
 
 Goal: cover the commercial and documentation layers that drive bottom-of-funnel AI citations.
 
@@ -576,7 +576,7 @@ Comparison queries represent the highest commercial intent in B2B software purch
 
 **Note:** The HTML comparison table is the core citation trigger. Perplexity and SearchGPT preferentially extract structured tabular comparisons when answering "vs." queries.
 
-## Conclusion: Schema as Machine Trust Infrastructure
+## What is the takeaway on schema for AI?
 
 Schema markup in 2026 is not a search ranking shortcut. It is machine trust infrastructure. The brands that earn consistent AI citations are not necessarily those with the most schema; they are the ones whose schema most accurately reflects a technically authoritative, content-rich, entity-verified domain.
 

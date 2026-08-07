@@ -302,7 +302,7 @@ Track:   sessions · engaged sessions · key-event conversion rate
 Compare: against organic-search baseline month over month
 ```
 
-## 10: Strategic Recommendations & Outlook
+## 10: What should you do next?
 
 Transitioning a B2B search program from PageRank to GEO comes down to four moves: reorganize for depth, ship machine-readable infrastructure, scale corroboration, and measure Share of Model. Brands that execute all four build a self-reinforcing position that compounds as AI search adoption grows.
 

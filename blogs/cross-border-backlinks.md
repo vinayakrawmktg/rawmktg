@@ -68,19 +68,19 @@ This has a practical implication. A brand that publishes only about cross-border
 
 Shape A
 
-#### Cashfree: full-stack breadth
+### Cashfree: full-stack breadth
 
 525 clean domains, median DR 78. Strongest clusters: payment-gateway and fintech (135 domains), cross-border (49), e-commerce (43), banking (37) and software (34). Breadth reflects an API-and-integrations business with wide editorial reach.
 
 Shape B
 
-#### Specialists: deliberate adjacency
+### Specialists: deliberate adjacency
 
 Skydo spreads across cross-border (42), freelancing (20), e-commerce (13) and exports (9). PayGlocal focuses on cross-border (29), payment-gateway (18), banking (13) and news/PR (7). Two brands, two visible strategies, both clean.
 
 Shape C
 
-#### Xflow: real authority, hidden by spam
+### Xflow: real authority, hidden by spam
 
 Genuine links tightly concentrated in cross-border (164 clean domains), crypto/Web3 (59), marketing (38) and startups (28). 89.3% spam rate means this authority is largely invisible. Cleanup is a higher priority than new link acquisition.
 
