@@ -13,7 +13,7 @@ Retrieval-Augmented Generation is the architectural bridge that allows LLMs to a
 
 Models like GPT-4 or Gemini are extraordinarily capable at reasoning, but they are hard-constrained by a knowledge cutoff, the moment their training stopped. They are also prone to hallucination when queried on niche, recent, or proprietary information, because they predict the next word based on probability, not verified fact.
 
-RAG solves this by decoupling the model's generative capability from its knowledge base. When a user submits a query, the system first behaves like a librarian: it searches an external index of live web pages and documents for relevant passages. Those retrieved passages are then handed to the LLM as grounded context, effectively telling it: "here is the information you are allowed to draw from." The model synthesises, the citations appear, and the buyer reads an answer that feels definitive.
+RAG solves this by decoupling the model's generative capability from its knowledge base. When a user submits a query, the system first behaves like a librarian: it searches an external index of live web pages and documents for [relevant passages](/blogs/how-your-page-gets-retrieved). Those retrieved passages are then handed to the LLM as grounded context, effectively telling it: "here is the information you are allowed to draw from." The model synthesises, the citations appear, and the buyer reads an answer that feels definitive.
 
 Content that cannot be found by the retriever does not exist in the AI's world.
 

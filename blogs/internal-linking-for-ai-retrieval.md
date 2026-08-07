@@ -19,7 +19,7 @@ TL;DR, what changes when retrieval goes neural
 
 **Search now runs on RAG, which retrieves and re-ranks passages, not pages.** Where SEO optimized for a rank position, Generative Engine Optimization (GEO) optimizes the upstream retrieval phase: getting specific text chunks injected into the model's context window.
 
-The consequence for architecture is blunt. RAG systems do not retrieve whole pages, they retrieve discrete, self-contained passages. If an enterprise page holds exceptional content but is structurally isolated from the rest of the site graph, it is effectively invisible to AI retrievers.
+The consequence for architecture is blunt. RAG systems do not retrieve whole pages, [they retrieve discrete, self-contained passages](/blogs/how-your-page-gets-retrieved). If an enterprise page holds exceptional content but is structurally isolated from the rest of the site graph, it is effectively invisible to AI retrievers.
 
 Query
 
