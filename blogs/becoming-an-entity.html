@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Becoming an Entity: Wikipedia, Wikidata &amp; the Knowledge Graph &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Search moved from strings to things. A build guide for becoming a recognized entity: the Entity Home, Wikidata, sameAs corroboration, and a 12-month sequence." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/becoming-an-entity" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/becoming-an-entity" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/becoming-an-entity" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/becoming-an-entity" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/becoming-an-entity" />
+  <meta property="og:title" content="Becoming an Entity" />
+  <meta property="og:description" content="Search moved from strings to things. A build guide for becoming a recognized entity: the Entity Home, Wikidata, sameAs corroboration, and a 12-month sequence." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/becoming-an-entity-header.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Becoming an Entity" />
+  <meta name="twitter:description" content="Search moved from strings to things. A build guide for becoming a recognized entity: the Entity Home, Wikidata, sameAs corroboration, and a 12-month sequence." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/becoming-an-entity-header.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Becoming an Entity", "description": "Search moved from strings to things. A build guide for becoming a recognized entity: the Entity Home, Wikidata, sameAs corroboration, and a 12-month sequence.", "image": "https://rawmktg.com/assets/images/becoming-an-entity-header.webp", "url": "https://rawmktg.com/blogs/becoming-an-entity", "datePublished": "2026-08-05", "dateModified": "2026-08-05", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/becoming-an-entity"}, "keywords": ["entity SEO", "knowledge graph", "Wikidata", "Wikipedia", "Entity Home", "sameAs", "JSON-LD", "GEO", "AI visibility", "schema.org"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/becoming-an-entity"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Becoming an Entity", "item": "https://rawmktg.com/blogs/becoming-an-entity"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a keyword and an entity?", "acceptedAnswer": {"@type": "Answer", "text": "A keyword is a string of text; an entity is a distinct concept with a unique machine identifier (a Google MID or a Wikidata QID). Keywords are ambiguous, the string \"Java\" means a language, an island, or coffee, so a string-matching engine has to guess. An entity resolves that ambiguity across every language at once: \"Eiffel Tower\" and \"Tour Eiffel\" are two labels on one node. Modern search and generative engines answer from entity nodes in a knowledge graph, not from documents that rank, so being a recognised entity is what makes a machine confident enough to state facts about you."}}, {"@type": "Question", "name": "Do I need a Wikipedia page to get a Google Knowledge Panel?", "acceptedAnswer": {"@type": "Answer", "text": "No. A Wikipedia article triggers a panel in roughly 52% of brand searches, but organisations with no Wikipedia article still get panels in about 28%. Wikipedia is a strong accelerant and a poor strategy, it is community-governed with an active deletion culture and a failed promotional attempt can get your domain blacklisted. The reliable route is Wikidata plus a canonical Entity Home and consistent third-party corroboration, which has no notability wall for structured data and feeds the same downstream systems."}}, {"@type": "Question", "name": "What is an Entity Home?", "acceptedAnswer": {"@type": "Answer", "text": "The single, authoritatively controlled URL that acts as the canonical reference for machine-readable facts about your entity, one entity, one URL. It is usually an About page or organisation root (not your marketing homepage), engineered to carry nested JSON-LD with explicit @id URIs and plain declarative copy. When it asserts facts, crawlers look for those exact facts on registries, Wikidata and news outlets; if they echo, algorithmic confidence rises and you earn stable nodes and Knowledge Panels."}}, {"@type": "Question", "name": "If I only do one thing, what should it be?", "acceptedAnswer": {"@type": "Answer", "text": "Create a Wikidata item and point it, and your Entity Home's sameAs array, at each other. Wikidata is the direct descendant of the Freebase database that seeded Google's Knowledge Graph, it is fully machine-readable, and it has no notability wall for structured data. A Wikidata item with fifteen well-referenced, qualified statements and a handful of external identifiers, reciprocally linked to a JSON-LD Entity Home, does more for machine-readable authority than another two hundred blog posts."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/becoming-an-entity.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/tools.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/becoming-an-entity.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/becoming-an-entity-header.webp" srcset="/assets/images/becoming-an-entity-header-800.webp 800w, /assets/images/becoming-an-entity-header-1200.webp 1200w, /assets/images/becoming-an-entity-header-1600.webp 1600w, /assets/images/becoming-an-entity-header.webp 2400w" sizes="100vw" alt="Becoming an Entity - Wikipedia, Wikidata and the knowledge graph - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Entity SEO &amp; Knowledge Graphs</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
+    <h1 class="article-headline">Becoming an Entity</h1>
+    <p class="article-deck">Wikipedia, Wikidata, and the knowledge graph: a working playbook for building machine-readable authority, not just rankings. Code, schemas and a twelve-month sequence included.</p>
+    <p class="article-data-note">A practical build guide grounded in the public record of the Google Knowledge Graph and Wikidata, the schema.org and Wikibase specifications, and published entity-SEO research, 2025-26. Code and schemas are illustrative reference implementations; figures are drawn from cited industry and platform sources.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p class="lead">Search stopped being about words a long time ago, and most marketing teams never got the memo. For a decade the job was to match strings: find the phrase people typed, put it on a page, point links at it, and wait. That system is gone.</p>
+<p>Modern search engines and generative AI systems do not primarily index documents. They query knowledge graphs, networked databases where facts are stored as discrete, interconnected nodes bound by defined relationships. When someone asks ChatGPT or Google who founded your company, the answer does not come from a page that ranks. It comes from a node that exists. You can publish two hundred excellent articles and still be invisible to an AI assistant, because the assistant is not looking for articles. It is looking for a thing it recognises.</p>
+<div class="pull-quote">The old question was: do we rank for this term? The new question is: does the machine know we exist, and does it know what we are? If your brand is not a thing in the graph, you are a rumour.</div>
+<div class="stat-grid"><div class="sg-item"><div class="sg-val">8B</div><div class="sg-label">entities in Google's knowledge graph</div></div><div class="sg-item"><div class="sg-val">800B</div><div class="sg-label">facts about them</div></div><div class="sg-item"><div class="sg-val">4.8x</div><div class="sg-label">AI Overview pick with 15+ linked entities</div></div><div class="sg-item"><div class="sg-val">28%</div><div class="sg-label">get a panel with no Wikipedia page</div></div></div>
+<h2 id="strings-to-things"><span class="section-num">01</span>Why did search move from strings to things?</h2>
+<div class="section-answer"><strong>Because engines stopped matching text and started resolving concepts, each with a unique machine identifier that kills ambiguity across every language at once.</strong> Entity-centric computing arrived in 2005 with Freebase, which Google acquired in 2010; the Google Knowledge Graph launched in 2012 on that data, explicitly reframing search from "strings to things". Freebase was retired in 2016 and migrated into Wikidata, which is why Wikidata now sits at the centre of the modern entity stack, it is the direct descendant of the database that seeded the whole system.</div>
+<div class="chart-wrap"><canvas id="entGrowth" height="210"></canvas></div><div class="chart-caption">Figure 1, entities grew about fourteen times over; facts about them grew forty-four times over. The graph is getting denser, not just wider, and getting admitted is the hard part.</div>
+<p>Read that second number carefully. The number of facts grew far faster than the number of entities: the graph is not mainly hunting for new things to know about, it is deepening what it knows about things it has already accepted. Getting in is the hard part; once you are in, the system wants more detail about you.</p>
+<h3>What an entity actually is</h3>
+<p>In the patent literature an entity is something singular, unique, well-defined, and distinguishable. Keywords are linguistic and suffer polysemy: the token "Java" is a language, an island, and a slang word for coffee. An entity sidesteps all of it, each concept gets a unique machine identifier that resolves the ambiguity everywhere at once. "Tour Eiffel" and "Eiffel Tower" are not two similar things; they are two labels on one node. Every node is assembled from the same five components:</p>
+<div class="tt-wrap"><div class="tt-label">The five components of an entity node</div><table class="tt"><thead><tr><th>Component</th><th>What it does</th><th>In practice</th></tr></thead><tbody><tr><td class="label">Unique identifier</td><td>Permanently separates this node from every other, across systems.</td><td>Google MID (/m/0dl567), Wikidata QID (Q1744)</td></tr><tr><td class="label">Labels &amp; aliases</td><td>Language-agnostic names and their variants.</td><td>Eiffel Tower (en), Tour Eiffel (fr), trading names, former names</td></tr><tr><td class="label">Entity type</td><td>Places the node in an ontological hierarchy.</td><td>schema:Person, schema:Corporation, wd:Q5 (human)</td></tr><tr><td class="label">Scalar attributes</td><td>Literal key-value facts about intrinsic properties.</td><td>Founding date, headquarters, employee count</td></tr><tr><td class="label">Relationship edges</td><td>Connects this node to other nodes via predicates.</td><td>founderOf, spouse (P26), parentOrganization</td></tr></tbody></table></div>
+<p>That last row is where authority actually lives. A node with attributes but no edges is a lonely record; a node with dense, corroborated edges into other well-established nodes is an entity the system trusts. Content connected to fifteen or more recognised entities has been observed at a 4.8-fold increase in AI Overview selection probability, and brands present in a recognised graph score around 35% higher on overall AI visibility, the same <a href="/blogs/topical-authority-cluster-ai-shortlists">topical-authority effect that lands B2B brands on AI shortlists</a>.</p>
+<div class="chart-wrap"><canvas id="entMult" height="190"></canvas></div><div class="chart-caption">Figure 2, graph presence is a multiplier on everything else you publish. Fifteen or more linked entities correlates with a 4.8x lift in AI Overview selection.</div>
+<h3>Reading the identifiers</h3>
+<p>Google's machine identifiers come in two flavours, and the prefix is diagnostic. The /m/ prefix is a legacy Freebase ID (migrated before 2015, usually deep cross-graph references); the /g/ prefix marks an entity created natively inside Google's graph from crawling and structured data. A company founded after 2015 has a /g/ ID or none at all, which means your node was built from what Google could scrape and reconcile, only as good as the signals you have published. That is the lever. Wikidata uses QIDs for items (Q5 is human) and PIDs for properties (P31 is "instance of"); every fact is a QID joined to a value through a PID.</p>
+<h2 id="why-now"><span class="section-num">02</span>Why does this matter more now than it did in 2019?</h2>
+<div class="section-answer"><strong>Because generative engines assemble answers from three knowledge layers, and the knowledge graph is the one you can edit directly, today, for free.</strong> Entity optimisation used to be a long-term bet. Generative search turned it into an immediate one. Every engine, ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews, draws on three distinct layers to build a single answer.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Parametric memory</div><div class="pl-desc">baked into model weights, you cannot edit it</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Knowledge graph</div><div class="pl-desc">structured, verified facts, edit this today</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Live search index</div><div class="pl-desc">fresh content via RAG at query time</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">One answer</div><div class="pl-desc">what the model states about you</div></div></div><div class="chart-caption">Figure 3, three layers feed one answer. You can influence all three but directly edit only the middle one, which is also the one that anchors factual assertions.</div>
+<p>The first layer is static, you can only hope you were in the corpus. The third layer you already influence with publishing and technical accessibility, which is where <a href="/blogs/how-rag-actually-works">most RAG-facing effort already goes</a>. The middle layer, the knowledge graph, is free to edit and it is where confidence comes from. When an entity is established in a recognised graph, generative models stop hedging: the output moves from "claims to be" to simply "is".</p>
+<div class="pull-quote">That verb shift is the whole game. A model with graph-level confirmation states your founding date as fact. A model without it will hedge, omit you, or hallucinate something plausible and wrong, a confident falsehood circulating with no page to correct.</div>
+<p>That third outcome is the expensive one, and it is exactly what <a href="/blogs/hallucination-proofing-your-brand">hallucination-proofing your brand</a> is built to prevent.</p>
+<h2 id="entity-home"><span class="section-num">03</span>What is an Entity Home, and why does it go first?</h2>
+<div class="section-answer"><strong>The single, authoritatively controlled URL that is the canonical reference for machine-readable facts about you. One entity, one URL, no exceptions.</strong> Search engines crawl millions of third-party pages that mention your brand, and those pages disagree constantly: old founding dates, superseded titles, legal names that changed three years ago. The crawler needs one place to go when the sources conflict. That place is the Entity Home, and it is usually not your homepage, it is an About page or organisation root engineered to carry structured JSON-LD and unambiguous declarative copy.</div>
+<div class="callout-box"><div class="callout-box-label">The Digital Brand Echo</div><p>When your Entity Home asserts a set of facts, crawlers go looking for those exact facts elsewhere. If corporate registries, Wikidata, news outlets and industry databases echo the same details, algorithmic confidence rises and you get stable nodes and Knowledge Panels. If they contradict, confidence falls, the node fragments, the panel disappears, and generative models start improvising.</p><p>This is why the boring work matters more than the clever work. Aligning your legal name across nine directories is not glamorous, it is the highest-leverage afternoon in the entire project.</p></div>
+<h3>The three gates</h3>
+<p>Entity data is evaluated in sequence, you do not get partial credit for skipping ahead.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Understandability</div><div class="pl-desc">parse who and what you are</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Credibility</div><div class="pl-desc">~3 independent sources agree</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Deliverability</div><div class="pl-desc">indexable, linked, RAG-ready</div></div></div><div class="chart-caption">Figure 4, sequential, not parallel. Failing gate one makes gates two and three irrelevant.</div>
+<p>Understandability is a markup-and-plain-copy problem. Credibility means systems verify your assertions against roughly three independent, high-confidence sources before accepting them, one source is a claim, two is a coincidence, three is a fact. Deliverability means a brilliant entity architecture behind a JavaScript wall crawlers cannot render is one nobody will ever see. Underneath all three sits the NEEATT frame (Notability, Experience, Expertise, Authoritativeness, Trustworthiness, Transparency); notability is the anchor, you cannot be a trusted authority until the system has decided you are a distinct you, which is how <a href="/blogs/eeat-is-an-ai-signal-now">E-E-A-T became an AI signal</a>.</p>
+<h3>The schema layer</h3>
+<p>Declaring an Entity Home means nested JSON-LD in the head of the canonical URL. Four properties do the structural work, and this is the same <a href="/blogs/schema-markup-ai-citations-2026">@graph discipline behind schema for AI citations</a>:</p>
+<div class="tt-wrap"><div class="tt-label">The four properties that build the node</div><table class="tt"><thead><tr><th>Property</th><th>Function</th><th>Why it matters</th></tr></thead><tbody><tr><td class="label">@id</td><td>Assigns a stable URI to the entity node itself.</td><td>Without it, parsers treat your JSON objects as anonymous blank nodes. Facts get read, then orphaned.</td></tr><tr><td class="label">sameAs</td><td>Maps your node to identical nodes on external graphs.</td><td>The bridge to Wikidata, Crunchbase and official profiles. It is how the echo gets found.</td></tr><tr><td class="label">mainEntity</td><td>Declares the primary entity a WebPage is about.</td><td>Says this page exists to document this node, not merely mention it.</td></tr><tr><td class="label">mainEntityOfPage</td><td>Points from the entity back to its canonical URL.</td><td>Attach it to secondary pages so they reference the Entity Home rather than compete with it.</td></tr></tbody></table></div>
+<div class="code-wrap"><div class="code-label">JSON-LD, a resolved organisation Entity Home</div><div class="code-block"><pre>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Corporation&quot;,
+      &quot;@id&quot;: &quot;https://example.com/#organization&quot;,
+      &quot;name&quot;: &quot;Enterprise Quantum Systems&quot;,
+      &quot;legalName&quot;: &quot;Enterprise Quantum Systems Inc.&quot;,
+      &quot;url&quot;: &quot;https://example.com&quot;,
+      &quot;foundingDate&quot;: &quot;2016-03-15&quot;,
+      &quot;founders&quot;: [
+        { &quot;@type&quot;: &quot;Person&quot;,
+          &quot;@id&quot;: &quot;https://example.com/about/team#john-smith&quot;,
+          &quot;name&quot;: &quot;Dr. John Smith&quot; }
+      ],
+      &quot;sameAs&quot;: [
+        &quot;https://www.wikidata.org/wiki/Q11223344&quot;,
+        &quot;https://www.crunchbase.com/organization/enterprise-quantum-systems&quot;,
+        &quot;https://www.linkedin.com/company/enterprise-quantum-systems&quot;
+      ],
+      &quot;mainEntityOfPage&quot;: { &quot;@type&quot;: &quot;WebPage&quot;, &quot;@id&quot;: &quot;https://example.com/about#webpage&quot; }
+    },
+    {
+      &quot;@type&quot;: &quot;WebPage&quot;,
+      &quot;@id&quot;: &quot;https://example.com/about#webpage&quot;,
+      &quot;url&quot;: &quot;https://example.com/about&quot;,
+      &quot;name&quot;: &quot;About Enterprise Quantum Systems&quot;,
+      &quot;mainEntity&quot;: { &quot;@id&quot;: &quot;https://example.com/#organization&quot; }
+    }
+  ]
+}</pre></div></div>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Generator</div><div class="embed-title">Generate your Entity Home JSON-LD</div><div class="embed-deck">Fill in your facts and profiles; the nested @graph, with the @id and reciprocal bindings, builds live below.</div></div><section class="card" id="ehg">
+  <div class="grid calc">
+    <div class="controls">
+      <div class="num-grid">
+        <div class="fld"><div class="lab">Entity type</div>
+          <select class="sel-input" id="eType"><option>Organization</option><option>Corporation</option><option>LocalBusiness</option><option>OnlineBusiness</option><option>EducationalOrganization</option><option>GovernmentOrganization</option><option>NGO</option></select></div>
+        <div class="fld"><div class="lab">Founding date</div><input type="date" class="sel-input" id="eFounded"></div>
+        <div class="fld"><div class="lab">Logo URL <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">opt</span></div><input class="tin" id="eLogo" placeholder="https://example.com/logo.png"></div>
+      </div>
+      <div class="fld"><div class="lab">Name</div><input class="tin" id="eName" placeholder="Enterprise Quantum Systems"></div>
+      <div class="fld"><div class="lab">Legal name <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">opt</span></div><input class="tin" id="eLegal" placeholder="Enterprise Quantum Systems Inc."></div>
+      <div class="fld"><div class="lab">Primary URL</div><input class="tin" id="eUrl" placeholder="https://example.com"></div>
+      <div class="fld"><div class="lab">Entity Home page URL <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">your About page</span></div><input class="tin" id="eHome" placeholder="https://example.com/about"></div>
+      <div class="fld"><div class="lab">Founder(s) <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">one per line</span></div><textarea class="ta" id="eFounders" style="min-height:70px" placeholder="Dr. John Smith"></textarea></div>
+      <div class="fld"><div class="lab">sameAs profiles <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">one URL per line</span></div>
+        <textarea class="ta" id="eSames" style="min-height:110px" placeholder="https://www.wikidata.org/wiki/Q11223344&#10;https://www.crunchbase.com/organization/your-co&#10;https://www.linkedin.com/company/your-co"></textarea>
+        <p class="hint">These become your sameAs bridges. For the echo to work, each of those profiles must link back to your Entity Home URL. Nothing is uploaded.</p></div>
+    </div>
+    <div class="output">
+      <div class="o-eyebrow">Your Entity Home JSON-LD</div>
+      <div class="codeout" style="margin:12px 0 0"><div class="code-block"><pre id="ehOut">{}</pre></div></div>
+      <div class="btn-row"><button class="tbtn primary" id="ehCopy" type="button">Copy</button><button class="tbtn" id="ehDl" type="button">Download .json</button></div>
+      <p class="caveat">Nested @graph with explicit @id URIs and reciprocal mainEntity / mainEntityOfPage binding, the three things most implementations get wrong. Paste into the &lt;head&gt; of your Entity Home only, referenced by @id elsewhere.</p>
+    </div>
+  </div>
+</section><div class="embed-foot"><a href="/tools/entity-home-generator">Open the full tool &rarr;</a></div></div>
+<script>
+(function(){
+  var root=document.getElementById('ehg'); if(!root) return;
+  function v(id){return (document.getElementById(id).value||'').trim();}
+  function lines(id){return (document.getElementById(id).value||'').split(/\r?\n/).map(function(s){return s.trim();}).filter(Boolean);}
+  function build(){
+    var name=v('eName')||'Your Organization';
+    var type=v('eType')||'Organization';
+    var url=v('eUrl'); var base=(url||'https://example.com').replace(/\/+$/,'');
+    var home=v('eHome')||(base+'/about');
+    var homeBase=home.replace(/#.*$/,'');
+    var orgId=base+'/#organization';
+    var pageId=homeBase+'#webpage';
+    var org={"@type":type,"@id":orgId,"name":name};
+    if(v('eLegal')) org.legalName=v('eLegal');
+    if(url) org.url=url;
+    if(v('eLogo')) org.logo=v('eLogo');
+    if(v('eFounded')) org.foundingDate=v('eFounded');
+    var fs=lines('eFounders');
+    if(fs.length){ org.founders=fs.map(function(n,i){return {"@type":"Person","@id":base+'/#founder-'+(i+1),"name":n};}); }
+    var sames=lines('eSames');
+    if(sames.length) org.sameAs=sames;
+    org.mainEntityOfPage={"@type":"WebPage","@id":pageId};
+    var page={"@type":"WebPage","@id":pageId,"url":home,"name":('About '+name),"mainEntity":{"@id":orgId}};
+    var graph={"@context":"https://schema.org","@graph":[org,page]};
+    document.getElementById('ehOut').textContent=JSON.stringify(graph,null,2);
+  }
+  ['eType','eFounded','eLogo','eName','eLegal','eUrl','eHome','eFounders','eSames'].forEach(function(id){
+    document.getElementById(id).addEventListener('input',build);
+    document.getElementById(id).addEventListener('change',build);
+  });
+  document.getElementById('ehCopy').addEventListener('click',function(){var b=this,t=document.getElementById('ehOut').textContent;
+    function d(){b.textContent='Copied';b.classList.add('is-done');setTimeout(function(){b.textContent='Copy';b.classList.remove('is-done');},1500);}
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(d,d);}else{d();}});
+  document.getElementById('ehDl').addEventListener('click',function(){var t=document.getElementById('ehOut').textContent;
+    var blob=new Blob([t],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='entity-home.jsonld';document.body.appendChild(a);a.click();document.body.removeChild(a);});
+  build();
+})();
+</script>
+<p>Three things people get wrong: they omit @id and wonder why the markup validates but nothing happens; they point sameAs at profiles that do not link back, breaking the reciprocity the echo depends on; and they duplicate the same organisation schema on every page, telling the crawler they have four hundred organisations instead of one.</p>
+<h3>Triggering a Knowledge Panel without Wikipedia</h3>
+<p>A Wikipedia article triggers a Knowledge Panel in roughly 52% of brand searches; organisations with no Wikipedia article still get panels in roughly 28%. So Wikipedia is a strong accelerant and a poor strategy, it is governed by a volunteer community with an active deletion culture, you do not control the page, and a botched attempt can get your domain blacklisted.</p>
+<div class="chart-wrap"><canvas id="entPanel" height="190"></canvas></div><div class="chart-caption">Figure 5, Wikipedia roughly doubles your odds of a Knowledge Panel. It does not decide them, more than a quarter of panels exist with no Wikipedia page at all.</div>
+<div class="tt-wrap"><div class="tt-label">The non-Wikipedia route, five steps in order</div><table class="tt"><thead><tr><th>Step</th><th>What you do</th></tr></thead><tbody><tr><td class="label">1. Establish the Entity Home</td><td>One crawlable URL with explicit corporate details, leadership bios and complete JSON-LD.</td></tr><tr><td class="label">2. Standardise core facts</td><td>Name, address, phone, founding date, titles and product descriptions match across every profile you control.</td></tr><tr><td class="label">3. Build external corroboration</td><td>Entries on Wikidata, Crunchbase, Reuters, Bloomberg, government registries, Dun &amp; Bradstreet.</td></tr><tr><td class="label">4. Deploy bidirectional sameAs</td><td>Link out from the Entity Home, and configure those third-party profiles to link back to it specifically.</td></tr><tr><td class="label">5. Maintain data harmony</td><td>Monitor third-party mentions so contradictions get caught before they erode confidence.</td></tr></tbody></table></div>
+<p>Step two is where most programmes quietly fail, it is unglamorous data-janitorial work with no dashboard payoff, so it gets deferred, and every later step is then built on sand.</p>
+<h2 id="wikidata"><span class="section-num">04</span>How do you engineer Wikipedia and Wikidata?</h2>
+<div class="section-answer"><strong>Skip the Wikipedia notability wall and go straight to Wikidata: fully machine-readable, no notability bar for structured data, and it feeds the same downstream systems.</strong> Wikipedia is a primary seed source for search knowledge graphs, which is why everyone wants in, and its General Notability Guideline demands significant coverage in reliable, independent secondary sources. Press releases and syndicated funding announcements are one source wearing twelve hats, and a failed promotional attempt can end in deletion or a domain blacklist. Wikidata has no equivalent wall. If you only do one thing from this entire article, do Wikidata.</div>
+<p>Wikidata is a free, open, secondary knowledge base built on RDF triple principles. Items (QIDs) carry labels, descriptions and aliases; facts are Statements, an item joined to a value through a property. Three structures turn a bare triple into something trustworthy: qualifiers add temporal and contextual parameters (start time P580, position held P39); references carry provenance (every statement should cite an external source, unreferenced statements are the first thing patrollers strip); and external identifiers (VIAF, ISNI, registry numbers) bridge your item into third-party databases. A Wikidata item with fifteen well-referenced, qualified statements and six external identifiers is worth more than a Wikipedia stub nobody maintains.</p>
+<h3>Batch reconciliation with OpenRefine</h3>
+<p>Adding one company by hand works; a product catalogue or author roster does not. OpenRefine is the standard tool: reconciliation programmatically matches unstructured text cells to unique QIDs, the moment your private spreadsheet joins the public graph.</p>
+<div class="tt-wrap"><div class="tt-label">OpenRefine reconciliation, six steps</div><table class="tt"><thead><tr><th>Step</th><th>What you do</th><th>The detail that decides quality</th></tr></thead><tbody><tr><td class="label">1. Ingest &amp; clean</td><td>Import CSV/TSV/JSON, apply text transforms.</td><td>Fix encoding, whitespace and casing first, dirty input produces confidently wrong matches.</td></tr><tr><td class="label">2. Start reconciliation</td><td>Point the column at the Wikidata reconciliation endpoint.</td><td>wikidata.reconci.link/en/api</td></tr><tr><td class="label">3. Constrain the class</td><td>Restrict candidates by instance of (P31) or subclass of (P279).</td><td>Humans to Q5, companies to Q4830453. This is where strings become things.</td></tr><tr><td class="label">4. Match extra columns</td><td>Map secondary columns to properties during scoring.</td><td>Country (P17), inception (P571), HQ (P159) resolve namesake collisions names alone cannot.</td></tr><tr><td class="label">5. Map the schema</td><td>Build the Wikibase schema: columns to properties, qualifiers, references.</td><td>Add reference URLs here, retrofitting provenance across thousands of statements is miserable.</td></tr><tr><td class="label">6. Push the edits</td><td>Upload via authenticated API, or run through Wikimedia PAWS.</td><td>PAWS is hosted JupyterHub for when local processing is the bottleneck.</td></tr></tbody></table></div>
+<p>Step four is the one people skip, and it prevents the worst failure mode in the discipline: confidently attaching your facts to the wrong node. Match on name alone and you will eventually merge yourself into a defunct Brazilian logistics firm.</p>
+<h3>SPARQL for people who do not write SPARQL</h3>
+<p>You query Wikidata through its SPARQL service. You do not need fluency, you need to read the namespace prefixes because they carry the meaning: wd: names a specific item, wdt: is the truthy predicate to a value, p:/ps:/pq: reach statement nodes and their qualifiers, and wdtn: builds external-identifier URIs when you federate out. Two queries earn their keep. The first catches duplicate external identifiers, run it quarterly, it takes seconds and catches the silent corruption that surfaces eighteen months later as a mysteriously wrong Knowledge Panel:</p>
+<div class="code-wrap"><div class="code-label">SPARQL, duplicate external-identifier check</div><div class="code-block"><pre># Catch one external identifier attached to two or more items
+SELECT ?item (GROUP_CONCAT(?extId; separator=&quot;|&quot;) AS ?idJoined)
+WHERE {
+  ?item wdt:P10701 ?extId.
+}
+GROUP BY ?item
+HAVING (COUNT(?extId) &gt;= 2)</pre></div></div>
+<p>The second federates the query service against another endpoint's SPARQL using a SERVICE block, constructing valid IRIs with BIND and CONCAT. Federation is where this stops feeling like SEO and starts feeling like data engineering, which is the correct feeling, you are maintaining records in a distributed public database.</p>
+<div class="code-wrap"><div class="code-label">SPARQL, federated query across two knowledge bases</div><div class="code-block"><pre># Federate the Wikidata query service out to another endpoint
+SELECT ?wikidataItem ?factgridItem ?extID WHERE {
+  ?wikidataItem wdt:P8168 ?extID .
+  SERVICE &lt;https://database.factgrid.de/sparql&gt; {
+    ?factgridItem wdt:P39 ?extID .
+  }
+  BIND(IRI(CONCAT(&quot;https://www.wikidata.org/wiki/&quot;, ?extID)) AS ?constructedIRI)
+}
+LIMIT 50</pre></div></div>
+<h2 id="audit"><span class="section-num">05</span>How do you audit what Google actually knows about you?</h2>
+<div class="section-answer"><strong>With the Knowledge Graph Search API, which tells you whether your entity exists, what identifier it holds, what type it was assigned, and which URL is bound to it.</strong> You cannot manage what you cannot see. The API is a REST endpoint at kgsearch.googleapis.com/v1/entities:search. Two changes in the Cloud Enterprise version matter: resultScore is gone (entity selection is now evaluated dynamically against real-time context, so any reporting built on tracking that number has an expiry date), and the MID now arrives wrapped in an array of explicit PropertyValue objects that preserve backward compatibility.</div>
+<div class="code-wrap"><div class="code-label">Python, a Knowledge Graph entity audit you can diff over time</div><div class="code-block"><pre>import requests, json
+
+ENDPOINT = &quot;https://kgsearch.googleapis.com/v1/entities:search&quot;
+
+def audit_entity(query_string, api_key, entity_type=None):
+    params = {&quot;query&quot;: query_string, &quot;key&quot;: api_key, &quot;limit&quot;: 5, &quot;indent&quot;: True}
+    if entity_type:
+        params[&quot;types&quot;] = entity_type
+    r = requests.get(ENDPOINT, params=params)
+    if r.status_code != 200:
+        raise Exception(f&quot;API request failed: {r.status_code} {r.text}&quot;)
+    results = []
+    for item in r.json().get(&quot;itemListElement&quot;, []):
+        node = item.get(&quot;result&quot;, {})
+        results.append({
+            &quot;name&quot;: node.get(&quot;name&quot;),
+            &quot;mid&quot;: node.get(&quot;@id&quot;, &quot;&quot;).replace(&quot;kg:&quot;, &quot;&quot;),
+            &quot;types&quot;: node.get(&quot;@type&quot;, []),
+            &quot;description&quot;: node.get(&quot;description&quot;, &quot;N/A&quot;),
+            &quot;official_url&quot;: node.get(&quot;url&quot;, &quot;N/A&quot;),
+        })
+    return results
+
+if __name__ == &quot;__main__&quot;:
+    print(json.dumps(audit_entity(&quot;OpenAI&quot;, &quot;YOUR_KEY&quot;, &quot;Organization&quot;), indent=2))</pre></div></div>
+<p>Run it on a schedule and store the output. Four things are worth alerting on, and none of them show up in a rank tracker, though all of them change how an AI assistant describes you: the MID changes or disappears (your node was merged, split or dropped); the official URL stops pointing at your domain (someone else captured the binding); the description shifts (Google's understanding of what you are has moved, possibly toward a competitor's category); or a namesake starts outranking you for your own brand string.</p>
+<h2 id="stack"><span class="section-num">06</span>What tools and metrics actually matter now?</h2>
+<div class="section-answer"><strong>Entity platforms that build and deploy machine-readable graphs, not keyword tools, and three generative metrics that survive the shift, starting with the one that needs no vendor.</strong> Traditional SEO platforms operate at the keyword level; entity platforms construct, manage and deploy graphs into your CMS. Two capabilities matter regardless of vendor: automated semantic internal linking (NLP entity extraction that cross-links by concept, the machine-readable cousin of <a href="/blogs/internal-linking-for-ai-retrieval">internal linking for AI retrieval</a>), and private knowledge graphs that give every article, author and product a URI exposed through a SPARQL or Linked Data interface, so an LLM crawler traverses a clean structured graph instead of guessing at your HTML.</div>
+<div class="tt-wrap"><div class="tt-label">The entity stack, by job</div><table class="tt"><thead><tr><th>Platform</th><th>Core capability</th><th>Best fit</th></tr></thead><tbody><tr><td class="label">InLinks</td><td>NLP entity extraction, automated internal linking, JSON-LD injection.</td><td>Sites needing semantic linking and schema without engineering time.</td></tr><tr><td class="label">WordLift</td><td>CMS entity curation, private knowledge graph, RDF endpoints.</td><td>Publishers wanting a queryable graph of their own content.</td></tr><tr><td class="label">Schema App</td><td>Scalable schema deployment via no-code mapping into a triple store.</td><td>Multi-domain enterprises needing centralised schema governance.</td></tr><tr><td class="label">Diffbot</td><td>Computer-vision and NLP crawling to build commercial graphs.</td><td>Teams building proprietary graph datasets from the open web.</td></tr><tr><td class="label">Profound</td><td>Share-of-voice and citation tracking across generative engines.</td><td>Brands measuring Share of Model and citation likelihood.</td></tr><tr><td class="label">AthenaHQ</td><td>Real-time sentiment and entity-mention tracking across LLMs.</td><td>PR and brand-equity monitoring inside AI interfaces.</td></tr></tbody></table></div>
+<p>Rank position is not dead but it is no longer sufficient. Three generative metrics are becoming standard: Share of Model (the proportion of generative answers in your category that reference your entity, the new share of voice); citation likelihood (how well your structure aligns with retrieval mechanisms); and contextual sentiment and accuracy (what models actually say about you). Start with the third because it needs no vendor: ask five models ten questions about your category once a month and write down what they say. You will learn more in an hour than most dashboards tell you in a quarter, and it pairs naturally with <a href="/blogs/prompt-to-citation-tracking">a prompt-to-citation measurement stack</a>.</p>
+<h2 id="sequence"><span class="section-num">07</span>What's the twelve-month build sequence?</h2>
+<div class="section-answer"><strong>Four heavily overlapping phases, anchor, synchronise, corroborate, govern, where sequence matters more than speed and phase four never ends.</strong> Inventory your entities first: the organisation, executive bios, flagship products and proprietary methodologies are all separate nodes, and most teams discover they have twice as many entities as they assumed, three of them competing for the same URL.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Phase 1</div><div class="pl-desc">anchor &amp; disambiguate</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Phase 2</div><div class="pl-desc">sync to public graphs</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Phase 3</div><div class="pl-desc">corroborate everywhere</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Phase 4</div><div class="pl-desc">govern, forever</div></div></div><div class="chart-caption">Figure 6, phases overlap and phase four never ends. Entities decay: executives leave, companies restructure, domains migrate, namesakes emerge.</div>
+<p>Phase one assigns each entity a dedicated Home URL with nested JSON-LD (@id, @type, mainEntity, complete scalar properties) and body copy that plainly states function, parent, founding details and people, marketing copy about what you enable customers to achieve is useless here, say what you are. Phase two reconciles historical records with OpenRefine and mints or updates QIDs with statements, qualifiers and external identifiers, it can start while phase one runs but not before, because Wikidata statements should reference the Entity Home. Phase three is the Digital Brand Echo made real: harmonise every fact across directories and registries, establish bidirectional sameAs, and add independent secondary citations through high-authority press and original research, the same <a href="/blogs/why-ai-cites-reddit-g2-analysts">earned corroboration that AI engines already trust</a>. Phase four runs scheduled API inspections, tracks Share of Model and sentiment, and re-validates schema so external changes never silently disconnect your node.</p>
+<div class="tt-wrap"><div class="tt-label">Where these projects go wrong</div><table class="tt"><thead><tr><th>Failure mode</th><th>What it looks like</th><th>The fix</th></tr></thead><tbody><tr><td class="label">Blank node syndrome</td><td>Schema validates perfectly, nothing changes in search.</td><td class="up">Add explicit @id URIs. Unnamed nodes get read and discarded.</td></tr><tr><td class="label">One-way sameAs</td><td>You link out to eight profiles. None link back.</td><td class="up">Configure the return link on every third-party profile you control.</td></tr><tr><td class="label">Fact drift</td><td>Three founding dates across five sources.</td><td class="up">Pick one, fix it at the Entity Home, then correct outward.</td></tr><tr><td class="label">Schema everywhere</td><td>Organisation markup duplicated on every page.</td><td class="up">One declaration, referenced by @id from everywhere else.</td></tr><tr><td class="label">Wikipedia tunnel vision</td><td>Six months on a page that gets deleted.</td><td class="up">Triage honestly. Do Wikidata first, always.</td></tr><tr><td class="label">Build and abandon</td><td>Great architecture in year one, silent decay in year two.</td><td class="up">Phase four is a standing commitment, not a project.</td></tr></tbody></table></div>
+<div class="callout-box"><div class="callout-box-label">Free tools from this piece</div><p>Three browser-based tools built from this playbook: the <a href="/tools/entity-home-generator">Entity Home JSON-LD Generator</a> for the nested @graph, the <a href="/tools/entity-readiness-scorecard">Entity Readiness Scorecard</a> to score yourself across the three gates, and the <a href="/tools/fact-consistency-checker">Fact-Consistency Checker</a> to catch the drift that fragments your node. All free, all run in your browser.</p></div>
+<h2 id="takeaway"><span class="section-num">08</span>What does this add up to?</h2>
+<div class="section-answer"><strong>A permanent shift, not a trend to wait out, where authority is earned through machine-readable clarity and corroboration, not volume.</strong> A brand with forty excellent articles and a clean, corroborated entity node will be cited more often than a brand with four hundred articles and no node at all. The sequence is not complicated: establish a canonical Entity Home anchored by nested JSON-LD, synchronise structured facts to Wikidata, maintain a consistent Digital Brand Echo across authoritative sources so credibility clears the three-source threshold, then govern it, forever.</div>
+<div class="pull-quote">Most of this work is unglamorous, cheap, and permanent, an unusual combination in marketing. The competitive window is open because the work looks like data administration rather than growth marketing, and most teams would rather ship another campaign. That preference is the opportunity.</div>
+<p>Winning here is not the same as winning the old game, and it compounds differently, the same reason <a href="/blogs/winning-google-isnt-winning-ai">winning Google is no longer winning AI</a>. Become a thing the machine knows, and the rest of your content finally has somewhere to attach.</p>
+<div class="faq-section"><div class="faq-section-label">Frequently Asked Questions</div><div class="faq-list"><div class="faq-item"><h3 class="faq-q">What is the difference between a keyword and an entity?</h3><p class="faq-a">A keyword is a string of text; an entity is a distinct concept with a unique machine identifier (a Google MID or a Wikidata QID). Keywords are ambiguous, the string "Java" means a language, an island, or coffee, so a string-matching engine has to guess. An entity resolves that ambiguity across every language at once: "Eiffel Tower" and "Tour Eiffel" are two labels on one node. Modern search and generative engines answer from entity nodes in a knowledge graph, not from documents that rank, so being a recognised entity is what makes a machine confident enough to state facts about you.</p></div><div class="faq-item"><h3 class="faq-q">Do I need a Wikipedia page to get a Google Knowledge Panel?</h3><p class="faq-a">No. A Wikipedia article triggers a panel in roughly 52% of brand searches, but organisations with no Wikipedia article still get panels in about 28%. Wikipedia is a strong accelerant and a poor strategy, it is community-governed with an active deletion culture and a failed promotional attempt can get your domain blacklisted. The reliable route is Wikidata plus a canonical Entity Home and consistent third-party corroboration, which has no notability wall for structured data and feeds the same downstream systems.</p></div><div class="faq-item"><h3 class="faq-q">What is an Entity Home?</h3><p class="faq-a">The single, authoritatively controlled URL that acts as the canonical reference for machine-readable facts about your entity, one entity, one URL. It is usually an About page or organisation root (not your marketing homepage), engineered to carry nested JSON-LD with explicit @id URIs and plain declarative copy. When it asserts facts, crawlers look for those exact facts on registries, Wikidata and news outlets; if they echo, algorithmic confidence rises and you earn stable nodes and Knowledge Panels.</p></div><div class="faq-item"><h3 class="faq-q">If I only do one thing, what should it be?</h3><p class="faq-a">Create a Wikidata item and point it, and your Entity Home's sameAs array, at each other. Wikidata is the direct descendant of the Freebase database that seeded Google's Knowledge Graph, it is fully machine-readable, and it has no notability wall for structured data. A Wikidata item with fifteen well-referenced, qualified statements and a handful of external identifiers, reciprocally linked to a JSON-LD Entity Home, does more for machine-readable authority than another two hundred blog posts.</p></div></div></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns and technical playbooks on GEO, entity SEO and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Sources: the public record of the Google Knowledge Graph and Wikidata, the schema.org and Wikibase specifications, the Knowledge Graph Search API docs, and published entity-SEO research, 2025-26. Code and schemas are illustrative reference implementations.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">8B</div><div class="stat-label">entities in Google's knowledge graph</div></div><hr class="stat-divider"><div><div class="stat-val">4.8x</div><div class="stat-label">AI Overview pick with 15+ linked entities</div></div><hr class="stat-divider"><div><div class="stat-val">28%</div><div class="stat-label">get a panel with no Wikipedia page</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this playbook</div><ul class="toc-list"><li><a href="#strings-to-things"><span class="toc-num">01</span>Strings to things</a></li><li><a href="#why-now"><span class="toc-num">02</span>Why it matters now</a></li><li><a href="#entity-home"><span class="toc-num">03</span>The Entity Home</a></li><li><a href="#wikidata"><span class="toc-num">04</span>Wikipedia & Wikidata</a></li><li><a href="#audit"><span class="toc-num">05</span>Auditing the graph</a></li><li><a href="#stack"><span class="toc-num">06</span>Stack & scoreboard</a></li><li><a href="#sequence"><span class="toc-num">07</span>The build sequence</a></li><li><a href="#takeaway"><span class="toc-num">08</span>What it adds up to</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4);
+
+  var gr=document.getElementById('entGrowth');
+  if(gr){new Chart(gr,{type:'bar',data:{labels:['Entities 2012','Entities 2026','Facts 2012','Facts 2026'],datasets:[{data:[570000000,8000000000,18000000000,800000000000],backgroundColor:[neutral,signal,neutral,up],borderRadius:4,barThickness:38}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){var v=c.raw;return ' '+(v>=1e9?(v/1e9)+'B':(v/1e6)+'M');}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{type:'logarithmic',ticks:{color:text,font:{family:mono,size:9},callback:function(v){return v>=1e9?(v/1e9)+'B':v>=1e6?(v/1e6)+'M':v;}},grid:{color:grid}}}}});}
+
+  var mu=document.getElementById('entMult');
+  if(mu){new Chart(mu,{type:'bar',data:{labels:['No linked entities','15+ linked entities'],datasets:[{data:[1,4.8],backgroundColor:[neutral,signal],borderRadius:4,barThickness:60}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'x AI Overview selection';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'x';}},grid:{color:grid}}}}});}
+
+  var pa=document.getElementById('entPanel');
+  if(pa){new Chart(pa,{type:'bar',data:{labels:['With Wikipedia','Without Wikipedia'],datasets:[{data:[52,28],backgroundColor:[signal,rgba(signal,0.55)],borderRadius:4,barThickness:60}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% of brand searches show a panel';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,max:60,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>

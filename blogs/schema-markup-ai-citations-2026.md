@@ -358,7 +358,7 @@ Platform-by-platform citation ranking signals and schema priorities
 
 ### Google Gemini and AI Overviews: Entity-First SEO
 
-Implement robust Organization and Person schemas with comprehensive sameAs arrays pointing to authoritative external knowledge bases. This explicit referencing helps Google's systems map the brand as a verified entity within its core Knowledge Graph, the prerequisite for consistent AI Overview citations.
+Implement robust Organization and Person schemas with comprehensive sameAs arrays pointing to authoritative external knowledge bases. This explicit referencing helps Google's systems map the brand as [a verified entity within its core Knowledge Graph](/blogs/becoming-an-entity), the prerequisite for consistent AI Overview citations.
 
 Organization.sameAs array: recommended external knowledge bases
 

@@ -123,6 +123,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://rawmktg.com/blogs/becoming-an-entity</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
     <url>
     <loc>https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists</loc>
     <lastmod>2026-06-01</lastmod>
@@ -177,6 +183,24 @@
   </url>
   <url>
     <loc>https://rawmktg.com/tools/llms-txt-generator</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/entity-home-generator</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/entity-readiness-scorecard</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/fact-consistency-checker</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

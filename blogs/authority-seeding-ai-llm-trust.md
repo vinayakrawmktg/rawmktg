@@ -166,7 +166,7 @@ Deliverable: Schema deployed site-wide, robots.txt updated, llms.txt live at roo
 
 Channel Seeding and Co-citation Distribution
 
-Translate the core concept definitions into conversational content and seed them across external high-authority platforms, including Reddit, Quora, Medium, and vertical-specific forums. Execute digital PR campaigns to secure plain-text mentions in industry publications and niche newsletters, explicitly writing sentences that co-locate the brand name with the target service descriptor. Build and verify the organisation's structured Wikidata and DBpedia nodes to cement its place in pre-trained models.
+Translate the core concept definitions into conversational content and seed them across external high-authority platforms, including Reddit, Quora, Medium, and vertical-specific forums. Execute digital PR campaigns to secure plain-text mentions in industry publications and niche newsletters, explicitly writing sentences that co-locate the brand name with the target service descriptor. Build and verify the organisation's [structured Wikidata and DBpedia nodes](/blogs/becoming-an-entity) to cement its place in pre-trained models.
 
 Deliverable: 20+ seeded external placements per quarter, with direct brand-to-category co-occurrence in each.
 

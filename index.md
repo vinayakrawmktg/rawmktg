@@ -6,7 +6,6 @@
 
 ## Articles
 
-- [Does llms.txt Actually Do Anything Yet?](https://rawmktg.com/blogs/does-llms-txt-do-anything-yet)
 - [Getting Found on Google and AI](https://rawmktg.com/blogs/payments-getting-found-google-ai)
 - [Ranking Isn't Visibility](https://rawmktg.com/blogs/ranking-isnt-visibility)
 - [Authority Isn't Demand](https://rawmktg.com/blogs/authority-isnt-demand)
@@ -18,6 +17,7 @@
 - [When Buyers Ask AI Which HR Software to Use, One Brand Owns the Answer](https://rawmktg.com/blogs/hr-saas-ai-visibility-gap)
 - [Beyond Cross-Border: Where India's Global-Payments Brands Actually Earn Their Backlinks](https://rawmktg.com/blogs/cross-border-backlinks)
 - [When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room](https://rawmktg.com/blogs/aec-ai-visibility-gap)
+- [Does llms.txt Actually Do Anything Yet?](https://rawmktg.com/blogs/does-llms-txt-do-anything-yet)
 - [How We Run a GEO Foundation Audit](https://rawmktg.com/blogs/geo-foundation-audit)
 - [Why Traditional SEO Is No Longer Enough](https://rawmktg.com/blogs/why-traditional-seo-is-no-longer-enough)
 - [AI Mode vs AI Overviews](https://rawmktg.com/blogs/ai-mode-vs-ai-overviews)
@@ -27,6 +27,7 @@
 - [Internal Linking for AI Retrieval](https://rawmktg.com/blogs/internal-linking-for-ai-retrieval)
 - [Schema Markup in 2026: The Structured-Data Playbook Every B2B Brand Needs for AI Citations](https://rawmktg.com/blogs/schema-markup-ai-citations-2026)
 - [OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site](https://rawmktg.com/blogs/how-ai-crawlers-index-your-site)
+- [Becoming an Entity](https://rawmktg.com/blogs/becoming-an-entity)
 - [The Reddit GEO Playbook](https://rawmktg.com/blogs/reddit-geo-playbook)
 - [Why AI Cites Reddit, G2 & Analysts Over Your Website](https://rawmktg.com/blogs/why-ai-cites-reddit-g2-analysts)
 - [The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists](https://rawmktg.com/blogs/topical-authority-cluster-ai-shortlists)

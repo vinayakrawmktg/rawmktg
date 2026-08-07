@@ -143,7 +143,7 @@ GEO Holy Trinity: empirical results from the Princeton/Georgia Tech study (PAWC 
 
 ### 1. Quotation Addition: High-Trust Semantic Anchors
 
-Direct expert quotes enclosed in quotation marks function as high-trust semantic anchors, allowing models to easily extract and attribute assertions. Implementation requires moving beyond paraphrased text to verbatim statements from accredited Subject Matter Experts (SMEs) with established external digital footprints, such as professional publications, speaking engagements, or entries in Wikidata. Embed quotes within clean HTML `<blockquote>` tags, explicitly attributing each quote with the expert's full name, official title, and primary credentials.
+Direct expert quotes enclosed in quotation marks function as high-trust semantic anchors, allowing models to easily extract and attribute assertions. Implementation requires moving beyond paraphrased text to verbatim statements from accredited Subject Matter Experts (SMEs) with established external digital footprints, such as professional publications, speaking engagements, or [entries in Wikidata](/blogs/becoming-an-entity). Embed quotes within clean HTML `<blockquote>` tags, explicitly attributing each quote with the expert's full name, official title, and primary credentials.
 
 ### 2. Statistics Addition: Replacing Adjectives with Data Points
 
