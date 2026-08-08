@@ -107,6 +107,12 @@
 .q:last-child{margin-bottom:0;}
 .q-t{font-family:var(--f-mono);font-size:13px;line-height:1.55;color:rgba(255,255,255,.82);margin-bottom:10px;}
 .q-t strong{color:#fff;font-weight:600;}
+.erow{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.erow:last-child{border-bottom:none;}
+.erow .fld{flex:1;min-width:88px;margin:0;}
+.ename{flex-basis:100%;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.02em;color:rgba(255,255,255,.9);}
+.m-val{font-family:var(--f-display);font-weight:700;font-size:30px;line-height:1;color:#fff;}
+.m-lab{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:7px;}
 .toolpage .iseg button[data-m="0"].sel{background:rgba(188,63,29,.20);border-color:var(--signal);}
 .toolpage .iseg button[data-m="0.5"].sel{background:rgba(138,130,120,.24);border-color:var(--mute);}
 .toolpage .iseg button[data-m="1"].sel{background:rgba(62,155,106,.20);border-color:var(--up);}
