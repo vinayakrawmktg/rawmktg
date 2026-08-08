@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/eeat-is-an-ai-signal-now · rawmktg. by Vinayak Ravi*
 
 
-The rules of digital visibility are being rewritten. For nearly two decades, Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, and Trustworthiness) functioned as a [qualitative guideline for human search quality raters](https://outpaceseo.com/glossary/google-search-quality-rater-guidelines/). It was abstract, interpretive, and largely invisible to the algorithms themselves. That era is over.
+The rules of digital visibility are being rewritten. For nearly two decades, Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, and Trustworthiness) functioned as a [qualitative guideline for human search quality raters](https://outpaceseo.com/glossary/google-search-quality-rater-guidelines/). It was abstract, interpretive, and largely invisible to the algorithms themselves. That era is over. It is one of three trust inputs, alongside how you are [mentioned, cited and recommended](/blogs/citation-vs-mention-vs-recommendation).
 
 Today, those same human-defined quality preferences are mathematically encoded into the parameter weights of large language models (LLMs) through a process called preference alignment. When a generative AI system like Perplexity, Google AI Overviews, or ChatGPT Search decides which sources to cite, it is not running a fresh keyword match. It is [executing a policy baked in during training](/blogs/how-rag-actually-works), a policy that mirrors, with striking precision, the criteria Google trained its human raters to apply. The gap between "writing for E-E-A-T" and "writing for AI citation" has effectively collapsed to zero.
 

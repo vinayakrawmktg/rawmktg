@@ -50,7 +50,7 @@ Table 01: Architectural feature comparison, ChatGPT vs. Perplexity vs. Gemini
 
 **A fine-tuned GPT-4o reading over Bing's index.** ChatGPT Search runs on a fine-tuned version of GPT-4o, blending pre-trained weights with live retrieval via Microsoft's Bing Web Index and OAI-Searchbot. The critical number for growth teams: only 15% of initially retrieved pages survive the citation selection filter. If your page is not in Bing's index, ChatGPT cannot see it at all.
 
-ChatGPT Search (now including GPT-5.3 Instant, launched March 4, 2026) applies five citation pillars to determine which sources survive the filter: Pattern Recognition, Credibility, Relevance, Timeliness, and Diversity.[9](#r9) In practical execution terms, this translates to four priorities:
+ChatGPT Search (now including GPT-5.3 Instant, launched March 4, 2026) applies five citation pillars to determine which sources survive the filter (a [citation](/blogs/citation-vs-mention-vs-recommendation), distinct from a mention or a recommendation): Pattern Recognition, Credibility, Relevance, Timeliness, and Diversity.[9](#r9) In practical execution terms, this translates to four priorities:
 
 15%
 The fraction of initially retrieved pages that survive ChatGPT's citation selection filter. Bing indexation, structured content density, review platform presence, and direct-answer formatting determine which pages make the cut.[9](#r9)

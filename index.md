@@ -35,6 +35,7 @@
 - [Hallucination-Proofing Your Brand: The Content Architecture That Stops AI Getting You Wrong](https://rawmktg.com/blogs/hallucination-proofing-your-brand)
 - [Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers](https://rawmktg.com/blogs/anatomy-of-a-high-citation-page)
 - [Authority Seeding for AI: Building the Off-Site Signal Stack That LLMs Actually Trust](https://rawmktg.com/blogs/authority-seeding-ai-llm-trust)
+- [Citation vs Mention vs Recommendation](https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation)
 - [How Your Page Gets Retrieved](https://rawmktg.com/blogs/how-your-page-gets-retrieved)
 - [RLHF and Your Brand](https://rawmktg.com/blogs/rlhf-and-your-brand)
 - [Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero](https://rawmktg.com/blogs/prompt-to-citation-tracking)

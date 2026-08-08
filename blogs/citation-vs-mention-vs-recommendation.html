@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Citation vs Mention vs Recommendation &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mentions, citations and recommendations are three different AI-search signals with three different fixes. The measurement taxonomy, the formulas to score each, and what the evidence shows." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation" />
+  <meta property="og:title" content="Citation vs Mention vs Recommendation" />
+  <meta property="og:description" content="Mentions, citations and recommendations are three different AI-search signals with three different fixes. The measurement taxonomy, the formulas to score each, and what the evidence shows." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/citation-vs-mention-vs-recommendation.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Citation vs Mention vs Recommendation" />
+  <meta name="twitter:description" content="Mentions, citations and recommendations are three different AI-search signals with three different fixes. The measurement taxonomy, the formulas to score each, and what the evidence shows." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/citation-vs-mention-vs-recommendation.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Citation vs Mention vs Recommendation", "description": "Mentions, citations and recommendations are three different AI-search signals with three different fixes. The measurement taxonomy, the formulas to score each, and what the evidence shows.", "image": "https://rawmktg.com/assets/images/citation-vs-mention-vs-recommendation.webp", "url": "https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation", "datePublished": "2026-08-08", "dateModified": "2026-08-08", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation"}, "keywords": ["AI visibility", "GEO measurement", "brand mentions", "citations", "recommendations", "generative engine optimization", "share of voice", "parametric memory", "RAG", "AI search metrics"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Citation vs Mention vs Recommendation", "item": "https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a mention, a citation, and a recommendation in AI search?", "acceptedAnswer": {"@type": "Answer", "text": "A mention is your brand name appearing in text anywhere on the web, linked or not; it feeds the model's parametric memory and answers whether the machine knows you exist. A citation is an engine attributing a specific claim to a specific URL; it comes from live non-parametric retrieval and answers whether the machine treats your page as evidence. A recommendation is the engine naming you as a good choice at the synthesis layer, and answers whether the machine picks you."}}, {"@type": "Question", "name": "Do brand mentions without links actually matter for AI visibility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but through a different mechanism than links. Unlinked mentions build entity prominence and co-citation, which is what a language model retains in its weights, rather than passing PageRank equity. In a 75,000-brand analysis, branded web mentions correlated with AI Overview visibility at 0.664 versus 0.218 for referring domains. Quality of context matters: low-quality mentions on scraped content farms do little."}}, {"@type": "Question", "name": "What percentage of AI citations point to a brand's own website?", "acceptedAnswer": {"@type": "Answer", "text": "About 2.9%. In production measurement, roughly 97.1% of citations in AI answers point to third-party domains, comparison listicles, communities like Reddit and YouTube, and reference and trade sites, rather than the brand's own domain. Your website is where you convert attention, not where you earn it."}}, {"@type": "Question", "name": "Which off-page signal correlates most strongly with AI visibility?", "acceptedAnswer": {"@type": "Answer", "text": "YouTube mentions, at a Spearman correlation of 0.737, ahead of branded web mentions at 0.664. Video transcripts are dense, conversational, entity-rich text that models ingest readily. Every mention-class signal outranked every link-class signal in the data, and raw content volume was the weakest predictor at 0.194."}}, {"@type": "Question", "name": "How should you measure AI visibility across engines?", "acceptedAnswer": {"@type": "Answer", "text": "Use a fixed prompt set of 20 to 50 discovery and comparison prompts, run it 3 to 5 times per engine to smooth out non-determinism, and compute a platform-weighted visibility score rather than a pooled average. Track mean recommendation position, a contextual sentiment index, and entity share of voice against a verified competitor set, and report per-engine deltas rather than one blended number."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/citation-vs-mention-vs-recommendation.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/tools.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/citation-vs-mention-vs-recommendation.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/citation-vs-mention-vs-recommendation.webp" srcset="/assets/images/citation-vs-mention-vs-recommendation-800.webp 800w, /assets/images/citation-vs-mention-vs-recommendation-1200.webp 1200w, /assets/images/citation-vs-mention-vs-recommendation-1600.webp 1600w, /assets/images/citation-vs-mention-vs-recommendation.webp 2400w" sizes="100vw" alt="Citation vs Mention vs Recommendation - the GEO measurement taxonomy - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Measurement Taxonomy &middot; Ranking Signals</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
+    <h1 class="article-headline">Citation vs Mention vs Recommendation</h1>
+    <p class="article-deck">Three words that get used interchangeably in GEO decks. They describe three different subsystems, three different failure modes, and three different fixes. Here is the measurement taxonomy, the math behind each one, and what the data actually says.</p>
+    <p class="article-data-note">A measurement-taxonomy teardown grounded in the Princeton/Georgia Tech GEO experiment (KDD 2024), the GEO-at-scale benchmark (102 brands, 102,025 responses), and the 75,000-brand correlation analysis, 2024-26. Formulas and code are working reference implementations; figures are drawn from the cited studies.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p>For nearly thirty years the currency of off-page SEO was the hyperlink. A link was a countable, directional vote. PageRank turned those votes into a graph, and the graph decided who ranked. The model was crude but honest: more good links, more authority, better position.</p>
+<p>That model is now one input among several. Large language models and <a href="/blogs/how-rag-actually-works">retrieval-augmented generation</a> have created an evaluation environment where the machine does not hand back ten blue links. It reads, it decides, and it writes an answer. Somewhere inside that process your brand is either present or absent, either trusted or ignored, either recommended or skipped.</p>
+<p>Three signals govern that outcome: mentions, citations, and recommendations. In marketing conversation they get flattened into one idea, usually described as "AI visibility". Inside the machine they are produced by different subsystems, stored in different places, and measured with different math. Confusing them is the reason so many GEO programmes stall.</p>
+<div class="pull-quote">You cannot fix a mention problem with better on-page content, and you cannot fix a citation problem with more press coverage.</div>
+<p>This article separates the three properly. It defines each one mechanically, gives you the formulas used to score them, walks through the empirical evidence for each, and ends with a diagnostic you can run against your own brand this week.</p>
+<h2 id="short"><span class="section-num">01</span>What is the difference between a mention, a citation, and a recommendation?</h2>
+<div class="section-answer"><strong>They are three signals from three subsystems.</strong> A mention feeds parametric memory (does the machine know you exist). A citation comes from non-parametric retrieval (does the machine treat your page as evidence). A recommendation happens at synthesis (does the machine pick you). They stack, and each gap has a different cause.</div>
+<p>If you read nothing else, read this:</p>
+<ul><li><strong>A mention</strong> is your brand name appearing in text anywhere on the web, linked or not. It feeds parametric memory, the knowledge baked into a model's weights. It answers: does the machine know you exist.</li><li><strong>A citation</strong> is an engine attributing a specific claim in its answer to a specific URL. It comes from non-parametric retrieval, the live fetch that happens when someone submits a prompt. It answers: does the machine treat your page as evidence.</li><li><strong>A recommendation</strong> is the engine naming you as a good choice. It happens at the synthesis layer, after retrieval, when the model weighs options against each other. It answers: does the machine pick you.</li></ul>
+<p>They stack. Mentions build the prior. Citations ground the answer. Recommendations convert. You can have all the mentions in the world and never get cited. You can get cited constantly and never get recommended. Each gap has a different cause.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Mention</div><div class="pl-desc">Awareness. Entity known to the model's weights.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Citation</div><div class="pl-desc">Trust. Page selected as evidence at retrieval.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Recommendation</div><div class="pl-desc">Selection. Named as the pick at synthesis.</div></div></div><div class="chart-caption">Figure 1. The three signals map onto three layers of a generative search system, and form a funnel: awareness, trust, selection.</div>
+<h2 id="why"><span class="section-num">02</span>Why does separating these three signals matter now?</h2>
+<div class="section-answer"><strong>Because the signals have decoupled.</strong> In classical search they moved together, a mention earned a link, the link moved the ranking, the ranking drove the click. Generative engines broke that chain, so link count is now a poor proxy for whether a machine will name you.</div>
+<p>A mention on Reddit with no link can lift your presence in ChatGPT answers while doing nothing for your Google position. A page that ranks eleventh on Google can be the single source an AI Overview cites, because <a href="/blogs/how-your-page-gets-retrieved">retrieval and ranking are separate operations</a>. And a brand can be cited as a source in an answer that ends up recommending a competitor, which is the most frustrating outcome of all.</p>
+<p>Two data points make the scale of the change concrete. In a correlation study of 75,000 brands, branded web mentions correlated with AI Overview visibility at 0.664 while referring domains managed 0.218. And longitudinal data suggests backlinks accounted for roughly 80% of off-page ranking influence in 2012 and around 45% by 2026, with mentions, entity prominence, and co-citation absorbing the difference.</p>
+<div class="chart-wrap"><canvas id="shiftChart" height="230"></canvas></div><div class="chart-caption">Figure 3. The composition of off-page influence has shifted from link-class signals toward mention-class signals, 2012 to 2026.</div>
+<p>Neither number means links are dead. Links still move classical rankings, and classical rankings still feed the retrieval indices these engines query. What the numbers mean is that link count is now a poor proxy for the thing you actually care about: whether a machine will name you when a buyer asks it a question. This is the same gap covered in <a href="/blogs/winning-google-isnt-winning-ai">winning Google is not winning AI</a>.</p>
+<h2 id="definitions"><span class="section-num">03</span>How is each signal actually defined?</h2>
+<div class="section-answer"><strong>By the mechanism that produces it, not how it looks.</strong> Two things can look identical in an AI answer and be produced by completely different parts of the system. Mentions come from entity recognition, citations from retrieval grounding, recommendations from synthesised choice.</div>
+<h3>The mention: entity recognition and parametric association</h3>
+<p>A mention is an unlinked or linked textual reference to an entity, a brand, a product, an executive, or a proprietary term, occurring in published digital text. The defining property is that no anchor tag is required. A plain string of text carries the signal.</p>
+<p>Mechanically, mentions operate at entity extraction and parametric encoding. When crawlers and training pipelines ingest unstructured text, NLP models run Named Entity Recognition to map a string to a node in a knowledge graph. Two derived signals matter more than the raw count:</p>
+<ul><li><strong>Co-occurrence</strong> is the spatial proximity of your brand string to topical keywords inside a sentence, paragraph, or chunk. It teaches the machine what you are.</li><li><strong>Co-citation</strong> is the appearance of two or more entities inside the same document or thematic context. It teaches the machine who you sit next to.</li></ul>
+<p>Co-citation is the underrated one. If your name appears in the same paragraph as three established category leaders often enough, the machine starts treating you as a member of that set. That is not a metaphor; it is a property of how embeddings cluster, and it is the core of <a href="/blogs/becoming-an-entity">becoming an entity</a>.</p>
+<p>The precedent for counting unlinked mentions goes back to Google's 2012 implied-links patent (US8682892B1), which describes systems that identify references to external resources without explicit hyperlinks and treat them as implied endorsements. The honest reading: implied links do not pass classic PageRank equity, but they do establish entity prominence, and entity prominence is what a language model retains.</p>
+<div class="callout-box"><div class="callout-box-label">An honest counter-argument</div><p>Some link-building practitioners maintain that mentions without links do very little for classical rankings, and on that narrow point they are largely right. The correlation data concerns AI visibility, not position one on a commercial keyword. Both things can be true at once.</p></div>
+<h3>The citation: non-parametric grounding and provenance</h3>
+<p>A citation is an explicit, verifiable reference, usually rendered as a hyperlinked URL, a footnote, or an inline attribution, that an answer engine uses to ground a specific factual claim in its output.</p>
+<p>Citations belong to non-parametric memory. When a prompt arrives, the engine performs a live retrieval step across its index, pulls relevant passages, and loads them into the context window. If the model uses content from one of those passages, it attaches an attribution. The citation is a receipt: the retrieval layer selected your specific chunk of text as evidence for a specific statement.</p>
+<p>This has a consequence most content teams miss. Being cited is not a reward for being authoritative in general. It is a reward for having a passage that was extractable, relevant, and dense with verifiable content at the exact moment a sub-query needed it, exactly the profile described in <a href="/blogs/anatomy-of-a-high-citation-page">the anatomy of a high-citation page</a>. Research on citation implementation consistently finds the same preferences: machine-extractable evidence density, precise statistics, direct expert quotations, and high structural clarity.</p>
+<p>Citations also serve the engine's own interests. They reduce hallucination by tying generated prose to retrievable web evidence, which is why RAG evaluation frameworks treat citation accuracy as a first-class quality metric rather than a courtesy to publishers.</p>
+<h3>The recommendation: synthesised selection</h3>
+<p>A recommendation is an algorithmic endorsement. The system explicitly proposes your brand as a top-tier choice in response to an intent-driven query.</p>
+<p>This happens at the decision layer, after retrieval and during synthesis. Ask an engine which enterprise CRM has the best Slack integration for B2B sales teams and it does not simply look up an answer. It decomposes the question, retrieves candidates across sources, compares attributes, weighs sentiment, and produces a rank-ordered or selective list.</p>
+<p>To issue that recommendation the system combines both memory types. Parametric memory supplies the prior, a sense of who the credible players are. Non-parametric retrieval supplies the current evidence about features, pricing, and third-party opinion. A brand missing from either side struggles: strong prior with weak evidence gets mentioned but not recommended; strong evidence with weak prior gets cited as a source while a better-known competitor gets named as the pick. It is also the only one of the three that maps directly to pipeline, and the endpoint that matters most <a href="/blogs/when-the-buyer-is-a-bot">when the buyer is a bot</a>.</p>
+<h3>Comparative taxonomy matrix</h3>
+<p>The table below is the reference version. If you take one artefact from this article into a strategy document, take this one.</p>
+<div class="tt-wrap"><div class="tt-label">Table 1. The measurement taxonomy across seven dimensions.</div><table class="tt"><thead><tr><th>Dimension</th><th>Mention</th><th>Citation</th><th>Recommendation</th></tr></thead><tbody><tr><td class="label">Primary IR signal</td><td>Implicit entity prominence and co-occurrence</td><td>Explicit grounding and provenance attribution</td><td>Synthesised decision and evaluative choice</td></tr><tr><td class="label">System memory layer</td><td>Parametric memory and knowledge graph</td><td>Non-parametric memory and RAG index</td><td>Model output and decoded context window</td></tr><tr><td class="label">Mechanistic trigger</td><td>Textual presence, NER, co-citation</td><td>Evidence density, extractable stats, schema</td><td>Positive sentiment, multi-source consensus, intent match</td></tr><tr><td class="label">Primary unit</td><td>Mention rate, co-occurrence frequency</td><td>Citation share, domain attribution count</td><td>Recommendation share of voice, mean rank</td></tr><tr><td class="label">Link dependency</td><td>Unlinked or linked, an implied link</td><td>Depends on valid, crawlable source URLs</td><td>Independent of any direct link</td></tr><tr><td class="label">Funnel impact</td><td>Top of funnel: entity awareness</td><td>Mid funnel: trust, verification, referral</td><td>Bottom of funnel: conversion, vendor selection</td></tr><tr><td class="label">Failure mode</td><td>Entity ambiguity or negative sentiment</td><td>Citation loss from stale or dropped chunks</td><td>Exclusion from the day-one consideration set</td></tr></tbody></table></div>
+<h2 id="machine"><span class="section-num">04</span>How does the machine actually produce these signals?</h2>
+<div class="section-answer"><strong>Across two layers: parametric memory and live retrieval.</strong> Almost every strategic mistake in GEO comes from treating them as one. Mentions live in the frozen weights; citations come from the runtime fetch; the recommendation is synthesised from both.</div>
+<h3>Parametric memory versus non-parametric retrieval</h3>
+<p>Parametric memory is the set of internal parameters, weights, and biases configured during pre-training and reinforcement learning. It is static knowledge, frozen at training time, distilled from enormous web crawls. An entity mentioned heavily across authoritative sources during pre-training becomes embedded in the weights. Ask the model a generic category question and it can name that entity without touching the live web.</p>
+<p>Non-parametric memory is everything external: real-time web indices, vector databases, and retrieval pipelines queried at the moment a prompt runs. It is fresh, swappable, and where citations come from.</p>
+<div class="callout-box"><div class="callout-box-label">The rule you can act on</div><p>If your brand is invisible even on prompts where the engine does not search, you have a parametric problem, and the fix is off-page and slow.</p><p>If your brand appears in the answer but your URL never shows up in the source list, you have a retrieval problem, and the fix is on-page and fast.</p></div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Offline ingestion</div><div class="pl-desc">Crawls + training bake entities into weights.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Parametric memory</div><div class="pl-desc">The prior: who the model already knows.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Runtime retrieval</div><div class="pl-desc">Live fetch selects chunks, produces citations.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Synthesis</div><div class="pl-desc">Both combine to produce the recommendation.</div></div></div><div class="chart-caption">Figure 4. Offline ingestion builds parametric memory. Runtime retrieval builds citations. Synthesis combines both into the recommendation.</div>
+<h3>Query fan-out, chunking, and context precision</h3>
+<p>Modern generative engines rarely query their index with the sentence the user typed. They use query fan-out: the orchestration layer decomposes the primary prompt into multiple targeted sub-queries. A question about enterprise SaaS CRMs with Slack integrations becomes a fan of narrower searches, integration comparisons, native workflow reviews, category buyer guides, run in parallel, each returning candidate documents.</p>
+<p>Retrieved documents are parsed into chunks, typically 100 to 300 words. A re-ranking model, usually a cross-encoder, scores each chunk for context precision. Chunks that score well share a profile: clear subject-predicate-object structure, exact numeric figures, named sources, and a single self-contained idea. Chunks that score badly are narrative, hedged, and dependent on the paragraph before them for meaning. Empirical work suggests the median length of a passage cited directly by systems like Claude or ChatGPT sits around 40 words.</p>
+<div class="callout-box"><div class="callout-box-label">The 40-word rule, stated plainly</div><p>Write the answer to a question in one self-contained passage of roughly 40 words that would still make sense if it were the only thing a machine ever read from your page. Then write everything else around it. This is the single highest-leverage on-page change available in GEO, and it costs nothing but discipline.</p></div>
+<h3>The Matthew effect and the brand stature ladder</h3>
+<p>Generative visibility compounds. Information retrieval literature calls this the Matthew effect, the rich getting richer, the engine that powers the <a href="/blogs/geo-compounding-flywheel">GEO compounding flywheel</a>. Language models display a structural bias toward entities with high baseline representation in the training corpus, because that is precisely what parametric memory is. Large-scale analysis across AI engines, published in the GEO-at-scale study covering 102 brands, 3,508 tracking runs, and 102,025 prompt responses, produces a clear ladder:</p>
+<div class="chart-wrap"><canvas id="tierChart" height="240"></canvas></div><div class="chart-caption">Figure 5. Baseline unbranded visibility by brand stature tier. Each rung down costs roughly 30 percentage points.</div>
+<ul><li><strong>Tier 1</strong>, global household brands with dense parametric representation, average <strong>72.9%</strong> visibility on unbranded discovery prompts.</li><li><strong>Tier 2</strong>, established mid-market and regional brands, sit at <strong>43.6%</strong>.</li><li><strong>Tier 3</strong>, niche and small brands without broad co-citation networks, average <strong>11.4%</strong>.</li></ul>
+<p>Because engines look for multi-source corroboration before committing to a commercial recommendation, a Tier 3 brand is not one content refresh away from parity. It has to build the off-site mention footprint that Tier 1 brands accumulated over a decade. The related finding from the same dataset: visibility trajectories stay flat without intervention. Brands do not drift upward on their own.</p>
+<h3>Source composition: earned coverage dominates</h3>
+<p>The most commonly held false belief in this discipline is that optimising your own domain is sufficient. Production measurement refutes it plainly. When AI search engines generate answers and attribute citations, roughly 2.9% of total citations point to the target brand's own website. The other 97.1% point elsewhere.</p>
+<div class="chart-wrap"><canvas id="sourceChart" height="240"></canvas></div><div class="chart-caption">Figure 6. Citation source composition. The brand's own domain is a rounding error at 2.9%.</div>
+<ul><li><strong>Listicles and comparison aggregators</strong> are the single largest category at about 35.7% of all citations, the "best X for Y" pages, and the highest-leverage placement in AI search.</li><li><strong>User communities and media</strong> such as Reddit, YouTube, and Quora supply roughly 18% to 25%. Re-rankers favour unvarnished user sentiment and recent contextual proof, which is <a href="/blogs/why-ai-cites-reddit-g2-analysts">why Reddit, G2 and analyst reports drive AI recommendations</a>.</li><li><strong>Reference sites and trade publications</strong> including Wikipedia account for 10% to 15%, providing high-trust entity validation.</li></ul>
+<p>Read that chart as an instruction rather than a curiosity. AI answer systems treat first-party claims with structural distrust unless independent sources corroborate them. Your website is where you convert attention, not where you earn it.</p>
+<h3>Different engines, different worlds</h3>
+<p>One more mechanical fact before the math. Engines do not share a retrieval index, and their cited source sets barely overlap. Cross-engine Jaccard overlap of cited domains runs between 16% and 20% for the same prompt, part of <a href="/blogs/why-engines-recommend-different-vendors">why engines recommend different vendors</a>. This kills the idea of a single AI search strategy: you are optimising for five loosely related systems with different index compositions, different re-ranking weights, and different freshness behaviour. That is exactly why the visibility metric below is platform-weighted rather than pooled.</p>
+<h2 id="math"><span class="section-num">05</span>How do you score the three signals?</h2>
+<div class="section-answer"><strong>Five metrics, each with its own formula.</strong> Traditional SEO metrics do not survive contact with generative search. Platform-weighted visibility, mean recommendation position, a sentiment index, entity share of voice, and cross-platform source overlap. Each measures a different thing.</div>
+<p>Keyword rank position assumes a ranked list. Domain authority assumes a link graph is the primary evaluator. Neither assumption holds when the output is a paragraph of synthesised prose. What follows is a working framework: five metrics, each with the formula, the variables, and code you can run against your own tracking data.</p>
+<h3>1. Platform-weighted visibility</h3>
+<p>Engines do not perform uniformly. A brand can be highly visible on ChatGPT and absent from Perplexity. Pooling those into one average hides the thing you need to see, so visibility is computed as a weighted composite where w_p is the platform weight (normalised to sum to one), M_p is mentions on platform p, and Q_p is prompts issued to it. Weight the engines your buyers actually use, and renormalise if you only track some of them.</p>
+<div class="code-wrap"><div class="code-label">python · platform-weighted visibility</div><div class="code-block"><pre>from collections import defaultdict
+
+WEIGHTS = {&quot;chatgpt&quot;: 0.30, &quot;gemini&quot;: 0.20, &quot;perplexity&quot;: 0.20,
+           &quot;claude&quot;: 0.20, &quot;grok&quot;: 0.10}
+
+def weighted_visibility(runs, weights=WEIGHTS):
+    &quot;&quot;&quot;runs: list of dicts -&gt; {platform, prompt_id, mentioned: bool}&quot;&quot;&quot;
+    issued, hits = defaultdict(int), defaultdict(int)
+    for r in runs:
+        issued[r[&quot;platform&quot;]] += 1
+        hits[r[&quot;platform&quot;]]   += 1 if r[&quot;mentioned&quot;] else 0
+    score, covered = 0.0, 0.0
+    for p, w in weights.items():
+        if issued[p] == 0:            # never fake coverage you do not have
+            continue
+        score   += w * (hits[p] / issued[p]) * 100
+        covered += w
+    return score / covered if covered else 0.0   # renormalise
+
+def by_platform(runs):
+    issued, hits = defaultdict(int), defaultdict(int)
+    for r in runs:
+        issued[r[&quot;platform&quot;]] += 1
+        hits[r[&quot;platform&quot;]]   += bool(r[&quot;mentioned&quot;])
+    return {p: round(100 * hits[p] / issued[p], 1) for p in issued}</pre></div></div>
+<h3>2. Mean recommendation position</h3>
+<p>Appearing in a list is not the same as topping it. Position inside a generated answer correlates strongly with user selection, so ordinal placement needs its own metric. M_pos is the subset of prompts where the brand receives an explicit ordinal recommendation, and r(q,p) is the rank assigned, where 1 is the primary recommendation. Lower is better, which makes this the one metric on the dashboard that inverts. Label it clearly or someone will misread it in a board deck.</p>
+<h3>3. Contextual sentiment index</h3>
+<p>Being mentioned is not automatically good. A brand named as the expensive option with poor support has visibility and a problem. The sentiment index normalises tone into a bounded 0 to 100 score: an all-positive answer set scores 100, all-neutral 50, all-negative 0. The 0.5 coefficient on neutral mentions means a negative mention costs exactly twice what a neutral one does, which matches the observed penalty in practice.</p>
+<h3>4. Entity share of voice</h3>
+<p>Share of voice answers the only question a CMO really asks: are you winning relative to the people you compete against. M_b is total mention count for the target brand and C is the set of verified, domain-resolvable competitor entities in the answers. The verification step matters, generative engines invent plausible-sounding vendor names, and hallucinated competitors in the denominator will quietly depress your score. Resolve every competitor name to a real domain before counting it.</p>
+<div class="code-wrap"><div class="code-label">python · sentiment index and share of voice</div><div class="code-block"><pre>def sentiment_index(mentions):
+    &quot;&quot;&quot;mentions: list of &#x27;positive&#x27; | &#x27;neutral&#x27; | &#x27;negative&#x27;&quot;&quot;&quot;
+    if not mentions:
+        return None
+    pos = mentions.count(&quot;positive&quot;)
+    neu = mentions.count(&quot;neutral&quot;)
+    return round((pos + 0.5 * neu) / len(mentions) * 100, 1)
+
+def share_of_voice(brand_mentions, competitor_mentions, resolvable):
+    &quot;&quot;&quot;resolvable: set of competitor names that map to a real domain.
+    Hallucinated vendors are excluded to keep the denominator honest.&quot;&quot;&quot;
+    rival_total = sum(n for name, n in competitor_mentions.items()
+                      if name in resolvable)
+    denom = brand_mentions + rival_total
+    return round(brand_mentions / denom * 100, 1) if denom else 0.0
+
+sentiment_index([&quot;positive&quot;, &quot;positive&quot;, &quot;neutral&quot;, &quot;negative&quot;])   # 62.5
+share_of_voice(48, {&quot;RivalA&quot;: 91, &quot;RivalB&quot;: 55, &quot;Ghostware&quot;: 7},
+               resolvable={&quot;RivalA&quot;, &quot;RivalB&quot;})                    # 24.7</pre></div></div>
+<h3>5. Cross-platform source overlap</h3>
+<p>The last metric is diagnostic rather than reportable. It measures how much two engines agree on sources for the same prompt, using the Jaccard coefficient over each platform's cited domain set. Run it across your prompt set and you learn where your engines diverge, which tells you which third-party domains are worth pursuing for which platform.</p>
+<div class="code-wrap"><div class="code-label">python · cross-engine source overlap</div><div class="code-block"><pre>from itertools import combinations
+
+def jaccard(a, b):
+    a, b = set(a), set(b)
+    union = a | b
+    return len(a &amp; b) / len(union) if union else 0.0
+
+def overlap_matrix(cited):
+    &quot;&quot;&quot;cited: {prompt_id: {platform: [domain, ...]}}&quot;&quot;&quot;
+    scores = {}
+    for prompt, per_platform in cited.items():
+        for p1, p2 in combinations(sorted(per_platform), 2):
+            scores.setdefault((p1, p2), []).append(
+                jaccard(per_platform[p1], per_platform[p2]))
+    return {pair: round(sum(v) / len(v), 3) for pair, v in scores.items()}
+
+# typical real-world output: values cluster between 0.16 and 0.20
+# treat anything above 0.35 as a suspiciously narrow prompt set</pre></div></div>
+<p>Executives want a single score. Composite metrics are lossy and you should say so out loud, but if you need one, weight the four reportable metrics and convert mean position into a positive-direction term (rank 1 scores 100, rank 6 scores 0). Publish the components alongside the composite. A score that moves without a visible driver is worse than no score.</p>
+<div class="tt-wrap"><div class="tt-label">Table 2. The five metrics, and the question each one answers.</div><table class="tt"><thead><tr><th>Metric</th><th>What it answers</th><th>Variables</th><th>Working target</th></tr></thead><tbody><tr><td class="label">Platform-weighted visibility</td><td>Does the machine know us, engine by engine</td><td>w_p weight, M_p mentions, Q_p prompts</td><td>Above the tier benchmark for your stature band</td></tr><tr><td class="label">Mean recommendation position</td><td>When named, how prominently</td><td>r(q,p) ordinal rank, M_pos qualifying prompts</td><td>3 or lower, tracked as a falling line</td></tr><tr><td class="label">Contextual sentiment index</td><td>Is the framing helping or hurting</td><td>N_pos, N_neu, N_total</td><td>70 or above, zero recurring negatives</td></tr><tr><td class="label">Entity share of voice</td><td>Are we winning against the named set</td><td>M_b brand, M_c verified competitors</td><td>Rising quarter on quarter, fixed competitor set</td></tr><tr><td class="label">Source overlap coefficient</td><td>How much engines agree on sources</td><td>D_p(q) cited domain sets</td><td>Diagnostic only, expect 0.16 to 0.20</td></tr></tbody></table></div>
+<p>Targets in the final column are working practitioner benchmarks rather than published thresholds. Set your own from your first baseline: a Tier 3 brand hitting 25% weighted visibility has achieved considerably more than a Tier 1 brand holding 70%.</p>
+<h2 id="evidence"><span class="section-num">06</span>What does the evidence actually show?</h2>
+<div class="section-answer"><strong>Three bodies of work, measuring three different things.</strong> The Princeton GEO experiment (causal lifts from content changes), the GEO-at-scale benchmark (non-determinism and the stature ladder), and the 75,000-brand correlation study (mentions beat links). They get quoted interchangeably; they should not be.</div>
+<h3>The Princeton GEO experiment</h3>
+<p>The foundational study establishing generative engine optimisation came from researchers at Princeton, Georgia Tech, the Allen Institute for AI, and IIT Delhi, published at ACM SIGKDD in 2024. It evaluated 10,000 queries across generative platforms to quantify how specific on-page changes affected visibility and citation rates. The headline: classical SEO tactics do close to nothing in generative environments, while adding machine-extractable proof does a great deal.</p>
+<div class="chart-wrap"><canvas id="liftChart" height="240"></canvas></div><div class="chart-caption">Figure 8. Measured visibility lift by content intervention (Princeton et al., KDD 2024). Evidence beats phrasing.</div>
+<ul><li><strong>Expert quotations</strong> produced the largest single lift at +41%. Models treat an attributed quote as a verifiable assertion rather than an opinion.</li><li><strong>Statistical density</strong> delivered +32%. Precise figures increase the chance a chunk survives re-ranking.</li><li><strong>Authoritative source citing</strong> delivered +30%. Linking out to primary studies raises the trust score of the citing page.</li><li><strong>Fluency optimisation</strong> delivered +28%. Clean, readable structure makes extraction easier.</li></ul>
+<p>Read those four together and a pattern emerges. Every winning intervention makes a passage more verifiable. None of them make it more persuasive. The machine is not being sold to; it is checking whether your claim can be substantiated without leaving your page.</p>
+<div class="callout-box"><div class="callout-box-label">The counterintuitive part</div><p>Adding an outbound link to a primary source raises your own citation odds by about 30%. Traditional SEO instinct says keep the equity in-house. Generative engines do the opposite, treating well-sourced pages as better evidence than unsourced ones. Link out generously to studies, standards, and documentation.</p></div>
+<h3>The GEO-at-scale benchmark</h3>
+<p>The second body of work is a production analysis across 102 enterprise brands, 3,508 tracking runs, and 102,025 prompt responses. It contributes three findings that should change how you measure.</p>
+<p>First, engines are non-deterministic. Re-running identical prompt sets against identical models produced a different prose answer in 22.5% of prompt-engine cells, and 6.8% of responses flipped binary status, moving from mentioned to not mentioned or the reverse. A single-run screenshot is not a measurement; it is a sample of size one from a noisy distribution.</p>
+<div class="stat-grid"><div class="sg-item"><div class="sg-val">22.5%</div><div class="sg-label">of answers change wording on re-run</div></div><div class="sg-item"><div class="sg-val">6.8%</div><div class="sg-label">flip mentioned / not-mentioned</div></div><div class="sg-item"><div class="sg-val">6.7x</div><div class="sg-label">sentiment variance vs presence</div></div><div class="sg-item"><div class="sg-val">flat</div><div class="sg-label">visibility without intervention</div></div></div>
+<p>Second, sentiment is far noisier than presence. Sentiment scores derived from LLM output exhibit about 6.7 times the variance of binary mention detection. Mention tracking is close to deterministic; tone fluctuates with decoding temperature and prompt phrasing. Treat a single-week sentiment drop as noise until three runs agree. Third, nothing improves on its own: absent content or digital PR intervention, visibility trajectories are flat. Every point of visibility you hold is the result of work someone did, which is the same logic behind <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a>.</p>
+<h3>Correlation studies: mentions versus links</h3>
+<p>The third body of work is correlational rather than experimental, and should be read with the usual caution. The 75,000-brand analysis measured Spearman correlations between off-page factors and visibility in Google AI Overviews, later extended to ChatGPT and AI Mode.</p>
+<div class="chart-wrap"><canvas id="corrChart" height="300"></canvas></div><div class="chart-caption">Figure 10. Spearman correlation with AI visibility by signal class. Every mention-class signal outranks every link-class signal.</div>
+<p>YouTube mentions lead at 0.737, which surprises people until you remember that video transcripts are dense, conversational, entity-rich text that models ingest happily. Branded web mentions follow at 0.664, branded anchors at 0.527, brand search volume at 0.392, Domain Rating at 0.326, referring domains at 0.218, and content volume, the raw number of pages on your site, comes last at 0.194.</p>
+<div class="callout-box"><div class="callout-box-label">Two honest caveats</div><p>Correlation is not causation, and brands that earn editorial mentions are usually brands that invested in product, PR, and category presence, all of which have independent effects.</p><p>The study population was filtered to brands above a Domain Rating threshold, so it describes the competitive middle and top, not a startup with nine backlinks. What survives both caveats is the ordering: every mention-class signal outranks every link-class signal, and publishing volume is the weakest predictor on the board.</p></div>
+<div class="tt-wrap"><div class="tt-label">Table 3. Experimental lifts and correlational signals side by side. The first three are causal; the last four are not.</div><table class="tt"><thead><tr><th>Intervention or signal</th><th>Measured effect</th><th>Source</th><th>Mechanism</th></tr></thead><tbody><tr><td class="label">Expert quotation added</td><td>+41% lift</td><td>Princeton / Georgia Tech, KDD 2024</td><td>Verifiable statement grounding, better extractability</td></tr><tr><td class="label">Statistical evidence density</td><td>+32% lift</td><td>Princeton / Georgia Tech, KDD 2024</td><td>Precise figures pass internal fact-check filters</td></tr><tr><td class="label">Authoritative source citing</td><td>+30% lift</td><td>Princeton / Georgia Tech, KDD 2024</td><td>Connects content to primary evidence nodes</td></tr><tr><td class="label">YouTube mentions</td><td>r = 0.737</td><td>75k-brand correlation analysis</td><td>Transcript ingest supplies high-trust co-occurrence</td></tr><tr><td class="label">Branded web mentions</td><td>r = 0.664</td><td>75k-brand correlation analysis</td><td>Teaches category placement through co-citation</td></tr><tr><td class="label">Referring domains</td><td>r = 0.218</td><td>75k-brand correlation analysis</td><td>Passes link equity, weak direct retrieval influence</td></tr><tr><td class="label">Content volume</td><td>r = 0.194</td><td>75k-brand correlation analysis</td><td>Page count alone does not build entity prominence</td></tr></tbody></table></div>
+<h2 id="playbook"><span class="section-num">07</span>What is the playbook for each signal?</h2>
+<div class="section-answer"><strong>Three pillars, in order: on-page, technical, off-page.</strong> Citation-first content structuring and entity markup are fast and within your control. Off-page entity PR is slow and decides the ceiling, because 97.1% of citations point away from your site.</div>
+<h3>Pillar 1: citation-first content structuring</h3>
+<p>The goal is a page a re-ranker can dismantle cleanly. That means abandoning the narrative intro and leading with the answer:</p>
+<ul><li>Write section headings as the explicit question a user would ask, not a noun phrase. "How much does implementation cost" beats "Implementation".</li><li>Answer in the first 60 words, completely, with no windup. If the reader could stop after your opening passage and be correctly informed, so could a model.</li><li>Target roughly 40 words for each key factual assertion, matching the median cited passage length.</li><li>State precise numbers, dates, and scope. "A 32% efficiency gain across 1,200 enterprise implementations in Q2 2026" is extractable; "dramatically improved results recently" is not.</li><li>Attribute every claim to a named source, and link out using descriptive anchor text that names the benchmark or dataset rather than the word "source".</li></ul>
+<p>The before-and-after below is the shape of the change. Both passages contain the same information. Only one survives chunking.</p>
+<div class="code-wrap"><div class="code-label">html · citation-first passage structure</div><div class="code-block"><pre>&lt;!-- BEFORE: narrative, hedged, unextractable --&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;Every business is different, and the time it takes to get up and
+running can vary quite a lot depending on your setup, your team, and
+how complex your existing processes are. Many of our customers have
+found the process to be quicker than expected...&lt;/p&gt;
+
+&lt;!-- AFTER: question heading, 40-word answer, named evidence --&gt;
+&lt;h2&gt;How long does implementation take?&lt;/h2&gt;
+&lt;p&gt;Median implementation takes 18 days for teams under 50 seats and
+41 days above 200 seats, based on 1,240 deployments completed between
+January and June 2026. Integration with an existing CRM adds a median
+6 days.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&quot;/research/deployment-benchmark-2026&quot;&gt;2026
+Deployment Benchmark, n=1,240&lt;/a&gt;&lt;/p&gt;</pre></div></div>
+<h3>Pillar 2: schema and entity markup</h3>
+<p>Schema alone will not make you visible. What it does is remove ambiguity about which entity you are, which matters enormously when your brand name is also a common noun or shared with another company. Declare a canonical @id URI consistently across every JSON-LD block, connect it with a sameAs array to Wikipedia, Wikidata, Crunchbase, LinkedIn, and official social accounts, and wrap statistical claims in Article and ClaimReview structures. The full treatment is in <a href="/blogs/schema-markup-ai-citations-2026">schema markup for AI citations</a>.</p>
+<div class="code-wrap"><div class="code-label">json-ld · entity declaration</div><div class="code-block"><pre>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;@id&quot;: &quot;https://example.com/#organization&quot;,
+  &quot;name&quot;: &quot;Example&quot;,
+  &quot;url&quot;: &quot;https://example.com&quot;,
+  &quot;description&quot;: &quot;AR automation for mid-market finance teams.&quot;,
+  &quot;foundingDate&quot;: &quot;2019-03-01&quot;,
+  &quot;sameAs&quot;: [
+    &quot;https://www.wikidata.org/wiki/Q000000&quot;,
+    &quot;https://www.crunchbase.com/organization/example&quot;,
+    &quot;https://www.linkedin.com/company/example&quot;,
+    &quot;https://www.youtube.com/@example&quot;
+  ],
+  &quot;subjectOf&quot;: {
+    &quot;@type&quot;: &quot;Article&quot;,
+    &quot;headline&quot;: &quot;2026 Deployment Benchmark&quot;,
+    &quot;citation&quot;: &quot;https://example.com/research/deployment-benchmark-2026&quot;
+  }
+}</pre></div></div>
+<h3>Pillar 3: off-page entity PR</h3>
+<p>This is where the ceiling is set. Since 97.1% of citations point at third-party domains, the work is earning presence on those domains. The co-citation play deserves special mention: getting your executives quoted in articles that also discuss Tier 1 competitors is one of the few reliable ways to move parametric association. You are not buying a link; you are teaching a model that your entity belongs in a set it already trusts, the mechanism behind <a href="/blogs/authority-seeding-ai-llm-trust">authority seeding</a>.</p>
+<div class="tt-wrap"><div class="tt-label">Table 4. Off-page priorities ordered by their share of AI-search citations.</div><table class="tt"><thead><tr><th>Source class</th><th>Citation share</th><th>What to do</th><th>Realistic timeline</th></tr></thead><tbody><tr><td class="label">Comparison listicles and buyer guides</td><td>~35.7%</td><td>Identify which roundups the engines cite for your category, then pitch inclusion, correct outdated entries, supply structured product data</td><td>6 to 12 weeks per placement</td></tr><tr><td class="label">User communities: Reddit, Quora, forums</td><td>18% to 25% with video</td><td>Answer real questions in detail with a named affiliation. Do not astroturf, detected shilling produces negative framing</td><td>Ongoing, compounding</td></tr><tr><td class="label">YouTube and video transcripts</td><td>Included above</td><td>Publish substantive video with clean transcripts. Strongest single correlation at r = 0.737</td><td>8 to 16 weeks to signal</td></tr><tr><td class="label">Reference sites and trade press</td><td>10% to 15%</td><td>Pursue Wikidata and Wikipedia eligibility, trade commentary, and analyst mentions alongside Tier 1 competitors</td><td>3 to 9 months</td></tr><tr><td class="label">Your own domain</td><td>~2.9%</td><td>Citation-first structuring, schema, crawlability. Necessary, nowhere near sufficient</td><td>2 to 4 weeks</td></tr></tbody></table></div>
+<h3>The measurement loop</h3>
+<p>Run a continuous 90-day cycle. The cadence matters more than the tooling.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Build the prompt set</div><div class="pl-desc">20-50 fixed prompts across discovery, comparison, problem-solution.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Baseline</div><div class="pl-desc">Query all engines over 3-5 runs; average to smooth variance.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Classify sources</div><div class="pl-desc">Tag every cited URL: brand, listicle, news, community, competitor.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Close the gaps</div><div class="pl-desc">Ship on-page evidence; outreach to the exact domains cited.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Re-measure</div><div class="pl-desc">Compare deltas per engine at 30 days; full review at 90.</div></div></div><div class="chart-caption">Figure 11. The operating cadence for a generative visibility programme.</div>
+<p>Step four is the one teams skip. The value is not in knowing you are invisible on a prompt. It is in knowing which four domains the engines consulted before deciding to name someone else.</p>
+<h3>Diagnosing which signal is broken</h3>
+<p>When visibility is bad, the taxonomy tells you where to look. Run a fixed prompt set and read the pattern:</p>
+<div class="tt-wrap"><div class="tt-label">Figure 12. A diagnostic for isolating the failing signal.</div><table class="tt"><thead><tr><th>Symptom</th><th>Broken signal</th><th>Where to fix</th></tr></thead><tbody><tr><td class="label">Absent even on prompts with no live search</td><td>Mention (parametric)</td><td>Off-page entity PR, co-citation, slow</td></tr><tr><td class="label">Named in the answer, but your URL never cited</td><td>Citation (retrieval)</td><td>On-page evidence density and schema, fast</td></tr><tr><td class="label">Cited as a source, competitor gets recommended</td><td>Recommendation (synthesis)</td><td>Comparison coverage, sentiment, share of voice</td></tr></tbody></table></div>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Diagnostic</div><div class="embed-title">Which of your three signals is broken?</div><div class="embed-deck">Answer the three questions from the diagnostic above and isolate the first failing signal, with the fix that actually applies.</div></div><section class="card" id="sd">
+  <div class="grid score">
+    <div class="controls">
+      <div class="cat">
+        <div class="cat-h">Answer three questions about one prompt set</div>
+        <div class="q"><div class="q-t">1. On prompts where the engine does <strong>not</strong> search the live web, does your brand get named?</div>
+          <div class="iseg" data-q="q1"><button data-v="yes">Yes, it appears</button><button data-v="no">No, absent</button></div></div>
+        <div class="q"><div class="q-t">2. When your brand <strong>does</strong> appear in an answer, does your URL show up in the cited sources?</div>
+          <div class="iseg" data-q="q2"><button data-v="yes">Yes, cited</button><button data-v="no">Never cited</button></div></div>
+        <div class="q"><div class="q-t">3. When you are cited, are you the recommended pick, or does a competitor get named?</div>
+          <div class="iseg" data-q="q3"><button data-v="yes">We are the pick</button><button data-v="no">Competitor wins</button></div></div>
+      </div>
+    </div>
+    <div class="panel-out">
+      <div class="o-eyebrow">Broken signal</div>
+      <div class="scorewrap"><span class="score" id="sdSignal" style="font-size:30px;line-height:1.15">--</span></div>
+      <span class="scoreband" id="sdLayer" style="background:rgba(255,255,255,.1);color:#fff">Answer the three checks</span>
+      <div class="gaps"><div class="gaps-h">What to fix first</div><div id="sdFix"><p class="hint">Your result and the specific fix appear here.</p></div></div>
+    </div>
+  </div>
+</section><div class="embed-foot"><a href="/tools/ai-visibility-signal-diagnostic">Open the full tool &rarr;</a></div></div>
+<script>
+(function(){
+  var root=document.getElementById('sd'); if(!root) return;
+  var ans={q1:null,q2:null,q3:null};
+  var RESULT={
+    mention:{sig:'Mention',layer:'Parametric memory · off-page & slow',
+      fix:'The model does not reliably know you exist. This lives in the frozen weights, so the fix is off-page and slow: earn co-citation alongside category leaders, pursue comparison listicles, communities and reference sites, and build entity prominence. On-page work will not move it.',
+      links:[['Off-page entity PR: authority seeding','/blogs/authority-seeding-ai-llm-trust'],['Becoming an entity','/blogs/becoming-an-entity']]},
+    citation:{sig:'Citation',layer:'Retrieval · on-page & fast',
+      fix:'You are known but your page is not being selected as evidence. This is the fastest fix: lead every section with a self-contained ~40-word answer, add precise statistics and named sources, and mark up entities with schema so a re-ranker can extract you cleanly.',
+      links:[['Anatomy of a high-citation page','/blogs/anatomy-of-a-high-citation-page'],['Schema markup for AI citations','/blogs/schema-markup-ai-citations-2026']]},
+    recommendation:{sig:'Recommendation',layer:'Synthesis · comparison & sentiment',
+      fix:'You are cited as a source but a competitor gets named as the pick. The gap is at synthesis: get into the comparison roundups the engines cite for your category, fix negative or missing sentiment, and build share of voice against the named competitor set.',
+      links:[['When the buyer is a bot','/blogs/when-the-buyer-is-a-bot'],['Why engines recommend different vendors','/blogs/why-engines-recommend-different-vendors']]},
+    healthy:{sig:'All three healthy',layer:'Maintain & re-baseline',
+      fix:'On this prompt set, all three signals are working: the model knows you, cites you, and picks you. Keep a fixed prompt set, re-measure every 30 days across engines, and watch for drift, nothing improves on its own and citations decay.',
+      links:[['Prompt-to-citation tracking','/blogs/prompt-to-citation-tracking'],['The 30-day content half-life','/blogs/30-day-content-half-life-recency-ai-ranking-signal']]}
+  };
+  function pick(){
+    if(ans.q1===null) return null;
+    if(ans.q1==='no') return 'mention';
+    if(ans.q2===null) return null;
+    if(ans.q2==='no') return 'citation';
+    if(ans.q3===null) return null;
+    if(ans.q3==='no') return 'recommendation';
+    return 'healthy';
+  }
+  function band(key){
+    var c={mention:'var(--signal)',citation:'#C9922E',recommendation:'#C9922E',healthy:'var(--up)'}[key];
+    return c;
+  }
+  function render(){
+    var k=pick();
+    var sigEl=document.getElementById('sdSignal'),layEl=document.getElementById('sdLayer'),fixEl=document.getElementById('sdFix');
+    if(!k){sigEl.textContent='--';layEl.textContent='Answer the three checks';layEl.style.background='rgba(255,255,255,.1)';layEl.style.color='#fff';
+      fixEl.innerHTML='<p class="hint">Your result and the specific fix appear here.</p>';return;}
+    var r=RESULT[k],c=band(k);
+    sigEl.textContent=r.sig; sigEl.style.color=c;
+    layEl.textContent=r.layer; layEl.style.background=c; layEl.style.color='#0b0b0c';
+    var ls=r.links.map(function(x){return '<a href="'+x[1]+'">'+x[0]+' &rarr;</a>';}).join('');
+    fixEl.innerHTML='<p style="margin:0 0 10px">'+r.fix+'</p><div class="srcs">'+ls+'</div>';
+  }
+  root.querySelectorAll('.iseg').forEach(function(seg){
+    var q=seg.getAttribute('data-q');
+    seg.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on'); ans[q]=b.getAttribute('data-v'); render();
+      });
+    });
+  });
+  render();
+})();
+</script>
+<div class="callout-box"><div class="callout-box-label">Free tools from this piece</div><p>Four browser-based tools built from this taxonomy: the <a href="/tools/ai-visibility-signal-diagnostic">Signal Diagnostic</a> to find the broken signal, the <a href="/tools/platform-weighted-visibility-calculator">Platform-Weighted Visibility Calculator</a>, the <a href="/tools/sentiment-share-of-voice-calculator">Sentiment &amp; Share-of-Voice Calculator</a>, and the <a href="/tools/cross-engine-source-overlap-calculator">Cross-Engine Source Overlap Calculator</a>. All free, all run in your browser.</p></div>
+<h2 id="caveats"><span class="section-num">08</span>What does this taxonomy not mean?</h2>
+<div class="section-answer"><strong>Four corrections, because this field overclaims fast.</strong> Links are not obsolete. Mentions are not free. The numbers are not permanent. And tracking is not progress.</div>
+<p><strong>It does not mean links are obsolete.</strong> Backlinks still move classical rankings, and classical rankings still feed the indices generative engines query. A correlation of 0.218 is not zero. The claim is that link count has stopped being a good proxy for AI visibility, not that it stopped mattering.</p>
+<p><strong>It does not mean mentions are free.</strong> Unlinked mentions carry weight, but the mechanism is entity prominence rather than equity transfer. A hundred low-quality mentions on scraped content farms will not build parametric presence. Quality of context is what makes co-occurrence useful.</p>
+<p><strong>It does not mean these numbers are permanent.</strong> Platform weights shift with market share. Source composition shifts as engines adjust retrieval preferences. The 40-word median will move as context windows grow. Treat every figure here as a snapshot with a decay rate, and <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">re-baseline quarterly</a>.</p>
+<p><strong>It does not mean tracking equals progress.</strong> Dashboards are cheap now. The bottleneck was never measurement. It is the unglamorous work of getting into the roundups your buyers' engines already trust, and that has not been automated. Measurement without visibility is <a href="/blogs/ranking-isnt-visibility">ranking that is not visibility</a>.</p>
+<h2 id="takeaway"><span class="section-num">09</span>Where does this leave you?</h2>
+<div class="section-answer"><strong>With three signals, three subsystems, three fixes.</strong> Off-page entity PR for mentions. Evidence-dense on-page structure for citations. Comparison coverage and sentiment for recommendations. Start with the diagnostic, then work the signal that is actually broken.</div>
+<p>The taxonomy is simple enough to hold in your head. Mentions establish entity awareness and category placement inside a model's weights. Citations provide grounding and verification during retrieval. Recommendations are the synthesised output where the system evaluates options and steers a buyer.</p>
+<p>The rebalancing this requires is uncomfortable for most organic teams, because the highest-leverage work sits outside the website. You are not optimising a page any more. You are building the case, distributed across the web, that a machine will assemble on your behalf when a buyer asks it a question you never see.</p>
+<div class="pull-quote">Run a fixed prompt set five times across the engines your buyers use, classify every cited URL, and find out which of the three signals is actually broken. Everything else follows from that answer.</div>
+<section class="faq-section" id="faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3 class="faq-q">What is the difference between a mention, a citation, and a recommendation in AI search?</h3><div class="faq-a"><p>A mention is your brand name appearing in text anywhere on the web, linked or not; it feeds the model's parametric memory and answers whether the machine knows you exist. A citation is an engine attributing a specific claim to a specific URL; it comes from live non-parametric retrieval and answers whether the machine treats your page as evidence. A recommendation is the engine naming you as a good choice at the synthesis layer, and answers whether the machine picks you.</p></div></div><div class="faq-item"><h3 class="faq-q">Do brand mentions without links actually matter for AI visibility?</h3><div class="faq-a"><p>Yes, but through a different mechanism than links. Unlinked mentions build entity prominence and co-citation, which is what a language model retains in its weights, rather than passing PageRank equity. In a 75,000-brand analysis, branded web mentions correlated with AI Overview visibility at 0.664 versus 0.218 for referring domains. Quality of context matters: low-quality mentions on scraped content farms do little.</p></div></div><div class="faq-item"><h3 class="faq-q">What percentage of AI citations point to a brand's own website?</h3><div class="faq-a"><p>About 2.9%. In production measurement, roughly 97.1% of citations in AI answers point to third-party domains, comparison listicles, communities like Reddit and YouTube, and reference and trade sites, rather than the brand's own domain. Your website is where you convert attention, not where you earn it.</p></div></div><div class="faq-item"><h3 class="faq-q">Which off-page signal correlates most strongly with AI visibility?</h3><div class="faq-a"><p>YouTube mentions, at a Spearman correlation of 0.737, ahead of branded web mentions at 0.664. Video transcripts are dense, conversational, entity-rich text that models ingest readily. Every mention-class signal outranked every link-class signal in the data, and raw content volume was the weakest predictor at 0.194.</p></div></div><div class="faq-item"><h3 class="faq-q">How should you measure AI visibility across engines?</h3><div class="faq-a"><p>Use a fixed prompt set of 20 to 50 discovery and comparison prompts, run it 3 to 5 times per engine to smooth out non-determinism, and compute a platform-weighted visibility score rather than a pooled average. Track mean recommendation position, a contextual sentiment index, and entity share of voice against a verified competitor set, and report per-engine deltas rather than one blended number.</p></div></div></section>
+<div class="about-block" id="references"><div class="about-label">References</div><p style="margin-bottom:16px;">The studies, patents and research this taxonomy draws on.</p><ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;"><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://arxiv.org/abs/2606.20065" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines. arXiv.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.explainx.ai/post/what-is-seo-geo" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What is SEO-GEO? Generative Engine Optimization. explainx.ai.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.linkpublishers.com/blog/brand-mentions-vs-backlinks" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Brand Mentions vs Backlinks: What Actually Moves Rankings in 2026. Link Publishers.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://searchatlas.com/blog/backlinks-vs-brand-mentions/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Backlinks vs Brand Mentions: Off-Page SEO Evolution in 2026. Search Atlas.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://neuroflash.com/blog/generative-engine-optimization/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Generative Engine Optimization (GEO): The Full Definition, Explained. neuroflash.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://arxiv.org/html/2606.20065v1" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Generative Engine Optimization at Scale (full text). arXiv.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.webtonic.in/blog/unlinked-brand-mentions/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Unlinked Brand Mentions: The 2026 Marketer's Guide. Web Tonic.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://neuraladx.com/how-to-implement-citations-for-geo/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">How To Implement Citations For Generative Engine Optimisation. NeuralAdX.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.deepchecks.com/rag-qa-testing-guide/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">RAG QA Testing Guide for Retrieval, Generation, and Citation.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.merselai.com/blog/geo-for-b2b" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Generative Engine Optimization for B2B: The Complete 2026 Guide. Mersel AI.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.gravidy.xyz/blog/brand-mentions-vs-backlinks" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Brand Mentions vs Backlinks: What Actually Moves Rankings. Gravidy.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://linkbuildinghq.com/brand-mentions-without-links/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Brand Mentions Without A Link Don't Matter. LinkBuildingHQ.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://coozmoo.com/digital-pr-vs-backlinks/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Digital PR vs Backlinks: The New SEO Strategy for 2026. Coozmoo.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://patents.google.com/patent/US8682892B1/en" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Patent US8682892B1: Google Patented Unlinked Brand Mentions.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://claironai.com/guide-to-geo-2026/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">The Complete Guide to Generative Engine Optimization in 2026. Clairon AI.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://seolyze.com/geo-definitive-guide/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Generative Engine Optimization, The Definitive Guide 2026. Seolyze.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">GEO: Generative Engine Optimization (Princeton, Georgia Tech, AI2, IIT Delhi). arXiv.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://ahrefs.com/blog/ai-overview-visibility-study/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">An Analysis of AI Overview Brand Visibility Factors, 75K Brands Studied. Ahrefs.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.reddit.com/r/seogrowth/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Are brand mentions without links really counted by Google as off-page signals. r/seogrowth.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://thenextweb.com/news/youtube-mentions-ai-brand-visibility" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">YouTube mentions are the top signal for AI brand visibility. TNW.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.buzzstream.com/blog/ai-brand-visibility-ahrefs/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI and Brand Visibility: Ahrefs' Insights from 75,000 Brands. BuzzStream.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://ranqo.com/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Ranqo, AI Search Visibility Suite. Further reading.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://ranqo.com/labs/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI Search Research. Ranqo Labs. Further reading.</a></li></ol></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns and technical playbooks on GEO, agentic commerce and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Sources: the Princeton/Georgia Tech GEO experiment (KDD 2024), the GEO-at-scale benchmark, and the 75,000-brand correlation analysis, 2024-26. Formulas and code are working reference implementations; figures are drawn from the cited studies.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">97.1%</div><div class="stat-label">of AI citations point off your site</div></div><hr class="stat-divider"><div><div class="stat-val">0.737</div><div class="stat-label">YouTube mentions, the top signal</div></div><hr class="stat-divider"><div><div class="stat-val">2.9%</div><div class="stat-label">citations to your own domain</div></div><hr class="stat-divider"><div><div class="stat-val">5</div><div class="stat-label">metrics in the scoring framework</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this teardown</div><ul class="toc-list"><li><a href="#short"><span class="toc-num">01</span>The short version</a></li><li><a href="#why"><span class="toc-num">02</span>Why it matters now</a></li><li><a href="#definitions"><span class="toc-num">03</span>Definitions, done properly</a></li><li><a href="#machine"><span class="toc-num">04</span>How the machine works</a></li><li><a href="#math"><span class="toc-num">05</span>The math</a></li><li><a href="#evidence"><span class="toc-num">06</span>What the evidence shows</a></li><li><a href="#playbook"><span class="toc-num">07</span>The playbook</a></li><li><a href="#caveats"><span class="toc-num">08</span>What it does not mean</a></li><li><a href="#takeaway"><span class="toc-num">09</span>Where this leaves you</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4);
+
+  var sh=document.getElementById('shiftChart');
+  if(sh){new Chart(sh,{type:'bar',data:{labels:['2012','2026'],datasets:[
+    {label:'Link-class signals',data:[80,45],backgroundColor:neutral,borderRadius:4},
+    {label:'Mention-class signals',data:[20,55],backgroundColor:signal,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+c.raw+'%';}}}},
+      scales:{x:{stacked:true,ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{stacked:true,beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var ti=document.getElementById('tierChart');
+  if(ti){new Chart(ti,{type:'bar',data:{labels:['Tier 1 (household)','Tier 2 (mid-market)','Tier 3 (niche)'],datasets:[{data:[72.9,43.6,11.4],backgroundColor:[up,rgba(signal,0.6),signal],borderRadius:4,barThickness:60}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% unbranded visibility';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var so=document.getElementById('sourceChart');
+  if(so){new Chart(so,{type:'bar',data:{labels:['Listicles & buyer guides','Communities & video','Reference & trade press','Your own domain'],datasets:[{data:[35.7,21.5,12.5,2.9],backgroundColor:[signal,rgba(signal,0.7),rgba(signal,0.5),neutral],borderRadius:4,barThickness:30}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% of citations';}}}},
+      scales:{x:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+
+  var lf=document.getElementById('liftChart');
+  if(lf){new Chart(lf,{type:'bar',data:{labels:['Expert quotes','Statistical density','Source citing','Fluency'],datasets:[{data:[41,32,30,28],backgroundColor:[signal,rgba(signal,0.8),rgba(signal,0.65),rgba(signal,0.5)],borderRadius:4,barThickness:48}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' +'+c.raw+'% visibility lift';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return '+'+v+'%';}},grid:{color:grid}}}}});}
+
+  var co=document.getElementById('corrChart');
+  if(co){new Chart(co,{type:'bar',data:{labels:['YouTube mentions','Branded web mentions','Branded anchors','Brand search volume','Domain Rating','Referring domains','Content volume'],datasets:[{data:[0.737,0.664,0.527,0.392,0.326,0.218,0.194],backgroundColor:[up,up,rgba(up,0.7),rgba(signal,0.55),rgba(signal,0.6),signal,signal],borderRadius:4,barThickness:22}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' r = '+c.raw;}}}},
+      scales:{x:{beginAtZero:true,max:0.8,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>

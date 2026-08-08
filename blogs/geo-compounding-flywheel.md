@@ -29,7 +29,7 @@ The economic profile of this new traffic makes the urgency sharper still. [Adobe
 
 **Through a seven-step, self-reinforcing loop.** Traditional SEO was a tournament. GEO is a flywheel - a self-reinforcing loop where each rotation adds gravitational mass to your brand inside the model. The competitor who starts the loop first doesn't just get a head start; they get a head start that gets harder to close with each rotation.
 
-The loop has seven steps, and most teams trying to "do GEO" fail because they execute one or two of them in isolation. The compounding effect only kicks in when the full cycle is closed.
+The loop has seven steps, and most teams trying to "do GEO" fail because they execute one or two of them in isolation. The compounding effect only kicks in when the full cycle is closed, and it runs on the three signals in the [mention-citation-recommendation taxonomy](/blogs/citation-vs-mention-vs-recommendation).
 
 Fig. 1 · The Seven-Step GEO Compounding Flywheel
 

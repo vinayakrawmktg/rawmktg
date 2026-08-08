@@ -75,7 +75,7 @@ The lesson is not that AI visibility is hard for everyone equally, it is that al
 
 ### Where AI answers actually come from
 
-To fix AI visibility you have to know what answers are built from, and it is not your homepage. Assistants assemble answers primarily from what [credible third-party sources](/blogs/why-ai-cites-reddit-g2-analysts) say about a category, review sites, trade media, comparison publishers, forums, then cite the brands those sources mention. Owned and paid content plays a much smaller role.
+To fix AI visibility you have to know what answers are built from, and it is not your homepage, only about [2.9% of AI citations point to your own site](/blogs/citation-vs-mention-vs-recommendation). Assistants assemble answers primarily from what [credible third-party sources](/blogs/why-ai-cites-reddit-g2-analysts) say about a category, review sites, trade media, comparison publishers, forums, then cite the brands those sources mention. Owned and paid content plays a much smaller role.
 
 Figure 2 - roughly four-fifths of AI citations trace back to earned media, not a brand's own or paid pages. Mentions across the web correlate with AI visibility far more strongly than backlinks do.
 
