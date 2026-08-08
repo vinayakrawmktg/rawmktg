@@ -102,6 +102,11 @@
 .toolpage .iseg{display:flex;gap:5px;flex:none;}
 .toolpage .iseg button{font-family:var(--f-mono);font-size:11px;padding:7px 11px;border-radius:5px;border:1px solid rgba(255,255,255,.14);background:transparent;color:rgba(255,255,255,.5);cursor:pointer;transition:all .14s;}
 .toolpage .iseg button.sel{color:#fff;}
+.iseg button.on{color:#fff;border-color:var(--signal);background:rgba(188,63,29,.20);}
+.q{margin-bottom:18px;}
+.q:last-child{margin-bottom:0;}
+.q-t{font-family:var(--f-mono);font-size:13px;line-height:1.55;color:rgba(255,255,255,.82);margin-bottom:10px;}
+.q-t strong{color:#fff;font-weight:600;}
 .toolpage .iseg button[data-m="0"].sel{background:rgba(188,63,29,.20);border-color:var(--signal);}
 .toolpage .iseg button[data-m="0.5"].sel{background:rgba(138,130,120,.24);border-color:var(--mute);}
 .toolpage .iseg button[data-m="1"].sel{background:rgba(62,155,106,.20);border-color:var(--up);}
