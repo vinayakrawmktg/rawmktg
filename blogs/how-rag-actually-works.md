@@ -45,7 +45,7 @@ Classic RAG is a single-shot process: query arrives, retriever pulls passages, L
 
 Agentic retrieval uses the LLM itself as a reasoning agent that decomposes the original question into sub-queries. A question like "How does Vendor A's security stack compare to Vendor B for a mid-market manufacturing firm?" becomes three separate searches: Vendor A's security specs, Vendor B's specs, and the compliance requirements of the manufacturing sector. The agent may also follow links between pages, dereferencing URLs to gather deeper context, mimicking the behaviour of a human researcher doing due diligence.
 
-The implication for content architecture is significant. Your pages must not just answer one question in isolation. They must interlink in a way that allows an autonomous AI agent to traverse the topic and gather a complete picture. A product page that does not link to your security documentation, compliance certifications, and relevant case studies is invisible to an agentic query about security.
+The implication for content architecture is significant. Your pages must not just answer one question in isolation. They must interlink in a way that allows an [autonomous AI agent](/blogs/when-the-buyer-is-a-bot) to traverse the topic and gather a complete picture. A product page that does not link to your security documentation, compliance certifications, and relevant case studies is invisible to an agentic query about security.
 
 ## What are the five stages of the AI search pipeline?
 

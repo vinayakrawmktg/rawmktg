@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/payments-getting-found-google-ai · rawmktg. by Vinayak Ravi*
 
 
-For a decade, getting found in payments meant one job: rank on Google for the terms buyers search. That job has not gone away, but a second one has appeared beside it, and most brands in the category are still only playing the first.
+For a decade, getting found in payments meant one job: rank on Google for the terms buyers search. That job has not gone away, but a second one has appeared beside it, and most brands in the category are still only playing the first. A third shift is already forming behind it, as [the buyer itself becomes an autonomous agent](/blogs/when-the-buyer-is-a-bot) that checks out through payment protocols like AP2.
 
 The finance leader evaluating a spend-management tool, the controller comparing AP-automation vendors, the founder shopping for a corporate card, they now run the same question through two systems at once. They still open Google, but they also ask ChatGPT, Perplexity, Gemini, Copilot or Grok to shortlist the options. Both systems return an answer. Your brand is either inside that answer or it is invisible.
 

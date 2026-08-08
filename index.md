@@ -17,6 +17,7 @@
 - [When Buyers Ask AI Which HR Software to Use, One Brand Owns the Answer](https://rawmktg.com/blogs/hr-saas-ai-visibility-gap)
 - [Beyond Cross-Border: Where India's Global-Payments Brands Actually Earn Their Backlinks](https://rawmktg.com/blogs/cross-border-backlinks)
 - [When Buyers Ask AI Which AEC Software to Use, Most Vendors Aren't in the Room](https://rawmktg.com/blogs/aec-ai-visibility-gap)
+- [When the Buyer Is a Bot](https://rawmktg.com/blogs/when-the-buyer-is-a-bot)
 - [Does llms.txt Actually Do Anything Yet?](https://rawmktg.com/blogs/does-llms-txt-do-anything-yet)
 - [How We Run a GEO Foundation Audit](https://rawmktg.com/blogs/geo-foundation-audit)
 - [Why Traditional SEO Is No Longer Enough](https://rawmktg.com/blogs/why-traditional-seo-is-no-longer-enough)

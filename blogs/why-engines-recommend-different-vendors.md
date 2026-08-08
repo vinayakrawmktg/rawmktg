@@ -194,7 +194,7 @@ Claim and optimise profiles on G2, Capterra, and Trustpilot for ChatGPT's 3x cit
 
 ## 07: What comes after GEO citations?
 
-**Citations are the short game; agentic discovery is next.** GEO as a citation strategy is the short game. The mid-term structural shift is more consequential. Stripe and OpenAI have pioneered the Agentic Commerce Protocol, an open-source checkout framework enabling autonomous AI agents to browse products, evaluate configurations, and execute purchases directly without human confirmation. Brands not structuring their digital presence for machine-readable evaluation today are building the wrong infrastructure for 2027.
+**Citations are the short game; agentic discovery is next.** GEO as a citation strategy is the short game. The mid-term structural shift is more consequential. Stripe and OpenAI have pioneered the [Agentic Commerce Protocol](/blogs/when-the-buyer-is-a-bot), an open-source checkout framework enabling autonomous AI agents to browse products, evaluate configurations, and execute purchases directly without human confirmation. Brands not structuring their digital presence for machine-readable evaluation today are building the wrong infrastructure for 2027.
 
 In an agentic commerce model, an AI agent will not present three CRM vendor options for a human to review. It will programmatically evaluate technical specs, pricing matrices, and sentiment profiles, then execute the SaaS subscription autonomously. The brands that have structured their schema, off-site consensus, and content architecture for machine retrieval will be selected. Those that have not will be invisible at the moment of transaction.
 

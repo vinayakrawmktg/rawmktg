@@ -65,7 +65,7 @@ It is not GPTBot. [GPTBot compiles training corpora for foundation models](https
 
 ### User-triggered fetchers: ChatGPT-User and Perplexity-User
 
-Both OpenAI and Perplexity also operate a second class of agent: [ChatGPT-User](https://developers.openai.com/api/docs/bots) and [Perplexity-User](https://docs.perplexity.ai/docs/resources/perplexity-crawlers). These do not crawl proactively. They execute a single HTTP GET when a user pastes a URL into the chat interface, or when the assistant needs to fetch a page to answer a question in real time.
+Both OpenAI and Perplexity also operate a second class of agent: [ChatGPT-User](https://developers.openai.com/api/docs/bots) and [Perplexity-User](https://docs.perplexity.ai/docs/resources/perplexity-crawlers). These do not crawl proactively. They execute a single HTTP GET when a user pastes a URL into the chat interface, or when the assistant needs to fetch a page to answer a question in real time. A fast-growing class of these agents no longer just reads your pages, it [buys from you directly](/blogs/when-the-buyer-is-a-bot).
 
 Because those fetches represent synchronous human intent, **they generally ignore standard Disallow rules** in robots.txt. Blocking them at the firewall level does not improve your indexing; it prevents users from sharing your pages inside the assistant. The right mental model is "browser request initiated by a human", not "automated crawler".
 
