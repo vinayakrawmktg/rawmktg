@@ -1393,7 +1393,7 @@ These are estimates and a single-day snapshot; read them as direction, not gospe
 
 ## 04. Is authority the moat? (It isn't.)
 
-**No. The pure-play vendors cluster in a narrow domain-rating band from the low 60s to mid 70s.** When authority is this uniform it stops being a differentiator. What separates traffic leaders from laggards is not how strong their domains are; it is how much they have published.
+**No. The pure-play vendors cluster in a narrow domain-rating band from the low 60s to mid 70s.** When authority is this uniform it stops being a differentiator. What separates traffic leaders from laggards is not how strong their domains are; it is how much they have published, the [topical authority cluster](/blogs/topical-authority-cluster-ai-shortlists) that wins AI shortlists.
 
 Figure 1. Domain rating is uniform across the pure-play field (63-76). The two hyperscaler sections sit far above (92, 96), yet earn among the fewest citations.
 
@@ -1563,7 +1563,7 @@ FAQPage JSON-LD (paste into the page head)
 
 ### Step 4: write answer-first
 
-Structure invites the citation; the words earn it. Lead each key section with a direct, self-contained answer of roughly 40 to 60 words that an engine can lift verbatim, then expand below it.
+Structure invites the citation; the words earn it. Lead each key section with a direct, self-contained answer of roughly 40 to 60 words that an engine can lift verbatim, then expand below it, the exact shape of [a high-citation page](/blogs/anatomy-of-a-high-citation-page).
 
 answer-first section pattern
 
@@ -12388,7 +12388,7 @@ The catch
 
 Self-service rules the early stage, but people still want a human before they sign. Gartner found 67% of buyers prefer a rep-free experience, yet 69% still ask a sales rep to check what the AI told them. Why? Trust: about half of buyers say they have hit misleading claims from AI, and about half say the same about sales reps. Buyers now use both, and cross-check each one.
 
-The lesson is simple. If AI shapes the shortlist, and the shortlist decides the deal, then getting recommended by AI is not a nice-to-have, it is a pipeline input.
+The lesson is simple. If AI shapes the shortlist, and the shortlist decides the deal, then getting recommended by AI is not a nice-to-have, it is a pipeline input, as the [carbon and ESG teardown](/blogs/authority-isnt-the-moat) shows in one category.
 
 ## 02. How does AI search really work?
 
@@ -12709,7 +12709,7 @@ Two things jump out. The incumbent Canva is named most, a reminder that AI answe
 
 ### Winning Google does not mean winning AI
 
-Plot each player's Google footprint against how often AI names them and the divergence is stark.
+Plot each player's Google footprint against how often AI names them and the divergence is stark, the same pattern as the [carbon and ESG software teardown](/blogs/authority-isnt-the-moat).
 
 Figure 4 - Google footprint (across) versus AI reach (up). The two do not line up: Gamma is huge on Google but mid-pack in AI; Deckary is tiny on Google yet named most in AI.
 

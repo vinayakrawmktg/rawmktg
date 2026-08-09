@@ -103,7 +103,7 @@ Two things jump out. The incumbent Canva is named most, a reminder that AI answe
 
 ### Winning Google does not mean winning AI
 
-Plot each player's Google footprint against how often AI names them and the divergence is stark.
+Plot each player's Google footprint against how often AI names them and the divergence is stark, the same pattern as the [carbon and ESG software teardown](/blogs/authority-isnt-the-moat).
 
 Figure 4 - Google footprint (across) versus AI reach (up). The two do not line up: Gamma is huge on Google but mid-pack in AI; Deckary is tiny on Google yet named most in AI.
 

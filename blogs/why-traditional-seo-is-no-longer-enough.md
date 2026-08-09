@@ -53,7 +53,7 @@ The catch
 
 Self-service rules the early stage, but people still want a human before they sign. Gartner found 67% of buyers prefer a rep-free experience, yet 69% still ask a sales rep to check what the AI told them. Why? Trust: about half of buyers say they have hit misleading claims from AI, and about half say the same about sales reps. Buyers now use both, and cross-check each one.
 
-The lesson is simple. If AI shapes the shortlist, and the shortlist decides the deal, then getting recommended by AI is not a nice-to-have, it is a pipeline input.
+The lesson is simple. If AI shapes the shortlist, and the shortlist decides the deal, then getting recommended by AI is not a nice-to-have, it is a pipeline input, as the [carbon and ESG teardown](/blogs/authority-isnt-the-moat) shows in one category.
 
 ## 02. How does AI search really work?
 

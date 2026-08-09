@@ -43,7 +43,7 @@ These are estimates and a single-day snapshot; read them as direction, not gospe
 
 ## 04. Is authority the moat? (It isn't.)
 
-**No. The pure-play vendors cluster in a narrow domain-rating band from the low 60s to mid 70s.** When authority is this uniform it stops being a differentiator. What separates traffic leaders from laggards is not how strong their domains are; it is how much they have published.
+**No. The pure-play vendors cluster in a narrow domain-rating band from the low 60s to mid 70s.** When authority is this uniform it stops being a differentiator. What separates traffic leaders from laggards is not how strong their domains are; it is how much they have published, the [topical authority cluster](/blogs/topical-authority-cluster-ai-shortlists) that wins AI shortlists.
 
 Figure 1. Domain rating is uniform across the pure-play field (63-76). The two hyperscaler sections sit far above (92, 96), yet earn among the fewest citations.
 
@@ -213,7 +213,7 @@ FAQPage JSON-LD (paste into the page head)
 
 ### Step 4: write answer-first
 
-Structure invites the citation; the words earn it. Lead each key section with a direct, self-contained answer of roughly 40 to 60 words that an engine can lift verbatim, then expand below it.
+Structure invites the citation; the words earn it. Lead each key section with a direct, self-contained answer of roughly 40 to 60 words that an engine can lift verbatim, then expand below it, the exact shape of [a high-citation page](/blogs/anatomy-of-a-high-citation-page).
 
 answer-first section pattern
 
