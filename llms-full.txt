@@ -1820,7 +1820,7 @@ rawmktg. publishes data-driven research on B2B marketing strategy, SEO, GEO, and
 
 # Becoming an Entity
 
-> Wikipedia, Wikidata, and the knowledge graph: a working playbook for building machine-readable authority, not just rankings. Code, schemas and a twelve-month sequence included.
+> Entity SEO, done properly: Wikipedia, Wikidata and the knowledge graph, a working playbook for building machine-readable authority and earning a Google Knowledge Panel. Code, schemas and a twelve-month sequence included.
 
 *Source: https://rawmktg.com/blogs/becoming-an-entity · rawmktg. by Vinayak Ravi*
 
@@ -2054,7 +2054,7 @@ The non-Wikipedia route, five steps in order
 
 Step two is where most programmes quietly fail, it is unglamorous data-janitorial work with no dashboard payoff, so it gets deferred, and every later step is then built on sand.
 
-## 04. How do you engineer Wikipedia and Wikidata?
+## 04. How do you engineer Wikipedia and Wikidata for entity SEO?
 
 **Skip the Wikipedia notability wall and go straight to Wikidata: fully machine-readable, no notability bar for structured data, and it feeds the same downstream systems.** Wikipedia is a primary seed source for search knowledge graphs, which is why everyone wants in, and its General Notability Guideline demands significant coverage in reliable, independent secondary sources. Press releases and syndicated funding announcements are one source wearing twelve hats, and a failed promotional attempt can end in deletion or a domain blacklist. Wikidata has no equivalent wall. If you only do one thing from this entire article, do Wikidata.
 
@@ -2145,7 +2145,7 @@ if __name__ == "__main__":
 
 Run it on a schedule and store the output. Four things are worth alerting on, and none of them show up in a rank tracker, though all of them change how an AI assistant describes you: the MID changes or disappears (your node was merged, split or dropped); the official URL stops pointing at your domain (someone else captured the binding); the description shifts (Google's understanding of what you are has moved, possibly toward a competitor's category); or a namesake starts outranking you for your own brand string.
 
-## 06. What tools and metrics actually matter now?
+## 06. What entity SEO tools and metrics actually matter now?
 
 **Entity platforms that build and deploy machine-readable graphs, not keyword tools, and three generative metrics that survive the shift, starting with the one that needs no vendor.** Traditional SEO platforms operate at the keyword level; entity platforms construct, manage and deploy graphs into your CMS. Two capabilities matter regardless of vendor: automated semantic internal linking (NLP entity extraction that cross-links by concept, the machine-readable cousin of [internal linking for AI retrieval](/blogs/internal-linking-for-ai-retrieval)), and private knowledge graphs that give every article, author and product a URI exposed through a SPARQL or Linked Data interface, so an LLM crawler traverses a clean structured graph instead of guessing at your HTML.
 
