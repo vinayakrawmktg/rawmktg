@@ -1,6 +1,6 @@
 # We Analysed 6 B2B SaaS Companies in the Container Tracking Software Space. Here Is What We Found.
 
-> Seven findings from Ahrefs data on AI citation gaps, domain authority divergence, commercial keyword coverage, and the carrier tracking page strategy that most players have missed entirely.
+> Seven findings from Ahrefs data, a companion to the field service software teardown , on AI citation gaps, domain authority divergence, commercial keyword coverage, and the carrier tracking page strategy that most players have missed entirely.
 
 *Source: https://rawmktg.com/blogs/container-tracking-saas-seo-geo-analysis · rawmktg. by Vinayak Ravi*
 

@@ -1,6 +1,6 @@
 # Why AI Cites Domo Over Databricks
 
-> The GEO hygiene gap deciding which data-analytics brands AI assistants surface when buyers ask, a six-platform teardown, and a companion to the carbon and ESG teardown .
+> The GEO hygiene gap deciding which data-analytics brands AI assistants surface when buyers ask, a six-platform teardown, and a companion to the carbon and ESG and field service software teardowns.
 
 *Source: https://rawmktg.com/blogs/why-ai-cites-domo-over-databricks · rawmktg. by Vinayak Ravi*
 

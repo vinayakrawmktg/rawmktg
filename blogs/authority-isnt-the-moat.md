@@ -47,7 +47,7 @@ These are estimates and a single-day snapshot; read them as direction, not gospe
 
 Figure 1. Domain rating is uniform across the pure-play field (63-76). The two hyperscaler sections sit far above (92, 96), yet earn among the fewest citations.
 
-Look at the outliers. One well-known enterprise brand carries a domain rating of 73, higher than several competitors, yet sits near the bottom of the traffic range with a tiny keyword footprint. The traffic leaders are the two firms with the largest content libraries, not the strongest link profiles. The lesson: stop buying links and start shipping pages. You have already cleared the authority bar. This is the same pattern behind [ranking isn't visibility](/blogs/ranking-isnt-visibility).
+Look at the outliers. One well-known enterprise brand carries a domain rating of 73, higher than several competitors, yet sits near the bottom of the traffic range with a tiny keyword footprint, the same authority-without-traffic gap as the [field service software teardown](/blogs/field-service-software-ai-visibility-gap). The traffic leaders are the two firms with the largest content libraries, not the strongest link profiles. The lesson: stop buying links and start shipping pages. You have already cleared the authority bar. This is the same pattern behind [ranking isn't visibility](/blogs/ranking-isnt-visibility).
 
 ## 05. What actually decides traffic?
 
