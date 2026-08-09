@@ -1,6 +1,6 @@
 # Authority Seeding for AI: Building the Off-Site Signal Stack That LLMs Actually Trust
 
-> Unlinked brand mentions correlate 3x more strongly with AI citation visibility than traditional backlinks. Here is the tactical playbook for building the niche-relevant review signals, third-party citations, and co-occurrence patterns that feed the models that now control B2B discovery.
+> LLM SEO starts off-site: unlinked brand mentions correlate 3x more strongly with AI citation visibility than traditional backlinks. Here is the tactical playbook for building the niche-relevant review signals, third-party citations, and co-occurrence patterns that feed the models that now control B2B discovery.
 
 *Source: https://rawmktg.com/blogs/authority-seeding-ai-llm-trust · rawmktg. by Vinayak Ravi*
 
