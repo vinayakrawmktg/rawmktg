@@ -35,7 +35,7 @@ Pattern 01 · Heading Structure
 
 **Phrase each heading as the exact question a buyer would type, then answer it directly beneath.** AI Mode decomposes a query into parallel sub-questions, so a page whose H2s map one-to-one onto those sub-questions hands the model a clean passage to retrieve for each, and a far higher chance of being cited.
 
-When a user inputs a conversational query into Perplexity or Gemini, the system does not search for pages containing those words. It decomposes the query into multiple parallel sub-queries, a mechanism Google has confirmed as "Query Fan-Out," and retrieves pages from the SERPs for each sub-query to synthesize a composite response.
+To get cited by AI, and to rank in ChatGPT, Perplexity and Gemini, you have to understand what these systems actually pull into an answer. When a user inputs a conversational query into Perplexity or Gemini, the system does not search for pages containing those words. It decomposes the query into multiple parallel sub-queries, a mechanism Google has confirmed as "Query Fan-Out," and retrieves pages from the SERPs for each sub-query to synthesize a composite response.
 
 Pages designed as Topical Authority Clusters, covering the primary query alongside several plausible fan-out sub-queries, [earn up to 161% more citations](https://threelayerapproach.com/learn/geo), with 51.2% of those pages successfully captured in final synthesized answers. The practical implication for any content architecture decision is direct: a page covering one question earns one citation opportunity. A page covering the primary question plus five related sub-queries earns six.
 

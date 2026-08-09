@@ -1,6 +1,6 @@
 # AI Mode vs AI Overviews
 
-> Google's two AI surfaces share a query box but run different retrieval logic and cite different sources, and a B2B brand has to earn its place in both. How each one decides what to show.
+> Google's two AI surfaces share a query box but run different retrieval logic and cite different sources, and a B2B brand has to earn its place in both. How each surface decides what to show, and how to rank in AI Overviews and AI Mode.
 
 *Source: https://rawmktg.com/blogs/ai-mode-vs-ai-overviews · rawmktg. by Vinayak Ravi*
 
@@ -165,7 +165,7 @@ AI Mode citation behavior, four numbers to plan around
 
 The volatility number is the one most teams underweight. AI Mode uses a probabilistic retrieval model that [continuously reshuffles its sources](/blogs/30-day-content-half-life-recency-ai-ranking-signal), so you are not chasing a fixed ranking that holds still once you win it. You are raising your inclusion odds across a distribution that re-rolls on every query, which reframes the whole measurement question.
 
-## 07. How do you appear in Google AI Mode?
+## 07. How do you rank in Google AI Mode and AI Overviews?
 
 **Semantic depth and entity authority, not keyword density. Three levers, in order of leverage.** Because AI Mode is conversational and runs on fan-out, the work that earns citations is depth and authority. Three levers.
 

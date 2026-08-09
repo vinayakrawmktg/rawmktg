@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/30-day-content-half-life-recency-ai-ranking-signal · rawmktg. by Vinayak Ravi*
 
 
-There is a number that should get every content strategist's attention: 3.2x.
+There is a number that should get every content strategist's attention: 3.2x. It is the clearest evidence yet that content decay is now a measurable AI-search problem, not a vague best practice.
 
 That is how much more likely a page that has not been updated in 90 days is to completely lose its AI search citations compared to a page refreshed within the same window. This is the 30-day content half-life in action. And understanding it mechanically, not just philosophically, is the difference between a content program that compounds in value and one that quietly decays.
 
