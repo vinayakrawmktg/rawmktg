@@ -260,6 +260,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://rawmktg.com/tools/facet-coverage-auditor</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/expected-citation-estimator</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/fan-out-content-brief-generator</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://rawmktg.com/tools/ai-visibility-signal-diagnostic</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>

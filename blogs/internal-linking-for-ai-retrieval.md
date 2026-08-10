@@ -201,7 +201,7 @@ Fused context
 
 sent to the LLM
 
-Figure 7 - GraphRAG fuses vector relevance and graph traversal via Reciprocal Rank Fusion.
+Figure 7 - GraphRAG fuses vector relevance and graph traversal via [Reciprocal Rank Fusion](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches).
 
 Engineers model assets as Entity-Attribute-Value triples (Subject, Predicate, Object). The pipeline runs extraction (pull JSON-LD and triples), deduplication (normalize entity names so "PostgreSQL," "Postgres" and "PG" resolve to one node), and graph construction (load relationships into a graph database). With the graph built, an Authority Boosting query counts each node's in-degree, its citation count, to find the most authoritative hubs.
 

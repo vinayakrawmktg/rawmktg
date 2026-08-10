@@ -154,7 +154,7 @@ Figure 4. Offline ingestion builds parametric memory. Runtime retrieval builds c
 
 ### Query fan-out, chunking, and context precision
 
-Modern generative engines rarely query their index with the sentence the user typed. They use query fan-out: the orchestration layer decomposes the primary prompt into multiple targeted sub-queries. A question about enterprise SaaS CRMs with Slack integrations becomes a fan of narrower searches, integration comparisons, native workflow reviews, category buyer guides, run in parallel, each returning candidate documents.
+Modern generative engines rarely query their index with the sentence the user typed. They use [query fan-out](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches): the orchestration layer decomposes the primary prompt into multiple targeted sub-queries. A question about enterprise SaaS CRMs with Slack integrations becomes a fan of narrower searches, integration comparisons, native workflow reviews, category buyer guides, run in parallel, each returning candidate documents.
 
 Retrieved documents are parsed into chunks, typically 100 to 300 words. A re-ranking model, usually a cross-encoder, scores each chunk for context precision. Chunks that score well share a profile: clear subject-predicate-object structure, exact numeric figures, named sources, and a single self-contained idea. Chunks that score badly are narrative, hedged, and dependent on the paragraph before them for meaning. Empirical work suggests the median length of a passage cited directly by systems like Claude or ChatGPT sits around 40 words.
 

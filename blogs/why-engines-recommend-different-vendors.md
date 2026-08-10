@@ -1,6 +1,6 @@
 # Why ChatGPT, Perplexity and Gemini Recommend Different Vendors (and How to Win All Three)
 
-> A technical breakdown of each engine's retrieval and ranking logic, with a practical prioritisation matrix for B2B SaaS brands operating on limited content budgets.
+> A technical breakdown of each engine's retrieval and ranking logic , with a practical prioritisation matrix for B2B SaaS brands operating on limited content budgets.
 
 *Source: https://rawmktg.com/blogs/why-engines-recommend-different-vendors · rawmktg. by Vinayak Ravi*
 

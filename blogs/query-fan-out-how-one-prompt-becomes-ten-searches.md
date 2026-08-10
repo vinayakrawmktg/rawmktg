@@ -295,6 +295,28 @@ html - the structural pattern that works
 
 Answer first, elaborate second. The chunker does not read ahead. If your answer arrives in paragraph four, it lands in a different chunk from the heading that promised it, and the two are scored separately.
 
+Free Tool · Generator
+
+Generate the eight-facet brief
+
+Turn your head term into the eight questions a fan-out will ask, one question-style H2 per facet, plus its target corpus. Copy or download.
+
+Your head term
+
+A named competitor (optional)
+
+Enter a head term and get an eight-facet brief: one question-style H2 per facet, plus the corpus each sub-query targets. Answer each in the first forty words, in server-side HTML.
+
+Your fan-out brief
+
+CopyDownload .md
+
+```
+Enter a head term to generate the brief.
+```
+
+[Open the full tool →](/tools/fan-out-content-brief-generator)
+
 ### 2. Keep passages monosemantic
 
 A passage is monosemantic when it stays cleanly on one concept. High monosemanticity keeps the embedding mathematically close to the target sub-query vector, maximising cosine similarity. ([Aleyda Solis](https://www.aleydasolis.com/en/ai-search/google-query-fan-out/)) Passages that blend several topics produce a vector that sits between all of them and scores mediocre against every sub-query. Practical test: take any 150-word block in isolation, with no heading, and ask what single question it answers. If you cannot name one, the chunk will not win one. This is the passage-level layer beneath [how your page gets retrieved](/blogs/how-your-page-gets-retrieved).
@@ -364,6 +386,90 @@ for p in PROMPTS:
 # share of voice by facet is the number that should move
 sov = group_by(rows, 'facet', agg=lambda r: mean(x['cited'] for x in r))
 ```
+
+Free Tool · Calculator
+
+Estimate your expected citation rate
+
+The formula above, made live. Enter your facet count, coverage and selection strength to see expected citations, and why covering one more facet usually wins.
+
+Your topic's fan-out
+
+Facets in the fan-out
+
+Facets you cover
+
+Avg selection strength (0-1)
+
+Retrieval probability is a coverage problem (do you have a passage that can win facet i at all). Selection strength is a quality and authority problem (given you were retrieved, does your audition chunk beat the others). Expected citation = the average of retrieval x selection across the fan-out.
+
+Expected citation rate
+
+0%
+
+Enter your fan-out
+
+Where the lift is
+
+Your estimate updates as you type.
+
+[Open the full tool →](/tools/expected-citation-estimator)
+
+Free Tool · Diagnostic
+
+Audit your facet coverage
+
+Run the eight-facet frame against your own content. Mark what you answer in under a hundred words and see the briefs you are missing.
+
+Your topic or head term
+
+For each of the eight facets a fan-out targets, mark whether a single passage on your site answers it in under a hundred words. Buried in paragraph four does not count, the chunker does not read ahead.
+
+**Specification.** the core features and what it actually does
+
+Covered in <100 wordsMissing / buried
+
+**Compatibility.** integrations, platforms and what it works with
+
+Covered in <100 wordsMissing / buried
+
+**Compliance.** security, certifications and regulatory fit
+
+Covered in <100 wordsMissing / buried
+
+**Capability.** specific workflows and how deep the automation goes
+
+Covered in <100 wordsMissing / buried
+
+**Price.** plans, tiers and total cost, in server-side HTML
+
+Covered in <100 wordsMissing / buried
+
+**Comparison.** head-to-head vs named competitors and alternatives
+
+Covered in <100 wordsMissing / buried
+
+**Sentiment.** real reviews and community proof (off your domain)
+
+Covered in <100 wordsMissing / buried
+
+**Edge case.** the awkward constraint a buyer asks about last
+
+Covered in <100 wordsMissing / buried
+
+Facet coverage
+
+0/8
+
+Mark the facets
+
+Briefs to write next
+
+[Open the full tool →](/tools/facet-coverage-auditor)
+
+Free tools from this piece
+
+Three browser-based tools built from this deep dive: the [Facet Coverage Auditor](/tools/facet-coverage-auditor) to find your gaps, the [Expected-Citation Estimator](/tools/expected-citation-estimator) that replaces rank tracking, and the [Fan-Out Content Brief Generator](/tools/fan-out-content-brief-generator). They complement the existing [Query Fan-Out Simulator](/tools/query-fan-out-simulator) and [RRF Calculator](/tools/rrf-rank-fusion-calculator). All free, all run in your browser.
 
 ## 10. What should you do this week?
 

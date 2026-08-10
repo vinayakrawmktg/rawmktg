@@ -144,7 +144,7 @@ The exception that proves the mechanic
 
 Ask a flat factual question, "What products does Adidas offer?", and every surface, including third-party models, converges on the same foundational sources: the annual report, the investor-relations portal, and Wikipedia. Wikipedia carries 35% of citations shared across AI engines despite being only 3.8% of total citations. Factual identity queries pull from canonical sources, so the surfaces agree.
 
-The pattern is consistent: the more a query needs to be reasoned across dimensions, the more fan-out engages and the more the two surfaces split apart. Most B2B buying questions, "best X for Y", "X vs Y", "how do teams handle Z", are exactly the multi-intent prompts that maximize divergence, which is why B2B brands feel the split harder than consumer ones.
+The pattern is consistent: the more a query needs to be reasoned across dimensions, the more [fan-out](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches) engages and the more the two surfaces split apart. Most B2B buying questions, "best X for Y", "X vs Y", "how do teams handle Z", are exactly the multi-intent prompts that maximize divergence, which is why B2B brands feel the split harder than consumer ones.
 
 ## 06. Who does AI Mode actually cite?
 
