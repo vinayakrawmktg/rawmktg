@@ -96,7 +96,7 @@ chunk within the overall document, to improve search retrieval.
 Answer only with the contextual prefix and nothing else.
 ```
 
-The measured gains are not marginal. On standard evaluation sets, contextual prefixes on dense embeddings cut top-20 retrieval failure by 35% against a naive pipeline; pair them with contextual keyword search and failures drop 49%; add a reranking stage and the reduction reaches 67%.
+The measured gains are not marginal. On standard evaluation sets, contextual prefixes on dense embeddings cut top-20 retrieval failure by 35% against a naive pipeline; pair them with contextual keyword search and failures drop 49%; add a reranking stage and the reduction reaches 67%. The whole funnel runs once per sub-query produced by [query fan-out](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches).
 
 Figure 1, retrieval failure reduction across the stack. Each layer targets a different cause, which is why the gains compound instead of overlapping. Source: Anthropic contextual retrieval.
 

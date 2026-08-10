@@ -51,7 +51,7 @@ The implication for content architecture is significant. Your pages must not jus
 
 **Query expansion, retrieval, re-ranking, synthesis, citation.** Every query fans out into sub-questions, pulls candidate passages, scores them for relevance, synthesises one answer, and credits the sources used. Your content has to survive each stage, and most pages fall out at retrieval or re-ranking, never reaching the citation.
 
-Every query submitted to ChatGPT, Perplexity, or Gemini passes through a five-stage pipeline before an answer is generated. This pipeline is the definitive filter that decides whether your content is cited or rendered invisible.
+Every query submitted to ChatGPT, Perplexity, or Gemini first undergoes [query fan-out](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches), then passes through a five-stage pipeline before an answer is generated. This pipeline is the definitive filter that decides whether your content is cited or rendered invisible.
 
 01Understand
 

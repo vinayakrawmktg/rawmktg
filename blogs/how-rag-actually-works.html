@@ -452,7 +452,7 @@
       <h2 id="pipeline">What are the five stages of the AI search pipeline?</h2>
 <div class="section-answer"><strong>Query expansion, retrieval, re-ranking, synthesis, citation.</strong> Every query fans out into sub-questions, pulls candidate passages, scores them for relevance, synthesises one answer, and credits the sources used. Your content has to survive each stage, and most pages fall out at retrieval or re-ranking, never reaching the citation.</div>
 
-      <p>Every query submitted to ChatGPT, Perplexity, or Gemini passes through a five-stage pipeline before an answer is generated. This pipeline is the definitive filter that decides whether your content is cited or rendered invisible.</p>
+      <p>Every query submitted to ChatGPT, Perplexity, or Gemini first undergoes <a href="/blogs/query-fan-out-how-one-prompt-becomes-ten-searches">query fan-out</a>, then passes through a five-stage pipeline before an answer is generated. This pipeline is the definitive filter that decides whether your content is cited or rendered invisible.</p>
 
       <div class="pipeline">
         <div class="pipeline-step">

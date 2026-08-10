@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Query Fan-Out: How AI Search Works &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Query fan-out explained: how AI search turns one prompt into 8-16 hidden sub-queries, the RRF and cosine math that decides citations, and why 95% of the searches that matter have zero keyword volume." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches" />
+  <meta property="og:title" content="Query Fan-Out: How One Prompt Becomes Ten Searches" />
+  <meta property="og:description" content="Query fan-out explained: how AI search turns one prompt into 8-16 hidden sub-queries, the RRF and cosine math that decides citations, and why 95% of the searches that matter have zero keyword volume." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Query Fan-Out: How One Prompt Becomes Ten Searches" />
+  <meta name="twitter:description" content="Query fan-out explained: how AI search turns one prompt into 8-16 hidden sub-queries, the RRF and cosine math that decides citations, and why 95% of the searches that matter have zero keyword volume." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Query Fan-Out: How One Prompt Becomes Ten Searches", "description": "Query fan-out explained: how AI search turns one prompt into 8-16 hidden sub-queries, the RRF and cosine math that decides citations, and why 95% of the searches that matter have zero keyword volume.", "image": "https://rawmktg.com/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches.webp", "url": "https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches", "datePublished": "2026-08-10", "dateModified": "2026-08-10", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches"}, "keywords": ["query fan-out", "AI search", "generative engine optimization", "GEO", "reciprocal rank fusion", "query decomposition", "ChatGPT Search", "Google AI Mode", "Perplexity", "sub-queries", "vector embeddings"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Query Fan-Out: How One Prompt Becomes Ten Searches", "item": "https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is query fan-out in AI search?", "acceptedAnswer": {"@type": "Answer", "text": "Query fan-out is the step where an AI search engine decomposes your single prompt into a set of targeted sub-queries, one per facet of what you meant (a spec, a price tier, a compliance requirement, a comparison, social proof), then fires them in parallel against different corpora. Instead of searching once for what you typed, the engine searches many times for what you meant, and each sub-query is a separate retrieval contest with its own winners."}}, {"@type": "Question", "name": "How many sub-queries does one prompt generate?", "acceptedAnswer": {"@type": "Answer", "text": "In standard modes, a single conversational prompt fans out into roughly 8 to 16 parallel sub-queries. About 59% of prompts trigger 5 to 11, 24% trigger 12 to 19, and the hardest standard tasks reach 28. Agentic research modes break the scale entirely: a single ChatGPT Deep Research prompt has been documented triggering over 400 sub-queries."}}, {"@type": "Question", "name": "Why do zero-volume keywords matter for AI search?", "acceptedAnswer": {"@type": "Answer", "text": "Over 95% of generated fan-out sub-queries have zero recurring search volume in keyword tools, because they are machine-written fresh for one user's context and never typed by anyone. Keyword databases measure strings humans repeat, so they cannot see a query that occurs once. The prioritisation metric shifts from search volume to facet coverage: how many of the sub-queries in a topic you can answer better than anyone."}}, {"@type": "Question", "name": "Does ranking #1 still matter with Reciprocal Rank Fusion?", "acceptedAnswer": {"@type": "Answer", "text": "Less than it used to. Under RRF with the conventional constant k=60, rank #1 contributes 0.01639 and rank #10 contributes 0.01429, a gap of just 13%. Moving a page from position 10 to 1 inside one sub-query buys a 13% edge; appearing at all in a second sub-query list buys close to 100%. A document that ranks #5 across four lists beats a document that ranks #1 in one, by 3.75x."}}, {"@type": "Question", "name": "How do you optimise for query fan-out?", "acceptedAnswer": {"@type": "Answer", "text": "Write atomically, one self-contained section per sub-question with the answer in the first 40 words; keep passages monosemantic so the embedding sits close to one sub-query vector; serve every fact (pricing, specs, compliance) in server-side HTML because the main ChatGPT crawler does not render JavaScript; and build the off-site footprint, since sentiment sub-queries go to Reddit, G2 and forums, not your site. Rewriting H2s as questions alone lifts ChatGPT citation rate from 29% to 41%."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/query-fan-out-how-one-prompt-becomes-ten-searches.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/query-fan-out-how-one-prompt-becomes-ten-searches.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches.webp" srcset="/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-800.webp 800w, /assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-1200.webp 1200w, /assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-1600.webp 1600w, /assets/images/query-fan-out-how-one-prompt-becomes-ten-searches.webp 2400w" sizes="100vw" alt="Query Fan-Out: How One Prompt Becomes Ten Searches - how AI search fans one prompt into many sub-queries - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">AI Search Mechanics &middot; Technical Deep Dive</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
+    <h1 class="article-headline">Query Fan-Out: How One Prompt Becomes Ten Searches</h1>
+    <p class="article-deck">You type one sentence. The engine runs eight to sixteen searches you never see, scores a few thousand text chunks, and writes an answer from roughly five pages. How that machine works, what the math rewards, and why the page that ranks #1 often loses to the page that ranks #5 four times.</p>
+    <p class="article-data-note">A technical deep dive on query fan-out across ChatGPT Search, Google AI Mode and Perplexity, grounded in published pipeline analyses and third-party measurements (Rankly, Netstager, Finseo, Aleyda Solis, Surfer, GEOly, Search Engine Land, Semrush), 2025-26. Figures are original illustrations built from the cited data; percentages are directional rather than exact.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p>Search used to be a single transaction. You typed a string, the engine matched it against an inverted index, and it handed back ten blue links ordered by lexical relevance, link topology and domain authority. One input, one lookup, one list. Every SEO tactic built between 1998 and 2023 assumes that shape.</p>
+<p>That shape is gone. When you ask ChatGPT Search, Google AI Mode or Perplexity a real question, the system does not run your question. It reads your question, works out what you are actually trying to decide, and then writes its own set of searches. Those run in parallel against different corpora, get fused, chunked, scored and compressed into a context window. Only then does a model write the paragraph you read.</p>
+<div class="pull-quote">Your competitors are not beating you on the head term. They are beating you on eleven sub-queries neither of you can see in Ahrefs.</div>
+<p>The industry name for the middle step is query fan-out (also query decomposition, multi-query retrieval, or query variant generation). If you optimised a page for the sentence a human types, you optimised for a string that is no longer being searched. The strings being searched are machine-written, highly specific, and almost entirely absent from keyword tools.</p>
+<h2 id="what"><span class="section-num">01</span>What is query fan-out, in one line?</h2>
+<div class="section-answer"><strong>AI search does not rank pages against your prompt.</strong> It generates its own sub-queries, retrieves passages for each one, fuses the lists, and cites whichever sources show up usefully across the most facets. Breadth of coverage beats depth on any single term.</div>
+<p>Each sub-query goes after a distinct facet of the original: a technical spec, a pricing tier, a compliance requirement, a comparison, a piece of social proof, or a follow-up you have not thought to ask. They fire simultaneously across live web indices, knowledge graphs, product catalogues and community databases. The system merges the ranked lists with Reciprocal Rank Fusion and dense vector scoring, assembles the surviving passages into a context block, and passes that to the model, which writes the answer with inline citations.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Classify</div><div class="pl-desc">Does this even need a search, and how hard?</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Decompose</div><div class="pl-desc">Write the sub-queries that cover the facets.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Retrieve</div><div class="pl-desc">Fire them at different corpora in parallel.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Fuse + score</div><div class="pl-desc">Merge lists, chunk pages, score the chunks.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Synthesise</div><div class="pl-desc">Write one answer, attach citations.</div></div></div><div class="chart-caption">Figure 1. The generalised fan-out pipeline. Every commercial AI search product is a variation on this shape.</div>
+<div class="callout-box"><div class="callout-box-label">The structural detail that drives everything</div><p>Retrieval happens per sub-query, not per prompt. A page is never evaluated once. It is evaluated eight to sixteen times, against eight to sixteen different questions, and it only needs to win a few of them to be pulled into the context pool. Visibility is no longer a position. It is a hit rate.</p></div>
+<h2 id="numbers"><span class="section-num">02</span>How many hidden searches does one prompt trigger?</h2>
+<div class="section-answer"><strong>Eight to sixteen in standard modes, and 400+ in agentic deep research.</strong> About 59% of prompts fan out into 5 to 11 sub-searches, 24% into 12 to 19, and the hardest standard tasks reach 28. A single ChatGPT Deep Research prompt has been documented triggering over 400. (<a href="https://www.geoly.ai/blog/query-fan-out" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">GEOly</a>)</div>
+<div class="chart-wrap"><canvas id="distChart" height="240"></canvas></div><div class="chart-caption">Figure 2. Distribution of sub-query volume per prompt. The modal prompt fires between five and eleven hidden searches.</div>
+<div class="tt-wrap"><div class="tt-label">Table 1. Sub-query volume bands, share of prompts, and the modes that produce them.</div><table class="tt"><thead><tr><th>Sub-query volume</th><th>Share of prompts</th><th>What triggers it</th><th>Typical engine</th></tr></thead><tbody><tr><td class="label">1 to 4</td><td>~17%</td><td>Simple factual and navigational lookups</td><td>Google AI Mode, ChatGPT standard</td></tr><tr><td class="label">5 to 11</td><td>59%</td><td>Standard commercial and comparative intent</td><td>Perplexity, ChatGPT Search</td></tr><tr><td class="label">12 to 19</td><td>24%</td><td>Multi-faceted buyer journeys and analysis</td><td>Google AI Mode on Gemini 2.5</td></tr><tr><td class="label">20 to 28</td><td>~3%</td><td>Advanced multi-constraint research tasks</td><td>Complex multi-turn AI sessions</td></tr><tr><td class="label">200 to 400+</td><td>Special mode</td><td>Recursive agentic deep research</td><td>ChatGPT Deep Research</td></tr></tbody></table></div>
+<p>Read that as a traffic forecast and it looks like good news. Read it as a competition forecast and it is not. Ten sub-queries means ten chances to be included and ten chances to be left out.</p>
+<h2 id="chatgpt"><span class="section-num">03</span>How does ChatGPT Search actually work, stage by stage?</h2>
+<div class="section-answer"><strong>A seven-stage retrieval pipeline, and every stage is a filter that throws work away.</strong> Understanding where the losses happen tells you exactly where to spend effort: classification, query generation, metadata filtering, fetch and chunk, vector scoring, audition selection, and synthesis.</div>
+<h3>Stage 1: query classification</h3>
+<p>A lightweight classifier scores the prompt in milliseconds and returns a no-search, simple-search and complex-search probability. If the no-search score clears roughly 0.2, the model answers from parameters and no retrieval happens at all. If the complex score clears roughly 0.4, the system enters a recursive multi-turn planner. (<a href="https://www.tryrankly.com/blogs/how-chatgpt-search-works" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Rankly</a>) A meaningful share of prompts in your category may never trigger a search, for those you are competing against training data and brand memory, not your sitemap.</p>
+<div class="code-wrap"><div class="code-label">python - the routing decision</div><div class="code-block"><pre># Conceptual shape of the routing decision
+scores = classifier(prompt, conversation_history)
+
+if scores.no_search &gt; 0.20:
+    return answer_from_parameters(prompt)        # no retrieval, no citations
+if scores.complex_search &gt; 0.40:
+    return recursive_planner(prompt, max_rounds=3)   # fan-out, read, fan-out again
+return single_pass_retrieval(prompt)             # one round of sub-queries</pre></div></div>
+<h3>Stage 2: search query generation</h3>
+<p>The orchestrator writes two classes of query: short keyword queries for inverted-index lookup, and longer semantic queries (around fifteen words) written to align vector embeddings with intent. For complex prompts it runs a planner loop, up to three rounds, issuing a batch, reading the metadata, spotting gaps, and firing again. If your content answers the obvious facet, you compete in round one against everyone. If it answers the awkward second-order facet, you are one of very few candidates in round two, where the field is thin.</p>
+<h3>Stages 3-4: filter, fetch and chunk</h3>
+<p>Sub-queries return 40 to 50 candidate URLs. Before fetching a single page, the system cuts that pool to 10 to 20 based purely on SERP-level metadata, title tags, meta descriptions, authority signals and schema. Your body copy is not consulted at this stage; your title tag is doing all the work. (<a href="https://www.tryrankly.com/blogs/how-chatgpt-search-works" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Rankly</a>) Survivors are fetched three to ten at a time under a hard two-second render timeout, then parsed into uniform, non-overlapping 128-token chunks (<a href="https://www.tryrankly.com/blogs/how-chatgpt-search-works" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Rankly</a>), about a hundred words, that may be split mid-argument by a chunker that has never read your headline.</p>
+<h3>Stages 5-6: vector scoring and the audition chunk</h3>
+<p>Chunks are embedded and scored by cosine similarity against the semantic sub-query vectors, thousands of comparisons in 100 to 200 milliseconds. The system then looks at the single highest-scoring chunk from each page, its audition chunk, alongside the metadata, and selects a final pool of three to five pages for deep reading. Your entire page is represented, at the moment of selection, by its best hundred words. If your best chunk is a hedged introduction, you do not audition well.</p>
+<h3>Stage 7: context assembly and generation</h3>
+<p>Surviving text, roughly 5,000 to 6,000 tokens, is formatted into sliding windows around the top chunks, and the core model writes the answer with inline citations. Two infrastructure facts sit underneath: about 92% of ChatGPT's external searches run via the Bing Search API, and OpenAI's OAI-SearchBot does not execute JavaScript, it parses raw HTML. Empirical work found 46% of ChatGPT crawler requests operating in plain-HTML mode. (<a href="https://blog.netstager.com/query-fan-out-in-seo/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Netstager</a>)</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">40-50 URLs</div><div class="pl-desc">from the sub-queries.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">10-20 pass</div><div class="pl-desc">metadata filter, title tags only.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">3-5 pages</div><div class="pl-desc">deep-read after the audition chunk.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">5-6k tokens</div><div class="pl-desc">context window, then the answer.</div></div></div><div class="chart-caption">Figure 3. The compression funnel. Fifty candidates become five pages become six thousand tokens.</div>
+<h2 id="engines"><span class="section-num">04</span>How do Google AI Mode and Perplexity differ?</h2>
+<div class="section-answer"><strong>Same fan-out, different destinations, and different transparency.</strong> Google issues up to sixteen parallel sub-searches across four corpora at once (<a href="https://www.aleydasolis.com/en/ai-search/google-query-fan-out/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Aleyda Solis</a>), the web index, Knowledge Graph, Shopping Graph and review databases. Perplexity exposes its six to ten sub-queries directly in the interface.</div>
+<p>What makes Google's version structurally different is not the count, it is the destinations. Your product page competes in the web index, your entity record in the Knowledge Graph, your feed in the Shopping Graph, your reviews somewhere else entirely. A team that only owns the website is playing one of four hands. And the number that should reshape planning: pages that rank for the associated fan-out sub-queries are 161% more likely to be cited in AI Overviews than pages that rank only for the primary query. (<a href="https://surferseo.com/blog/query-fan-out/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Surfer</a>) This is the multi-corpus split covered in <a href="/blogs/ai-mode-vs-ai-overviews">AI Mode vs AI Overviews</a>.</p>
+<p>Perplexity leans on decomposition hardest and most visibly, exposing its sub-queries as follow-up searches. It is the cheapest research tool available: type your buyers' questions and read the sub-queries it shows you. That is your content brief, written by the machine that will grade it. (<a href="https://www.finseo.ai/query-fanout-analysis" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Finseo</a>)</p>
+<div class="tt-wrap"><div class="tt-label">Table 2. Architecture comparison across the three engines that matter commercially.</div><table class="tt"><thead><tr><th>Feature</th><th>ChatGPT Search</th><th>Google AI Mode</th><th>Perplexity</th></tr></thead><tbody><tr><td class="label">Orchestrator</td><td>Dedicated reasoning orchestrator</td><td>Custom Gemini 2.5 engine</td><td>Agentic RAG pipeline</td></tr><tr><td class="label">Sub-queries / prompt</td><td>8 to 12 (400+ in Deep Research)</td><td>8 to 16 parallel</td><td>6 to 10</td></tr><tr><td class="label">Primary index</td><td>Bing API ~92% + OAI-SearchBot</td><td>Web index, Knowledge Graph, Shopping Graph, reviews</td><td>Hybrid web + multi-engine APIs</td></tr><tr><td class="label">JavaScript rendering</td><td>No, raw HTML only</td><td>Yes, Googlebot pipeline</td><td>Partial and limited</td></tr><tr><td class="label">Fetch timeout</td><td>Hard 2.0s per page</td><td>Native SERP latency</td><td>Dynamic multi-source</td></tr><tr><td class="label">Unit evaluated</td><td>128-token vector chunks</td><td>Entity-based passage scoring</td><td>Structured Q&amp;A passages</td></tr></tbody></table></div>
+<h2 id="math"><span class="section-num">05</span>What is the math that decides who gets cited?</h2>
+<div class="section-answer"><strong>Two operations: cosine similarity for relevance, and Reciprocal Rank Fusion for survival.</strong> Neither rewards what classical SEO optimises for. Cosine scores a passage against a sub-query; RRF decides which documents survive when eight ranked lists have to become one.</div>
+<h3>Vector embeddings and cosine similarity</h3>
+<p>A 128-token chunk becomes a dense vector; a generated sub-query becomes a dense vector in the same space; relevance is the cosine of the angle between them. The denominator normalises for magnitude, so a long passage does not beat a short one simply for being long. Retrieval systems care about the band from roughly 0.7 upward. Because embeddings capture concepts rather than strings, a chunk can score high with zero exact keyword overlap. Keyword density is not a lever here; conceptual cleanliness is.</p>
+<div class="code-wrap"><div class="code-label">python - the scoring pass, minus the GPU</div><div class="code-block"><pre># What the scoring pass looks like, minus the GPU
+import numpy as np
+
+def cosine(a, b):
+    return float(a @ b / (np.linalg.norm(a) * np.linalg.norm(b)))
+
+chunks        = chunk_page(html, size_tokens=128, overlap=0)
+chunk_vecs    = embed(chunks)              # e.g. 1536 dimensions each
+subquery_vecs = embed(generated_subqueries)
+
+# every chunk is scored against every sub-query, independently
+scores = { (i, j): cosine(q, ch)
+           for i, q  in enumerate(subquery_vecs)
+           for j, ch in enumerate(chunk_vecs) }
+
+# the page is represented by its single best chunk: the audition chunk
+audition = max(scores.values())</pre></div></div>
+<div class="callout-box"><div class="callout-box-label">The line that breaks old habits</div><p>Your page's score at the selection gate is a maximum, not a mean. Padding a page with more sections does not raise its audition score. Writing one section that nails one sub-query does.</p></div>
+<h3>Reciprocal Rank Fusion, and why #1 is overrated</h3>
+<p>After N parallel sub-queries the system holds N ranked lists and needs one pool. It merges them with RRF: each document scores the sum, across every list it appears in, of one over a constant (conventionally k=60) plus its rank. (<a href="https://www.geoly.ai/blog/query-fan-out" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">GEOly</a>) The constant exists to stop any single list's top result from dominating, and it works by flattening the top of the curve almost completely.</p>
+<div class="chart-wrap"><canvas id="rrfChart" height="240"></canvas></div><div class="chart-caption">Figure 4. The RRF weighting curve at k=60. Rank #1 contributes 0.01639, rank #10 contributes 0.01429, a gap of just 13%.</div>
+<p>Thirteen percent. Every incremental effort spent moving a page from position ten to position one buys a 13% edge inside a single sub-query list. Appearing at all in a second sub-query list buys you close to 100%.</p>
+<div class="chart-wrap"><canvas id="abChart" height="210"></canvas></div><div class="chart-caption">Figure 5. Document B ranks #5 in four lists; Document A ranks #1 in one. B wins by 3.75x without ever winning a single sub-query.</div>
+<div class="code-wrap"><div class="code-label">python - Reciprocal Rank Fusion in eight lines</div><div class="code-block"><pre># Reciprocal Rank Fusion in eight lines
+from collections import defaultdict
+
+def rrf(result_lists, k=60):
+    scores = defaultdict(float)
+    for ranked in result_lists:                 # one list per sub-query
+        for rank, doc in enumerate(ranked, start=1):
+            scores[doc] += 1.0 / (k + rank)
+    return sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
+
+# doc_a appears once at rank 1; doc_b appears four times at rank 5
+lists = [
+    [&#x27;doc_a&#x27;, &#x27;x&#x27;, &#x27;y&#x27;, &#x27;z&#x27;, &#x27;doc_b&#x27;],
+    [&#x27;p&#x27;, &#x27;q&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;doc_b&#x27;],
+    [&#x27;t&#x27;, &#x27;u&#x27;, &#x27;v&#x27;, &#x27;w&#x27;, &#x27;doc_b&#x27;],
+    [&#x27;m&#x27;, &#x27;n&#x27;, &#x27;o&#x27;, &#x27;l&#x27;, &#x27;doc_b&#x27;],
+]
+rrf(lists)[:2]
+# [(&#x27;doc_b&#x27;, 0.06154), (&#x27;doc_a&#x27;, 0.01639)]</pre></div></div>
+<p>The fusion algorithm structurally favours content that addresses multiple facets over monolithic pages that optimise for one head term. It is the mathematical reason a <a href="/blogs/topical-authority-cluster-ai-shortlists">topical authority cluster</a> outperforms a hero page. And because the engine scores individual chunks against specific sub-queries, not domains against topics, <a href="/blogs/ranking-isnt-visibility">passage relevance now outranks domain authority</a>: a small domain's explicit, dense, atomic answer can outscore a vague passage on a major publisher (<a href="https://blog.netstager.com/query-fan-out-in-seo/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Netstager</a>). Authority still helps at the selection gate, but it cannot manufacture a relevant chunk that does not exist.</p>
+<h2 id="example"><span class="section-num">06</span>What does fan-out do to a real buyer prompt?</h2>
+<div class="section-answer"><strong>It reads the hard constraints and writes eight searches aimed at eight corpora.</strong> A mid-market healthcare-CRM prompt with four hard constraints (Epic integration, HIPAA, AI workflows, under $150/user) and one soft one decomposes into eight sub-queries, only one of which resembles a keyword anyone researches.</div>
+<p>A traditional engine would try to match 'enterprise CRM healthcare Epic EHR HIPAA under 150' and return a mess of sponsored pages. The AI system writes eight searches instead:</p>
+<div class="tt-wrap"><div class="tt-label">Table 3. The fan-out for a single mid-market buyer prompt. Only SQ-01 resembles a keyword anyone researches.</div><table class="tt"><thead><tr><th>ID</th><th>Facet</th><th>Target corpus</th><th>Selection logic</th></tr></thead><tbody><tr><td class="label">SQ-01</td><td>Product classification</td><td>Web index, review aggregators</td><td>Identify category leaders</td></tr><tr><td class="label">SQ-02</td><td>Technical compatibility</td><td>Vendor docs, app exchanges</td><td>Filter on a hard integration requirement</td></tr><tr><td class="label">SQ-03</td><td>Regulatory</td><td>Trust centres, security specs</td><td>Verify the mandatory legal framework</td></tr><tr><td class="label">SQ-04</td><td>Functional capability</td><td>Feature modules, product guides</td><td>Assess automation depth</td></tr><tr><td class="label">SQ-05</td><td>Commercial</td><td>Official pricing pages</td><td>Enforce the sub-$150 constraint</td></tr><tr><td class="label">SQ-06</td><td>Direct comparison</td><td>Comparative roundups</td><td>Analyse trade-offs between leaders</td></tr><tr><td class="label">SQ-07</td><td>Sentiment</td><td>Reddit, Quora, peer forums</td><td>Validate real implementation experience</td></tr><tr><td class="label">SQ-08</td><td>Edge case</td><td>Vendor FAQs, knowledge bases</td><td>Audit constraints on secondary candidate</td></tr></tbody></table></div>
+<p>The synthesised answer highlights Vendor A for superior Epic integration (cited from technical docs), notes Vendor B as cost-effective but flags that Epic sync needs middleware (cited from a developer forum), and excludes Vendor C outright because its HIPAA BAA is restricted to tiers above $200. This is the mechanism behind most unexplained AI visibility losses. The page was fine. The coverage was not.</p>
+<div class="callout-box"><div class="callout-box-label">The vendor that lost</div><p>A competitor published one well-optimised landing page targeting 'best healthcare CRM'. It was excluded entirely, because it offered no extractable data for SQ-02, SQ-03 or SQ-05. It did not rank badly. It was never a candidate. There was nothing on the page for three of the eight questions to retrieve.</p></div>
+<h2 id="zero-volume"><span class="section-num">07</span>Why can't keyword tools see the searches that matter?</h2>
+<div class="section-answer"><strong>Because over 95% of generated sub-queries have zero recurring search volume. (<a href="https://blog.netstager.com/query-fan-out-in-seo/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Netstager</a>)</strong> Keyword databases were built by measuring strings humans repeat. Fan-out sub-queries are written fresh by a model for one user's context and never typed by anyone. A tool that measures repetition cannot see a query that occurs once.</div>
+<p>So the standard workflow breaks at the first step, there is no volume report to sort descending. What replaces it: read the sub-queries Perplexity exposes for your category; mine your sales calls (buyer objections are almost verbatim what the orchestrator generates); enumerate your head term's facets deliberately (specification, compatibility, compliance, capability, price, comparison, sentiment, edge case); and watch which pages get cited for questions you never targeted. Search volume as a prioritisation metric is retiring. Facet coverage replaces it, the same shift measured in <a href="/blogs/citation-vs-mention-vs-recommendation">citation vs mention vs recommendation</a>.</p>
+<div class="tt-wrap"><div class="tt-label">Table 4. The optimisation model before and after query fan-out.</div><table class="tt"><thead><tr><th>Factor</th><th>Traditional SEO</th><th>Generative engine optimisation</th></tr></thead><tbody><tr><td class="label">Primary goal</td><td>Rank #1 on a results page</td><td>Be cited inside a synthesised answer</td></tr><tr><td class="label">Targeting unit</td><td>One focus keyword per page</td><td>Whole intent clusters and entity facets</td></tr><tr><td class="label">Ranking signal</td><td>Domain authority, backlinks, exact match</td><td>Passage vector similarity, monosemantic chunks</td></tr><tr><td class="label">Volume model</td><td>High-volume head and mid-tail terms</td><td>Zero-volume sub-queries, ~95% invisible</td></tr><tr><td class="label">Content structure</td><td>Monolithic 2,500-word guide</td><td>Modular, self-contained, passage-level answers</td></tr><tr><td class="label">Technical focus</td><td>Core Web Vitals, mobile UX, JS rendering</td><td>Plain-HTML readability, fast crawl, schema</td></tr><tr><td class="label">Measurement</td><td>Clicks, keyword rankings, impressions</td><td>Citation frequency, share of voice by facet</td></tr></tbody></table></div>
+<h2 id="playbook"><span class="section-num">08</span>How do you optimise for query fan-out?</h2>
+<div class="section-answer"><strong>Four moves: write atomically, keep passages monosemantic, survive a non-rendering crawler, and build off-site.</strong> In rough order of return on effort. Almost none of it is measurable in the tools most teams pay for, which is the real transition cost.</div>
+<h3>1. Write atomically, and let headings do the retrieving</h3>
+<p>Engines extract 128-token chunks and score them independently, so build modular, self-contained sections where each fully answers one sub-question. Pages with headlines that directly answer specific sub-questions are cited by ChatGPT 41% of the time, against 29% for generic or artistic headlines, a twelve-point swing for writing your H2s as questions. (<a href="https://blog.netstager.com/query-fan-out-in-seo/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Netstager</a>) The counterintuitive part: focused articles covering 26% to 50% of a topic's sub-queries beat massive single-page guides attempting 100%, because five focused pages produce five audition chunks, five title tags and five shots at the fusion pool, where one monster URL produces one of each. This is the shape of <a href="/blogs/anatomy-of-a-high-citation-page">a high-citation page</a>.</p>
+<div class="chart-wrap"><canvas id="citeChart" height="210"></canvas></div><div class="chart-caption">Figure 6. ChatGPT citation rate by headline style: question-style H2s (41%) vs generic or artistic headlines (29%).</div>
+<div class="code-wrap"><div class="code-label">html - the structural pattern that works</div><div class="code-block"><pre>&lt;article&gt;
+  &lt;h1&gt;Healthcare CRM platforms with native Epic EHR integration&lt;/h1&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Which healthcare CRMs integrate natively with Epic EHR?&lt;/h2&gt;
+    &lt;p&gt;Three platforms offer certified native Epic integration:
+    Vendor A (Epic App Orchard, bidirectional), Vendor B (read-only
+    via middleware), and Vendor C (FHIR R4 endpoint, 2024 onward).&lt;/p&gt;
+    &lt;!-- answer lands in the first 40 words, inside one chunk --&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Does a HIPAA BAA come with every pricing tier?&lt;/h2&gt;
+    &lt;table&gt;...tiers, BAA availability, price per user per month...&lt;/table&gt;
+  &lt;/section&gt;
+&lt;/article&gt;</pre></div></div>
+<p>Answer first, elaborate second. The chunker does not read ahead. If your answer arrives in paragraph four, it lands in a different chunk from the heading that promised it, and the two are scored separately.</p>
+<h3>2. Keep passages monosemantic</h3>
+<p>A passage is monosemantic when it stays cleanly on one concept. High monosemanticity keeps the embedding mathematically close to the target sub-query vector, maximising cosine similarity. (<a href="https://www.aleydasolis.com/en/ai-search/google-query-fan-out/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Aleyda Solis</a>) Passages that blend several topics produce a vector that sits between all of them and scores mediocre against every sub-query. Practical test: take any 150-word block in isolation, with no heading, and ask what single question it answers. If you cannot name one, the chunk will not win one. This is the passage-level layer beneath <a href="/blogs/how-your-page-gets-retrieved">how your page gets retrieved</a>.</p>
+<h3>3. Make the facts survive a non-rendering crawler</h3>
+<p>Since OAI-SearchBot does not run client-side JavaScript, and 46% of ChatGPT retrieval passes fetch plain HTML, every fact you want cited must be in the server-side response, and under a two-second timeout. Use semantic HTML (article, section, h2, table); never render pricing, specs or compliance data client-side; use real HTML tables, not CSS grids or images; and ship JSON-LD, more in <a href="/blogs/schema-markup-ai-citations-2026">schema markup for AI citations</a> and <a href="/blogs/how-ai-crawlers-index-your-site">how AI crawlers index your site</a>.</p>
+<div class="callout-box"><div class="callout-box-label">If your pricing table is rendered client-side</div><p>It does not exist. Not to a non-rendering crawler working under a two-second timeout. Any fact you want cited, pricing, specs, compliance terms, integration lists, has to be in the server-side HTML response.</p></div>
+<div class="code-wrap"><div class="code-label">json-ld - one block answers three sub-queries</div><div class="code-block"><pre>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;SoftwareApplication&quot;,
+  &quot;name&quot;: &quot;Vendor A Health Cloud&quot;,
+  &quot;applicationCategory&quot;: &quot;CRM&quot;,
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;price&quot;: &quot;120.00&quot;,
+    &quot;priceCurrency&quot;: &quot;USD&quot;,
+    &quot;unitText&quot;: &quot;per user per month&quot;
+  },
+  &quot;featureList&quot;: [
+    &quot;Native Epic EHR integration via App Orchard&quot;,
+    &quot;HIPAA Business Associate Agreement on all paid tiers&quot;,
+    &quot;Automated patient outreach workflows&quot;
+  ]
+}</pre></div></div>
+<h3>4. Build the off-site footprint, because the fan-out leaves your domain</h3>
+<p>Sentiment sub-queries do not go to your website. They go to Reddit, Quora, G2 and Capterra, because the engine is cross-validating your claims against people who are not you. Domains with strong profiles across those platforms see roughly 3x higher citation rates, and sites with very large referring-domain footprints are around 3.5x more likely to be cited. (<a href="https://blog.netstager.com/query-fan-out-in-seo/" target="_blank" rel="noopener" style="font-family:var(--f-mono);font-size:11px;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule);">Netstager</a>) A fan-out of eight sub-queries might send only four at content you control; the other four go to corpora you can influence but not own. That is the argument for <a href="/blogs/authority-seeding-ai-llm-trust">authority seeding</a> and <a href="/blogs/why-ai-cites-reddit-g2-analysts">why AI cites Reddit, G2 and analysts</a>.</p>
+<h2 id="measure"><span class="section-num">09</span>How do you measure any of this?</h2>
+<div class="section-answer"><strong>Rank tracking answers a question the engine no longer asks. Expected citation replaces it.</strong> Expected citation decomposes into retrieval probability (a coverage problem, do you have a passage that can win sub-query i at all) and selection probability (a quality and authority problem, does your audition chunk beat the others).</div>
+<p>Most teams have spent a decade optimising selection for a handful of queries while leaving retrieval at zero for most of the fan-out. A workable loop, without buying anything: build a prompt set of 30 to 50 real buyer questions; run them across ChatGPT Search, AI Mode and Perplexity weekly, logging every cited domain; capture the sub-queries where the interface exposes them; score whether you were cited, mentioned without a link, and which facet you were cited for; and track share of voice by facet. Gaps by facet tell you what to write next, the discipline behind <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a>.</p>
+<div class="code-wrap"><div class="code-label">python - minimal citation tracker</div><div class="code-block"><pre># Minimal citation tracker: prompts in, cited domains out
+import datetime
+
+PROMPTS = load_jsonl(&#x27;buyer_prompts.jsonl&#x27;)     # 30-50 real questions
+rows = []
+for p in PROMPTS:
+    for engine in (&#x27;chatgpt_search&#x27;, &#x27;ai_mode&#x27;, &#x27;perplexity&#x27;):
+        answer = ask(engine, p[&#x27;text&#x27;])
+        rows.append({
+            &#x27;date&#x27;:       datetime.date.today().isoformat(),
+            &#x27;prompt&#x27;:     p[&#x27;id&#x27;],
+            &#x27;facet&#x27;:      p[&#x27;facet&#x27;],        # spec | compat | compliance | price ...
+            &#x27;engine&#x27;:     engine,
+            &#x27;cited&#x27;:      OUR_DOMAIN in answer.citations,
+            &#x27;mentioned&#x27;:  OUR_BRAND in answer.text,
+            &#x27;sources&#x27;:    answer.citations,
+            &#x27;subqueries&#x27;: answer.get(&#x27;subqueries&#x27;, []),   # Perplexity exposes these
+        })
+
+# share of voice by facet is the number that should move
+sov = group_by(rows, &#x27;facet&#x27;, agg=lambda r: mean(x[&#x27;cited&#x27;] for x in r))</pre></div></div>
+<h2 id="monday"><span class="section-num">10</span>What should you do this week?</h2>
+<div class="section-answer"><strong>Decompose your five best prompts by hand, audit facets not keywords, and start the log.</strong> The baseline you do not capture this month is the comparison you will want in six.</div>
+<ul><li>Pick your five highest-value buyer prompts and decompose them by hand with the eight-facet frame: specification, compatibility, compliance, capability, price, comparison, sentiment, edge case. You will find gaps within twenty minutes.</li><li>Audit the facets, not the keywords. For each sub-query, ask whether any single passage on your site answers it in under a hundred words. If not, that is a brief.</li><li>Rewrite your H2s as questions, then move the answer into the first forty words underneath each.</li><li>Curl your own pages with JavaScript disabled. Anything missing from that response is invisible to a meaningful share of AI retrieval.</li><li>Split the monster guide. One page carrying twenty facets has one audition chunk and one title tag; five focused pages have five of each.</li><li>Claim the off-domain surfaces: review profiles, documentation, community answers, entity records. Half the fan-out never touches your site.</li><li>Start the prompt log now. Thirty prompts, weekly, three engines, in a sheet.</li></ul>
+<div class="pull-quote">AI search does not reward the best page for a query. It rewards the most consistently useful source across a set of queries you will never see.</div>
+<section class="faq-section" id="faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3 class="faq-q">What is query fan-out in AI search?</h3><div class="faq-a"><p>Query fan-out is the step where an AI search engine decomposes your single prompt into a set of targeted sub-queries, one per facet of what you meant (a spec, a price tier, a compliance requirement, a comparison, social proof), then fires them in parallel against different corpora. Instead of searching once for what you typed, the engine searches many times for what you meant, and each sub-query is a separate retrieval contest with its own winners.</p></div></div><div class="faq-item"><h3 class="faq-q">How many sub-queries does one prompt generate?</h3><div class="faq-a"><p>In standard modes, a single conversational prompt fans out into roughly 8 to 16 parallel sub-queries. About 59% of prompts trigger 5 to 11, 24% trigger 12 to 19, and the hardest standard tasks reach 28. Agentic research modes break the scale entirely: a single ChatGPT Deep Research prompt has been documented triggering over 400 sub-queries.</p></div></div><div class="faq-item"><h3 class="faq-q">Why do zero-volume keywords matter for AI search?</h3><div class="faq-a"><p>Over 95% of generated fan-out sub-queries have zero recurring search volume in keyword tools, because they are machine-written fresh for one user's context and never typed by anyone. Keyword databases measure strings humans repeat, so they cannot see a query that occurs once. The prioritisation metric shifts from search volume to facet coverage: how many of the sub-queries in a topic you can answer better than anyone.</p></div></div><div class="faq-item"><h3 class="faq-q">Does ranking #1 still matter with Reciprocal Rank Fusion?</h3><div class="faq-a"><p>Less than it used to. Under RRF with the conventional constant k=60, rank #1 contributes 0.01639 and rank #10 contributes 0.01429, a gap of just 13%. Moving a page from position 10 to 1 inside one sub-query buys a 13% edge; appearing at all in a second sub-query list buys close to 100%. A document that ranks #5 across four lists beats a document that ranks #1 in one, by 3.75x.</p></div></div><div class="faq-item"><h3 class="faq-q">How do you optimise for query fan-out?</h3><div class="faq-a"><p>Write atomically, one self-contained section per sub-question with the answer in the first 40 words; keep passages monosemantic so the embedding sits close to one sub-query vector; serve every fact (pricing, specs, compliance) in server-side HTML because the main ChatGPT crawler does not render JavaScript; and build the off-site footprint, since sentiment sub-queries go to Reddit, G2 and forums, not your site. Rewriting H2s as questions alone lifts ChatGPT citation rate from 29% to 41%.</p></div></div></section>
+<div class="about-block" id="references"><div class="about-label">Sources and further reading</div><p style="margin-bottom:16px;">The pipeline analyses and measurements this deep dive draws on.</p><ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;"><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://blog.netstager.com/query-fan-out-in-seo/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What Is Query Fan-Out in SEO and How Does It Affect Your Rankings? Netstager.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.finseo.ai/query-fanout-analysis" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Query Fan-Out Analysis Tool: Analyze AI Query Decomposition. Finseo.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.aleydasolis.com/en/ai-search/google-query-fan-out/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Google AI Mode's Query Fan-Out Technique: What It Means for SEO. Aleyda Solis.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://searchengineland.com/guide/query-fan-out" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What Is Query Fan-Out and How Does It Work for AI Searches? Search Engine Land.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.semrush.com/blog/query-fan-out/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What Is Query Fan-Out and Why Does It Matter? Semrush.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://surferseo.com/blog/query-fan-out/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Query Fan-Out: Everything You Need To Know. Surfer.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.tryrankly.com/blogs/how-chatgpt-search-works" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">How ChatGPT Search Works: The 7-Stage Pipeline Behind Every Answer. Rankly.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.geoly.ai/blog/query-fan-out" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What Is Query Fan-Out? Understanding the Hidden Queries Driving AI Search. GEOly.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://arxiv.org/html/2601.17692v1" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">LegalMALR: Multi-Agent Query Understanding and LLM-Based Reranking. arXiv.</a></li></ol></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-led analysis of how search, retrieval and AI answer engines actually work. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Figures are original illustrations built from the cited data. Percentages are drawn from published third-party measurements and should be read as directional rather than exact.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">1 -&gt; 12</div><div class="stat-label">average fan-out width per prompt</div></div><hr class="stat-divider"><div><div class="stat-val">95%</div><div class="stat-label">of decisive searches have zero keyword volume</div></div><hr class="stat-divider"><div><div class="stat-val">13%</div><div class="stat-label">the RRF edge from rank 10 to rank 1</div></div><hr class="stat-divider"><div><div class="stat-val">3.75x</div><div class="stat-label">how much #5-in-four beats #1-in-one</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this deep dive</div><ul class="toc-list"><li><a href="#what"><span class="toc-num">01</span>What fan-out is</a></li><li><a href="#numbers"><span class="toc-num">02</span>The hidden searches</a></li><li><a href="#chatgpt"><span class="toc-num">03</span>ChatGPT, stage by stage</a></li><li><a href="#engines"><span class="toc-num">04</span>Google & Perplexity</a></li><li><a href="#math"><span class="toc-num">05</span>The math that decides</a></li><li><a href="#example"><span class="toc-num">06</span>A worked example</a></li><li><a href="#zero-volume"><span class="toc-num">07</span>The zero-volume problem</a></li><li><a href="#playbook"><span class="toc-num">08</span>The playbook</a></li><li><a href="#measure"><span class="toc-num">09</span>How to measure it</a></li><li><a href="#monday"><span class="toc-num">10</span>What to do this week</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4);
+
+  var d=document.getElementById('distChart');
+  if(d){new Chart(d,{type:'bar',data:{labels:['1-4','5-11','12-19','20-28','200-400+'],datasets:[{data:[17,59,24,3,1],backgroundColor:['#5B7FB3',signal,'#5B7FB3','#5B7FB3','#5B7FB3'],borderRadius:4,barThickness:30}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% of prompts';}}}},
+      scales:{x:{beginAtZero:true,max:70,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+
+  var r=document.getElementById('rrfChart');
+  if(r){var labels=[],vals=[];for(var i=1;i<=10;i++){labels.push('#'+i);vals.push(1/(60+i));}
+    new Chart(r,{type:'line',data:{labels:labels,datasets:[{data:vals,borderColor:signal,backgroundColor:rgba(signal,0.15),borderWidth:2,pointRadius:3,pointBackgroundColor:signal,fill:true,tension:0.1}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' RRF weight '+c.raw.toFixed(5);}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'},title:{display:true,text:'rank within one sub-query list',color:text,font:{family:mono,size:9}}},y:{ticks:{color:text,font:{family:mono,size:9},callback:function(v){return v.toFixed(4);}},grid:{color:grid}}}}});}
+
+  var a=document.getElementById('abChart');
+  if(a){new Chart(a,{type:'bar',data:{labels:['Doc B (#5 x4 lists)','Doc A (#1 x1 list)'],datasets:[{data:[0.06154,0.01639],backgroundColor:[up,neutral],borderRadius:4,barThickness:44}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' RRF score '+c.raw.toFixed(5);}}}},
+      scales:{x:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+
+  var c=document.getElementById('citeChart');
+  if(c){new Chart(c,{type:'bar',data:{labels:['Question-style H2s','Generic / artistic headlines'],datasets:[{data:[41,29],backgroundColor:[up,neutral],borderRadius:4,barThickness:56}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' cited '+c.raw+'% of the time';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,max:50,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>
