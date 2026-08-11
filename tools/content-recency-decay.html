@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <title>Content Recency Decay Estimator &middot; Free GEO Tool &middot; rawmktg.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Estimate how fast a page&#x27;s AI citations decay by engine (Perplexity ~30d to ChatGPT ~90d) and get a refresh-by date, grounded in the 30-day content half-life research." />
+  <meta name="description" content="Your AI citations have a shelf life. Estimate how fast a page's freshness and its citations decay on each engine, and when to refresh before the drop." />
   <meta name="author" content="Vinayak Ravi" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
@@ -22,7 +22,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rawmktg.com/tools/content-recency-decay" />
   <meta property="og:title" content="Content Recency Decay Estimator" />
-  <meta property="og:description" content="Estimate how fast a page&#x27;s AI citations decay by engine (Perplexity ~30d to ChatGPT ~90d) and get a refresh-by date, grounded in the 30-day content half-life research." />
+  <meta property="og:description" content="Your AI citations have a shelf life. Estimate how fast a page's freshness and its citations decay on each engine, and when to refresh before the drop." />
   <meta property="og:site_name" content="rawmktg." />
   <meta property="og:image" content="https://rawmktg.com/assets/images/og-default.png" />
   <meta property="og:image:width" content="1200" />
@@ -30,12 +30,13 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Content Recency Decay Estimator" />
-  <meta name="twitter:description" content="Estimate how fast a page&#x27;s AI citations decay by engine (Perplexity ~30d to ChatGPT ~90d) and get a refresh-by date, grounded in the 30-day content half-life research." />
+  <meta name="twitter:description" content="Your AI citations have a shelf life. Estimate how fast a page's freshness and its citations decay on each engine, and when to refresh before the drop." />
   <meta name="twitter:image" content="https://rawmktg.com/assets/images/og-default.png" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Content Recency Decay Estimator", "url": "https://rawmktg.com/tools/content-recency-decay", "description": "Estimate how fast a page's AI citations decay by engine (Perplexity ~30d to ChatGPT ~90d) and get a refresh-by date, grounded in the 30-day content half-life research.", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, all browsers", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Content Recency Decay Estimator", "url": "https://rawmktg.com/tools/content-recency-decay", "description": "Estimate how fast a page's AI citations decay by engine (Perplexity ~30d to ChatGPT ~90d) and get a refresh-by date, grounded in the 30-day content half-life research.", "isPartOf": {"@type": "WebSite", "name": "rawmktg.", "url": "https://rawmktg.com"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://rawmktg.com/tools"}, {"@type": "ListItem", "position": 3, "name": "Content Recency Decay Estimator", "item": "https://rawmktg.com/tools/content-recency-decay"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/","https://x.com/rawmktgcom"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast do AI citations decay?", "acceptedAnswer": {"@type": "Answer", "text": "It varies by engine and topic, but pages left un-updated lose citation share measurably within a quarter, faster on recency-sensitive engines like Perplexity and Google's AI surfaces. The estimator models the curve so you refresh before the drop, not after."}}, {"@type": "Question", "name": "How often should I refresh a page?", "acceptedAnswer": {"@type": "Answer", "text": "Refresh on a cadence tied to the topic's volatility: fast-moving categories every 4-8 weeks, evergreen ones quarterly. Update the substance and the dateModified in schema, a date change alone does not reset the clock."}}, {"@type": "Question", "name": "Is the Content Recency Decay Estimator free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Content Recency Decay Estimator is completely free, with no sign-up, no usage limits and no watermark on the output."}}, {"@type": "Question", "name": "Is my data private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Content Recency Decay Estimator runs entirely in your browser. Nothing you paste or enter is uploaded, stored or sent to any server."}}]}</script>
   <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -345,6 +346,9 @@
   </div>
 </section>
 <section class="method"><h2>How this works</h2><p>AI engines increasingly weight <strong>freshness</strong>. Pages left unrefreshed for 90+ days are roughly <strong>3.2x more likely</strong> to lose their AI citations, and over 80% of citations on commercial queries come from pages updated within the prior 30 days. Each engine applies a different window, so this tool models an exponential freshness half-life per engine and projects retention forward.</p><p>Use the recommended refresh date as a trigger to update one statistic, the dateModified field, and one section heading, enough to re-enter the citation window.</p><div class="srcs"><a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">The 30-day content half-life &rarr;</a></div></section>
+<section class="method"><h2>How to use it</h2><ol class="howto"><li>Enter the page's topic type and last-updated date.</li><li>See the modeled citation decay curve per engine.</li><li>Set a refresh cadence before the half-life passes.</li></ol></section>
+<section class="method" id="faq"><h2>Frequently asked questions</h2><h3>How fast do AI citations decay?</h3><p>It varies by engine and topic, but pages left un-updated lose citation share measurably within a quarter, faster on recency-sensitive engines like Perplexity and Google's AI surfaces. The estimator models the curve so you refresh before the drop, not after.</p><h3>How often should I refresh a page?</h3><p>Refresh on a cadence tied to the topic's volatility: fast-moving categories every 4-8 weeks, evergreen ones quarterly. Update the substance and the dateModified in schema, a date change alone does not reset the clock.</p><h3>Is the Content Recency Decay Estimator free to use?</h3><p>Yes. The Content Recency Decay Estimator is completely free, with no sign-up, no usage limits and no watermark on the output.</p><h3>Is my data private?</h3><p>Yes. The Content Recency Decay Estimator runs entirely in your browser. Nothing you paste or enter is uploaded, stored or sent to any server.</p></section>
+<section class="method"><h2>Related tools and reading</h2><p>Keep going with the playbooks and tools behind this one.</p><div class="srcs"><a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">Content freshness: the 30-day AI half-life &rarr;</a><a href="/blogs/prompt-to-citation-tracking">Prompt-to-citation tracking &rarr;</a><a href="/tools/geo-readiness-scorecard">GEO Readiness Scorecard &rarr;</a></div></section>
   </div>
 </main>
 
