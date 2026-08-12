@@ -281,6 +281,20 @@
   </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -323,13 +337,13 @@
   <div class="grid calc">
     <div class="controls">
       <div class="fld"><div class="lab">Page last updated</div>
-        <input type="date" id="rcDate">
+        <input type="date" id="rcDate" aria-label="Rc date">
         <p class="hint">When the page's main content (and its dateModified) last changed.</p></div>
       <div class="fld"><div class="lab">AI engine</div>
         <div class="seg" id="rcEngine"><button data-h="90" class="sel">ChatGPT</button><button data-h="75">Google AIO</button><button data-h="60">Gemini</button><button data-h="30">Perplexity</button></div>
         <p class="hint">Each engine weights freshness differently. Perplexity has the tightest window (~30 days); ChatGPT the widest (~90).</p></div>
       <div class="fld"><div class="lab">Current monthly AI citations <span class="val" style="color:rgba(255,255,255,.5)">optional</span></div>
-        <div class="ipt"><input type="number" id="rcCites" value="40" min="0" step="1"></div>
+        <div class="ipt"><input type="number" id="rcCites" value="40" min="0" step="1" aria-label="Rc cites"></div>
         <p class="hint">Used to translate retention into citations at risk.</p></div>
     </div>
     <div class="output">

@@ -497,6 +497,20 @@
 </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -535,7 +549,7 @@
 
 <main class="toolpage" id="article-main">
   <div class="page">
-<section class="card"><div class="grid calc"><div class="controls"><div class="fld"><label for="wuAge">Account age <span class="val" id="wuAgeV">9 days</span></label><input id="wuAge" type="range" min="0" max="90" value="9"></div><div class="fld"><label for="wuKarma">Comment karma <span class="val" id="wuKarmaV">22</span></label><input id="wuKarma" type="range" min="0" max="400" value="22"></div><div class="fld"><label for="wuVal">Value contributions this cycle <span class="val" id="wuValV">7</span></label><input id="wuVal" type="range" min="0" max="50" value="7"></div><div class="fld"><label for="wuPromo">Brand mentions this cycle <span class="val" id="wuPromoV">1</span></label><input id="wuPromo" type="range" min="0" max="20" value="1"></div><div class="hint">A planning aid for the 30-day warm-up and the 9:1 value-to-promotion rule. It does not read your account, it just maps your inputs to the protocol.</div></div><div class="output"><div class="o-eyebrow">Current phase</div><div class="o-big" id="wuPhase" style="font-size:34px">-</div><span class="scoreband" id="wuRisk" style="margin:2px 0 16px">-</span><div class="metrics" id="wuMetrics"></div></div></div></section>
+<section class="card"><div class="grid calc"><div class="controls"><div class="fld"><label for="wuAge">Account age <span class="val" id="wuAgeV">9 days</span></label><input id="wuAge" type="range" min="0" max="90" value="9" aria-label="Wu age"></div><div class="fld"><label for="wuKarma">Comment karma <span class="val" id="wuKarmaV">22</span></label><input id="wuKarma" type="range" min="0" max="400" value="22" aria-label="Wu karma"></div><div class="fld"><label for="wuVal">Value contributions this cycle <span class="val" id="wuValV">7</span></label><input id="wuVal" type="range" min="0" max="50" value="7" aria-label="Wu val"></div><div class="fld"><label for="wuPromo">Brand mentions this cycle <span class="val" id="wuPromoV">1</span></label><input id="wuPromo" type="range" min="0" max="20" value="1" aria-label="Wu promo"></div><div class="hint">A planning aid for the 30-day warm-up and the 9:1 value-to-promotion rule. It does not read your account, it just maps your inputs to the protocol.</div></div><div class="output"><div class="o-eyebrow">Current phase</div><div class="o-big" id="wuPhase" style="font-size:34px">-</div><span class="scoreband" id="wuRisk" style="margin:2px 0 16px">-</span><div class="metrics" id="wuMetrics"></div></div></div></section>
 <section class="method"><h2>How this works</h2><p>Reddit runs a four-layer spam defense, and it rarely tells you when you have tripped it, post links too early and you get silently shadowbanned. The fix is a disciplined warm-up: <strong>Presence</strong> (days 1-14, no links), <strong>Engagement</strong> (days 15-30, bank 50-200 karma), then <strong>Seeding</strong> (month 2+, max one brand link a week) on a strict 9:1 value-to-promotion ratio. This planner maps your inputs to that protocol and flags when it is safe to attach a brand.</p><div class="srcs"><a href="/blogs/reddit-geo-playbook">The Reddit GEO Playbook &rarr;</a></div></section>
 <section class="method"><h2>How to use it</h2><ol class="howto"><li>Enter your account age, karma and activity.</li><li>Read your warm-up phase and link gate.</li><li>Follow the safe self-promotion ratio.</li></ol></section>
 <section class="method" id="faq"><h2>Frequently asked questions</h2><h3>Why do Reddit accounts get shadowbanned?</h3><p>Because they promote before earning standing, links too early, a thin history, a high self-promotion ratio. Reddit's filters and moderators penalise that, and a shadowbanned account's content never reaches the threads AI cites.</p><h3>What is a safe self-promotion ratio on Reddit?</h3><p>The common guidance is roughly nine genuine contributions for every one that links your own content. The planner sets the ratio and the link gate against your account's age and karma so you build standing before you post.</p><h3>Is the Reddit Warm-Up &amp; Compliance Planner free to use?</h3><p>Yes. The Reddit Warm-Up &amp; Compliance Planner is completely free, with no sign-up, no usage limits and no watermark on the output.</p><h3>Is my data private?</h3><p>Yes. The Reddit Warm-Up &amp; Compliance Planner runs entirely in your browser. Nothing you paste or enter is uploaded, stored or sent to any server.</p></section>

@@ -497,6 +497,20 @@
 </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -535,7 +549,7 @@
 
 <main class="toolpage" id="article-main">
   <div class="page">
-<section class="card"><div class="controls"><div class="fld"><label for="foq">Enter a buyer query</label><div class="ipt"><input id="foq" type="text" value="best CRM for mid-market teams" autocomplete="off" /></div><div class="chips" id="foEx"><span class="chip" data-q="best CRM for mid-market teams">best CRM for mid-market teams</span><span class="chip" data-q="Asana vs Monday for agencies">Asana vs Monday</span><span class="chip" data-q="how to reduce SaaS churn">how to reduce SaaS churn</span><span class="chip" data-q="best AI note taker">best AI note taker</span></div><div class="hint">AI Mode decomposes your query into parallel sub-queries, up to 16, each hitting a different index. This shows an illustrative fan-out so you can see which content types resolve each branch.</div></div><div class="output" style="margin-top:22px"><div class="o-eyebrow">Parallel sub-queries</div><div class="o-big" id="foCount" style="font-size:40px">0</div><div class="o-sub" id="foCap">of up to 16 concurrent sub-queries</div><div class="alloc" id="foRows"></div></div></section>
+<section class="card"><div class="controls"><div class="fld"><label for="foq">Enter a buyer query</label><div class="ipt"><input id="foq" type="text" value="best CRM for mid-market teams" autocomplete="off" / aria-label="Foq"></div><div class="chips" id="foEx"><span class="chip" data-q="best CRM for mid-market teams">best CRM for mid-market teams</span><span class="chip" data-q="Asana vs Monday for agencies">Asana vs Monday</span><span class="chip" data-q="how to reduce SaaS churn">how to reduce SaaS churn</span><span class="chip" data-q="best AI note taker">best AI note taker</span></div><div class="hint">AI Mode decomposes your query into parallel sub-queries, up to 16, each hitting a different index. This shows an illustrative fan-out so you can see which content types resolve each branch.</div></div><div class="output" style="margin-top:22px"><div class="o-eyebrow">Parallel sub-queries</div><div class="o-big" id="foCount" style="font-size:40px">0</div><div class="o-sub" id="foCap">of up to 16 concurrent sub-queries</div><div class="alloc" id="foRows"></div></div></section>
 <section class="method"><h2>How this works</h2><p>Classic search maps one query to one retrieval path. <strong>AI Mode does not.</strong> It shreds the parent query into sub-queries by dimension, runs them in parallel across specialized indexes, then synthesizes one answer with inline citations. That is why it cites pages that never rank for the head term. This simulator infers the likely sub-queries from your query's shape, it is illustrative, not a live API call, but the lesson holds: ranking for the head term no longer guarantees you are in the room.</p><div class="srcs"><a href="/blogs/ai-mode-vs-ai-overviews">AI Mode vs AI Overviews &rarr;</a><a href="/blogs/how-rag-actually-works">How RAG actually works &rarr;</a></div></section>
 <section class="method"><h2>How to use it</h2><ol class="howto"><li>Type a buyer query.</li><li>Watch it decompose into parallel sub-queries by dimension.</li><li>Map each sub-query to the content that resolves it.</li></ol></section>
 <section class="method" id="faq"><h2>Frequently asked questions</h2><h3>What does the fan-out simulator show?</h3><p>How a real engine shreds one buyer query into parallel sub-queries, one per dimension (spec, price, compliance, comparison, sentiment), and which content type resolves each branch. It makes the hidden searches you are actually competing on visible.</p><h3>How is this an illustrative tool?</h3><p>It models the decomposition pattern documented for AI Mode and similar engines; the exact sub-queries a live engine writes vary by context. Use it to plan coverage across dimensions, not as a literal transcript of one engine's run.</p><h3>Is the Query Fan-Out Simulator free to use?</h3><p>Yes. The Query Fan-Out Simulator is completely free, with no sign-up, no usage limits and no watermark on the output.</p><h3>Is my data private?</h3><p>Yes. The Query Fan-Out Simulator runs entirely in your browser. Nothing you paste or enter is uploaded, stored or sent to any server.</p></section>

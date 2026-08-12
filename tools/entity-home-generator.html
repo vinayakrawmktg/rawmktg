@@ -279,6 +279,20 @@
   </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -323,16 +337,16 @@
       <div class="num-grid">
         <div class="fld"><div class="lab">Entity type</div>
           <select class="sel-input" id="eType"><option>Organization</option><option>Corporation</option><option>LocalBusiness</option><option>OnlineBusiness</option><option>EducationalOrganization</option><option>GovernmentOrganization</option><option>NGO</option></select></div>
-        <div class="fld"><div class="lab">Founding date</div><input type="date" class="sel-input" id="eFounded"></div>
-        <div class="fld"><div class="lab">Logo URL <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">opt</span></div><input class="tin" id="eLogo" placeholder="https://example.com/logo.png"></div>
+        <div class="fld"><div class="lab">Founding date</div><input type="date" class="sel-input" id="eFounded" aria-label="E founded"></div>
+        <div class="fld"><div class="lab">Logo URL <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">opt</span></div><input class="tin" id="eLogo" placeholder="https://example.com/logo.png" aria-label="https://example.com/logo.png"></div>
       </div>
-      <div class="fld"><div class="lab">Name</div><input class="tin" id="eName" placeholder="Enterprise Quantum Systems"></div>
-      <div class="fld"><div class="lab">Legal name <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">opt</span></div><input class="tin" id="eLegal" placeholder="Enterprise Quantum Systems Inc."></div>
-      <div class="fld"><div class="lab">Primary URL</div><input class="tin" id="eUrl" placeholder="https://example.com"></div>
-      <div class="fld"><div class="lab">Entity Home page URL <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">your About page</span></div><input class="tin" id="eHome" placeholder="https://example.com/about"></div>
-      <div class="fld"><div class="lab">Founder(s) <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">one per line</span></div><textarea class="ta" id="eFounders" style="min-height:70px" placeholder="Dr. John Smith"></textarea></div>
+      <div class="fld"><div class="lab">Name</div><input class="tin" id="eName" placeholder="Enterprise Quantum Systems" aria-label="Enterprise Quantum Systems"></div>
+      <div class="fld"><div class="lab">Legal name <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">opt</span></div><input class="tin" id="eLegal" placeholder="Enterprise Quantum Systems Inc." aria-label="Enterprise Quantum Systems Inc."></div>
+      <div class="fld"><div class="lab">Primary URL</div><input class="tin" id="eUrl" placeholder="https://example.com" aria-label="https://example.com"></div>
+      <div class="fld"><div class="lab">Entity Home page URL <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">your About page</span></div><input class="tin" id="eHome" placeholder="https://example.com/about" aria-label="https://example.com/about"></div>
+      <div class="fld"><div class="lab">Founder(s) <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">one per line</span></div><textarea class="ta" id="eFounders" style="min-height:70px" placeholder="Dr. John Smith" aria-label="Dr. John Smith"></textarea></div>
       <div class="fld"><div class="lab">sameAs profiles <span class="val" style="color:rgba(255,255,255,.5);font-size:12px">one URL per line</span></div>
-        <textarea class="ta" id="eSames" style="min-height:110px" placeholder="https://www.wikidata.org/wiki/Q11223344&#10;https://www.crunchbase.com/organization/your-co&#10;https://www.linkedin.com/company/your-co"></textarea>
+        <textarea class="ta" id="eSames" style="min-height:110px" placeholder="https://www.wikidata.org/wiki/Q11223344&#10;https://www.crunchbase.com/organization/your-co&#10;https://www.linkedin.com/company/your-co" aria-label="https://www.wikidata.org/wiki/Q11223344&amp;#10;https://www.crunchbase.com/organization/your-co&amp;#10;https://www.linkedin.com/company/your-co"></textarea>
         <p class="hint">These become your sameAs bridges. For the echo to work, each of those profiles must link back to your Entity Home URL. Nothing is uploaded.</p></div>
     </div>
     <div class="output">

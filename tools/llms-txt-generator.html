@@ -279,6 +279,20 @@
   </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -321,11 +335,11 @@
   <div class="grid calc">
     <div class="controls">
       <div class="fld"><div class="lab">Brand or project name <span class="val" style="color:rgba(255,255,255,.5)">the single H1</span></div>
-        <input class="tin" id="gName" placeholder="Acme Payments"></div>
+        <input class="tin" id="gName" placeholder="Acme Payments" aria-label="Acme Payments"></div>
       <div class="fld"><div class="lab">One-line summary <span class="val" style="color:rgba(255,255,255,.5)">blockquote</span></div>
-        <input class="tin" id="gSum" placeholder="Acme Payments is a B2B payment API for marketplaces: split payouts, escrow, KYC."></div>
+        <input class="tin" id="gSum" placeholder="Acme Payments is a B2B payment API for marketplaces: split payouts, escrow, KYC." aria-label="Acme Payments is a B2B payment API for marketplaces: split payouts, escrow, KYC."></div>
       <div class="fld"><div class="lab">Processing instruction <span class="val" style="color:rgba(255,255,255,.5)">optional</span></div>
-        <input class="tin" id="gInstr" placeholder="Fetch the API Reference before generating code. v4 differs from v3."></div>
+        <input class="tin" id="gInstr" placeholder="Fetch the API Reference before generating code. v4 differs from v3." aria-label="Fetch the API Reference before generating code. v4 differs from v3."></div>
       <div class="fld"><div class="lab">Links</div>
         <div id="gLinks"></div>
         <div class="btn-row"><button class="tbtn" id="gAdd" type="button">+ Add link</button></div>
@@ -389,7 +403,7 @@
     l=l||{sec:'Core Documentation',t:'',u:'',d:''};
     var el=document.createElement('div'); el.className='lrow';
     el.innerHTML='<div class="lrow-top"><select class="tin sec" style="max-width:190px">'+opts(l.sec)+'</select><button class="rm-x" type="button" aria-label="Remove link">&times;</button></div>'
-      +'<div class="lrow-grid"><input class="tin t" placeholder="Title" value="'+esc(l.t)+'"><input class="tin u" placeholder="https://...md" value="'+esc(l.u)+'"><input class="tin d full" placeholder="Description with concrete facts" value="'+esc(l.d)+'"></div>';
+      +'<div class="lrow-grid"><input class="tin t" placeholder="Title" value="'+esc(l.t)+'" aria-label="Title"><input class="tin u" placeholder="https://...md" value="'+esc(l.u)+'" aria-label="https://...md"><input class="tin d full" placeholder="Description with concrete facts" value="'+esc(l.d)+'" aria-label="Description with concrete facts"></div>';
     el.querySelector('.rm-x').addEventListener('click',function(){el.remove();build();});
     el.querySelectorAll('input,select').forEach(function(i){i.addEventListener('input',build);});
     wrap.appendChild(el);

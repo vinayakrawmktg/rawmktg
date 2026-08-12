@@ -279,6 +279,20 @@
   </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -320,7 +334,7 @@
 <section class="card" id="ece">
   <div class="grid score">
     <div class="controls">
-      <div class="cat"><div class="cat-h">Your topic's fan-out</div><div class="num-grid"><div class="fld"><div class="lab">Facets in the fan-out</div><input class="tin" id="eceTotal" inputmode="numeric" value="8"></div><div class="fld"><div class="lab">Facets you cover</div><input class="tin" id="eceCov" inputmode="numeric" value="5"></div><div class="fld"><div class="lab">Avg selection strength (0-1)</div><input class="tin" id="eceSel" inputmode="decimal" value="0.4"></div></div><p class="hint" style="margin:10px 0 0">Retrieval probability is a coverage problem (do you have a passage that can win facet i at all). Selection strength is a quality and authority problem (given you were retrieved, does your audition chunk beat the others). Expected citation = the average of retrieval x selection across the fan-out.</p></div>
+      <div class="cat"><div class="cat-h">Your topic's fan-out</div><div class="num-grid"><div class="fld"><div class="lab">Facets in the fan-out</div><input class="tin" id="eceTotal" inputmode="numeric" value="8" aria-label="Ece total"></div><div class="fld"><div class="lab">Facets you cover</div><input class="tin" id="eceCov" inputmode="numeric" value="5" aria-label="Ece cov"></div><div class="fld"><div class="lab">Avg selection strength (0-1)</div><input class="tin" id="eceSel" inputmode="decimal" value="0.4" aria-label="Ece sel"></div></div><p class="hint" style="margin:10px 0 0">Retrieval probability is a coverage problem (do you have a passage that can win facet i at all). Selection strength is a quality and authority problem (given you were retrieved, does your audition chunk beat the others). Expected citation = the average of retrieval x selection across the fan-out.</p></div>
     </div>
     <div class="panel-out">
       <div class="o-eyebrow">Expected citation rate</div>

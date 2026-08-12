@@ -497,6 +497,20 @@
 </style>
   <link rel="stylesheet" href="/assets/tools.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -535,7 +549,7 @@
 
 <main class="toolpage" id="article-main">
   <div class="page">
-<section class="card"><div class="grid mix"><div class="controls"><div class="fld"><label for="abIn">Paste the answer that leads your H2</label><textarea class="ta" id="abIn" placeholder="Paste the 1-3 sentence answer block that opens a section. AI engines extract this window, so it should lead with the answer, stay in the 40-55 word range, and carry a number with its source."></textarea><div class="chips" id="abEx"><span class="chip">Load example</span></div><div class="hint">Gemini lifts the first self-contained answer after a heading. The 40-55 word window matches its single- and multi-pass extraction patterns.</div></div><div class="output"><div class="o-eyebrow">Extraction score</div><div class="o-big" id="abScore">0</div><span class="scoreband" id="abBand" style="margin:2px 0 16px">-</span><div class="metrics" id="abMetrics"></div></div></div></section>
+<section class="card"><div class="grid mix"><div class="controls"><div class="fld"><label for="abIn">Paste the answer that leads your H2</label><textarea class="ta" id="abIn" placeholder="Paste the 1-3 sentence answer block that opens a section. AI engines extract this window, so it should lead with the answer, stay in the 40-55 word range, and carry a number with its source." aria-label="Paste the 1-3 sentence answer block that opens a section. AI engines extract this window, so it should lead with the answer, stay in the 40-55 word range, and carry a number with its source."></textarea><div class="chips" id="abEx"><span class="chip">Load example</span></div><div class="hint">Gemini lifts the first self-contained answer after a heading. The 40-55 word window matches its single- and multi-pass extraction patterns.</div></div><div class="output"><div class="o-eyebrow">Extraction score</div><div class="o-big" id="abScore">0</div><span class="scoreband" id="abBand" style="margin:2px 0 16px">-</span><div class="metrics" id="abMetrics"></div></div></div></section>
 <section class="method"><h2>How this works</h2><p>After every target H2, lead with a direct, self-contained answer of <strong>40 to 55 words</strong> before any narrative. This matches Gemini's extraction window, and statistics with clear source citations lift citation probability by 40-70%. This tool checks the mechanics of that block: length, whether it leads with the answer, whether it carries a number, sentence economy, and filler. It is a writing aid, not a guarantee of citation.</p><div class="srcs"><a href="/blogs/ai-mode-vs-ai-overviews">AI Mode vs AI Overviews &rarr;</a><a href="/blogs/anatomy-of-a-high-citation-page">Anatomy of a high-citation page &rarr;</a></div></section>
 <section class="method"><h2>How to use it</h2><ol class="howto"><li>Paste the answer that leads your H2.</li><li>See the word-window, answer-first, statistic and filler checks.</li><li>Rewrite until the block passes all four.</li></ol></section>
 <section class="method" id="faq"><h2>Frequently asked questions</h2><h3>What makes an answer block extractable by AI?</h3><p>A self-contained answer of roughly 40 to 55 words that leads with the answer (not a windup), states a concrete statistic or fact, and stays free of filler. AI engines lift the first such block after a heading, so it has to make sense read in isolation.</p><h3>Why 40 to 55 words?</h3><p>That is about one 128-token chunk, the unit retrievers score. Shorter can miss context; much longer gets split mid-argument across chunks. The window keeps your answer inside a single scored passage.</p><h3>Is the Answer Block Optimizer free to use?</h3><p>Yes. The Answer Block Optimizer is completely free, with no sign-up, no usage limits and no watermark on the output.</p><h3>Is my data private?</h3><p>Yes. The Answer Block Optimizer runs entirely in your browser. Nothing you paste or enter is uploaded, stored or sent to any server.</p></section>
