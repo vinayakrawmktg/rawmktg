@@ -10,7 +10,7 @@ STYLE=sl("<style>","</style>")
 NAV=sl('<nav class="site-nav"',"</nav>")
 NEWS=sl('<section class="newsletter-section"',"</section>")
 FOOT=sl('<footer class="site-foot"',"</footer>")
-ADSENSE='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>'
+ADSENSE=''  # AdSense removed: no ad units, hurts TBT
 FONTS=sl('<link rel="preconnect" href="https://fonts.googleapis.com" />','rel="stylesheet" /></noscript>')
 TOOLSCSS=open("assets/tools.css",encoding="utf-8").read()
 # inline tools.css into the base <style> so tool pages are fully self-contained

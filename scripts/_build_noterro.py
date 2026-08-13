@@ -16,7 +16,7 @@ T=open("blogs/aec-ai-visibility-gap.html",encoding="utf-8").read()
 def sl(a,b):
     i=T.index(a); j=T.index(b,i)+len(b); return T[i:j]
 STYLE=sl("<style>","</style>")
-ADSENSE=sl("<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js","></script>")
+ADSENSE=''  # AdSense removed: no ad units, hurts TBT
 GA=sl("<!-- Google tag (gtag.js) -->","gtag('config','G-4B3LL6MJKN');</script>")
 FONTS=sl('<link rel="preconnect" href="https://fonts.googleapis.com" />','rel="stylesheet" /></noscript>')
 NAV=sl('<nav class="site-nav"',"</nav>")

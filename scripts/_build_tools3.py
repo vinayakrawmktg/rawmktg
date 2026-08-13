@@ -9,7 +9,7 @@ def sl(a,b):
 STYLE=sl("<style>","</style>"); FONTS=sl('<link rel="preconnect" href="https://fonts.googleapis.com" />','rel="stylesheet" /></noscript>')
 NAV=sl('<nav class="site-nav"',"</nav>"); NEWS=sl('<section class="newsletter-section"',"</section>"); FOOT=sl('<footer class="site-foot"',"</footer>")
 GA=sl("<!-- Google tag (gtag.js) -->","setTimeout(l,3000);})();</script>")
-ADSENSE='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>'
+ADSENSE=''  # AdSense removed: no ad units, hurts TBT
 def esc(t): return H.escape(t,quote=False)
 def escq(t): return H.escape(t,quote=True)
 def jb(o): return '<script type="application/ld+json">'+json.dumps(o)+'</script>'

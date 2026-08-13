@@ -25,7 +25,7 @@ NAV=sl('<nav class="site-nav"',"</nav>")
 NEWS=sl('<section class="newsletter-section"',"</section>")
 FOOT=sl('<footer class="site-foot"',"</footer>")
 GA=sl("<!-- Google tag (gtag.js) -->","setTimeout(l,3000);})();</script>")
-ADSENSE='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>'
+ADSENSE=''  # AdSense removed: no ad units, hurts TBT
 # add Tools link to nav (between Glossary and About)
 NAV=NAV.replace('<a href="/glossary">Glossary</a>','<a href="/glossary">Glossary</a>\n        <a href="/tools">Tools</a>',1)
 

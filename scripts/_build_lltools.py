@@ -11,7 +11,7 @@ FONTS=sl('<link rel="preconnect" href="https://fonts.googleapis.com" />','rel="s
 NAV=sl('<nav class="site-nav"',"</nav>")
 NEWS=sl('<section class="newsletter-section"',"</section>")
 FOOT=sl('<footer class="site-foot"',"</footer>")
-ADSENSE='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>'
+ADSENSE=''  # AdSense removed: no ad units, hurts TBT
 def esc(t): return H.escape(t,quote=False)
 def escq(t): return H.escape(t,quote=True)
 

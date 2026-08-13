@@ -32,7 +32,7 @@ GA=('<!-- Google tag (gtag.js) -->\n  <script>window.dataLayer=window.dataLayer|
     "document.head.appendChild(s);}"
     "if(document.readyState==='complete')l();else window.addEventListener('load',l);"
     "setTimeout(l,3000);})();</script>")
-ADSENSE='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952288317022852" crossorigin="anonymous"></script>'
+ADSENSE=''  # AdSense removed: no ad units, hurts TBT
 
 # ---- renderers ----
 def p(t): return f"<p>{norm(t)}</p>"
