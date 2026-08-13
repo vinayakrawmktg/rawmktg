@@ -7,8 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title><![CDATA[The 'Best X for Y' Page AI Pulls Into Shortlists · rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/comparison-pages-ai-shortlists</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/comparison-pages-ai-shortlists</guid>
+      <pubDate>Wed, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[The comparison-page playbook for AI search. 63% of AI citations go to ranked listicles; only ~12% of cited URLs sit in Google's organic top 10. The four levers that get a page quoted (verdict box, fact density, question headings, neutrality), nested ItemList schema, a before/after rebuild, segment selection, and a 90-day sequence.]]></description>
+    </item>
     <item>
       <title><![CDATA[Beyond Cross-Border: Where India's Global-Payments Brands Actually Earn Their Backlinks · rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/cross-border-backlinks</link>

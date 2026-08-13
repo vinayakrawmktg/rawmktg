@@ -110,7 +110,7 @@ Crucially, these contracts are shifting from flat training fees to usage-based r
 
 **Treat a review profile as a structured dataset, ecosystem-wide and descriptive.** In an AI-first world, a review profile is not a sales landing page, it is a structured semantic dataset engines crawl, parse and cite. Because aggregate review sites drive up to 85% of citations on broad B2B category queries, optimizing these directories is non-negotiable.
 
-Adopt an ecosystem approach, not a single profile. Maintaining verified, consistent profiles across G2, Capterra, TrustRadius and Clutch supplies a multi-platform consensus signal that can make a model up to three times more likely to cite you. Acquire reviews compliantly and make them descriptive, full of real use cases, concrete metrics and precise comparisons, the exact material engines lift.
+Adopt an ecosystem approach, not a single profile. Maintaining verified, consistent profiles across G2, Capterra, TrustRadius and Clutch supplies a multi-platform consensus signal that can make a model up to three times more likely to cite you. Acquire reviews compliantly and make them descriptive, full of real use cases, concrete metrics and precise comparisons, the exact material engines lift. The same shortlist shape wins citations on your own domain when you build it deliberately, which is the whole of [the comparison-page playbook](/blogs/comparison-pages-ai-shortlists).
 
 **Trigger on success milestones** (clean onboarding, a positive QBR, a resolved ticket). **Reduce friction** with direct review links. **Never incentivize**, G2 enforces strict compliance and can suspend profiles. **Integrate into core workflows** like renewal check-ins for a steady, compliant influx.
 

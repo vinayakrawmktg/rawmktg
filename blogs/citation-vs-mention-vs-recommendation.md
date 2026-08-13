@@ -180,7 +180,7 @@ The most commonly held false belief in this discipline is that optimising your o
 
 Figure 6. Citation source composition. The brand's own domain is a rounding error at 2.9%.
 
-- **Listicles and comparison aggregators** are the single largest category at about 35.7% of all citations, the "best X for Y" pages, and the highest-leverage placement in AI search.
+- **Listicles and comparison aggregators** are the single largest category at about 35.7% of all citations, the ["best X for Y" pages](/blogs/comparison-pages-ai-shortlists), and the highest-leverage placement in AI search.
 - **User communities and media** such as Reddit, YouTube, and Quora supply roughly 18% to 25%. Re-rankers favour unvarnished user sentiment and recent contextual proof, which is [why Reddit, G2 and analyst reports drive AI recommendations](/blogs/why-ai-cites-reddit-g2-analysts).
 - **Reference sites and trade publications** including Wikipedia account for 10% to 15%, providing high-trust entity validation.
 

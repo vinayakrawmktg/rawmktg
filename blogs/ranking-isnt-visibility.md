@@ -120,7 +120,7 @@ Ask: would the person who searched this term ever take out a loan or buy this pr
 
 **With third-party proof, honest comparisons and transparent tools, the same assets that feed AI citations.** Lending is a trust purchase: a prospect is about to share income, identity and bank details. Between discovery and application sits a phase where the buyer quietly asks one question, can I trust this brand with my money and my data? Three assets carry disproportionate weight, and the audit showed lenders under-investing in all three: comparison and best-of pages, transparent rates and calculators, and third-party proof.
 
-Notice how tightly these link back to awareness. The review sites and comparison publishers AI assistants cite are the same ones a cautious borrower reads, so investing in third-party proof is not a separate PR line item, it is consideration-stage conversion and AI visibility bought with the same dollar.
+Notice how tightly these link back to awareness. The review sites and comparison publishers AI assistants cite are the same ones a cautious borrower reads, so investing in third-party proof is not a separate PR line item, it is consideration-stage conversion and AI visibility bought with the same dollar. That comparison page can be a vendor-owned asset rather than a directory listing, which is exactly what [the best-X-for-Y comparison-page playbook](/blogs/comparison-pages-ai-shortlists) is for.
 
 What each trust signal actually does
 

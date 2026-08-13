@@ -127,6 +127,8 @@ Implementation · 90-Day Rollout
 
 ## §7How do you sequence the 90-day rollout?
 
+To apply these patterns to one specific, high-intent page type, comparison and "best X for Y" pages, see [the comparison-page playbook](/blogs/comparison-pages-ai-shortlists), which builds on this checklist rather than repeating it.
+
 Deconstructing high-citation pages is an exercise in pattern recognition. Implementing those patterns at scale is a sequenced operational problem. The rollout divides into three phases, each of which must be started before the next begins, since crawler propagation and index freshness signals take 4–8 weeks to stabilize.
 
 1
