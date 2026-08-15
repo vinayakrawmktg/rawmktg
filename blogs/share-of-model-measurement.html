@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Share of Model: How to Actually Measure It &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How to measure Share of Model without guessing: the weighted formula, the runs-per-prompt and portfolio size that make it stable, and benchmark bands by vertical." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/share-of-model-measurement" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/share-of-model-measurement" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/share-of-model-measurement" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/share-of-model-measurement" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/share-of-model-measurement" />
+  <meta property="og:title" content="Share of Model: How to Actually Measure It" />
+  <meta property="og:description" content="How to measure Share of Model without guessing: the weighted formula, the runs-per-prompt and portfolio size that make it stable, and benchmark bands by vertical." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/share-of-model-measurement.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Share of Model: How to Actually Measure It" />
+  <meta name="twitter:description" content="How to measure Share of Model without guessing: the weighted formula, the runs-per-prompt and portfolio size that make it stable, and benchmark bands by vertical." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/share-of-model-measurement.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Share of Model: How to Actually Measure It", "description": "How to measure Share of Model without guessing: the weighted formula, the runs-per-prompt and portfolio size that make it stable, and benchmark bands by vertical.", "image": "https://rawmktg.com/assets/images/share-of-model-measurement.webp", "url": "https://rawmktg.com/blogs/share-of-model-measurement", "datePublished": "2026-08-15", "dateModified": "2026-08-15", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/share-of-model-measurement"}, "keywords": ["share of model", "AI visibility measurement", "GEO metrics", "weighted share of model", "AI search benchmarks", "prompt portfolio", "confidence interval", "Wilson score", "AI visibility score", "generative engine optimization"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/share-of-model-measurement"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Share of Model: How to Actually Measure It", "item": "https://rawmktg.com/blogs/share-of-model-measurement"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Share of Model and how is it calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Share of Model is the percentage of brand presence an entity captures across a statistically representative set of category prompts, measured across multiple generative engines and weighted by commercial intent and engine usage. You compute it as your weighted presence divided by the total weighted presence of every brand in the competitive set, over the same prompt portfolio, on the same engines, on a fixed cadence. The denominator is total field presence, not response count, which is what makes it a share rather than a rate."}}, {"@type": "Question", "name": "How many times should you run each prompt?", "acceptedAnswer": {"@type": "Answer", "text": "Eight to twelve runs per prompt per engine, minimum. Language models are probabilistic: the same prompt sent twice can return different brand sets. At one run your estimate is either 0% or 100%; at three runs it can still be off by 30 points; the estimate only settles into an actionable range around eight to twelve runs. High live-retrieval engines like Perplexity and Google AI Overviews need the top of that range because they re-retrieve on every call."}}, {"@type": "Question", "name": "How many prompts do you need for a reliable Share of Model?", "acceptedAnswer": {"@type": "Answer", "text": "To hold a two-point margin of error at a 27% inclusion rate you need roughly 1,900 scored observations per brand per engine. At ten runs per prompt that is about 190 prompts, so decision-grade programmes land at a portfolio of 250 to 500 prompts run 5 to 12 times per engine. Precision flattens hard after about 2,500 observations, so a 250-prompt portfolio plus more engines usually beats a 500-prompt one on a tight budget."}}, {"@type": "Question", "name": "Should you report one blended AI-visibility number across engines?", "acceptedAnswer": {"@type": "Answer", "text": "Report both, but never blended-only. The weighted composite goes on the dashboard; the per-engine breakdown goes in the appendix, because that is where the fix lives. A brand strong on Claude and weak on Perplexity has a live-retrieval problem, the training corpus knows it but the live index does not, which is a crawlability and freshness fix rather than a brand fix. A single blended number hides the engine you are invisible in."}}, {"@type": "Question", "name": "What is a good Share of Model score?", "acceptedAnswer": {"@type": "Answer", "text": "It depends entirely on the vertical and your competitive tier, so a raw number means nothing in isolation. Across teardowns brands land in four tiers: category leaders run roughly 35-48%, strong challengers 15-32%, and emerging providers 3-15%, with the exact bands set by how consolidated the market is. Field service tops out highest (leader band to 48%) because it is the most consolidated; carbon accounting bottoms lowest (emerging to 3%) because engines there reward peer-reviewed and regulatory sources over marketing volume. Read your number against the band for your tier."}}, {"@type": "Question", "name": "How is Share of Model different from share of voice, citations and mentions?", "acceptedAnswer": {"@type": "Answer", "text": "Share of voice counts media impressions; share of search counts branded query volume; both break when the buyer asks a model instead of seeing an ad or reaching Google. Citations, mentions and recommendations are the underlying events, a taxonomy that is upstream of Share of Model and defines what you count. Share of Model is the middle scoreboard layer: it takes those events, counts them across a fixed weighted prompt portfolio, and turns them into one share you can trend and benchmark. Attribution to sessions and pipeline is a separate downstream layer."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/share-of-model-measurement.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/assets/tools.css" />
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/share-of-model-measurement.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/share-of-model-measurement.webp" srcset="/assets/images/share-of-model-measurement-800.webp 800w, /assets/images/share-of-model-measurement-1200.webp 1200w, /assets/images/share-of-model-measurement-1600.webp 1600w, /assets/images/share-of-model-measurement.webp 2400w" sizes="100vw" alt="Share of Model: How to Actually Measure It - the Share of Model measurement method - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Ranking &amp; Measurement &middot; Method</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
+    <h1 class="article-headline">Share of Model: How to Actually Measure It</h1>
+    <p class="article-deck">Share of Model gets quoted in every AI-visibility deck and defined in almost none of them. This is the formula, the sample size that makes it stable, and the benchmark bands that tell you whether your number is good or embarrassing.</p>
+    <p class="article-data-note">A measurement-method piece grounded in the Share of Model literature (Alephic, Chetver, the Agile Brand Guide), the multi-industry LLM brand-ownership study (arXiv), and rawmktg category teardowns, 2026. Formulas and code are working reference implementations; benchmark bands are directional, drawn from teardowns of the actual competitive set.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p>Most teams find out about their AI visibility the same way. Someone on the exec team types the category question into ChatGPT, does not see the company, and forwards the screenshot to marketing. That screenshot is not data. It is one draw from a probability distribution, and the next person to type the same question will get a different answer.</p>
+<p>Share of Model is the metric that replaces the screenshot. It answers one question with one number: across the questions your buyers actually ask, in the engines they actually use, how much of the answer space do you own compared to everyone else selling into the same problem. This piece is the methodology, not the taxonomy and not the attribution plumbing, just the metric, how to compute it, how big a sample it needs, and how to read the result.</p>
+<div class="pull-quote">A single measurement is a screenshot. Two comparable measurements are a program.</div>
+<div class="callout-box"><div class="callout-box-label">The short version</div><p>Share of Model = your weighted presence divided by the total weighted presence of every brand in the category, computed over the same prompt portfolio, on the same engines, on a fixed cadence.</p><p>What makes it hard is not the mathematics, it is the discipline: a fixed portfolio, enough runs, honest weights, and the willingness to publish a number lower than the one your tool vendor reports.</p></div>
+<h2 id="layers"><span class="section-num">01</span>How do the three AI-visibility metrics differ?</h2>
+<div class="section-answer"><strong>Taxonomy defines the event, Share of Model scores it, attribution follows it.</strong> Three measurement problems get confused, and each has a different fix. What counts is a taxonomy question. Whether an appearance produced a session is an attribution question. Share of Model is the middle layer that counts the defined events across a fixed prompt set and turns them into one share.</div>
+<p>Before you can count anything, you have to decide what counts. A brand name in a paragraph, a URL in a footnote, and a brand named as the recommendation are three different events with three different causes, the distinction drawn in <a href="/blogs/citation-vs-mention-vs-recommendation">citation vs mention vs recommendation</a>, and it is upstream of everything here. Once you know a brand appeared, you still need to know whether that answer produced a session or a deal, a plumbing problem covered in <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a>. Share of Model sits between them: it is a scoreboard, not a diagnosis and not a revenue model.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Taxonomy</div><div class="pl-desc">Defines the event: mention vs citation vs recommendation.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Share of Model</div><div class="pl-desc">Scores the event across a fixed prompt portfolio.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Attribution</div><div class="pl-desc">Follows it downstream to sessions, signups, pipeline.</div></div></div><div class="chart-caption">Figure 1. Where Share of Model sits. The taxonomy defines the event, the metric scores it, attribution follows it downstream.</div>
+<div class="tt-wrap"><div class="tt-label">Table 1. Legacy visibility metrics and the assumption each one breaks on.</div><table class="tt"><thead><tr><th>Metric</th><th>What it counts</th><th>Unit</th><th>Fails when</th></tr></thead><tbody><tr><td class="label">Share of Voice</td><td>Media impressions and paid reach</td><td>Impressions</td><td>Buyers stop seeing media and start asking a model</td></tr><tr><td class="label">Share of Search</td><td>Branded query volume in Google</td><td>Search volume</td><td>The query never reaches Google because the answer arrived first</td></tr><tr><td class="label">Rank tracking</td><td>Position on a static results page</td><td>Position 1 to 100</td><td>There is no page, only a synthesized paragraph</td></tr><tr><td class="label">Share of Model</td><td>Weighted brand presence in generated answers</td><td>Percent of answer space</td><td>The prompt set is too small or unweighted</td></tr></tbody></table></div>
+<p>The last row is the whole argument. Generative outputs are probabilistic, so the correct unit of measurement is a share of a distribution, not a position on a list.</p>
+<h2 id="measures"><span class="section-num">02</span>What does Share of Model actually measure?</h2>
+<div class="section-answer"><strong>Weighted brand presence across a representative, multi-engine prompt set.</strong> Three parts do the work: a statistically representative and versioned prompt portfolio, coverage across multiple engines that retrieve differently, and weighting by commercial intent so a definition is not worth the same as a shortlist.</div>
+<p>A <strong>statistically representative set</strong> is a fixed portfolio, versioned and re-run identically each cycle, covering the range of ways a buyer actually phrases the problem. If the portfolio changes between cycles, the trend line is meaningless. <strong>Across multiple engines</strong> matters because ChatGPT, Perplexity, Google AI Overviews, Claude and Grok retrieve, and therefore recommend, differently, the reason set out in <a href="/blogs/why-engines-recommend-different-vendors">why different engines recommend different vendors</a>; a blended single number hides the fact that you might own one engine and be invisible in another.</p>
+<p><strong>Weighted by intent</strong> is the part most tools skip. A brand named in answer to "what is workforce management software" and a brand named in answer to "which workforce management platform handles multi-state overtime compliance under $12 per employee" are not worth the same. One is a definition. The other is a shortlist that ends in a purchase order.</p>
+<h2 id="naive"><span class="section-num">03</span>Why does the naive inclusion-rate formula lie to you?</h2>
+<div class="section-answer"><strong>It treats a footnote like a recommendation, every engine as equal, and every question as equal.</strong> The unweighted inclusion rate, brand appearances divided by scored responses, is clean, reproducible and wrong in three ways. The practical consequence is rank inversion: two brands can swap places entirely once weighting is applied.</div>
+<p>Nearly every tool that reports an AI-visibility score starts with the unweighted inclusion rate: the number of responses in which the brand appears anywhere, divided by the total scored responses. Show up in 620 of 2,000 answers and you score 31%. It treats a fourth-alternative caveat mention identically to being named the single best option; it treats a Grok mention the same as an enterprise-procurement ChatGPT mention; and it rewards you for winning cheap definitional prompts that are worth almost nothing.</p>
+<div class="chart-wrap"><canvas id="rankChart" height="240"></canvas></div><div class="chart-caption">Figure 2. Rank inversion. Brand A wins on raw volume and loses on every dimension that maps to revenue once weighting is applied.</div>
+<p>Brand A is winning the definitional long tail and appearing late in lists. Brand B appears less often but appears first, in comparison and constraint prompts, in the engines its buyers use. A raw count says Brand A leads by seven points; the weighted score says Brand B leads by nineteen. Only one of those conclusions would survive contact with the pipeline, which is the same gap between <a href="/blogs/ranking-isnt-visibility">ranking and visibility</a>.</p>
+<h2 id="formula"><span class="section-num">04</span>What is the formula that holds up?</h2>
+<div class="section-answer"><strong>Weighted presence over total weighted field presence, adjusted for engine and intent.</strong> For every engine and every prompt, take your presence score, multiply by the engine weight and the intent weight, and sum. Divide by the same sum across every brand in the competitive set. Engine weights sum to one so the score stays interpretable.</div>
+<div class="code-wrap"><div class="code-label">formula · weighted Share of Model</div><div class="code-block"><pre>SoM(b) =    Σ_e  Σ_p   w_e · w_p · score(b, e, p)
+           -----------------------------------------
+           Σ_{b&#x27; in C}  Σ_e  Σ_p   w_e · w_p · score(b&#x27;, e, p)
+
+  w_e     engine weight, Σ w_e = 1   (where your buyers ask)
+  w_p     intent weight, 0.5x .. 2.0x (distance from purchase)
+  score   presence in [0,1], averaged over N runs of the prompt
+  C       the competitive set (the denominator is field presence,
+          not response count, that is what makes it a share)</pre></div></div>
+<h3>Setting the engine weights</h3>
+<p>Engine weight is a business decision, not a statistical one: it reflects where your buyers ask, not global market share. A B2B infrastructure vendor selling to platform engineers weights Perplexity and Claude higher; a mid-market SaaS company selling to operations leaders weights ChatGPT and Google AI Overviews heavily. Set the weights once, document the reasoning, and do not change them mid-year. If you must revise them, restate prior periods on the new weights so the trend stays honest.</p>
+<h3>Setting the intent weights</h3>
+<p>Intent weight scales with distance from a purchase decision. A workable default we use across teardowns:</p>
+<div class="tt-wrap"><div class="tt-label">Table 2. Default intent weights. Tune the multipliers to your sales cycle, then freeze them.</div><table class="tt"><thead><tr><th>Intent tier</th><th>Weight</th><th>What the prompt is doing</th><th>Example</th></tr></thead><tbody><tr><td class="label">Navigational &amp; entity</td><td>0.5x</td><td>Testing whether the model knows you exist and describes you correctly</td><td>What is Acme, and what does it do?</td></tr><tr><td class="label">Category discovery</td><td>1.0x</td><td>Unbranded category ask, no vendor named</td><td>Best workforce management platforms for multi-site healthcare</td></tr><tr><td class="label">Comparative &amp; evaluation</td><td>1.5x</td><td>Head-to-head, pros and cons, shortlist construction</td><td>Compare Acme and Beta for compliance tracking</td></tr><tr><td class="label">Transactional &amp; constraint</td><td>2.0x</td><td>Hard budget, integration or regulatory constraints attached</td><td>HRIS under $15 per employee with Slack and SOC 2 Type II</td></tr></tbody></table></div>
+<p>The gap between 0.5 and 2.0 is deliberate. It is the difference between a model knowing your name and a model putting you on a shortlist while the buyer has a budget open. Brands that only optimize the top of that table build <a href="/blogs/authority-isnt-demand">an authority position with no demand attached</a>.</p>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Calculator</div><div class="embed-title">Compute your Share of Model</div><div class="embed-deck">The weighted formula above, made live. Enter per-engine mention and prompt counts for a visibility score, then add field mentions to get your Share of Model, your share of the whole competitive field.</div></div><section class="card" id="pv">
+  <div class="grid score">
+    <div class="controls">
+      <div class="cat"><div class="cat-h">Enter your tracking counts per engine</div><p class="hint" style="margin:6px 0 12px">Leave an engine blank to exclude it, the score renormalises across the engines you actually track. Default weights are market-share estimates; edit them for your market. "Field mentions" is optional, the total brand-mentions across every vendor in the same responses; fill it to also get your Share of Model.</p><div class="erow"><div class="ename">ChatGPT</div><div class="fld"><div class="lab">Mentioned</div><input class="tin" id="pv_chatgpt_m" inputmode="numeric" value="" aria-label="Pv chatgpt m"></div><div class="fld"><div class="lab">Prompts issued</div><input class="tin" id="pv_chatgpt_q" inputmode="numeric" value="" aria-label="Pv chatgpt q"></div><div class="fld"><div class="lab">Weight</div><input class="tin" id="pv_chatgpt_w" inputmode="decimal" value="0.30" aria-label="Pv chatgpt w"></div><div class="fld"><div class="lab">Field mentions (all vendors)</div><input class="tin" id="pv_chatgpt_f" inputmode="numeric" value="" aria-label="Pv chatgpt field mentions"></div></div><div class="erow"><div class="ename">Gemini</div><div class="fld"><div class="lab">Mentioned</div><input class="tin" id="pv_gemini_m" inputmode="numeric" value="" aria-label="Pv gemini m"></div><div class="fld"><div class="lab">Prompts issued</div><input class="tin" id="pv_gemini_q" inputmode="numeric" value="" aria-label="Pv gemini q"></div><div class="fld"><div class="lab">Weight</div><input class="tin" id="pv_gemini_w" inputmode="decimal" value="0.20" aria-label="Pv gemini w"></div><div class="fld"><div class="lab">Field mentions (all vendors)</div><input class="tin" id="pv_gemini_f" inputmode="numeric" value="" aria-label="Pv gemini field mentions"></div></div><div class="erow"><div class="ename">Perplexity</div><div class="fld"><div class="lab">Mentioned</div><input class="tin" id="pv_perplexity_m" inputmode="numeric" value="" aria-label="Pv perplexity m"></div><div class="fld"><div class="lab">Prompts issued</div><input class="tin" id="pv_perplexity_q" inputmode="numeric" value="" aria-label="Pv perplexity q"></div><div class="fld"><div class="lab">Weight</div><input class="tin" id="pv_perplexity_w" inputmode="decimal" value="0.20" aria-label="Pv perplexity w"></div><div class="fld"><div class="lab">Field mentions (all vendors)</div><input class="tin" id="pv_perplexity_f" inputmode="numeric" value="" aria-label="Pv perplexity field mentions"></div></div><div class="erow"><div class="ename">Claude</div><div class="fld"><div class="lab">Mentioned</div><input class="tin" id="pv_claude_m" inputmode="numeric" value="" aria-label="Pv claude m"></div><div class="fld"><div class="lab">Prompts issued</div><input class="tin" id="pv_claude_q" inputmode="numeric" value="" aria-label="Pv claude q"></div><div class="fld"><div class="lab">Weight</div><input class="tin" id="pv_claude_w" inputmode="decimal" value="0.20" aria-label="Pv claude w"></div><div class="fld"><div class="lab">Field mentions (all vendors)</div><input class="tin" id="pv_claude_f" inputmode="numeric" value="" aria-label="Pv claude field mentions"></div></div><div class="erow"><div class="ename">Grok</div><div class="fld"><div class="lab">Mentioned</div><input class="tin" id="pv_grok_m" inputmode="numeric" value="" aria-label="Pv grok m"></div><div class="fld"><div class="lab">Prompts issued</div><input class="tin" id="pv_grok_q" inputmode="numeric" value="" aria-label="Pv grok q"></div><div class="fld"><div class="lab">Weight</div><input class="tin" id="pv_grok_w" inputmode="decimal" value="0.10" aria-label="Pv grok w"></div><div class="fld"><div class="lab">Field mentions (all vendors)</div><input class="tin" id="pv_grok_f" inputmode="numeric" value="" aria-label="Pv grok field mentions"></div></div></div>
+    </div>
+    <div class="panel-out">
+      <div class="o-eyebrow">Platform-weighted visibility</div>
+      <div class="scorewrap"><span class="score" id="pvScore">0</span><span class="score-d">%</span></div>
+      <span class="scoreband" id="pvBand" style="background:rgba(255,255,255,.1);color:#fff">Enter counts</span>
+      <div class="gauge"><div class="gfill" id="pvFill" style="width:0%;background:var(--signal)"></div></div>
+      <div class="gaps"><div class="gaps-h">Per-engine visibility</div><div id="pvBreak"></div></div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)">
+        <div class="o-eyebrow">Share of Model <span style="color:rgba(255,255,255,.4);text-transform:none;letter-spacing:0">, share of the field</span></div>
+        <div class="scorewrap"><span class="score" id="pvSom">&ndash;</span><span class="score-d">%</span></div>
+        <div class="gaps"><div id="pvSomNote"><p class="hint">Add "field mentions" per engine to compute your weighted share of the whole competitive field.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section></div>
+<h2 id="scoring"><span class="section-num">05</span>How do you score a single response?</h2>
+<div class="section-answer"><strong>A composite of five dimensions between 0.0 and 1.0, averaged over the runs.</strong> Presence is not a one or a zero. It is mention inclusion, recommendation endorsement, position prominence, sentiment and entity accuracy, weighted so the first two carry 60% because recommendation is what moves pipeline.</div>
+<div class="tt-wrap"><div class="tt-label">Table 3. The five presence dimensions and their default weights.</div><table class="tt"><thead><tr><th>Dimension</th><th>Symbol</th><th>Weight</th><th>What it captures</th></tr></thead><tbody><tr><td class="label">Mention inclusion</td><td>m</td><td>0.30</td><td>Is the brand named or cited anywhere in the response. Binary.</td></tr><tr><td class="label">Recommendation endorsement</td><td>d</td><td>0.30</td><td>Presented as a pick rather than a passing reference. Active endorsements carry 3-5x the value of a co-mention.</td></tr><tr><td class="label">Position prominence</td><td>rho</td><td>0.20</td><td>Where in the answer hierarchy the brand lands. Graded, not binary.</td></tr><tr><td class="label">Sentiment polarity</td><td>s</td><td>0.15</td><td>Positive framing scores 1.0, neutral 0.6, negative 0.0.</td></tr><tr><td class="label">Entity accuracy</td><td>a</td><td>0.05</td><td>Are the stated features, pricing and positioning correct. Catches hallucination.</td></tr></tbody></table></div>
+<div class="chart-wrap"><canvas id="dimChart" height="210"></canvas></div><div class="chart-caption">Figure 4. Default dimension weights. The first two carry 60% because recommendation is the outcome that moves pipeline.</div>
+<p>Position prominence needs a ladder rather than a raw rank, because the drop-off is not linear, being named first is worth far more than twice being named second. Entity accuracy carries the smallest weight but the largest downside: a brand can score well on inclusion and still be harmed if the model consistently misstates its pricing tier, so track it as a separate alarm, not just a 5% input. The structural fix is in <a href="/blogs/hallucination-proofing-your-brand">hallucination-proofing your brand</a>.</p>
+<div class="code-wrap"><div class="code-label">python · presence score for one brand, one prompt, one engine</div><div class="code-block"><pre>from dataclasses import dataclass
+
+POSITION_WEIGHTS = {1: 1.00, 2: 0.70, 3: 0.70, 4: 0.40, 5: 0.40, 6: 0.40}
+TAIL_WEIGHT      = 0.15
+SENTIMENT        = {&quot;positive&quot;: 1.0, &quot;neutral&quot;: 0.6, &quot;negative&quot;: 0.0}
+DIM_WEIGHTS      = {&quot;m&quot;: 0.30, &quot;d&quot;: 0.30, &quot;rho&quot;: 0.20, &quot;s&quot;: 0.15, &quot;a&quot;: 0.05}
+
+@dataclass
+class Extraction:
+    rank: int; mentioned: int; recommended: int
+    sentiment: str; entity_accurate: int
+
+def presence(x):
+    rho = POSITION_WEIGHTS.get(x.rank, TAIL_WEIGHT)
+    return (DIM_WEIGHTS[&quot;m&quot;]   * x.mentioned
+          + DIM_WEIGHTS[&quot;d&quot;]   * x.recommended
+          + DIM_WEIGHTS[&quot;rho&quot;] * rho
+          + DIM_WEIGHTS[&quot;s&quot;]   * SENTIMENT[x.sentiment]
+          + DIM_WEIGHTS[&quot;a&quot;]   * x.entity_accurate)
+
+# average presence() over the N runs of the prompt. keep the weights
+# in config, not in code, so a weighting change is auditable.</pre></div></div>
+<p>Extraction is the part people underestimate. Brand names get truncated, pluralized and abbreviated inside generated prose. Build an alias table per brand before you run anything, and validate your extractor against a hand-labelled sample of at least 200 responses before you trust a single score.</p>
+<h2 id="runs"><span class="section-num">06</span>How many runs per prompt do you actually need?</h2>
+<div class="section-answer"><strong>Eight to twelve, because one run is a coin flip recorded as a fact.</strong> The failure that invalidates most AI-visibility reporting is running each prompt once and reporting the result as a rate. The same prompt sent twice returns different brand sets; the estimate only settles around eight to twelve runs per prompt per engine.</div>
+<div class="chart-wrap"><canvas id="sampleChart" height="240"></canvas></div><div class="chart-caption">Figure 5. A single prompt with a true inclusion rate of 27%, estimated run by run. Before roughly run 8 the estimate is noise.</div>
+<p>At one run your estimate is either 0% or 100%. At three runs it can still be off by 30 points. Somewhere around eight to twelve runs per prompt per engine, the estimate settles into a range you can act on. Perplexity and Google AI Overviews are especially unstable because they re-retrieve on every call.</p>
+<h3>Bounding the estimate</h3>
+<p>Report intervals, not point estimates. For simple presence proportions use a Wilson score interval rather than the normal approximation, which breaks badly at the low rates most brands actually have.</p>
+<div class="code-wrap"><div class="code-label">python · Wilson 95% confidence interval</div><div class="code-block"><pre>import math
+
+def wilson(successes, n, z=1.96):
+    &quot;&quot;&quot;95% CI for a proportion. Correct at small n and extreme p,
+    where the normal approximation breaks badly.&quot;&quot;&quot;
+    if n == 0:
+        return (0.0, 0.0)
+    p      = successes / n
+    denom  = 1 + z*z / n
+    centre = (p + z*z / (2*n)) / denom
+    margin = z * math.sqrt(p*(1-p)/n + z*z/(4*n*n)) / denom
+    return (centre - margin, centre + margin)   # use for inclusion rates</pre></div></div>
+<p>The weighted Share of Model composite is not a simple proportion, and mentions cluster inside multi-brand responses, which violates the independence Wilson assumes. For the composite, resample at the response level with a percentile bootstrap.</p>
+<div class="code-wrap"><div class="code-label">python · response-level bootstrap for the composite</div><div class="code-block"><pre>import numpy as np
+
+def bootstrap_som(responses, brand, n_iter=1000, seed=7):
+    &quot;&quot;&quot;Percentile bootstrap CI for the weighted composite. Resample
+    whole responses, not individual mentions, so within-response
+    correlation (brands cluster inside multi-brand answers) survives.&quot;&quot;&quot;
+    rng = np.random.default_rng(seed)
+    idx = np.arange(len(responses))
+    est = []
+    for _ in range(n_iter):
+        sample = [responses[i] for i in rng.choice(idx, len(idx))]
+        est.append(weighted_som(sample, brand, ENGINE_W, INTENT_W))
+    return tuple(np.percentile(est, [2.5, 97.5]))  # &lt;1000 iters = unstable tails</pre></div></div>
+<h2 id="prompts"><span class="section-num">07</span>How many prompts do you need?</h2>
+<div class="section-answer"><strong>Enough for about 1,900 observations per brand per engine, then stop.</strong> Work backwards from the precision you need. To hold a two-point margin at a 27% rate you need roughly 1,900 scored observations per brand per engine, which at ten runs is about 190 prompts. A 250 to 500 prompt portfolio is where decision-grade programmes land.</div>
+<div class="code-wrap"><div class="code-label">formula · observations required for a ±2 point margin</div><div class="code-block"><pre>n = z² · p(1 - p) / E²
+
+  z = 1.96  (95% confidence)
+  p = 0.27  (observed inclusion rate)
+  E = 0.02  (target margin of error, ±2 points)
+
+  -&gt;  n ≈ 1,896 scored observations, per brand, per engine
+  at 10 runs/prompt that is ≈ 190 prompts; round up to a
+  250 to 500 prompt portfolio, run 5 to 12 times per engine.</pre></div></div>
+<div class="chart-wrap"><canvas id="ciChart" height="230"></canvas></div><div class="chart-caption">Figure 6. Confidence-interval width against total observations. The curve flattens hard after about 2,500.</div>
+<p>The flattening matters more than the absolute numbers. Going from 500 to 2,500 observations buys a large precision gain; going from 2,500 to 5,000 buys very little. That is the argument for a 250-prompt portfolio rather than a 500-prompt one if budget is tight, spend the saved API calls on more engines instead.</p>
+<div class="callout-box"><div class="callout-box-label">Directional versus decision-grade</div><p>A 50 to 100 prompt audit is fine for a first look and for finding obvious gaps. It is not enough to declare a winner between two brands sitting three points apart, and it is not enough to claim a quarter-over-quarter improvement. Say which one you are doing.</p></div>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Calculator</div><div class="embed-title">Plan your sample size</div><div class="embed-deck">How many runs and prompts you need for a number you can trust, plus a Wilson confidence interval for a rate you have already measured.</div></div><section class="card" id="ssc">
+  <div class="grid score">
+    <div class="controls">
+      <div class="cat"><div class="cat-h">Plan the sample</div><div class="num-grid"><div class="fld"><div class="lab">Expected inclusion rate (%)</div><input class="tin" id="sscP" inputmode="decimal" value="27"></div><div class="fld"><div class="lab">Target margin of error (&plusmn; points)</div><input class="tin" id="sscE" inputmode="decimal" value="2"></div><div class="fld"><div class="lab">Confidence (90 / 95 / 99)</div><input class="tin" id="sscZ" inputmode="numeric" value="95"></div><div class="fld"><div class="lab">Runs per prompt per engine</div><input class="tin" id="sscR" inputmode="numeric" value="10"></div></div><p class="hint" style="margin:8px 0 0">n = z&sup2; &middot; p(1-p) / E&sup2;. Runs convert observations into a prompt count. Engines that re-retrieve on every call (Perplexity, Google AI Overviews) need the top of the 8-12 run range.</p></div>
+      <div class="cat"><div class="cat-h">Bound an observed rate (Wilson)</div><div class="num-grid"><div class="fld"><div class="lab">Times the brand appeared</div><input class="tin" id="sscK" inputmode="numeric" value="54"></div><div class="fld"><div class="lab">Total scored responses</div><input class="tin" id="sscN" inputmode="numeric" value="200"></div></div><p class="hint" style="margin:8px 0 0">The Wilson score interval is correct at the low rates most brands actually have, where the normal approximation breaks badly.</p></div>
+    </div>
+    <div class="panel-out">
+      <div class="o-eyebrow">Observations needed</div>
+      <div class="scorewrap"><span class="score" id="sscN2">0</span><span class="score-d">obs</span></div>
+      <span class="scoreband" id="sscBand" style="background:rgba(255,255,255,.1);color:#fff">per brand, per engine</span>
+      <div class="gaps"><div class="gaps-h">The plan</div><div id="sscPlan"><p class="hint">Your prompt count appears here.</p></div></div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)">
+        <div class="o-eyebrow">Wilson 95% interval</div>
+        <div class="scorewrap"><span class="score" id="sscCI" style="font-size:34px">&ndash;</span></div>
+        <div id="sscCInote"><p class="hint">Enter appearances and total responses to bound the rate.</p></div>
+      </div>
+    </div>
+  </div>
+</section></div>
+<h2 id="engines"><span class="section-num">08</span>Why can't you blend the engines into one number?</h2>
+<div class="section-answer"><strong>Retrieval architecture drives variance, and variance drives your run budget.</strong> Blending everything into one number is the second most common mistake after under-sampling. Report each engine separately, then weight into the headline, because the per-engine cut is where the fix lives.</div>
+<div class="tt-wrap"><div class="tt-label">Table 4. Per-engine execution configuration. Report each engine separately, then weight into the headline number.</div><table class="tt"><thead><tr><th>Engine</th><th>Primary retrieval</th><th>Variance</th><th>Min runs</th><th>Best intent fit</th></tr></thead><tbody><tr><td class="label">ChatGPT</td><td>Hybrid parametric plus web RAG</td><td>Moderate</td><td>10</td><td>Broad commercial and B2B discovery</td></tr><tr><td class="label">Perplexity</td><td>Live web RAG indexing</td><td>High</td><td>12</td><td>Deep technical and research queries</td></tr><tr><td class="label">Google AI Overviews</td><td>Search graph plus Gemini</td><td>High</td><td>10</td><td>High-volume consumer and business search</td></tr><tr><td class="label">Claude</td><td>Parametric-heavy, extended context</td><td>Low to moderate</td><td>8</td><td>Long-form analysis and enterprise evaluation</td></tr><tr><td class="label">Grok</td><td>Real-time social plus web RAG</td><td>High</td><td>12</td><td>Real-time trends and industry news</td></tr></tbody></table></div>
+<p>A brand strong on Claude and weak on Perplexity has a live-retrieval problem: the training corpus knows it, the live index does not. That is a crawlability and freshness fix, not a brand fix, and the mechanics are in <a href="/blogs/how-your-page-gets-retrieved">how your page gets retrieved</a>.</p>
+<h2 id="portfolio"><span class="section-num">09</span>How do you build the prompt portfolio?</h2>
+<div class="section-answer"><strong>From how buyers describe situations, not from a keyword list.</strong> The portfolio is the measurement instrument. Keyword lists are what people type into a search box; buyers describe a situation to an assistant, their headcount, their stack, their compliance constraint. Most of those phrasings have zero search volume.</div>
+<p>Most buyer phrasings have zero search volume, which is exactly why the <a href="/blogs/query-fan-out-how-one-prompt-becomes-ten-searches">query fan-out mechanics</a> matter here. A workable split is 15% navigational, 35% category discovery, 30% comparative and 20% transactional. Discovery gets the largest share because it is where the category conversation happens; transactional gets the highest weight because it is where the money is.</p>
+<div class="chart-wrap"><canvas id="portfolioChart" height="230"></canvas></div><div class="chart-caption">Figure 8. Portfolio allocation by volume. Discovery and comparison prompts carry the bulk of the volume; constraint prompts carry the bulk of the weight.</div>
+<div class="code-wrap"><div class="code-label">yaml · the versioned portfolio file</div><div class="code-block"><pre># portfolio.yaml -- version this file. It IS the measurement instrument.
+version: 2026.Q3.1
+category: field_service_management
+competitor_set: [acme, beta, gamma, delta, epsilon, zeta]
+
+engine_weights:              # must sum to 1.0 -- where your buyers ask
+  chatgpt:      0.38
+  ai_overviews: 0.24
+  perplexity:   0.18
+  claude:       0.12
+  grok:         0.08
+
+intent_weights: {navigational: 0.5, discovery: 1.0,
+                 comparative: 1.5, transactional: 2.0}
+
+prompts:
+  - {id: fsm-disc-001, tier: discovery,     text: &quot;best field service software for HVAC&quot;}
+  - {id: fsm-comp-014, tier: comparative,   text: &quot;ServiceTitan vs Housecall Pro for a 40-tech shop&quot;}
+  - {id: fsm-txn-031,  tier: transactional, text: &quot;FSM under $80/tech/mo with QuickBooks + SOC 2&quot;}</pre></div></div>
+<p>Three rules keep the instrument honest. Never edit a prompt in place, deprecate it and add a new ID. Never add prompts mid-cycle, batch them into the next version. Always keep at least 80% of prompts stable across versions so the trend line survives.</p>
+<h2 id="pipeline"><span class="section-num">10</span>What does the measurement pipeline look like?</h2>
+<div class="section-answer"><strong>Nine stages on a fixed cadence, with the portfolio frozen and every raw response stored.</strong> Run monthly for an active programme, quarterly for maintenance. The denominator is total field presence, not response count. Store every raw response, not just the extraction, because scoring logic and alias tables improve and re-scoring history is cheap.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Frozen portfolio</div><div class="pl-desc">250-500 prompts, versioned, unchanged.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Poll engines</div><div class="pl-desc">8-12 runs per prompt per engine.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Extract + score</div><div class="pl-desc">Alias table, five presence dimensions.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Aggregate to field share</div><div class="pl-desc">Denominator = total field presence.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Report + CI</div><div class="pl-desc">Blended headline plus per-engine cut, then backlog.</div></div></div><div class="chart-caption">Figure 9. The full loop. The last stage feeds the content backlog; stage one stays frozen so the next cycle is comparable.</div>
+<div class="code-wrap"><div class="code-label">python · the weighted Share of Model rollup</div><div class="code-block"><pre>from collections import defaultdict
+
+def weighted_som(responses, brand, engine_w, intent_w):
+    &quot;&quot;&quot;responses: iterable of scored responses across the portfolio.&quot;&quot;&quot;
+    num = den = 0.0
+    for r in responses:
+        w    = engine_w[r.engine] * intent_w[r.tier]
+        num += w * r.scores.get(brand, 0.0)
+        den += w * sum(r.scores.values())   # total field presence
+    return num / den if den else 0.0        # a share, not a rate</pre></div></div>
+<p>Storage is cheaper than execution by two orders of magnitude, so keep the full text of every response, not the extraction. And the rollup query's guard clause is not optional: under-sampled cells are the main source of fake movement.</p>
+<div class="code-wrap"><div class="code-label">sql · cycle-over-cycle rollup with an under-sampling guard</div><div class="code-block"><pre>-- Cycle-over-cycle movement, ready for the dashboard.
+WITH scored AS (
+  SELECT cycle_id, engine, tier, brand,
+         engine_weight * intent_weight * presence_score AS w_score,
+         engine_weight * intent_weight * field_score    AS w_field
+  FROM   response_scores
+  WHERE  portfolio_version = &#x27;2026.Q3.1&#x27;
+)
+SELECT cycle_id,
+       SUM(w_score) / NULLIF(SUM(w_field), 0) AS share_of_model,
+       COUNT(*)                               AS observations
+FROM   scored
+GROUP  BY cycle_id
+HAVING COUNT(*) &gt;= 200;   -- the HAVING is not optional: under-sampled
+                          -- cells are the main source of fake movement.</pre></div></div>
+<h2 id="benchmarks"><span class="section-num">11</span>What does a good Share of Model score look like?</h2>
+<div class="section-answer"><strong>It depends on the vertical, and most first measurements land in the bottom two tiers.</strong> A score means nothing in isolation. 18% is excellent in a fragmented market with forty vendors and poor in a consolidated one with four. Across verticals, brands land in four consistent tiers, and benchmarks come from teardowns of the actual competitive set.</div>
+<div class="chart-wrap"><canvas id="benchChart" height="250"></canvas></div><div class="chart-caption">Figure 11. Share of Model benchmark bands by vertical and competitive tier (band midpoints). Read your number against the band for your tier.</div>
+<div class="tt-wrap"><div class="tt-label">Table 5. Benchmark Share of Model ranges by vertical. The right-hand column is where the gap gets closed.</div><table class="tt"><thead><tr><th>Vertical</th><th>Category leader</th><th>Strong challenger</th><th>Emerging provider</th><th>What drives retrieval</th></tr></thead><tbody><tr><td class="label">HR tech &amp; staffing</td><td>35-45%</td><td>18-30%</td><td>5-15%</td><td>Directory reviews (G2, Capterra), community forums, pricing pages</td></tr><tr><td class="label">AEC services &amp; tech</td><td>32-42%</td><td>15-28%</td><td>4-12%</td><td>Technical specs, trade association journals, Schema.org entities</td></tr><tr><td class="label">Field service management</td><td>38-48%</td><td>20-32%</td><td>5-14%</td><td>Feature comparison tables, integration guides, industry reviews</td></tr><tr><td class="label">Carbon accounting</td><td>35-45%</td><td>16-28%</td><td>3-12%</td><td>Methodological papers, GHG Protocol citations, regulatory briefs</td></tr></tbody></table></div>
+<p>Three things to read out of that table. Field service runs highest at the top because it is the most consolidated, so the leader's denominator is smaller, the full breakdown is in the <a href="/blogs/field-service-software-ai-visibility-gap">field service software teardown</a>. Carbon accounting runs lowest because the category rewards methodological credibility over marketing volume, which a new entrant cannot buy quickly, we took that market apart in <a href="/blogs/authority-isnt-the-moat">authority isn't the moat</a>. And the retrieval-driver column is the actionable one: optimizing an AEC site with HR-tech tactics produces nothing.</p>
+<p>The tier that surprises people is the bottom one. In our lending and credit teardown, 44 of 52 brands were named 0% of the time. Not low, zero, a large fraction of a well-funded category sitting entirely outside the answer space. Movement is slower than teams expect: set expectations at three to five points per quarter for a brand in the emerging tier doing the work consistently.</p>
+<h2 id="money"><span class="section-num">12</span>How do you connect model share to money?</h2>
+<div class="section-answer"><strong>Stack five layers under it, then size the gap for the CFO.</strong> Share of Model on its own is a marketing metric. To survive a budget conversation it connects to pipeline through a citation-source split, mention quality, an authority-gap map, AI-referral attribution and agentic web logs.</div>
+<div class="pipeline"><div class="pl-node is-goal"><div class="pl-title">01 Share of Model + rank</div><div class="pl-desc">The weighted score and your ordinal position.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">02 Citation-source split</div><div class="pl-desc">Owned / earned / community. Own-domain-only is fragile.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">03 Mention quality</div><div class="pl-desc">Sentiment, attribute association, hallucination rate.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">04 Authority-gap map</div><div class="pl-desc">Third-party domains you are absent from = outreach list.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">05 AI-referral attribution</div><div class="pl-desc">Sessions from AI engines vs branded-search lift.</div></div></div><div class="chart-caption">Figure 12. The measurement stack. Layer 01 is the number; everything above it explains why the number moved.</div>
+<p>The authority-gap map, the third-party domains engines cite for your category where you are absent, is your outreach target list, and the method is in <a href="/blogs/authority-seeding-ai-llm-trust">authority seeding for AI</a>. Two formulas carry the budget conversation. Return on GEO connects spend to tracked revenue plus a conservatively attributed brand-lift term, and cost of inaction quantifies the gap to the leader as forgone pipeline.</p>
+<div class="callout-box"><div class="callout-box-label">A worked cost-of-inaction estimate</div><p>A field service platform running at 14% against a leader at 38%, in a category generating an estimated 120,000 relevant prompts a year, converting AI-sourced exposure at 1.4% into opportunities worth an average of $18,000. The 24-point gap maps to 28,800 answers, which maps to roughly $7.26 million in annual pipeline that goes to someone else.</p><p>Be honest about what that number is: a sizing estimate built on a conversion assumption you should state explicitly, not a forecast. Its job is to make the gap legible to a CFO, not to be booked.</p></div>
+<h2 id="ninety"><span class="section-num">13</span>How do you stand the program up in 90 days?</h2>
+<div class="section-answer"><strong>Measurement infrastructure before optimization work, always.</strong> The first score lands on day 14 and it will be worse than expected. Check crawler behaviour before the authority work, or the placements you earn will feed engines that still cannot retrieve your site.</div>
+<div class="tt-wrap"><div class="tt-label">Table 6. A 90-day implementation sequence.</div><table class="tt"><thead><tr><th>Stage</th><th>Focus</th><th>Deliverables</th></tr></thead><tbody><tr><td class="label">Days 1-14</td><td>Baseline audit</td><td>Curate the 250+ prompt portfolio, run first sampling across five engines, map competitor Share of Model</td></tr><tr><td class="label">Days 15-30</td><td>Machine scannability</td><td>llms.txt at root, clean Markdown variants, Schema.org markup, verify bot access in robots.txt</td></tr><tr><td class="label">Days 31-60</td><td>Citation-gap acquisition</td><td>Targeted PR and placement on the high-citation third-party domains from authority mapping</td></tr><tr><td class="label">Days 61-75</td><td>Pipeline attribution</td><td>GA4 referral tracking for AI engines, dashboard combining Share of Model and referral conversions</td></tr><tr><td class="label">Days 76-90</td><td>Operational cadence</td><td>Automated monthly polling, variance alerts, Share of Model in the quarterly review</td></tr></tbody></table></div>
+<p>Days 15 to 30 come before the authority work for a reason: if the crawlers cannot parse your pages, the placements you earn in days 31 to 60 will feed engines that still cannot retrieve your site, and you will pay for coverage that only helps your competitors' answers look better sourced. Check crawler behaviour first, using the breakdown in <a href="/blogs/how-ai-crawlers-index-your-site">how AI crawlers actually index your site</a>.</p>
+<h2 id="failures"><span class="section-num">14</span>What are the seven ways the number goes wrong?</h2>
+<div class="section-answer"><strong>Under-sampling, drift, blending, alias misses, weight tinkering, thin cells and denominator confusion.</strong> Most bad Share of Model reporting traces to one of seven failure modes. The most damaging is weight tinkering, because it is invisible outside the measurement team and manufactures good news on demand.</div>
+<div class="tt-wrap"><div class="tt-label">Table 7. The seven failure modes that account for most bad Share of Model reporting.</div><table class="tt"><thead><tr><th>Failure</th><th>What it looks like</th><th>Fix</th></tr></thead><tbody><tr><td class="label">Single-run sampling</td><td>Score swings 15 points between cycles with no work done</td><td>8 to 12 runs per prompt per engine, minimum</td></tr><tr><td class="label">Portfolio drift</td><td>Prompts edited or added between cycles</td><td>Version the portfolio file, keep 80% stable, deprecate rather than edit</td></tr><tr><td class="label">Blended-only reporting</td><td>One number that hides an engine you are invisible in</td><td>Always publish the per-engine cut alongside the headline</td></tr><tr><td class="label">Alias misses</td><td>Extractor misses abbreviations and truncations of the brand</td><td>Alias table per brand, validated against 200 hand-labelled responses</td></tr><tr><td class="label">Weight tinkering</td><td>Score improves after a weighting change, not after work</td><td>Freeze weights for the year, restate history if you must revise</td></tr><tr><td class="label">Under-sampled cells</td><td>A tier or engine with 40 observations reported as a trend</td><td>Suppress cells below a minimum observation count</td></tr><tr><td class="label">Denominator confusion</td><td>Reporting a rate and calling it a share</td><td>Denominator is total field presence across the competitor set, not response count</td></tr></tbody></table></div>
+<p>If your weights change, the previous quarter has to be restated on the new weights before anyone sees a trend line. Write that into the process document.</p>
+<h2 id="week"><span class="section-num">15</span>What should you do this week?</h2>
+<div class="section-answer"><strong>Run a 50-prompt pilot, with intervals attached, against the band for your tier.</strong> Settle the taxonomy, write 50 prompts from sales-call notes tagged to intent tiers, run each ten times on two engines, score with the five dimensions, and report with a Wilson interval. Then freeze the weights and put the next run on the calendar.</div>
+<ul><li><strong>Settle the taxonomy first.</strong> Decide what counts as a citation, a mention and a recommendation before you count anything, using <a href="/blogs/citation-vs-mention-vs-recommendation">the taxonomy piece</a> as the reference.</li><li><strong>Write 50 prompts from sales-call notes,</strong> not from a keyword tool, and tag each to an intent tier. This is your pilot portfolio.</li><li><strong>Run each prompt 10 times on two engines.</strong> Score presence with the five dimensions and report the number with a Wilson interval attached.</li><li><strong>Compare to the band</strong> for your vertical and tier in Table 5. If you are below the emerging band, the problem is retrieval, not messaging.</li><li><strong>Pull the citation-source split.</strong> If more than 70% of your citations come from your own domain, the authority gap is your first project.</li><li><strong>Freeze the weights, version the portfolio, and put the next run on the calendar.</strong> A single measurement is a screenshot; two comparable measurements are a program.</li></ul>
+<p>Share of Model is not complicated mathematics. It is a weighted average with confidence intervals attached. What makes it hard is the discipline, a fixed portfolio, enough runs, honest weights, and the willingness to publish a number lower than the one your tool vendor reports. That discipline is the entire difference between measurement and guessing.</p>
+<section class="faq-section" id="faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3 class="faq-q">What is Share of Model and how is it calculated?</h3><div class="faq-a"><p>Share of Model is the percentage of brand presence an entity captures across a statistically representative set of category prompts, measured across multiple generative engines and weighted by commercial intent and engine usage. You compute it as your weighted presence divided by the total weighted presence of every brand in the competitive set, over the same prompt portfolio, on the same engines, on a fixed cadence. The denominator is total field presence, not response count, which is what makes it a share rather than a rate.</p></div></div><div class="faq-item"><h3 class="faq-q">How many times should you run each prompt?</h3><div class="faq-a"><p>Eight to twelve runs per prompt per engine, minimum. Language models are probabilistic: the same prompt sent twice can return different brand sets. At one run your estimate is either 0% or 100%; at three runs it can still be off by 30 points; the estimate only settles into an actionable range around eight to twelve runs. High live-retrieval engines like Perplexity and Google AI Overviews need the top of that range because they re-retrieve on every call.</p></div></div><div class="faq-item"><h3 class="faq-q">How many prompts do you need for a reliable Share of Model?</h3><div class="faq-a"><p>To hold a two-point margin of error at a 27% inclusion rate you need roughly 1,900 scored observations per brand per engine. At ten runs per prompt that is about 190 prompts, so decision-grade programmes land at a portfolio of 250 to 500 prompts run 5 to 12 times per engine. Precision flattens hard after about 2,500 observations, so a 250-prompt portfolio plus more engines usually beats a 500-prompt one on a tight budget.</p></div></div><div class="faq-item"><h3 class="faq-q">Should you report one blended AI-visibility number across engines?</h3><div class="faq-a"><p>Report both, but never blended-only. The weighted composite goes on the dashboard; the per-engine breakdown goes in the appendix, because that is where the fix lives. A brand strong on Claude and weak on Perplexity has a live-retrieval problem, the training corpus knows it but the live index does not, which is a crawlability and freshness fix rather than a brand fix. A single blended number hides the engine you are invisible in.</p></div></div><div class="faq-item"><h3 class="faq-q">What is a good Share of Model score?</h3><div class="faq-a"><p>It depends entirely on the vertical and your competitive tier, so a raw number means nothing in isolation. Across teardowns brands land in four tiers: category leaders run roughly 35-48%, strong challengers 15-32%, and emerging providers 3-15%, with the exact bands set by how consolidated the market is. Field service tops out highest (leader band to 48%) because it is the most consolidated; carbon accounting bottoms lowest (emerging to 3%) because engines there reward peer-reviewed and regulatory sources over marketing volume. Read your number against the band for your tier.</p></div></div><div class="faq-item"><h3 class="faq-q">How is Share of Model different from share of voice, citations and mentions?</h3><div class="faq-a"><p>Share of voice counts media impressions; share of search counts branded query volume; both break when the buyer asks a model instead of seeing an ad or reaching Google. Citations, mentions and recommendations are the underlying events, a taxonomy that is upstream of Share of Model and defines what you count. Share of Model is the middle scoreboard layer: it takes those events, counts them across a fixed weighted prompt portfolio, and turns them into one share you can trend and benchmark. Attribution to sessions and pipeline is a separate downstream layer.</p></div></div></section>
+<div class="about-block" id="references"><div class="about-label">References</div><p style="margin-bottom:16px;">Figures 1 through 14 are original, built from the data and formulas in the sources below.</p><ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;"><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.alephic.com/geo" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Share of Model, Generative Engine Optimization. Alephic.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://chetver.com/research/share-of-model" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Share of Model Framework: Architectonics of Measuring AI Visibility, Narrative Control, and ROI. Chetver.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://agilebrandguide.com/wiki/agentic-commerce/share-of-model-som/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Share of Model (SoM). The Agile Brand Guide.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://clearcited.com/methodology/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">How we measure: methodology. Clear Cited.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://aicarma.com/blog/ai-visibility-score/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What Is AI Visibility Score? The Complete Guide to Share of Model. AICarma.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://everything-pr.com/what-is-share-of-model-the-new-metric-replacing-share-of-voice" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What Is Share of Model? The New Metric Replacing Share of Voice. Everything-PR.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://hallam.agency/blog/share-of-model-a-key-metric-for-ai-powered-search/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Share of Model: a key metric for AI-powered search. Hallam.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://medium.com/@joachim_43659/how-to-measure-ai-search-visibility-the-complete-framework-for-2026-e7fe64c2f759" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">How to Measure AI Search Visibility: The Complete Framework for 2026. Medium.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://arxiv.org/html/2606.23057v1" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Who Owns the AI Recommendation? A Multi-Industry Empirical Map of Brand Category Ownership Across LLMs. arXiv.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.imarkinfotech.com/what-is-share-of-model-and-how-do-you-track-geo-performance-the-measurement-framework/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What is Share of Model and How Do You Track GEO Performance? iMark Infotech.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://simaia.co/insight/what-is-share-of-model" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What is share of model? Simaia.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.precis.com/aeo-services" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AEO Agency &amp; Services: Future-proof brands for AI. Precis.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.brandarmor.ai/blog/how-do-i-compare-website-seo-and-ai-visibility-in-2026" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">How Do I Compare Website SEO and AI Visibility in 2026? BrandArmor.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://hingemarketing.com/programs-services/services/geo-seo-services-for-professional-services" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">GEO &amp; SEO Services for professional services. Hinge Marketing.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.seozoom.com/what-percentage-of-the-ai-market-do-you-hold/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">What percentage of the AI market do you hold? SEOZoom.</a></li></ol></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns and technical playbooks on GEO, agentic commerce and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Sources: the Share of Model literature (Alephic, Chetver, the Agile Brand Guide), the multi-industry LLM brand-ownership study (arXiv), and rawmktg category teardowns, 2026. Formulas and code are working reference implementations; benchmark bands are directional.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">8-12</div><div class="stat-label">runs per prompt before the score is real</div></div><hr class="stat-divider"><div><div class="stat-val">250-500</div><div class="stat-label">prompts for a decision-grade portfolio</div></div><hr class="stat-divider"><div><div class="stat-val">±2.0</div><div class="stat-label">point margin at ~1,900 observations</div></div><hr class="stat-divider"><div><div class="stat-val">5</div><div class="stat-label">engines, reported separately then weighted</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this method</div><ul class="toc-list"><li><a href="#layers"><span class="toc-num">01</span>Three metrics, three jobs</a></li><li><a href="#measures"><span class="toc-num">02</span>What it measures</a></li><li><a href="#naive"><span class="toc-num">03</span>Why the naive formula lies</a></li><li><a href="#formula"><span class="toc-num">04</span>The formula that holds up</a></li><li><a href="#scoring"><span class="toc-num">05</span>Scoring one response</a></li><li><a href="#runs"><span class="toc-num">06</span>How many runs</a></li><li><a href="#prompts"><span class="toc-num">07</span>How many prompts</a></li><li><a href="#engines"><span class="toc-num">08</span>Engines are not interchangeable</a></li><li><a href="#portfolio"><span class="toc-num">09</span>Building the portfolio</a></li><li><a href="#pipeline"><span class="toc-num">10</span>The measurement pipeline</a></li><li><a href="#benchmarks"><span class="toc-num">11</span>Benchmarks by vertical</a></li><li><a href="#money"><span class="toc-num">12</span>From model share to money</a></li><li><a href="#ninety"><span class="toc-num">13</span>Standing it up in 90 days</a></li><li><a href="#failures"><span class="toc-num">14</span>Seven ways it goes wrong</a></li><li><a href="#week"><span class="toc-num">15</span>What to do this week</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.getElementById('pv'); if(!root) return;
+  var ENG=[['chatgpt','ChatGPT'],['gemini','Gemini'],['perplexity','Perplexity'],['claude','Claude'],['grok','Grok']];
+  function num(id){var el=document.getElementById(id); if(!el) return null; var v=parseFloat(el.value);return isNaN(v)?null:v;}
+  function compute(){
+    var score=0,covered=0,rows=[];
+    var somScore=0,somCov=0,somRows=[];
+    ENG.forEach(function(e){
+      var m=num('pv_'+e[0]+'_m'),q=num('pv_'+e[0]+'_q'),w=num('pv_'+e[0]+'_w'),f=num('pv_'+e[0]+'_f');
+      if(q===null||q<=0||w===null||w<0){return;}
+      var mm=(m===null?0:m); var pct=Math.max(0,Math.min(100,100*mm/q));
+      score+=w*pct; covered+=w; rows.push([e[1],pct,w]);
+      if(f!==null&&f>0){var sp=Math.max(0,Math.min(100,100*mm/f)); somScore+=w*sp; somCov+=w; somRows.push([e[1],sp]);}
+    });
+    var out=covered>0?score/covered:0;
+    var scoreEl=document.getElementById('pvScore'),bandEl=document.getElementById('pvBand'),fill=document.getElementById('pvFill'),br=document.getElementById('pvBreak');
+    if(covered<=0){scoreEl.textContent='0';bandEl.textContent='Enter counts';bandEl.style.background='rgba(255,255,255,.1)';bandEl.style.color='#fff';fill.style.width='0%';br.innerHTML='<p class="hint">Per-engine numbers appear here.</p>';}
+    else{
+      scoreEl.textContent=out.toFixed(1); fill.style.width=Math.min(100,out)+'%';
+      var lbl,col;
+      if(out>=50){lbl='Strong';col='var(--up)';}else if(out>=25){lbl='Building';col='#C9922E';}else{lbl='At risk';col='var(--signal)';}
+      bandEl.textContent=lbl; bandEl.style.background=col; bandEl.style.color='#0b0b0c'; fill.style.background=col;
+      rows.sort(function(a,b){return b[1]-a[1];});
+      br.innerHTML=rows.map(function(r){
+        return '<div class="lt-stat"><span>'+r[0]+' <span style="color:rgba(255,255,255,.4)">(w '+r[2]+')</span></span><strong>'+r[1].toFixed(1)+'%</strong></div>';
+      }).join('');
+    }
+    var somEl=document.getElementById('pvSom'),somNote=document.getElementById('pvSomNote');
+    if(somEl){
+      if(somCov<=0){somEl.textContent='–';somNote.innerHTML='<p class="hint">Add "field mentions" per engine to compute your weighted share of the whole competitive field.</p>';}
+      else{
+        var som=somScore/somCov; somEl.textContent=som.toFixed(1);
+        somRows.sort(function(a,b){return b[1]-a[1];});
+        var note=somRows.map(function(r){return '<div class="lt-stat"><span>'+r[0]+'</span><strong>'+r[1].toFixed(1)+'%</strong></div>';}).join('');
+        somNote.innerHTML=note+'<p class="hint" style="margin-top:8px">Your weighted presence as a share of total field presence. Weight the engines your buyers use; report the per-engine cut alongside the headline.</p>';
+      }
+    }
+  }
+  root.querySelectorAll('input').forEach(function(i){i.addEventListener('input',compute);});
+  compute();
+})();
+</script>
+<script>
+(function(){
+  var root=document.getElementById('ssc'); if(!root) return;
+  function num(id){var el=document.getElementById(id); if(!el) return null; var v=parseFloat(el.value); return isNaN(v)?null:v;}
+  function zfor(c){ if(c>=99) return 2.576; if(c>=95) return 1.96; if(c>=90) return 1.645; return 1.96; }
+  function compute(){
+    var p=num('sscP'), E=num('sscE'), C=num('sscZ'), R=num('sscR');
+    var n2=document.getElementById('sscN2'),band=document.getElementById('sscBand'),plan=document.getElementById('sscPlan');
+    if(p===null||E===null||E<=0||C===null||R===null||R<=0){
+      n2.textContent='0';band.textContent='per brand, per engine';plan.innerHTML='<p class="hint">Your prompt count appears here.</p>';
+    } else {
+      var pr=Math.min(Math.max(p,0),100)/100, Er=E/100, z=zfor(C);
+      var n=z*z*pr*(1-pr)/(Er*Er);
+      var prompts=Math.ceil(n/R);
+      n2.textContent=Math.round(n).toLocaleString();
+      band.textContent='at '+z.toFixed(3)+' z';band.style.background='rgba(255,255,255,.1)';band.style.color='#fff';
+      var port = prompts<=250?'250': (prompts<=500?'250-500':'500+');
+      plan.innerHTML='<div class="lt-stat"><span>Prompts at '+R+' runs/engine</span><strong>&asymp; '+prompts.toLocaleString()+'</strong></div>'
+        +'<div class="lt-stat"><span>Round to a portfolio of</span><strong>'+port+'</strong></div>'
+        +'<p class="hint" style="margin-top:8px">Precision flattens after ~2,500 observations. Past that, spend on more engines, not more prompts.</p>';
+    }
+    var k=num('sscK'), N=num('sscN');
+    var ci=document.getElementById('sscCI'),note=document.getElementById('sscCInote');
+    if(k===null||N===null||N<=0||k<0||k>N){
+      ci.textContent='–';note.innerHTML='<p class="hint">Enter appearances and total responses to bound the rate.</p>';
+    } else {
+      var z=1.96, ph=k/N, den=1+z*z/N;
+      var centre=(ph+z*z/(2*N))/den;
+      var margin=z*Math.sqrt(ph*(1-ph)/N + z*z/(4*N*N))/den;
+      var lo=Math.max(0,(centre-margin))*100, hi=Math.min(1,(centre+margin))*100;
+      ci.textContent=lo.toFixed(1)+'–'+hi.toFixed(1)+'%';
+      note.innerHTML='<div class="lt-stat"><span>Point estimate</span><strong>'+(ph*100).toFixed(1)+'%</strong></div>'
+        +'<div class="lt-stat"><span>95% interval width</span><strong>&plusmn;'+((hi-lo)/2).toFixed(1)+' pts</strong></div>'
+        +'<p class="hint" style="margin-top:8px">Report the interval, not the point. A wide interval means you have not run enough.</p>';
+    }
+  }
+  root.querySelectorAll('input').forEach(function(i){i.addEventListener('input',compute);});
+  compute();
+})();
+</script>
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4);
+
+  var rk=document.getElementById('rankChart');
+  if(rk){new Chart(rk,{type:'bar',data:{labels:['Raw inclusion rate','Weighted Share of Model'],datasets:[
+    {label:'Brand A',data:[31,24],backgroundColor:neutral,borderRadius:4},
+    {label:'Brand B',data:[24,43],backgroundColor:signal,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+c.raw+'%';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,max:50,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var dm=document.getElementById('dimChart');
+  if(dm){new Chart(dm,{type:'bar',data:{labels:['Mention','Recommendation','Position','Sentiment','Entity acc.'],datasets:[{data:[30,30,20,15,5],backgroundColor:[signal,signal,rgba(signal,0.6),rgba(signal,0.45),neutral],borderRadius:4,barThickness:50}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' weight '+(c.raw/100).toFixed(2);}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,max:35,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return (v/100).toFixed(2);}},grid:{color:grid}}}}});}
+
+  var sm=document.getElementById('sampleChart');
+  if(sm){new Chart(sm,{type:'line',data:{labels:['1','2','3','4','5','6','7','8','9','10','11','12'],datasets:[
+    {label:'Running estimate',data:[0,50,33,40,20,33,29,27,28,26,27,27],borderColor:signal,backgroundColor:rgba(signal,0.12),borderWidth:2,tension:0.3,fill:true,pointRadius:3},
+    {label:'True rate 27%',data:[27,27,27,27,27,27,27,27,27,27,27,27],borderColor:up,borderDash:[5,4],borderWidth:1.5,pointRadius:0}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'%';}}}},
+      scales:{x:{title:{display:true,text:'runs',color:text,font:{family:mono,size:10}},ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var ci=document.getElementById('ciChart');
+  if(ci){new Chart(ci,{type:'line',data:{labels:['250','500','1000','2500','5000'],datasets:[{label:'CI half-width',data:[6.5,4.5,3.2,2.0,1.4],borderColor:signal,backgroundColor:rgba(signal,0.12),borderWidth:2,tension:0.35,fill:true,pointRadius:3}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' ±'+c.raw+' pts';}}}},
+      scales:{x:{title:{display:true,text:'observations',color:text,font:{family:mono,size:10}},ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return '±'+v;}},grid:{color:grid}}}}});}
+
+  var pf=document.getElementById('portfolioChart');
+  if(pf){new Chart(pf,{type:'bar',data:{labels:['Navigational','Category discovery','Comparative','Transactional'],datasets:[{data:[15,35,30,20],backgroundColor:[neutral,signal,rgba(signal,0.7),rgba(signal,0.5)],borderRadius:4,barThickness:54}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% of the portfolio';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,max:40,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var bc=document.getElementById('benchChart');
+  if(bc){new Chart(bc,{type:'bar',data:{labels:['HR tech','AEC','Field service','Carbon'],datasets:[
+    {label:'Category leader',data:[40,37,43,40],backgroundColor:up,borderRadius:4},
+    {label:'Strong challenger',data:[24,21,26,22],backgroundColor:rgba(signal,0.75),borderRadius:4},
+    {label:'Emerging',data:[10,8,9,7],backgroundColor:signal,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': ~'+c.raw+'%';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,max:50,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>

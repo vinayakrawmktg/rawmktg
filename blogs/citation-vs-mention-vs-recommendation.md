@@ -9,7 +9,7 @@ For nearly thirty years the currency of off-page SEO was the hyperlink. A link w
 
 That model is now one input among several. Large language models and [retrieval-augmented generation](/blogs/how-rag-actually-works) have created an evaluation environment where the machine does not hand back ten blue links. It reads, it decides, and it writes an answer. Somewhere inside that process your brand is either present or absent, either trusted or ignored, either recommended or skipped.
 
-Three signals govern that outcome: mentions, citations, and recommendations. In marketing conversation they get flattened into one idea, usually described as "AI visibility". Inside the machine they are produced by different subsystems, stored in different places, and measured with different math. Confusing them is the reason so many GEO programmes stall.
+Three signals govern that outcome: mentions, citations, and recommendations. In marketing conversation they get flattened into one idea, usually described as "AI visibility". Inside the machine they are produced by different subsystems, stored in different places, and measured with different math. Confusing them is the reason so many GEO programmes stall. Once the taxonomy is settled, turning those events into one comparable, benchmarkable number is the job of [Share of Model](/blogs/share-of-model-measurement).
 
 You cannot fix a mention problem with better on-page content, and you cannot fix a citation problem with more press coverage.
 

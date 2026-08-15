@@ -7,8 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title><![CDATA[Share of Model: How to Actually Measure It · rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/share-of-model-measurement</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/share-of-model-measurement</guid>
+      <pubDate>Fri, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[The measurement method for Share of Model: the weighted formula (presence over total field presence, adjusted for engine and intent), the sample size that makes it stable (8-12 runs per prompt, a 250-500 prompt portfolio, ~1,900 observations for a ±2-point margin), Wilson and bootstrap intervals, per-engine reporting, benchmark bands by vertical, and a 90-day stand-up. The metric that replaces the screenshot.]]></description>
+    </item>
     <item>
       <title><![CDATA[The 'Best X for Y' Page AI Pulls Into Shortlists · rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/comparison-pages-ai-shortlists</link>

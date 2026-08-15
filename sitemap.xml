@@ -46,6 +46,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rawmktg.com/blogs/share-of-model-measurement</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rawmktg.com/blogs/comparison-pages-ai-shortlists</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -262,6 +268,12 @@
   <url>
     <loc>https://rawmktg.com/tools/product-offer-jsonld-generator</loc>
     <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/tools/sample-size-confidence-planner</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

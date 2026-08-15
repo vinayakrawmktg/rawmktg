@@ -202,7 +202,7 @@ The citation infrastructure you build today (structured data, entity disambiguat
 
 The Strategic Imperative
 
-GEO is not a content experiment. It is the infrastructure for your next acquisition channel. Brands that establish technical alignment with ChatGPT, Perplexity, and Gemini now will own the citation inventory when agentic purchasing becomes the default buyer behaviour. The window for first-mover advantage is measured in months, not years.
+GEO is not a content experiment. It is the infrastructure for your next acquisition channel. Brands that establish technical alignment with ChatGPT, Perplexity, and Gemini now will own the citation inventory when agentic purchasing becomes the default buyer behaviour. The window for first-mover advantage is measured in months, not years. Because each engine retrieves differently, measure them separately and weight into one headline number, the method in [Share of Model, measured properly](/blogs/share-of-model-measurement).
 
 Frequently Asked Questions
 

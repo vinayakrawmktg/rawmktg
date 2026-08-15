@@ -67,7 +67,7 @@ Of marketers who plan to optimise for AI have started
 
 ### The AI-answer cliff
 
-When we scored all 52 companies on how often the assistants named them across 40 buyer questions, the distribution was not a gentle curve. It was a cliff.
+When we scored all 52 companies on how often the assistants named them across 40 buyer questions, the distribution was not a gentle curve. It was a cliff. Scoring a field like this properly, with enough runs and honest weights, is its own discipline, laid out in [Share of Model, measured properly](/blogs/share-of-model-measurement).
 
 Figure 1 - AI named-rate distribution across 52 lenders. 85% sit at zero; a handful reach single digits; only three, the ones with genuine third-party coverage, reach the low teens. Source: 40-prompt scan, 4 engines
 
