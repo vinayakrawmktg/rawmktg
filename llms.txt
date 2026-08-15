@@ -77,6 +77,26 @@
 - [Query Fan-Out Simulator](https://rawmktg.com/tools/query-fan-out-simulator): See how AI Mode shreds a buyer query into parallel sub-queries, and which content type resolves each branch.
 - [Dual-Track AI Visibility Scorecard](https://rawmktg.com/tools/dual-track-visibility-scorecard): Score your visibility on Google's two AI surfaces separately, AI Overviews and AI Mode, with your biggest gaps on each track ranked.
 - [All tools](https://rawmktg.com/tools)
+- [Agentic Commerce Readiness Scorecard](https://rawmktg.com/tools/agentic-commerce-readiness-scorecard) - Score your store on the 10 things AI shopping agents require, latency, machine-readable catalog, unified incentives, identity linking, MACH, with your gaps ranked.
+- [AI Bot Log Analyzer](https://rawmktg.com/tools/ai-bot-log-analyzer) - Paste your access log to see AI-crawler traffic, per-agent status codes, /llms.txt hits, and 403/429 flags where citation bots are being silently blocked.
+- [AI Visibility Signal Diagnostic](https://rawmktg.com/tools/ai-visibility-signal-diagnostic) - Answer three questions and find out which AI-search signal is broken, mention, citation, or recommendation, and the specific fix for each.
+- [Chunk Retrievability Analyzer](https://rawmktg.com/tools/chunk-retrievability-analyzer) - Paste a page to see how a retriever splits it into passages, then score each chunk in isolation and flag the orphaned ones that never name their own subject.
+- [Cross-Engine Source Overlap Calculator](https://rawmktg.com/tools/cross-engine-source-overlap-calculator) - Paste the domains each AI engine cited for one prompt and compute the pairwise Jaccard overlap, showing how little engines agree on sources.
+- [Entity Home JSON-LD Generator](https://rawmktg.com/tools/entity-home-generator) - Build the nested @graph JSON-LD for your Entity Home, with explicit @id URIs and the reciprocal sameAs bindings most implementations miss. Copy or download.
+- [Entity Readiness Scorecard](https://rawmktg.com/tools/entity-readiness-scorecard) - Score your entity posture across the three gates and NEEATT notability signals, and get your biggest gaps ranked in priority order.
+- [Expected-Citation Estimator](https://rawmktg.com/tools/expected-citation-estimator) - Estimate your expected AI-citation rate from facet coverage and selection strength, the measurement that replaces rank tracking under query fan-out.
+- [Facet Coverage Auditor](https://rawmktg.com/tools/facet-coverage-auditor) - Audit your content against the eight facets a query fan-out targets, specification to edge case, and get a ranked list of the briefs you are missing.
+- [Fact-Consistency Checker](https://rawmktg.com/tools/fact-consistency-checker) - Check whether your core facts match across every profile. Drift fragments your entity, so this flags every conflict against your Entity Home.
+- [Fan-Out Content Brief Generator](https://rawmktg.com/tools/fan-out-content-brief-generator) - Turn a head term into an eight-facet content brief: one question-style H2 per facet plus the corpus each sub-query targets. Copy or download.
+- [llms.txt Generator](https://rawmktg.com/tools/llms-txt-generator) - Generate a spec-compliant llms.txt file: one H1, a third-person blockquote, and sectioned links in the mandatory - [Title](URL): Description format. Copy or download.
+- [llms.txt Validator](https://rawmktg.com/tools/llms-txt-validator) - Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax.
+- [Product/Offer JSON-LD Generator](https://rawmktg.com/tools/product-offer-jsonld-generator) - Generate agent-readable Product + Offer JSON-LD with explicit attributes, live inventory and a dateModified stamp. Copy or download for your product pages.
+- [Product Schema (JSON-LD) Auditor](https://rawmktg.com/tools/product-schema-auditor) - Paste a product page and audit its Product/Offer JSON-LD for the fields AI shopping agents need: SKU/GTIN, price, availability, live inventory and specs.
+- [Retrieval-Readiness Checklist](https://rawmktg.com/tools/retrieval-readiness-checklist) - Score an article against the eight properties that decide whether its passages survive chunking, retrieval and reranking, with your biggest gaps ranked.
+- [robots.txt for AI Generator](https://rawmktg.com/tools/robots-txt-ai-generator) - Generate a robots.txt that keeps AI search and citation crawlers allowed while controlling foundation-model training crawlers, separately. Copy or download.
+- [RRF Rank-Fusion Calculator](https://rawmktg.com/tools/rrf-rank-fusion-calculator) - Enter a dense ranking and a keyword (BM25) ranking and see the Reciprocal Rank Fusion merge with k=60, why good-on-both beats best-on-one.
+- [Sentiment & Share-of-Voice Calculator](https://rawmktg.com/tools/sentiment-share-of-voice-calculator) - Compute a contextual sentiment index and entity share of voice from your AI-answer mention counts, with the hallucinated-competitor guardrail.
+- [UGC Prompt-Injection Scanner](https://rawmktg.com/tools/ugc-prompt-injection-scanner) - Paste a review and flag the prompt-injection patterns, hidden HTML comments and redirect URLs that hijack AI shopping agents parsing your page.
 
 ## AI-Search Glossary
 

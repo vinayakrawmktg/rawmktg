@@ -480,7 +480,7 @@ extractability(P=0.0, D=0.0, H=0.0, N=0.1)   # 0.02  (legacy page)</pre></div></
 <div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Generator</div><div class="embed-title">Generate your comparison schema</div><div class="embed-deck">Turn the markup above into your own nested ItemList + SoftwareApplication JSON-LD. Enter two products, copy the block, and server-render it on your page.</div></div><section class="card" id="csg">
   <div class="grid calc">
     <div class="controls">
-      <div class="cat"><div class="cat-h">Comparison page</div><div class="fld"><div class="lab">Page title</div><input class="tin" id="csgTitle" placeholder="e.g. Acme vs Rival Comparison (2026)"></div><div class="fld"><div class="lab">Application category</div><input class="tin" id="csgCat" value="BusinessApplication"></div></div>      <div class="cat"><div class="cat-h">Product A (position 1)</div><div class="num-grid"><div class="fld"><div class="lab">Name</div><input class="tin" id="csgAName" placeholder="Acme"></div><div class="fld"><div class="lab">Price</div><input class="tin" id="csgAPrice" inputmode="decimal" placeholder="79.00"></div><div class="fld"><div class="lab">Per (unit text)</div><input class="tin" id="csgAUnit" placeholder="per user per month"></div><div class="fld"><div class="lab">Rating (optional)</div><input class="tin" id="csgARate" inputmode="decimal" placeholder="4.6"></div><div class="fld"><div class="lab">Review count (optional)</div><input class="tin" id="csgARev" inputmode="numeric" placeholder="412"></div></div></div>      <div class="cat"><div class="cat-h">Product B (position 2)</div><div class="num-grid"><div class="fld"><div class="lab">Name</div><input class="tin" id="csgBName" placeholder="Rival"></div><div class="fld"><div class="lab">Price</div><input class="tin" id="csgBPrice" inputmode="decimal" placeholder="115.00"></div><div class="fld"><div class="lab">Per (unit text)</div><input class="tin" id="csgBUnit" placeholder="per user per month"></div><div class="fld"><div class="lab">Rating (optional)</div><input class="tin" id="csgBRate" inputmode="decimal" placeholder=""></div><div class="fld"><div class="lab">Review count (optional)</div><input class="tin" id="csgBRev" inputmode="numeric" placeholder=""></div></div><p class="hint" style="margin:10px 0 0">Generates a nested WebPage &rarr; ItemList &rarr; SoftwareApplication block. ItemList assigns explicit rank, which is what a Top-N answer is built from. Render it server-side, and make every value match the visible copy on the page exactly.</p></div>
+      <div class="cat"><div class="cat-h">Comparison page</div><div class="fld"><div class="lab">Page title</div><input class="tin" id="csgTitle" placeholder="e.g. Acme vs Rival Comparison (2026)"></div><div class="fld"><div class="lab">Application category</div><input class="tin" id="csgCat" value="BusinessApplication"></div><div class="fld"><div class="lab">Currency</div><select class="tin" id="csgCur"><option>USD</option><option>EUR</option><option>GBP</option><option>INR</option><option>CAD</option><option>AUD</option><option>JPY</option><option>SGD</option><option>BRL</option><option>ZAR</option></select></div></div>      <div class="cat"><div class="cat-h">Product A (position 1)</div><div class="num-grid"><div class="fld"><div class="lab">Name</div><input class="tin" id="csgAName" placeholder="Acme"></div><div class="fld"><div class="lab">Price</div><input class="tin" id="csgAPrice" inputmode="decimal" placeholder="79.00"></div><div class="fld"><div class="lab">Per (unit text)</div><input class="tin" id="csgAUnit" placeholder="per user per month"></div><div class="fld"><div class="lab">Rating (optional)</div><input class="tin" id="csgARate" inputmode="decimal" placeholder="4.6"></div><div class="fld"><div class="lab">Review count (optional)</div><input class="tin" id="csgARev" inputmode="numeric" placeholder="412"></div></div></div>      <div class="cat"><div class="cat-h">Product B (position 2)</div><div class="num-grid"><div class="fld"><div class="lab">Name</div><input class="tin" id="csgBName" placeholder="Rival"></div><div class="fld"><div class="lab">Price</div><input class="tin" id="csgBPrice" inputmode="decimal" placeholder="115.00"></div><div class="fld"><div class="lab">Per (unit text)</div><input class="tin" id="csgBUnit" placeholder="per user per month"></div><div class="fld"><div class="lab">Rating (optional)</div><input class="tin" id="csgBRate" inputmode="decimal" placeholder=""></div><div class="fld"><div class="lab">Review count (optional)</div><input class="tin" id="csgBRev" inputmode="numeric" placeholder=""></div></div><p class="hint" style="margin:10px 0 0">Generates a nested WebPage &rarr; ItemList &rarr; SoftwareApplication block. ItemList assigns explicit rank, which is what a Top-N answer is built from. Render it server-side, and make every value match the visible copy on the page exactly.</p></div>      <div class="cat"><div class="cat-h">Product C (position 3, optional)</div><div class="num-grid"><div class="fld"><div class="lab">Name</div><input class="tin" id="csgCName" placeholder=""></div><div class="fld"><div class="lab">Price</div><input class="tin" id="csgCPrice" inputmode="decimal" placeholder=""></div><div class="fld"><div class="lab">Per (unit text)</div><input class="tin" id="csgCUnit" placeholder="per user per month"></div><div class="fld"><div class="lab">Rating (optional)</div><input class="tin" id="csgCRate" inputmode="decimal" placeholder=""></div><div class="fld"><div class="lab">Review count (optional)</div><input class="tin" id="csgCRev" inputmode="numeric" placeholder=""></div></div></div>
     </div>
     <div class="output">
       <div class="o-eyebrow">Your JSON-LD</div>
@@ -674,23 +674,26 @@ third-party review data as of [date]. Reviewed quarterly.
   var root=document.getElementById('csg'); if(!root) return;
   function v(id){return (document.getElementById(id).value||'').trim();}
   function today(){var d=new Date();return d.toISOString().slice(0,10);}
-  function prod(name,cat,price,unit,rate,rev){
+  function prod(name,cat,price,unit,rate,rev,cur){
     var o={"@type":"SoftwareApplication","name":name,"applicationCategory":cat};
-    if(price){var off={"@type":"Offer","price":price,"priceCurrency":"USD"}; if(unit) off.unitText=unit; o.offers=off;}
+    if(price){var off={"@type":"Offer","price":price,"priceCurrency":cur}; if(unit) off.unitText=unit; o.offers=off;}
     if(rate&&rev){o.aggregateRating={"@type":"AggregateRating","ratingValue":rate,"reviewCount":rev};}
     return o;
   }
   function build(){
     var out=document.getElementById('csgOut');
-    var an=v('csgAName'), bn=v('csgBName');
-    if(!an||!bn){out.textContent='Enter at least two product names to generate the schema.';return;}
-    var cat=v('csgCat')||'BusinessApplication';
-    var title=v('csgTitle')||(an+' vs '+bn+' Comparison');
+    var cat=v('csgCat')||'BusinessApplication', cur=v('csgCur')||'USD';
+    var items=[];
+    ['A','B','C'].forEach(function(K){
+      var nm=v('csg'+K+'Name'); if(!nm) return;
+      items.push(prod(nm,cat,v('csg'+K+'Price'),v('csg'+K+'Unit'),v('csg'+K+'Rate'),v('csg'+K+'Rev'),cur));
+    });
+    if(items.length<2){out.textContent='Enter at least two product names to generate the schema.';return;}
+    var names=items.map(function(it){return it.name;});
+    var title=v('csgTitle')||(names.join(' vs ')+' Comparison');
+    var list=items.map(function(it,i){return {"@type":"ListItem","position":i+1,"item":it};});
     var obj={"@context":"https://schema.org","@type":"WebPage","name":title,"dateModified":today(),
-      "mainEntity":{"@type":"ItemList","numberOfItems":2,"itemListElement":[
-        {"@type":"ListItem","position":1,"item":prod(an,cat,v('csgAPrice'),v('csgAUnit'),v('csgARate'),v('csgARev'))},
-        {"@type":"ListItem","position":2,"item":prod(bn,cat,v('csgBPrice'),v('csgBUnit'),v('csgBRate'),v('csgBRev'))}
-      ]}};
+      "mainEntity":{"@type":"ItemList","numberOfItems":items.length,"itemListElement":list}};
     out.textContent='<script type="application/ld+json">\n'+JSON.stringify(obj,null,2)+'\n<\/script>';
   }
   root.querySelectorAll('input').forEach(function(i){i.addEventListener('input',build);});

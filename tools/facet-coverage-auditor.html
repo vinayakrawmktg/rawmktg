@@ -385,7 +385,9 @@
   var NAMES=['Specification','Compatibility','Compliance','Capability','Price','Comparison','Sentiment','Edge case'];
   var CORP=['product & feature pages','docs & app exchanges','trust centre & security page','product guides','pricing page (server-side)','comparison & alternatives pages','Reddit, G2, community','FAQ & knowledge base'];
   var state={};
+  var topicEl=document.getElementById('fcaTopic');
   function compute(){
+    var topic=(topicEl.value||'').trim();
     var covered=0, gaps=[];
     for(var i=0;i<8;i++){ if(state[i]==='yes') covered++; else if(state[i]==='no') gaps.push(i); }
     var answered=Object.keys(state).length;
@@ -395,7 +397,7 @@
     if(answered<8){bEl.textContent='Mark the facets ('+answered+'/8)';bEl.style.background='rgba(255,255,255,.1)';bEl.style.color='#fff';}
     else{var lbl,col; if(covered>=7){lbl='Strong coverage';col='var(--up)';}else if(covered>=4){lbl='Building';col='#C9922E';}else{lbl='At risk';col='var(--signal)';}
       bEl.textContent=lbl;bEl.style.background=col;bEl.style.color='#0b0b0c';fill.style.background=col;}
-    if(gaps.length){ g.innerHTML=gaps.map(function(i){return '<div class="lt-stat"><span><strong style="color:#fff">'+NAMES[i]+'</strong> <span style="color:rgba(255,255,255,.4)">'+CORP[i]+'</span></span><strong style="color:var(--signal)">write it</strong></div>';}).join(''); }
+    if(gaps.length){ g.innerHTML=gaps.map(function(i){return '<div class="lt-stat"><span><strong style="color:#fff">'+NAMES[i]+'</strong> <span style="color:rgba(255,255,255,.4)">'+CORP[i]+(topic?' &middot; for &ldquo;'+topic+'&rdquo;':'')+'</span></span><strong style="color:var(--signal)">write it</strong></div>';}).join(''); }
     else if(answered===8){ g.innerHTML='<p class="hint">Full coverage. Now make each passage monosemantic and served in plain HTML.</p>'; }
     else { g.innerHTML='<p class="hint">Missing facets appear here as briefs.</p>'; }
   }
@@ -408,6 +410,7 @@
       });
     });
   });
+  topicEl.addEventListener('input',compute);
   compute();
 })();
 </script>

@@ -343,7 +343,7 @@ Paste a slice of your access log and see which AI crawlers you get, and whether 
 
 Paste your access log
 
-Works with standard combined log format. It detects named AI user agents, tallies status codes, and flags 403/429s hitting your citation bots, the silent cause of missing AI citations.
+Works with standard combined log format. It detects named AI user agents, tallies status codes, verifies source IPs against published crawler ranges to flag spoofed user agents, and flags 403/429s hitting your citation bots, the silent cause of missing AI citations.
 
 AI bot traffic
 

@@ -334,6 +334,10 @@ Page title
 
 Application category
 
+Currency
+
+USDEURGBPINRCADAUDJPYSGDBRLZAR
+
 Product A (position 1)
 
 Name
@@ -359,6 +363,18 @@ Rating (optional)
 Review count (optional)
 
 Generates a nested WebPage → ItemList → SoftwareApplication block. ItemList assigns explicit rank, which is what a Top-N answer is built from. Render it server-side, and make every value match the visible copy on the page exactly.
+
+Product C (position 3, optional)
+
+Name
+
+Price
+
+Per (unit text)
+
+Rating (optional)
+
+Review count (optional)
 
 Your JSON-LD
 

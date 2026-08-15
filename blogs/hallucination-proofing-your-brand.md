@@ -378,7 +378,7 @@ Paste your page content
 
 Checks the four parts of the Claim-Anchoring framework. Runs in your browser.
 
-Hallucination-risk score
+Claim-anchoring score
 
 -
 

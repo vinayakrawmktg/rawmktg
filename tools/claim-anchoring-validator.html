@@ -341,7 +341,7 @@
         <p class="hint">Checks the four parts of the Claim-Anchoring framework. Runs in your browser.</p></div>
     </div>
     <div class="output">
-      <div class="o-eyebrow">Hallucination-risk score</div>
+      <div class="o-eyebrow">Claim-anchoring score</div>
       <div class="o-lift" id="caScore">-</div>
       <div class="o-sub" id="caSub">paste content to analyze</div>
       <div class="metrics" id="caMetrics"></div>
@@ -422,9 +422,9 @@
     var ratio=sents.length?evid/sents.length:0;
     var capPct=capOK/n, autoPct=autoOK/n;
     var ratioScore=Math.min(1,ratio/0.7), brandScore=brand?Math.min(1,(brOK/n)/0.6):0.5;
-    var comp=capPct*0.28+autoPct*0.24+ratioScore*0.30+brandScore*0.18, risk=Math.round((1-comp)*100);
-    document.getElementById('caScore').textContent=risk;
-    document.getElementById('caSub').textContent=(risk<=35?'low risk':(risk<=60?'moderate risk':'high risk'))+' \u00b7 '+secs.length+' sections';
+    var comp=capPct*0.28+autoPct*0.24+ratioScore*0.30+brandScore*0.18, score=Math.round(comp*100);
+    document.getElementById('caScore').textContent=score;
+    document.getElementById('caSub').textContent=(score>=65?'well anchored':(score>=40?'partly anchored':'hallucination risk'))+' \u00b7 '+secs.length+' sections';
     var M=[
       {n:'Answer capsules',v:capPct,f:'Open each section with a 40-60 word direct answer to its heading.'},
       {n:'Section autonomy',v:autoPct,f:'Make each section 120-180 words and self-contained; avoid "this/it" openings.'},

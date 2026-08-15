@@ -387,17 +387,18 @@
     var sentEl=document.getElementById('ssSent'),sovEl=document.getElementById('ssSov'),note=document.getElementById('ssNote');
     var sent=null;
     if(tot>0){sent=(pos+0.5*neu)/tot*100; sentEl.textContent=sent.toFixed(1);}else{sentEl.textContent='--';}
-    var brand=n('ssBrand'),rivals=0,names=0;
+    var brand=n('ssBrand'),rivals=0,names=0,rlist=[];
     document.getElementById('ssComp').value.split('\n').forEach(function(line){
       line=line.trim(); if(!line) return;
       var m=line.match(/(-?\d+(\.\d+)?)\s*$/);
-      if(m){rivals+=Math.max(0,parseFloat(m[1]));names++;}
+      if(m){var cnt=Math.max(0,parseFloat(m[1])),nm=line.slice(0,m.index).replace(/[\s,:;|\-]+$/,'').trim()||('Competitor '+(names+1));rivals+=cnt;names++;rlist.push([nm,cnt]);}
     });
     var denom=brand+rivals, sov=denom>0?brand/denom*100:null;
     sovEl.textContent=(sov===null)?'--':sov.toFixed(1);
     var msgs=[];
     if(sent!==null){ if(sent>=70) msgs.push('Sentiment is healthy at '+sent.toFixed(1)+', at or above the 70 target.'); else if(sent>=50) msgs.push('Sentiment '+sent.toFixed(1)+' is neutral-leaning, look for recurring negative framings to fix.'); else msgs.push('Sentiment '+sent.toFixed(1)+' is a problem, a negative mention costs twice a neutral one.'); }
     if(sov!==null){ msgs.push('Share of voice '+sov.toFixed(1)+'% against '+names+' competitor'+(names===1?'':'s')+' ('+rivals+' mentions).'); }
+    if(rlist.length){ rlist.sort(function(a,b){return b[1]-a[1];}); msgs.push('Competitor set (your alias table): '+rlist.map(function(r){return r[0]+' &middot; '+r[1];}).join(', ')+'.'); }
     note.innerHTML = msgs.length? msgs.map(function(m){return '<p style="margin:0 0 8px">'+m+'</p>';}).join('') : '<p class="hint">Both scores update as you type.</p>';
   }
   root.querySelectorAll('input,textarea').forEach(function(i){i.addEventListener('input',compute);});

@@ -3589,6 +3589,10 @@ Page title
 
 Application category
 
+Currency
+
+USDEURGBPINRCADAUDJPYSGDBRLZAR
+
 Product A (position 1)
 
 Name
@@ -3614,6 +3618,18 @@ Rating (optional)
 Review count (optional)
 
 Generates a nested WebPage → ItemList → SoftwareApplication block. ItemList assigns explicit rank, which is what a Top-N answer is built from. Render it server-side, and make every value match the visible copy on the page exactly.
+
+Product C (position 3, optional)
+
+Name
+
+Price
+
+Per (unit text)
+
+Rating (optional)
+
+Review count (optional)
 
 Your JSON-LD
 
@@ -5580,7 +5596,7 @@ Paste a slice of your access log and see which AI crawlers you get, and whether 
 
 Paste your access log
 
-Works with standard combined log format. It detects named AI user agents, tallies status codes, and flags 403/429s hitting your citation bots, the silent cause of missing AI citations.
+Works with standard combined log format. It detects named AI user agents, tallies status codes, verifies source IPs against published crawler ranges to flag spoofed user agents, and flags 403/429s hitting your citation bots, the silent cause of missing AI citations.
 
 AI bot traffic
 
@@ -7447,7 +7463,7 @@ Paste your page content
 
 Checks the four parts of the Claim-Anchoring framework. Runs in your browser.
 
-Hallucination-risk score
+Claim-anchoring score
 
 -
 

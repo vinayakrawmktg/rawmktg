@@ -398,14 +398,14 @@
     }).join('')+'</div>';
   function compute(){
     var vals=Object.keys(state).map(function(k){return state[k];}).filter(function(x){return x!==null;});
-    var total=ITEMS.length, sum=vals.reduce(function(a,b){return a+b;},0);
-    var score=Math.round((sum/total)*100);
+    var answered=vals.length, sum=vals.reduce(function(a,b){return a+b;},0);
+    var score=answered?Math.round((sum/answered)*100):0;
     document.getElementById('rrcScore').textContent=score;
     document.getElementById('rrcFill').style.width=score+'%';
     var b=score>=80?['Citable','var(--up)']:score>=55?['Survivable','#D4A34A']:['At risk','var(--signal)'];
     var band=document.getElementById('rrcBand'); band.textContent=b[0]; band.style.background='transparent'; band.style.color=b[1]; band.style.border='1px solid '+b[1];
     document.getElementById('rrcFill').style.background=b[1];
-    document.getElementById('rrcDone').textContent=vals.length+'/'+total;
+    document.getElementById('rrcDone').textContent=vals.length+' / '+ITEMS.length+' answered';
     var gaps=Object.keys(state).filter(function(k){return state[k]!==null&&state[k]<1;}).sort(function(a,b){return state[a]-state[b];}).slice(0,5);
     document.getElementById('rrcGaps').innerHTML=gaps.length?gaps.map(function(k,i){
       return '<div class="gap"><span class="rk">'+(i+1)+'</span><span style="flex:1"><span class="gt">'+ITEMS[k][0]+'</span><span class="ga">'+ITEMS[k][2]+'</span></span><span class="pts">'+(state[k]===0?'+full':'+half')+'</span></div>';
