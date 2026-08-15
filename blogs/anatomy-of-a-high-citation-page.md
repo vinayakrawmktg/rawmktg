@@ -91,7 +91,7 @@ Pattern 05 · Technical Architecture
 
 **Schema removes ambiguity.** FAQPage and Article markup label your question-and-answer pairs so the model parses them without guessing, and consistent entity schema resolves who you are across the web. It does not force a citation, but it lowers the cost of quoting you, which raises the odds.
 
-Schema serves two distinct functions in a RAG pipeline. First, it provides direct, unrendered access to page data, exposing full Q&A pairs and article metadata directly in the raw HTML payload. Second, it establishes entity clarity: a brand becomes a recognized node in the LLM's internal knowledge representation rather than floating generic text.
+Schema serves two distinct functions in a RAG pipeline. First, it provides direct, unrendered access to page data, exposing full Q&A pairs and article metadata directly in the raw HTML payload, which only helps if the rest of the page survives a raw fetch too, the subject of [do AI crawlers render JavaScript?](/blogs/do-ai-crawlers-render-javascript) Second, it establishes entity clarity: a brand becomes a recognized node in the LLM's internal knowledge representation rather than floating generic text.
 
 One technical consideration that is often missed: a complete [AI crawler access audit](/blogs/how-ai-crawlers-index-your-site) must precede any schema rollout. Without explicit allowance for `GPTBot`, `PerplexityBot`, and `Google-Extended`, the schema investment returns nothing.
 

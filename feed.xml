@@ -10,6 +10,13 @@
     <lastBuildDate>Fri, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
 
     <item>
+      <title><![CDATA[Do AI Crawlers Render JavaScript? · rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/do-ai-crawlers-render-javascript</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/do-ai-crawlers-render-javascript</guid>
+      <pubDate>Fri, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A rendering-layer teardown of 12 AI crawlers. Roughly 69% of AI crawlers cannot execute JavaScript; 9 of 12 major ones run no runtime at all, and the two that pass (Google-Extended, Applebot) inherit a search render pipeline. Covers crawl vs fetch vs execute, the headless illusion, the five-second budget, crawl waste (34.8% 404s), the dual-invisibility trap, the Content Visibility Ratio test, and the four fixes: SSR, SSG, ISR and edge prerendering.]]></description>
+    </item>
+    <item>
       <title><![CDATA[Share of Model: How to Actually Measure It · rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/share-of-model-measurement</link>
       <guid isPermaLink="true">https://rawmktg.com/blogs/share-of-model-measurement</guid>

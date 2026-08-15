@@ -105,7 +105,7 @@ That payload is functionally empty. It has a title and a script tag. It has no b
 
 ### Which rendering strategy actually works
 
-The fix is to put the populated DOM in the initial HTTP response. There are four ways to do that, each with a different operational cost.
+The fix is to put the populated DOM in the initial HTTP response. There are four ways to do that, each with a different operational cost. The full per-crawler pass/fail data and the four fixes in depth are in [do AI crawlers render JavaScript?](/blogs/do-ai-crawlers-render-javascript)
 
 Table 02
 

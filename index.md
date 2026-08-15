@@ -24,6 +24,7 @@
 - [Why ChatGPT, Perplexity and Gemini Recommend Different Vendors (and How to Win All Three)](https://rawmktg.com/blogs/why-engines-recommend-different-vendors)
 - [The GEO Compounding Flywheel: How to Build AI Visibility That Gets Harder to Dislodge](https://rawmktg.com/blogs/geo-compounding-flywheel)
 - [How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter](https://rawmktg.com/blogs/how-rag-actually-works)
+- [Do AI Crawlers Render JavaScript?](https://rawmktg.com/blogs/do-ai-crawlers-render-javascript)
 - [Internal Linking for AI Retrieval](https://rawmktg.com/blogs/internal-linking-for-ai-retrieval)
 - [Schema Markup in 2026: The Structured-Data Playbook Every B2B Brand Needs for AI Citations](https://rawmktg.com/blogs/schema-markup-ai-citations-2026)
 - [OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site](https://rawmktg.com/blogs/how-ai-crawlers-index-your-site)

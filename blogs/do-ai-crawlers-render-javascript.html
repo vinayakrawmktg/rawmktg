@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Do AI Crawlers Render JavaScript? &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Do AI crawlers run JavaScript? Mostly no, 9 of 12 execute none. The per-crawler pass/fail data, the Content Visibility Ratio test, and four SSR fixes." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/do-ai-crawlers-render-javascript" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/do-ai-crawlers-render-javascript" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/do-ai-crawlers-render-javascript" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/do-ai-crawlers-render-javascript" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/do-ai-crawlers-render-javascript" />
+  <meta property="og:title" content="Do AI Crawlers Render JavaScript?" />
+  <meta property="og:description" content="Do AI crawlers run JavaScript? Mostly no, 9 of 12 execute none. The per-crawler pass/fail data, the Content Visibility Ratio test, and four SSR fixes." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/do-ai-crawlers-render-javascript.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Do AI Crawlers Render JavaScript?" />
+  <meta name="twitter:description" content="Do AI crawlers run JavaScript? Mostly no, 9 of 12 execute none. The per-crawler pass/fail data, the Content Visibility Ratio test, and four SSR fixes." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/do-ai-crawlers-render-javascript.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Do AI Crawlers Render JavaScript?", "description": "Do AI crawlers run JavaScript? Mostly no, 9 of 12 execute none. The per-crawler pass/fail data, the Content Visibility Ratio test, and four SSR fixes.", "image": "https://rawmktg.com/assets/images/do-ai-crawlers-render-javascript.webp", "url": "https://rawmktg.com/blogs/do-ai-crawlers-render-javascript", "datePublished": "2026-08-15", "dateModified": "2026-08-15", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/do-ai-crawlers-render-javascript"}, "keywords": ["AI crawlers", "JavaScript rendering", "SSR", "client-side rendering", "GPTBot", "ClaudeBot", "PerplexityBot", "content visibility ratio", "edge prerendering", "GEO technical SEO"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/do-ai-crawlers-render-javascript"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Do AI Crawlers Render JavaScript?", "item": "https://rawmktg.com/blogs/do-ai-crawlers-render-javascript"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do AI crawlers render JavaScript?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly no. Industry benchmarks put the share of AI crawlers that cannot execute JavaScript at roughly 69%, and in a twelve-crawler test nine ran no JavaScript runtime at all. The vast majority are lightweight HTTP clients: they issue a GET, read the response body, extract text and close the connection. Content that only exists after a React, Vue or Angular runtime hydrates is invisible to them. The two crawlers that do render, Google-Extended and Applebot, pass only because they inherit an existing search render pipeline."}}, {"@type": "Question", "name": "Why does my page rank on Google but get nothing in AI answers?", "acceptedAnswer": {"@type": "Answer", "text": "Because Google renders in a second pass and standalone AI engines do not. Google ingests your raw HTML immediately, then queues the URL for headless Chromium to execute the bundle later, so the rendered content eventually reaches the index and ranking. AI crawlers have no deferred rendering stage: whatever is in the initial response body is the complete, permanent record of your page. A page at position one in Google can be a blank document to the model a buyer is asking for a recommendation."}}, {"@type": "Question", "name": "If a bot fetches my .js files, doesn't that mean it renders them?", "acceptedAnswer": {"@type": "Answer", "text": "No. Fetching a file and executing it are unrelated events. ClaudeBot downloads JavaScript on roughly 23.84% of its requests and runs none of it, GPTBot sits around 11.50%, and telemetry across 500M+ GPTBot fetches recorded zero client-side script execution. Those files are collected as raw text for training corpora, not executed to paint components. A bot that identifies as Chrome and pulls your bundle can still render nothing."}}, {"@type": "Question", "name": "How do I test whether AI crawlers can read my page?", "acceptedAnswer": {"@type": "Answer", "text": "Fetch it with no browser. Run curl with a crawler user agent against your pricing page and grep for a string that only exists in your real content, like a price or plan name; no output means it is not in the raw HTML. For a real number, compute the Content Visibility Ratio, the visible body text in the raw fetch divided by the visible text in the rendered DOM, across your commercial URLs and wire a floor of 0.85 into CI. Do not use Search Console indexation status: it measures Google's rendering queue, which the AI engines do not have."}}, {"@type": "Question", "name": "What is the fix if AI crawlers can't see my content?", "acceptedAnswer": {"@type": "Answer", "text": "Get the content into the initial HTML response. There are four patterns: server-side rendering (SSR) or incremental static regeneration (ISR) for content that changes daily, static generation (SSG) for content that changes monthly, and edge prerendering, a CDN worker that serves bots a cached rendered snapshot, for a legacy codebase you cannot rewrite. Only SSR requires touching the application. Free wins on top: replace JavaScript accordions with native details/summary, and mirror any JSON-LD-only facts into semantic HTML."}}, {"@type": "Question", "name": "Which pages should I fix first?", "acceptedAnswer": {"@type": "Answer", "text": "The intersection of high citation value and low visibility, which is usually five to fifteen URLs. Score Risk = citation share x (1 - CVR) for each commercial page and sort descending. The answer comes back the same in almost every audit: pricing first, product and specification pages second, comparison and alternatives pages third, because those are exactly the pages built as dynamic tables fed by an API."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/do-ai-crawlers-render-javascript.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/assets/tools.css" />
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/do-ai-crawlers-render-javascript.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/do-ai-crawlers-render-javascript.webp" srcset="/assets/images/do-ai-crawlers-render-javascript-800.webp 800w, /assets/images/do-ai-crawlers-render-javascript-1200.webp 1200w, /assets/images/do-ai-crawlers-render-javascript-1600.webp 1600w, /assets/images/do-ai-crawlers-render-javascript.webp 2400w" sizes="100vw" alt="Do AI Crawlers Render JavaScript? - the AI crawler rendering and SSR teardown - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Technical Layer &middot; Rendering Teardown</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
+    <h1 class="article-headline">Do AI Crawlers Render JavaScript?</h1>
+    <p class="article-deck">Your page ranks on Google and returns an empty div to ChatGPT. This is the test that shows which one you have, the per-crawler pass and fail data behind it, and the four ways to fix it without rebuilding your front end.</p>
+    <p class="article-data-note">A rendering-layer teardown of twelve AI crawlers using controlled raw-fetch tests, Vercel and server-log telemetry (500M+ GPTBot fetches), and per-bot execution data, 2026. Code is working reference; per-crawler rates are third-party estimates and directional.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p>A page that looks perfect in Chrome can arrive at an AI engine as forty lines of boilerplate and one empty container. Not a slow page. Not a blocked page. An empty one.</p>
+<p>This keeps turning up in teardowns. A company ranks well, has real content, has a technically clean site, and gets almost nothing in AI answers. Then you fetch the page the way a bot fetches it, without a browser, and the pricing table is gone. The feature list is gone. The FAQ is gone. What is left is a title tag and a script tag. The cause is architectural, and it is not a secret: industry benchmarks put the share of AI crawlers that cannot execute JavaScript at roughly 69%.</p>
+<div class="pull-quote">You can grant every bot in the world full permission and still serve them nothing. Access is a different problem from readability.</div>
+<p>This piece is the rendering layer specifically. It does not repeat the crawler roster or the robots.txt rules, which are covered in <a href="/blogs/how-ai-crawlers-index-your-site">how AI crawlers index your site</a>. That is about access. This is about whether, once a bot is through the door, there is anything on the page for it to read.</p>
+<h2 id="ops"><span class="section-num">01</span>Crawling, fetching and executing: what's the difference?</h2>
+<div class="section-answer"><strong>Three separate operations, and only the third needs a browser.</strong> Crawling is one HTTP GET. Asset fetching is pulling the files that response references. Script execution is running a JavaScript runtime to build the DOM. Nearly every AI crawler completes the first two and never begins the third.</div>
+<p>Crawling is the network transaction: a GET returns status, headers and a body, one round trip. Asset fetching is the bot parsing that body, finding references to stylesheets, scripts and images, and issuing secondary GETs. Fetching a file is not the same as using it. Script execution is a different category of work: initialising a JS runtime, building the DOM and CSSOM, firing lifecycle events, waiting on async calls to your API, and hydrating the interface. It needs a browser.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">1. Crawl</div><div class="pl-desc">One HTTP GET. Status, headers, body.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">2. Fetch assets</div><div class="pl-desc">Secondary GETs for scripts, CSS, images.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">3. Execute</div><div class="pl-desc">JS runtime builds the DOM. Needs a browser.</div></div></div><div class="chart-caption">Figure 1. The three stages. Nearly every AI crawler completes stages one and two and never begins stage three.</div>
+<p>The distinction matters because several AI bots do fetch your JavaScript files, which makes their logs look like rendering. They are not rendering. Those files are collected as raw text for training corpora, not executed to paint components. The reason is economics, not capability: a search engine monetises the index and can pay for a fleet of headless Chromium instances; an AI operator optimising for corpus volume and a two-second answer cuts the browser out of the hot path.</p>
+<h2 id="benchmark"><span class="section-num">02</span>Which AI crawlers render JavaScript, and which don't?</h2>
+<div class="section-answer"><strong>Nine of twelve run no runtime at all.</strong> Pass means the crawler runs a JavaScript runtime and can see hydrated content. Fail means it reads the raw response body and nothing else. Nine fail, two pass, one is partial, and the two that pass both inherit an existing search render pipeline.</div>
+<div class="chart-wrap"><canvas id="renderChart" height="260"></canvas></div><div class="chart-caption">Figure 2. Rendering benchmark score by crawler on a client-rendered page. If your content needs a runtime, three quarters of this list cannot read it.</div>
+<div class="tt-wrap"><div class="tt-label">Table 1. The rendering benchmark. Nine fails, two passes, one partial. The two passes are both search engines with an existing render pipeline.</div><table class="tt"><thead><tr><th>Crawler</th><th>Purpose</th><th>JS execution</th><th>Infrastructure</th><th>JS fetch rate</th><th>Timeout</th></tr></thead><tbody><tr><td class="label">GPTBot</td><td>Training corpus</td><td class="down">FAIL</td><td>HTTP client</td><td>~11.50%</td><td>~9.0s</td></tr><tr><td class="label">OAI-SearchBot</td><td>ChatGPT search index</td><td class="down">FAIL</td><td>HTTP client</td><td>&lt; 1.0%</td><td>~5.0s</td></tr><tr><td class="label">ChatGPT-User</td><td>Live user retrieval</td><td class="down">FAIL</td><td>Zero-footprint client</td><td>0.00%</td><td>~5.0s, HTTP 499</td></tr><tr><td class="label">ClaudeBot</td><td>Training corpus</td><td class="down">FAIL</td><td>HTTP client</td><td>~23.84%</td><td>~5.0 to 8.0s</td></tr><tr><td class="label">Claude-SearchBot</td><td>Live search index</td><td class="down">FAIL</td><td>HTTP client</td><td>~5.0%</td><td>~5.0s</td></tr><tr><td class="label">PerplexityBot</td><td>Indexing and live RAG</td><td class="down">FAIL</td><td>HTTP client</td><td>&lt; 2.0%</td><td>~5.0s</td></tr><tr><td class="label">Meta-ExternalAgent</td><td>Training corpus</td><td class="down">FAIL</td><td>HTTP client</td><td>Minimal</td><td>Standard HTTP</td></tr><tr><td class="label">Bytespider</td><td>Training corpus</td><td class="down">FAIL</td><td>HTTP client</td><td>Minimal</td><td>Standard HTTP</td></tr><tr><td class="label">CCBot</td><td>Common Crawl</td><td class="down">FAIL</td><td>HTTP client</td><td>Minimal</td><td>Standard HTTP</td></tr><tr><td class="label">Google-Extended</td><td>Gemini training access</td><td>PASS</td><td>Googlebot WRS</td><td>&gt; 80%</td><td>Deferred queue</td></tr><tr><td class="label">Applebot</td><td>Siri and Apple search</td><td>PASS</td><td>Browser-based</td><td>&gt; 70%</td><td>Browser lifecycle</td></tr><tr><td class="label">Bingbot</td><td>Bing index, ChatGPT RAG</td><td>LIMITED</td><td>Legacy WRS</td><td>Moderate</td><td>Variable</td></tr></tbody></table></div>
+<p>The pattern is clean. Every crawler that passes is operated by a company that already ran a search engine before it ran a model. Google-Extended is not really a crawler at all, it is an access token in robots.txt that governs whether Googlebot's Web Rendering Service output can feed Gemini training. Applebot inherits Apple's browser-based crawling stack. Everyone else built new infrastructure in the last three years, and nobody building new infrastructure chose to put Chromium in the hot path.</p>
+<div class="callout-box"><div class="callout-box-label">The short version</div><p>Nine of the twelve major AI crawlers run no JavaScript runtime at all.</p><p>The two that pass do so because they inherit an existing search rendering pipeline, not because AI companies decided rendering matters.</p><p>Fetching a .js file and executing it are unrelated events. ClaudeBot downloads scripts on nearly a quarter of its requests and runs none of them.</p></div>
+<h2 id="illusion"><span class="section-num">03</span>Why do the user agents look like browsers?</h2>
+<div class="section-answer"><strong>They wear a browser's costume over a command-line HTTP client.</strong> AI crawlers advertise AppleWebKit builds, Chrome tokens and the full Mozilla prefix, but socket-level logging shows no layout engine, no CSS cascade, no event loop, no render tree.</div>
+<div class="chart-wrap"><canvas id="execChart" height="240"></canvas></div><div class="chart-caption">Figure 3. Asset-fetch rate against execution rate. The bars are real; the execution rate underneath them is flat at zero.</div>
+<p>ClaudeBot fetches JavaScript on roughly 23.84% of its requests, more than double OpenAI's rate, and spends another 35.17% of its fetches on images. It runs none of the scripts it downloads. GPTBot sits at 11.50%. ChatGPT-User, the bot that fires when a person asks a live question in a chat window, fetches no secondary assets at all, zero CSS, zero JS, one request and done. If you are diagnosing this from server logs, that is the trap: you will see a bot that identifies as Chrome, requesting your bundle files, hitting your CDN, generating traffic that looks like a browser session. It never renders a pixel.</p>
+<h2 id="fleets"><span class="section-num">04</span>What does each AI fleet actually do?</h2>
+<div class="section-answer"><strong>Decoupled bots, all non-rendering, with different timeouts.</strong> OpenAI splits training, search and live retrieval across three bots; Anthropic fetches heavily and renders nothing; Perplexity reads raw markup and admits when it can't; Gemini and Applebot render only because they sit on a search stack.</div>
+<h3>OpenAI</h3>
+<p>GPTBot handles training-corpus collection, OAI-SearchBot builds the search index, and ChatGPT-User fetches URLs live when a conversation needs them. Telemetry across more than 500 million GPTBot fetches recorded zero instances of client-side script execution. ChatGPT-User is the strictest of the three, because a person is waiting: it runs a roughly five-second ceiling, and if your page does not deliver text inside that window it issues an HTTP 499, closes the connection, and falls back to querying Google with a site: operator to scrape whatever the cached index holds. Your server sees a request; your page never gets read; the answer gets built from someone else's summary of you.</p>
+<h3>Anthropic</h3>
+<p>ClaudeBot and Claude-SearchBot behave the same way structurally. Server-log monitoring across Next.js endpoints shows heavy asset fetching and no runtime. Content painted by client-side scripts comes back as an empty shell, and the download volume is misleading, which is exactly why so many teams conclude they are fine.</p>
+<h3>Perplexity, Google and Apple</h3>
+<p>PerplexityBot is built for low-latency live retrieval and skips asset downloading almost entirely, processing raw markup. In benchmarks against a client-rendered React app it says so out loud, telling the user the page depends on dynamic JavaScript and it cannot summarise it, the honest failure case; the dangerous one is silence. Gemini is the exception, and an inherited one: it sits on Google's search infrastructure and benefits from the Web Rendering Service, so client-rendered content stays visible as long as Googlebot's Chromium instances do not time out first. Applebot similarly runs browser-based crawling. Neither is evidence that AI crawlers render, both are evidence that search crawlers render and two AI products happen to be downstream of one.</p>
+<h2 id="diff"><span class="section-num">05</span>What does a non-rendering crawler actually receive?</h2>
+<div class="section-answer"><strong>An app shell: a title, a script tag, and one empty div.</strong> A client-rendered SPA returns document tags, metadata, a script reference and an empty mount node on first request. Everything a buyer cares about arrives later, after the bundle downloads and the runtime calls your API. To a non-rendering bot, that is 0 bytes of extractable content.</div>
+<p>This is what a non-rendering crawler receives, the raw server response that GPTBot, ClaudeBot and PerplexityBot ingest:</p>
+<div class="code-wrap"><div class="code-label">html · raw server response, extractable content: 0 bytes</div><div class="code-block"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Enterprise Analytics Platform | Pricing &amp; Features&lt;/title&gt;
+  &lt;script src=&quot;/static/js/main.7c89b2e1.js&quot; defer&gt;&lt;/script&gt;
+  &lt;link href=&quot;/static/css/main.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+  &lt;!-- Parsing ends here. Extractable content: 0 bytes. --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div></div>
+<p>And this is what a browser, Googlebot or Applebot ends up with once the runtime has run:</p>
+<div class="code-wrap"><div class="code-label">html · hydrated DOM, what humans and rendering crawlers process</div><div class="code-block"><pre>&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;main class=&quot;dashboard-container&quot;&gt;
+      &lt;h1&gt;Enterprise Analytics Engine&lt;/h1&gt;
+      &lt;section class=&quot;pricing-matrix&quot;&gt;
+        &lt;h2&gt;Plan pricing&lt;/h2&gt;
+        &lt;div class=&quot;tier&quot;&gt;
+          &lt;h3&gt;Pro Plan&lt;/h3&gt;
+          &lt;p class=&quot;price&quot;&gt;$299 / month&lt;/p&gt;
+          &lt;ul class=&quot;features&quot;&gt;
+            &lt;li&gt;Real-time event streaming&lt;/li&gt;
+            &lt;li&gt;Automated LLM citation tracking&lt;/li&gt;
+            &lt;li&gt;Unlimited seat licenses&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</pre></div></div>
+<p>Same URL, two payloads. The bot gets the first box; your buyer's question gets answered from the second, on somebody else's site. The useful way to quantify this is a single ratio: the extractable body text in the raw response divided by the extractable body text in the hydrated DOM.</p>
+<div class="code-wrap"><div class="code-label">formula · Content Visibility Ratio</div><div class="code-block"><pre>CVR      =  T_raw / T_rendered           # Content Visibility Ratio
+CVR_site =  Σ (CVR_i x V_i) / Σ V_i       # weight by commercial value
+
+  T  = word count of visible body text (excl. nav, scripts, boilerplate)
+  V  = commercial weight of page i (use pipeline influence, not sessions)
+  1.0 = fully server-rendered   ~0.0 = pure client-rendered</pre></div></div>
+<div class="chart-wrap"><canvas id="cvrChart" height="240"></canvas></div><div class="chart-caption">Figure 5. A typical hybrid SaaS site, measured page type by page type. The blog scores 98%. The pricing page, which decides deals, scores 6%.</div>
+<p>A fully server-rendered page sits near 1.0, a pure client-rendered page near 0.0, and most real sites are hybrids: a static marketing shell with a dynamically loaded pricing widget, or a server-rendered article with client-loaded comparison tables. Compute the site-level number too, but weight it by commercial value, not page count, an average across ten thousand blog URLs will tell you everything is fine while the six pages that matter score near zero.</p>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Analyzer</div><div class="embed-title">Score your Content Visibility Ratio</div><div class="embed-deck">The ratio above, made live. Paste the raw fetch and the rendered page and see how many words a non-rendering bot never sees.</div></div><section class="card" id="cvr">
+  <div class="grid score">
+    <div class="controls">
+      <div class="cat"><div class="cat-h">Paste the two versions of your page</div><div class="fld"><div class="lab">Raw fetch, no browser (curl output or View Source)</div><textarea class="ta" id="cvrRaw" rows="7" placeholder="Paste the HTML a bot receives, curl -A GPTBot ... or View Source"></textarea></div><div class="fld"><div class="lab">Rendered, in a browser (Inspect / copy the visible text or DOM)</div><textarea class="ta" id="cvrRen" rows="7" placeholder="Paste the rendered DOM or the visible page text a human sees"></textarea></div><p class="hint" style="margin:8px 0 0">CVR = visible words in the raw fetch / visible words in the rendered page. Scripts, styles, nav and boilerplate are stripped before counting. A commercial page should clear 0.85.</p></div>
+    </div>
+    <div class="panel-out">
+      <div class="o-eyebrow">Content Visibility Ratio</div>
+      <div class="scorewrap"><span class="score" id="cvrScore">0</span><span class="score-d">/ 1.0</span></div>
+      <span class="scoreband" id="cvrBand" style="background:rgba(255,255,255,.1);color:#fff">Paste both versions</span>
+      <div class="gauge"><div class="gfill" id="cvrFill" style="width:0%;background:var(--signal)"></div></div>
+      <div class="gaps"><div class="gaps-h">What the bot sees</div><div id="cvrNote"><p class="hint">Word counts and the verdict appear here.</p></div></div>
+    </div>
+  </div>
+</section></div>
+<h2 id="budget"><span class="section-num">06</span>Why does the five-second budget break client-rendered pages?</h2>
+<div class="section-answer"><strong>The render path is serial, and the bot will not wait.</strong> User-triggered bots inherit a human's patience budget, roughly five seconds, after which the request is abandoned. A client-rendered page cannot make that window even when everything works, because the sequence is serial: fetch HTML, parse, fetch bundle, execute, call the API, wait, paint.</div>
+<div class="code-wrap"><div class="code-label">formula · the five-second visibility budget</div><div class="code-block"><pre>T_visible = TTFB + T_transfer + T_bundle + T_exec + T_api  &lt; 5000 ms
+
+  server-rendered page:  only TTFB + T_transfer exist
+  client-rendered page:  all five terms, in series, before any text
+  target: TTFB &lt; 500 ms, full response well inside the 5s ceiling</pre></div></div>
+<p>The practical target is a time to first byte under 500 milliseconds with the full response well inside five seconds, achievable on almost any stack when the HTML is complete on arrival, and close to impossible when the content depends on a round trip your API has not started yet. Geography makes it worse, and it is the part most teams outside the United States miss: the AI fleets do not crawl from distributed regions. ChatGPT fetches primarily out of Des Moines and Phoenix, and Claude crawls exclusively out of Columbus. If your origin sits in Frankfurt, Mumbai or Singapore, every request pays a trans-continental round trip out of the same five-second budget, and no CDN edge helps you if the HTML itself is assembled at the origin.</p>
+<h2 id="waste"><span class="section-num">07</span>Why do your logs look busier than your visibility?</h2>
+<div class="section-answer"><strong>A third of AI fetches hit 404s and redirect chains.</strong> Non-rendering crawlers extract URLs from markup as text and cannot resolve hashed asset names or code-split chunk maps, so they request a large volume of files that no longer exist.</div>
+<div class="chart-wrap"><canvas id="wasteChart" height="240"></canvas></div><div class="chart-caption">Figure 8. Where the crawl budget goes. A third of AI-crawler fetches never reach a real page.</div>
+<p>Vercel's telemetry across Next.js infrastructure puts ChatGPT at 34.82% of fetches hitting 404s and Claude at 34.16%, largely from repeated requests for stale files under paths like /static/js/. ChatGPT burns a further 14.36% in redirect chains, against Googlebot's 1.49%. Two consequences: raw bot hit counts are a terrible proxy for how much of your content was actually read, and crawl budget is finite even for well-funded crawlers, so the waste comes out of the same allocation your real pages need.</p>
+<div class="tt-wrap"><div class="tt-label">Table 2. Log signals and their real interpretation. The last row is the one that sends teams down the wrong path for months.</div><table class="tt"><thead><tr><th>Signal in your logs</th><th>What it looks like</th><th>What it actually means</th></tr></thead><tbody><tr><td class="label">Chrome-like user agent</td><td>A browser session</td><td>A command-line HTTP client with a costume</td></tr><tr><td class="label">Requests for .js bundles</td><td>Rendering in progress</td><td>Text collection for a training corpus</td></tr><tr><td class="label">High 404 rate on /static/</td><td>A broken deploy</td><td>URL extraction without a build manifest</td></tr><tr><td class="label">HTTP 499 on a slow route</td><td>A network blip</td><td>A live-retrieval bot hit its timeout and left</td></tr><tr><td class="label">Heavy bot traffic, no citations</td><td>A content problem</td><td>Usually a rendering problem</td></tr></tbody></table></div>
+<h2 id="dual"><span class="section-num">08</span>Why does client-side rendering fail twice?</h2>
+<div class="section-answer"><strong>Both the direct fetch and the indexed fallback come back empty.</strong> You would expect a CSR site to fail once, on the direct fetch. It usually fails twice, and the second failure is the one nobody instruments.</div>
+<p>ChatGPT Search does not fetch most URLs live, roughly 92% of its live web queries resolve through Bing's index rather than a fresh GPTBot request. Bingbot's rendering is limited and selective compared with Googlebot's. So the client-rendered page misses on the direct path because OpenAI's bots run no runtime, and misses on the indexed path because the index it is reading from never held the rendered DOM either.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Buyer asks a model</div><div class="pl-desc">for a shortlist in your category.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Direct fetch</div><div class="pl-desc">AI bot runs no runtime -&gt; empty shell.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Index fallback</div><div class="pl-desc">Bing's limited render -&gt; empty too.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Answer built without you</div><div class="pl-desc">from whoever sent text.</div></div></div><div class="chart-caption">Figure 9. Both routes to a shortlist, both returning nothing. This is why the failure is silent.</div>
+<div class="code-wrap"><div class="code-label">formula · probability you are visible to an answer</div><div class="code-block"><pre>P(visible) = 1 - (1 - r_direct)(1 - r_index)
+
+  r_direct = P(a live bot fetch returns extractable content)
+  r_index  = P(the index it falls back to holds rendered text)
+  client-side rendering drives BOTH terms toward zero at once.</pre></div></div>
+<p>The page types this hits hardest are the commercial ones. Product and specification pages account for around 20.1% of AI citations and 14.2% of post-referral conversions; comparison and alternatives pages account for another 9.3% and carry the highest purchase intent on the site. Those are exactly the pages built as dynamic tables fed by an API. Domain authority does not rescue you: organic traffic volume is one of the strongest predictors of AI-citation frequency, but volume only amplifies content the engine can read, so a high-authority domain serving app shells converts its advantage into nothing. The page-level counterpart is <a href="/blogs/anatomy-of-a-high-citation-page">the anatomy of a high-citation page</a>, which covers what goes inside the HTML once the HTML actually exists.</p>
+<h2 id="ranking"><span class="section-num">09</span>Why does ranking on Google prove nothing?</h2>
+<div class="section-answer"><strong>Google renders in a second pass. Standalone AI engines do not.</strong> The most common objection is that the page ranks, so the content is clearly readable. It is readable by Google, which runs a two-stage pipeline: raw HTML ingested immediately, then a render queue where headless Chromium executes the bundle later. Ranking is the output of a process that includes a browser.</div>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Raw HTML ingested</div><div class="pl-desc">immediately, at crawl time.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Render queue</div><div class="pl-desc">headless Chromium runs the bundle, seconds to days later.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Rendered DOM indexed</div><div class="pl-desc">the content finally lands and can rank.</div></div></div><div class="chart-caption">Figure 10. Google's two-stage pipeline. It gets a second pass at your page. Nothing else on the benchmark list does.</div>
+<p>Standalone AI engines have no deferred rendering stage. There is no queue, no second visit, no eventual consistency. Whatever was in the initial response body is the complete record of your page, permanently, until the next crawl returns the same empty shell. A page at position one in Google can be a blank document to the model a buyer is asking for a recommendation. This is the rendering-layer version of <a href="/blogs/ranking-isnt-visibility">ranking is not visibility</a>.</p>
+<div class="callout-box"><div class="callout-box-label">Stop using Search Console as the proxy</div><p>Indexation status answers a question about Google's rendering queue. It answers nothing about a bot that has no rendering queue.</p><p>The only valid test is a raw HTTP fetch with no browser involved, run against the specific URLs that carry commercial weight.</p></div>
+<h2 id="test"><span class="section-num">10</span>How do you test your own site in ten minutes?</h2>
+<div class="section-answer"><strong>A raw HTTP fetch with no browser, on your commercial URLs.</strong> Three checks in increasing order of rigour. Fetch with a crawler user agent and grep for a real content string; sweep the fleet and watch the word-count column; score the Content Visibility Ratio and wire it into CI.</div>
+<h3>1. The single-URL curl test</h3>
+<p>Fetch the page with a crawler user agent and grep for something that only exists in your real content, a price, a plan name, a specific feature string.</p>
+<div class="code-wrap"><div class="code-label">bash · single-URL curl test</div><div class="code-block"><pre>curl -A &quot;Mozilla/5.0 (compatible; GPTBot/1.4; +https://openai.com/gptbot)&quot; \
+     -s https://example.com/pricing | grep -i &quot;per month&quot;
+
+# no output means the string is not in the raw HTML,
+# which means it is not in the model&#x27;s view of your page.</pre></div></div>
+<h3>2. The multi-bot sweep</h3>
+<p>Different bots occasionally get different treatment, usually because of a CDN bot rule somebody added years ago. Test the fleet, not one agent. The word-count column is the one to watch, a page that returns 40 words to every agent and 1,400 in a browser has told you everything you need to know.</p>
+<div class="code-wrap"><div class="code-label">bash · multi-bot sweep</div><div class="code-block"><pre>#!/usr/bin/env bash
+URL=&quot;https://example.com/pricing&quot;
+NEEDLE=&quot;per month&quot;
+declare -A AGENTS=(
+  [GPTBot]=&quot;Mozilla/5.0 (compatible; GPTBot/1.4; +https://openai.com/gptbot)&quot;
+  [OAI-SearchBot]=&quot;Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)&quot;
+  [ChatGPT-User]=&quot;Mozilla/5.0 (compatible; ChatGPT-User/1.0; +https://openai.com/bot)&quot;
+  [ClaudeBot]=&quot;Mozilla/5.0 (compatible; ClaudeBot/1.0; +claudebot@anthropic.com)&quot;
+  [PerplexityBot]=&quot;Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/bot)&quot;
+)
+for name in &quot;${!AGENTS[@]}&quot;; do
+  code=$(curl -A &quot;${AGENTS[$name]}&quot; -s -o /tmp/body -w &quot;%{http_code}&quot; --max-time 5 &quot;$URL&quot;)
+  words=$(sed &#x27;s/&lt;[^&gt;]*&gt;/ /g&#x27; /tmp/body | wc -w)
+  grep -qi &quot;$NEEDLE&quot; /tmp/body &amp;&amp; hit=&quot;FOUND&quot; || hit=&quot;MISSING&quot;
+  printf &quot;%-16s http=%s words=%-6s %s\n&quot; &quot;$name&quot; &quot;$code&quot; &quot;$words&quot; &quot;$hit&quot;
+done
+# the word-count column is the tell: 40 words to every bot,
+# 1,400 in a browser, and you have found your ceiling.</pre></div></div>
+<h3>3. Scoring the Content Visibility Ratio</h3>
+<p>For a real number across a set of URLs, compare the raw fetch against a rendered fetch and diff the text. This is the version worth wiring into CI.</p>
+<div class="code-wrap"><div class="code-label">python · Content Visibility Ratio, wired into CI</div><div class="code-block"><pre>import requests, subprocess, json
+from bs4 import BeautifulSoup
+
+BOT  = &quot;Mozilla/5.0 (compatible; GPTBot/1.4; +https://openai.com/gptbot)&quot;
+DROP = [&quot;script&quot;, &quot;style&quot;, &quot;noscript&quot;, &quot;nav&quot;, &quot;footer&quot;, &quot;svg&quot;]
+
+def visible_words(html):
+    soup = BeautifulSoup(html, &quot;html.parser&quot;)
+    for tag in soup(DROP):
+        tag.decompose()
+    return len(soup.get_text(&quot; &quot;, strip=True).split())
+
+def raw(url):
+    return requests.get(url, headers={&quot;User-Agent&quot;: BOT}, timeout=5).text
+
+def rendered(url):                       # any headless runner works here
+    return subprocess.check_output([&quot;node&quot;, &quot;render.js&quot;, url], text=True)
+
+def cvr(url):
+    t_raw, t_rendered = visible_words(raw(url)), visible_words(rendered(url))
+    return round(t_raw / max(t_rendered, 1), 3)
+
+URLS = [&quot;https://example.com/pricing&quot;,
+        &quot;https://example.com/product/analytics&quot;,
+        &quot;https://example.com/compare/competitor-x&quot;]
+report = {u: cvr(u) for u in URLS}
+print(json.dumps(report, indent=2))
+assert all(v &gt;= 0.85 for v in report.values()), &quot;CVR floor breached&quot;  # fail the build</pre></div></div>
+<p>A fourth check takes ten seconds and needs no tooling: open Chrome DevTools, hit the command palette, type Disable JavaScript, and reload. What remains on screen is roughly the dataset available to a non-rendering bot. Missing favicons are a useful tell, since SPAs that inject icon references through script leave AI interfaces showing a generic placeholder.</p>
+<h2 id="fixes"><span class="section-num">11</span>What are the four fixes, and what does each cost?</h2>
+<div class="section-answer"><strong>SSR, SSG, ISR or edge prerendering, and only one is a rewrite.</strong> There is no single right answer. The correct choice depends on how often the content changes and how much of your codebase you are willing to touch. Modern frameworks move the fetch to the server by default, so the crawler gets a populated document and the browser still hydrates.</div>
+<div class="tt-wrap"><div class="tt-label">Table 3. The remediation matrix. Four of the five patterns solve the problem. Only one requires rewriting your application.</div><table class="tt"><thead><tr><th>Pattern</th><th>AI readable</th><th>Server cost</th><th>Freshness</th><th>Best fit</th></tr></thead><tbody><tr><td class="label">Client-side (CSR)</td><td class="down">No</td><td>Minimal, static CDN</td><td>Real time, client API</td><td>Authenticated dashboards, internal apps</td></tr><tr><td class="label">Server-side (SSR)</td><td>Yes</td><td>High, compute per request</td><td>Real time, server API</td><td>High-frequency commerce, personalised feeds</td></tr><tr><td class="label">Static generation (SSG)</td><td>Yes</td><td>Low, build-time</td><td>Build dependent</td><td>Docs, blogs, marketing pages</td></tr><tr><td class="label">Incremental static (ISR)</td><td>Yes</td><td>Low to moderate</td><td>Stale-while-revalidate</td><td>Large catalogues, content portals</td></tr><tr><td class="label">Edge prerendering</td><td>Yes</td><td>Moderate, CDN worker</td><td>Cache-TTL dependent</td><td>Legacy CSR apps that cannot be refactored</td></tr></tbody></table></div>
+<p>In the Next.js App Router, React Server Components run data fetching on the server by default. The async work completes before the response is sent, so core content is already in the initial HTML, the browser still hydrates and stays interactive, and the crawler gets a populated document. Nobody has to choose.</p>
+<div class="code-wrap"><div class="code-label">tsx · a server-rendered pricing page (Next.js App Router)</div><div class="code-block"><pre>// app/pricing/page.tsx
+// Server Component by default. No &quot;use client&quot; directive.
+// The fetch resolves before a single byte is sent to the client.
+export const revalidate = 3600;          // ISR: regenerate hourly
+
+export default async function PricingPage() {
+  const tiers = await fetch(&quot;https://api.example.com/pricing&quot;, {
+    next: { revalidate: 3600 },
+  }).then((r) =&gt; r.json());
+
+  return (
+    &lt;main&gt;
+      &lt;h1&gt;Enterprise Analytics Engine pricing&lt;/h1&gt;
+      {tiers.map((tier) =&gt; (
+        &lt;section key={tier.id}&gt;
+          &lt;h2&gt;{tier.name}&lt;/h2&gt;
+          &lt;p&gt;{tier.price} per month&lt;/p&gt;
+          &lt;ul&gt;{tier.features.map((f) =&gt; &lt;li key={f}&gt;{f}&lt;/li&gt;)}&lt;/ul&gt;
+        &lt;/section&gt;
+      ))}
+    &lt;/main&gt;
+  );
+}</pre></div></div>
+<p>One detail changes how you test. Next.js streams progressive HTML chunks wrapped in Suspense boundaries to human browsers, but when incoming headers match a known crawler user agent it pauses streaming until every server promise resolves and delivers one complete document. So a page can look chunked in a browser and arrive whole to a bot. Test with the bot user agent, not with your own.</p>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Advisor</div><div class="embed-title">Find your rendering fix</div><div class="embed-deck">Answer three questions and get the cheapest of the four fixes, SSR, SSG, ISR or edge prerendering, that fits your change frequency and codebase.</div></div><section class="card" id="rra">
+  <div class="grid score">
+    <div class="controls">
+      <div class="cat"><div class="cat-h">Answer three questions</div><div class="q"><div class="q-t"><strong>How often does this content change?</strong></div><div class="iseg" data-f="freq"><button data-v="realtime">Real time / per user</button><button data-v="daily">Daily</button><button data-v="monthly">Weekly / monthly</button><button data-v="rare">Rarely</button></div></div><div class="q"><div class="q-t"><strong>Can you change the application code?</strong></div><div class="iseg" data-f="code"><button data-v="modern">Yes, modern framework</button><button data-v="legacy">Yes, but legacy</button><button data-v="none">No, untouchable</button></div></div><div class="q"><div class="q-t"><strong>How big is the page set?</strong></div><div class="iseg" data-f="scale"><button data-v="small">A handful of key pages</button><button data-v="large">A large catalogue</button></div></div><p class="hint" style="margin:8px 0 0">The goal is the same for all four fixes: get the populated DOM into the initial HTTP response. The right one depends on change frequency and how much of the codebase you can touch.</p></div>
+    </div>
+    <div class="panel-out">
+      <div class="o-eyebrow">Recommended fix</div>
+      <div class="scorewrap"><span class="score" id="rraFix" style="font-size:40px">&ndash;</span></div>
+      <span class="scoreband" id="rraBand" style="background:rgba(255,255,255,.1);color:#fff">Answer the three</span>
+      <div class="gaps"><div class="gaps-h">Why, and the cost</div><div id="rraNote"><p class="hint">Your recommendation appears here.</p></div></div>
+    </div>
+  </div>
+</section></div>
+<h2 id="prerender"><span class="section-num">12</span>How does edge prerendering work for a codebase you can't rewrite?</h2>
+<div class="section-answer"><strong>A CDN worker serves bots a cached snapshot and humans the SPA.</strong> Most enterprise teams will not migrate a legacy Angular or Vue app to server rendering this quarter. Edge prerendering is the retrofit: it changes nothing about your origin or your build, only what bots receive.</div>
+<p>A CDN worker intercepts the request before it reaches your origin and branches on user agent. Human traffic passes straight through to the normal SPA bundle. Known crawler traffic is checked against a key-value store of rendered snapshots: a cache hit returns complete HTML in single-digit milliseconds, a miss dispatches a render to a managed headless browser, returns the result, and writes it back to the store.</p>
+<div class="code-wrap"><div class="code-label">javascript · Cloudflare Worker, bot interception with a KV snapshot layer</div><div class="code-block"><pre>// Cloudflare Worker: bot interception with a KV snapshot layer
+const BOTS = /GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-SearchBot|PerplexityBot|Bytespider|CCBot/i;
+
+export default {
+  async fetch(request, env, ctx) {
+    const ua  = request.headers.get(&quot;user-agent&quot;) || &quot;&quot;;
+    const url = new URL(request.url);
+
+    // humans and unknown agents: straight to origin, untouched
+    if (!BOTS.test(ua)) return fetch(request);
+
+    const key    = `snap:${url.pathname}`;
+    const cached = await env.SNAPSHOTS.get(key);
+    if (cached) {
+      return new Response(cached, {
+        headers: { &quot;content-type&quot;: &quot;text/html&quot;, &quot;x-prerender&quot;: &quot;hit&quot; },
+      });
+    }
+    // miss: render in a managed headless browser, then persist
+    const html = await renderWithBrowser(env, url.toString());
+    ctx.waitUntil(env.SNAPSHOTS.put(key, html, { expirationTtl: 86400 }));
+    return new Response(html, {
+      headers: { &quot;content-type&quot;: &quot;text/html&quot;, &quot;x-prerender&quot;: &quot;miss&quot; },
+    });
+  },
+};</pre></div></div>
+<p>Cloudflare documents this pattern in its <a href="https://developers.cloudflare.com/browser-rendering/" target="_blank" rel="noopener">Browser Rendering prerender guide</a>, and if you would rather not run the headless layer yourself, <a href="https://docs.prerender.io/docs/cloudflare-workers" target="_blank" rel="noopener">Prerender.io publishes a Worker integration</a> that does the same job as a managed service.</p>
+<div class="callout-box"><div class="callout-box-label">One warning on this pattern</div><p>Serve bots the same content humans see, rendered. Serving different content is cloaking, and it is a policy problem with search engines regardless of how the AI crawlers feel about it.</p><p>Keep the snapshot TTL shorter than your pricing change cycle. A stale snapshot of a discontinued plan is worse than no snapshot.</p></div>
+<h2 id="progressive"><span class="section-num">13</span>What can you fix for free with progressive enhancement?</h2>
+<div class="section-answer"><strong>Choose markup that works before scripts run.</strong> Some of this needs no rendering-architecture change at all. The most common self-inflicted wound is the custom JavaScript accordion: FAQ content hidden inside a component that only mounts after hydration is invisible to a non-rendering parser. Native elements do the same job and keep the text in the markup stream.</div>
+<div class="code-wrap"><div class="code-label">html · native details/summary vs a JS accordion</div><div class="code-block"><pre>&lt;!-- invisible to non-rendering crawlers: content mounts on click --&gt;
+&lt;div class=&quot;accordion&quot; data-faq-widget&gt;&lt;/div&gt;
+
+&lt;!-- visible to everything: collapsed in the browser, present in the HTML --&gt;
+&lt;details&gt;
+  &lt;summary&gt;Does the Pro plan include SSO?&lt;/summary&gt;
+  &lt;p&gt;Yes. SAML and OIDC single sign-on are included on Pro and above at
+     no additional cost, with SCIM provisioning available on Enterprise.&lt;/p&gt;
+&lt;/details&gt;</pre></div></div>
+<p>The second wound is treating structured data as content delivery. Schema is valuable and you should ship it, as covered in <a href="/blogs/schema-markup-ai-citations-2026">schema markup and AI citations</a>, but empirical tests on ChatGPT-User show it frequently bypasses JSON-LD parsing and works from plain text in the body. If your price only exists inside a JSON-LD block, treat it as unpublished, mirror every critical fact, pricing, availability, specifications, in ordinary semantic HTML. Third, check what your framework does to navigation: a client-rendered nav means the crawler finds no internal links, so discovery of your other pages depends entirely on the sitemap, which is a fragile way to run a site.</p>
+<h2 id="priority"><span class="section-num">14</span>Which pages should you fix first?</h2>
+<div class="section-answer"><strong>The intersection of high citation value and low visibility.</strong> You do not need to fix everything. You need the pages where citation value is high and readability is low, and that intersection is usually five to fifteen URLs.</div>
+<div class="code-wrap"><div class="code-label">formula · remediation priority score</div><div class="code-block"><pre>Risk_i = C_i x (1 - CVR_i)
+
+  C   = the page type&#x27;s share of AI citations
+  CVR = how much of it a non-rendering bot can read
+  sort descending -&gt; your remediation queue, top to bottom.</pre></div></div>
+<p>Run the ratio across your commercial URLs, sort descending, and stop where the score falls below your smallest meaningful number. In almost every audit the answer comes back the same: pricing first, product and specification pages second, comparison and alternatives pages third.</p>
+<div class="tt-wrap"><div class="tt-label">Table 4. The usual suspects. The pages closest to revenue are the ones built most dynamically.</div><table class="tt"><thead><tr><th>Page type</th><th>Typical citation share</th><th>Common failure</th><th>Fix</th></tr></thead><tbody><tr><td class="label">Pricing</td><td>High</td><td>Tiers fetched from a billing API on mount</td><td>SSR or ISR the tier data</td></tr><tr><td class="label">Product and specs</td><td>20.1%</td><td>Spec tables rendered from a CMS client call</td><td>SSG with build-time fetch</td></tr><tr><td class="label">Comparison and alternatives</td><td>9.3%</td><td>Interactive comparison grid, no fallback</td><td>Server-render the table, hydrate the filters</td></tr><tr><td class="label">Documentation</td><td>Moderate</td><td>Sometimes client-side search only</td><td>Ensure static route output</td></tr><tr><td class="label">FAQ</td><td>Moderate</td><td>Custom accordion component</td><td>Native details and summary</td></tr><tr><td class="label">Blog</td><td>High volume</td><td>Rarely broken, already static</td><td>Leave it alone</td></tr></tbody></table></div>
+<h2 id="thirty"><span class="section-num">15</span>What's the 30-day sequence?</h2>
+<div class="section-answer"><strong>Measure, fix the top ten, mirror the facts, then lock it in CI.</strong> This is not a quarter of work. For most sites it is three sprints and a CI check, and measurement comes first because the delta is the only proof the fix worked.</div>
+<div class="tt-wrap"><div class="tt-label">Table 5. Thirty days from unknown to instrumented. The CI check is what stops this recurring in six months.</div><table class="tt"><thead><tr><th>Window</th><th>Work</th><th>Output</th></tr></thead><tbody><tr><td class="label">Days 1-5</td><td>Raw-fetch crawl of every commercial URL, CVR scored</td><td>A ranked list of broken pages</td></tr><tr><td class="label">Days 5-16</td><td>Move the top ten URLs to SSR, SSG or edge prerender</td><td>Commercial pages readable without a runtime</td></tr><tr><td class="label">Days 9-14</td><td>Mirror JSON-LD-only facts into semantic HTML, replace JS accordions</td><td>No critical fact exists in one place only</td></tr><tr><td class="label">Days 13-20</td><td>TTFB under 500ms on the fixed routes, verify with a 5s timeout</td><td>Live-retrieval bots stop bailing</td></tr><tr><td class="label">Days 19-24</td><td>CVR check in CI with a floor of 0.85 on commercial routes</td><td>Regressions fail the build, not the pipeline</td></tr><tr><td class="label">Days 27-30</td><td>Re-baseline, hand the delta to the content team</td><td>A measurable before and after</td></tr></tbody></table></div>
+<p>The last row matters more than it looks. Once the HTML is readable, the constraint moves from infrastructure to content, and the question changes from whether the engine can read the page to whether it wants to cite it. That is a different problem with a different playbook, and <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a> covers how to measure the second half. The retrieval pipeline your rendered text then has to survive is in <a href="/blogs/how-rag-actually-works">how RAG actually works</a>.</p>
+<h2 id="week"><span class="section-num">16</span>What should you do this week?</h2>
+<div class="section-answer"><strong>Curl your pricing page, score five URLs, and put the check in CI.</strong> Run the raw-fetch test on the pages that carry commercial weight, pick the cheapest fix that works, and lock a CVR floor into CI before you ship it, so the next refactor cannot quietly reintroduce the problem.</div>
+<ul><li><strong>Run the curl test on your pricing page.</strong> One command, one grep. If the price is not in the output, you have found your ceiling.</li><li><strong>Score five URLs, not five hundred.</strong> Pricing, top product page, main comparison page, one docs page, one blog post. The spread tells you the shape of the problem.</li><li><strong>Stop citing Search Console as evidence.</strong> It measures a rendering queue that only one of these engines has.</li><li><strong>Pick the cheapest fix that works.</strong> Content changes daily, SSR or ISR. Monthly, SSG. Codebase untouchable, edge prerendering.</li><li><strong>Put the check in CI before you ship the fix,</strong> or the next refactor quietly reintroduces it and nobody notices for two quarters.</li></ul>
+<p>The uncomfortable part of this finding is how mundane it is. There is no ranking algorithm to reverse-engineer and no prompt to optimise. A crawler asked for your page, your server sent an empty container, and the model wrote its answer from whoever sent text instead. That is the entire mechanism, which also makes it the cheapest fix in the stack. Content strategy takes quarters to compound. This one lands the day you deploy it.</p>
+<section class="faq-section" id="faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3 class="faq-q">Do AI crawlers render JavaScript?</h3><div class="faq-a"><p>Mostly no. Industry benchmarks put the share of AI crawlers that cannot execute JavaScript at roughly 69%, and in a twelve-crawler test nine ran no JavaScript runtime at all. The vast majority are lightweight HTTP clients: they issue a GET, read the response body, extract text and close the connection. Content that only exists after a React, Vue or Angular runtime hydrates is invisible to them. The two crawlers that do render, Google-Extended and Applebot, pass only because they inherit an existing search render pipeline.</p></div></div><div class="faq-item"><h3 class="faq-q">Why does my page rank on Google but get nothing in AI answers?</h3><div class="faq-a"><p>Because Google renders in a second pass and standalone AI engines do not. Google ingests your raw HTML immediately, then queues the URL for headless Chromium to execute the bundle later, so the rendered content eventually reaches the index and ranking. AI crawlers have no deferred rendering stage: whatever is in the initial response body is the complete, permanent record of your page. A page at position one in Google can be a blank document to the model a buyer is asking for a recommendation.</p></div></div><div class="faq-item"><h3 class="faq-q">If a bot fetches my .js files, doesn't that mean it renders them?</h3><div class="faq-a"><p>No. Fetching a file and executing it are unrelated events. ClaudeBot downloads JavaScript on roughly 23.84% of its requests and runs none of it, GPTBot sits around 11.50%, and telemetry across 500M+ GPTBot fetches recorded zero client-side script execution. Those files are collected as raw text for training corpora, not executed to paint components. A bot that identifies as Chrome and pulls your bundle can still render nothing.</p></div></div><div class="faq-item"><h3 class="faq-q">How do I test whether AI crawlers can read my page?</h3><div class="faq-a"><p>Fetch it with no browser. Run curl with a crawler user agent against your pricing page and grep for a string that only exists in your real content, like a price or plan name; no output means it is not in the raw HTML. For a real number, compute the Content Visibility Ratio, the visible body text in the raw fetch divided by the visible text in the rendered DOM, across your commercial URLs and wire a floor of 0.85 into CI. Do not use Search Console indexation status: it measures Google's rendering queue, which the AI engines do not have.</p></div></div><div class="faq-item"><h3 class="faq-q">What is the fix if AI crawlers can't see my content?</h3><div class="faq-a"><p>Get the content into the initial HTML response. There are four patterns: server-side rendering (SSR) or incremental static regeneration (ISR) for content that changes daily, static generation (SSG) for content that changes monthly, and edge prerendering, a CDN worker that serves bots a cached rendered snapshot, for a legacy codebase you cannot rewrite. Only SSR requires touching the application. Free wins on top: replace JavaScript accordions with native details/summary, and mirror any JSON-LD-only facts into semantic HTML.</p></div></div><div class="faq-item"><h3 class="faq-q">Which pages should I fix first?</h3><div class="faq-a"><p>The intersection of high citation value and low visibility, which is usually five to fifteen URLs. Score Risk = citation share x (1 - CVR) for each commercial page and sort descending. The answer comes back the same in almost every audit: pricing first, product and specification pages second, comparison and alternatives pages third, because those are exactly the pages built as dynamic tables fed by an API.</p></div></div></section>
+<div class="about-block" id="references"><div class="about-label">References</div><p style="margin-bottom:16px;">Figures 1 through 15 are original, built from the telemetry and benchmarks in the sources below.</p><ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;"><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.lymlyt.com/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Do AI Crawlers Render JavaScript? The Honest Answer. LymLyt.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://wolfstonedigital.com/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">JavaScript and AI Crawlers: Why Your Page May Be Invisible. Wolfstone Digital.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://visively.com/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI Crawlers and JavaScript: Why LLMs Cannot See Your Client-Rendered Content. Visively.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.lantern.dev/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI Crawlers Do Not Render JavaScript. Lantern.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">The Rise of the AI Crawler. Vercel.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.searchviu.com/en/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI Crawlers and JavaScript Rendering. searchVIU.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://edgecomet.com/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">How GPTBot and ChatGPT-User Handle JavaScript. EdgeComet.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://developers.cloudflare.com/browser-rendering/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Pre-render Pages for Crawlers. Cloudflare Browser Rendering docs.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://docs.prerender.io/docs/cloudflare-workers" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Integrating Prerender with Cloudflare Workers. Prerender.io docs.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://web.dev/articles/rendering-on-the-web" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Rendering on the Web. web.dev (Google).</a></li></ol></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns and technical playbooks on GEO, agentic commerce and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Sources: controlled raw-fetch tests, Vercel and server-log telemetry across 500M+ GPTBot fetches, and per-bot execution data, 2026. Code is a working reference implementation; per-crawler rates are third-party estimates and directional.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">9/12</div><div class="stat-label">major AI crawlers run no JS runtime</div></div><hr class="stat-divider"><div><div class="stat-val">5.0s</div><div class="stat-label">before a live bot abandons the fetch</div></div><hr class="stat-divider"><div><div class="stat-val">6%</div><div class="stat-label">CVR of a typical dynamic pricing page</div></div><hr class="stat-divider"><div><div class="stat-val">34.8%</div><div class="stat-label">of AI fetches landing on 404 responses</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this teardown</div><ul class="toc-list"><li><a href="#ops"><span class="toc-num">01</span>Crawl, fetch, execute</a></li><li><a href="#benchmark"><span class="toc-num">02</span>Who passes, who fails</a></li><li><a href="#illusion"><span class="toc-num">03</span>The headless illusion</a></li><li><a href="#fleets"><span class="toc-num">04</span>What each fleet does</a></li><li><a href="#diff"><span class="toc-num">05</span>App shell vs hydrated DOM</a></li><li><a href="#budget"><span class="toc-num">06</span>The five-second budget</a></li><li><a href="#waste"><span class="toc-num">07</span>Crawl waste</a></li><li><a href="#dual"><span class="toc-num">08</span>The dual invisibility trap</a></li><li><a href="#ranking"><span class="toc-num">09</span>Why ranking proves nothing</a></li><li><a href="#test"><span class="toc-num">10</span>Testing in ten minutes</a></li><li><a href="#fixes"><span class="toc-num">11</span>The four fixes</a></li><li><a href="#prerender"><span class="toc-num">12</span>Edge prerendering</a></li><li><a href="#progressive"><span class="toc-num">13</span>Progressive enhancement</a></li><li><a href="#priority"><span class="toc-num">14</span>Which pages first</a></li><li><a href="#thirty"><span class="toc-num">15</span>A 30-day sequence</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.getElementById('cvr'); if(!root) return;
+  function words(s){
+    if(!s) return 0;
+    var t=s;
+    // if it looks like HTML, strip tags + drop non-content elements
+    if(/</.test(t)){
+      t=t.replace(/<(script|style|noscript|svg|nav|footer)[\s\S]*?<\/\1>/gi,' ');
+      t=t.replace(/<[^>]+>/g,' ');
+      t=t.replace(/&[a-z#0-9]+;/gi,' ');
+    }
+    t=t.replace(/\s+/g,' ').trim();
+    return t?t.split(' ').length:0;
+  }
+  function compute(){
+    var raw=words(document.getElementById('cvrRaw').value);
+    var ren=words(document.getElementById('cvrRen').value);
+    var sEl=document.getElementById('cvrScore'),bEl=document.getElementById('cvrBand'),fill=document.getElementById('cvrFill'),note=document.getElementById('cvrNote');
+    if(ren<=0){sEl.textContent='0';bEl.textContent='Paste both versions';bEl.style.background='rgba(255,255,255,.1)';bEl.style.color='#fff';fill.style.width='0%';note.innerHTML='<p class="hint">Word counts and the verdict appear here.</p>';return;}
+    var cvr=Math.min(raw/ren,1);
+    sEl.textContent=cvr.toFixed(2); fill.style.width=(cvr*100)+'%';
+    var lbl,col; if(cvr>=0.85){lbl='Readable';col='var(--up)';}else if(cvr>=0.5){lbl='Hybrid, at risk';col='#C9922E';}else{lbl='Invisible to bots';col='var(--signal)';}
+    bEl.textContent=lbl;bEl.style.background=col;bEl.style.color='#0b0b0c';fill.style.background=col;
+    var verdict = cvr>=0.85 ? 'A non-rendering bot sees essentially the same page a human does.'
+      : cvr>=0.5 ? 'The bot sees the shell but misses content that only mounts after hydration. Find the client-loaded blocks.'
+      : 'The bot receives almost nothing. Your content depends on a JavaScript runtime these crawlers do not run.';
+    note.innerHTML='<div class="lt-stat"><span>Raw fetch (bot)</span><strong>'+raw.toLocaleString()+' words</strong></div>'
+      +'<div class="lt-stat"><span>Rendered (human)</span><strong>'+ren.toLocaleString()+' words</strong></div>'
+      +'<div class="lt-stat"><span>Missing to the bot</span><strong>'+Math.max(0,ren-raw).toLocaleString()+' words</strong></div>'
+      +'<p class="hint" style="margin-top:8px">'+verdict+'</p>';
+  }
+  root.querySelectorAll('textarea').forEach(function(t){t.addEventListener('input',compute);});
+  compute();
+})();
+</script>
+<script>
+(function(){
+  var root=document.getElementById('rra'); if(!root) return;
+  var s={};
+  var FIX={
+    SSR:['SSR','Server-side rendering. The server assembles the full HTML per request, so real-time and personalised data is readable on arrival. Highest server cost: compute on every request.'],
+    ISR:['ISR','Incremental static regeneration. Pages are pre-built and revalidated on a schedule (stale-while-revalidate), so a large catalogue stays fresh and cheap. Low to moderate cost.'],
+    SSG:['SSG','Static generation. The HTML is built once at deploy time and served from the CDN. Cheapest readable option; best for content that changes weekly or monthly.'],
+    EDGE:['Edge prerender','A CDN worker serves bots a cached rendered snapshot and passes humans to the SPA. The retrofit when you cannot touch the codebase. Moderate cost; watch the snapshot TTL.']
+  };
+  function decide(){
+    var f=s.freq,c=s.code,sc=s.scale;
+    if(!f||!c) return null;
+    if(c==='none') return 'EDGE';
+    if(f==='realtime') return 'SSR';
+    if(f==='daily') return sc==='large'?'ISR':'SSR';
+    if(f==='monthly') return sc==='large'?'ISR':'SSG';
+    if(f==='rare') return 'SSG';
+    return 'SSG';
+  }
+  function render(){
+    var k=decide();
+    var fixEl=document.getElementById('rraFix'),band=document.getElementById('rraBand'),note=document.getElementById('rraNote');
+    if(!k){fixEl.textContent='–';band.textContent='Answer the three';band.style.background='rgba(255,255,255,.1)';band.style.color='#fff';note.innerHTML='<p class="hint">Your recommendation appears here.</p>';return;}
+    var F=FIX[k];
+    fixEl.textContent=F[0];
+    band.textContent = (k==='EDGE'?'Retrofit':'Rebuild-light'); band.style.background='var(--up)';band.style.color='#0b0b0c';
+    var extra = (s.code==='legacy'&&k!=='EDGE') ? '<p class="hint" style="margin-top:8px">Legacy stack: if a framework migration is not realistic this quarter, edge prerendering gets you readable pages without touching the origin.</p>' : '';
+    note.innerHTML='<div class="lt-stat"><span>Pattern</span><strong>'+F[0]+'</strong></div><p class="hint" style="margin-top:8px">'+F[1]+'</p>'+extra;
+  }
+  root.querySelectorAll('.iseg').forEach(function(seg){
+    var f=seg.getAttribute('data-f');
+    seg.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on'); s[f]=b.getAttribute('data-v'); render();
+      });
+    });
+  });
+  render();
+})();
+</script>
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4), amber='#C9922E';
+
+  var rn=document.getElementById('renderChart');
+  if(rn){new Chart(rn,{type:'bar',data:{labels:['Google-Extended','Applebot','Bingbot','GPTBot','ClaudeBot','PerplexityBot','ChatGPT-User'],datasets:[{data:[100,97,45,6,6,6,0],backgroundColor:[up,up,amber,signal,signal,signal,signal],borderRadius:4,barThickness:22}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' render score '+c.raw+'/100';}}}},
+      scales:{x:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}}}}});}
+
+  var ex=document.getElementById('execChart');
+  if(ex){new Chart(ex,{type:'bar',data:{labels:['ClaudeBot','GPTBot','Claude-SearchBot','PerplexityBot','OAI-SearchBot','ChatGPT-User'],datasets:[
+    {type:'bar',label:'JS fetch rate',data:[23.84,11.50,5.0,2.0,1.0,0],backgroundColor:signal,borderRadius:4},
+    {type:'line',label:'Script execution rate',data:[0,0,0,0,0,0],borderColor:up,borderWidth:2,pointRadius:3,pointBackgroundColor:up}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+c.raw+'%';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:9}},grid:{color:'transparent'}},y:{beginAtZero:true,max:40,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var cv=document.getElementById('cvrChart');
+  if(cv){new Chart(cv,{type:'bar',data:{labels:['Blog','Docs','Homepage','Product','Comparison','Pricing'],datasets:[{data:[98,88,61,20,12,6],backgroundColor:[up,up,amber,signal,signal,signal],borderRadius:4,barThickness:44}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' CVR '+c.raw+'%';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+
+  var wa=document.getElementById('wasteChart');
+  if(wa){new Chart(wa,{type:'bar',data:{labels:['ChatGPT','Claude','Googlebot'],datasets:[
+    {label:'404s',data:[34.82,34.16,1.49],backgroundColor:signal,borderRadius:4},
+    {label:'Redirect chains',data:[14.36,8.0,1.49],backgroundColor:rgba(signal,0.5),borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+c.raw+'%';}}}},
+      scales:{x:{stacked:true,ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{stacked:true,beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'%';}},grid:{color:grid}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>
