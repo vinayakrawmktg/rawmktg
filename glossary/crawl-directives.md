@@ -1,6 +1,6 @@
-# What is Crawl directives?
+# What Are Crawler Directives?
 
-Crawl directives are the Allow and Disallow instructions inside robots.txt that tell a crawler which URL paths it may fetch. They are matched per user-agent, so different bots can be given different access.
+Crawler directives (also called crawl directives) are the Allow and Disallow instructions inside robots.txt, plus the robots meta tag and X-Robots-Tag header, that tell a crawler which URL paths it may fetch, index, or use for training. They are matched per user-agent, so different bots can be given different access.
 
 ## How it works
 

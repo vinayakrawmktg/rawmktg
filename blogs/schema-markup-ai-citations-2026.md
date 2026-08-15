@@ -593,6 +593,22 @@ Execute these six principles systematically and you build the kind of machine-re
 
 Frequently Asked Questions
 
+### How does schema impact AI citations?
+
+Schema does not directly rank a page, but it removes ambiguity: it tells a parser that a number is a price, a block is an FAQ answer, or an entity is your organization, so a model can extract and attribute the fact cleanly. About 53% of pages cited in AI answers carry valid structured data while many commercial pages carry none, so schema is the difference between a machine inferring your content and being told it.
+
+### What schema markup do you need for AI search citations?
+
+Ship Organization and Article or BlogPosting on every page, FAQPage on any Q&A block, and a single consolidated @graph so a parser resolves the relationships in one pass. For product and comparison pages add SoftwareApplication and ItemList. Match every value in schema to the visible copy exactly, or you risk a structured-data penalty.
+
+### How can poor page structure hurt AI citation potential?
+
+A page with no headings, no schema and content buried in client-rendered blocks forces the retriever to guess what each passage is about, and it usually guesses wrong. Unstructured HTML fragments the entity relationships a model needs, so the page loses to a competitor whose pricing, features and FAQs are cleanly marked up and answer-first.
+
+### Which article schema should a B2B site use?
+
+Use Article or BlogPosting with author, datePublished and dateModified, wrapped in an @graph alongside your Organization node so the model ties the piece to a known entity. Add FAQPage for any question block. Avoid stacking disconnected script tags, a single @graph block improves crawl efficiency over fragmented markup.
+
 ### Does schema markup directly improve AI citation rankings?
 
 Schema markup does not directly improve citation rankings for already-visible pages. However, it acts as an attention mechanism during crawl and indexation, helping AI parsers accurately extract structured facts that are otherwise missed in natural language prose. For pages below the top 10, schema can shift citation eligibility by clarifying entity relationships that retrieval models use to score passage relevance.

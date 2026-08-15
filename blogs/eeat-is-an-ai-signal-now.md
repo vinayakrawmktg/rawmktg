@@ -202,6 +202,10 @@ The brands that understand this shift earliest will not just maintain their sear
 
 Frequently Asked Questions
 
+### Why are E-E-A-T and LLM optimization the new ranking signals?
+
+Because the same experience, expertise, authoritativeness and trust signals Google rewards were baked into language models during reinforcement learning from human feedback, so a model prefers sources that read as credible. About 96% of AI Overview citations go to sources Google already trusts for E-E-A-T, which means optimizing for LLMs and optimizing for E-E-A-T are increasingly the same job.
+
 ### Does E-E-A-T affect AI citation rates?
 
 Yes. 96% of Google AI Overview citations go to sources with verifiable E-E-A-T profiles. Pages ranked #5 with strong E-E-A-T signals outperform #1-ranked pages with weak E-E-A-T by 2.3× in AI citation frequency. E-E-A-T is no longer a qualitative guideline for human reviewers, it is mathematically encoded into LLM preferences through RLHF and Direct Preference Optimization training pipelines.

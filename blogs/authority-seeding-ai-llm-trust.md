@@ -229,6 +229,14 @@ The transition from traditional index-based search to generative discovery requi
 
 Frequently Asked Questions
 
+### What is LLM seeding?
+
+LLM seeding, also called authority seeding, is placing consistent, corroborating information about your brand across the third-party sources a language model already trusts, so the model associates your entity with your category. Because roughly 97% of AI citations point off your own domain, seeding review sites, communities and analyst coverage moves visibility more than anything you publish on your own site.
+
+### What does LLM seeding mean?
+
+It means teaching a model who you are through repetition across independent, high-trust sources rather than through links. Getting your brand named alongside established competitors in the same articles, directories and forums builds the co-citation and entity prominence a model retains in its weights, which is what gets you into the answer when a buyer asks.
+
 ### What is authority seeding for AI search?
 
 Authority seeding is the practice of building off-site brand signals (unlinked mentions, reviews, niche directory listings, and community references) so AI engines have multiple corroborating sources to draw on when deciding whether to cite a brand. Unlinked brand mentions correlate with AI citation rates 3x more strongly than backlinks (r=0.664 vs r=0.218).

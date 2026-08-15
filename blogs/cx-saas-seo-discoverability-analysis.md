@@ -203,6 +203,10 @@ A free rawmktg tool. [Open the full tool →](/tools/saas-funnel-gap-analyzer) �
 
 Frequently Asked Questions
 
+### What is CX SEO, and why do CX software vendors struggle with it?
+
+CX SEO is search and AI-visibility work for customer-experience software, and vendors struggle with it for a consistent reason: they invest in brand and product pages while leaving the middle of the funnel, comparison, alternatives and use-case content, to review aggregators. The result is strong branded traffic and near-zero presence on the non-branded, problem-led queries buyers actually ask.
+
 ### What is the organic traffic gap between B2B CX SaaS companies?
 
 Across six B2B CX SaaS companies analyzed, the organic traffic gap reaches 150× between the category leader and the lowest-performing company. The referring domain gap is 5,141 domains between the most-linked and least-linked company. These gaps reflect years of compounding SEO investment rather than short-term ranking differences, making them structurally difficult to close through content production alone without simultaneous authority building.

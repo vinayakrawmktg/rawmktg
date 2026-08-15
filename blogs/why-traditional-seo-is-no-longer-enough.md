@@ -229,6 +229,10 @@ Track citation rate, not pageviews. Move in the next 6 to 12 months, before the 
 
 Frequently Asked Questions
 
+### How do you transition from traditional SEO to GEO?
+
+Keep the technical SEO foundation, crawlability, structured data and clean information architecture, then shift the content brief from keyword-matching to answer-first passages a model can lift. Add FAQ and comparison content that names competitors honestly, publish structured facts in server-side HTML, and measure AI citations and Share of Model alongside rankings. The transition is additive, not a teardown.
+
 ### What is GEO (Generative Engine Optimization)?
 
 GEO is the practice of getting your brand cited, mentioned and recommended inside AI-generated answers across ChatGPT, Perplexity, Gemini, Google AI Overviews and Claude. Where traditional SEO optimizes to rank a page in a list of links, GEO optimizes to become the source an AI engine lifts and credits when it synthesizes an answer. It combines technical hygiene (crawlability, schema), citation-first content (answer capsules, statistics, expert quotes), and off-site authority (reviews, mentions, partner citations).

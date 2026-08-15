@@ -1956,6 +1956,14 @@ The transition from traditional index-based search to generative discovery requi
 
 Frequently Asked Questions
 
+### What is LLM seeding?
+
+LLM seeding, also called authority seeding, is placing consistent, corroborating information about your brand across the third-party sources a language model already trusts, so the model associates your entity with your category. Because roughly 97% of AI citations point off your own domain, seeding review sites, communities and analyst coverage moves visibility more than anything you publish on your own site.
+
+### What does LLM seeding mean?
+
+It means teaching a model who you are through repetition across independent, high-trust sources rather than through links. Getting your brand named alongside established competitors in the same articles, directories and forums builds the co-citation and entity prominence a model retains in its weights, which is what gets you into the answer when a buyer asks.
+
 ### What is authority seeding for AI search?
 
 Authority seeding is the practice of building off-site brand signals (unlinked mentions, reviews, niche directory listings, and community references) so AI engines have multiple corroborating sources to draw on when deciding whether to cite a brand. Unlinked brand mentions correlate with AI citation rates 3x more strongly than backlinks (r=0.664 vs r=0.218).
@@ -4570,6 +4578,10 @@ A free rawmktg tool. [Open the full tool →](/tools/saas-funnel-gap-analyzer) �
 
 Frequently Asked Questions
 
+### What is CX SEO, and why do CX software vendors struggle with it?
+
+CX SEO is search and AI-visibility work for customer-experience software, and vendors struggle with it for a consistent reason: they invest in brand and product pages while leaving the middle of the funnel, comparison, alternatives and use-case content, to review aggregators. The result is strong branded traffic and near-zero presence on the non-branded, problem-led queries buyers actually ask.
+
 ### What is the organic traffic gap between B2B CX SaaS companies?
 
 Across six B2B CX SaaS companies analyzed, the organic traffic gap reaches 150× between the category leader and the lowest-performing company. The referring domain gap is 5,141 domains between the most-linked and least-linked company. These gaps reflect years of compounding SEO investment rather than short-term ranking differences, making them structurally difficult to close through content production alone without simultaneous authority building.
@@ -5829,6 +5841,10 @@ The practical consequence for marketing leaders is that the question "How do we 
 The brands that understand this shift earliest will not just maintain their search visibility. They will occupy a structural advantage in the generative search era that compounds over time, as their citation authority grows with each earned media placement and each well-sourced, expert-verified piece of content they publish. In a world where the model's weights are the algorithm, becoming the source the model trusts is the only optimization strategy that matters.
 
 Frequently Asked Questions
+
+### Why are E-E-A-T and LLM optimization the new ranking signals?
+
+Because the same experience, expertise, authoritativeness and trust signals Google rewards were baked into language models during reinforcement learning from human feedback, so a model prefers sources that read as credible. About 96% of AI Overview citations go to sources Google already trusts for E-E-A-T, which means optimizing for LLMs and optimizing for E-E-A-T are increasingly the same job.
 
 ### Does E-E-A-T affect AI citation rates?
 
@@ -7851,6 +7867,14 @@ The work in this article is mostly configuration, not strategy. If your team has
 Citation share is now the easiest variable to move in technical SEO, because most competitors have not done any of the above. The configuration in this article covers most of the gap. Use a [GEO Foundation Audit](/blogs/geo-foundation-audit) to measure citation impact before and after each change. For the content architecture layer, see [The Topical Authority Cluster](/blogs/topical-authority-cluster-ai-shortlists). For off-site authority signals, see [Authority Seeding for AI](/blogs/authority-seeding-ai-llm-trust).
 
 Frequently Asked Questions
+
+### What are crawler directives?
+
+Crawler directives are the instructions that tell a bot what it may fetch, index or train on. They live in three places: robots.txt rules (User-agent, Allow, Disallow), the robots meta tag and X-Robots-Tag HTTP header (index/noindex, follow/nofollow), and access tokens like Google-Extended that govern AI-training use. Granting access is separate from being readable, a bot you allow can still receive an empty page.
+
+### What does a crawler directive mean?
+
+A crawler directive is a single instruction to a specific user agent, for example Disallow: /admin for GPTBot or noindex on a thin page. Each directive targets one behaviour, crawl, index, or training, for one bot, so an effective policy is a set of directives rather than one switch. Check your robots.txt is not blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended by accident.
 
 ### Do AI search crawlers execute JavaScript?
 
@@ -11730,6 +11754,10 @@ CMOs who keep optimizing for density and page-rank are tuning an interface their
 
 Frequently Asked Questions
 
+### Who provides the best expert human raters for RLHF?
+
+The leading suppliers of expert human raters for RLHF are specialist data-labeling firms such as Surge AI, Scale AI and its Outlier network, Invisible Technologies, Toloka and Labelbox, alongside the in-house rater teams at the frontier labs. For domains like law, medicine or finance the differentiator is credentialed subject-matter experts rather than general crowdworkers, because rater quality sets the ceiling on model preference quality.
+
 ### What is RLHF, and why does it matter for marketing?
 
 RLHF (Reinforcement Learning from Human Feedback) is a post-training stage where human raters rank a model's competing answers, a reward model learns to predict their preference, and the model is optimized toward it. For marketing it matters because this is where a model learns which sources and brands to prefer when it answers a question. If your brand was in the answers raters marked better, the model is more likely to recommend you, and that preference is decided in training, not at query time.
@@ -12355,6 +12383,22 @@ The six-principle playbook:
 Execute these six principles systematically and you build the kind of machine-readable, entity-verified, structurally coherent domain that AI engines cite by default, not by accident. Use a [GEO Foundation Audit](/blogs/geo-foundation-audit) to baseline your citation share before and after the rollout. For a sector-level snapshot of what the absence of these principles looks like in live data, see our [AEC software AI visibility analysis](/blogs/aec-ai-visibility-gap).
 
 Frequently Asked Questions
+
+### How does schema impact AI citations?
+
+Schema does not directly rank a page, but it removes ambiguity: it tells a parser that a number is a price, a block is an FAQ answer, or an entity is your organization, so a model can extract and attribute the fact cleanly. About 53% of pages cited in AI answers carry valid structured data while many commercial pages carry none, so schema is the difference between a machine inferring your content and being told it.
+
+### What schema markup do you need for AI search citations?
+
+Ship Organization and Article or BlogPosting on every page, FAQPage on any Q&A block, and a single consolidated @graph so a parser resolves the relationships in one pass. For product and comparison pages add SoftwareApplication and ItemList. Match every value in schema to the visible copy exactly, or you risk a structured-data penalty.
+
+### How can poor page structure hurt AI citation potential?
+
+A page with no headings, no schema and content buried in client-rendered blocks forces the retriever to guess what each passage is about, and it usually guesses wrong. Unstructured HTML fragments the entity relationships a model needs, so the page loses to a competitor whose pricing, features and FAQs are cleanly marked up and answer-first.
+
+### Which article schema should a B2B site use?
+
+Use Article or BlogPosting with author, datePublished and dateModified, wrapped in an @graph alongside your Organization node so the model ties the piece to a known entity. Add FAQPage for any question block. Avoid stacking disconnected script tags, a single @graph block improves crawl efficiency over fragmented markup.
 
 ### Does schema markup directly improve AI citation rankings?
 
@@ -15351,6 +15395,10 @@ AI picks sources by clarity and proof, not keyword rank, keyword stuffing actual
 Track citation rate, not pageviews. Move in the next 6 to 12 months, before the trusted-source list locks in.
 
 Frequently Asked Questions
+
+### How do you transition from traditional SEO to GEO?
+
+Keep the technical SEO foundation, crawlability, structured data and clean information architecture, then shift the content brief from keyword-matching to answer-first passages a model can lift. Add FAQ and comparison content that names competitors honestly, publish structured facts in server-side HTML, and measure AI citations and Share of Model alongside rankings. The transition is additive, not a teardown.
 
 ### What is GEO (Generative Engine Optimization)?
 

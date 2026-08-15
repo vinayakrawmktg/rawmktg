@@ -373,6 +373,14 @@ Citation share is now the easiest variable to move in technical SEO, because mos
 
 Frequently Asked Questions
 
+### What are crawler directives?
+
+Crawler directives are the instructions that tell a bot what it may fetch, index or train on. They live in three places: robots.txt rules (User-agent, Allow, Disallow), the robots meta tag and X-Robots-Tag HTTP header (index/noindex, follow/nofollow), and access tokens like Google-Extended that govern AI-training use. Granting access is separate from being readable, a bot you allow can still receive an empty page.
+
+### What does a crawler directive mean?
+
+A crawler directive is a single instruction to a specific user agent, for example Disallow: /admin for GPTBot or noindex on a thin page. Each directive targets one behaviour, crawl, index, or training, for one bot, so an effective policy is a set of directives rather than one switch. Check your robots.txt is not blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended by accident.
+
 ### Do AI search crawlers execute JavaScript?
 
 No. None of the three primary AI crawlers, OAI-SearchBot (ChatGPT Search), PerplexityBot, or CCBot (Common Crawl), execute JavaScript. They retrieve raw HTML only. Sites relying on client-side rendering to deliver page content are effectively invisible to AI search engines, regardless of organic SEO performance. Server-side rendering or incremental static regeneration is required for AI crawl coverage.

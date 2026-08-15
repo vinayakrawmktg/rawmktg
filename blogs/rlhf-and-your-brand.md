@@ -229,6 +229,10 @@ CMOs who keep optimizing for density and page-rank are tuning an interface their
 
 Frequently Asked Questions
 
+### Who provides the best expert human raters for RLHF?
+
+The leading suppliers of expert human raters for RLHF are specialist data-labeling firms such as Surge AI, Scale AI and its Outlier network, Invisible Technologies, Toloka and Labelbox, alongside the in-house rater teams at the frontier labs. For domains like law, medicine or finance the differentiator is credentialed subject-matter experts rather than general crowdworkers, because rater quality sets the ceiling on model preference quality.
+
 ### What is RLHF, and why does it matter for marketing?
 
 RLHF (Reinforcement Learning from Human Feedback) is a post-training stage where human raters rank a model's competing answers, a reward model learns to predict their preference, and the model is optimized toward it. For marketing it matters because this is where a model learns which sources and brands to prefer when it answers a question. If your brand was in the answers raters marked better, the model is more likely to recommend you, and that preference is decided in training, not at query time.
