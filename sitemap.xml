@@ -799,6 +799,18 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
+    <loc>https://rawmktg.com/pricing</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rawmktg.com/refunds</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://rawmktg.com/privacy</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
