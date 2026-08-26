@@ -6,6 +6,7 @@
 
 ## Articles
 
+- [Digital PR & Data Studies: The Link Play AI Cites](https://rawmktg.com/blogs/mentions-beat-links)
 - [Field Service Software SEO Teardown](https://rawmktg.com/blogs/field-service-software-ai-visibility-gap)
 - [Carbon & ESG Software SEO Teardown](https://rawmktg.com/blogs/authority-isnt-the-moat)
 - [Getting Found on Google and AI](https://rawmktg.com/blogs/payments-getting-found-google-ai)

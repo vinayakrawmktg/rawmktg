@@ -54,7 +54,7 @@ Table 02: Retrieval architecture and referrer behavior by platform
 
 **It is the off-site monitoring layer of the stack.** The first functional layer of the GEO measurement stack is off-site monitoring. Because engines produce variable, personalized responses, you measure visibility by building a controlled Prompt Portfolio: a baseline diagnostic test run on a recurring schedule.
 
-Start with a 30-day playbook: assemble a representative set of **50-150 prompts** sorted into three functional buckets.[5](#r5)
+Start with a 30-day playbook: assemble a representative set of **50-150 prompts** sorted into three functional buckets. This is the baseline tier of the [rawmktg measurement methodology](/methodology); decision-grade work runs 250 to 500.[5](#r5)
 
 Table 03: The three prompt buckets
 

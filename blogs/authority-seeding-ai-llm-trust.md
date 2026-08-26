@@ -31,7 +31,7 @@ Table 01: Authority metric correlations with AI citation visibility · Cross-pla
 
 This divergence occurs because [language models learn from statistical patterns](https://huggingface.co/blog/Codatta/evolution-of-large-model-data-engineering) across the global web text corpus. The Common Crawl C4 dataset alone is approximately 750 GB of web text. When a brand name consistently co-occurs in close proximity to industry-specific keywords, specialised subject matter, and positive contextual sentiment across distributed publications, the underlying neural network constructs a strong associative link.
 
-Traditional link-building attempts to manipulate the structural web graph. Authority seeding operates at the semantic layer the model actually reads and weights.
+Traditional link-building attempts to manipulate the structural web graph. Authority seeding operates at the semantic layer the model actually reads and weights, and the highest-yield way to seed it is original research others repeat, covered in [digital PR and data studies](/blogs/mentions-beat-links).
 
 Fig. 01: Signal correlation spectrum vs AI citation visibility (indexed to Unlinked Mentions = 1.0)
 

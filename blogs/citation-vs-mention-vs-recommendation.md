@@ -172,7 +172,7 @@ Figure 5. Baseline unbranded visibility by brand stature tier. Each rung down co
 - **Tier 2**, established mid-market and regional brands, sit at **43.6%**.
 - **Tier 3**, niche and small brands without broad co-citation networks, average **11.4%**.
 
-Because engines look for multi-source corroboration before committing to a commercial recommendation, a Tier 3 brand is not one content refresh away from parity. It has to build the off-site mention footprint that Tier 1 brands accumulated over a decade. The related finding from the same dataset: visibility trajectories stay flat without intervention. Brands do not drift upward on their own.
+Because engines look for multi-source corroboration before committing to a commercial recommendation, a Tier 3 brand is not one content refresh away from parity. It has to build the off-site mention footprint that Tier 1 brands accumulated over a decade, which is the whole subject of [digital PR and data studies, the link play AI cites](/blogs/mentions-beat-links). The related finding from the same dataset: visibility trajectories stay flat without intervention. Brands do not drift upward on their own.
 
 ### Source composition: earned coverage dominates
 
@@ -469,7 +469,7 @@ Build the prompt set
 
 Baseline
 
-Query all engines over 3-5 runs; average to smooth variance.
+Query all engines over 8 to 12 runs (we run 10); average to smooth variance. See the [methodology](/methodology).
 
 →
 

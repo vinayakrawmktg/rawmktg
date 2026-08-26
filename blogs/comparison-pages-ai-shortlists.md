@@ -567,7 +567,7 @@ Then push the change rather than waiting to be crawled. IndexNow notifies partic
 
 Days 1-14
 
-Build the prompt repository, 20-40 prompts, baseline BVR / SoV / AICF across four engines.
+Build the prompt repository, 20-40 prompts (the baseline tier of the [measurement methodology](/methodology)), baseline BVR / SoV / AICF across four engines.
 
 →
 

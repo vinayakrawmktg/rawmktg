@@ -125,6 +125,30 @@ curl -s "$SITEMAP" \
 
 Run that against your own sitemap before reading further. The output is usually the most persuasive artefact in the entire audit, because it is your URLs and your numbers rather than an industry average.
 
+Free Tool · Auditor
+
+Score your own discovery yield
+
+The formula above, made live. Run the hop-sweep against your sitemap, paste the output, and see how many declared URLs a real-time indexer can actually resolve.
+
+Paste your crawl results
+
+One URL per line: the hop-sweep output, or url,status,hops CSV
+
+Load sample
+
+A URL passes only if it returns 200 and resolves inside the three-hop ceiling. Real-time AI indexers abandon anything at three hops or more. Get the input by running the hop-sweep from the article against your own sitemap.
+
+Discovery yield
+
+0/ 1.0
+
+Paste your crawl
+
+Where the budget goes
+
+The breakdown and worst offenders appear here.
+
 ## 03. Why are status codes cache instructions, not cosmetic detail?
 
 **The wrong redirect code breaks caching, so you pay the hop cost on every cycle, forever.** A 301 (or 308) tells the agent the move is permanent and the target should be cached, so you pay the hop once. A 302 or 307 tells it nothing moved, so the original URL is re-requested on every cycle.
