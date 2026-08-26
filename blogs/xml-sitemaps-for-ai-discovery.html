@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>The Broken-Sitemap Tax: XML Sitemaps for AI Discovery &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="XML sitemaps for AI discovery: the 3-hop ceiling, cache-instruction status codes, honest lastmod, IndexNow push, and a discovery-yield gate for CI." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery" />
+  <meta property="og:title" content="The Broken-Sitemap Tax: XML Sitemaps for AI Discovery" />
+  <meta property="og:description" content="XML sitemaps for AI discovery: the 3-hop ceiling, cache-instruction status codes, honest lastmod, IndexNow push, and a discovery-yield gate for CI." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/xml-sitemaps-for-ai-discovery.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Broken-Sitemap Tax: XML Sitemaps for AI Discovery" />
+  <meta name="twitter:description" content="XML sitemaps for AI discovery: the 3-hop ceiling, cache-instruction status codes, honest lastmod, IndexNow push, and a discovery-yield gate for CI." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/xml-sitemaps-for-ai-discovery.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The Broken-Sitemap Tax: XML Sitemaps for AI Discovery", "description": "XML sitemaps for AI discovery: the 3-hop ceiling, cache-instruction status codes, honest lastmod, IndexNow push, and a discovery-yield gate for CI.", "image": "https://rawmktg.com/assets/images/xml-sitemaps-for-ai-discovery.webp", "url": "https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery", "datePublished": "2026-08-26", "dateModified": "2026-08-26", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery"}, "keywords": ["XML sitemap", "AI discovery", "sitemap for AI crawlers", "IndexNow", "lastmod", "redirect hops", "discovery yield", "technical SEO", "GEO", "real-time indexers"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "The Broken-Sitemap Tax: XML Sitemaps for AI Discovery", "item": "https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do XML sitemaps still matter for AI search?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, more than they did, but for a different reason. Training crawlers read your sitemap as a bulk URL manifest, while real-time AI indexers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) read its lastmod values to decide what to recrawl today. That makes the sitemap a scheduling instruction, not just an inventory. The discovery layer, what you declare, how fast it resolves, and how you push changes, decides whether an engine can cheaply turn your URL into a citable document."}}, {"@type": "Question", "name": "How many redirect hops will AI crawlers follow?", "acceptedAnswer": {"@type": "Answer", "text": "Far fewer than search engines. The HTTP spec permits 30 redirects and Googlebot has historically followed around 10, but real-time AI indexers enforce a hard ceiling of one to three hops and then abandon the request with no client-side error logged anywhere you can see. A legacy URL often burns that budget on scheme, host and trailing-slash normalisation alone, so a bot never reaches your content. Collapse multi-hop chains into a single rewrite rule."}}, {"@type": "Question", "name": "Why does the lastmod timestamp in my sitemap matter so much?", "acceptedAnswer": {"@type": "Answer", "text": "Because real-time indexers lean on freshness harder than Google does, and a false timestamp is a trust penalty. If your build stamps today's date on all 12,000 URLs every deploy, the indexer recrawls aggressively, finds nothing actually changed, and demotes the recrawl priority of the whole file. Measure timestamp trust as content-changed URLs over lastmod-changed URLs; below 0.2 you are better off publishing no lastmod at all, because an absent signal is neutral while a false one is penalised."}}, {"@type": "Question", "name": "What status code should a sitemap URL redirect use for AI crawlers?", "acceptedAnswer": {"@type": "Answer", "text": "A 301 (or 308 where the request method and body must survive, such as API feeds and IndexNow payloads). A 301 tells the agent the move is permanent and the new target should be cached, so you pay the hop once. A 302 or 307 tells it nothing moved, so the original URL stays in the index and gets re-requested on every cycle, which is more expensive on every cycle after the first. The worst pattern is a 301 followed by a 302, which invalidates the permanent cache."}}, {"@type": "Question", "name": "Do root files like robots.txt and sitemap.xml need special handling?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. /robots.txt, /sitemap.xml, /llms.txt and /llms-full.txt must return an explicit 200 from the root host with zero client-visible redirects. PerplexityBot refuses to follow redirects at all for /llms.txt, so a single 301 there makes the file effectively nonexistent to it. Use a transparent internal rewrite (invisible to the crawler), not a redirect (a hop it has to spend). A build that adds a catch-all rewrite emitting a 301 is the most common silent break."}}, {"@type": "Question", "name": "What is IndexNow and should I use it?", "acceptedAnswer": {"@type": "Answer", "text": "IndexNow inverts discovery from pull to push: when you create, update or delete a page, your origin notifies participating engines directly and the URL enters a recrawl queue in seconds instead of days. Participants include Bing, Yandex, Naver, Seznam and Yep, and a meaningful share of live ChatGPT Search grounding resolves through Bing. Verify domain ownership with a key file at the root, submit only the URLs that genuinely changed (the same hash-derived list your sitemap uses), and call it from the deploy hook after the sitemap validator passes."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/xml-sitemaps-for-ai-discovery.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Geist',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:800;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/assets/tools.css" />
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
+            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
+            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
+            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
+            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
+            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+          </div>
+        </div>
+        <a href="/glossary">Glossary</a>
+        <a href="/tools">Tools</a>
+        <a href="/about">About</a>
+        <a href="/#newsletter" class="cta">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/xml-sitemaps-for-ai-discovery.webp" srcset="/assets/images/xml-sitemaps-for-ai-discovery-800.webp 800w, /assets/images/xml-sitemaps-for-ai-discovery-1200.webp 1200w, /assets/images/xml-sitemaps-for-ai-discovery-1600.webp 1600w, /assets/images/xml-sitemaps-for-ai-discovery.webp 2400w" sizes="100vw" alt="The Broken-Sitemap Tax: XML Sitemaps for AI Discovery - XML sitemaps for AI discovery - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">Technical Layer &middot; Indexation</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
+    <h1 class="article-headline">The Broken-Sitemap Tax: XML Sitemaps for AI Discovery</h1>
+    <p class="article-deck">Your sitemap is no longer an index manifest. It is a scheduling instruction for machines that abandon a request after three hops, and the difference is costing you citations you never see.</p>
+    <p class="article-data-note">A discovery-layer teardown grounded in AI-crawler network-behaviour analyses, the Princeton/Georgia Tech GEO experiment, and 2026 citation-freshness and selection/absorption benchmarks. Code is working reference; per-crawler magnitudes are third-party estimates and directional.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<p>Nobody puts a line item for this in the budget. It surfaces as something else. Publishing volume climbs and organic traffic flatlines. A competitor gets named in ChatGPT answers about your category and you do not. Your log export shows tens of thousands of AI-crawler requests a month, which looks like proof the machines are paying attention, right up until you check how many of those requests ended in a document that could be cited.</p>
+<p>That gap is the Broken-Sitemap Tax: the compounding cost of declaring a set of URLs a generative engine cannot cheaply resolve into text. The URLs redirect. They carry timestamps nobody believes. They disagree with their own canonical tags. Each one is a fetch that costs the crawler compute and returns nothing usable, and every system with a budget responds the same way, it comes back less often, on fewer URLs, with less patience.</p>
+<div class="pull-quote">The tax is silent by design. You served three clean redirects and the client walked away. From the server's point of view, nothing failed.</div>
+<p>This is not a rerun of the classical crawl-budget argument, which barely matters for most sites under a few thousand URLs. Two things changed. First, hop tolerance collapsed: real-time AI indexers enforce a ceiling of one to three redirect hops, against the ten Googlebot has tolerated and the thirty the HTTP spec permits. Second, the sitemap became a change feed: real-time indexers read its lastmod values to decide what to recrawl today, which makes timestamp integrity a ranking input rather than an administrative detail.</p>
+<div class="callout-box"><div class="callout-box-label">Scope</div><p>This piece covers the discovery layer: what you declare, how fast it resolves, and how you push changes. Crawler identities and robots.txt directives are covered in how AI crawlers index your site. Whether those crawlers execute your JavaScript once they arrive is covered in do AI crawlers render JavaScript. Neither is repeated here.</p></div>
+<h2 id="families"><span class="section-num">01</span>How did the sitemap become a schedule instead of a manifest?</h2>
+<div class="section-answer"><strong>Three families of agent read the same file with three different tolerances.</strong> Training crawlers ingest a bulk manifest patiently. Real-time search indexers read your lastmod to prioritise the recrawl queue and abandon slow fetches. User-triggered fetchers barely touch the file. The middle family is the one your sitemap is actually talking to.</div>
+<p>Training crawlers like GPTBot, ClaudeBot and CCBot ingest bulk corpora asynchronously. They throttle themselves between 0.5 and 5.0 requests per second and tolerate multi-hop redirects, because nothing about their mission is time-bound. Real-time search indexers like OAI-SearchBot, Claude-SearchBot and PerplexityBot ground live answers under latency constraints closer to an API call than a crawl, and they ignore Crawl-delay entirely, because a delayed fetch is useless when a user is waiting. User-triggered fetchers like ChatGPT-User fire when a person pastes your URL into a chat and behave like a headless browser with a stopwatch running.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">Training crawlers</div><div class="pl-desc">Patient bulk manifest. Tolerate 5 hops. Model-release pace.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Real-time indexers</div><div class="pl-desc">Read lastmod, prioritise recrawl. 1-3 hops. Answer pace.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">User fetchers</div><div class="pl-desc">Arrive with a URL in hand. Ignore the sitemap.</div></div></div><div class="chart-caption">Figure 2. Same file, three readers, three tolerances. The middle column decides whether you are in today's answer.</div>
+<div class="tt-wrap"><div class="tt-label">Table 1. Crawler families and what each does with the file you publish at /sitemap.xml.</div><table class="tt"><thead><tr><th>Family</th><th>Agents</th><th>What it wants</th><th>Rate behaviour</th><th>Hop ceiling</th><th>Crawl-delay</th></tr></thead><tbody><tr><td class="label">Model training</td><td>GPTBot, ClaudeBot, CCBot, Google-Extended, Bytespider</td><td>A complete URL manifest for bulk ingestion</td><td>0.5-5.0 req/s, async</td><td>Up to 5 hops</td><td>Honoured</td></tr><tr><td class="label">Real-time search</td><td>OAI-SearchBot, Claude-SearchBot, PerplexityBot</td><td>Fresh lastmod to prioritise the recrawl queue</td><td>Continuous, high velocity</td><td>1 to 3 hops</td><td>Ignored</td></tr><tr><td class="label">User-triggered fetch</td><td>ChatGPT-User, Claude-User, Perplexity-User</td><td>Nothing. It arrives with a URL in hand</td><td>Bursty, tied to chat sessions</td><td>Up to 3 hops</td><td>Frequently bypassed</td></tr><tr><td class="label">Specialised extractors</td><td>Diffbot, YouBot, cohere-ai, Mistral-Crawl</td><td>Entity and structured-data targets</td><td>Periodic, medium velocity</td><td>Up to 3 hops</td><td>Generally honoured</td></tr></tbody></table></div>
+<p>One practical consequence: when people say their AI visibility is fine because GPTBot hits their site constantly, they are usually reading training-crawler logs. Training ingestion moves at the pace of model releases; citation in a live answer moves at the pace of the real-time index. Only one of them is affected by what you shipped this week. The full crawler roster and robots.txt directives are in <a href="/blogs/how-ai-crawlers-index-your-site">how AI crawlers index your site</a>.</p>
+<h2 id="hops"><span class="section-num">02</span>What is the three-hop ceiling?</h2>
+<div class="section-answer"><strong>Real-time indexers abandon a request after one to three redirects, silently.</strong> The HTTP spec permits 30 redirects and Googlebot follows around 10. AI indexers enforce a hard ceiling of one to three hops, after which the request is dropped with no client-side error logged anywhere you can see.</div>
+<div class="chart-wrap"><canvas id="hopChart" height="230"></canvas></div><div class="chart-caption">Figure 3. Redirect tolerance by agent type. Most site architectures were designed against the grey bars and are now read by the orange ones.</div>
+<p>Three hops sounds generous until you count what a legacy URL actually does. Scheme normalisation is one hop, host normalisation another, trailing-slash enforcement a third. A user arriving from an old PDF, an email footer, or a partner directory can burn the whole budget before a byte of content is served.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">http://site/page</div><div class="pl-desc">Scheme normalisation.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">https://www.site/page</div><div class="pl-desc">Host normalisation.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">https://site/page</div><div class="pl-desc">Trailing-slash enforcement.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">https://site/page/</div><div class="pl-desc">Content, finally, if any budget is left.</div></div></div><div class="chart-caption">Figure 4. The chain almost every mature site has somewhere: three redirects for zero content. One rewrite rule collapses it.</div>
+<p>The failure mode is what makes it expensive. A 404 is loud; a 500 pages someone; a crawler quietly hitting its hop ceiling produces a 301 in your access log, then silence. Your monitoring sees a successful response. The engine sees a resource it could not resolve inside its budget and moves to the next candidate, which belongs to someone else.</p>
+<p>It helps to have a number. Define discovery yield as the share of declared URLs a real-time indexer can actually resolve into a citable document in one pass: three binary conditions, all cheap to measure.</p>
+<div class="code-wrap"><div class="code-label">formula &amp;middot; discovery yield</div><div class="code-block"><pre>discovery_yield =  (1 / N) · Σ  [ s_i = 200 ]·[ h_i &lt;= H ]·[ c_i = u_i ]
+
+  N   URLs declared in the sitemap        H   agent hop ceiling (1-3)
+  s   terminal status code                c   the page&#x27;s declared canonical
+  h   redirect hop count                  u   the URL as declared
+  A URL counts only if it returns 200, resolves inside the hop budget,
+  and points at itself as canonical. Most sites score 0.60 to 0.85.</pre></div></div>
+<div class="code-wrap"><div class="code-label">bash &amp;middot; measure hop counts on the URLs you declare</div><div class="code-block"><pre>#!/usr/bin/env bash
+# Reports redirect hops and terminal status for every URL in a sitemap.
+# Anything with hops &gt;= 3 is at or past the real-time indexer ceiling.
+SITEMAP=&quot;https://example.com/sitemap.xml&quot;
+UA=&quot;Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)&quot;
+
+curl -s &quot;$SITEMAP&quot; \
+  | grep -oP &#x27;(?&lt;=&lt;loc&gt;)[^&lt;]+&#x27; \
+  | while read -r url; do
+      chain=$(curl -sIL -A &quot;$UA&quot; -o /dev/null \
+        -w &#x27;%{num_redirects} %{http_code} %{url_effective}&#x27; &quot;$url&quot;)
+      hops=$(echo &quot;$chain&quot;  | awk &#x27;{print $1}&#x27;)
+      code=$(echo &quot;$chain&quot;  | awk &#x27;{print $2}&#x27;)
+      final=$(echo &quot;$chain&quot; | awk &#x27;{print $3}&#x27;)
+      if [ &quot;$hops&quot; -ge 1 ] || [ &quot;$code&quot; != &quot;200&quot; ]; then
+        printf &#x27;HOPS=%s STATUS=%s  %s  -&gt;  %s\n&#x27; &quot;$hops&quot; &quot;$code&quot; &quot;$url&quot; &quot;$final&quot;
+      fi
+    done</pre></div></div>
+<p>Run that against your own sitemap before reading further. The output is usually the most persuasive artefact in the entire audit, because it is your URLs and your numbers rather than an industry average.</p>
+<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Auditor</div><div class="embed-title">Score your own discovery yield</div><div class="embed-deck">The formula above, made live. Run the hop-sweep against your sitemap, paste the output, and see how many declared URLs a real-time indexer can actually resolve.</div></div><section class="card" id="sdy">
+  <div class="grid score">
+    <div class="controls">
+      <div class="cat"><div class="cat-h">Paste your crawl results</div><div class="fld"><div class="lab">One URL per line: the hop-sweep output, or url,status,hops CSV</div><textarea class="ta" id="sdyIn" rows="9" placeholder="HOPS=2 STATUS=301 https://example.com/page
+or
+https://example.com/page,301,2"></textarea></div><div class="btn-row" style="margin-top:8px"><button class="tbtn" id="sdySample" type="button">Load sample</button></div><p class="hint" style="margin:10px 0 0">A URL passes only if it returns 200 and resolves inside the three-hop ceiling. Real-time AI indexers abandon anything at three hops or more. Get the input by running the hop-sweep from the article against your own sitemap.</p></div>
+    </div>
+    <div class="panel-out">
+      <div class="o-eyebrow">Discovery yield</div>
+      <div class="scorewrap"><span class="score" id="sdyScore">0</span><span class="score-d">/ 1.0</span></div>
+      <span class="scoreband" id="sdyBand" style="background:rgba(255,255,255,.1);color:#fff">Paste your crawl</span>
+      <div class="gauge"><div class="gfill" id="sdyFill" style="width:0%;background:var(--signal)"></div></div>
+      <div class="gaps"><div class="gaps-h">Where the budget goes</div><div id="sdyNote"><p class="hint">The breakdown and worst offenders appear here.</p></div></div>
+    </div>
+  </div>
+</section></div>
+<h2 id="status"><span class="section-num">03</span>Why are status codes cache instructions, not cosmetic detail?</h2>
+<div class="section-answer"><strong>The wrong redirect code breaks caching, so you pay the hop cost on every cycle, forever.</strong> A 301 (or 308) tells the agent the move is permanent and the target should be cached, so you pay the hop once. A 302 or 307 tells it nothing moved, so the original URL is re-requested on every cycle.</div>
+<p>A 301 caches the new target, GPTBot immediately, ClaudeBot for roughly thirty days, PerplexityBot on the next cycle. A 308 does the same while guaranteeing the request method and body survive, which makes it correct for API endpoints, JSON feeds and IndexNow payloads where a silent rewrite to GET would destroy the request. A 302 or 307 keeps the original URL in the index and re-requests it every cycle. Multiply that by a few thousand URLs and a daily cadence and you have an egress line item nobody can explain.</p>
+<div class="chart-wrap"><canvas id="cacheChart" height="240"></canvas></div><div class="chart-caption">Figure 5. Relative caching benefit against relative repeat-fetch waste, by response pattern. Temporary redirects are more expensive on every cycle after the first.</div>
+<div class="tt-wrap"><div class="tt-label">Table 2. How each response pattern is interpreted by AI crawlers, and what it costs on the next cycle.</div><table class="tt"><thead><tr><th>Response</th><th>Crawler caching behaviour</th><th>Recrawl impact</th><th>Indexing outcome</th></tr></thead><tbody><tr><td class="label">200 OK direct</td><td>Canonical target stored immediately, no hop</td><td>Optimal, minimal budget</td><td>Immediate ingestion into retrieval context</td></tr><tr><td class="label">301 permanent</td><td>Target cached (GPTBot now, ClaudeBot ~30d)</td><td>Future crawls reallocate to the target</td><td>Canonical consolidates; method may rewrite to GET</td></tr><tr><td class="label">308 permanent</td><td>Target cached, method and body preserved</td><td>Future crawls reallocate to the target</td><td>Correct for API feeds and IndexNow payloads</td></tr><tr><td class="label">302 temporary</td><td>Target not cached, original retained</td><td>High, entry URL polled continuously</td><td>Signals unstable authority, delays ingestion</td></tr><tr><td class="label">307 temporary</td><td>Target not cached, POST payload preserved</td><td>High, original polled regularly</td><td>Blocks permanent canonical consolidation</td></tr><tr><td class="label">301 then 302</td><td>Invalidates the cached 301</td><td>Severe, perpetual loop checks</td><td>Early drop-off, silent eviction from citation pools</td></tr><tr><td class="label">Redirect to noindex</td><td>Follows the hop, then rejects the target</td><td>Total budget waste</td><td>Immediate drop from index and candidates</td></tr></tbody></table></div>
+<p>The pattern worth hunting is the 301 followed by a 302, which happens when a permanent migration rule and a temporary campaign or maintenance rule live in different layers and neither team knows about the other. Two more anti-patterns deserve a grep: user-agent-dependent redirects that serve bots a different path are cloaking and are detected, and geolocation redirects that bounce /en/ to /us/ create loops for crawlers that egress from a single region, which describes most AI fleets.</p>
+<div class="callout-box"><div class="callout-box-label">Target distribution</div><p>A healthy log profile for the URLs you declare: above 95% 200 OK, under 5% permanent redirects, under 1% temporary redirects. If your temporary-redirect share is in double digits, fix that first, before content, before schema, before anything else.</p></div>
+<h2 id="root"><span class="section-num">04</span>Why must root discovery files get zero hops, not three?</h2>
+<div class="section-answer"><strong>robots.txt, sitemap.xml and llms.txt must return a 200 from the root with no redirect at all.</strong> PerplexityBot refuses to follow redirects when fetching /llms.txt, so a single 301 there makes the file nonexistent to it. Use a transparent internal rewrite, invisible to the crawler, not a redirect, which is a hop it has to spend.</div>
+<p>This breaks in a specific, common way. A team reorganises static assets, moves the files into a build-output directory, and adds a catch-all rewrite that happens to emit a 301. Everything still works in a browser. Every human test passes. The discovery layer goes dark and nothing reports it.</p>
+<div class="code-wrap"><div class="code-label">nginx &amp;middot; transparent rewrites for root discovery assets</div><div class="code-block"><pre>server {
+  listen 443 ssl http2;
+  server_name example.com;
+
+  # Root discovery assets. 200 OK, zero client-visible hops.
+  location = /robots.txt {
+    default_type text/plain;
+    try_files /static_root/robots.txt =404;
+    expires 1h;
+    add_header Cache-Control &quot;public, no-transform&quot;;
+  }
+  location = /sitemap.xml {
+    default_type application/xml;
+    try_files /static_root/sitemap.xml =404;
+    expires 15m;
+  }
+  location = /llms.txt {
+    default_type text/plain;
+    try_files /static_root/llms.txt =404;
+    expires 1h;
+    add_header Access-Control-Allow-Origin &quot;*&quot;;
+  }
+  location = /llms-full.txt {
+    default_type text/plain;
+    try_files /static_root/llms-full.txt =404;
+    expires 1h;
+  }
+
+  # Everything else: collapse scheme, host, and slash in a single hop.
+  location / {
+    if ($http_x_forwarded_proto = &quot;http&quot;) {
+      return 301 https://example.com$request_uri;
+    }
+    proxy_pass http://origin_upstream;
+  }
+}</pre></div></div>
+<div class="tt-wrap"><div class="tt-label">Table 3. The three root files, their consumers, and their redirect tolerance. Only one is forgiving, and not by much.</div><table class="tt"><thead><tr><th>Attribute</th><th>robots.txt</th><th>sitemap.xml</th><th>llms.txt</th></tr></thead><tbody><tr><td class="label">Protocol role</td><td>Access control and permission rules</td><td>Canonical URL inventory and change signal</td><td>Machine context map for agents</td></tr><tr><td class="label">Primary consumer</td><td>Crawlers of every family</td><td>Search and AI indexers, aggregators</td><td>LLM agents and retrieval pipelines</td></tr><tr><td class="label">Format</td><td>Plain-text key-value directives</td><td>UTF-8 XML against the sitemaps schema</td><td>Strict Markdown subset</td></tr><tr><td class="label">Server requirement</td><td>200 OK direct at the root</td><td>200 OK, UTF-8, schema valid</td><td>200 OK direct with text/plain</td></tr><tr><td class="label">Redirect tolerance</td><td>Effectively zero</td><td>Tolerated but degrades efficiency</td><td>Zero, PerplexityBot fails outright</td></tr></tbody></table></div>
+<p>On llms.txt itself, keep expectations calibrated. It is a clean specification with real adoption among developer tools, but large-scale log studies found 97% of published llms.txt files received zero automated crawler requests. Publish a valid one because it costs an hour and future-proofs the surface, but do not treat it as a discovery strategy, the XML sitemap is where the discovery work happens. The <a href="/blogs/does-llms-txt-do-anything-yet">dedicated llms.txt piece</a> goes deeper on the spec.</p>
+<h2 id="lastmod"><span class="section-num">05</span>Why is lastmod the signal you are probably lying with?</h2>
+<div class="section-answer"><strong>Build-stamped timestamps tell the indexer everything changed, it checks, finds nothing, and demotes you.</strong> AI indexers lean on lastmod harder than Google because freshness is the strongest scheduling input they have. Honest timestamps get a recrawl queue that tracks your publishing; false ones get you demoted as a source of scheduling information.</div>
+<p>Here is the mechanism. Your build regenerates the sitemap on every deploy and stamps today's date on all 12,000 URLs, the default behaviour of most static-site generators and half the CMS plugins in circulation. The indexer takes you at your word and recrawls aggressively, compares the semantic hash of what it fetched against what it had, and finds nothing changed, on thousands of URLs. It will not do that twice: the recrawl priority of the whole file gets demoted, and the next time you ship something important you are in a slower queue.</p>
+<div class="code-wrap"><div class="code-label">formula &amp;middot; timestamp trust</div><div class="code-block"><pre>timestamp_trust =  (URLs whose CONTENT changed) / (URLs whose LASTMOD changed)
+
+  1.00  every timestamp change was a real content change
+  0.04  you told the indexer 12,000 pages changed when 500 did
+  &lt; 0.7 = engineering ticket.  &lt; 0.2 = better to publish no lastmod at all.</pre></div></div>
+<div class="chart-wrap"><canvas id="freshChart" height="230"></canvas></div><div class="chart-caption">Figure 10. Relative citation rate by time since last genuine update. The cliff between the first two buckets is steeper than most editorial calendars assume.</div>
+<p>The fix is to stop letting the build decide what changed and let a content hash decide instead: hash the rendered body with the volatile parts stripped, compare against the stored hash, and write a timestamp only when the comparison fails.</p>
+<div class="code-wrap"><div class="code-label">python &amp;middot; hash-based lastmod generation</div><div class="code-block"><pre>import hashlib, json, re, datetime, pathlib
+
+STATE = pathlib.Path(&quot;.sitemap-hashes.json&quot;)
+VOLATILE = [
+    re.compile(r&#x27;&lt;nav\b.*?&lt;/nav&gt;&#x27;, re.S | re.I),
+    re.compile(r&#x27;&lt;footer\b.*?&lt;/footer&gt;&#x27;, re.S | re.I),
+    re.compile(r&#x27;data-build-id=&quot;[^&quot;]*&quot;&#x27;),
+    re.compile(r&#x27;\d{4}-\d{2}-\d{2}T[\d:+.-]+&#x27;),   # rendered timestamps
+]
+
+def semantic_hash(html: str) -&gt; str:
+    &quot;&quot;&quot;Hash only the content a retrieval system would actually keep.&quot;&quot;&quot;
+    for pattern in VOLATILE:
+        html = pattern.sub(&#x27;&#x27;, html)
+    text = re.sub(r&#x27;&lt;[^&gt;]+&gt;&#x27;, &#x27; &#x27;, html)
+    text = &#x27; &#x27;.join(text.split()).lower()
+    return hashlib.sha256(text.encode(&#x27;utf-8&#x27;)).hexdigest()
+
+def resolve_lastmod(pages: dict[str, str]):
+    &quot;&quot;&quot;pages maps url -&gt; rendered html. Returns url -&gt; ISO 8601 lastmod.&quot;&quot;&quot;
+    prior = json.loads(STATE.read_text()) if STATE.exists() else {}
+    now = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
+    out, state, changed = {}, {}, []
+    for url, html in pages.items():
+        digest = semantic_hash(html)
+        record = prior.get(url)
+        if record and record[&#x27;hash&#x27;] == digest:
+            out[url] = record[&#x27;lastmod&#x27;]          # unchanged, keep the old date
+            state[url] = record
+        else:
+            out[url] = now                        # genuinely new or edited
+            state[url] = {&#x27;hash&#x27;: digest, &#x27;lastmod&#x27;: now}
+            changed.append(url)
+    STATE.write_text(json.dumps(state, indent=2))
+    print(f&#x27;{len(changed)} of {len(pages)} URLs changed this build&#x27;)
+    return out, changed</pre></div></div>
+<p>The changed list that falls out of this function is the same list you push to IndexNow later, which is not a coincidence. Two formatting rules while you are in there: use full W3C datetime with a UTC offset (2026-03-31T08:30:00+00:00, not a bare date), and never write a future lastmod, which happens more than you would expect when scheduled publishing and timezone handling collide.</p>
+<h2 id="partition"><span class="section-num">06</span>Why should you partition the sitemap file?</h2>
+<div class="section-answer"><strong>So a crawl-rate regression arrives with a filename attached, not buried in 48,000 URLs.</strong> The protocol permits 50,000 URLs per file, but auditing guidance converges on ~5,000 for two reasons: a real-time indexer abandons a slow XML parse the way it abandons a slow redirect, and a monolithic file gives you one number to watch instead of a per-section signal.</div>
+<div class="code-wrap"><div class="code-label">xml &amp;middot; sitemap index and a compliant child file</div><div class="code-block"><pre>&lt;!-- /sitemap.xml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;sitemapindex xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;
+  &lt;sitemap&gt;
+    &lt;loc&gt;https://example.com/sitemap-docs.xml&lt;/loc&gt;
+    &lt;lastmod&gt;2026-08-24T09:12:00+00:00&lt;/lastmod&gt;
+  &lt;/sitemap&gt;
+  &lt;sitemap&gt;
+    &lt;loc&gt;https://example.com/sitemap-blog.xml&lt;/loc&gt;
+    &lt;lastmod&gt;2026-08-26T06:40:00+00:00&lt;/lastmod&gt;
+  &lt;/sitemap&gt;
+&lt;/sitemapindex&gt;
+
+&lt;!-- /sitemap-docs.xml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://example.com/docs/architecture&lt;/loc&gt;
+    &lt;lastmod&gt;2026-08-24T09:12:00+00:00&lt;/lastmod&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://example.com/docs/rate-limits&lt;/loc&gt;
+    &lt;lastmod&gt;2026-07-02T11:48:00+00:00&lt;/lastmod&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;
+&lt;!-- No changefreq, no priority: ignored for years, pure parse-time cost. --&gt;</pre></div></div>
+<p>Note what is absent: no changefreq and no priority. Both have been ignored by Google for years and appear in no documented AI-indexer behaviour, so they are bytes that cost parse time and buy nothing. The lastmod on the index entries is genuinely useful, because it lets an agent skip an entire child file it has already seen. Escape your ampersands, keep the file UTF-8, serve it over HTTPS, and declare the namespace, unescaped entities and missing namespaces are the two failures that break strict XML parsers outright.</p>
+<h2 id="hygiene"><span class="section-num">07</span>What does sitemap hygiene actually require?</h2>
+<div class="section-answer"><strong>Every URL in the file is a claim that it is canonical, live and indexable.</strong> Zero non-200 URLs, exact canonical alignment, directive alignment (no noindex or robots-blocked URLs), and parameter discipline. Every URL that fails one test teaches the crawler to discount the whole file.</div>
+<ul><li><strong>Zero non-200 URLs.</strong> Anything returning 301, 302, 308, 404 or 5xx should be purged automatically, not quarterly by hand.</li><li><strong>Canonical alignment.</strong> The URL in loc must match the page's own canonical tag exactly, including trailing slash and protocol. Mismatches are a documented cause of eviction from citation candidate pools.</li><li><strong>Directive alignment.</strong> A URL carrying noindex or blocked in robots.txt must never appear, declaring a page you told crawlers not to read is a contradiction resolved against you.</li><li><strong>Parameter discipline.</strong> Session IDs, tracking parameters and faceted-navigation combinations produce near-duplicate URLs that consume budget and dilute the canonical signal.</li></ul>
+<div class="code-wrap"><div class="code-label">python &amp;middot; sitemap validator with a hard fail</div><div class="code-block"><pre>import asyncio, re, sys
+import httpx
+from xml.etree import ElementTree
+
+NS = {&#x27;sm&#x27;: &#x27;http://www.sitemaps.org/schemas/sitemap/0.9&#x27;}
+UA = &#x27;Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)&#x27;
+HOP_CEILING = 3
+CANONICAL = re.compile(r&#x27;&lt;link[^&gt;]+rel=[&quot;\&#x27;]canonical[&quot;\&#x27;][^&gt;]+href=[&quot;\&#x27;]([^&quot;\&#x27;]+)&#x27;, re.I)
+
+async def check(client, url):
+    try:
+        r = await client.get(url, follow_redirects=True, timeout=10.0)
+    except httpx.RequestError as exc:
+        return {&#x27;url&#x27;: url, &#x27;fail&#x27;: f&#x27;network: {exc.__class__.__name__}&#x27;}
+    hops = len(r.history)
+    if r.status_code != 200:
+        return {&#x27;url&#x27;: url, &#x27;fail&#x27;: f&#x27;status {r.status_code}&#x27;}
+    if hops &gt;= HOP_CEILING:
+        return {&#x27;url&#x27;: url, &#x27;fail&#x27;: f&#x27;{hops} hops, at or past the ceiling&#x27;}
+    if &#x27;noindex&#x27; in r.headers.get(&#x27;x-robots-tag&#x27;, &#x27;&#x27;).lower():
+        return {&#x27;url&#x27;: url, &#x27;fail&#x27;: &#x27;x-robots-tag noindex&#x27;}
+    match = CANONICAL.search(r.text[:200_000])
+    if match and match.group(1).rstrip(&#x27;/&#x27;) != url.rstrip(&#x27;/&#x27;):
+        return {&#x27;url&#x27;: url, &#x27;fail&#x27;: f&#x27;canonical drift -&gt; {match.group(1)}&#x27;}
+    return None
+
+async def main(sitemap_url):
+    async with httpx.AsyncClient(headers={&#x27;User-Agent&#x27;: UA}) as client:
+        xml = (await client.get(sitemap_url)).text
+        urls = [e.text for e in ElementTree.fromstring(xml).iterfind(&#x27;.//sm:loc&#x27;, NS)]
+        sem = asyncio.Semaphore(12)
+        async def guarded(u):
+            async with sem:
+                return await check(client, u)
+        results = await asyncio.gather(*(guarded(u) for u in urls))
+    failures = [r for r in results if r]
+    yield_rate = 1 - len(failures) / max(len(urls), 1)
+    for f in failures[:40]:
+        print(f&quot;FAIL  {f[&#x27;fail&#x27;]:&lt;38} {f[&#x27;url&#x27;]}&quot;)
+    print(f&#x27;\ndiscovery yield: {yield_rate:.3f} over {len(urls)} URLs&#x27;)
+    sys.exit(1 if yield_rate &lt; 0.98 else 0)
+
+asyncio.run(main(&#x27;https://example.com/sitemap-docs.xml&#x27;))</pre></div></div>
+<p>Wire that into CI as a blocking step on the sitemap build. A threshold of 0.98 is aggressive on purpose, the point of a gate is that it fails before the file ships, not that it produces a dashboard nobody opens. The canonical-and-structure side of this is covered in <a href="/blogs/anatomy-of-a-high-citation-page">the anatomy of a high-citation page</a>.</p>
+<h2 id="freshness"><span class="section-num">08</span>Why is freshness the highest-leverage variable you control?</h2>
+<div class="section-answer"><strong>Content updated within 30 days is cited at ~3.2x the rate of static pages.</strong> Everything above is about not losing; this is where the file earns. 76.4% of top-cited ChatGPT Search URLs come from pages updated in the preceding 30 days, and pages untouched for three months face ~3x the probability of losing citations entirely.</div>
+<p>Google AI Overviews is more forgiving, 65% of citations from content updated within a year, 89% within three years. That difference is a strategy input: if ChatGPT Search is where your category gets decided, your update cadence is not a hygiene task, it is the campaign. Fitted to a simple exponential, the observed decay implies a citation half-life near two months for competitive commercial queries, the same shape as <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">the 30-day content half-life</a>.</p>
+<div class="code-wrap"><div class="code-label">formula &amp;middot; freshness decay</div><div class="code-block"><pre>C(t) =  e^(-λ·t)          # relative citation likelihood
+
+  t  days since the last GENUINE content change
+  λ  fitted to the fresh/stale ratio; implies a citation half-life
+     near ~60 days for competitive commercial queries.</pre></div></div>
+<p>Two things follow. A page you update every ninety days spends most of its life in the shallow part of the curve, so a quarterly refresh is closer to maintenance than advantage. And the update has to be real, the decay is driven by the indexer detecting genuine change, the same hash comparison from the lastmod section. Changing a date in a byline is not a content update, and the system that decides whether you get cited is the one that already caught you doing it.</p>
+<div class="callout-box"><div class="callout-box-label">Practical cadence</div><p>Pick the twenty to fifty URLs that carry commercial intent, put them on a thirty-day substantive review, and let the long tail decay. Trying to keep twelve thousand pages inside thirty days is how sites end up build-stamping their sitemaps in the first place.</p></div>
+<h2 id="indexnow"><span class="section-num">09</span>How does IndexNow push beat pull?</h2>
+<div class="section-answer"><strong>You notify engines the instant a page changes, so recrawl happens in seconds, not days.</strong> Everything so far optimises a pull model, you publish and wait to be noticed. IndexNow inverts the direction: on create, update or delete, your origin notifies participating engines directly and the URL enters a recrawl queue in seconds.</div>
+<p>The participant list includes Bing, Yandex, Naver, Seznam and Yep, which matters more than it used to because a meaningful share of live ChatGPT Search grounding resolves through the Bing index rather than a direct fetch, the same downstream dependency described in <a href="/blogs/do-ai-crawlers-render-javascript">do AI crawlers render JavaScript</a>.</p>
+<div class="chart-wrap"><canvas id="pushChart" height="220"></canvas></div><div class="chart-caption">Figure 11. Time from publish to entering a recrawl queue, by discovery mechanism. The sitemap narrows the window; the push closes it.</div>
+<h3>Ownership verification and payloads</h3>
+<p>Before you submit, you prove you control the domain: a key of 8 to 128 characters from a-z, A-Z, 0-9 and hyphen (a 32-character UUID with dashes stripped is the default), written into a UTF-8 file at the root named exactly {key}.txt, containing the key and nothing else. If you cannot write to the root, keyLocation lets you host it elsewhere, but verification scope is bounded by the directory the key sits in, a key at /catalog/key.txt authorises submissions under /catalog/ and nothing else. Single URLs go over GET percent-encoded; bulk submissions go over POST as JSON, up to 10,000 URLs, and the host field takes a bare FQDN with no protocol, path, slash or port.</p>
+<div class="code-wrap"><div class="code-label">http &amp;middot; both submission patterns</div><div class="code-block"><pre># Single URL, HTTP GET
+GET /indexnow?url=https%3A%2F%2Fexample.com%2Fdocs&amp;key=fa8c0a469da44e9b8f6a769f291829f5 HTTP/1.1
+Host: api.indexnow.org
+
+# Bulk submission, HTTP POST (up to 10,000 URLs)
+POST /indexnow HTTP/1.1
+Host: api.indexnow.org
+Content-Type: application/json; charset=utf-8
+
+{
+  &quot;host&quot;: &quot;example.com&quot;,
+  &quot;key&quot;: &quot;fa8c0a469da44e9b8f6a769f291829f5&quot;,
+  &quot;keyLocation&quot;: &quot;https://example.com/fa8c0a469da44e9b8f6a769f291829f5.txt&quot;,
+  &quot;urlList&quot;: [
+    &quot;https://example.com/docs/rate-limits&quot;,
+    &quot;https://example.com/docs/architecture&quot;,
+    &quot;https://example.com/blog/sitemap-audit&quot;
+  ]
+}</pre></div></div>
+<div class="tt-wrap"><div class="tt-label">Table 4. IndexNow payload fields and response semantics. Most first-run failures are the host field or an unreachable key file.</div><table class="tt"><thead><tr><th>Field or code</th><th>Type</th><th>Validation rule</th><th>Purpose</th></tr></thead><tbody><tr><td class="label">host</td><td>String</td><td>FQDN only, no protocol, path, port or slash</td><td>Identifies the target origin</td></tr><tr><td class="label">key</td><td>String</td><td>8-128 chars from a-z, A-Z, 0-9 and hyphen</td><td>Authenticates ownership</td></tr><tr><td class="label">keyLocation</td><td>String</td><td>HTTPS URL to the key file, scope bounded by its directory</td><td>Delegated verification when the root is unavailable</td></tr><tr><td class="label">urlList</td><td>Array</td><td>Max 10,000 URLs per POST, percent-encoded</td><td>The batch of changed pages</td></tr><tr><td class="label">200 OK</td><td>Response</td><td>Payload received and validated</td><td>Triggers the inter-engine broadcast</td></tr><tr><td class="label">400 Bad Request</td><td>Response</td><td>Malformed JSON, host or URL format</td><td>Schema error, usually the host field</td></tr><tr><td class="label">403 Forbidden</td><td>Response</td><td>Key file missing, unreadable or mismatched</td><td>Ownership not proven</td></tr></tbody></table></div>
+<p>Submitting to one endpoint reaches all of them. The receiving engine verifies your key, then broadcasts the payload to every other participant within about ten seconds, and that fanout is cryptographically signed rather than trusted on faith, each forwarded payload carries an RSA-signed SHA-256 digest of the body that the receiver verifies against the sender's published key set. That is what stops a third party from spoofing submissions on your behalf.</p>
+<div class="pipeline"><div class="pl-node"><div class="pl-title">One authenticated POST</div><div class="pl-desc">to a single IndexNow endpoint.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Verify key</div><div class="pl-desc">receiver confirms ownership.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Signed broadcast</div><div class="pl-desc">fanout to every participant in ~10s.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">All engines queue</div><div class="pl-desc">Bing, Yandex, Naver, Seznam, Yep.</div></div></div><div class="chart-caption">Figure 12. One authenticated POST, verified once, broadcast to every participant. The signature headers make the fanout safe to trust.</div>
+<div class="code-wrap"><div class="code-label">python &amp;middot; production submission pipeline</div><div class="code-block"><pre>import json, time
+import requests
+from typing import Iterable
+
+class IndexNowPipeline:
+    ENDPOINT = &#x27;https://api.indexnow.org/indexnow&#x27;
+    BATCH = 10_000
+
+    def __init__(self, host: str, api_key: str, key_location: str | None = None):
+        # host must be a bare FQDN. Strip anything the caller got wrong.
+        self.host = host.replace(&#x27;https://&#x27;, &#x27;&#x27;).replace(&#x27;http://&#x27;, &#x27;&#x27;).strip(&#x27;/&#x27;)
+        self.api_key = api_key
+        self.key_location = key_location or f&#x27;https://{self.host}/{api_key}.txt&#x27;
+
+    def preflight(self) -&gt; bool:
+        &quot;&quot;&quot;Verify the key file is reachable and exact before submitting.&quot;&quot;&quot;
+        r = requests.get(self.key_location, timeout=10)
+        if r.status_code != 200:
+            print(f&#x27;key file unreachable: {r.status_code} at {self.key_location}&#x27;)
+            return False
+        if r.text.strip() != self.api_key:
+            print(&#x27;key file contents do not match the key&#x27;)
+            return False
+        return True
+
+    def submit(self, urls: Iterable[str]) -&gt; bool:
+        urls = list(dict.fromkeys(urls))          # dedupe, preserve order
+        if not urls:
+            return True
+        if not self.preflight():
+            return False
+        for i in range(0, len(urls), self.BATCH):
+            batch = urls[i:i + self.BATCH]
+            payload = {&#x27;host&#x27;: self.host, &#x27;key&#x27;: self.api_key,
+                       &#x27;keyLocation&#x27;: self.key_location, &#x27;urlList&#x27;: batch}
+            r = requests.post(self.ENDPOINT, data=json.dumps(payload),
+                              headers={&#x27;Content-Type&#x27;: &#x27;application/json; charset=utf-8&#x27;},
+                              timeout=15)
+            if r.status_code == 200:
+                print(f&#x27;pushed {len(batch)} URLs&#x27;)
+            elif r.status_code == 429:
+                time.sleep(30)                    # back off, then retry
+                return self.submit(urls[i:])
+            else:
+                print(f&#x27;submission failed: {r.status_code} {r.text[:200]}&#x27;)
+                return False
+        return True
+
+if __name__ == &#x27;__main__&#x27;:
+    # changed_urls comes from the hash comparison in the lastmod code above.
+    pipeline = IndexNowPipeline(&#x27;example.com&#x27;, &#x27;fa8c0a469da44e9b8f6a769f291829f5&#x27;)
+    pipeline.submit(changed_urls)</pre></div></div>
+<p>Call it from the deploy hook, after the sitemap is written and the validator has passed. Push only what changed, pushing your whole inventory on every deploy is the IndexNow equivalent of build-stamping your timestamps, and it earns you a 429 followed by a reputation you will not enjoy.</p>
+<h2 id="limits"><span class="section-num">10</span>What can a clean sitemap not do for you?</h2>
+<div class="section-answer"><strong>Discovery gets the page fetched. It does not get the page cited.</strong> Those are separate systems with separate inputs. Content-level levers, statistics, quotations, cited sources and strict structure, drive citation, and source attribution overperforms for pages without domain authority.</div>
+<p>The Princeton, Georgia Tech, Allen Institute and IIT Delhi GEO research measured how specific content modifications change citation performance, with lifts up to 40% over unoptimised baselines. The individual results are more useful than the headline.</p>
+<div class="chart-wrap"><canvas id="leverChart" height="240"></canvas></div><div class="chart-caption">Figure 13. Position-adjusted word-count lift by optimisation method. The last bar is the legacy tactic that still shows up in briefs.</div>
+<div class="tt-wrap"><div class="tt-label">Table 5. Content-level levers, measured. Source attribution overperforms for pages without domain authority.</div><table class="tt"><thead><tr><th>Method</th><th>Mechanism</th><th>Word-count lift</th><th>Impression lift</th></tr></thead><tbody><tr><td class="label">Quotation addition</td><td>Verifiable expert statements act as attributable anchors</td><td>+41%</td><td>+28%</td></tr><tr><td class="label">Statistics addition</td><td>Numerical claims replace qualitative ones</td><td>+31% to +41%</td><td>+23%</td></tr><tr><td class="label">Cite external sources</td><td>Inline references raise model confidence</td><td>+28% (+115% at rank 5)</td><td>+14%</td></tr><tr><td class="label">Fluency optimisation</td><td>Cleaner prose lowers parsing cost</td><td>+28%</td><td>+14%</td></tr><tr><td class="label">Strict heading hierarchy</td><td>Predictable structure improves chunk boundaries</td><td>+17.3% citation rate</td><td>+18.5%</td></tr><tr><td class="label">Keyword stuffing</td><td>Repetition lowers information density</td><td class="down">-8%</td><td>+5%</td></tr></tbody></table></div>
+<p>The rank-5 finding is the interesting one for anyone without an established domain: applying source citation to a page at position five in classical results lifted its generative visibility by 115%, which suggests evidence density can substitute for authority in a way that was never true in link-based ranking. One more distinction worth carrying into reporting, a 2026 benchmark of 21,181 search-layer interactions separates citation selection (whether an engine includes your link) from citation absorption (how much your text shapes the answer).</p>
+<div class="chart-wrap"><canvas id="absorbChart" height="240"></canvas></div><div class="chart-caption">Figure 14. Citation breadth against per-page influence. Perplexity cites the most sources and absorbs the least from each one.</div>
+<div class="tt-wrap"><div class="tt-label">Table 6. Selection against absorption. A Perplexity citation and a ChatGPT citation are not the same asset.</div><table class="tt"><thead><tr><th>Platform</th><th>Search trigger rate</th><th>Mean citations</th><th>Absorption influence</th><th>Behaviour</th></tr></thead><tbody><tr><td class="label">ChatGPT Search</td><td>98.64%</td><td>6.88</td><td>0.2713</td><td>Selective picking, deep absorption per page</td></tr><tr><td class="label">Google AI Overviews</td><td>99.67%</td><td>12.06</td><td>0.0584</td><td>Broad distribution, shallow extraction</td></tr><tr><td class="label">Perplexity</td><td>100.00%</td><td>16.35</td><td>0.0646</td><td>Exhaustive inclusion, low individual influence</td></tr></tbody></table></div>
+<p>The practical read: optimising for ChatGPT Search rewards evidence density on a small number of pages, while optimising for Perplexity rewards breadth and concise semantic matching across many. Your sitemap strategy is the same in both cases; your content strategy is not. Scoring which of the two you are winning is the subject of <a href="/blogs/share-of-model-measurement">Share of Model, measured properly</a>, and the taxonomy underneath it is <a href="/blogs/citation-vs-mention-vs-recommendation">citation vs mention vs recommendation</a>.</p>
+<h2 id="number"><span class="section-num">11</span>How do you put a number on it and gate it?</h2>
+<div class="section-answer"><strong>Two numbers: the tax you are paying, and a Sitemap Health Index you track monthly.</strong> Audits that produce a list get deprioritised; audits that produce a number that moves get funded. Quantify the redirect waste directly, then track a composite over time and gate it in CI.</div>
+<p>The first number quantifies the waste: count the redirect hops you serve crawlers per cycle and add a penalty for every URL whose terminal response is temporary, because those get re-requested indefinitely. Multiply by your CDN egress cost per request and you have a finance-legible version, usually small, and that is fine, the real cost was never the bandwidth, it is the fetches you did not get spent on pages you wanted read.</p>
+<div class="code-wrap"><div class="code-label">formula &amp;middot; the tax itself</div><div class="code-block"><pre>tax =  f · Σ  h_i · (1 + τ_i·k)
+
+  f   crawl cycles per period       τ   1 if terminal response is temporary
+  h   redirect hops on URL i        k   re-request multiplier for temporaries
+  x CDN egress cost/request = a finance-legible number. The real cost was
+  never bandwidth; it is the fetches not spent on pages you wanted read.</pre></div></div>
+<div class="code-wrap"><div class="code-label">formula &amp;middot; Sitemap Health Index</div><div class="code-block"><pre>SHI =  0.40·R + 0.30·H + 0.20·γ + 0.10·F
+
+  R  share of declared URLs returning 200 directly
+  H  share resolving inside the three-hop ceiling
+  γ  timestamp trust (from timestamp_trust above)
+  F  share of commercial URLs updated within 30 days
+  Score monthly. Treat anything under 80 as an open engineering item.</pre></div></div>
+<p>The weights are a starting point, not a law. Response health carries the most because it is a precondition for everything else; freshness carries the least because it is hardest to sustain and easiest to fake. Score it monthly, plot it, and treat anything under 80 as an open engineering item.</p>
+<div class="code-wrap"><div class="code-label">yaml &amp;middot; CI gate on the discovery layer</div><div class="code-block"><pre># .github/workflows/discovery-gate.yml
+name: discovery-gate
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: &#x27;0 6 * * 1&#x27;          # weekly drift check against production
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: &#x27;3.12&#x27; }
+      - run: pip install httpx
+      - name: Root files must return 200 with zero hops
+        run: |
+          for f in robots.txt sitemap.xml llms.txt; do
+            read -r hops status &lt; &lt;(curl -sIL -o /dev/null \
+              -w &#x27;%{num_redirects} %{http_code}&#x27; &quot;https://example.com/$f&quot;)
+            echo &quot;$f: hops=$hops status=$status&quot;
+            [ &quot;$hops&quot; = &quot;0&quot; ] &amp;&amp; [ &quot;$status&quot; = &quot;200&quot; ] || exit 1
+          done
+      - name: Sitemap discovery yield must exceed 0.98
+        run: python scripts/validate_sitemap.py
+      - name: Push changed URLs to IndexNow
+        if: github.event_name == &#x27;push&#x27;
+        run: python scripts/push_indexnow.py
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}</pre></div></div>
+<p>Pair the gate with log telemetry so you catch regressions that ship from outside your repository, which is where most of them come from. Segment requests by verified bot identity rather than user-agent string alone, using reverse and forward DNS or vendor-published IP ranges, and alert when AI-crawler traffic pushes origin p95 latency past 800ms or 5xx past 1%, when spoofed AI user-agents exceed 5% of bot traffic, and immediately if any root discovery file starts returning something other than 200. The verification mechanics tie back to <a href="/blogs/prompt-to-citation-tracking">prompt-to-citation tracking</a>.</p>
+<h2 id="ninety"><span class="section-num">12</span>What does the ninety-day sequence look like?</h2>
+<div class="section-answer"><strong>Routing first, timestamps second, partition and push third, telemetry last.</strong> None of this requires a replatform, it is routing rules, timestamps and telemetry, the highest return per engineering hour available to a marketing team that can get a sprint. The sequence matters: fixing freshness before hop counts ships fresh content into a layer that cannot resolve it.</div>
+<div class="tt-wrap"><div class="tt-label">Table 7. Ninety days, sequenced so each phase depends on the one before it.</div><table class="tt"><thead><tr><th>Window</th><th>Work</th><th>Verification</th></tr></thead><tbody><tr><td class="label">Days 1-14</td><td>Run the hop sweep across every declared URL. Collapse multi-hop chains into single rewrites. Make root files transparent. Purge non-200 URLs.</td><td>Discovery yield above 0.95, root files at zero hops</td></tr><tr><td class="label">Days 15-30</td><td>Replace build-stamped lastmod with hash-based generation. Move to ISO 8601 with UTC offsets. Add canonical alignment to the build.</td><td>Timestamp trust above 0.9, no future-dated entries</td></tr><tr><td class="label">Days 31-60</td><td>Split the sitemap by content type into files under 5,000 URLs. Publish a sitemap index. Wire IndexNow into the deploy hook.</td><td>Every child file parses, IndexNow returning 200</td></tr><tr><td class="label">Days 61-90</td><td>Segment logs by verified bot identity. Alert on status-distribution drift and root-file regressions. Put top commercial URLs on a 30-day review.</td><td>Sitemap Health Index above 85 and rising</td></tr></tbody></table></div>
+<div class="pull-quote">The tax is invisible until you go looking for it. There is no notification, no red banner, just a slow divergence between how much you publish and how often you get named. Run the hop sweep. It takes ten minutes and it will tell you whether you are paying.</div>
+<section class="faq-section" id="faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3 class="faq-q">Do XML sitemaps still matter for AI search?</h3><div class="faq-a"><p>Yes, more than they did, but for a different reason. Training crawlers read your sitemap as a bulk URL manifest, while real-time AI indexers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) read its lastmod values to decide what to recrawl today. That makes the sitemap a scheduling instruction, not just an inventory. The discovery layer, what you declare, how fast it resolves, and how you push changes, decides whether an engine can cheaply turn your URL into a citable document.</p></div></div><div class="faq-item"><h3 class="faq-q">How many redirect hops will AI crawlers follow?</h3><div class="faq-a"><p>Far fewer than search engines. The HTTP spec permits 30 redirects and Googlebot has historically followed around 10, but real-time AI indexers enforce a hard ceiling of one to three hops and then abandon the request with no client-side error logged anywhere you can see. A legacy URL often burns that budget on scheme, host and trailing-slash normalisation alone, so a bot never reaches your content. Collapse multi-hop chains into a single rewrite rule.</p></div></div><div class="faq-item"><h3 class="faq-q">Why does the lastmod timestamp in my sitemap matter so much?</h3><div class="faq-a"><p>Because real-time indexers lean on freshness harder than Google does, and a false timestamp is a trust penalty. If your build stamps today's date on all 12,000 URLs every deploy, the indexer recrawls aggressively, finds nothing actually changed, and demotes the recrawl priority of the whole file. Measure timestamp trust as content-changed URLs over lastmod-changed URLs; below 0.2 you are better off publishing no lastmod at all, because an absent signal is neutral while a false one is penalised.</p></div></div><div class="faq-item"><h3 class="faq-q">What status code should a sitemap URL redirect use for AI crawlers?</h3><div class="faq-a"><p>A 301 (or 308 where the request method and body must survive, such as API feeds and IndexNow payloads). A 301 tells the agent the move is permanent and the new target should be cached, so you pay the hop once. A 302 or 307 tells it nothing moved, so the original URL stays in the index and gets re-requested on every cycle, which is more expensive on every cycle after the first. The worst pattern is a 301 followed by a 302, which invalidates the permanent cache.</p></div></div><div class="faq-item"><h3 class="faq-q">Do root files like robots.txt and sitemap.xml need special handling?</h3><div class="faq-a"><p>Yes. /robots.txt, /sitemap.xml, /llms.txt and /llms-full.txt must return an explicit 200 from the root host with zero client-visible redirects. PerplexityBot refuses to follow redirects at all for /llms.txt, so a single 301 there makes the file effectively nonexistent to it. Use a transparent internal rewrite (invisible to the crawler), not a redirect (a hop it has to spend). A build that adds a catch-all rewrite emitting a 301 is the most common silent break.</p></div></div><div class="faq-item"><h3 class="faq-q">What is IndexNow and should I use it?</h3><div class="faq-a"><p>IndexNow inverts discovery from pull to push: when you create, update or delete a page, your origin notifies participating engines directly and the URL enters a recrawl queue in seconds instead of days. Participants include Bing, Yandex, Naver, Seznam and Yep, and a meaningful share of live ChatGPT Search grounding resolves through Bing. Verify domain ownership with a key file at the root, submit only the URLs that genuinely changed (the same hash-derived list your sitemap uses), and call it from the deploy hook after the sitemap validator passes.</p></div></div></section>
+<div class="about-block" id="references"><div class="about-label">References</div><p style="margin-bottom:16px;">Figures 1 through 15 are original, built from the data and behaviour analyses in the sources below.</p><ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;"><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.sorank.com/glossary-geo-seo/ai-crawlers" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI crawler families, user agents, and network behaviour. SoRank.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.captaindns.com/en/blog/ai-crawlers-redirects-handling-gptbot-claudebot-perplexitybot" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI crawlers and redirects: hop ceilings, status codes, and root file requirements. CaptainDNS.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.margen.net/robots-txt-ai-crawlers-gptbot-claudebot-perplexitybot/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Robots.txt behaviour across GPTBot, ClaudeBot, and PerplexityBot. Margen.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://web-alert.io/blog/ai-crawler-bot-monitoring-gptbot-claudebot-perplexitybot-guide" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI crawler monitoring, identity verification, and alerting thresholds. Web-Alert.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.get-ryze.ai/blog/llms-txt-vs-robots-txt-vs-sitemap-what-each-does-for-ai-crawlers" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">llms.txt vs robots.txt vs sitemap.xml: what each file does. Ryze.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://llmstxtgenerate.com/llms-txt-format/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">The llms.txt format specification.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.answer.ai/posts/2024-09-03-llmstxt.html" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">The original llms.txt proposal. Answer.AI.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://neuraladx.com/ai-search-indexing-content-freshness-sitemaps-lastmod-indexnow/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI search indexing, content freshness, lastmod, and IndexNow. NeuralAdX.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://quickseo.ai/blog/xml-sitemap-checks-the-complete-2026-guide-to-auditing-fixing-your-sitemap" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">XML sitemap auditing guide. QuickSEO.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.indexnow.org/documentation" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">IndexNow protocol documentation.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.indexnow.org/searchengines" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">IndexNow participating engines and the shared registry.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.indexnow.org/faq" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">IndexNow FAQ.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://meshworld.in/blog/web-dev/seo/indexnow/indexnow-api-deep-dive/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">IndexNow API deep dive: JSON payloads and key delegation. MeshWorld.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">GEO: Generative Engine Optimization. Princeton University.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.omnibound.ai/blog/generative-engine-optimization-statistics" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Generative engine optimisation statistics and freshness benchmarks. Omnibound.</a></li></ol></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns and technical playbooks on GEO, agentic commerce and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p><p>Sources: AI-crawler network-behaviour analyses, the Princeton/Georgia Tech GEO experiment, the IndexNow protocol docs, and 2026 citation-freshness and selection/absorption benchmarks. Code is a working reference implementation; per-crawler magnitudes are third-party estimates and directional.</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">3 hops</div><div class="stat-label">before a real-time indexer abandons the request</div></div><hr class="stat-divider"><div><div class="stat-val">0.64</div><div class="stat-label">discovery yield on a typical enterprise sitemap</div></div><hr class="stat-divider"><div><div class="stat-val">3.2x</div><div class="stat-label">citation rate for pages updated inside 30 days</div></div><hr class="stat-divider"><div><div class="stat-val">0</div><div class="stat-label">hops allowed on robots.txt, sitemap.xml, llms.txt</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this teardown</div><ul class="toc-list"><li><a href="#families"><span class="toc-num">01</span>Manifest to schedule</a></li><li><a href="#hops"><span class="toc-num">02</span>The three-hop ceiling</a></li><li><a href="#status"><span class="toc-num">03</span>Status codes as cache</a></li><li><a href="#root"><span class="toc-num">04</span>Root files get zero hops</a></li><li><a href="#lastmod"><span class="toc-num">05</span>The lastmod you lie with</a></li><li><a href="#partition"><span class="toc-num">06</span>Partition the file</a></li><li><a href="#hygiene"><span class="toc-num">07</span>Sitemap hygiene</a></li><li><a href="#freshness"><span class="toc-num">08</span>Freshness is leverage</a></li><li><a href="#indexnow"><span class="toc-num">09</span>Push beats pull</a></li><li><a href="#limits"><span class="toc-num">10</span>What it cannot do</a></li><li><a href="#number"><span class="toc-num">11</span>Put a number on it</a></li><li><a href="#ninety"><span class="toc-num">12</span>The ninety-day sequence</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.getElementById('sdy'); if(!root) return;
+  var SAMPLE="HOPS=0 STATUS=200  https://example.com/docs/architecture\nHOPS=2 STATUS=301  https://example.com/docs/rate-limits\nHOPS=3 STATUS=301  https://example.com/legacy/page\nHOPS=1 STATUS=302  https://example.com/promo\nHOPS=0 STATUS=404  https://example.com/removed";
+  function parse(line){
+    var url=(line.match(/https?:\/\/[^\s,]+/)||[null])[0];
+    var status=null,hops=null;
+    var mS=line.match(/STATUS\s*=\s*(\d{3})/i), mH=line.match(/HOPS\s*=\s*(\d+)/i);
+    if(mS) status=parseInt(mS[1],10);
+    if(mH) hops=parseInt(mH[1],10);
+    if(status===null||hops===null){
+      var parts=line.split(',').map(function(x){return x.trim();});
+      if(parts.length>=3){
+        if(!url) url=parts[0];
+        if(status===null){var s=parseInt(parts[1],10); if(!isNaN(s)) status=s;}
+        if(hops===null){var h=parseInt(parts[2],10); if(!isNaN(h)) hops=h;}
+      }
+    }
+    if(url===null||status===null) return null;
+    if(hops===null) hops=0;
+    return {url:url,status:status,hops:hops};
+  }
+  function compute(){
+    var raw=document.getElementById('sdyIn').value.split('\n');
+    var rows=[]; for(var i=0;i<raw.length;i++){ if(!raw[i].trim()) continue; var r=parse(raw[i]); if(r) rows.push(r); }
+    var sEl=document.getElementById('sdyScore'),band=document.getElementById('sdyBand'),fill=document.getElementById('sdyFill'),note=document.getElementById('sdyNote');
+    if(!rows.length){sEl.textContent='0';band.textContent='Paste your crawl';band.style.background='rgba(255,255,255,.1)';band.style.color='#fff';fill.style.width='0%';note.innerHTML='<p class="hint">The breakdown and worst offenders appear here.</p>';return;}
+    var total=rows.length, direct=0, redirectOk=0, nonOk=0, overHop=0, fails=[];
+    rows.forEach(function(r){
+      var okStatus=(r.status===200), okHop=(r.hops<3);
+      if(okStatus&&okHop){ if(r.hops===0) direct++; else redirectOk++; }
+      else {
+        if(!okStatus) nonOk++;
+        if(!okHop) overHop++;
+        fails.push(r);
+      }
+    });
+    var pass=direct+redirectOk, yield_=pass/total;
+    sEl.textContent=yield_.toFixed(2); fill.style.width=(yield_*100)+'%';
+    var lbl,col; if(yield_>=0.98){lbl='Healthy';col='var(--up)';}else if(yield_>=0.90){lbl='At risk';col='#C9922E';}else{lbl='Failing';col='var(--signal)';}
+    band.textContent=lbl;band.style.background=col;band.style.color='#0b0b0c';fill.style.background=col;
+    function row(lbl,val,c){return '<div class="lt-stat"><span>'+lbl+'</span><strong'+(c?' style="color:'+c+'"':'')+'>'+val+'</strong></div>';}
+    var html=row('URLs declared',total.toLocaleString())
+      +row('200, zero hops',direct.toLocaleString(),'var(--up)')
+      +row('200, resolved in budget',redirectOk.toLocaleString())
+      +row('Non-200',nonOk.toLocaleString(), nonOk?'var(--signal)':null)
+      +row('At or past the hop ceiling',overHop.toLocaleString(), overHop?'var(--signal)':null);
+    if(fails.length){
+      html+='<div class="gaps-h" style="margin-top:12px">Worst offenders</div>';
+      fails.slice(0,8).forEach(function(r){
+        var why = (r.status!==200? r.status+' ':'') + (r.hops>=3? r.hops+' hops':'');
+        var short=r.url.replace(/^https?:\/\//,'');
+        if(short.length>42) short=short.slice(0,40)+'..';
+        html+='<div class="lt-stat"><span style="color:rgba(255,255,255,.62)">'+short+'</span><strong style="color:var(--signal)">'+why.trim()+'</strong></div>';
+      });
+      if(fails.length>8) html+='<p class="hint" style="margin-top:6px">and '+(fails.length-8)+' more.</p>';
+    } else {
+      html+='<p class="hint" style="margin-top:8px">Every declared URL resolves cleanly. This is where you want to be.</p>';
+    }
+    note.innerHTML=html;
+  }
+  document.getElementById('sdyIn').addEventListener('input',compute);
+  document.getElementById('sdySample').addEventListener('click',function(){document.getElementById('sdyIn').value=SAMPLE;compute();});
+  compute();
+})();
+</script>
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4), amber='#C9922E';
+
+  var hp=document.getElementById('hopChart');
+  if(hp){new Chart(hp,{type:'bar',data:{labels:['HTTP spec','Googlebot','Training crawlers','Real-time indexers','User fetchers'],datasets:[{data:[30,10,5,3,3],backgroundColor:[neutral,neutral,rgba(signal,0.6),signal,signal],borderRadius:4,barThickness:40}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' up to '+c.raw+' redirect hops';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,max:32,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}}}}});}
+
+  var ca=document.getElementById('cacheChart');
+  if(ca){new Chart(ca,{type:'bar',data:{labels:['200 OK','301','308','302','307','301→302'],datasets:[
+    {label:'Caching benefit',data:[100,85,85,10,10,0],backgroundColor:up,borderRadius:4},
+    {label:'Repeat-fetch waste',data:[0,8,8,80,80,100],backgroundColor:signal,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+c.raw;}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,max:100,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}}}}});}
+
+  var fr=document.getElementById('freshChart');
+  if(fr){new Chart(fr,{type:'bar',data:{labels:['0-30 days','1-3 months','3+ months'],datasets:[{data:[3.2,1.0,0.33],backgroundColor:[up,amber,signal],borderRadius:4,barThickness:64}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'x relative citation rate';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:11}},grid:{color:'transparent'}},y:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10},callback:function(v){return v+'x';}},grid:{color:grid}}}}});}
+
+  var pu=document.getElementById('pushChart');
+  if(pu){new Chart(pu,{type:'bar',data:{labels:['No sitemap (days)','Sitemap + lastmod (hours)','IndexNow push (seconds)'],datasets:[{data:[100,24,1],backgroundColor:[signal,amber,up],borderRadius:4,barThickness:44}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' relative time to recrawl queue';}}}},
+      scales:{x:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}},y:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}}}}});}
+
+  var lv=document.getElementById('leverChart');
+  if(lv){new Chart(lv,{type:'bar',data:{labels:['Quotations','Statistics','Cite sources','Fluency','Strict headings','Keyword stuffing'],datasets:[{data:[41,36,28,28,17.3,-8],backgroundColor:['#3E9B6A',rgba(signal,0.85),rgba(signal,0.7),rgba(signal,0.6),rgba(signal,0.5),signal],borderRadius:4,barThickness:34}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return ' '+(c.raw>0?'+':'')+c.raw+'% word-count lift';}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:9}},grid:{color:'transparent'}},y:{ticks:{color:text,font:{family:mono,size:10},callback:function(v){return (v>0?'+':'')+v+'%';}},grid:{color:grid}}}}});}
+
+  var ab=document.getElementById('absorbChart');
+  if(ab){new Chart(ab,{type:'bar',data:{labels:['ChatGPT Search','Google AI Overviews','Perplexity'],datasets:[
+    {label:'Mean citations',data:[6.88,12.06,16.35],backgroundColor:neutral,borderRadius:4},
+    {label:'Absorption x100',data:[27.13,5.84,6.46],backgroundColor:signal,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+c.raw;}}}},
+      scales:{x:{ticks:{color:text,font:{family:mono,size:10}},grid:{color:'transparent'}},y:{beginAtZero:true,ticks:{color:text,font:{family:mono,size:10}},grid:{color:grid}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>

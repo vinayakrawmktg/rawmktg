@@ -7,8 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title><![CDATA[The Broken-Sitemap Tax: XML Sitemaps for AI Discovery &middot; rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/xml-sitemaps-for-ai-discovery</guid>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[The discovery-layer teardown for AI search. Real-time indexers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) enforce a 1-3 redirect-hop ceiling against Googlebot's ~10, and read your sitemap's lastmod as a recrawl schedule rather than an inventory. Covers the three-hop ceiling and discovery yield, status codes as cache instructions (301/308 vs 302/307), zero-hop root files, hash-based honest lastmod, sitemap partitioning and hygiene, freshness as the highest-leverage lever (3.2x citation inside 30 days), IndexNow push-vs-pull, the selection-vs-absorption split across engines, a Sitemap Health Index, a CI discovery-gate, and a 90-day sequence.]]></description>
+    </item>
     <item>
       <title><![CDATA[Do AI Crawlers Render JavaScript? · rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/do-ai-crawlers-render-javascript</link>

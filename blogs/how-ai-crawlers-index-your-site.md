@@ -267,7 +267,7 @@ html · <head>
 
 ### XML sitemaps that actually help
 
-All three of the crawlers we are configuring for use the sitemap, but they use it differently. OAI-SearchBot and PerplexityBot treat it as a freshness hint: a starting point for what to revisit. CCBot treats it as a sampling guide: a way to choose which representative pages to capture in its archive. The implications for sitemap hygiene are the same in either case.
+All three of the crawlers we are configuring for use the sitemap, but they use it differently. OAI-SearchBot and PerplexityBot treat it as a freshness hint: a starting point for what to revisit. CCBot treats it as a sampling guide: a way to choose which representative pages to capture in its archive. The implications for sitemap hygiene are the same in either case, and they are the whole subject of [the broken-sitemap tax](/blogs/xml-sitemaps-for-ai-discovery): the three-hop ceiling, honest lastmod, and pushing changes with IndexNow.
 
 - **Exclude non-canonical URLs.** No query parameters, no faceted filters, no duplicate paths. One URL per page of content.
 - **Every URL returns 200.** Broken sitemap entries train the crawler to deprioritise the entire feed.

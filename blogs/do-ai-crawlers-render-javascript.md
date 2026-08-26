@@ -518,7 +518,7 @@ html · native details/summary vs a JS accordion
 </details>
 ```
 
-The second wound is treating structured data as content delivery. Schema is valuable and you should ship it, as covered in [schema markup and AI citations](/blogs/schema-markup-ai-citations-2026), but empirical tests on ChatGPT-User show it frequently bypasses JSON-LD parsing and works from plain text in the body. If your price only exists inside a JSON-LD block, treat it as unpublished, mirror every critical fact, pricing, availability, specifications, in ordinary semantic HTML. Third, check what your framework does to navigation: a client-rendered nav means the crawler finds no internal links, so discovery of your other pages depends entirely on the sitemap, which is a fragile way to run a site.
+The second wound is treating structured data as content delivery. Schema is valuable and you should ship it, as covered in [schema markup and AI citations](/blogs/schema-markup-ai-citations-2026), but empirical tests on ChatGPT-User show it frequently bypasses JSON-LD parsing and works from plain text in the body. If your price only exists inside a JSON-LD block, treat it as unpublished, mirror every critical fact, pricing, availability, specifications, in ordinary semantic HTML. Third, check what your framework does to navigation: a client-rendered nav means the crawler finds no internal links, so discovery of your other pages depends entirely on the sitemap, which is a fragile way to run a site, and fragile in specific measurable ways covered in [the broken-sitemap tax](/blogs/xml-sitemaps-for-ai-discovery).
 
 ## 14. Which pages should you fix first?
 

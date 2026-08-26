@@ -115,7 +115,7 @@ Four files, four jobs
 
 The distinction that resolves most arguments
 
-robots.txt controls access. sitemap.xml declares inventory. llms.txt suggests priority. Only one of those three is enforced by anything, and it is not llms.txt, it is an information index with no access-control properties whatsoever. Treating it as a security or permissions layer is a category error that shows up in production more often than it should.
+robots.txt controls access. sitemap.xml declares inventory. llms.txt suggests priority. Only one of those three is enforced by anything, and it is not llms.txt, it is an information index with no access-control properties whatsoever. Treating it as a security or permissions layer is a category error that shows up in production more often than it should. The file that actually carries the discovery work is the XML sitemap, and getting it right is the subject of [the broken-sitemap tax](/blogs/xml-sitemaps-for-ai-discovery).
 
 ## 02. What do the server logs actually say?
 
