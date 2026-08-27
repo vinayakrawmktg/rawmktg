@@ -410,6 +410,10 @@
 }
 .shot.narrow { max-width: 460px; }
 .shot.narrow .shot-frame { height: 240px; }
+/* live: a real screenshot exists, show it at natural size */
+.shot.live .shot-frame { height: auto; background: var(--paper); }
+.shot.live .shot-img { position: static; width: 100%; height: auto; }
+.shot.live .shot-ph { display: none; }
 
 /* --- inline stat row ------------------------------------------------------ */
 .m-stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 24px 0 8px; }
