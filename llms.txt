@@ -1,6 +1,21 @@
 # rawmktg
 
-> rawmktg is a blog covering B2B marketing strategy, SEO, GEO (Generative Engine Optimization), AI search visibility, and content marketing for SaaS companies.
+> RawMktg is a product that finds out why AI assistants don't recommend your brand and generates the fixes. It crawls your site the way an AI crawler does, measures your Share of Model (how often assistants name you, as a share of the whole field, with confidence intervals), locates the specific faults, and generates artefacts (JSON-LD, rewritten answer blocks, llms.txt, robots.txt, content briefs). It is backed by an extensive research library: 47 original teardowns and playbooks, 51 free tools, a 65-term glossary and a versioned measurement methodology, on B2B marketing, SEO, GEO (Generative Engine Optimization) and AI search visibility.
+
+## Product
+
+- [RawMktg product homepage](https://rawmktg.com/) - Find out why AI assistants don't recommend you. The four-layer model (Measure, Mention, Citation, Recommendation), a free audit of 25 pages, and honest measurement (every number carries an interval; no arrow without significance).
+- [AI Visibility Audit](https://rawmktg.com/features/ai-visibility-audit) - Crawl your site as an AI crawler does; find which pages return almost nothing to a bot and why. Content Visibility Ratio (raw fetch words / rendered words; commercial floor 0.85), seven rubrics and ~50 checks producing located, point-weighted findings.
+- [Share of Model](https://rawmktg.com/features/share-of-model) - Measure how often AI assistants name your brand as a share of the whole field. Five-signal presence score (mention 30%, recommendation 30%, position 20%, sentiment 15%, entity accuracy 5%), frozen versioned prompt portfolio, confidence intervals and a significance gate.
+- [Findings & Fixes](https://rawmktg.com/features/findings-and-fixes) - Every failed check becomes a located finding with quoted evidence and a generated artefact: JSON-LD, answer block, llms.txt, robots.txt, schema snippet or content brief. Asserted inputs are labelled, never blended into a measured score.
+- [Competitor & Citation Tracking](https://rawmktg.com/features/competitor-tracking) - The models surface who is recommended instead of you; every citation is recorded and aggregated. Competitors are scored from the same answers, so there is no per-competitor pricing.
+- [For B2B SaaS marketing teams](https://rawmktg.com/use-cases/b2b-saas-marketing) - A defensible board number, a diagnosis of why you are absent, and work your team can do.
+- [For technical SEO](https://rawmktg.com/use-cases/technical-seo) - Rendering is the whole problem; measure CVR and get ticket-ready, evidence-backed findings on AI crawler retrieval.
+- [For agencies](https://rawmktg.com/use-cases/agencies) - A free audit as a leave-behind on any prospect domain, scoped findings, artefacts, and reporting that survives a sceptical client.
+- [Pricing](https://rawmktg.com/pricing) - Plans from $99/month (Diagnostic), Visibility, Program at $899/month, and agency plans from $1,500/month.
+- [Research library](https://rawmktg.com/research) - The teardowns, tools, glossary and methodology the product was built from.
+- [About](https://rawmktg.com/about) - What RawMktg is, the research programme behind it, and the company (Sageo Consulting LLP).
+- [Contact](https://rawmktg.com/contact) - Support, sales, billing and privacy; company details; billing handled by Paddle.
 
 ## Published Posts
 

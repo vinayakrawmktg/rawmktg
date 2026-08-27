@@ -291,20 +291,25 @@
       <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
       <div class="nav-links">
         <div class="nav-dropdown">
-          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Product <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu" role="menu">
-            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
-            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
-            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
-            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
-            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
-            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+            <span class="nm-sub">Features</span>
+            <a role="menuitem" href="/features/ai-visibility-audit"><span class="nm-num">01</span>AI Visibility Audit</a>
+            <a role="menuitem" href="/features/share-of-model"><span class="nm-num">02</span>Share of Model</a>
+            <a role="menuitem" href="/features/findings-and-fixes"><span class="nm-num">03</span>Findings &amp; Fixes</a>
+            <a role="menuitem" href="/features/competitor-tracking"><span class="nm-num">04</span>Competitor Tracking</a>
+            <span class="nm-sub">Use cases</span>
+            <a role="menuitem" href="/use-cases/b2b-saas-marketing"><span class="nm-num">&rarr;</span>For B2B SaaS marketing</a>
+            <a role="menuitem" href="/use-cases/technical-seo"><span class="nm-num">&rarr;</span>For technical SEO</a>
+            <a role="menuitem" href="/use-cases/agencies"><span class="nm-num">&rarr;</span>For agencies</a>
+            <a role="menuitem" href="/pricing"><span class="nm-num">$</span>Pricing</a>
           </div>
         </div>
-        <a href="/glossary">Glossary</a>
+        <a href="/research">Research</a>
         <a href="/tools">Tools</a>
-        <a href="/about">About</a>
-        <a href="/#newsletter" class="cta">Subscribe</a>
+        <a href="/glossary">Glossary</a>
+        <a href="https://app.rawmktg.com" class="nav-signin">Sign in</a>
+        <a href="https://app.rawmktg.com/audit" class="cta">Free audit</a>
       </div>
     </div>
   </div>
@@ -342,14 +347,14 @@
 <div class="pipeline"><div class="pl-node"><div class="pl-title">http://site/page</div><div class="pl-desc">Scheme normalisation.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">https://www.site/page</div><div class="pl-desc">Host normalisation.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">https://site/page</div><div class="pl-desc">Trailing-slash enforcement.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">https://site/page/</div><div class="pl-desc">Content, finally, if any budget is left.</div></div></div><div class="chart-caption">Figure 4. The chain almost every mature site has somewhere: three redirects for zero content. One rewrite rule collapses it.</div>
 <p>The failure mode is what makes it expensive. A 404 is loud; a 500 pages someone; a crawler quietly hitting its hop ceiling produces a 301 in your access log, then silence. Your monitoring sees a successful response. The engine sees a resource it could not resolve inside its budget and moves to the next candidate, which belongs to someone else.</p>
 <p>It helps to have a number. Define discovery yield as the share of declared URLs a real-time indexer can actually resolve into a citable document in one pass: three binary conditions, all cheap to measure.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; discovery yield</div><div class="code-block"><pre>discovery_yield =  (1 / N) · Σ  [ s_i = 200 ]·[ h_i &lt;= H ]·[ c_i = u_i ]
+<div class="code-wrap"><div class="code-label">formula &middot; discovery yield</div><div class="code-block"><pre>discovery_yield =  (1 / N) · Σ  [ s_i = 200 ]·[ h_i &lt;= H ]·[ c_i = u_i ]
 
   N   URLs declared in the sitemap        H   agent hop ceiling (1-3)
   s   terminal status code                c   the page&#x27;s declared canonical
   h   redirect hop count                  u   the URL as declared
   A URL counts only if it returns 200, resolves inside the hop budget,
   and points at itself as canonical. Most sites score 0.60 to 0.85.</pre></div></div>
-<div class="code-wrap"><div class="code-label">bash &amp;middot; measure hop counts on the URLs you declare</div><div class="code-block"><pre>#!/usr/bin/env bash
+<div class="code-wrap"><div class="code-label">bash &middot; measure hop counts on the URLs you declare</div><div class="code-block"><pre>#!/usr/bin/env bash
 # Reports redirect hops and terminal status for every URL in a sitemap.
 # Anything with hops &gt;= 3 is at or past the real-time indexer ceiling.
 SITEMAP=&quot;https://example.com/sitemap.xml&quot;
@@ -394,7 +399,7 @@ https://example.com/page,301,2"></textarea></div><div class="btn-row" style="mar
 <h2 id="root"><span class="section-num">04</span>Why must root discovery files get zero hops, not three?</h2>
 <div class="section-answer"><strong>robots.txt, sitemap.xml and llms.txt must return a 200 from the root with no redirect at all.</strong> PerplexityBot refuses to follow redirects when fetching /llms.txt, so a single 301 there makes the file nonexistent to it. Use a transparent internal rewrite, invisible to the crawler, not a redirect, which is a hop it has to spend.</div>
 <p>This breaks in a specific, common way. A team reorganises static assets, moves the files into a build-output directory, and adds a catch-all rewrite that happens to emit a 301. Everything still works in a browser. Every human test passes. The discovery layer goes dark and nothing reports it.</p>
-<div class="code-wrap"><div class="code-label">nginx &amp;middot; transparent rewrites for root discovery assets</div><div class="code-block"><pre>server {
+<div class="code-wrap"><div class="code-label">nginx &middot; transparent rewrites for root discovery assets</div><div class="code-block"><pre>server {
   listen 443 ssl http2;
   server_name example.com;
 
@@ -435,14 +440,14 @@ https://example.com/page,301,2"></textarea></div><div class="btn-row" style="mar
 <h2 id="lastmod"><span class="section-num">05</span>Why is lastmod the signal you are probably lying with?</h2>
 <div class="section-answer"><strong>Build-stamped timestamps tell the indexer everything changed, it checks, finds nothing, and demotes you.</strong> AI indexers lean on lastmod harder than Google because freshness is the strongest scheduling input they have. Honest timestamps get a recrawl queue that tracks your publishing; false ones get you demoted as a source of scheduling information.</div>
 <p>Here is the mechanism. Your build regenerates the sitemap on every deploy and stamps today's date on all 12,000 URLs, the default behaviour of most static-site generators and half the CMS plugins in circulation. The indexer takes you at your word and recrawls aggressively, compares the semantic hash of what it fetched against what it had, and finds nothing changed, on thousands of URLs. It will not do that twice: the recrawl priority of the whole file gets demoted, and the next time you ship something important you are in a slower queue.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; timestamp trust</div><div class="code-block"><pre>timestamp_trust =  (URLs whose CONTENT changed) / (URLs whose LASTMOD changed)
+<div class="code-wrap"><div class="code-label">formula &middot; timestamp trust</div><div class="code-block"><pre>timestamp_trust =  (URLs whose CONTENT changed) / (URLs whose LASTMOD changed)
 
   1.00  every timestamp change was a real content change
   0.04  you told the indexer 12,000 pages changed when 500 did
   &lt; 0.7 = engineering ticket.  &lt; 0.2 = better to publish no lastmod at all.</pre></div></div>
 <div class="chart-wrap"><canvas id="freshChart" height="230"></canvas></div><div class="chart-caption">Figure 10. Relative citation rate by time since last genuine update. The cliff between the first two buckets is steeper than most editorial calendars assume.</div>
 <p>The fix is to stop letting the build decide what changed and let a content hash decide instead: hash the rendered body with the volatile parts stripped, compare against the stored hash, and write a timestamp only when the comparison fails.</p>
-<div class="code-wrap"><div class="code-label">python &amp;middot; hash-based lastmod generation</div><div class="code-block"><pre>import hashlib, json, re, datetime, pathlib
+<div class="code-wrap"><div class="code-label">python &middot; hash-based lastmod generation</div><div class="code-block"><pre>import hashlib, json, re, datetime, pathlib
 
 STATE = pathlib.Path(&quot;.sitemap-hashes.json&quot;)
 VOLATILE = [
@@ -481,7 +486,7 @@ def resolve_lastmod(pages: dict[str, str]):
 <p>The changed list that falls out of this function is the same list you push to IndexNow later, which is not a coincidence. Two formatting rules while you are in there: use full W3C datetime with a UTC offset (2026-03-31T08:30:00+00:00, not a bare date), and never write a future lastmod, which happens more than you would expect when scheduled publishing and timezone handling collide.</p>
 <h2 id="partition"><span class="section-num">06</span>Why should you partition the sitemap file?</h2>
 <div class="section-answer"><strong>So a crawl-rate regression arrives with a filename attached, not buried in 48,000 URLs.</strong> The protocol permits 50,000 URLs per file, but auditing guidance converges on ~5,000 for two reasons: a real-time indexer abandons a slow XML parse the way it abandons a slow redirect, and a monolithic file gives you one number to watch instead of a per-section signal.</div>
-<div class="code-wrap"><div class="code-label">xml &amp;middot; sitemap index and a compliant child file</div><div class="code-block"><pre>&lt;!-- /sitemap.xml --&gt;
+<div class="code-wrap"><div class="code-label">xml &middot; sitemap index and a compliant child file</div><div class="code-block"><pre>&lt;!-- /sitemap.xml --&gt;
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;sitemapindex xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;
   &lt;sitemap&gt;
@@ -511,7 +516,7 @@ def resolve_lastmod(pages: dict[str, str]):
 <h2 id="hygiene"><span class="section-num">07</span>What does sitemap hygiene actually require?</h2>
 <div class="section-answer"><strong>Every URL in the file is a claim that it is canonical, live and indexable.</strong> Zero non-200 URLs, exact canonical alignment, directive alignment (no noindex or robots-blocked URLs), and parameter discipline. Every URL that fails one test teaches the crawler to discount the whole file.</div>
 <ul><li><strong>Zero non-200 URLs.</strong> Anything returning 301, 302, 308, 404 or 5xx should be purged automatically, not quarterly by hand.</li><li><strong>Canonical alignment.</strong> The URL in loc must match the page's own canonical tag exactly, including trailing slash and protocol. Mismatches are a documented cause of eviction from citation candidate pools.</li><li><strong>Directive alignment.</strong> A URL carrying noindex or blocked in robots.txt must never appear, declaring a page you told crawlers not to read is a contradiction resolved against you.</li><li><strong>Parameter discipline.</strong> Session IDs, tracking parameters and faceted-navigation combinations produce near-duplicate URLs that consume budget and dilute the canonical signal.</li></ul>
-<div class="code-wrap"><div class="code-label">python &amp;middot; sitemap validator with a hard fail</div><div class="code-block"><pre>import asyncio, re, sys
+<div class="code-wrap"><div class="code-label">python &middot; sitemap validator with a hard fail</div><div class="code-block"><pre>import asyncio, re, sys
 import httpx
 from xml.etree import ElementTree
 
@@ -558,7 +563,7 @@ asyncio.run(main(&#x27;https://example.com/sitemap-docs.xml&#x27;))</pre></div><
 <h2 id="freshness"><span class="section-num">08</span>Why is freshness the highest-leverage variable you control?</h2>
 <div class="section-answer"><strong>Content updated within 30 days is cited at ~3.2x the rate of static pages.</strong> Everything above is about not losing; this is where the file earns. 76.4% of top-cited ChatGPT Search URLs come from pages updated in the preceding 30 days, and pages untouched for three months face ~3x the probability of losing citations entirely.</div>
 <p>Google AI Overviews is more forgiving, 65% of citations from content updated within a year, 89% within three years. That difference is a strategy input: if ChatGPT Search is where your category gets decided, your update cadence is not a hygiene task, it is the campaign. Fitted to a simple exponential, the observed decay implies a citation half-life near two months for competitive commercial queries, the same shape as <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal">the 30-day content half-life</a>.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; freshness decay</div><div class="code-block"><pre>C(t) =  e^(-λ·t)          # relative citation likelihood
+<div class="code-wrap"><div class="code-label">formula &middot; freshness decay</div><div class="code-block"><pre>C(t) =  e^(-λ·t)          # relative citation likelihood
 
   t  days since the last GENUINE content change
   λ  fitted to the fresh/stale ratio; implies a citation half-life
@@ -571,7 +576,7 @@ asyncio.run(main(&#x27;https://example.com/sitemap-docs.xml&#x27;))</pre></div><
 <div class="chart-wrap"><canvas id="pushChart" height="220"></canvas></div><div class="chart-caption">Figure 11. Time from publish to entering a recrawl queue, by discovery mechanism. The sitemap narrows the window; the push closes it.</div>
 <h3>Ownership verification and payloads</h3>
 <p>Before you submit, you prove you control the domain: a key of 8 to 128 characters from a-z, A-Z, 0-9 and hyphen (a 32-character UUID with dashes stripped is the default), written into a UTF-8 file at the root named exactly {key}.txt, containing the key and nothing else. If you cannot write to the root, keyLocation lets you host it elsewhere, but verification scope is bounded by the directory the key sits in, a key at /catalog/key.txt authorises submissions under /catalog/ and nothing else. Single URLs go over GET percent-encoded; bulk submissions go over POST as JSON, up to 10,000 URLs, and the host field takes a bare FQDN with no protocol, path, slash or port.</p>
-<div class="code-wrap"><div class="code-label">http &amp;middot; both submission patterns</div><div class="code-block"><pre># Single URL, HTTP GET
+<div class="code-wrap"><div class="code-label">http &middot; both submission patterns</div><div class="code-block"><pre># Single URL, HTTP GET
 GET /indexnow?url=https%3A%2F%2Fexample.com%2Fdocs&amp;key=fa8c0a469da44e9b8f6a769f291829f5 HTTP/1.1
 Host: api.indexnow.org
 
@@ -593,7 +598,7 @@ Content-Type: application/json; charset=utf-8
 <div class="tt-wrap"><div class="tt-label">Table 4. IndexNow payload fields and response semantics. Most first-run failures are the host field or an unreachable key file.</div><table class="tt"><thead><tr><th>Field or code</th><th>Type</th><th>Validation rule</th><th>Purpose</th></tr></thead><tbody><tr><td class="label">host</td><td>String</td><td>FQDN only, no protocol, path, port or slash</td><td>Identifies the target origin</td></tr><tr><td class="label">key</td><td>String</td><td>8-128 chars from a-z, A-Z, 0-9 and hyphen</td><td>Authenticates ownership</td></tr><tr><td class="label">keyLocation</td><td>String</td><td>HTTPS URL to the key file, scope bounded by its directory</td><td>Delegated verification when the root is unavailable</td></tr><tr><td class="label">urlList</td><td>Array</td><td>Max 10,000 URLs per POST, percent-encoded</td><td>The batch of changed pages</td></tr><tr><td class="label">200 OK</td><td>Response</td><td>Payload received and validated</td><td>Triggers the inter-engine broadcast</td></tr><tr><td class="label">400 Bad Request</td><td>Response</td><td>Malformed JSON, host or URL format</td><td>Schema error, usually the host field</td></tr><tr><td class="label">403 Forbidden</td><td>Response</td><td>Key file missing, unreadable or mismatched</td><td>Ownership not proven</td></tr></tbody></table></div>
 <p>Submitting to one endpoint reaches all of them. The receiving engine verifies your key, then broadcasts the payload to every other participant within about ten seconds, and that fanout is cryptographically signed rather than trusted on faith, each forwarded payload carries an RSA-signed SHA-256 digest of the body that the receiver verifies against the sender's published key set. That is what stops a third party from spoofing submissions on your behalf.</p>
 <div class="pipeline"><div class="pl-node"><div class="pl-title">One authenticated POST</div><div class="pl-desc">to a single IndexNow endpoint.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Verify key</div><div class="pl-desc">receiver confirms ownership.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Signed broadcast</div><div class="pl-desc">fanout to every participant in ~10s.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">All engines queue</div><div class="pl-desc">Bing, Yandex, Naver, Seznam, Yep.</div></div></div><div class="chart-caption">Figure 12. One authenticated POST, verified once, broadcast to every participant. The signature headers make the fanout safe to trust.</div>
-<div class="code-wrap"><div class="code-label">python &amp;middot; production submission pipeline</div><div class="code-block"><pre>import json, time
+<div class="code-wrap"><div class="code-label">python &middot; production submission pipeline</div><div class="code-block"><pre>import json, time
 import requests
 from typing import Iterable
 
@@ -658,13 +663,13 @@ if __name__ == &#x27;__main__&#x27;:
 <h2 id="number"><span class="section-num">11</span>How do you put a number on it and gate it?</h2>
 <div class="section-answer"><strong>Two numbers: the tax you are paying, and a Sitemap Health Index you track monthly.</strong> Audits that produce a list get deprioritised; audits that produce a number that moves get funded. Quantify the redirect waste directly, then track a composite over time and gate it in CI.</div>
 <p>The first number quantifies the waste: count the redirect hops you serve crawlers per cycle and add a penalty for every URL whose terminal response is temporary, because those get re-requested indefinitely. Multiply by your CDN egress cost per request and you have a finance-legible version, usually small, and that is fine, the real cost was never the bandwidth, it is the fetches you did not get spent on pages you wanted read.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; the tax itself</div><div class="code-block"><pre>tax =  f · Σ  h_i · (1 + τ_i·k)
+<div class="code-wrap"><div class="code-label">formula &middot; the tax itself</div><div class="code-block"><pre>tax =  f · Σ  h_i · (1 + τ_i·k)
 
   f   crawl cycles per period       τ   1 if terminal response is temporary
   h   redirect hops on URL i        k   re-request multiplier for temporaries
   x CDN egress cost/request = a finance-legible number. The real cost was
   never bandwidth; it is the fetches not spent on pages you wanted read.</pre></div></div>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; Sitemap Health Index</div><div class="code-block"><pre>SHI =  0.40·R + 0.30·H + 0.20·γ + 0.10·F
+<div class="code-wrap"><div class="code-label">formula &middot; Sitemap Health Index</div><div class="code-block"><pre>SHI =  0.40·R + 0.30·H + 0.20·γ + 0.10·F
 
   R  share of declared URLs returning 200 directly
   H  share resolving inside the three-hop ceiling
@@ -672,7 +677,7 @@ if __name__ == &#x27;__main__&#x27;:
   F  share of commercial URLs updated within 30 days
   Score monthly. Treat anything under 80 as an open engineering item.</pre></div></div>
 <p>The weights are a starting point, not a law. Response health carries the most because it is a precondition for everything else; freshness carries the least because it is hardest to sustain and easiest to fake. Score it monthly, plot it, and treat anything under 80 as an open engineering item.</p>
-<div class="code-wrap"><div class="code-label">yaml &amp;middot; CI gate on the discovery layer</div><div class="code-block"><pre># .github/workflows/discovery-gate.yml
+<div class="code-wrap"><div class="code-label">yaml &middot; CI gate on the discovery layer</div><div class="code-block"><pre># .github/workflows/discovery-gate.yml
 name: discovery-gate
 on:
   push:
@@ -715,6 +720,7 @@ jobs:
   </div>
 </div>
 
+<div class="page prod-cta"><div style="border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:12px;background:var(--paper-2);padding:22px 24px;margin:8px 0 40px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;"><div style="max-width:58ch;"><div style="font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:-.01em;color:var(--ink);margin-bottom:5px;">See where your brand actually sits.</div><div style="font-family:var(--f-prose);font-size:14px;line-height:1.55;color:var(--ink-2);">RawMktg audits your site the way an AI crawler does and shows exactly why you are, or aren't, in the answer. Free, 25 pages, no card.</div></div><a href="https://app.rawmktg.com/audit" style="font-family:var(--f-mono);font-size:13px;font-weight:600;background:var(--signal);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;">Run a free audit &rarr;</a></div></div>
 <section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
   <div class="page">
     <div class="newsletter-inner">
@@ -736,10 +742,31 @@ jobs:
 
 <footer class="site-foot" aria-label="Site footer">
   <div class="page">
+    <div class="foot-top">
+      <div>
+        <div class="foot-col-label">Product</div>
+        <div class="foot-cats">
+          <a href="/features/ai-visibility-audit">AI Visibility Audit</a>
+          <a href="/features/share-of-model">Share of Model</a>
+          <a href="/features/findings-and-fixes">Findings &amp; Fixes</a>
+          <a href="/features/competitor-tracking">Competitor Tracking</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-label">Research</div>
+        <div class="foot-cats">
+          <a href="/research">All research</a>
+          <a href="/topics/industry-teardowns">Industry teardowns</a>
+          <a href="/tools">Free tools</a>
+          <a href="/glossary">Glossary</a>
+          <a href="/methodology">Methodology</a>
+        </div>
+      </div>
+    </div>
     <div class="foot-row">
       <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
-      <div class="foot-links"><a href="/about">About</a><a href="/methodology">Methodology</a>
-        <a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
       <span>&copy; 2026 rawmktg.</span>
     </div>
   </div>

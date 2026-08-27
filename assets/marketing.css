@@ -1,0 +1,163 @@
+/* ============================================================================
+   rawmktg. product / marketing pages. Extends the site design system.
+   Uses the site tokens: --paper, --ink, --signal, --up, --rule, --mute,
+   --f-display (Space Grotesk), --f-prose (Azeret Mono), --f-mono (JetBrains).
+   ========================================================================== */
+
+.mkt { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+@media (max-width:768px){ .mkt { padding: 0 20px; } }
+
+/* --- hero ----------------------------------------------------------------- */
+.m-hero { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+.m-eyebrow {
+  font-family: var(--f-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--signal);
+  display: inline-block; margin-bottom: 22px;
+}
+.m-hero h1 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(34px, 6vw, 60px); line-height: 1.02; letter-spacing: -.03em;
+  color: var(--ink); margin: 0 0 20px; max-width: 15ch;
+}
+.m-lede {
+  font-family: var(--f-prose); font-size: 17px; line-height: 1.6;
+  color: var(--ink-2); max-width: 60ch; margin: 0 0 28px;
+}
+.m-lede strong { color: var(--ink); font-weight: 600; }
+
+/* --- buttons -------------------------------------------------------------- */
+.m-cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.m-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--f-mono); font-size: 13px; font-weight: 600;
+  letter-spacing: .01em; text-decoration: none; cursor: pointer;
+  padding: 13px 22px; border-radius: 8px; border: 1px solid transparent;
+  transition: transform .12s ease, background .12s ease;
+}
+.m-btn.primary { background: var(--signal); color: #fff; }
+.m-btn.primary:hover { transform: translateY(-1px); background: #a5350f; }
+.m-btn.secondary { background: transparent; color: var(--ink); border-color: var(--rule-2); }
+.m-btn.secondary:hover { border-color: var(--ink); }
+.m-cta-note { font-family: var(--f-mono); font-size: 12px; color: var(--mute); margin: 14px 0 0; }
+
+/* --- sections ------------------------------------------------------------- */
+.m-section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+.m-section:last-of-type { border-bottom: 0; }
+.m-section .mkt > h2 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(24px, 3.4vw, 34px); line-height: 1.12; letter-spacing: -.02em;
+  color: var(--ink); margin: 0 0 18px; max-width: 24ch;
+}
+.m-section .mkt > p {
+  font-family: var(--f-prose); font-size: 15.5px; line-height: 1.68;
+  color: var(--ink-2); max-width: 66ch; margin: 0 0 16px;
+}
+.m-section .mkt > p strong { color: var(--ink); font-weight: 600; }
+.m-section .mkt > p:last-child { margin-bottom: 0; }
+.m-section .mkt > p + .m-grid,
+.m-section .mkt > p + .layers,
+.m-section .mkt > p + .steps,
+.m-section .mkt > p + .tt-wrap,
+.m-section .mkt > p + .shot { margin-top: 26px; }
+.m-kicker {
+  font-family: var(--f-mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--mute);
+  display: block; margin: 0 0 14px;
+}
+
+/* --- the four layers (the product spine) ---------------------------------- */
+.layers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 28px 0 8px; }
+@media (max-width:768px){ .layers { grid-template-columns: 1fr; } }
+.layer {
+  border: 1px solid var(--rule); border-radius: 12px; padding: 24px;
+  background: var(--paper-2); position: relative;
+}
+.layer-num {
+  font-family: var(--f-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--signal);
+  display: block; margin-bottom: 10px;
+}
+.layer h3 {
+  font-family: var(--f-display); font-weight: 600; font-size: 18px;
+  letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px;
+}
+.layer p { font-family: var(--f-prose); font-size: 13.5px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+.layers-note {
+  font-family: var(--f-prose); font-size: 15px; line-height: 1.65; color: var(--ink-2);
+  border-left: 3px solid var(--signal); padding: 4px 0 4px 18px; margin: 24px 0 0; max-width: 62ch;
+}
+.layers-note strong { color: var(--ink); }
+
+/* --- generic card grids --------------------------------------------------- */
+.m-grid { display: grid; gap: 16px; margin: 26px 0 6px; }
+.m-grid.two { grid-template-columns: repeat(2, 1fr); }
+.m-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width:900px){ .m-grid.three { grid-template-columns: 1fr 1fr; } }
+@media (max-width:768px){ .m-grid.two, .m-grid.three { grid-template-columns: 1fr; } }
+.m-card { border: 1px solid var(--rule); border-radius: 12px; padding: 22px; background: var(--paper); }
+.m-card h3 {
+  font-family: var(--f-display); font-weight: 600; font-size: 16.5px;
+  letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px;
+}
+.m-card p { font-family: var(--f-prose); font-size: 13.5px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+.m-card .m-more {
+  font-family: var(--f-mono); font-size: 12px; font-weight: 600; color: var(--signal);
+  text-decoration: none; display: inline-block; margin-top: 12px;
+}
+.m-card .m-more:hover { text-decoration: underline; }
+
+/* --- numbered steps ------------------------------------------------------- */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 26px 0 6px; counter-reset: step; }
+@media (max-width:900px){ .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width:560px){ .steps { grid-template-columns: 1fr; } }
+.step { border-top: 2px solid var(--signal); padding: 16px 0 0; }
+.step-num { font-family: var(--f-mono); font-size: 12px; font-weight: 600; color: var(--signal); display: block; margin-bottom: 8px; }
+.step h3 { font-family: var(--f-display); font-weight: 600; font-size: 15.5px; color: var(--ink); margin: 0 0 6px; letter-spacing: -.01em; }
+.step p { font-family: var(--f-prose); font-size: 13px; line-height: 1.58; color: var(--ink-2); margin: 0; }
+
+/* --- screenshot figures (tidy placeholder until the PNG exists) ----------- */
+.shot { margin: 24px 0 6px; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--paper-2); }
+.shot-frame {
+  position: relative; height: 300px; display: flex; align-items: center; justify-content: center;
+  background: var(--paper-3); overflow: hidden;
+}
+.shot-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+.shot-ph {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--mute); padding: 0 20px; text-align: center;
+}
+.shot figcaption {
+  font-family: var(--f-mono); font-size: 12px; line-height: 1.5; color: var(--mute);
+  padding: 12px 16px; border-top: 1px solid var(--rule); background: var(--paper);
+}
+.shot.narrow { max-width: 460px; }
+.shot.narrow .shot-frame { height: 240px; }
+
+/* --- inline stat row ------------------------------------------------------ */
+.m-stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 24px 0 8px; }
+.m-stat { }
+.m-stat b { font-family: var(--f-display); font-weight: 700; font-size: 30px; color: var(--signal); display: block; line-height: 1; letter-spacing: -.02em; }
+.m-stat span { font-family: var(--f-mono); font-size: 11.5px; color: var(--mute); display: block; margin-top: 6px; max-width: 22ch; }
+
+/* --- closing CTA band ----------------------------------------------------- */
+.m-close { padding: 56px 0 64px; text-align: left; }
+.m-close h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px,3.4vw,32px); letter-spacing: -.02em; color: var(--ink); margin: 0 0 12px; }
+.m-close p { font-family: var(--f-prose); font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 58ch; margin: 0 0 22px; }
+
+/* --- quiet / notes -------------------------------------------------------- */
+.m-quiet { font-family: var(--f-mono); font-size: 12px; color: var(--mute); }
+.m-note { font-family: var(--f-prose); font-size: 14px; line-height: 1.6; color: var(--ink-2); background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 20px 0; }
+
+/* --- contact blocks ------------------------------------------------------- */
+.m-contact { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin: 24px 0; }
+@media (max-width:640px){ .m-contact { grid-template-columns: 1fr; } }
+.m-contact .m-card a { font-family: var(--f-mono); font-size: 13px; color: var(--signal); text-decoration: none; }
+.m-entity { font-family: var(--f-mono); font-size: 13px; line-height: 1.7; color: var(--ink-2); }
+.m-entity strong { color: var(--ink); display:block; }
+
+/* --- nav: product dropdown reuses .nav-menu; sign-in link ----------------- */
+.nav-signin { font-family: var(--f-mono); font-size: 13px; }
+.nav-menu .nm-sub {
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--mute); padding: 10px 16px 4px; display: block;
+}

@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Research: AI search visibility teardowns &amp; playbooks &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="B2B marketing intelligence for the AI era. We measure who AI recommends across ChatGPT, Perplexity, Gemini and AI Overviews, and the SEO and GEO work that gets B2B brands cited." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/research" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/research" />
+  <link rel="alternate" hreflang="en-IN" href="https://rawmktg.com/research" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/research" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/research" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://rawmktg.com/research" />
+  <meta property="og:title"       content="rawmktg., B2B marketing intelligence for the AI era" />
+  <meta property="og:description" content="We measure who AI recommends across ChatGPT, Perplexity, Gemini and AI Overviews, and the SEO and GEO work that gets B2B brands cited." />
+  <meta property="og:image"       content="https://rawmktg.com/assets/images/rawmktg-homepage-og.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="rawmktg." />
+  <meta property="article:published_time" content="2026-04-01T00:00:00Z" />
+  <meta property="article:modified_time"  content="2026-06-06T00:00:00Z" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="rawmktg., B2B marketing intelligence for the AI era" />
+  <meta name="twitter:description" content="We measure who AI recommends across ChatGPT, Perplexity, Gemini and AI Overviews, and the SEO and GEO work that gets B2B brands cited." />
+  <meta name="twitter:image"       content="https://rawmktg.com/assets/images/rawmktg-homepage-og.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "rawmktg.",
+    "description": "B2B marketing intelligence for the AI era. SEO, GEO, AI search visibility, and content strategy for SaaS companies.",
+    "url": "https://rawmktg.com",
+    "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
+    "author":    { "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"] }
+  }
+  </script>
+
+  <!-- Speakable schema for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".hero-title", ".hero-desc", ".intro-inner", ".card-title"] },
+    "url": "https://rawmktg.com/research"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk', system-ui, sans-serif;
+      --f-prose:'Azeret Mono', ui-monospace, monospace;
+      --f-mono:'JetBrains Mono', ui-monospace, monospace;
+      --f-logo:'Geist', system-ui, sans-serif;
+    }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--paper); color:var(--ink); font-family:var(--f-prose); font-size:16px; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .page { max-width:1080px; margin:0 auto; padding:0 32px; }
+    .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    .site-nav { border-bottom:1px solid var(--rule); background:var(--paper); position:sticky; top:0; z-index:100; }
+    .nav-row { height:60px; display:flex; align-items:center; justify-content:space-between; }
+    .rm-logo { font-family:var(--f-logo); font-weight:800; font-size:20px; letter-spacing:-0.045em; display:inline-flex; align-items:baseline; line-height:1; color:var(--ink); }
+    .rm-logo .mktg { color:var(--ink-2); }
+    .rm-logo .dot { color:var(--signal); }
+    .nav-links { display:flex; align-items:center; gap:24px; font-family:var(--f-mono); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); }
+    .nav-links > a { transition:color 0.15s; }
+    .nav-links > a:hover { color:var(--ink); }
+    .nav-links a.cta { color:var(--signal); }
+
+    /* Dropdown */
+    .nav-dropdown { position:relative; }
+    .nav-trigger {
+      font:inherit; color:var(--mute); background:none; border:0; cursor:pointer;
+      letter-spacing:0.14em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px;
+      padding:0; transition:color 0.15s;
+    }
+    .nav-trigger:hover, .nav-dropdown:hover .nav-trigger, .nav-dropdown:focus-within .nav-trigger { color:var(--ink); }
+    .nav-trigger .caret { font-size:9px; color:var(--faint); }
+    .nav-menu {
+      position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(-6px);
+      background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+      box-shadow:0 10px 30px rgba(42,39,34,0.12); padding:8px; min-width:300px;
+      opacity:0; visibility:hidden; transition:opacity 0.15s, transform 0.15s; z-index:200;
+    }
+    .nav-dropdown:hover .nav-menu, .nav-dropdown:focus-within .nav-menu {
+      opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+    }
+    .nav-menu a {
+      display:block; padding:10px 12px; border-radius:6px;
+      font-family:var(--f-mono); font-size:10.5px; font-weight:500; letter-spacing:0.10em;
+      text-transform:uppercase; color:var(--ink-2); transition:background 0.12s, color 0.12s; white-space:nowrap;
+    }
+    .nav-menu a:hover { background:var(--paper-2); color:var(--signal); }
+    .nav-menu .nm-num { color:var(--faint); margin-right:8px; }
+
+    /* ── Brand hero ─────────────────────────────────────────── */
+    .hero { padding:80px 0 64px; border-bottom:1px solid var(--rule); }
+    .hero-eyebrow { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.20em; text-transform:uppercase; color:var(--signal); margin-bottom:20px; }
+    .hero-title { font-family:var(--f-display); font-weight:700; font-size:clamp(32px,5vw,54px); line-height:1.06; letter-spacing:-0.03em; color:var(--ink); margin-bottom:22px; max-width:880px; }
+    .hero-desc { font-family:var(--f-prose); font-size:17px; line-height:1.6; color:var(--ink-2); max-width:660px; margin-bottom:30px; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:var(--paper); font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:14px 24px; border-radius:6px; transition:opacity 0.15s; }
+    .btn-primary:hover { opacity:0.82; }
+    .btn-secondary { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--rule-2); color:var(--ink-2); font-family:var(--f-mono); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:13px 22px; border-radius:6px; transition:border-color 0.15s,color 0.15s; }
+    .btn-secondary:hover { border-color:var(--ink); color:var(--ink); }
+
+    /* ── Intro ──────────────────────────────────────────────── */
+    .section-kicker { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.20em; text-transform:uppercase; color:var(--signal); margin-bottom:16px; }
+    .intro { padding:60px 0; border-bottom:1px solid var(--rule); }
+    .intro-inner { max-width:730px; }
+    .intro h2 { font-family:var(--f-display); font-weight:700; font-size:clamp(24px,3vw,32px); letter-spacing:-0.02em; color:var(--ink); margin-bottom:22px; line-height:1.16; }
+    .intro p { font-family:var(--f-prose); font-size:16px; line-height:1.72; color:var(--ink-2); margin-bottom:18px; }
+    .intro p:last-child { margin-bottom:0; }
+    .intro em { font-style:italic; color:var(--ink); }
+    .intro .em-stat { color:var(--signal); font-weight:600; font-style:normal; }
+
+    /* ── Clusters ───────────────────────────────────────────── */
+    .cluster { padding:52px 0; border-bottom:1px solid var(--rule); }
+    .cluster-head { max-width:760px; margin-bottom:32px; }
+    .cluster-num { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.20em; text-transform:uppercase; color:var(--mute); }
+    .cluster-title { font-family:var(--f-display); font-weight:700; font-size:clamp(22px,2.6vw,28px); line-height:1.15; letter-spacing:-0.02em; color:var(--ink); margin:10px 0 12px; }
+    .cluster-frame { font-family:var(--f-prose); font-size:14.5px; line-height:1.65; color:var(--mute); }
+    .article-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+    .article-card { display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--rule); border-radius:8px; overflow:hidden; color:inherit; transition:border-color 0.15s,box-shadow 0.15s; }
+    .article-card:hover { border-color:var(--rule-2); box-shadow:0 4px 16px rgba(42,39,34,0.07); }
+    .article-card:hover .card-title { color:var(--signal); }
+    .article-card:hover .card-arrow { color:var(--signal); transform:translateX(3px); }
+    .card-img { width:100%; height:auto; display:block; flex-shrink:0; }
+    .card-body { padding:20px 20px 18px; display:flex; flex-direction:column; flex:1; }
+    .card-topic { font-family:var(--f-mono); font-size:9.5px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--signal); margin-bottom:9px; }
+    .card-title { font-family:var(--f-display); font-weight:700; font-size:16.5px; line-height:1.25; letter-spacing:-0.014em; color:var(--ink); margin-bottom:9px; transition:color 0.15s; }
+    .card-desc { font-family:var(--f-prose); font-size:12.5px; line-height:1.6; color:var(--mute); flex:1; margin-bottom:14px; }
+    .card-footer { display:flex; align-items:center; justify-content:flex-end; }
+    .card-arrow { font-family:var(--f-mono); font-size:15px; color:var(--faint); transition:color 0.15s,transform 0.15s; }
+
+    .explore-more { margin-top:28px; }
+    .explore-link { display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--signal); border:1px solid var(--rule-2); padding:11px 18px; border-radius:6px; transition:border-color 0.15s, background 0.15s; }
+    .explore-link:hover { border-color:var(--signal); background:var(--signal-soft); }
+
+    /* ── About ──────────────────────────────────────────────── */
+    .about { padding:64px 0; border-bottom:1px solid var(--rule); }
+    .about-inner { max-width:730px; }
+    .about h2 { font-family:var(--f-display); font-weight:700; font-size:clamp(24px,3vw,32px); letter-spacing:-0.02em; color:var(--ink); margin-bottom:20px; }
+    .about p { font-family:var(--f-prose); font-size:16px; line-height:1.72; color:var(--ink-2); margin-bottom:18px; }
+    .about a { color:var(--signal); border-bottom:1px solid var(--signal-soft); transition:border-color 0.15s; }
+    .about a:hover { border-color:var(--signal); }
+    .about .about-cta { display:inline-block; margin-top:4px; font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--signal); padding-bottom:2px; }
+
+    /* ── Newsletter ─────────────────────────────────────────── */
+    .newsletter-section { padding:56px 0 72px; border-top:1px solid var(--rule); }
+    .newsletter-inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .newsletter-label { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:0.20em; text-transform:uppercase; color:var(--signal); margin-bottom:14px; }
+    .newsletter-title { font-family:var(--f-display); font-weight:700; font-size:28px; line-height:1.18; letter-spacing:-0.020em; color:var(--ink); margin-bottom:12px; }
+    .newsletter-desc { font-family:var(--f-prose); font-size:14px; line-height:1.65; color:var(--mute); }
+    .newsletter-form { display:flex; flex-direction:column; gap:12px; }
+    .newsletter-form input[type="email"] { width:100%; padding:14px 16px; background:var(--paper-2); border:1px solid var(--rule-2); border-radius:6px; font-family:var(--f-prose); font-size:14px; color:var(--ink); outline:none; transition:border-color 0.15s; }
+    .newsletter-form input[type="email"]::placeholder { color:var(--faint); }
+    .newsletter-form input[type="email"]:focus { border-color:var(--signal); }
+    .newsletter-form button { width:100%; padding:14px 24px; background:var(--ink); color:var(--paper); border:none; border-radius:6px; font-family:var(--f-mono); font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; }
+    .newsletter-form button:hover { background:var(--signal); }
+    .newsletter-note { font-family:var(--f-mono); font-size:10px; letter-spacing:0.10em; text-transform:uppercase; color:var(--mute); }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    .site-foot { border-top:1px solid var(--rule); padding:36px 0 44px; }
+    .foot-top { display:flex; flex-wrap:wrap; gap:24px 40px; margin-bottom:28px; }
+    .foot-col-label { font-family:var(--f-mono); font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--mute); margin-bottom:12px; }
+    .foot-cats { display:flex; flex-direction:column; gap:8px; }
+    .foot-cats a { font-family:var(--f-mono); font-size:11px; letter-spacing:0.06em; color:var(--mute); transition:color 0.15s; }
+    .foot-cats a:hover { color:var(--ink); }
+    .foot-row { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding-top:24px; border-top:1px solid var(--rule); font-family:var(--f-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); }
+    .foot-row a { transition:color 0.15s; }
+    .foot-row a:hover { color:var(--ink); }
+    .foot-links { display:flex; gap:20px; }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width:900px) { .article-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:768px) {
+      .page { padding:0 20px; }
+      .article-grid { grid-template-columns:1fr; }
+      .newsletter-inner { grid-template-columns:1fr; gap:32px; }
+      .nav-links { display:none; }
+      .hero { padding:56px 0 48px; }
+    }
+      .nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+      .foot-cats{gap:2px;}.foot-cats a{display:inline-block;padding:6px 0;line-height:1.1;}.foot-links a{display:inline-block;padding:6px 0;}
+  </style>
+
+  <!-- Google AdSense (deferred) -->
+
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"Organization","@id":"https://rawmktg.com/#organization","name":"rawmktg.","url":"https://rawmktg.com","sameAs":["https://www.linkedin.com/company/rawmktg/","https://x.com/rawmktgcom"] }
+  </script>
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"WebSite","@id":"https://rawmktg.com/#website","name":"rawmktg.","url":"https://rawmktg.com","description":"B2B marketing intelligence for the AI era. SEO, GEO, and AI search visibility for SaaS companies.","publisher":{"@id":"https://rawmktg.com/#organization"} }
+  </script>
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"Person","name":"Vinayak Ravi","url":"https://rawmktg.com","sameAs":["https://www.linkedin.com/in/vinayakravi/","https://x.com/vinayaksravi"] }
+  </script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/index.md" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://rawmktg.com/#org", "name": "rawmktg.", "url": "https://rawmktg.com", "logo": "https://rawmktg.com/assets/images/favicon-180.png", "description": "rawmktg. publishes data-driven teardowns, tools and a glossary on how AI search decides what to recommend.", "sameAs": ["https://www.linkedin.com/company/rawmktg/","https://x.com/rawmktgcom"]}, {"@type": "WebSite", "@id": "https://rawmktg.com/#website", "name": "rawmktg.", "url": "https://rawmktg.com", "publisher": {"@id": "https://rawmktg.com/#org"}, "inLanguage": "en"}]}</script>
+  <style id="mobile-fixes">
+:root{--faint:#8B8578;}
+.article-content,.article-content p,.article-content li,.article-content td,.faq-a,.faq-a p,.about-block p,.method p,.method li,.section-answer,.callout-box p,.card-desc,.tt td,.gloss-body,.gloss-body p,.entry-body,.entry-body p,.legal-inner,.legal-inner li,.legal-inner p{overflow-wrap:anywhere;word-break:break-word;}
+.about-block a,.article-content a,.method a,.references a{overflow-wrap:anywhere;}
+@media(max-width:768px){
+  .foot-row{flex-direction:column;align-items:flex-start;gap:16px;}
+  .foot-links{gap:18px!important;flex-wrap:wrap;}
+  .foot-cats{gap:10px!important;flex-wrap:wrap;}
+  .foot-links a,.foot-cats a,.nav-menu a{min-height:44px;display:inline-flex;align-items:center;}
+  .method .srcs{gap:12px 20px!important;}
+  .method .srcs a,.srcs a{padding:6px 0;display:inline-block;}
+  .eyebrow-tag,.eyebrow-date,.chart-caption,.tt-label,.code-label,.toc-list a,.stat-label,.sidebar-label,.about-label,.card-topic,.newsletter-note,.pl-desc,.figcap,.o-eyebrow,.gaps-h,.lab,.sg-label,.article-data-note,.nav-links{font-size:12px!important;}
+}
+</style>
+  <link rel="stylesheet" href="/assets/marketing.css" />
+<style id="mkt-inline">
+/* ============================================================================
+   rawmktg. product / marketing pages. Extends the site design system.
+   Uses the site tokens: --paper, --ink, --signal, --up, --rule, --mute,
+   --f-display (Space Grotesk), --f-prose (Azeret Mono), --f-mono (JetBrains).
+   ========================================================================== */
+
+.mkt { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+@media (max-width:768px){ .mkt { padding: 0 20px; } }
+
+/* --- hero ----------------------------------------------------------------- */
+.m-hero { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+.m-eyebrow {
+  font-family: var(--f-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--signal);
+  display: inline-block; margin-bottom: 22px;
+}
+.m-hero h1 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(34px, 6vw, 60px); line-height: 1.02; letter-spacing: -.03em;
+  color: var(--ink); margin: 0 0 20px; max-width: 15ch;
+}
+.m-lede {
+  font-family: var(--f-prose); font-size: 17px; line-height: 1.6;
+  color: var(--ink-2); max-width: 60ch; margin: 0 0 28px;
+}
+.m-lede strong { color: var(--ink); font-weight: 600; }
+
+/* --- buttons -------------------------------------------------------------- */
+.m-cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.m-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--f-mono); font-size: 13px; font-weight: 600;
+  letter-spacing: .01em; text-decoration: none; cursor: pointer;
+  padding: 13px 22px; border-radius: 8px; border: 1px solid transparent;
+  transition: transform .12s ease, background .12s ease;
+}
+.m-btn.primary { background: var(--signal); color: #fff; }
+.m-btn.primary:hover { transform: translateY(-1px); background: #a5350f; }
+.m-btn.secondary { background: transparent; color: var(--ink); border-color: var(--rule-2); }
+.m-btn.secondary:hover { border-color: var(--ink); }
+.m-cta-note { font-family: var(--f-mono); font-size: 12px; color: var(--mute); margin: 14px 0 0; }
+
+/* --- sections ------------------------------------------------------------- */
+.m-section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+.m-section:last-of-type { border-bottom: 0; }
+.m-section .mkt > h2 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(24px, 3.4vw, 34px); line-height: 1.12; letter-spacing: -.02em;
+  color: var(--ink); margin: 0 0 18px; max-width: 24ch;
+}
+.m-section .mkt > p {
+  font-family: var(--f-prose); font-size: 15.5px; line-height: 1.68;
+  color: var(--ink-2); max-width: 66ch; margin: 0 0 16px;
+}
+.m-section .mkt > p strong { color: var(--ink); font-weight: 600; }
+.m-section .mkt > p:last-child { margin-bottom: 0; }
+.m-section .mkt > p + .m-grid,
+.m-section .mkt > p + .layers,
+.m-section .mkt > p + .steps,
+.m-section .mkt > p + .tt-wrap,
+.m-section .mkt > p + .shot { margin-top: 26px; }
+.m-kicker {
+  font-family: var(--f-mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--mute);
+  display: block; margin: 0 0 14px;
+}
+
+/* --- the four layers (the product spine) ---------------------------------- */
+.layers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 28px 0 8px; }
+@media (max-width:768px){ .layers { grid-template-columns: 1fr; } }
+.layer {
+  border: 1px solid var(--rule); border-radius: 12px; padding: 24px;
+  background: var(--paper-2); position: relative;
+}
+.layer-num {
+  font-family: var(--f-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--signal);
+  display: block; margin-bottom: 10px;
+}
+.layer h3 {
+  font-family: var(--f-display); font-weight: 600; font-size: 18px;
+  letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px;
+}
+.layer p { font-family: var(--f-prose); font-size: 13.5px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+.layers-note {
+  font-family: var(--f-prose); font-size: 15px; line-height: 1.65; color: var(--ink-2);
+  border-left: 3px solid var(--signal); padding: 4px 0 4px 18px; margin: 24px 0 0; max-width: 62ch;
+}
+.layers-note strong { color: var(--ink); }
+
+/* --- generic card grids --------------------------------------------------- */
+.m-grid { display: grid; gap: 16px; margin: 26px 0 6px; }
+.m-grid.two { grid-template-columns: repeat(2, 1fr); }
+.m-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width:900px){ .m-grid.three { grid-template-columns: 1fr 1fr; } }
+@media (max-width:768px){ .m-grid.two, .m-grid.three { grid-template-columns: 1fr; } }
+.m-card { border: 1px solid var(--rule); border-radius: 12px; padding: 22px; background: var(--paper); }
+.m-card h3 {
+  font-family: var(--f-display); font-weight: 600; font-size: 16.5px;
+  letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px;
+}
+.m-card p { font-family: var(--f-prose); font-size: 13.5px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+.m-card .m-more {
+  font-family: var(--f-mono); font-size: 12px; font-weight: 600; color: var(--signal);
+  text-decoration: none; display: inline-block; margin-top: 12px;
+}
+.m-card .m-more:hover { text-decoration: underline; }
+
+/* --- numbered steps ------------------------------------------------------- */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 26px 0 6px; counter-reset: step; }
+@media (max-width:900px){ .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width:560px){ .steps { grid-template-columns: 1fr; } }
+.step { border-top: 2px solid var(--signal); padding: 16px 0 0; }
+.step-num { font-family: var(--f-mono); font-size: 12px; font-weight: 600; color: var(--signal); display: block; margin-bottom: 8px; }
+.step h3 { font-family: var(--f-display); font-weight: 600; font-size: 15.5px; color: var(--ink); margin: 0 0 6px; letter-spacing: -.01em; }
+.step p { font-family: var(--f-prose); font-size: 13px; line-height: 1.58; color: var(--ink-2); margin: 0; }
+
+/* --- screenshot figures (tidy placeholder until the PNG exists) ----------- */
+.shot { margin: 24px 0 6px; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--paper-2); }
+.shot-frame {
+  position: relative; height: 300px; display: flex; align-items: center; justify-content: center;
+  background: var(--paper-3); overflow: hidden;
+}
+.shot-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+.shot-ph {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--mute); padding: 0 20px; text-align: center;
+}
+.shot figcaption {
+  font-family: var(--f-mono); font-size: 12px; line-height: 1.5; color: var(--mute);
+  padding: 12px 16px; border-top: 1px solid var(--rule); background: var(--paper);
+}
+.shot.narrow { max-width: 460px; }
+.shot.narrow .shot-frame { height: 240px; }
+
+/* --- inline stat row ------------------------------------------------------ */
+.m-stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 24px 0 8px; }
+.m-stat { }
+.m-stat b { font-family: var(--f-display); font-weight: 700; font-size: 30px; color: var(--signal); display: block; line-height: 1; letter-spacing: -.02em; }
+.m-stat span { font-family: var(--f-mono); font-size: 11.5px; color: var(--mute); display: block; margin-top: 6px; max-width: 22ch; }
+
+/* --- closing CTA band ----------------------------------------------------- */
+.m-close { padding: 56px 0 64px; text-align: left; }
+.m-close h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px,3.4vw,32px); letter-spacing: -.02em; color: var(--ink); margin: 0 0 12px; }
+.m-close p { font-family: var(--f-prose); font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 58ch; margin: 0 0 22px; }
+
+/* --- quiet / notes -------------------------------------------------------- */
+.m-quiet { font-family: var(--f-mono); font-size: 12px; color: var(--mute); }
+.m-note { font-family: var(--f-prose); font-size: 14px; line-height: 1.6; color: var(--ink-2); background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 20px 0; }
+
+/* --- contact blocks ------------------------------------------------------- */
+.m-contact { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin: 24px 0; }
+@media (max-width:640px){ .m-contact { grid-template-columns: 1fr; } }
+.m-contact .m-card a { font-family: var(--f-mono); font-size: 13px; color: var(--signal); text-decoration: none; }
+.m-entity { font-family: var(--f-mono); font-size: 13px; line-height: 1.7; color: var(--ink-2); }
+.m-entity strong { color: var(--ink); display:block; }
+
+/* --- nav: product dropdown reuses .nav-menu; sign-in link ----------------- */
+.nav-signin { font-family: var(--f-mono); font-size: 13px; }
+.nav-menu .nm-sub {
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--mute); padding: 10px 16px 4px; display: block;
+}
+
+</style>
+</head>
+
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/index.md. It is optimized for AI and LLM tools.</div>
+
+<!-- ── Nav ──────────────────────────────────────────────────── -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Product <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <span class="nm-sub">Features</span>
+            <a role="menuitem" href="/features/ai-visibility-audit"><span class="nm-num">01</span>AI Visibility Audit</a>
+            <a role="menuitem" href="/features/share-of-model"><span class="nm-num">02</span>Share of Model</a>
+            <a role="menuitem" href="/features/findings-and-fixes"><span class="nm-num">03</span>Findings &amp; Fixes</a>
+            <a role="menuitem" href="/features/competitor-tracking"><span class="nm-num">04</span>Competitor Tracking</a>
+            <span class="nm-sub">Use cases</span>
+            <a role="menuitem" href="/use-cases/b2b-saas-marketing"><span class="nm-num">&rarr;</span>For B2B SaaS marketing</a>
+            <a role="menuitem" href="/use-cases/technical-seo"><span class="nm-num">&rarr;</span>For technical SEO</a>
+            <a role="menuitem" href="/use-cases/agencies"><span class="nm-num">&rarr;</span>For agencies</a>
+            <a role="menuitem" href="/pricing"><span class="nm-num">$</span>Pricing</a>
+          </div>
+        </div>
+        <a href="/research">Research</a>
+        <a href="/tools">Tools</a>
+        <a href="/glossary">Glossary</a>
+        <a href="https://app.rawmktg.com" class="nav-signin">Sign in</a>
+        <a href="https://app.rawmktg.com/audit" class="cta">Free audit</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div class="page" style="padding-top:28px;"><p style="font-family:var(--f-prose);font-size:15px;line-height:1.6;color:var(--ink-2);max-width:70ch;margin:0;">We built <a href="/" style="color:var(--signal);text-decoration:none;">RawMktg</a> because we kept finding the same thing across every audit: brands absent from AI answers with no way to see why. This is the research it came from, 47 teardowns and playbooks, 51 free tools and a versioned methodology. <a href="/" style="color:var(--signal);text-decoration:none;">See the product &rarr;</a></p></div>
+
+
+<!-- ── Brand hero ────────────────────────────────────────────── -->
+<header class="hero" aria-label="Introduction">
+  <div class="page">
+    <div class="hero-eyebrow">rawmktg.</div>
+    <h1 class="hero-title">B2B marketing intelligence for the AI era.</h1>
+    <p class="hero-desc">Buyers are asking ChatGPT, Perplexity and Gemini which vendor to use. We dig into who shows up in the answer, who doesn't, and why, using real data across real B2B verticals.</p>
+    <div class="hero-actions">
+      <a href="#start-here" class="btn-primary">Start with the teardowns →</a>
+      <a href="#newsletter" class="btn-secondary">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── What this is ──────────────────────────────────────────── -->
+<section class="intro" aria-label="What this is">
+  <div class="page">
+    <div class="intro-inner">
+      <div class="section-kicker">What this is</div>
+      <h2>Search has quietly moved. Most companies aren't in the room.</h2>
+      <p>The buyer who used to type a query into Google and scan ten blue links now asks an AI assistant a direct question, such as <em>"what's the best container-tracking software for a mid-market freight forwarder?"</em>, and acts on the three names it returns. The vendors in that answer win. The ones who aren't get no second look.</p>
+      <p>rawmktg. is where we publish what we find when we measure that gap. We pull citation data across ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot and Grok, line it up against the SEO fundamentals underneath, and write up what actually separates the brands AI recommends from the ones it ignores.</p>
+      <p>The recurring finding, vertical after vertical, is the same: most companies aren't in the room. In the AEC software space, <span class="em-stat">four of six vendors had fewer than two AI citations combined.</span> In senior living, one brand was being misclassified by AI at the exact moment of highest buyer intent. The pattern holds across CX SaaS, autonomous retail and container tracking. A visibility moat sitting wide open because almost nobody is building it yet.</p>
+      <p>No theory for its own sake. Every piece here is either built on data we ran, or on the published research that holds up when you check it. If a tactic doesn't move citations, it doesn't make the page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Cluster 1: Industry teardowns ─────────────────────────── -->
+<section class="cluster" id="start-here" aria-label="Industry teardowns">
+  <div class="page">
+    <div class="cluster-head">
+      <div class="cluster-num">01 / Start here</div>
+      <h2 class="cluster-title">The industry teardowns</h2>
+      <p class="cluster-frame">We pick a B2B vertical, pull the AI-citation and SEO data across the main players, and show you exactly where the visibility gaps are. Same method every time. These are the clearest illustration of what this site is about.</p>
+    </div>
+    <div class="article-grid">
+      <a href="/blogs/field-service-software-ai-visibility-gap" class="article-card">
+        <img src="/assets/images/field-service-software-ai-visibility-gap-header-card.webp" srcset="/assets/images/field-service-software-ai-visibility-gap-header-card-400.webp 400w, /assets/images/field-service-software-ai-visibility-gap-header-card-700.webp 700w, /assets/images/field-service-software-ai-visibility-gap-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 300px" alt="Field Service Software SEO Teardown - field service management SEO/GEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Field Service Software &middot; AI Visibility Research</div>
+          <div class="card-title">Field Service Software SEO Teardown</div>
+          <p class="card-desc">A teardown of 10 field service management platforms: why authority isn't traffic, the branded-demand trap, AI citations across 6 engines, and a 90-day playbook.</p>
+        </div>
+      </a>
+        <a href="/blogs/authority-isnt-the-moat" class="article-card">
+        <img src="/assets/images/authority-isnt-the-moat-header-card.webp" srcset="/assets/images/authority-isnt-the-moat-header-card-400.webp 400w, /assets/images/authority-isnt-the-moat-header-card-700.webp 700w, /assets/images/authority-isnt-the-moat-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 300px" alt="Carbon & ESG Software SEO Teardown - GEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Carbon &amp; ESG &middot; GEO + SEO Teardown</div>
+          <div class="card-title">Carbon &amp; ESG Software SEO Teardown</div>
+          <p class="card-desc">A search and AI-visibility teardown of 10 carbon and ESG platforms: why authority isn't the moat, content is, and the GEO playbook to win.</p>
+        </div>
+      </a>
+      <a href="/blogs/payments-getting-found-google-ai" class="article-card">
+        <img src="/assets/images/payments-getting-found-google-ai-header-card.webp" srcset="/assets/images/payments-getting-found-google-ai-header-card-400.webp 400w, /assets/images/payments-getting-found-google-ai-header-card-700.webp 700w, /assets/images/payments-getting-found-google-ai-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Getting Found on Google and AI - payments GEO &amp; SEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO &amp; SEO Teardown &middot; Payments &amp; Fintech</div>
+          <div class="card-title">Getting Found on Google and AI</div>
+          <p class="card-desc">A payments marketer's playbook from 48 fintech audits: why discovery doubled, how brands win their name but lose the category, and the 90-day plan to get found on Google and AI.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/ranking-isnt-visibility" class="article-card">
+        <img src="/assets/images/ranking-isnt-visibility-header-card.webp" srcset="/assets/images/ranking-isnt-visibility-header-card-400.webp 400w, /assets/images/ranking-isnt-visibility-header-card-700.webp 700w, /assets/images/ranking-isnt-visibility-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Ranking Isn't Visibility - lending & credit AI teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO &amp; SEO Teardown &middot; Lending &amp; Credit</div>
+          <div class="card-title">Ranking Isn't Visibility</div>
+          <p class="card-desc">An audit of 52 lending & credit brands: 44 named 0% of the time by AI. Why ranking isn't visibility, where AI answers come from, and the full-funnel fixes.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/authority-isnt-demand" class="article-card">
+        <img src="/assets/images/authority-isnt-demand-header-card.webp" srcset="/assets/images/authority-isnt-demand-header-card-400.webp 400w, /assets/images/authority-isnt-demand-header-card-700.webp 700w, /assets/images/authority-isnt-demand-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Authority Isn't Demand - B2B identity cohort GEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO &amp; SEO Teardown &middot; Identity</div>
+          <div class="card-title">Authority Isn't Demand</div>
+          <p class="card-desc">An 8-brand teardown of the identity cohort (Okta to Cognito): why DR-75 Descope wins almost no buyer demand, why AI names MojoAuth over Okta, and the demand engine that converts authority.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/winning-google-isnt-winning-ai" class="article-card">
+        <img src="/assets/images/winning-google-isnt-winning-ai-header-card.webp" srcset="/assets/images/winning-google-isnt-winning-ai-header-card-400.webp 400w, /assets/images/winning-google-isnt-winning-ai-header-card-700.webp 700w, /assets/images/winning-google-isnt-winning-ai-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Winning Google Isn't Winning AI - AI presentation tools GEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO &amp; SEO Teardown &middot; Presentation Tools</div>
+          <div class="card-title">Winning Google Isn't Winning AI</div>
+          <p class="card-desc">A teardown of the AI deck-tools market: Gamma owns Google, but Canva, Deckary and Beautiful.ai win AI answers, and why niche questions are where brands get named.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/why-ai-cites-razorpay-over-airpay" class="article-card">
+        <img src="/assets/images/why-ai-cites-razorpay-over-airpay-header-card.webp" srcset="/assets/images/why-ai-cites-razorpay-over-airpay-header-card-400.webp 400w, /assets/images/why-ai-cites-razorpay-over-airpay-header-card-700.webp 700w, /assets/images/why-ai-cites-razorpay-over-airpay-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Why AI Cites Razorpay Over Airpay - GEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO &amp; SEO Teardown &middot; Payments</div>
+          <div class="card-title">Why AI Cites Razorpay Over Airpay</div>
+          <p class="card-desc">A six-brand teardown of India's payment gateways: why Razorpay and Stripe each win ~21% of AI answers while Airpay sits at 3%, and the content, trust and crawl gaps behind it.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+        <a href="/blogs/why-ai-cites-domo-over-databricks" class="article-card">
+        <img src="/assets/images/why-ai-cites-domo-over-databricks-header-card.webp" srcset="/assets/images/why-ai-cites-domo-over-databricks-header-card-400.webp 400w, /assets/images/why-ai-cites-domo-over-databricks-header-card-700.webp 700w, /assets/images/why-ai-cites-domo-over-databricks-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Why AI Cites Domo Over Databricks" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO &amp; SEO Teardown &middot; Data Analytics</div>
+          <div class="card-title">Why AI Cites Domo Over Databricks</div>
+          <p class="card-desc">A six-platform teardown of data-analytics SaaS: why a DR-70 brand out-cites a DR-88 one, and the GEO hygiene gap behind it.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/property-vista-authority-paradox" class="article-card">
+        <img src="/assets/images/property-vista-authority-paradox-header-card.webp" srcset="/assets/images/property-vista-authority-paradox-header-card-400.webp 400w, /assets/images/property-vista-authority-paradox-header-card-700.webp 700w, /assets/images/property-vista-authority-paradox-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The Authority Paradox of Property Vista - GEO teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO Teardown &middot; Multifamily Proptech</div>
+          <div class="card-title">The Authority Paradox of Property Vista</div>
+          <p class="card-desc">A DR-63 brand with G2, Gartner and Crunchbase backlinks that is nearly invisible on ChatGPT and Perplexity, and the one infrastructure fix behind it.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+
+
+
+    </div>
+    <div class="explore-more"><a href="/topics/industry-teardowns" class="explore-link">Explore all teardowns →</a></div>
+  </div>
+</section>
+
+<!-- ── Cluster 2: How AI search works ────────────────────────── -->
+<section class="cluster" aria-label="How AI search works">
+  <div class="page">
+    <div class="cluster-head">
+      <div class="cluster-num">02 / The mechanism</div>
+      <h2 class="cluster-title">How AI search actually works</h2>
+      <p class="cluster-frame">Before the tactics, the mechanism. How retrieval-augmented generation decides what gets pulled into an answer, why each engine recommends different vendors, and how visibility compounds once you have it.</p>
+    </div>
+    <div class="article-grid">
+
+      <a href="/blogs/query-fan-out-how-one-prompt-becomes-ten-searches" class="article-card">
+        <img src="/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-header-card.webp" srcset="/assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-header-card-400.webp 400w, /assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-header-card-700.webp 700w, /assets/images/query-fan-out-how-one-prompt-becomes-ten-searches-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 300px" alt="Query Fan-Out - how AI search splits one prompt into many sub-queries" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">AI Search Mechanics &middot; Technical Deep Dive</div>
+          <div class="card-title">Query Fan-Out Explained</div>
+          <p class="card-desc">How AI search turns one prompt into 8-16 hidden sub-queries, the RRF and cosine math that decides citations, and why 95% of the searches that matter have zero keyword volume.</p>
+        </div>
+      </a>
+      <a href="/blogs/when-the-buyer-is-a-bot" class="article-card">
+        <img src="/assets/images/when-the-buyer-is-a-bot-header-card.webp" srcset="/assets/images/when-the-buyer-is-a-bot-header-card-400.webp 400w, /assets/images/when-the-buyer-is-a-bot-header-card-700.webp 700w, /assets/images/when-the-buyer-is-a-bot-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="When the Buyer Is a Bot - agentic commerce protocol teardown" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Agentic Commerce &middot; Protocol Teardown</div>
+          <div class="card-title">When the Buyer Is a Bot</div>
+          <p class="card-desc">When the buyer is an AI agent, your catalog API is the product, not your homepage. The agentic-commerce protocol stack (UCP, ACP, AP2, MCP, A2A) and the infrastructure to win.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+       <a href="/blogs/does-llms-txt-do-anything-yet" class="article-card">
+        <img src="/assets/images/does-llms-txt-do-anything-yet-header-card.webp" srcset="/assets/images/does-llms-txt-do-anything-yet-header-card-400.webp 400w, /assets/images/does-llms-txt-do-anything-yet-header-card-700.webp 700w, /assets/images/does-llms-txt-do-anything-yet-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Does llms.txt Actually Do Anything Yet?" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">How AI Search Works &middot; llms.txt</div>
+          <div class="card-title">Does llms.txt Actually Do Anything Yet?</div>
+          <p class="card-desc">515 million AI bot events, only 408 touched llms.txt. Search crawlers ignore the file; coding agents devour it. What the server logs prove, and what to actually ship.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/why-traditional-seo-is-no-longer-enough" class="article-card">
+        <img src="/assets/images/why-traditional-seo-is-no-longer-enough-header-card.webp" srcset="/assets/images/why-traditional-seo-is-no-longer-enough-header-card-400.webp 400w, /assets/images/why-traditional-seo-is-no-longer-enough-header-card-700.webp 700w, /assets/images/why-traditional-seo-is-no-longer-enough-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Why Traditional SEO Is No Longer Enough - the shift to GEO" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">How AI Search Works &middot; Strategy</div>
+          <div class="card-title">Why Traditional SEO Is No Longer Enough</div>
+          <p class="card-desc">80% of B2B deals go to the vendor favored before sales contact, and chatbots now shape the shortlist. The shift from blue links to AI answers, what RAG rewards, and a 90-day GEO roadmap.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/ai-mode-vs-ai-overviews" class="article-card">
+        <img src="/assets/images/ai-mode-vs-ai-overviews-header-card.webp" srcset="/assets/images/ai-mode-vs-ai-overviews-header-card-400.webp 400w, /assets/images/ai-mode-vs-ai-overviews-header-card-700.webp 700w, /assets/images/ai-mode-vs-ai-overviews-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="AI Mode vs AI Overviews - Google's two AI surfaces" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">How AI Search Works &middot; Mechanism</div>
+          <div class="card-title">AI Mode vs AI Overviews</div>
+          <p class="card-desc">Google split search into two AI surfaces that share a query box but agree on sources just 13.7% of the time. The architecture, query fan-out, and the dual-track playbook.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/geo-foundation-audit" class="article-card">
+        <img src="/assets/images/geo-foundation-audit-card.webp" srcset="/assets/images/geo-foundation-audit-card-400.webp 400w, /assets/images/geo-foundation-audit-card-700.webp 700w, /assets/images/geo-foundation-audit-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="How We Run a GEO Foundation Audit" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Framework · GEO</div>
+          <div class="card-title">How We Run a GEO Foundation Audit</div>
+          <p class="card-desc">AI converts at 11x organic, but your analytics can't see it. The five-step diagnostic: query mapping, multi-model execution, citation gap scoring, crawlability, and content restructuring.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+      <a href="/blogs/why-engines-recommend-different-vendors" class="article-card">
+        <img src="/assets/images/why-engines-recommend-different-vendors-headers-card.webp" srcset="/assets/images/why-engines-recommend-different-vendors-headers-card-400.webp 400w, /assets/images/why-engines-recommend-different-vendors-headers-card-700.webp 700w, /assets/images/why-engines-recommend-different-vendors-headers-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Why ChatGPT, Perplexity and Gemini Recommend Different Vendors" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Multi-Engine GEO</div>
+          <div class="card-title">Why ChatGPT, Perplexity and Gemini Recommend Different Vendors (and How to Win All Three)</div>
+          <p class="card-desc">69% of B2B buyers use 3 or more AI engines. ChatGPT leans on Bing's top 15%, Perplexity scores 5 real-time RAG factors, Gemini resolves entities first. Tactics and a 60-day roadmap.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+      <a href="/blogs/geo-compounding-flywheel" class="article-card">
+        <img src="/assets/images/the-geo-compounding-flywheel-header-card.webp" srcset="/assets/images/the-geo-compounding-flywheel-header-card-400.webp 400w, /assets/images/the-geo-compounding-flywheel-header-card-700.webp 700w, /assets/images/the-geo-compounding-flywheel-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The GEO Compounding Flywheel" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO · Growth Strategy</div>
+          <div class="card-title">The GEO Compounding Flywheel: How to Build AI Visibility That Gets Harder to Dislodge</div>
+          <p class="card-desc">73% of B2B procurement managers use AI for vendor discovery. The seven-step loop that decides who gets cited, and why first-mover advantage compounds in AI search.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+        <a href="/blogs/how-rag-actually-works" class="article-card">
+        <img src="/assets/images/how-rag-actually-works-header-card.webp" srcset="/assets/images/how-rag-actually-works-header-card-400.webp 400w, /assets/images/how-rag-actually-works-header-card-700.webp 700w, /assets/images/how-rag-actually-works-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="How RAG Actually Works" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Technical · GEO</div>
+          <div class="card-title">How RAG Actually Works, And Why It's the Only GEO Lever That Moves This Quarter</div>
+          <p class="card-desc">The five-stage AI search pipeline, what the Princeton and Georgia Tech GEO research actually shows, and a three-phase action plan for B2B marketers.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+    </div>
+    <div class="explore-more"><a href="/topics/how-ai-search-works" class="explore-link">Explore how AI search works →</a></div>
+  </div>
+</section>
+
+<!-- ── Cluster 3: The technical layer ────────────────────────── -->
+<section class="cluster" aria-label="The technical layer">
+  <div class="page">
+    <div class="cluster-head">
+      <div class="cluster-num">03 / The plumbing</div>
+      <h2 class="cluster-title">The technical layer</h2>
+      <p class="cluster-frame">What the crawlers can and can't do, and the structured data that makes your pages legible to them. The unglamorous plumbing that decides whether you are even eligible to be cited.</p>
+    </div>
+    <div class="article-grid">
+      <a href="/blogs/xml-sitemaps-for-ai-discovery" class="article-card">
+        <img src="/assets/images/xml-sitemaps-for-ai-discovery-card.webp" srcset="/assets/images/xml-sitemaps-for-ai-discovery-card-400.webp 400w, /assets/images/xml-sitemaps-for-ai-discovery-card-700.webp 700w, /assets/images/xml-sitemaps-for-ai-discovery-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The Broken-Sitemap Tax" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Technical Layer &middot; Indexation</div>
+          <div class="card-title">The Broken-Sitemap Tax</div>
+          <p class="card-desc">Real-time AI indexers quit after 3 redirect hops and read lastmod as a schedule. The hop ceiling, cache-instruction status codes, honest timestamps, and IndexNow push.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/do-ai-crawlers-render-javascript" class="article-card">
+        <img src="/assets/images/do-ai-crawlers-render-javascript-card.webp" srcset="/assets/images/do-ai-crawlers-render-javascript-card-400.webp 400w, /assets/images/do-ai-crawlers-render-javascript-card-700.webp 700w, /assets/images/do-ai-crawlers-render-javascript-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Do AI Crawlers Render JavaScript?" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Technical Layer &middot; Rendering</div>
+          <div class="card-title">Do AI Crawlers Render JavaScript?</div>
+          <p class="card-desc">9 of 12 major AI crawlers run no JavaScript runtime. The per-crawler pass/fail data, the Content Visibility Ratio test, and four SSR fixes.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+       <a href="/blogs/internal-linking-for-ai-retrieval" class="article-card">
+        <img src="/assets/images/internal-linking-for-ai-retrieval-header-card.webp" srcset="/assets/images/internal-linking-for-ai-retrieval-header-card-400.webp 400w, /assets/images/internal-linking-for-ai-retrieval-header-card-700.webp 700w, /assets/images/internal-linking-for-ai-retrieval-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Internal Linking for AI Retrieval" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Technical GEO &middot; Internal Linking</div>
+          <div class="card-title">Internal Linking for AI Retrieval</div>
+          <p class="card-desc">How hub pages, anchor-text density, and a flat 2-3 hop crawl depth decide whether your pages are retrieved in a RAG query chain.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/schema-markup-ai-citations-2026" class="article-card">
+        <img src="/assets/images/schema-markup-in-2026-header-card.webp" srcset="/assets/images/schema-markup-in-2026-header-card-400.webp 400w, /assets/images/schema-markup-in-2026-header-card-700.webp 700w, /assets/images/schema-markup-in-2026-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Schema Markup in 2026" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Technical GEO · Structured Data</div>
+          <div class="card-title">Schema Markup in 2026: The Structured-Data Playbook Every B2B Brand Needs for AI Citations</div>
+          <p class="card-desc">53% of AI-cited pages carry valid schema. The @graph architecture, four core B2B schema types, and a six-week implementation roadmap.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/how-ai-crawlers-index-your-site" class="article-card">
+        <img src="/assets/images/how-ai-crawlers-index-your-site-header-card.webp" srcset="/assets/images/how-ai-crawlers-index-your-site-header-card-400.webp 400w, /assets/images/how-ai-crawlers-index-your-site-header-card-700.webp 700w, /assets/images/how-ai-crawlers-index-your-site-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="How AI Crawlers Actually Index Your Site" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Technical GEO · Crawlers</div>
+          <div class="card-title">OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site</div>
+          <p class="card-desc">0 of 3 AI crawlers execute JavaScript. The breakdown of crawl logic, IP verification, and the robots.txt config that separates citation indexers from training harvesters.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+    </div>
+    <div class="explore-more"><a href="/topics/technical-layer" class="explore-link">Explore the technical layer →</a></div>
+  </div>
+</section>
+
+<!-- ── Cluster 4: Content & authority architecture ───────────── -->
+<section class="cluster" aria-label="Content and authority architecture">
+  <div class="page">
+    <div class="cluster-head">
+      <div class="cluster-num">04 / Make it citable</div>
+      <h2 class="cluster-title">Content &amp; authority architecture</h2>
+      <p class="cluster-frame">How to structure pages and off-site signals so AI trusts and retrieves them: the cluster models, the page anatomy, and the trust signals that correlate with citations.</p>
+    </div>
+    <div class="article-grid">
+      <a href="/blogs/mentions-beat-links" class="article-card">
+        <img src="/assets/images/mentions-beat-links-card.webp" srcset="/assets/images/mentions-beat-links-card-400.webp 400w, /assets/images/mentions-beat-links-card-700.webp 700w, /assets/images/mentions-beat-links-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Digital PR &amp; Data Studies: The Link Play AI Cites" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Content &amp; Authority &middot; Digital PR</div>
+          <div class="card-title">Digital PR &amp; Data Studies: The Link Play AI Cites</div>
+          <p class="card-desc">Your domain is under 10% of AI citation sources. Original research seeded off-site is what generative engines actually cite, plus the study spec and a 90-day play.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/comparison-pages-ai-shortlists" class="article-card">
+        <img src="/assets/images/comparison-pages-ai-shortlists-card.webp" srcset="/assets/images/comparison-pages-ai-shortlists-card-400.webp 400w, /assets/images/comparison-pages-ai-shortlists-card-700.webp 700w, /assets/images/comparison-pages-ai-shortlists-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The Best X for Y Page AI Pulls Into Shortlists" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Comparison Pages &middot; BOFU</div>
+          <div class="card-title">The 'Best X for Y' Page AI Pulls Into Shortlists</div>
+          <p class="card-desc">63% of AI citations go to ranked lists; only 12% of cited URLs sit in Google's top 10. The comparison-page playbook: verdict box, fact density, schema, and a 90-day sequence.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/becoming-an-entity" class="article-card">
+        <img src="/assets/images/becoming-an-entity-header-card.webp" srcset="/assets/images/becoming-an-entity-header-card-400.webp 400w, /assets/images/becoming-an-entity-header-card-700.webp 700w, /assets/images/becoming-an-entity-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Becoming an Entity - Wikipedia, Wikidata and the knowledge graph" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Entity SEO &middot; Knowledge Graph</div>
+          <div class="card-title">Becoming an Entity</div>
+          <p class="card-desc">Search moved from strings to things. The build guide for becoming a recognized entity: the Entity Home, Wikidata, sameAs corroboration, and a 12-month sequence.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/reddit-geo-playbook" class="article-card">
+        <img src="/assets/images/reddit-geo-playbook-header-card.webp" srcset="/assets/images/reddit-geo-playbook-header-card-400.webp 400w, /assets/images/reddit-geo-playbook-header-card-700.webp 700w, /assets/images/reddit-geo-playbook-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The Reddit GEO Playbook - which threads AI actually cites" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Content &amp; Authority &middot; Off-Site</div>
+          <div class="card-title">The Reddit GEO Playbook</div>
+          <p class="card-desc">Reddit drives 20.8% of B2B AI citations. Which threads AI cites (80% have under 20 upvotes), how each engine reads Reddit, and the 9:1 workflow to earn citations without getting banned.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/why-ai-cites-reddit-g2-analysts" class="article-card">
+        <img src="/assets/images/why-ai-cites-reddit-g2-analysts-header-card.webp" srcset="/assets/images/why-ai-cites-reddit-g2-analysts-header-card-400.webp 400w, /assets/images/why-ai-cites-reddit-g2-analysts-header-card-700.webp 700w, /assets/images/why-ai-cites-reddit-g2-analysts-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Why AI Cites Reddit, G2 &amp; Analysts Over Your Website" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Authority Seeding &middot; Off-Site GEO</div>
+          <div class="card-title">Why AI Cites Reddit, G2 &amp; Analysts Over Your Website</div>
+          <p class="card-desc">The off-site authority stack AI engines actually pull from, and how to seed G2, Reddit and analyst reviews so they feed AI answers.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/topical-authority-cluster-ai-shortlists" class="article-card">
+        <img src="/assets/images/topical-authority-cluster-header-card.webp" srcset="/assets/images/topical-authority-cluster-header-card-400.webp 400w, /assets/images/topical-authority-cluster-header-card-700.webp 700w, /assets/images/topical-authority-cluster-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Content Strategy · GEO</div>
+          <div class="card-title">The Topical Authority Cluster That Gets B2B Brands Into AI Shortlists</div>
+          <p class="card-desc">+41% citation lift from statistics, 86% of citations from brand-managed sources. The hybrid cluster architecture and Share of Model measurement framework.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/hallucination-proofing-your-brand" class="article-card">
+        <img src="/assets/images/hallucination-proofing-your-brand-header-card.webp" srcset="/assets/images/hallucination-proofing-your-brand-header-card-400.webp 400w, /assets/images/hallucination-proofing-your-brand-header-card-700.webp 700w, /assets/images/hallucination-proofing-your-brand-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Hallucination-Proofing Your Brand" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO Strategy · Brand</div>
+          <div class="card-title">Hallucination-Proofing Your Brand: The Content Architecture That Stops AI Getting You Wrong</div>
+          <p class="card-desc">+41% citation lift from statistics; 54% fewer hallucinations with knowledge graphs. Schema @graph, /llms.txt, Answer Capsules, and Proof-Pairing Density.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/anatomy-of-a-high-citation-page" class="article-card">
+        <img src="/assets/images/anatomy-of-a-high-citation-header-card.webp" srcset="/assets/images/anatomy-of-a-high-citation-header-card-400.webp 400w, /assets/images/anatomy-of-a-high-citation-header-card-700.webp 700w, /assets/images/anatomy-of-a-high-citation-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Anatomy of a High-Citation Page" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Content Architecture · GEO</div>
+          <div class="card-title">Anatomy of a High-Citation Page: Reverse-Engineering What Gets Pulled Into AI Answers</div>
+          <p class="card-desc">38% top-10 overlap; 55% of citations come from the first 30% of the page. What heading structure, paragraph density, and answer-lead formatting look like on cited pages.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/authority-seeding-ai-llm-trust" class="article-card">
+        <img src="/assets/images/build-the-signal-stack-llms-trust-header-card.webp" srcset="/assets/images/build-the-signal-stack-llms-trust-header-card-400.webp 400w, /assets/images/build-the-signal-stack-llms-trust-header-card-700.webp 700w, /assets/images/build-the-signal-stack-llms-trust-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Authority Seeding for AI" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Authority Seeding · GEO</div>
+          <div class="card-title">Authority Seeding for AI: Building the Off-Site Signal Stack That LLMs Actually Trust</div>
+          <p class="card-desc">Unlinked mentions correlate at r=0.664 vs r=0.218 for backlinks. The five-gate citation gauntlet, platform profiles, and a five-phase execution blueprint.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+    </div>
+    <div class="explore-more"><a href="/topics/content-authority" class="explore-link">Explore content &amp; authority →</a></div>
+  </div>
+</section>
+
+<!-- ── Cluster 5: Ranking signals & measurement ──────────────── -->
+<section class="cluster" aria-label="Ranking signals and measurement">
+  <div class="page">
+    <div class="cluster-head">
+      <div class="cluster-num">05 / Hold &amp; measure</div>
+      <h2 class="cluster-title">Ranking signals &amp; measurement</h2>
+      <p class="cluster-frame">The signals that decide whether you hold a citation or lose it, and how to actually measure any of this when your analytics can't see most AI traffic.</p>
+    </div>
+    <div class="article-grid">
+
+      <a href="/blogs/share-of-model-measurement" class="article-card">
+        <img src="/assets/images/share-of-model-measurement-card.webp" srcset="/assets/images/share-of-model-measurement-card-400.webp 400w, /assets/images/share-of-model-measurement-card-700.webp 700w, /assets/images/share-of-model-measurement-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 300px" alt="Share of Model: How to Actually Measure It" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Measurement Method &middot; Ranking Signals</div>
+          <div class="card-title">Share of Model: How to Actually Measure It</div>
+          <p class="card-desc">The formula, the sample size that makes it stable (8-12 runs, 250-500 prompts), and benchmark bands by vertical. The metric that replaces the screenshot.</p>
+        </div>
+      </a>
+      <a href="/blogs/citation-vs-mention-vs-recommendation" class="article-card">
+        <img src="/assets/images/citation-vs-mention-vs-recommendation-header-card.webp" srcset="/assets/images/citation-vs-mention-vs-recommendation-header-card-400.webp 400w, /assets/images/citation-vs-mention-vs-recommendation-header-card-700.webp 700w, /assets/images/citation-vs-mention-vs-recommendation-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 300px" alt="Citation vs Mention vs Recommendation - the GEO measurement taxonomy" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Measurement Taxonomy &middot; Ranking Signals</div>
+          <div class="card-title">Citation vs Mention vs Recommendation</div>
+          <p class="card-desc">Mentions, citations and recommendations are three different AI-search signals with three different fixes. The taxonomy, the math, and what the data shows.</p>
+        </div>
+      </a>
+        <a href="/blogs/how-your-page-gets-retrieved" class="article-card">
+        <img src="/assets/images/how-your-page-gets-retrieved-header-card.webp" srcset="/assets/images/how-your-page-gets-retrieved-header-card-400.webp 400w, /assets/images/how-your-page-gets-retrieved-header-card-700.webp 700w, /assets/images/how-your-page-gets-retrieved-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="How Your Page Gets Retrieved - chunking, embeddings and the rerank funnel" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">AI Search Mechanics &middot; Retrieval</div>
+          <div class="card-title">How Your Page Gets Retrieved</div>
+          <p class="card-desc">AI engines never read your page, they read chunks of it, scored alone. How chunking, embeddings, vector drift and reranking decide what gets cited, and how to write for it.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/rlhf-and-your-brand" class="article-card">
+        <img src="/assets/images/rlhf-and-your-brand-header-card.webp" srcset="/assets/images/rlhf-and-your-brand-header-card-400.webp 400w, /assets/images/rlhf-and-your-brand-header-card-700.webp 700w, /assets/images/rlhf-and-your-brand-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="RLHF and Your Brand" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Post-Training Teardown &middot; Ranking Signals</div>
+          <div class="card-title">RLHF and Your Brand</div>
+          <p class="card-desc">How human rater preferences in RLHF and DPO quietly decide which brands AI recommends, and the GEO playbook to win Share of Model.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/blogs/prompt-to-citation-tracking" class="article-card">
+        <img src="/assets/images/prompt-to-citation-tracking-header-card.webp" srcset="/assets/images/prompt-to-citation-tracking-header-card-400.webp 400w, /assets/images/prompt-to-citation-tracking-header-card-700.webp 700w, /assets/images/prompt-to-citation-tracking-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="Prompt-to-Citation Tracking" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO Measurement · Analytics</div>
+          <div class="card-title">Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero</div>
+          <p class="card-desc">AI sessions convert at 4.4x organic; GA4 misses about 30% of AI referrers. The prompt portfolio, GA4 dual-setup, and Looker Studio dashboard that prove GEO ROI.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/eeat-is-an-ai-signal-now" class="article-card">
+        <img src="/assets/images/e-e-a-t-is-an-ai-signal-now-header-card.webp" srcset="/assets/images/e-e-a-t-is-an-ai-signal-now-header-card-400.webp 400w, /assets/images/e-e-a-t-is-an-ai-signal-now-header-card-700.webp 700w, /assets/images/e-e-a-t-is-an-ai-signal-now-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="E-E-A-T Is an AI Signal Now" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">GEO · Content Strategy</div>
+          <div class="card-title">E-E-A-T Is an AI Signal Now: How Google's Quality Framework Got Baked Into LLM Preferences</div>
+          <p class="card-desc">96% of AI Overview citations go to E-E-A-T-trusted sources. How RLHF wired quality into LLMs, and the 90-day framework to close the gap.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+      <a href="/blogs/30-day-content-half-life-recency-ai-ranking-signal" class="article-card">
+        <img src="/assets/images/the-30-day-content-half-life-header-card.webp" srcset="/assets/images/the-30-day-content-half-life-header-card-400.webp 400w, /assets/images/the-30-day-content-half-life-header-card-700.webp 700w, /assets/images/the-30-day-content-half-life-header-card.webp 1000w" sizes="(max-width:768px) calc(100vw - 40px), (max-width:1024px) 46vw, 340px" alt="The 30-Day Content Half-Life" class="card-img" loading="lazy" width="1000" height="525">
+        <div class="card-body">
+          <div class="card-topic">Content Strategy · GEO</div>
+          <div class="card-title">The 30-Day Content Half-Life: Why Recency Is Now a Hard Ranking Signal for AI Answers</div>
+          <p class="card-desc">Pages are 3.2x more likely to lose AI citations after 90 days. The technical reason why, platform-by-platform heuristics, and the refresh system to fix it.</p>
+          <div class="card-footer"><span class="card-arrow" aria-hidden="true">→</span></div>
+        </div>
+      </a>
+
+    </div>
+    <div class="explore-more"><a href="/topics/ranking-signals" class="explore-link">Explore ranking signals &amp; measurement →</a></div>
+  </div>
+</section>
+
+<!-- ── About / author ────────────────────────────────────────── -->
+<section class="about" id="about" aria-label="About the author">
+  <div class="page">
+    <div class="about-inner">
+      <div class="section-kicker">Who writes this</div>
+      <h2>Written by Vinayak Ravi</h2>
+      <p>rawmktg. is written by Vinayak Ravi. The analyses here come out of original research: citation data pulled across the major AI engines, lined up against the SEO fundamentals underneath, and checked against the published studies that hold up.</p>
+      <p>Nothing on this site is theory for its own sake. If a finding is here, it is because the data behind it showed something worth writing down. If something is useful to you, the method behind it is available.</p>
+      <a href="mailto:vinayak@rawmktg.com" class="about-cta">Get in touch →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Newsletter ────────────────────────────────────────────── -->
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe →</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+</main>
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-top">
+      <div>
+        <div class="foot-col-label">Product</div>
+        <div class="foot-cats">
+          <a href="/features/ai-visibility-audit">AI Visibility Audit</a>
+          <a href="/features/share-of-model">Share of Model</a>
+          <a href="/features/findings-and-fixes">Findings &amp; Fixes</a>
+          <a href="/features/competitor-tracking">Competitor Tracking</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-label">Research</div>
+        <div class="foot-cats">
+          <a href="/research">All research</a>
+          <a href="/topics/industry-teardowns">Industry teardowns</a>
+          <a href="/tools">Free tools</a>
+          <a href="/glossary">Glossary</a>
+          <a href="/methodology">Methodology</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-row">
+      <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

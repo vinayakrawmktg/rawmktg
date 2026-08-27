@@ -291,20 +291,25 @@
       <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
       <div class="nav-links">
         <div class="nav-dropdown">
-          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Product <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu" role="menu">
-            <a role="menuitem" href="/topics/industry-teardowns"><span class="nm-num">01</span>The industry teardowns</a>
-            <a role="menuitem" href="/topics/how-ai-search-works"><span class="nm-num">02</span>How AI search actually works</a>
-            <a role="menuitem" href="/topics/technical-layer"><span class="nm-num">03</span>The technical layer</a>
-            <a role="menuitem" href="/topics/content-authority"><span class="nm-num">04</span>Content &amp; authority architecture</a>
-            <a role="menuitem" href="/topics/ranking-signals"><span class="nm-num">05</span>Ranking signals &amp; measurement</a>
-            <a role="menuitem" href="/topics"><span class="nm-num">&rarr;</span>Browse all topics</a>
+            <span class="nm-sub">Features</span>
+            <a role="menuitem" href="/features/ai-visibility-audit"><span class="nm-num">01</span>AI Visibility Audit</a>
+            <a role="menuitem" href="/features/share-of-model"><span class="nm-num">02</span>Share of Model</a>
+            <a role="menuitem" href="/features/findings-and-fixes"><span class="nm-num">03</span>Findings &amp; Fixes</a>
+            <a role="menuitem" href="/features/competitor-tracking"><span class="nm-num">04</span>Competitor Tracking</a>
+            <span class="nm-sub">Use cases</span>
+            <a role="menuitem" href="/use-cases/b2b-saas-marketing"><span class="nm-num">&rarr;</span>For B2B SaaS marketing</a>
+            <a role="menuitem" href="/use-cases/technical-seo"><span class="nm-num">&rarr;</span>For technical SEO</a>
+            <a role="menuitem" href="/use-cases/agencies"><span class="nm-num">&rarr;</span>For agencies</a>
+            <a role="menuitem" href="/pricing"><span class="nm-num">$</span>Pricing</a>
           </div>
         </div>
-        <a href="/glossary">Glossary</a>
+        <a href="/research">Research</a>
         <a href="/tools">Tools</a>
-        <a href="/about">About</a>
-        <a href="/#newsletter" class="cta">Subscribe</a>
+        <a href="/glossary">Glossary</a>
+        <a href="https://app.rawmktg.com" class="nav-signin">Sign in</a>
+        <a href="https://app.rawmktg.com/audit" class="cta">Free audit</a>
       </div>
     </div>
   </div>
@@ -348,7 +353,7 @@
 <p>The bottom of the table is equally instructive. Keyword stuffing produced an absolute 8% decline, because neural relevance models read repetition as low-information filler, which means a decade of habit is now actively negative. Vocabulary expansion and authoritative tone barely register. You cannot write your way to citation with style. You have to bring something.</p>
 <h3>Strategies stack, and the incumbent pays</h3>
 <p>The Princeton team also tested combinations. Fluency optimisation paired with statistics addition beat every isolated strategy by more than 5.5%, and cite-sources, mediocre alone, expanded significantly when paired with quotation or statistical additions. Lift compounds, but not cleanly, because the strategies overlap in what they signal.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; stacked lift with overlap</div><div class="code-block"><pre>lift_combined  =  1  -  Π (1 - lift_i)  +  δ_overlap
+<div class="code-wrap"><div class="code-label">formula &middot; stacked lift with overlap</div><div class="code-block"><pre>lift_combined  =  1  -  Π (1 - lift_i)  +  δ_overlap
 
   lift_i     measured single-strategy delta (e.g. quotes +0.41)
   δ_overlap  negative correction for shared signal
@@ -373,7 +378,7 @@
 <div class="section-answer"><strong>Build it out of stat units: a precise number, a named methodology, and an attributed quote, in a chunk-sized block.</strong> Most original research fails at citation for a reason that has nothing to do with the research. The findings are real and the methodology is sound, but the write-up buries every usable number inside a narrative paragraph that cannot be extracted without its surrounding context. The unit that travels is not the study. It is the stat unit.</div>
 <div class="pipeline"><div class="pl-node"><div class="pl-title">Precise number</div><div class="pl-desc">Not a qualitative hedge. 41%, not most.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Named methodology</div><div class="pl-desc">n, sample, field window. Verifiable.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Attributed quote</div><div class="pl-desc">A real person with a real title. The 41% lever.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Stat unit</div><div class="pl-desc">The smallest block a model can lift whole with attribution intact.</div></div></div><div class="chart-caption">Figure 6. A stat unit is the smallest block a generative engine can lift whole with attribution intact. Everything in your study should be built toward producing these.</div>
 <p>Three components, all mandatory. A precise number, not a qualitative hedge. A named methodology so the claim is verifiable and the model can assess it. An attributed quote from a real person with a real title, which is where the 41% lever lives. Miss any one and the block degrades into something a model can read but will not confidently repeat. You can measure how well a document does this: citable stat density counts the extractable units per thousand words.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; citable stat density</div><div class="code-block"><pre>CSD  =  ( Σ_{u∈U}  n_u · m_u )  /  (W / 1000)
+<div class="code-wrap"><div class="code-label">formula &middot; citable stat density</div><div class="code-block"><pre>CSD  =  ( Σ_{u∈U}  n_u · m_u )  /  (W / 1000)
 
   U   candidate claim units in the document
   n   1 if the unit carries a precise numeric value
@@ -482,7 +487,7 @@ def audit(paragraphs):
 <p>The corollary is that placement quality has a specific technical meaning here, and it is not domain rating. What matters is whether a domain is already being retrieved for prompts in your category, and whether the placement carries extractable facts. A DR 85 national outlet that mentions you in a listicle with no numbers is worth less than a DR 55 trade publication that reprints your headline statistic with attribution.</p>
 <div class="pipeline"><div class="pl-node"><div class="pl-title">Retrieval trust</div><div class="pl-desc">Is this domain already cited for your category prompts?</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Citable fact density</div><div class="pl-desc">Does the placement carry your number and methodology?</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node is-goal"><div class="pl-title">Upper-right quadrant</div><div class="pl-desc">Retrieved AND factual. The only quadrant that converts.</div></div><div class="pl-arrow" aria-hidden="true">&rarr;</div><div class="pl-node"><div class="pl-title">Citation</div><div class="pl-desc">Coverage becomes a source the engine pulls into answers.</div></div></div><div class="chart-caption">Figure 8. Placement types mapped against retrieval trust and citable fact density. The upper right is the only quadrant that reliably converts coverage into citation.</div>
 <p>You can formalise this. An entity corroboration index weights each mentioning domain by how much the retrieval layer trusts it, then takes a log of mention count to reflect diminishing returns from repeat coverage on the same site.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; entity corroboration index</div><div class="code-block"><pre>ECI  =  Σ_j  w_j · log(1 + m_j)
+<div class="code-wrap"><div class="code-label">formula &middot; entity corroboration index</div><div class="code-block"><pre>ECI  =  Σ_j  w_j · log(1 + m_j)
 
   m_j  mention count on domain j
   w_j  retrieval-trust weight for domain j, 0 to 1
@@ -606,7 +611,7 @@ Sitemap: https://example.com/sitemap.xml</pre></div></div>
 <h2 id="measure"><span class="section-num">07</span>How do you measure this without fooling yourself?</h2>
 <div class="section-answer"><strong>Instrument brand mention share across a fixed prompt set, run each prompt many times, and report the lag.</strong> Rank tracking cannot process a synthesised paragraph, so the measurement stack has to change with the strategy. Four metrics carry most of the load. Brand mention share is the one to instrument first, because it is most directly moved by off-site PR and cheapest to sample; the definitions and sampling are set out in Share of Model and the standard at the methodology page.</div>
 <div class="tt-wrap"><div class="tt-label">Table 6. The four metrics that survive contact with a generative answer.</div><table class="tt"><thead><tr><th>Metric</th><th>What it counts</th><th>What it tells you</th><th>Working benchmark</th></tr></thead><tbody><tr><td class="label">AI answer inclusion rate</td><td>Share of prompt runs where you appear as a source at all</td><td>Macro discovery reach</td><td>Above 65% on category prompts</td></tr><tr><td class="label">Citation rate</td><td>Share of runs containing a clickable link to your domain</td><td>Direct attribution capture</td><td>Above 35%</td></tr><tr><td class="label">Brand mention share</td><td>Share of responses naming your brand across a competitive prompt set</td><td>Competitive share of voice</td><td>Beat your closest rival by 1.5x</td></tr><tr><td class="label">Sentiment delta</td><td>Whether you are recommended positively, neutrally, or conditionally</td><td>Commercial framing quality</td><td>Net positive above +0.75</td></tr></tbody></table></div>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; brand mention share</div><div class="code-block"><pre>BMS  =  ( 1 / (P·R) )  Σ_p Σ_r  [ brand ∈ A_{p,r} ]
+<div class="code-wrap"><div class="code-label">formula &middot; brand mention share</div><div class="code-block"><pre>BMS  =  ( 1 / (P·R) )  Σ_p Σ_r  [ brand ∈ A_{p,r} ]
 
   P   prompts in the fixed set     R   runs per prompt
   A   answer text for one run
@@ -672,7 +677,7 @@ def summarise(client):
 <p>The distortion compounds. Baseline direct traffic converts at around 2.46%. The Dark AI sessions hiding inside that bucket convert at roughly 10.21%, a 4.1x premium. Blended together, the Direct channel looks slightly better than usual and nobody investigates, while the PR campaign that produced the highest-intent traffic on the site reports almost nothing.</p>
 <div class="tt-wrap"><div class="tt-label">Table 7. Three populations, two buckets. The middle row is the problem.</div><table class="tt"><thead><tr><th>Channel as recorded</th><th>Share of AI sessions</th><th>Referrer header</th><th>Conversion rate</th><th>Attribution outcome</th></tr></thead><tbody><tr><td class="label">Visible AI referral</td><td>29.4%</td><td>Intact</td><td>10.21%</td><td>Correctly credited</td></tr><tr><td class="label">Dark AI</td><td>70.6%</td><td>Stripped</td><td>10.21%</td><td>Filed as Direct</td></tr><tr><td class="label">Genuine direct</td><td>Not AI</td><td>None</td><td>2.46%</td><td>Correct, but now diluted</td></tr></tbody></table></div>
 <p>A rough estimate of the hidden revenue is better than no estimate.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; hidden Dark-AI revenue</div><div class="code-block"><pre>hidden_revenue  ≈  D · φ · c · V
+<div class="code-wrap"><div class="code-label">formula &middot; hidden Dark-AI revenue</div><div class="code-block"><pre>hidden_revenue  ≈  D · φ · c · V
 
   D    unsegmented monthly Direct sessions
   φ    0.706  share of AI referrals with the referrer header stripped
@@ -707,7 +712,7 @@ if __name__ == &quot;__main__&quot;:
 <div class="chart-wrap"><canvas id="timelineChart" height="230"></canvas></div><div class="chart-caption">Figure 13. Ninety days from baseline scan to citation re-measurement. The workstreams overlap deliberately.</div>
 <ul><li><strong>Days 0 to 21.</strong> Baseline everything before you change anything. Run the prompt scan, record brand mention share and citation rate against two competitors, capture the cited-domain list. In parallel, verify crawler access and ship the schema. This is the only thing that lets you prove causation later.</li><li><strong>Days 7 to 42.</strong> Design and field the study. Write the headline sentences first, cut every question that cannot produce one, and field on a panel unless your list is genuinely representative. Twenty-one days of fielding is enough for most B2B panels.</li><li><strong>Days 42 to 59.</strong> Analysis, stat-unit extraction, and hub build. Score the draft for citable density before it ships. Front-load the finding. Publish the raw data.</li><li><strong>Days 56 to 90.</strong> Distribution in sequence: exclusive to one tier-one outlet, then broad outreach citing that coverage, then wire syndication, then expert commentary on the outlets that covered it. Do not run these simultaneously.</li><li><strong>Days 80 to 90.</strong> Mention harvest and citation re-scan against the same prompt set, same run count, same competitors. Expect mentions to have moved and citations to be only starting to.</li></ul>
 <p>Then hold. The single most common failure mode is publishing one study, seeing mention lift without citation lift at day ninety, and concluding the strategy does not work. The compounding is real but it runs on the retrieval layer's refresh cycle, not yours. Cost per incremental citation point is the number to bring to the second budget conversation.</p>
-<div class="code-wrap"><div class="code-label">formula &amp;middot; cost per citation point</div><div class="code-block"><pre>cost_per_point  =  total_campaign_cost  /  Δ brand_mention_share
+<div class="code-wrap"><div class="code-label">formula &middot; cost per citation point</div><div class="code-block"><pre>cost_per_point  =  total_campaign_cost  /  Δ brand_mention_share
 
   Δ in percentage points, same prompt set before and after.
   Looks bad after one study. Reasonable after three.
@@ -726,6 +731,7 @@ if __name__ == &quot;__main__&quot;:
   </div>
 </div>
 
+<div class="page prod-cta"><div style="border:1px solid var(--rule);border-left:3px solid var(--signal);border-radius:12px;background:var(--paper-2);padding:22px 24px;margin:8px 0 40px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;"><div style="max-width:58ch;"><div style="font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:-.01em;color:var(--ink);margin-bottom:5px;">See where your brand actually sits.</div><div style="font-family:var(--f-prose);font-size:14px;line-height:1.55;color:var(--ink-2);">RawMktg audits your site the way an AI crawler does and shows exactly why you are, or aren't, in the answer. Free, 25 pages, no card.</div></div><a href="https://app.rawmktg.com/audit" style="font-family:var(--f-mono);font-size:13px;font-weight:600;background:var(--signal);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;">Run a free audit &rarr;</a></div></div>
 <section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
   <div class="page">
     <div class="newsletter-inner">
@@ -747,10 +753,31 @@ if __name__ == &quot;__main__&quot;:
 
 <footer class="site-foot" aria-label="Site footer">
   <div class="page">
+    <div class="foot-top">
+      <div>
+        <div class="foot-col-label">Product</div>
+        <div class="foot-cats">
+          <a href="/features/ai-visibility-audit">AI Visibility Audit</a>
+          <a href="/features/share-of-model">Share of Model</a>
+          <a href="/features/findings-and-fixes">Findings &amp; Fixes</a>
+          <a href="/features/competitor-tracking">Competitor Tracking</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-label">Research</div>
+        <div class="foot-cats">
+          <a href="/research">All research</a>
+          <a href="/topics/industry-teardowns">Industry teardowns</a>
+          <a href="/tools">Free tools</a>
+          <a href="/glossary">Glossary</a>
+          <a href="/methodology">Methodology</a>
+        </div>
+      </div>
+    </div>
     <div class="foot-row">
       <a href="/" style="font-family:'Geist',system-ui;font-weight:800;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
-      <div class="foot-links"><a href="/about">About</a><a href="/methodology">Methodology</a>
-        <a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
       <span>&copy; 2026 rawmktg.</span>
     </div>
   </div>
