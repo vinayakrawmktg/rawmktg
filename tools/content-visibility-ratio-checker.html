@@ -400,5 +400,45 @@
   compute();
 })();
 </script>
+
+<script>
+/* demo: auto-load a worked example + clear */
+(function(){
+  var CFG={"root": "cvr", "textareas": {"cvrRaw": "<h1>Acme Pricing</h1>\n<p>Choose a plan that fits your team.</p>", "cvrRen": "<h1>Acme Pricing</h1>\n<p>Choose a plan that fits your team.</p>\n<div>Starter is $29 per seat per month with API access and email support. Pro is $99 per seat per month adding SSO, audit logs, and priority support. Enterprise is custom priced with a dedicated CSM, SAML, and a 99.9% uptime SLA. All plans include a 14 day free trial, unlimited projects, and no credit card required to start.</div>"}};
+  var CARD=document.getElementById(CFG.root); if(!CARD) return;
+  if(CARD.querySelector('.demo-bar')) return;
+  function fire(e){['input','change'].forEach(function(ev){try{e.dispatchEvent(new Event(ev,{bubbles:true}));}catch(x){}});}
+  function loadExample(){
+    var i,e;
+    for(i in (CFG.inputs||{})){e=document.getElementById(i);if(e){e.value=CFG.inputs[i];fire(e);}}
+    for(i in (CFG.textareas||{})){e=document.getElementById(i);if(e){e.value=CFG.textareas[i];fire(e);}}
+    (CFG.clicks||[]).forEach(function(sel){var b=CARD.querySelector(sel);if(b)b.click();});
+    setBar(true);
+  }
+  function clearAll(){
+    CARD.querySelectorAll('input,textarea').forEach(function(e){var t=(e.type||'').toLowerCase();if(t==='button'||t==='submit')return;e.value='';fire(e);});
+    CARD.querySelectorAll('.iseg button.on').forEach(function(b){b.classList.remove('on');});
+    setBar(false);
+  }
+  var bar=document.createElement('div');
+  bar.className='demo-bar';
+  bar.style.cssText='display:flex;align-items:center;gap:8px;margin:0 0 14px;font-family:var(--f-mono,monospace);font-size:11.5px;flex-wrap:wrap;';
+  function setBar(loaded){
+    bar.innerHTML='';
+    var lab=document.createElement('span');
+    lab.style.cssText='color:var(--mute,#8a8a8a);';
+    lab.textContent = loaded? 'Loaded with a worked example, edit it or' : 'Inputs cleared,';
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='tbtn';
+    btn.textContent = loaded? 'Clear' : 'Load example';
+    btn.addEventListener('click', loaded? clearAll : loadExample);
+    bar.appendChild(lab); bar.appendChild(btn);
+  }
+  var host=CARD.querySelector('.controls .cat')||CARD.querySelector('.controls')||CARD;
+  host.insertBefore(bar, host.firstChild);
+  loadExample();
+})();
+</script>
+
 </body>
 </html>

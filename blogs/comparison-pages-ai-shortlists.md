@@ -605,6 +605,10 @@ The consideration funnel is being re-decided in public, the incumbents' advantag
 
 ## Frequently asked questions
 
+### What makes a comparison page get pulled into AI shortlists?
+
+Four things: a verdict box that names a winner for a specific segment, high fact density with real numbers and prices, question-shaped headings that match how buyers ask, and visible neutrality that names where each option wins. AI engines pull ranked, extractable comparison pages into shortlists far more often than undifferentiated listicles, and only a small share of cited comparison URLs sit in Google's organic top ten, so page structure matters more than the domain's rank.
+
 ### How do you get a comparison page cited by AI engines?
 
 Build the page around retrievable passages, not a narrative. Put a self-contained verdict naming both products in the first hundred words, run at least one verifiable fact per hundred words, phrase H2s as the buyer's actual question, name at least one case where a competitor wins, link out to independent sources, and ship ItemList plus SoftwareApplication and FAQPage schema server-side. Those moves target the levers that controlled testing shows move citation probability the most.

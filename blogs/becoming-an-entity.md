@@ -397,6 +397,10 @@ Winning here is not the same as winning the old game, and it compounds different
 
 Frequently Asked Questions
 
+### Is Wikidata a knowledge graph, and how does it help SEO?
+
+Yes. Wikidata is a free, structured knowledge graph whose entries each carry a unique QID, and it is one of the primary sources large language models and Google's Knowledge Graph draw on to resolve entities. For Wikidata SEO the payoff is that a Wikidata entry helps you become a known entity: it gives your brand a machine-readable identifier a model can attach facts to, which is why a Wikidata QID and a consistent sameAs link from your site to your Wikidata and Wikipedia knowledge-graph nodes are among the highest-leverage entity signals you can build.
+
 ### What is the difference between a keyword and an entity?
 
 A keyword is a string of text; an entity is a distinct concept with a unique machine identifier (a Google MID or a Wikidata QID). Keywords are ambiguous, the string "Java" means a language, an island, or coffee, so a string-matching engine has to guess. An entity resolves that ambiguity across every language at once: "Eiffel Tower" and "Tour Eiffel" are two labels on one node. Modern search and generative engines answer from entity nodes in a knowledge graph, not from documents that rank, so being a recognised entity is what makes a machine confident enough to state facts about you.

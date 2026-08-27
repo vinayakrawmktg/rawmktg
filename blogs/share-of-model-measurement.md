@@ -580,6 +580,10 @@ Share of Model is not complicated mathematics. It is a weighted average with con
 
 ## Frequently asked questions
 
+### What is Share of Model tracking, and do you need an agency for it?
+
+Share of Model tracking is measuring, on a fixed cadence, how often and how prominently a brand is named across AI answers for a category, then trending it over time. You do not need a Share of Model agency to start: the method is a frozen prompt portfolio run 8 to 12 times per engine with the results scored and bounded, which an in-house team can run themselves. An agency mainly helps with scale and consistency, not with anything proprietary; the full standard is public on the measurement methodology page.
+
 ### What is Share of Model and how is it calculated?
 
 Share of Model is the percentage of brand presence an entity captures across a statistically representative set of category prompts, measured across multiple generative engines and weighted by commercial intent and engine usage. You compute it as your weighted presence divided by the total weighted presence of every brand in the competitive set, over the same prompt portfolio, on the same engines, on a fixed cadence. The denominator is total field presence, not response count, which is what makes it a share rather than a rate.

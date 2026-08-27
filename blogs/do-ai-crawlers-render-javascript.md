@@ -578,6 +578,10 @@ The uncomfortable part of this finding is how mundane it is. There is no ranking
 
 ## Frequently asked questions
 
+### Can AI crawlers execute JavaScript?
+
+Mostly no. In a twelve-crawler test, nine ran no JavaScript runtime at all, so for AI search JavaScript rendering you should assume the crawler sees only your raw server-rendered HTML. Two crawlers pass only because they inherit a search engine's render pipeline, and one is limited. If your content, pricing or specifications only appear after client-side JavaScript executes, most AI crawlers cannot read them, which is why server-side rendering or prerendering is the fix.
+
 ### Do AI crawlers render JavaScript?
 
 Mostly no. Industry benchmarks put the share of AI crawlers that cannot execute JavaScript at roughly 69%, and in a twelve-crawler test nine ran no JavaScript runtime at all. The vast majority are lightweight HTTP clients: they issue a GET, read the response body, extract text and close the connection. Content that only exists after a React, Vue or Angular runtime hydrates is invisible to them. The two crawlers that do render, Google-Extended and Applebot, pass only because they inherit an existing search render pipeline.

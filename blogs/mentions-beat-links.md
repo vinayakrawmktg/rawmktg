@@ -178,6 +178,30 @@ CSD  =  ( Σ_{u∈U}  n_u · m_u )  /  (W / 1000)
 
 A general blog post typically scores under 1. A well-built research hub should clear 4. Below 2 and you have written an essay with numbers in it, which is a different thing.
 
+Free Tool · Analyzer
+
+Score your own citable stat density
+
+The formula above, made live. Paste your draft and see which claims a model can lift and which will not survive extraction.
+
+Paste your research draft
+
+One claim per line. The scorer rates each and computes density.
+
+Load sample
+
+Each line scores +2 for a precise number, +2 for a named method (n=, sample, margin of error), +2 for attribution (said, according to), -1 for a hedge (most, many, significant), +1 for fitting a chunk (45 words or fewer). 5+ is citable. A research hub should clear a density of 4 per 1,000 words.
+
+Citable stat density
+
+0/ 1,000 words
+
+Paste a draft
+
+Line by line
+
+Per-claim verdicts appear here.
+
 ### Design backward from the headline
 
 The practical move is to write the press headline before you write the survey. If you cannot state the finding you are hoping for as a single sentence with a number in it, the study is not designed yet. This feels like cheating. It is not, provided you are honest about publishing the result whichever way it lands. What you are doing is making sure the instrument can produce an extractable claim at all, rather than a table of correlations that requires a paragraph to explain.

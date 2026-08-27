@@ -593,6 +593,10 @@ Execute these six principles systematically and you build the kind of machine-re
 
 Frequently Asked Questions
 
+### What is the best schema for AI search citations?
+
+There is no single tag; the schema that earns AI search citations is the set that resolves your entity and your facts unambiguously. In practice that means Organization with a sameAs array to bind your identity, Article or the relevant content type for the page, and Product, FAQPage or Dataset where they apply, all cross-linked by explicit @id. Structured data does not force a citation, but sites with fully implemented JSON-LD see materially higher AI citation rates because the model can extract a fact and attribute it to a resolved entity.
+
 ### How does schema impact AI citations?
 
 Schema does not directly rank a page, but it removes ambiguity: it tells a parser that a number is a price, a block is an FAQ answer, or an entity is your organization, so a model can extract and attribute the fact cleanly. About 53% of pages cited in AI answers carry valid structured data while many commercial pages carry none, so schema is the difference between a machine inferring your content and being told it.

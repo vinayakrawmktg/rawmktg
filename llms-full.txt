@@ -284,6 +284,10 @@ A free rawmktg tool. [Open the full tool →](/tools/content-recency-decay) · [
 
 Frequently Asked Questions
 
+### How does content recency affect AI rankings?
+
+Strongly, and faster than in classic SEO. Content updated within roughly the last 30 days is cited at several times the rate of static pages on competitive commercial queries, and pages left untouched for months face a sharply higher chance of losing citations entirely. Content recency behaves like a decay curve, so a genuine substantive refresh, not a changed byline date, on your commercially important pages is one of the highest-leverage ranking signals in AI search.
+
 ### How often should content be updated to retain AI citations?
 
 Pages updated within 30 days show the highest AI citation retention. Beyond 90 days, pages are 3.2x more likely to lose citations regardless of domain authority. Updating at least the dateModified schema value alongside substantive content changes is the most reliable way to stay inside the citation window.
@@ -887,7 +891,7 @@ Traditional SEO optimized for domain-level link equity. Generative engine optimi
 
 Generative systems do not digest web pages as holistic narratives. They [retrieve and parse them](/blogs/how-your-page-gets-retrieved) through real-time [Retrieval-Augmented Generation (RAG)](/blogs/how-rag-actually-works) frameworks that decompose queries, run parallel searches, re-rank candidates, and then extract specific passages from the winners. By the time a page is being considered for citation, the contest is already mostly decided by structure, not by prose quality or domain authority alone.
 
-This analysis deconstructs the six structural patterns shared by 10 pages that consistently earned [AI citations](/blogs/citation-vs-mention-vs-recommendation) across ChatGPT, Gemini, and Perplexity over a 90-day observation window. Each pattern is presented with the mechanism behind it, an audit framework, and an implementation checklist.
+This analysis deconstructs the six structural patterns shared by 10 pages that consistently earned [AI citations](/blogs/citation-vs-mention-vs-recommendation) across ChatGPT, Gemini, and Perplexity over a 90-day observation window. Each pattern is presented with the mechanism behind it, an audit framework, and an implementation checklist. The off-site half of the same problem, getting independent sites to repeat your numbers, is covered in [digital PR and data studies](/blogs/mentions-beat-links).
 
 Pattern 01 · Heading Structure
 
@@ -2602,6 +2606,10 @@ Winning here is not the same as winning the old game, and it compounds different
 
 Frequently Asked Questions
 
+### Is Wikidata a knowledge graph, and how does it help SEO?
+
+Yes. Wikidata is a free, structured knowledge graph whose entries each carry a unique QID, and it is one of the primary sources large language models and Google's Knowledge Graph draw on to resolve entities. For Wikidata SEO the payoff is that a Wikidata entry helps you become a known entity: it gives your brand a machine-readable identifier a model can attach facts to, which is why a Wikidata QID and a consistent sameAs link from your site to your Wikidata and Wikipedia knowledge-graph nodes are among the highest-leverage entity signals you can build.
+
 ### What is the difference between a keyword and an entity?
 
 A keyword is a string of text; an entity is a distinct concept with a unique machine identifier (a Google MID or a Wikidata QID). Keywords are ambiguous, the string "Java" means a language, an island, or coffee, so a string-matching engine has to guess. An entity resolves that ambiguity across every language at once: "Eiffel Tower" and "Tour Eiffel" are two labels on one node. Modern search and generative engines answer from entity nodes in a knowledge graph, not from documents that rank, so being a recognised entity is what makes a machine confident enough to state facts about you.
@@ -3194,6 +3202,10 @@ The rebalancing this requires is uncomfortable for most organic teams, because t
 Run a fixed prompt set five times across the engines your buyers use, classify every cited URL, and find out which of the three signals is actually broken. Everything else follows from that answer.
 
 ## Frequently asked questions
+
+### Citation vs mention: what is the difference?
+
+A mention names your brand in the answer text; a citation links or attributes a specific claim to your page as a source. Mentions and citations are not interchangeable: you can be mentioned constantly and never cited, or cited as a source without being recommended as the answer. Mentions build the prior that you belong in the category, citations ground a specific claim in your content, and recommendations convert, each has a different cause and a different fix.
 
 ### What is the difference between a mention, a citation, and a recommendation in AI search?
 
@@ -3859,6 +3871,10 @@ Note which competitor URLs are winning the citations at baseline, because those 
 The consideration funnel is being re-decided in public, the incumbents' advantage was link distribution rather than retrievability, and the winning format is one you are allowed to publish on your own domain. Most of your competitors are still writing 'Why We Are 10x Better'. That is the whole opening.
 
 ## Frequently asked questions
+
+### What makes a comparison page get pulled into AI shortlists?
+
+Four things: a verdict box that names a winner for a specific segment, high fact density with real numbers and prices, question-shaped headings that match how buyers ask, and visible neutrality that names where each option wins. AI engines pull ranked, extractable comparison pages into shortlists far more often than undifferentiated listicles, and only a small share of cited comparison URLs sit in Google's organic top ten, so page structure matters more than the domain's rank.
 
 ### How do you get a comparison page cited by AI engines?
 
@@ -5201,6 +5217,10 @@ The last row matters more than it looks. Once the HTML is readable, the constrai
 The uncomfortable part of this finding is how mundane it is. There is no ranking algorithm to reverse-engineer and no prompt to optimise. A crawler asked for your page, your server sent an empty container, and the model wrote its answer from whoever sent text instead. That is the entire mechanism, which also makes it the cheapest fix in the stack. Content strategy takes quarters to compound. This one lands the day you deploy it.
 
 ## Frequently asked questions
+
+### Can AI crawlers execute JavaScript?
+
+Mostly no. In a twelve-crawler test, nine ran no JavaScript runtime at all, so for AI search JavaScript rendering you should assume the crawler sees only your raw server-rendered HTML. Two crawlers pass only because they inherit a search engine's render pipeline, and one is limited. If your content, pricing or specifications only appear after client-side JavaScript executes, most AI crawlers cannot read them, which is why server-side rendering or prerendering is the fix.
 
 ### Do AI crawlers render JavaScript?
 
@@ -9574,6 +9594,30 @@ CSD  =  ( Σ_{u∈U}  n_u · m_u )  /  (W / 1000)
 
 A general blog post typically scores under 1. A well-built research hub should clear 4. Below 2 and you have written an essay with numbers in it, which is a different thing.
 
+Free Tool · Analyzer
+
+Score your own citable stat density
+
+The formula above, made live. Paste your draft and see which claims a model can lift and which will not survive extraction.
+
+Paste your research draft
+
+One claim per line. The scorer rates each and computes density.
+
+Load sample
+
+Each line scores +2 for a precise number, +2 for a named method (n=, sample, margin of error), +2 for attribution (said, according to), -1 for a hedge (most, many, significant), +1 for fitting a chunk (45 words or fewer). 5+ is citable. A research hub should clear a density of 4 per 1,000 words.
+
+Citable stat density
+
+0/ 1,000 words
+
+Paste a draft
+
+Line by line
+
+Per-claim verdicts appear here.
+
 ### Design backward from the headline
 
 The practical move is to write the press headline before you write the survey. If you cannot state the finding you are hoping for as a single sentence with a number in it, the study is not designed yet. This feels like cheating. It is not, provided you are honest about publishing the result whichever way it lands. What you are doing is making sure the instrument can produce an extractable claim at all, rather than a table of correlations that requires a paragraph to explain.
@@ -13155,6 +13199,10 @@ Execute these six principles systematically and you build the kind of machine-re
 
 Frequently Asked Questions
 
+### What is the best schema for AI search citations?
+
+There is no single tag; the schema that earns AI search citations is the set that resolves your entity and your facts unambiguously. In practice that means Organization with a sameAs array to bind your identity, Article or the relevant content type for the page, and Product, FAQPage or Dataset where they apply, all cross-linked by explicit @id. Structured data does not force a citation, but sites with fully implemented JSON-LD see materially higher AI citation rates because the model can extract a fact and attribute it to a resolved entity.
+
 ### How does schema impact AI citations?
 
 Schema does not directly rank a page, but it removes ambiguity: it tells a parser that a number is a price, a block is an FAQ answer, or an entity is your organization, so a model can extract and attribute the fact cleanly. About 53% of pages cited in AI answers carry valid structured data while many commercial pages carry none, so schema is the difference between a machine inferring your content and being told it.
@@ -13787,6 +13835,10 @@ If your weights change, the previous quarter has to be restated on the new weigh
 Share of Model is not complicated mathematics. It is a weighted average with confidence intervals attached. What makes it hard is the discipline, a fixed portfolio, enough runs, honest weights, and the willingness to publish a number lower than the one your tool vendor reports. That discipline is the entire difference between measurement and guessing.
 
 ## Frequently asked questions
+
+### What is Share of Model tracking, and do you need an agency for it?
+
+Share of Model tracking is measuring, on a fixed cadence, how often and how prominently a brand is named across AI answers for a category, then trending it over time. You do not need a Share of Model agency to start: the method is a frozen prompt portfolio run 8 to 12 times per engine with the results scored and bounded, which an in-house team can run themselves. An agency mainly helps with scale and consistency, not with anything proprietary; the full standard is public on the measurement methodology page.
 
 ### What is Share of Model and how is it calculated?
 

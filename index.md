@@ -6,7 +6,6 @@
 
 ## Articles
 
-- [Digital PR & Data Studies: The Link Play AI Cites](https://rawmktg.com/blogs/mentions-beat-links)
 - [Field Service Software SEO Teardown](https://rawmktg.com/blogs/field-service-software-ai-visibility-gap)
 - [Carbon & ESG Software SEO Teardown](https://rawmktg.com/blogs/authority-isnt-the-moat)
 - [Getting Found on Google and AI](https://rawmktg.com/blogs/payments-getting-found-google-ai)
@@ -30,6 +29,7 @@
 - [Internal Linking for AI Retrieval](https://rawmktg.com/blogs/internal-linking-for-ai-retrieval)
 - [Schema Markup in 2026: The Structured-Data Playbook Every B2B Brand Needs for AI Citations](https://rawmktg.com/blogs/schema-markup-ai-citations-2026)
 - [OAI-SearchBot vs. PerplexityBot vs. Common Crawl: How AI Crawlers Actually Index Your Site](https://rawmktg.com/blogs/how-ai-crawlers-index-your-site)
+- [Digital PR & Data Studies: The Link Play AI Cites](https://rawmktg.com/blogs/mentions-beat-links)
 - [The 'Best X for Y' Page AI Pulls Into Shortlists](https://rawmktg.com/blogs/comparison-pages-ai-shortlists)
 - [Becoming an Entity](https://rawmktg.com/blogs/becoming-an-entity)
 - [The Reddit GEO Playbook](https://rawmktg.com/blogs/reddit-geo-playbook)

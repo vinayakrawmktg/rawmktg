@@ -565,6 +565,10 @@ Run a fixed prompt set five times across the engines your buyers use, classify e
 
 ## Frequently asked questions
 
+### Citation vs mention: what is the difference?
+
+A mention names your brand in the answer text; a citation links or attributes a specific claim to your page as a source. Mentions and citations are not interchangeable: you can be mentioned constantly and never cited, or cited as a source without being recommended as the answer. Mentions build the prior that you belong in the category, citations ground a specific claim in your content, and recommendations convert, each has a different cause and a different fix.
+
 ### What is the difference between a mention, a citation, and a recommendation in AI search?
 
 A mention is your brand name appearing in text anywhere on the web, linked or not; it feeds the model's parametric memory and answers whether the machine knows you exist. A citation is an engine attributing a specific claim to a specific URL; it comes from live non-parametric retrieval and answers whether the machine treats your page as evidence. A recommendation is the engine naming you as a good choice at the synthesis layer, and answers whether the machine picks you.

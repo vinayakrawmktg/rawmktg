@@ -276,6 +276,10 @@ A free rawmktg tool. [Open the full tool →](/tools/content-recency-decay) · [
 
 Frequently Asked Questions
 
+### How does content recency affect AI rankings?
+
+Strongly, and faster than in classic SEO. Content updated within roughly the last 30 days is cited at several times the rate of static pages on competitive commercial queries, and pages left untouched for months face a sharply higher chance of losing citations entirely. Content recency behaves like a decay curve, so a genuine substantive refresh, not a changed byline date, on your commercially important pages is one of the highest-leverage ranking signals in AI search.
+
 ### How often should content be updated to retain AI citations?
 
 Pages updated within 30 days show the highest AI citation retention. Beyond 90 days, pages are 3.2x more likely to lose citations regardless of domain authority. Updating at least the dateModified schema value alongside substantive content changes is the most reliable way to stay inside the citation window.

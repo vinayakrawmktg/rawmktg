@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <title>llms.txt Validator &middot; Free GEO Tool &middot; rawmktg.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax." />
+  <meta name="description" content="Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax. It is a free llms.txt validator and checker for AI search." />
   <meta name="author" content="Vinayak Ravi" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
@@ -21,14 +21,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rawmktg.com/tools/llms-txt-validator" />
   <meta property="og:title" content="llms.txt Validator" />
-  <meta property="og:description" content="Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax." />
+  <meta property="og:description" content="Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax. It is a free llms.txt validator and checker for AI search." />
   <meta property="og:site_name" content="rawmktg." />
   <meta property="og:image" content="https://rawmktg.com/assets/images/og-default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="llms.txt Validator" />
-  <meta name="twitter:description" content="Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax." />
+  <meta name="twitter:description" content="Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax. It is a free llms.txt validator and checker for AI search." />
   <meta name="twitter:image" content="https://rawmktg.com/assets/images/og-default.png" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "llms.txt Validator", "url": "https://rawmktg.com/tools/llms-txt-validator", "description": "Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax.", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, all browsers", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "llms.txt Validator", "url": "https://rawmktg.com/tools/llms-txt-validator", "description": "Paste your llms.txt and check it against the seven structural spec rules plus description quality: single H1, blockquote, broad sections, and correct link syntax.", "isPartOf": {"@type": "WebSite", "name": "rawmktg.", "url": "https://rawmktg.com"}}</script>
@@ -324,7 +324,7 @@
   <header class="article-header">
     <div class="article-eyebrow"><span class="eyebrow-tag">Free Tool &middot; Validator</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Aug 2026</span></div>
     <h1 class="article-headline">llms.txt Validator</h1>
-    <p class="article-deck">Paste your llms.txt and lint it against the spec: single H1, blockquote, broad sections, the mandatory link colon, and fact-rich descriptions.</p>
+    <p class="article-deck">Paste your llms.txt and lint it against the spec: single H1, blockquote, broad sections, the mandatory link colon, and fact-rich descriptions. It is a free llms.txt validator and checker for AI search.</p>
   </header>
 </div>
 
@@ -426,5 +426,45 @@
   ta.addEventListener('input',run); run();
 })();
 </script>
+
+<script>
+/* demo: auto-load a worked example + clear */
+(function(){
+  var CFG={"root": "val", "textareas": {"valIn": "# Example\n\n> Example is a B2B analytics platform for product teams.\n\n## Docs\n- [Getting started](https://example.com/docs): Setup and your first dashboard\n- [API reference](https://example.com/api)\n- Pricing\n"}};
+  var CARD=document.getElementById(CFG.root); if(!CARD) return;
+  if(CARD.querySelector('.demo-bar')) return;
+  function fire(e){['input','change'].forEach(function(ev){try{e.dispatchEvent(new Event(ev,{bubbles:true}));}catch(x){}});}
+  function loadExample(){
+    var i,e;
+    for(i in (CFG.inputs||{})){e=document.getElementById(i);if(e){e.value=CFG.inputs[i];fire(e);}}
+    for(i in (CFG.textareas||{})){e=document.getElementById(i);if(e){e.value=CFG.textareas[i];fire(e);}}
+    (CFG.clicks||[]).forEach(function(sel){var b=CARD.querySelector(sel);if(b)b.click();});
+    setBar(true);
+  }
+  function clearAll(){
+    CARD.querySelectorAll('input,textarea').forEach(function(e){var t=(e.type||'').toLowerCase();if(t==='button'||t==='submit')return;e.value='';fire(e);});
+    CARD.querySelectorAll('.iseg button.on').forEach(function(b){b.classList.remove('on');});
+    setBar(false);
+  }
+  var bar=document.createElement('div');
+  bar.className='demo-bar';
+  bar.style.cssText='display:flex;align-items:center;gap:8px;margin:0 0 14px;font-family:var(--f-mono,monospace);font-size:11.5px;flex-wrap:wrap;';
+  function setBar(loaded){
+    bar.innerHTML='';
+    var lab=document.createElement('span');
+    lab.style.cssText='color:var(--mute,#8a8a8a);';
+    lab.textContent = loaded? 'Loaded with a worked example, edit it or' : 'Inputs cleared,';
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='tbtn';
+    btn.textContent = loaded? 'Clear' : 'Load example';
+    btn.addEventListener('click', loaded? clearAll : loadExample);
+    bar.appendChild(lab); bar.appendChild(btn);
+  }
+  var host=CARD.querySelector('.controls .cat')||CARD.querySelector('.controls')||CARD;
+  host.insertBefore(bar, host.firstChild);
+  loadExample();
+})();
+</script>
+
 </body>
 </html>
