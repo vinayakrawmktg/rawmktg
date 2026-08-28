@@ -50,7 +50,7 @@
   --f-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --f-prose:   'Azeret Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --f-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --f-logo:    'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --f-logo:    'Space Grotesk', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   /* legacy aliases — Colors.html / BrandKit.html still reference these */
   --f-sans:    var(--f-display);
   --f-serif:   var(--f-prose);
@@ -73,7 +73,7 @@ html, body{
    ========================================================= */
 .rm-logo{
   font-family: var(--f-logo);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.045em;
   display: inline-flex;
   align-items: baseline;
