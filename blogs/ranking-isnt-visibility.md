@@ -71,7 +71,7 @@ When we scored all 52 companies on how often the assistants named them across 40
 
 Figure 1 - AI named-rate distribution across 52 lenders. 85% sit at zero; a handful reach single digits; only three, the ones with genuine third-party coverage, reach the low teens. Source: 40-prompt scan, 4 engines
 
-The lesson is not that AI visibility is hard for everyone equally, it is that almost no one in lending has done the specific work that earns it, which means the field is wide open.
+The lesson is not that AI visibility is hard for everyone equally, it is that almost no one in lending has done the specific work that earns it, which means the field is wide open. The same inversion shows up in investing and wealth, where [the cleanest sites earned zero AI citations](/blogs/clean-site-zero-citations) and the messiest got quoted.
 
 ### Where AI answers actually come from
 

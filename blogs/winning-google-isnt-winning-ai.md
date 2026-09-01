@@ -7,7 +7,7 @@
 
 The market for AI tools that build slides and decks has gone from a handful of names to a crowded field in under two years. Gamma, Beautiful.ai, Plus AI, SlideSpeak, Deckary, Canva and consultant-focused tools like Prezent now compete for the same buyers. This teardown looks at how those buyers actually find a tool today, who is winning on Google, who is winning inside AI assistants, and why those are no longer the same question.
 
-We pulled a one-day snapshot of live search data: the terms buyers use and how hard they are to win, who ranks where on Google, the links each player has earned, and the answers four AI assistants give to 40 real buyer questions. Three patterns stand out: discovery has split in two; the Google leader is not the AI leader; and the niche is winnable.
+We pulled a one-day snapshot of live search data: the terms buyers use and how hard they are to win, who ranks where on Google, the links each player has earned, and the answers four AI assistants give to 40 real buyer questions. Three patterns stand out: discovery has split in two; the Google leader is not the AI leader; and the niche is winnable. A companion teardown scores 41 investing and wealth brands and finds [the cleanest sites earning zero AI citations](/blogs/clean-site-zero-citations).
 
 ## 01. How do buyers find a deck tool now?
 

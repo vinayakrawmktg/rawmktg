@@ -399,7 +399,7 @@ domain:example-network.tld
 
 **It establishes that a segment's link profiles are thin, decayed, and concentrated. It does not measure what that costs in traffic, pipeline, or AI-assistant citations,** because none of those were measured here. What it does show is that the cheapest available improvements are sitting unclaimed in front of everyone at once.
 
-Every figure in this piece is computed from 41 backlink audits, the Investing & Wealth cohort, produced on 26 August 2026 from Ahrefs referring domains, backlinks, and link intersect data, each benchmarked against the same forty-company peer set. Sub-segment assignment is ours and is for analysis only. Four limitations are worth stating.
+Every figure in this piece is computed from 41 backlink audits, the Investing & Wealth cohort, produced on 26 August 2026 from Ahrefs referring domains, backlinks, and link intersect data, each benchmarked against the same forty-company peer set. Sub-segment assignment is ours and is for analysis only. Four limitations are worth stating. A companion teardown scores the same Investing & Wealth cohort on exactly that: [clean sites, and zero AI citations](/blogs/clean-site-zero-citations).
 
 - **Spam classification is partly manual.** Ahrefs' flag was the starting point and each list was read by hand. Another analyst would draw the line differently, particularly in the DR 30 to 50 band.
 - **Ahrefs' index is not the web.** Referring domain counts, historical counts, and traffic estimates are one crawler's view. Directionally sound, not absolute.

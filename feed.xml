@@ -7,8 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title><![CDATA[Clean Site, Zero Citations: An Investing & Wealth AI-Visibility Teardown &middot; rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/clean-site-zero-citations</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/clean-site-zero-citations</guid>
+      <pubDate>Mon, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[An AI-visibility teardown of 41 companies in the Investing & Wealth cohort (investing, wealth and digital-asset infrastructure), each scored against the same 48 buyer questions on ChatGPT, Google AI Overviews, Claude and Gemini -- 7,872 answers -- with 35 same-day site crawls (23,870 URLs). Headline: 36 of 41 companies were never named or linked in a single one of their 192 answers, and the segment occupies just 19% of the answer slot counting every overlap. The inversion: the five visible companies carried twice the median high-priority site problems of the invisible 36 -- the cleanest site (Juno, one problem, six URLs) scored zero, the messiest (Range, Pulley) got quoted -- so site hygiene does not appear in the signal (r=+0.25, not significant; confounded by publishing volume). Why: retrieval is a gate not a ranking factor, three multiplicative gates (retrievability, answer match, corroboration); the segment optimises gate 1 and dies at gate 2, no page answers the question. 314 of 328 vendor-stage cells are empty; Alternatives is a clean zero across all 41 companies and four tools. Ten domains own 37% of the slot and a third of that is trade media and adjacent vendors. The four tools disagree (Range is 6% and 17% at once), so single-tool 'AI visibility' is noise. 21% of losses cited no source at all -- a corroboration problem, not a content one. Reports four metrics to replace 'AI visibility': Answer Share, Stage Coverage Index, Decision-Stage Presence, Citable Surface Ratio. Includes a 90-day sequence, the three-gate model, decision-page HTML with FAQ schema, and a gate-1 shell check. 10 figures, 7 tables, 4 code blocks.]]></description>
+    </item>
     <item>
       <title><![CDATA[The Link Liability: What 41 Backlink Audits Reveal &middot; rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/the-link-liability</link>

@@ -11,7 +11,7 @@ The standard behind these numbers
 
 This article is the worked spec. The one-page, versioned standard every rawmktg figure follows lives at the [measurement methodology](/methodology).
 
-Share of Model is the metric that replaces the screenshot. It answers one question with one number: across the questions your buyers actually ask, in the engines they actually use, how much of the answer space do you own compared to everyone else selling into the same problem. This piece is the methodology, not the taxonomy and not the attribution plumbing, just the metric, how to compute it, how big a sample it needs, and how to read the result.
+Share of Model is the metric that replaces the screenshot. It answers one question with one number: across the questions your buyers actually ask, in the engines they actually use, how much of the answer space do you own compared to everyone else selling into the same problem. This piece is the methodology, not the taxonomy and not the attribution plumbing, just the metric, how to compute it, how big a sample it needs, and how to read the result. A single number can still hide which buying stage is missing, which is why a [segment teardown reports four measures, not one](/blogs/clean-site-zero-citations).
 
 A single measurement is a screenshot. Two comparable measurements are a program.
 
