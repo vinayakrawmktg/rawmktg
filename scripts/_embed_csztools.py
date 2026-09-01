@@ -42,6 +42,13 @@ a=a.replace(cj, '\n'+'\n'.join(scripts)+cj, 1)
 open(ART,"w",encoding="utf-8").write(a)
 print("embedded:", a.count('id="abIn"'), a.count('id="checklist"'), "| tools.css:", a.count('assets/tools.css'))
 
+# stacked layout for embeds (article column is narrower than a full tool page)
+STYLE_FIX='<style id="tool-embed-fix">.tool-embed .grid.mix,.tool-embed .grid.score{grid-template-columns:1fr;gap:22px;}.tool-embed .ta{min-height:150px;}</style>\n'
+if 'id="tool-embed-fix"' not in a:
+    firsthead=EMB[0][5]
+    a=a.replace('<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Optimizer', STYLE_FIX+'<div class="toolpage tool-embed"><div class="embed-head"><div class="embed-eyebrow">Free Tool &middot; Optimizer',1)
+    open(ART,"w",encoding="utf-8").write(a)
+
 # inbound link from winning-google-isnt-winning-ai
 f="blogs/winning-google-isnt-winning-ai.html"; h=open(f,encoding="utf-8").read()
 if "/blogs/clean-site-zero-citations" not in h:
