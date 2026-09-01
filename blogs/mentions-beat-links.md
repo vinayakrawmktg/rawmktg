@@ -29,7 +29,7 @@ The entire Digital PR industry was built on converting editorial coverage into f
 
 Figure 2. External signals ranked by correlation with AI citation inclusion. The classical link-graph metrics cluster well below mention density.
 
-Read that carefully, because it is easy to draw the wrong conclusion. Backlinks did not stop mattering. A 0.204 correlation is a real signal, and the link graph still governs whether a crawler finds your page in the first place. What changed is that links are no longer the dominant term. They are one input among several, and they are outweighed by something most PR reporting does not even track.
+Read that carefully, because it is easy to draw the wrong conclusion. Backlinks did not stop mattering. A 0.204 correlation is a real signal, and the link graph still governs whether a crawler finds your page in the first place. What changed is that links are no longer the dominant term. They are one input among several, and they are outweighed by something most PR reporting does not even track. A cohort of 41 [backlink audits across one segment](/blogs/the-link-liability) makes the same point from the supply side: only 3.7 percent of every link relationship ever formed still carries authority.
 
 The mechanism is straightforward once you stop thinking in ranking terms. A retrieval-augmented system assembling an answer about your category is not consulting a link graph. It is looking for the same claim, about the same entity, on multiple independent sources. That is corroboration. A link signals a relationship between two documents; a mention is direct evidence that an independent party asserted a fact about you. The taxonomy underneath this, citation versus mention versus recommendation, is covered in [that piece](/blogs/citation-vs-mention-vs-recommendation).
 
@@ -76,7 +76,7 @@ The bottom of the table is equally instructive. Keyword stuffing produced an abs
 
 The Princeton team also tested combinations. Fluency optimisation paired with statistics addition beat every isolated strategy by more than 5.5%, and cite-sources, mediocre alone, expanded significantly when paired with quotation or statistical additions. Lift compounds, but not cleanly, because the strategies overlap in what they signal.
 
-formula &middot; stacked lift with overlap
+formula · stacked lift with overlap
 
 ```
 lift_combined  =  1  -  Π (1 - lift_i)  +  δ_overlap
@@ -164,7 +164,7 @@ Figure 6. A stat unit is the smallest block a generative engine can lift whole w
 
 Three components, all mandatory. A precise number, not a qualitative hedge. A named methodology so the claim is verifiable and the model can assess it. An attributed quote from a real person with a real title, which is where the 41% lever lives. Miss any one and the block degrades into something a model can read but will not confidently repeat. You can measure how well a document does this: citable stat density counts the extractable units per thousand words.
 
-formula &middot; citable stat density
+formula · citable stat density
 
 ```
 CSD  =  ( Σ_{u∈U}  n_u · m_u )  /  (W / 1000)
@@ -334,7 +334,7 @@ Figure 8. Placement types mapped against retrieval trust and citable fact densit
 
 You can formalise this. An entity corroboration index weights each mentioning domain by how much the retrieval layer trusts it, then takes a log of mention count to reflect diminishing returns from repeat coverage on the same site.
 
-formula &middot; entity corroboration index
+formula · entity corroboration index
 
 ```
 ECI  =  Σ_j  w_j · log(1 + m_j)
@@ -535,7 +535,7 @@ Table 6. The four metrics that survive contact with a generative answer.
 | Brand mention share | Share of responses naming your brand across a competitive prompt set | Competitive share of voice | Beat your closest rival by 1.5x |
 | Sentiment delta | Whether you are recommended positively, neutrally, or conditionally | Commercial framing quality | Net positive above +0.75 |
 
-formula &middot; brand mention share
+formula · brand mention share
 
 ```
 BMS  =  ( 1 / (P·R) )  Σ_p Σ_r  [ brand ∈ A_{p,r} ]
@@ -629,7 +629,7 @@ Table 7. Three populations, two buckets. The middle row is the problem.
 
 A rough estimate of the hidden revenue is better than no estimate.
 
-formula &middot; hidden Dark-AI revenue
+formula · hidden Dark-AI revenue
 
 ```
 hidden_revenue  ≈  D · φ · c · V
@@ -684,7 +684,7 @@ Figure 13. Ninety days from baseline scan to citation re-measurement. The workst
 
 Then hold. The single most common failure mode is publishing one study, seeing mention lift without citation lift at day ninety, and concluding the strategy does not work. The compounding is real but it runs on the retrieval layer's refresh cycle, not yours. Cost per incremental citation point is the number to bring to the second budget conversation.
 
-formula &middot; cost per citation point
+formula · cost per citation point
 
 ```
 cost_per_point  =  total_campaign_cost  /  Δ brand_mention_share

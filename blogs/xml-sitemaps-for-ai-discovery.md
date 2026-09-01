@@ -88,7 +88,7 @@ The failure mode is what makes it expensive. A 404 is loud; a 500 pages someone;
 
 It helps to have a number. Define discovery yield as the share of declared URLs a real-time indexer can actually resolve into a citable document in one pass: three binary conditions, all cheap to measure.
 
-formula &middot; discovery yield
+formula · discovery yield
 
 ```
 discovery_yield =  (1 / N) · Σ  [ s_i = 200 ]·[ h_i <= H ]·[ c_i = u_i ]
@@ -100,7 +100,7 @@ discovery_yield =  (1 / N) · Σ  [ s_i = 200 ]·[ h_i <= H ]·[ c_i = u_i ]
   and points at itself as canonical. Most sites score 0.60 to 0.85.
 ```
 
-bash &middot; measure hop counts on the URLs you declare
+bash · measure hop counts on the URLs you declare
 
 ```
 #!/usr/bin/env bash
@@ -181,7 +181,7 @@ A healthy log profile for the URLs you declare: above 95% 200 OK, under 5% perma
 
 This breaks in a specific, common way. A team reorganises static assets, moves the files into a build-output directory, and adds a catch-all rewrite that happens to emit a 301. Everything still works in a browser. Every human test passes. The discovery layer goes dark and nothing reports it.
 
-nginx &middot; transparent rewrites for root discovery assets
+nginx · transparent rewrites for root discovery assets
 
 ```
 server {
@@ -240,7 +240,7 @@ On llms.txt itself, keep expectations calibrated. It is a clean specification wi
 
 Here is the mechanism. Your build regenerates the sitemap on every deploy and stamps today's date on all 12,000 URLs, the default behaviour of most static-site generators and half the CMS plugins in circulation. The indexer takes you at your word and recrawls aggressively, compares the semantic hash of what it fetched against what it had, and finds nothing changed, on thousands of URLs. It will not do that twice: the recrawl priority of the whole file gets demoted, and the next time you ship something important you are in a slower queue.
 
-formula &middot; timestamp trust
+formula · timestamp trust
 
 ```
 timestamp_trust =  (URLs whose CONTENT changed) / (URLs whose LASTMOD changed)
@@ -254,7 +254,7 @@ Figure 10. Relative citation rate by time since last genuine update. The cliff b
 
 The fix is to stop letting the build decide what changed and let a content hash decide instead: hash the rendered body with the volatile parts stripped, compare against the stored hash, and write a timestamp only when the comparison fails.
 
-python &middot; hash-based lastmod generation
+python · hash-based lastmod generation
 
 ```
 import hashlib, json, re, datetime, pathlib
@@ -301,7 +301,7 @@ The changed list that falls out of this function is the same list you push to In
 
 **So a crawl-rate regression arrives with a filename attached, not buried in 48,000 URLs.** The protocol permits 50,000 URLs per file, but auditing guidance converges on ~5,000 for two reasons: a real-time indexer abandons a slow XML parse the way it abandons a slow redirect, and a monolithic file gives you one number to watch instead of a per-section signal.
 
-xml &middot; sitemap index and a compliant child file
+xml · sitemap index and a compliant child file
 
 ```
 <!-- /sitemap.xml -->
@@ -343,7 +343,7 @@ Note what is absent: no changefreq and no priority. Both have been ignored by Go
 - **Directive alignment.** A URL carrying noindex or blocked in robots.txt must never appear, declaring a page you told crawlers not to read is a contradiction resolved against you.
 - **Parameter discipline.** Session IDs, tracking parameters and faceted-navigation combinations produce near-duplicate URLs that consume budget and dilute the canonical signal.
 
-python &middot; sitemap validator with a hard fail
+python · sitemap validator with a hard fail
 
 ```
 import asyncio, re, sys
@@ -399,7 +399,7 @@ Wire that into CI as a blocking step on the sitemap build. A threshold of 0.98 i
 
 Google AI Overviews is more forgiving, 65% of citations from content updated within a year, 89% within three years. That difference is a strategy input: if ChatGPT Search is where your category gets decided, your update cadence is not a hygiene task, it is the campaign. Fitted to a simple exponential, the observed decay implies a citation half-life near two months for competitive commercial queries, the same shape as [the 30-day content half-life](/blogs/30-day-content-half-life-recency-ai-ranking-signal).
 
-formula &middot; freshness decay
+formula · freshness decay
 
 ```
 C(t) =  e^(-λ·t)          # relative citation likelihood
@@ -427,7 +427,7 @@ Figure 11. Time from publish to entering a recrawl queue, by discovery mechanism
 
 Before you submit, you prove you control the domain: a key of 8 to 128 characters from a-z, A-Z, 0-9 and hyphen (a 32-character UUID with dashes stripped is the default), written into a UTF-8 file at the root named exactly {key}.txt, containing the key and nothing else. If you cannot write to the root, keyLocation lets you host it elsewhere, but verification scope is bounded by the directory the key sits in, a key at /catalog/key.txt authorises submissions under /catalog/ and nothing else. Single URLs go over GET percent-encoded; bulk submissions go over POST as JSON, up to 10,000 URLs, and the host field takes a bare FQDN with no protocol, path, slash or port.
 
-http &middot; both submission patterns
+http · both submission patterns
 
 ```
 # Single URL, HTTP GET
@@ -489,7 +489,7 @@ Bing, Yandex, Naver, Seznam, Yep.
 
 Figure 12. One authenticated POST, verified once, broadcast to every participant. The signature headers make the fanout safe to trust.
 
-python &middot; production submission pipeline
+python · production submission pipeline
 
 ```
 import json, time
@@ -587,7 +587,7 @@ The practical read: optimising for ChatGPT Search rewards evidence density on a 
 
 The first number quantifies the waste: count the redirect hops you serve crawlers per cycle and add a penalty for every URL whose terminal response is temporary, because those get re-requested indefinitely. Multiply by your CDN egress cost per request and you have a finance-legible version, usually small, and that is fine, the real cost was never the bandwidth, it is the fetches you did not get spent on pages you wanted read.
 
-formula &middot; the tax itself
+formula · the tax itself
 
 ```
 tax =  f · Σ  h_i · (1 + τ_i·k)
@@ -598,7 +598,7 @@ tax =  f · Σ  h_i · (1 + τ_i·k)
   never bandwidth; it is the fetches not spent on pages you wanted read.
 ```
 
-formula &middot; Sitemap Health Index
+formula · Sitemap Health Index
 
 ```
 SHI =  0.40·R + 0.30·H + 0.20·γ + 0.10·F
@@ -612,7 +612,7 @@ SHI =  0.40·R + 0.30·H + 0.20·γ + 0.10·F
 
 The weights are a starting point, not a law. Response health carries the most because it is a precondition for everything else; freshness carries the least because it is hardest to sustain and easiest to fake. Score it monthly, plot it, and treat anything under 80 as an open engineering item.
 
-yaml &middot; CI gate on the discovery layer
+yaml · CI gate on the discovery layer
 
 ```
 # .github/workflows/discovery-gate.yml

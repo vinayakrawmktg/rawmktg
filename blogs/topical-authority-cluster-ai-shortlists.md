@@ -359,7 +359,7 @@ Generative engines represent both the user query and each content chunk as high-
 
 ### What is Share of Model and how do B2B brands measure it?
 
-Share of Model (SoM) is the percentage of relevant AI-generated responses in which a brand is mentioned or cited. It is measured through prompt-based auditing: develop 40 to 50 conversational prompts that mirror real buyer questions, run them across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, then record mention frequency, citation accuracy, competitive density, and sentiment. Enterprise audits expand to around 200 prompts. Track monthly or quarterly and pair with Google Analytics 4 segments that isolate AI-agent referral traffic (GPTBot, Claude-Web, PerplexityBot) to tie model citations directly to pipeline.
+Share of Model (SoM) is the percentage of relevant AI-generated responses in which a brand is mentioned or cited. It is measured through prompt-based auditing: develop 40 to 50 conversational prompts that mirror real buyer questions, run them across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, then record mention frequency, citation accuracy, competitive density, and sentiment. Enterprise audits expand to around 200 prompts, at the fixed 8 to 12 runs per prompt set by the [measurement methodology](/methodology). Track monthly or quarterly and pair with Google Analytics 4 segments that isolate AI-agent referral traffic (GPTBot, Claude-Web, PerplexityBot) to tie model citations directly to pipeline.
 
 Citations & Sources
 

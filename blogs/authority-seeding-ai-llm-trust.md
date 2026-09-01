@@ -182,7 +182,7 @@ Deliverable: Monthly AI SOV report, hallucination log, and competitor citation s
 
 **They are the handshake with AI retrieval.** Admit the real-time agents you want citing you in robots.txt, and publish an llms.txt pointing them at your fact-dense pages. Get this wrong and every off-site mention you seed drives crawlers to a page they cannot read, wasting the effort.
 
-Two configuration files form the technical handshake between your site and AI retrieval systems. Both must be correctly configured before [off-site seeding](/blogs/reddit-geo-playbook) begins; without them, seeded mentions may drive crawlers to a site that actively blocks them.
+Two configuration files form the technical handshake between your site and AI retrieval systems. Both must be correctly configured before [off-site seeding](/blogs/reddit-geo-playbook) begins; without them, seeded mentions may drive crawlers to a site that actively blocks them. For the state of that stack across a funded segment, see [the link liability](/blogs/the-link-liability): 41 backlink audits, an 86 percent median decay rate, and a four-metric scoreboard that replaces Domain Rating.
 
 Target robots.txt configuration for AI crawler access
 

@@ -7,8 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title><![CDATA[The Link Liability: What 41 Backlink Audits Reveal &middot; rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/the-link-liability</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/the-link-liability</guid>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A backlink teardown of 41 funded companies in investing, wealth management and digital assets (the Investing & Wealth cohort), audited on one day with one method against the same 40-company peer set and read as a single dataset. Headline: of 15,134 link relationships ever formed across the cohort, 2,126 domains still link, 1,044 pass authority, and only 567 sit at DR 50+ -- 3.7% of everything ever earned, an 86% pooled decay rate. Findings: 58% of live referring domains sit at DR 29 or below and 36% below DR 10; Domain Rating correlates with live dofollow domains at r=0.45 (14.6-point residual) so it lags reality and is inflated by single sitewide footer links; median company has lost 74% of every domain that ever linked and nobody monitors it (13,037 lost relationships sit unworked); median homepage concentration is 100%, capping what content can rank; 49% of the 283 strongest placements are nofollow; 31% of flagged spam domains carry DR 30+ so a low-DR filter keeps a third of them; 803 identified link opportunities resolve to just 32 domains (0.69 average pairwise overlap), 62% directories and wire hosts. Introduces four replacement metrics -- Effective Authority Domains (median 8), Live Equity Ratio (median 13%), Link Liability Ratio (median 47%), Page Concentration (median 100%) -- with a nine-step remediation order, a triage pass, a 90-day sequence, and working pandas and disavow code. 13 original figures, 7 tables, 4 code blocks.]]></description>
+    </item>
     <item>
       <title><![CDATA[Digital PR & Data Studies: The Link Play AI Cites &middot; rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/mentions-beat-links</link>

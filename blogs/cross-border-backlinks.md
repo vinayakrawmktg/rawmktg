@@ -36,7 +36,7 @@ Table 01 · Brand backlink profiles, June 2026
 | Infinity | 79 | 28 | 8.9% | 50 | Small, startup and cross-border leaning |
 | Eximpay | 126 | 5 | 9.5% | 7 | Minimal footprint; a handful of low-authority domains |
 
-Fig. 1 · Clean (non-spam) referring domains by brand. Cashfree leads on both volume and authority (median DR 78).
+Fig. 1 · Clean (non-spam) referring domains by brand. Cashfree leads on both volume and authority (median DR 78). Volume is not equity, though: across 41 [backlink audits in adjacent segments](/blogs/the-link-liability), only 3.7 percent of the relationships ever formed still pass authority today.
 
 Two things are worth reading carefully here. Cashfree's lead is real and high in quality: 525 clean referring domains at a median Domain Rating of 78, well ahead of the field. Xflow's position is more nuanced. Its raw profile is the second largest by backlinks, but almost nine in ten of those links are flagged as spam, leaving roughly 393 genuine referring domains once the noise is stripped out. The pure-play specialists, Skydo and PayGlocal, run smaller but cleaner profiles in the low hundreds.
 
