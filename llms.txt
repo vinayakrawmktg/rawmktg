@@ -10,7 +10,7 @@
 - [Findings & Fixes](https://rawmktg.com/features/findings-and-fixes) - Every failed check becomes a located finding with quoted evidence and a generated artefact: JSON-LD, answer block, llms.txt, robots.txt, schema snippet or content brief. Asserted inputs are labelled, never blended into a measured score.
 - [Competitor & Citation Tracking](https://rawmktg.com/features/competitor-tracking) - The models surface who is recommended instead of you; every citation is recorded and aggregated. Competitors are scored from the same answers, so there is no per-competitor pricing.
 - [For B2B SaaS marketing teams](https://rawmktg.com/use-cases/b2b-saas-marketing) - A defensible board number, a diagnosis of why you are absent, and work your team can do.
-- [For technical SEO](https://rawmktg.com/use-cases/technical-seo) - Rendering is the whole problem; measure CVR and get ticket-ready, evidence-backed findings on AI crawler retrieval.
+- [For technical SEO](https://rawmktg.com/use-cases/technical-optimization) - Rendering is the whole problem; measure CVR and get ticket-ready, evidence-backed findings on AI crawler retrieval.
 - [For agencies](https://rawmktg.com/use-cases/agencies) - A free audit as a leave-behind on any prospect domain, scoped findings, artefacts, and reporting that survives a sceptical client.
 - [Pricing](https://rawmktg.com/pricing) - Plans from $99/month (Diagnostic), Visibility, Program at $899/month, and agency plans from $1,500/month.
 - [Research library](https://rawmktg.com/research) - The teardowns, tools, glossary and methodology the product was built from.

@@ -21,3 +21,6 @@
 # ── Old uppercase /Blogs/ -> lowercase /blogs/ (301). Clean-URL serving then
 #    resolves /blogs/slug.html to /blogs/slug automatically. ──
 /Blogs/*   /blogs/:splat   301
+
+# Renamed use-case URL (was not indexed)
+/use-cases/technical-seo   /use-cases/technical-optimization   301
