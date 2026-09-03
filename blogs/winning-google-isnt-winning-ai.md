@@ -140,7 +140,7 @@ The link sources that move the needle in this category
 
 The compounding effect
 
-These signals stack. A strong directory listing helps Google ranking, which helps AI retrieval, which earns reviews and press, which feed back into both. One well-placed asset, such as an original data report, can lift Google rank, links and AI citations at once. That is why the players who started early keep pulling ahead.
+These signals stack. A strong directory listing helps Google ranking, which helps AI retrieval, which earns reviews and press, which feed back into both. One well-placed asset, such as an original data report, can lift Google rank, links and AI citations at once. That is why the players who started early keep pulling ahead. That AI retrieval begins with a [query fan-out](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches), one prompt expanded into eight to sixteen hidden searches, so being surfaced means covering the facets rather than ranking first for one term.
 
 ## 06. How do AI engines decide what to name?
 

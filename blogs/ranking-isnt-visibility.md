@@ -81,7 +81,7 @@ Figure 2 - roughly four-fifths of AI citations trace back to earned media, not a
 
 The practical implication
 
-You cannot write or buy your way into AI answers from your own domain alone, and as the [carbon and ESG teardown](/blogs/authority-isnt-the-moat) shows, domain authority barely helps. You [earn your way in](/blogs/authority-seeding-ai-llm-trust) by becoming a brand the sources AI trusts already talk about: get listed and reviewed on the category's review sites, pitch data and commentary to trade publishers, and make sure comparison round-ups include you. For a lender that means G2/Capterra-type listings for B2B software, credible personal-finance and SMB publishers for consumer products, and original data others want to cite.
+You cannot write or buy your way into AI answers from your own domain alone, and as the [carbon and ESG teardown](/blogs/authority-isnt-the-moat) shows, domain authority barely helps. You [earn your way in](/blogs/authority-seeding-ai-llm-trust) by becoming a brand the sources AI trusts already talk about: get listed and reviewed on the category's review sites, pitch data and commentary to trade publishers, and make sure comparison round-ups include you. For a lender that means G2/Capterra-type listings for B2B software, credible personal-finance and SMB publishers for consumer products, and original data others want to cite. Those answers are assembled by [fanning one prompt out into many hidden searches](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches) and fusing the results, so inclusion is about covering the sub-queries, not holding the number-one spot for a term.
 
 ### Three fixable failure modes
 

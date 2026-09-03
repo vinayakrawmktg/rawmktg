@@ -57,7 +57,7 @@ It is not GPTBot. [GPTBot compiles training corpora for foundation models](https
 
 ### PerplexityBot: Perplexity's retrieval engine
 
-[PerplexityBot](https://docs.perplexity.ai/docs/resources/perplexity-crawlers) is the background agent that maintains Perplexity's real-time retrieval index. Its objective is structural: keep authoritative, content-dense pages discoverable so the retrieval-augmented generation layer can cite them accurately. It deprioritises programmatic listings, faceted directories, and thin paginated archives, which is rational given that those pages rarely become useful citations.
+[PerplexityBot](https://docs.perplexity.ai/docs/resources/perplexity-crawlers) is the background agent that maintains Perplexity's real-time retrieval index. Its objective is structural: keep authoritative, content-dense pages discoverable so the retrieval-augmented generation layer can cite them accurately. It deprioritises programmatic listings, faceted directories, and thin paginated archives, which is rational given that those pages rarely become useful citations. At answer time that index feeds a [query fan-out](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches): one prompt becomes many parallel sub-queries, each matched to passages independently.
 
 ### CCBot: Common Crawl's archival harvester
 

@@ -149,7 +149,7 @@ def probability_of_citation(page, query):
     return match * trust
 ```
 
-Gate 1 is what a site crawl measures. It is necessary, it is cheap, and it is the only gate most of these companies have touched. Thirty of the thirty-five crawled sites passed it well enough to be readable and still scored zero, because they failed gate 2. There was no page. [Gate 2 is a supply problem, not a quality problem](/blogs/how-your-page-gets-retrieved): it does not ask whether your page is better, it asks whether a page exists that addresses the question in the shape the question was asked. Gate 3 is why fireblocks.com holds 8% and a cleaner site holds nothing. The segment has been optimising a gate it already passed.
+Gate 1 is what a site crawl measures. It is necessary, it is cheap, and it is the only gate most of these companies have touched. Thirty of the thirty-five crawled sites passed it well enough to be readable and still scored zero, because they failed gate 2. There was no page. [Gate 2 is a supply problem, not a quality problem](/blogs/how-your-page-gets-retrieved): it does not ask whether your page is better, it asks whether a page exists that addresses the question in the shape the question was asked. Gate 3 is why fireblocks.com holds 8% and a cleaner site holds nothing. The segment has been optimising a gate it already passed. The shape matters because the engine has already [fanned your prompt out into many sub-queries](/blogs/query-fan-out-how-one-prompt-becomes-ten-searches), and it matches each one against a passage separately.
 
 ## 06. Which buying stages is the segment missing?
 

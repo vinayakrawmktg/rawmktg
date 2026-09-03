@@ -497,7 +497,7 @@
 
       <h3>PerplexityBot: Perplexity's retrieval engine</h3>
 
-      <p><a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">PerplexityBot</a> is the background agent that maintains Perplexity's real-time retrieval index. Its objective is structural: keep authoritative, content-dense pages discoverable so the retrieval-augmented generation layer can cite them accurately. It deprioritises programmatic listings, faceted directories, and thin paginated archives, which is rational given that those pages rarely become useful citations.</p>
+      <p><a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">PerplexityBot</a> is the background agent that maintains Perplexity's real-time retrieval index. Its objective is structural: keep authoritative, content-dense pages discoverable so the retrieval-augmented generation layer can cite them accurately. It deprioritises programmatic listings, faceted directories, and thin paginated archives, which is rational given that those pages rarely become useful citations. At answer time that index feeds a <a href="/blogs/query-fan-out-how-one-prompt-becomes-ten-searches">query fan-out</a>: one prompt becomes many parallel sub-queries, each matched to passages independently.</p>
 
       <h3>CCBot: Common Crawl's archival harvester</h3>
 
