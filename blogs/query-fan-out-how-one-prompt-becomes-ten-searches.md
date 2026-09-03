@@ -17,6 +17,8 @@ The industry name for the middle step is query fan-out (also query decomposition
 
 **AI search does not rank pages against your prompt.** It generates its own sub-queries, retrieves passages for each one, fuses the lists, and cites whichever sources show up usefully across the most facets. Breadth of coverage beats depth on any single term.
 
+Query fan-out, also written **"query fan out"** or **"query fanout"**, is the same mechanism Google and Gemini call **grounding**: the engine expands your prompt into many sub-queries, retrieves passages for each, and grounds its answer in what comes back. So "query fan-out" and "grounding queries" describe the two halves of one process, and its practical meaning is that breadth of coverage, not a single keyword ranking, decides who gets cited.
+
 Each sub-query goes after a distinct facet of the original: a technical spec, a pricing tier, a compliance requirement, a comparison, a piece of social proof, or a follow-up you have not thought to ask. They fire simultaneously across live web indices, knowledge graphs, product catalogues and community databases. The system merges the ranked lists with Reciprocal Rank Fusion and dense vector scoring, assembles the surviving passages into a context block, and passes that to the model, which writes the answer with inline citations.
 
 Classify
@@ -469,7 +471,7 @@ Briefs to write next
 
 Free tools from this piece
 
-Three browser-based tools built from this deep dive: the [Facet Coverage Auditor](/tools/facet-coverage-auditor) to find your gaps, the [Expected-Citation Estimator](/tools/expected-citation-estimator) that replaces rank tracking, and the [Fan-Out Content Brief Generator](/tools/fan-out-content-brief-generator). They complement the existing [Query Fan-Out Simulator](/tools/query-fan-out-simulator) and [RRF Calculator](/tools/rrf-rank-fusion-calculator). All free, all run in your browser.
+Three browser-based tools built from this deep dive: the [Facet Coverage Auditor](/tools/facet-coverage-auditor) to find your gaps, the [Expected-Citation Estimator](/tools/expected-citation-estimator) that replaces rank tracking, and the [Fan-Out Content Brief Generator](/tools/fan-out-content-brief-generator). They complement the existing [Query Fan-Out Simulator](/tools/query-fan-out-simulator), a free query fan-out tool, and [RRF Calculator](/tools/rrf-rank-fusion-calculator). All free, all run in your browser.
 
 ## 10. What should you do this week?
 
@@ -506,6 +508,14 @@ Less than it used to. Under RRF with the conventional constant k=60, rank #1 con
 ### How do you optimise for query fan-out?
 
 Write atomically, one self-contained section per sub-question with the answer in the first 40 words; keep passages monosemantic so the embedding sits close to one sub-query vector; serve every fact (pricing, specs, compliance) in server-side HTML because the main ChatGPT crawler does not render JavaScript; and build the off-site footprint, since sentiment sub-queries go to Reddit, G2 and forums, not your site. Rewriting H2s as questions alone lifts ChatGPT citation rate from 29% to 41%.
+
+### Is query fan-out the same as grounding?
+
+Largely yes. Grounding is the term Google and Gemini use for retrieving external passages to support an answer, and query fan-out is how that retrieval is done: the model rewrites your prompt into eight to sixteen sub-queries, runs them in parallel, and grounds the answer in the passages that come back. "Query fan-out" names the expansion step; "grounding" names the retrieve-and-cite loop it feeds.
+
+### Is there a query fan-out tool?
+
+Yes. The free Query Fan-Out Simulator takes a buyer prompt and shows the sub-queries an engine is likely to generate from it, so you can see which facets your page answers and which it misses. Pair it with the Fan-Out Content Brief Generator to turn those sub-queries into an outline, and the RRF Calculator to see how fusion scoring rewards breadth over a single number-one ranking.
 
 Sources and further reading
 
