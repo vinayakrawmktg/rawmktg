@@ -31,10 +31,10 @@ def clean(content):
     out=content.strip()+tail
     # real legal details
     out=out.replace('[DATE]','15 August 2026')
-    out=out.replace('[LEGAL ENTITY NAME]','Sageo Consulting LLP')
-    out=out.replace('[REGISTERED ADDRESS]','TB3, Sowparnika Ananda, Sompura Gate, Sarjapur Road, Bangalore 562125, Karnataka')
-    out=out.replace('[COUNTRY]','India')
-    out=out.replace('[JURISDICTION]','India')
+    out=out.replace('[LEGAL ENTITY NAME]','Sageo SIA')
+    out=out.replace('[REGISTERED ADDRESS]','Prūšu iela 23B - 13, Rīga, LV-1057')
+    out=out.replace('[COUNTRY]','Latvia')
+    out=out.replace('[JURISDICTION]','Latvia')
     return out
 
 def head(prefix,slug,title,desc,extra_css=False):

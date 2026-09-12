@@ -12,9 +12,9 @@
 - [For B2B SaaS marketing teams](https://rawmktg.com/use-cases/b2b-saas-marketing) - A defensible board number, a diagnosis of why you are absent, and work your team can do.
 - [For technical SEO](https://rawmktg.com/use-cases/technical-optimization) - Rendering is the whole problem; measure CVR and get ticket-ready, evidence-backed findings on AI crawler retrieval.
 - [For agencies](https://rawmktg.com/use-cases/agencies) - A free audit as a leave-behind on any prospect domain, scoped findings, artefacts, and reporting that survives a sceptical client.
-- [Pricing](https://rawmktg.com/pricing) - Plans from $99/month (Diagnostic), Visibility, Program at $899/month, and agency plans from $1,500/month.
+- [Pricing](https://rawmktg.com/pricing) - Plans from $99/month (Diagnostic), Visibility, Program at $899/month, and agency plans from $1,500/month. All prices include tax.
 - [Research library](https://rawmktg.com/research) - The teardowns, tools, glossary and methodology the product was built from.
-- [About](https://rawmktg.com/about) - What RawMktg is, the research programme behind it, and the company (Sageo Consulting LLP).
+- [About](https://rawmktg.com/about) - What RawMktg is, the research programme behind it, and the company (Sageo SIA).
 - [Contact](https://rawmktg.com/contact) - Support, sales, billing and privacy; company details; billing handled by Paddle.
 
 ## Published Posts

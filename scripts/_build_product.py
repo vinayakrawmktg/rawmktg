@@ -13,10 +13,10 @@ def escq(t): return H.escape(t,quote=True)
 
 AUDIT="https://app.rawmktg.com/audit"
 APP="https://app.rawmktg.com"
-ENTITY="Sageo Consulting LLP"
-ADDR="TB3, Sowparnika Ananda, Sompura Gate, Sarjapur Road, Bangalore 562125, Karnataka"
-COUNTRY="India"
-REG="[LLP registration number, to add before publishing]"
+ENTITY="Sageo SIA"
+ADDR="Prūšu iela 23B - 13, Rīga, LV-1057"
+COUNTRY="Latvia"
+REG="Reg. Nr. 40203775716"
 
 # ---------------- NEW PRODUCT NAV ----------------
 NAV='''<nav class="site-nav" aria-label="Site navigation">
