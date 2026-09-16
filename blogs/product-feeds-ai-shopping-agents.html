@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4B3LL6MJKN');(function(){function l(){if(window.__gaLd)return;window.__gaLd=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-4B3LL6MJKN';document.head.appendChild(s);}if(document.readyState==='complete')l();else window.addEventListener('load',l);setTimeout(l,3000);})();</script>
+  <meta name="google-adsense-account" content="ca-pub-5952288317022852" />
+  <meta name="robots" content="index, follow" />
+  <title>Product Feeds for AI Shopping Agents &middot; rawmktg.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How to get your products recommended by AI shopping agents: the structured product feed, the fields that decide inclusion (price with ISO currency, availability, identifiers, images), Product/Offer schema, the 2026 discovery-vs-checkout settlement, the competing protocols (OpenAI ACP, Google UCP/AP2, Visa, Mastercard), and how to measure it." />
+  <meta name="author" content="Vinayak Ravi" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png" />
+  <link rel="canonical" href="https://rawmktg.com/blogs/product-feeds-ai-shopping-agents" />
+  <link rel="alternate" hreflang="en-US" href="https://rawmktg.com/blogs/product-feeds-ai-shopping-agents" />
+  <link rel="alternate" hreflang="en" href="https://rawmktg.com/blogs/product-feeds-ai-shopping-agents" />
+  <link rel="alternate" hreflang="x-default" href="https://rawmktg.com/blogs/product-feeds-ai-shopping-agents" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rawmktg.com/blogs/product-feeds-ai-shopping-agents" />
+  <meta property="og:title" content="Product Feeds for AI Shopping Agents" />
+  <meta property="og:description" content="How to get your products recommended by AI shopping agents: the structured product feed, the fields that decide inclusion (price with ISO currency, availability, identifiers, images), Product/Offer schema, the 2026 discovery-vs-checkout settlement, the competing protocols (OpenAI ACP, Google UCP/AP2, Visa, Mastercard), and how to measure it." />
+  <meta property="og:site_name" content="rawmktg." />
+  <meta property="og:image" content="https://rawmktg.com/assets/images/product-feeds-ai-shopping-agents.webp" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Product Feeds for AI Shopping Agents" />
+  <meta name="twitter:description" content="How to get your products recommended by AI shopping agents: the structured product feed, the fields that decide inclusion (price with ISO currency, availability, identifiers, images), Product/Offer schema, the 2026 discovery-vs-checkout settlement, the competing protocols (OpenAI ACP, Google UCP/AP2, Visa, Mastercard), and how to measure it." />
+  <meta name="twitter:image" content="https://rawmktg.com/assets/images/product-feeds-ai-shopping-agents.webp" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Product Feeds for AI Shopping Agents", "description": "How to get your products recommended by AI shopping agents: the structured product feed, the fields that decide inclusion (price with ISO currency, availability, identifiers, images), Product/Offer schema, the 2026 discovery-vs-checkout settlement, the competing protocols (OpenAI ACP, Google UCP/AP2, Visa, Mastercard), and how to measure it.", "image": "https://rawmktg.com/assets/images/product-feeds-ai-shopping-agents.webp", "url": "https://rawmktg.com/blogs/product-feeds-ai-shopping-agents", "datePublished": "2026-09-16", "dateModified": "2026-09-16", "author": {"@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}, "publisher": {"@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rawmktg.com/blogs/product-feeds-ai-shopping-agents"}, "keywords": ["agentic commerce", "AI shopping agents", "product feed", "Agentic Commerce Protocol", "ACP", "Product schema", "ChatGPT shopping", "AI checkout", "get recommended by AI", "merchant feed"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-headline", ".article-deck", "h2", "h3"]}, "url": "https://rawmktg.com/blogs/product-feeds-ai-shopping-agents"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "rawmktg.", "item": "https://rawmktg.com/"}, {"@type": "ListItem", "position": 2, "name": "Product Feeds for AI Shopping Agents", "item": "https://rawmktg.com/blogs/product-feeds-ai-shopping-agents"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is agentic commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Agentic commerce is when an autonomous AI agent researches, compares and buys products on a shopper's behalf: the human sets the intent and the agent handles discovery, comparison, and checkout or handoff. It differs from conversational commerce (which assists a human shopping in chat) by delegating the decision and, sometimes, the transaction to the agent. Since 2026 the common pattern is AI-led discovery with checkout kept in the merchant's environment."}}, {"@type": "Question", "name": "How do AI shopping agents find products?", "acceptedAnswer": {"@type": "Answer", "text": "Primarily through a structured product feed the merchant pushes to the platform, a gzip-compressed file (.jsonl.gz, .csv.gz or .xml.gz) updated daily with each product's price, availability, images, identifiers and eligibility flags, and secondarily through corroborating web data such as Product/Offer schema on your PDP and third-party listings. The agent reads records and fields, not your storefront design, so if you are not in the feed you are invisible to it."}}, {"@type": "Question", "name": "What fields does a product feed need for AI shopping agents?", "acceptedAnswer": {"@type": "Answer", "text": "At minimum a stable identifier (GTIN/MPN/brand), a price with its ISO currency code (e.g. '129.00 USD'), an availability/stock status, images, a product category, and the platform's eligibility flags for search and checkout. Inclusion is a data-quality gate: a missing identifier, an unpriced item, or a stale stock status filters the product out before any ranking happens."}}, {"@type": "Question", "name": "Do I still need Product schema if I have a feed?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The feed gets you into the catalogue, but Product and Offer schema on your product page is the on-page truth agents corroborate the feed against, and it is what web-crawling agents read when there is no feed. The critical rule is that the schema and the feed must agree exactly on price, currency, availability and identifiers; if they disagree, the agent trusts neither."}}, {"@type": "Question", "name": "What are the agentic-commerce protocols (ACP, UCP, AP2)?", "acceptedAnswer": {"@type": "Answer", "text": "At least five launched between April 2025 and January 2026: OpenAI's Agentic Commerce Protocol (ACP, with Stripe) for discovery and the commerce handshake in ChatGPT; Google's Universal Commerce Protocol (UCP) for merchant product exchange and its Agent Payments Protocol (AP2) for agent-initiated payments; Visa's Trusted Agent Protocol for verifying an agent acts for a real cardholder; and Mastercard's Agent Pay for tokenised agent payments. All consume structured product data, so a clean feed and matching schema are the portable asset."}}, {"@type": "Question", "name": "Why did my product stop showing in AI shopping results?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always feed drift. If the item sells out but the feed still says in_stock, if a price changes on the site but not the feed, or if a daily feed push fails, the agent either surfaces stale data (and down-ranks you when shoppers bounce) or drops the product. An agent's catalogue is only as current as your last successful push, so reconcile the feed against live stock and price daily and monitor push success."}}, {"@type": "Question", "name": "How do you get an AI agent to recommend your product, not just list it?", "acceptedAnswer": {"@type": "Answer", "text": "Inclusion is data quality; recommendation adds the trust signals an agent can compute: a competitive, correctly-formatted price, accurate availability, a populated aggregate rating corroborated by off-site reviews, and complete attributes that match the shopper's constraints. Agents penalise ambiguity, no reviews, a vague category, or a price that disagrees across feed, PDP and third-party listings, so be the cleanest, most corroborated, least ambiguous option."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/company/rawmktg/", "https://x.com/rawmktgcom"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="rawmktg." href="https://rawmktg.com/feed.xml" />
+  <link rel="alternate" type="text/markdown" href="/blogs/product-feeds-ai-shopping-agents.md" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Azeret+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --paper:#F2EFE8; --paper-2:#ECE7DD; --paper-3:#E2DCD0;
+      --ink:#2A2722; --ink-2:#4D4742; --mute:#6B6459; --faint:#C5BFB4;
+      --rule:#D6D0C5; --rule-2:#B4ADA2;
+      --signal:#BC3F1D; --signal-soft:#F1D9CC; --up:#3E9B6A;
+      --f-display:'Space Grotesk',system-ui,sans-serif;
+      --f-prose:'Azeret Mono',ui-monospace,monospace;
+      --f-mono:'JetBrains Mono',ui-monospace,monospace;
+      --f-logo:'Space Grotesk',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+    /* Nav */
+    .site-nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100;}
+    .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .rm-logo{font-family:var(--f-logo);font-weight:700;font-size:20px;letter-spacing:-0.045em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink);}
+    .rm-logo .mktg{color:var(--ink-2);}
+    .rm-logo .dot{color:var(--signal);}
+    .nav-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .nav-links a{transition:color 0.15s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a.cta{color:var(--signal);}
+
+    /* Header image */
+    .article-header-img{width:100%;height:auto;display:block;}
+
+    /* Article header */
+    .article-header{padding:52px 0 44px;}
+    .article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .eyebrow-tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);}
+    .eyebrow-sep{color:var(--faint);}
+    .eyebrow-date{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);}
+    .article-headline{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,48px);line-height:1.07;letter-spacing:-0.026em;color:var(--ink);margin-bottom:20px;max-width:880px;}
+    .article-deck{font-family:var(--f-prose);font-size:17px;line-height:1.65;color:var(--ink-2);max-width:720px;margin-bottom:16px;}
+    .article-data-note{font-family:var(--f-mono);font-size:10.5px;line-height:1.6;color:var(--mute);border-left:2px solid var(--rule);padding-left:14px;max-width:600px;}
+
+    /* Layout */
+    .article-body{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:48px 0 80px;align-items:start;}
+    .sidebar{position:sticky;top:80px;}
+
+    /* Sidebar */
+    .sidebar-block{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-bottom:24px;}
+    .sidebar-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:18px;}
+    .stat-row{display:flex;flex-direction:column;gap:16px;}
+    .stat-val{font-family:var(--f-display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+    .stat-label{font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);margin-top:4px;}
+    .stat-divider{border:none;border-top:1px solid var(--rule);margin:0;}
+
+    /* TOC */
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .toc-list a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;color:var(--mute);line-height:1.4;transition:color 0.15s;display:block;}
+    .toc-list a:hover{color:var(--signal);}
+    .toc-num{color:var(--faint);margin-right:6px;}
+
+    /* Prose */
+    .article-content p{font-family:var(--f-prose);font-size:16px;line-height:1.75;color:var(--ink-2);margin-bottom:24px;}
+    .article-content h2{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.018em;color:var(--ink);margin:52px 0 18px;line-height:1.18;}
+    .article-content h3{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-0.012em;color:var(--ink);margin:34px 0 12px;line-height:1.22;}
+    .article-content ul{margin:0 0 24px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .article-content ul li{font-family:var(--f-prose);font-size:15px;line-height:1.7;color:var(--ink-2);padding-left:18px;position:relative;}
+    .article-content ul li::before{content:"-";position:absolute;left:0;color:var(--signal);font-weight:600;}
+    .article-content a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+    .article-content a:hover{opacity:0.75;}
+    .article-content strong{font-weight:700;color:var(--ink);}
+    .article-content em{font-style:italic;}
+    .article-content code{font-family:var(--f-mono);font-size:0.88em;background:var(--signal-soft);color:var(--ink);padding:1px 6px;border-radius:3px;}
+
+    /* Section number */
+    .section-num{display:block;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+
+    /* Section answer */
+    .section-answer{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:16px 20px;margin:0 0 32px;font-family:var(--f-display);font-size:16px;font-weight:600;line-height:1.45;color:var(--ink);}
+
+    /* Stat callout */
+    .stat-callout{background:var(--ink);color:var(--paper);border-radius:8px;padding:24px 28px;margin:28px 0 36px;display:flex;align-items:center;gap:24px;}
+    .stat-callout .sc-val{font-family:var(--f-display);font-weight:700;font-size:48px;letter-spacing:-0.03em;color:var(--signal);flex-shrink:0;line-height:1;}
+    .stat-callout .sc-text{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:rgba(242,239,232,.78);}
+
+    /* Stat grid */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:32px 0 40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .sg-item{padding:24px 20px 24px 0;border-right:1px solid var(--rule);}
+    .sg-item:last-child{border-right:none;padding-right:0;}
+    .sg-item:not(:first-child){padding-left:20px;}
+    .sg-val{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;color:var(--signal);line-height:1;margin-bottom:8px;}
+    .sg-label{font-family:var(--f-prose);font-size:12px;line-height:1.55;color:var(--mute);}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--signal);padding:12px 0 12px 24px;margin:36px 0;font-family:var(--f-display);font-size:20px;line-height:1.45;font-style:italic;font-weight:500;color:var(--ink);}
+
+    /* Terminal table */
+    .tt-wrap{margin:28px 0 36px;overflow-x:auto;}
+    .tt-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .tt{width:100%;border-collapse:collapse;background:#1A1815;border-radius:8px;overflow:hidden;font-family:var(--f-mono);font-size:12.5px;}
+    .tt thead tr{border-bottom:1px solid rgba(255,255,255,.10);}
+    .tt thead th{padding:12px 16px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.40);}
+    .tt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background 0.12s;}
+    .tt tbody tr:last-child{border-bottom:none;}
+    .tt tbody tr:hover{background:rgba(255,255,255,.03);}
+    .tt td{padding:13px 16px;color:rgba(255,255,255,.78);line-height:1.55;vertical-align:top;}
+    .tt td.up{color:var(--up);font-weight:600;}
+    .tt td.down{color:var(--signal);font-weight:600;}
+    .tt td.mid{color:#D4A34A;font-weight:600;}
+    .tt td.mute{color:rgba(255,255,255,.42);}
+    .tt td.label{color:rgba(255,255,255,.92);font-weight:600;}
+    .tt td.metric{color:var(--up);font-weight:600;}
+    .tt td.neg{color:#c85a5a;font-weight:600;}
+    .tt td.highlight{background:rgba(208,74,42,.12);}
+    .tt td.absent{color:rgba(255,255,255,.30);}
+    /* Priority row highlights */
+    .tt tr.now-row td{background:rgba(62,155,106,.08);}
+    .tt tr.short-row td{background:rgba(212,163,74,.06);}
+    .tt tr.ongoing-row td{background:rgba(255,255,255,.02);}
+
+    /* Chart wrapper */
+    .chart-wrap{background:#1A1815;border-radius:8px;padding:28px 24px 20px;margin:28px 0 8px;position:relative;}
+    .chart-caption{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 28px;}
+
+    /* Code block */
+    .code-wrap{margin:20px 0 32px;}
+    .code-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;}
+    .code-block{background:#1A1815;border-radius:8px;padding:20px 24px;overflow-x:auto;position:relative;}
+    .code-block pre{font-family:var(--f-mono);font-size:12px;line-height:1.65;color:rgba(255,255,255,.82);white-space:pre;margin:0;}
+    .code-block .cm{color:#8a857a;font-style:italic;}
+    .code-block .tg{color:#ffb380;}
+    .code-block .at{color:#f5d590;}
+    .code-block .st{color:#c5e4a6;}
+    .code-block .kw{color:#ff9985;}
+    .code-lang{position:absolute;top:8px;right:12px;font-family:var(--f-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.30);}
+
+    /* Callout box */
+    .callout-box{background:var(--signal-soft);border-left:3px solid var(--signal);border-radius:0 6px 6px 0;padding:18px 22px;margin:28px 0 36px;}
+    .callout-box-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:10px;}
+    .callout-box p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:0;}
+
+    /* Two-column feature box */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 36px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+    .compare-col{padding:20px 24px;}
+    .compare-col:first-child{border-right:1px solid var(--rule);}
+    .compare-col-label{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+    .compare-col-label.seo{color:var(--mute);}
+    .compare-col-label.geo{color:var(--signal);}
+    .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0;}
+    .compare-col ul li{font-family:var(--f-prose);font-size:13px;line-height:1.6;color:var(--ink-2);padding-left:16px;position:relative;}
+    .compare-col ul li::before{content:"-";position:absolute;left:0;color:var(--faint);}
+    .compare-col.geo-col ul li::before{color:var(--signal);}
+
+    /* Citations */
+    .about-block{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px;}
+    .about-label{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;}
+    .about-block p{font-family:var(--f-prose);font-size:14px;line-height:1.7;color:var(--mute);}
+
+    /* Footer */
+    .site-foot{border-top:1px solid var(--rule);padding:28px 0 40px;margin-top:80px;}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+    .foot-row a{transition:color 0.15s;}
+    .foot-row a:hover{color:var(--ink);}
+    .foot-links{display:flex;gap:20px;}
+
+    @media(max-width:768px){
+      .page{padding:0 20px;}
+      .article-body{grid-template-columns:1fr;gap:40px;}
+      .sidebar{position:static;}
+      .nav-links{display:none;}
+      .stat-callout{flex-direction:column;gap:12px;}
+      .stat-grid{grid-template-columns:1fr;}
+      .sg-item{border-right:none;border-bottom:1px solid var(--rule);padding:16px 0;}
+      .sg-item:last-child{border-bottom:none;}
+      .compare-grid{grid-template-columns:1fr;}
+      .compare-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+    }
+
+    /* ── FAQ section ────────────────────────────────────────── */
+    .faq-section { margin-top: 56px; }
+    .faq-section-label { font-family: var(--f-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+    .faq-q { font-family: var(--f-display); font-weight: 700; font-size: 17px;
+      line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 10px; }
+    .faq-a { font-family: var(--f-prose); font-size: 14px; line-height: 1.7;
+      color: var(--ink-2); margin: 0; }
+  
+    .nav-links{align-items:center;}
+    .nav-dropdown{position:relative;}
+    .nav-trigger{font:inherit;color:var(--mute);background:none;border:0;cursor:pointer;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;padding:0;transition:color 0.15s;}
+    .nav-trigger:hover,.nav-dropdown:hover .nav-trigger,.nav-dropdown:focus-within .nav-trigger{color:var(--ink);}
+    .nav-trigger .caret{font-size:9px;color:var(--faint);}
+    .nav-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 30px rgba(42,39,34,0.12);padding:8px;min-width:300px;opacity:0;visibility:hidden;transition:opacity 0.15s,transform 0.15s;z-index:200;}
+.nav-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .nav-dropdown:hover .nav-menu,.nav-dropdown:focus-within .nav-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:6px;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-2);transition:background 0.12s,color 0.12s;white-space:nowrap;}
+    .nav-menu a:hover{background:var(--paper-2);color:var(--signal);}
+    .nav-menu .nm-num{color:var(--faint);margin-right:8px;}
+      .newsletter-section{padding:56px 0 72px;border-top:1px solid var(--rule);}
+    .newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .newsletter-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;}
+    .newsletter-title{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.18;letter-spacing:-0.020em;color:var(--ink);margin-bottom:12px;}
+    .newsletter-desc{font-family:var(--f-prose);font-size:14px;line-height:1.65;color:var(--mute);}
+    .newsletter-form{display:flex;flex-direction:column;gap:12px;}
+    .newsletter-form input[type="email"]{width:100%;padding:14px 16px;background:var(--paper-2);border:1px solid var(--rule-2);border-radius:6px;font-family:var(--f-prose);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.15s;}
+    .newsletter-form input[type="email"]::placeholder{color:var(--faint);}
+    .newsletter-form input[type="email"]:focus{border-color:var(--signal);}
+    .newsletter-form button{width:100%;padding:14px 24px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.15s;}
+    .newsletter-form button:hover{background:var(--signal);}
+    .newsletter-note{font-family:var(--f-mono);font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:var(--mute);}
+    @media(max-width:768px){.newsletter-inner{grid-template-columns:1fr;gap:32px;}}
+      .foot-top{display:flex;gap:56px;flex-wrap:wrap;margin-bottom:26px;}.foot-col-label{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}.foot-cats{display:flex;flex-direction:column;gap:2px;}.foot-cats a{display:block;padding:4px 0;line-height:1.25;}.foot-links a{display:inline-block;padding:6px 0;}
+  
+    .article-figure{margin:30px 0 10px;}
+    .article-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+    .figcap{font-family:var(--f-mono);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);text-align:center;margin:12px 0 30px;line-height:1.55;}
+  
+    /* Native pipeline flow (Fig 1) */
+    .pipeline{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:nowrap;}
+    .pl-node{flex:1;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:18px 14px;text-align:center;background:var(--paper-2);}
+    .pl-node.is-goal{border-color:var(--signal);background:var(--signal-soft);}
+    .pl-title{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);margin-bottom:7px;}
+    .pl-node.is-goal .pl-title{color:var(--signal);}
+    .pl-desc{font-family:var(--f-mono);font-size:9.5px;line-height:1.55;letter-spacing:0.06em;color:var(--mute);text-transform:uppercase;}
+    .pl-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;padding:0 8px;flex:0 0 auto;}
+    /* Doughnut center overlay (Figs 3-4) */
+    .donut-box{position:relative;max-width:300px;margin:6px auto;}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;}
+    .donut-pct{font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:-0.03em;line-height:1;}
+    .donut-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:7px;}
+    @media(max-width:640px){
+      .pipeline{flex-direction:column;}
+      .pl-arrow{transform:rotate(90deg);padding:8px 0;}
+    }
+  </style>
+  
+</head>
+<body>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at https://rawmktg.com/blogs/product-feeds-ai-shopping-agents.md. Optimized for AI and LLM tools.</div>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="page">
+    <div class="nav-row">
+      <a href="/" class="rm-logo" aria-label="rawmktg home">raw<span class="mktg">mktg</span><span class="dot">.</span></a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Features <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/features/ai-visibility-audit"><span class="nm-num">01</span>AI Visibility Audit</a>
+            <a role="menuitem" href="/features/share-of-model"><span class="nm-num">02</span>Share of Model</a>
+            <a role="menuitem" href="/features/findings-and-fixes"><span class="nm-num">03</span>Findings &amp; Fixes</a>
+            <a role="menuitem" href="/features/competitor-tracking"><span class="nm-num">04</span>Competitor Tracking</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Use cases <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/use-cases/b2b-saas-marketing"><span class="nm-num">&rarr;</span>For B2B SaaS marketing</a>
+            <a role="menuitem" href="/use-cases/technical-optimization"><span class="nm-num">&rarr;</span>For technical optimization</a>
+            <a role="menuitem" href="/use-cases/agencies"><span class="nm-num">&rarr;</span>For agencies</a>
+          </div>
+        </div>
+        <a href="/pricing">Pricing</a>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Resources <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu" role="menu">
+            <a role="menuitem" href="/research"><span class="nm-num">&rarr;</span>Research</a>
+            <a role="menuitem" href="/tools"><span class="nm-num">&rarr;</span>Tools</a>
+            <a role="menuitem" href="/glossary"><span class="nm-num">&rarr;</span>Glossary</a>
+          </div>
+        </div>
+        <a href="https://app.rawmktg.com" class="nav-signin">Sign in</a>
+        <a href="https://app.rawmktg.com/audit" class="cta">Free audit</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<img src="/assets/images/product-feeds-ai-shopping-agents.webp" srcset="/assets/images/product-feeds-ai-shopping-agents-800.webp 800w, /assets/images/product-feeds-ai-shopping-agents-1200.webp 1200w, /assets/images/product-feeds-ai-shopping-agents-1600.webp 1600w, /assets/images/product-feeds-ai-shopping-agents.webp 2400w" sizes="100vw" alt="Product Feeds for AI Shopping Agents - getting recommended by AI shopping agents - rawmktg." class="article-header-img" width="2400" height="1260" loading="eager">
+
+<div class="page">
+  <header class="article-header">
+    <div class="article-eyebrow"><span class="eyebrow-tag">How AI Search Works &middot; Agentic Commerce</span><span class="eyebrow-sep">&middot;</span><span class="eyebrow-date">Updated Sep 2026</span></div>
+    <h1 class="article-headline">Product Feeds for AI Shopping Agents</h1>
+    <p class="article-deck">An AI agent doing your customer's shopping never sees your storefront. It reads a structured feed and a handful of data fields, then decides whether to surface, compare, or buy your product. Here is how to be in the set it chooses from.</p>
+    <p class="article-data-note">Figures are 2026 industry estimates (OpenAI Economic Research, Salesforce State of Marketing 2026, Adobe Analytics) and the protocol landscape is moving fast, OpenAI retired Instant Checkout in March 2026. Treat specifics as directional and confirm current feed specs with each platform.</p>
+  </header>
+</div>
+
+<div class="page">
+  <div class="article-body">
+    <main class="article-content" id="article-main">
+<h2 id="what"><span class="section-num">01</span>What is agentic commerce, and what changes for you?</h2>
+<div class="section-answer"><strong>Agentic commerce is when an autonomous AI agent researches, compares and buys on a shopper's behalf: the human sets the intent, the agent handles discovery, comparison, and checkout or handoff.</strong> The practical change is that the agent never sees your storefront, your design, your copy, your CRO. It reads a structured feed and a few data fields, and decides from those.</div>
+<p>This is the sequel to <a href="/blogs/when-the-buyer-is-a-bot">when the buyer is a bot</a>: that piece covered why agentic commerce matters and how the protocol stack works; this one is the operational how, how to structure your product data so an agent includes, compares and recommends you. The mindset shift is total. For twenty years, ecommerce optimisation meant persuading a human on a page. An agent is not persuaded by a page. It is fed a record, and it reasons over fields.</p>
+<p>The 2026 settlement made this concrete. After OpenAI retired Instant Checkout in March 2026, the industry converged on a division of labour: AI handles discovery and comparison, merchants keep checkout in their own environment. So the job is no longer 'sell to the agent'. It is 'be in the set the agent surfaces, with data clean enough to be chosen', then convert the human when the agent hands them back.</p>
+<h2 id="big"><span class="section-num">02</span>How big is agentic shopping, really?</h2>
+<div class="section-answer"><strong>Big enough to plan for now. Roughly 50 million shopping queries a day already happen inside ChatGPT, AI agents drove about 20% of global orders in the 2025 holiday season ($262B), and AI-driven traffic to US retail sites grew 393% year over year in early 2026.</strong> This is not a horizon bet. The discovery layer has already moved; the question is whether your product data is ready for it.</div>
+<div class="chart-wrap"><canvas id="shareChart" height="260"></canvas></div><div class="chart-caption">Figure 1. AI agents drove roughly 20% of global orders in the 2025 holiday season (Salesforce). The discovery layer has already shifted; feeds are how you show up in it.</div>
+<p>The numbers describe a channel that is past the experimental stage. Around 50 million shopping queries a day run inside ChatGPT alone (about 2% of all its queries, per OpenAI's own research); Salesforce put AI agents behind roughly a fifth of global holiday orders; and Adobe measured a near-quadrupling of AI-referred traffic to US retail. The buyers are already asking agents what to buy. What decides the answer is not on your homepage, it is in your feed.</p>
+<h2 id="find"><span class="section-num">03</span>How does a shopping agent actually find your product?</h2>
+<div class="section-answer"><strong>Through a structured product feed you push to the platform, plus corroborating data on the open web, not by crawling and interpreting your storefront.</strong> If you are not in the feed, or your feed record is incomplete, you are invisible to the agent no matter how good your site is.</div>
+<p>An agent assembles a shortlist the way a database query does: it reads structured records, filters on attributes (price, availability, category, eligibility), and ranks on signals it can compute (relevance, rating, price competitiveness). The primary source is the feed, a file you push to the platform, and the secondary source is corroboration from the open web, your PDP schema, reviews, and third-party listings. Both have to be clean and consistent, because <a href="/blogs/clean-site-zero-citations">an agent discards outliers the same way an AI answer does</a>.</p>
+<h2 id="feed"><span class="section-num">04</span>What is a product feed, and what do you push?</h2>
+<div class="section-answer"><strong>A gzip-compressed file (.jsonl.gz, .csv.gz or .xml.gz) pushed to the platform's endpoint, usually updated daily, that lists every product with its price, availability, images, identifiers and eligibility flags.</strong> The feed record, not your web page, is the unit an agent reads. Treat it as your most important storefront.</div>
+<p>Mechanically, you push a compressed feed to an endpoint the platform provides (OpenAI's, for example), with daily updates accepted. Each record tells the agent what you sell, whether it is in stock, the price with its currency, the images, and the eligibility flags for search and checkout. Get the format right and you are in the catalogue; get a field wrong and the record is filtered out before a shopper ever sees it.</p>
+<div class="code-wrap"><div class="code-label">Code 1. One product-feed record (JSONL). This is what the agent reads, not your PDP.</div><div class="code-block"><pre># A single line of a product feed (JSONL), the unit an agent actually reads.
+# Merchants push a gzip file (.jsonl.gz / .csv.gz / .xml.gz) to the platform endpoint,
+# updated daily. This is the record, not your marketing page.
+{
+  &quot;id&quot;: &quot;SKU-10482&quot;,
+  &quot;title&quot;: &quot;Aero Running Shoe, Men&#x27;s, Volt&quot;,
+  &quot;description&quot;: &quot;Lightweight road running shoe, 8mm drop, 220g. Breathable knit upper.&quot;,
+  &quot;link&quot;: &quot;https://example.com/p/aero-running-shoe&quot;,
+  &quot;image_link&quot;: &quot;https://example.com/img/aero-volt-1.jpg&quot;,
+  &quot;additional_image_link&quot;: [&quot;https://example.com/img/aero-volt-2.jpg&quot;],
+  &quot;price&quot;: &quot;129.00 USD&quot;,              # price WITH ISO 4217 currency code
+  &quot;availability&quot;: &quot;in_stock&quot;,         # in_stock | out_of_stock | preorder
+  &quot;inventory_quantity&quot;: 42,
+  &quot;gtin&quot;: &quot;0195819023471&quot;,            # GTIN / MPN / brand = the identifiers agents match on
+  &quot;brand&quot;: &quot;Aero&quot;,
+  &quot;condition&quot;: &quot;new&quot;,
+  &quot;google_product_category&quot;: &quot;Apparel &amp; Accessories &gt; Shoes&quot;,
+  &quot;shipping&quot;: &quot;US:::5.99 USD&quot;,
+  &quot;return_policy&quot;: &quot;30-day free returns&quot;,
+  &quot;enabled_for&quot;: [&quot;search&quot;, &quot;checkout&quot;]   # eligibility flags the platform reads
+}</pre></div></div>
+<h2 id="fields"><span class="section-num">05</span>Which fields decide whether you get included?</h2>
+<div class="section-answer"><strong>Price with an ISO currency code, availability, a stable product identifier (GTIN/MPN/brand), images, category, and the platform's eligibility flags. Miss any and the record is filtered before ranking.</strong> Inclusion is a data-quality gate before it is a relevance contest, most products lose at the gate, not the ranking.</div>
+<div class="tt-wrap"><div class="tt-label">Table 1. The feed fields that decide inclusion, and what a miss costs you.</div><table class="tt"><thead><tr><th>Field</th><th>Why the agent needs it</th><th>What a miss costs</th></tr></thead><tbody><tr><td>price + ISO currency</td><td>Filter and comparison; '129.00 USD' not '$129'</td><td>Excluded from price-filtered and comparison queries</td></tr><tr><td>availability / stock</td><td>Agents drop out-of-stock items</td><td>Surfaced then discarded, or never surfaced</td></tr><tr><td>GTIN / MPN / brand</td><td>The identifier agents match and de-duplicate on</td><td>Not matched to the query or merged wrongly</td></tr><tr><td>images</td><td>Required for most shopping surfaces</td><td>Record rejected or down-ranked</td></tr><tr><td>product category</td><td>Routes you into the right query set</td><td>Shown for the wrong intents, or none</td></tr><tr><td>eligibility flags</td><td>Platform's search/checkout gating</td><td>Silently excluded despite a valid product</td></tr></tbody></table></div>
+<p>The pattern mirrors the rest of GEO: inclusion is a gate you pass with clean, complete, machine-readable data, and only then does relevance and ranking decide the order. Most merchants lose products at the gate, an unpriced item, a stale stock status, a missing GTIN, long before any ranking logic runs.</p>
+<h2 id="schema"><span class="section-num">06</span>Does on-page Product schema still matter if the feed does the work?</h2>
+<div class="section-answer"><strong>Yes. The feed gets you into the catalogue; Product/Offer schema on your PDP is the on-page truth an agent corroborates the feed against, and it is what web-crawling agents read when there is no feed.</strong> Feed and schema must agree, exactly, on price, availability and identifiers, or the agent trusts neither.</div>
+<p>Not every agent works from a pushed feed; some read the open web, and all of them cross-check. Product and Offer schema on the PDP, with the same GTIN, price, currency and availability as the feed, gives the agent a consistent second source. The <a href="/blogs/schema-markup-ai-citations-2026">schema playbook</a> covers the full stack; for shopping, the load-bearing types are Product, Offer, AggregateRating and the shipping/return details, all matching the feed to the character.</p>
+<div class="code-wrap"><div class="code-label">Code 2. Product / Offer schema on the PDP, every value matching the feed record above.</div><div class="code-block"><pre>&lt;!-- Product + Offer schema on the PDP: the on-page truth an agent corroborates the feed against. --&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Product&quot;,
+  &quot;name&quot;: &quot;Aero Running Shoe, Men&#x27;s, Volt&quot;,
+  &quot;gtin&quot;: &quot;0195819023471&quot;,
+  &quot;brand&quot;: {&quot;@type&quot;: &quot;Brand&quot;, &quot;name&quot;: &quot;Aero&quot;},
+  &quot;image&quot;: [&quot;https://example.com/img/aero-volt-1.jpg&quot;],
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;price&quot;: &quot;129.00&quot;,
+    &quot;priceCurrency&quot;: &quot;USD&quot;,
+    &quot;availability&quot;: &quot;https://schema.org/InStock&quot;,
+    &quot;itemCondition&quot;: &quot;https://schema.org/NewCondition&quot;,
+    &quot;url&quot;: &quot;https://example.com/p/aero-running-shoe&quot;,
+    &quot;shippingDetails&quot;: {&quot;@type&quot;: &quot;OfferShippingDetails&quot;, &quot;shippingRate&quot;: {&quot;@type&quot;:&quot;MonetaryAmount&quot;,&quot;value&quot;:&quot;5.99&quot;,&quot;currency&quot;:&quot;USD&quot;}},
+    &quot;hasMerchantReturnPolicy&quot;: {&quot;@type&quot;:&quot;MerchantReturnPolicy&quot;,&quot;returnPolicyCategory&quot;:&quot;https://schema.org/MerchantReturnFiniteReturnWindow&quot;,&quot;merchantReturnDays&quot;:30}
+  },
+  &quot;aggregateRating&quot;: {&quot;@type&quot;: &quot;AggregateRating&quot;, &quot;ratingValue&quot;: &quot;4.6&quot;, &quot;reviewCount&quot;: &quot;812&quot;}
+}
+&lt;/script&gt;</pre></div></div>
+<h2 id="protocols"><span class="section-num">07</span>What are the competing agentic-commerce protocols?</h2>
+<div class="section-answer"><strong>At least five launched between April 2025 and January 2026: OpenAI's Agentic Commerce Protocol (ACP), Google's UCP and AP2, Visa's Trusted Agent Protocol, and Mastercard's Agent Pay.</strong> You do not have to bet on one, but you do have to keep a clean, standards-shaped feed so you can plug into whichever your buyers use.</div>
+<div class="tt-wrap"><div class="tt-label">Table 2. The agentic-commerce protocol landscape (2026). Roles overlap and are still shifting.</div><table class="tt"><thead><tr><th>Protocol</th><th>Backer</th><th>What it governs</th></tr></thead><tbody><tr><td>Agentic Commerce Protocol (ACP)</td><td>OpenAI (with Stripe)</td><td>Product discovery and the agent-to-merchant commerce handshake in ChatGPT</td></tr><tr><td>Universal Commerce Protocol (UCP)</td><td>Google</td><td>Merchant product and offer exchange for agentic surfaces</td></tr><tr><td>Agent Payments Protocol (AP2)</td><td>Google</td><td>Authorising and executing agent-initiated payments</td></tr><tr><td>Trusted Agent Protocol</td><td>Visa</td><td>Verifying that an agent is acting for a real cardholder</td></tr><tr><td>Agent Pay</td><td>Mastercard</td><td>Tokenised, authenticated agent payments</td></tr></tbody></table></div>
+<p>The takeaway is not to master all five. It is that they all consume structured product and offer data, so a clean, well-identified feed and matching schema are the portable asset that lets you onboard to whichever protocol your buyers' agents adopt. Chase the data quality, not the protocol of the month.</p>
+<h2 id="discovery"><span class="section-num">08</span>Discovery or checkout, which is the job now?</h2>
+<div class="section-answer"><strong>Discovery. Since the 2026 settlement, AI agents surface and compare while merchants keep checkout, so your goal is to be in the agent's shortlist with data clean enough to be chosen, then convert the human on your own site.</strong> You are optimising to be selected by the agent and handed a ready-to-buy human, not to close the sale inside the chat.</div>
+<p>OpenAI's retirement of Instant Checkout six months after launch reset expectations: the durable pattern is AI-led discovery, merchant-owned checkout. That is good news operationally, it means your conversion, payments and data stay in your environment, and the new work is narrow: get discovered and get chosen. The agent does the shortlisting; you win by being a clean, complete, competitively-priced record, and by keeping the checkout it hands off to fast and frictionless.</p>
+<h2 id="recommend"><span class="section-num">09</span>What makes an agent recommend you, not just list you?</h2>
+<div class="section-answer"><strong>The same signals a human comparison uses, made machine-readable: competitive and correctly-formatted price, real availability, strong ratings, complete attributes, and corroboration across the web.</strong> Inclusion is data quality; recommendation is data quality plus the trust signals an agent can compute.</div>
+<p>Once you are in the set, the agent ranks. It rewards what it can verify: a price it can compare cleanly, stock it can trust, an <a href="/blogs/mentions-beat-links">aggregate rating and reviews corroborated off-site</a>, and complete attributes that match the shopper's constraints (size, spec, compatibility). It penalises ambiguity, an item with no reviews, a vague category, or a price that disagrees between feed, PDP and third-party listings. Recommendation is won on the same axis as citation: be the cleanest, most corroborated, least ambiguous option.</p>
+<h2 id="hygiene"><span class="section-num">10</span>Why do products drop out of AI shopping results after they were showing?</h2>
+<div class="section-answer"><strong>Feed drift. Stale stock status, a lapsed price, a failed daily update, or an eligibility flag flipping off silently removes products that were previously surfaced.</strong> An agent's catalogue is only as current as your last successful feed push, so feed hygiene is an operational discipline, not a one-time setup.</div>
+<p>The most common silent failure is not a bad initial feed, it is drift. A product sells out but the feed still says in_stock (so the agent surfaces it, the shopper bounces, and the platform down-ranks you); a price changes on the site but not the feed (so feed and PDP disagree and the agent distrusts both); a daily push fails and the whole catalogue goes stale. Monitor push success, reconcile feed against live stock and price daily, and treat feed health like uptime.</p>
+<h2 id="measure"><span class="section-num">11</span>How do you measure whether agents recommend you?</h2>
+<div class="section-answer"><strong>Run real shopping prompts across the agentic surfaces your buyers use, several times each, and log whether your product is surfaced, how it ranks against rivals, and whether the price, stock and attributes it shows are correct.</strong> It is the Share-of-Model discipline applied to products instead of brands.</div>
+<p>Build a portfolio of the shopping questions your buyers ask an agent, 'best [product] for [use] under [price]', '[your product] vs [rival]', and run each several times across ChatGPT shopping, Google's agentic surfaces and the rest, because <a href="/blogs/share-of-model-measurement">one run per prompt is noise</a>. Log three things: are you surfaced, where do you rank, and are the price/stock/attributes the agent shows correct. A wrong price or stale stock is a feed-hygiene failure (section 10); being absent entirely is an inclusion failure (sections 4 and 5).</p>
+<h2 id="checklist"><span class="section-num">12</span>The AI-shopping-feed checklist</h2>
+<div class="section-answer"><strong>Ten checks that decide whether an agent can find, trust and recommend your products. Most catalogues fail on identifiers or freshness.</strong> Run it against your live feed and a sample PDP, and reconcile the two.</div>
+<div class="tt-wrap"><div class="tt-label">Table 3. The agent-ready product-feed checklist.</div><table class="tt"><thead><tr><th>#</th><th>Check</th><th>Pass looks like</th></tr></thead><tbody><tr><td class="num">1</td><td>Feed pushed to the platform</td><td>Valid .jsonl.gz/.csv.gz/.xml.gz at the endpoint</td></tr><tr><td class="num">2</td><td>Daily updates succeeding</td><td>Monitored push with success/failure alerts</td></tr><tr><td class="num">3</td><td>Price + ISO currency</td><td>'129.00 USD', not '$129', on every item</td></tr><tr><td class="num">4</td><td>Accurate availability</td><td>Stock status reconciled to live inventory daily</td></tr><tr><td class="num">5</td><td>Stable identifiers</td><td>GTIN/MPN/brand on every product</td></tr><tr><td class="num">6</td><td>Images</td><td>Primary + additional images per item</td></tr><tr><td class="num">7</td><td>Eligibility flags set</td><td>Enabled for search (and checkout where used)</td></tr><tr><td class="num">8</td><td>PDP schema matches feed</td><td>Product/Offer values identical to the feed</td></tr><tr><td class="num">9</td><td>Ratings &amp; reviews present</td><td>AggregateRating populated and corroborated off-site</td></tr><tr><td class="num">10</td><td>Measured</td><td>Shopping prompts run across agents, accuracy verified</td></tr></tbody></table></div>
+<h2 id="limits"><span class="section-num">13</span>What a feed won't do</h2>
+<div class="section-answer"><strong>A perfect feed gets you found and fairly compared; it will not make an uncompetitive product win, and it does not replace the human conversion you still own.</strong> Data quality is the entry ticket, not the whole game.</div>
+<p>Two honest limits. First, an agent recommends on merits it can compute, so a clean feed surfaces an over-priced or poorly-reviewed product accurately as over-priced and poorly-reviewed; the feed removes the reasons you are wrongly excluded, it does not fix the product or the price. Second, because the 2026 settlement keeps checkout with you, the handed-off human still has to convert on your site, so a fast, low-friction <a href="/blogs/pricing-page-ai-will-quote">pricing and checkout experience</a> still matters. The feed wins the shortlist; you still close the sale.</p>
+<section class="faq-section" id="faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3 class="faq-q">What is agentic commerce?</h3><div class="faq-a"><p>Agentic commerce is when an autonomous AI agent researches, compares and buys products on a shopper's behalf: the human sets the intent and the agent handles discovery, comparison, and checkout or handoff. It differs from conversational commerce (which assists a human shopping in chat) by delegating the decision and, sometimes, the transaction to the agent. Since 2026 the common pattern is AI-led discovery with checkout kept in the merchant's environment.</p></div></div><div class="faq-item"><h3 class="faq-q">How do AI shopping agents find products?</h3><div class="faq-a"><p>Primarily through a structured product feed the merchant pushes to the platform, a gzip-compressed file (.jsonl.gz, .csv.gz or .xml.gz) updated daily with each product's price, availability, images, identifiers and eligibility flags, and secondarily through corroborating web data such as Product/Offer schema on your PDP and third-party listings. The agent reads records and fields, not your storefront design, so if you are not in the feed you are invisible to it.</p></div></div><div class="faq-item"><h3 class="faq-q">What fields does a product feed need for AI shopping agents?</h3><div class="faq-a"><p>At minimum a stable identifier (GTIN/MPN/brand), a price with its ISO currency code (e.g. '129.00 USD'), an availability/stock status, images, a product category, and the platform's eligibility flags for search and checkout. Inclusion is a data-quality gate: a missing identifier, an unpriced item, or a stale stock status filters the product out before any ranking happens.</p></div></div><div class="faq-item"><h3 class="faq-q">Do I still need Product schema if I have a feed?</h3><div class="faq-a"><p>Yes. The feed gets you into the catalogue, but Product and Offer schema on your product page is the on-page truth agents corroborate the feed against, and it is what web-crawling agents read when there is no feed. The critical rule is that the schema and the feed must agree exactly on price, currency, availability and identifiers; if they disagree, the agent trusts neither.</p></div></div><div class="faq-item"><h3 class="faq-q">What are the agentic-commerce protocols (ACP, UCP, AP2)?</h3><div class="faq-a"><p>At least five launched between April 2025 and January 2026: OpenAI's Agentic Commerce Protocol (ACP, with Stripe) for discovery and the commerce handshake in ChatGPT; Google's Universal Commerce Protocol (UCP) for merchant product exchange and its Agent Payments Protocol (AP2) for agent-initiated payments; Visa's Trusted Agent Protocol for verifying an agent acts for a real cardholder; and Mastercard's Agent Pay for tokenised agent payments. All consume structured product data, so a clean feed and matching schema are the portable asset.</p></div></div><div class="faq-item"><h3 class="faq-q">Why did my product stop showing in AI shopping results?</h3><div class="faq-a"><p>Almost always feed drift. If the item sells out but the feed still says in_stock, if a price changes on the site but not the feed, or if a daily feed push fails, the agent either surfaces stale data (and down-ranks you when shoppers bounce) or drops the product. An agent's catalogue is only as current as your last successful push, so reconcile the feed against live stock and price daily and monitor push success.</p></div></div><div class="faq-item"><h3 class="faq-q">How do you get an AI agent to recommend your product, not just list it?</h3><div class="faq-a"><p>Inclusion is data quality; recommendation adds the trust signals an agent can compute: a competitive, correctly-formatted price, accurate availability, a populated aggregate rating corroborated by off-site reviews, and complete attributes that match the shopper's constraints. Agents penalise ambiguity, no reviews, a vague category, or a price that disagrees across feed, PDP and third-party listings, so be the cleanest, most corroborated, least ambiguous option.</p></div></div></section>
+<div class="about-block" id="references"><div class="about-label">References</div><p style="margin-bottom:16px;">Market figures and the protocol landscape are 2026 industry estimates from the sources below; specifics move fast, confirm current feed specs with each platform.</p><ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;"><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://elogic.co/blog/chatgpt-commerce-statistics/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">ChatGPT Commerce &amp; Agentic Shopping Statistics 2026. Elogic.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.hypotenuse.ai/blog/chatgpts-instant-checkout-the-next-phase-of-agentic-commerce" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">ChatGPT Instant Checkout: What Happened to It in 2026. Hypotenuse.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://opascope.com/insights/ai-shopping-assistant-guide-2026-agentic-commerce-protocols/" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">AI Shopping Assistant Guide 2026: Agentic Commerce Protocols. Opascope.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.ekamoira.com/blog/chatgpt-instant-checkout-agentic-commerce-protocol-2026" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">ChatGPT Instant Checkout: ACP Protocol Retailer Guide (2026). Ekamoira.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://www.paz.ai/agentic-commerce" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Agentic Commerce in 2026: How AI Agents Buy Products. Paz.ai.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://developers.google.com/search/docs/appearance/structured-data/product" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Product structured data (Product, Offer). Google Search Central.</a></li><li style="font-family:var(--f-mono);font-size:12px;line-height:1.55;color:var(--mute);padding-left:4px;"><a href="https://schema.org/Product" target="_blank" rel="noopener" style="color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);">Product and Offer types. Schema.org.</a></li></ol></div>
+<div class="about-block"><div class="about-label">About rawmktg.</div><p>rawmktg. publishes data-driven teardowns and technical playbooks on GEO, agentic commerce and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com</p></div>
+    </main>
+<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-label">By the numbers</div><div class="stat-row"><div><div class="stat-val">~50M</div><div class="stat-label">shopping queries a day inside ChatGPT</div></div><hr class="stat-divider"><div><div class="stat-val">20%</div><div class="stat-label">of 2025 holiday orders driven by AI agents</div></div><hr class="stat-divider"><div><div class="stat-val">+393%</div><div class="stat-label">YoY growth in AI-referred US retail traffic</div></div><hr class="stat-divider"><div><div class="stat-val">5</div><div class="stat-label">competing agentic-commerce protocols</div></div></div></div><div class="sidebar-block"><div class="sidebar-label">In this playbook</div><ul class="toc-list"><li><a href="#what"><span class="toc-num">01</span>What changes for you</a></li><li><a href="#big"><span class="toc-num">02</span>How big it is</a></li><li><a href="#find"><span class="toc-num">03</span>How agents find products</a></li><li><a href="#feed"><span class="toc-num">04</span>The product feed</a></li><li><a href="#fields"><span class="toc-num">05</span>The fields that decide inclusion</a></li><li><a href="#schema"><span class="toc-num">06</span>Product schema</a></li><li><a href="#protocols"><span class="toc-num">07</span>The protocol landscape</a></li><li><a href="#discovery"><span class="toc-num">08</span>Discovery vs checkout</a></li><li><a href="#recommend"><span class="toc-num">09</span>Getting recommended</a></li><li><a href="#hygiene"><span class="toc-num">10</span>Feed hygiene</a></li><li><a href="#measure"><span class="toc-num">11</span>Measuring it</a></li><li><a href="#checklist"><span class="toc-num">12</span>The checklist</a></li><li><a href="#limits"><span class="toc-num">13</span>What it won't do</a></li></ul></div></aside>
+  </div>
+</div>
+
+<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+  <div class="page">
+    <div class="newsletter-inner">
+      <div>
+        <div class="newsletter-label">Newsletter</div>
+        <h2 class="newsletter-title">Get the next article in your inbox</h2>
+        <p class="newsletter-desc">New articles on B2B SEO, GEO, and AI search visibility. No fluff, no cadence for the sake of it. When there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/api/subscribe">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe &rarr;</button>
+        <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" aria-label="Site footer">
+  <div class="page">
+    <div class="foot-top">
+      <div>
+        <div class="foot-col-label">Product</div>
+        <div class="foot-cats">
+          <a href="/features/ai-visibility-audit">AI Visibility Audit</a>
+          <a href="/features/share-of-model">Share of Model</a>
+          <a href="/features/findings-and-fixes">Findings &amp; Fixes</a>
+          <a href="/features/competitor-tracking">Competitor Tracking</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-label">Use cases</div>
+        <div class="foot-cats">
+          <a href="/use-cases/b2b-saas-marketing">For B2B SaaS marketing</a>
+          <a href="/use-cases/technical-optimization">For technical optimization</a>
+          <a href="/use-cases/agencies">For agencies</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-label">Research</div>
+        <div class="foot-cats">
+          <a href="/research">All research</a>
+          <a href="/topics/industry-teardowns">Industry teardowns</a>
+          <a href="/tools">Free tools</a>
+          <a href="/glossary">Glossary</a>
+          <a href="/methodology">Methodology</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-row">
+      <a href="/" style="font-family:'Space Grotesk',system-ui;font-weight:700;font-size:15px;letter-spacing:-0.04em;">raw<span style="color:var(--ink-2)">mktg</span><span style="color:var(--signal)">.</span></a>
+      <div class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/llms.txt">llms.txt</a></div>
+      <span>&copy; 2026 rawmktg.</span><span style="display:block;margin-top:6px;opacity:.6;font-size:11px;line-height:1.55;">rawmktg. is a product of Sageo SIA (reg. Nr. 40203775716, Prūšu iela 23B - 13, Rīga, LV-1057, Latvia).</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined') return;
+  var css=getComputedStyle(document.documentElement);
+  var signal=(css.getPropertyValue('--signal')||'#D04A2A').trim();
+  var faint=(css.getPropertyValue('--faint')||'#C5BFB4').trim();
+  var up=(css.getPropertyValue('--up')||'#3E9B6A').trim();
+  var mono="'JetBrains Mono', monospace", text='rgba(255,255,255,0.55)', grid='rgba(255,255,255,0.08)';
+  function rgba(hex,a){var n=hex.replace('#','');return 'rgba('+parseInt(n.substr(0,2),16)+','+parseInt(n.substr(2,2),16)+','+parseInt(n.substr(4,2),16)+','+a+')';}
+  var neutral=rgba(faint,0.4);
+  var sc=document.getElementById('shareChart');
+  if(sc){new Chart(sc,{type:'doughnut',data:{labels:['AI-agent-driven orders','Everything else'],datasets:[{data:[20,80],backgroundColor:[signal,neutral],borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'64%',plugins:{legend:{position:'bottom',labels:{color:text,font:{family:mono,size:11}}},tooltip:{callbacks:{label:function(c){return ' '+c.raw+'% of 2025 holiday orders';}}}}}});}
+})();
+</script>
+<style id="cb-copy-css">
+.code-block{position:relative;}
+.code-copy{position:absolute;top:8px;right:8px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1;letter-spacing:.02em;padding:5px 9px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72);cursor:pointer;opacity:0;transition:opacity .15s,background .15s,color .15s,border-color .15s;-webkit-appearance:none;appearance:none;}
+.code-block:hover .code-copy,.code-copy:focus-visible{opacity:1;}
+.code-copy:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.32);}
+.code-copy.is-done{color:var(--up,#3E9B6A);border-color:var(--up,#3E9B6A);background:rgba(62,155,106,0.12);}
+@media(hover:none){.code-copy{opacity:1;}}
+</style>
+<script id="cb-copy-js">
+(function(){
+  function fallback(t,done){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);done();}catch(e){}}
+  function add(){
+    var blocks=document.querySelectorAll('.code-block');
+    for(var i=0;i<blocks.length;i++){(function(cb){
+      if(cb.querySelector('.code-copy'))return;
+      var pre=cb.querySelector('pre'); if(!pre)return;
+      var b=document.createElement('button');
+      b.type='button'; b.className='code-copy'; b.textContent='Copy'; b.setAttribute('aria-label','Copy code to clipboard');
+      b.addEventListener('click',function(){
+        var t=pre.innerText;
+        function done(){b.textContent='Copied'; b.classList.add('is-done'); setTimeout(function(){b.textContent='Copy'; b.classList.remove('is-done');},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t,done);});}
+        else{fallback(t,done);}
+      });
+      cb.appendChild(b);
+    })(blocks[i]);}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',add);}else{add();}
+})();
+</script>
+</body>
+</html>

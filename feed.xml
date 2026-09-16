@@ -10,6 +10,13 @@
     <lastBuildDate>Tue, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
 
     <item>
+      <title><![CDATA[Product Feeds for AI Shopping Agents &middot; rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/product-feeds-ai-shopping-agents</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/product-feeds-ai-shopping-agents</guid>
+      <pubDate>Tue, 16 Sep 2026 18:00:00 +0000</pubDate>
+      <description><![CDATA[How to get your products recommended by AI shopping agents. In agentic commerce an autonomous agent researches, compares and buys on a shopper's behalf, and since the 2026 settlement (OpenAI retired Instant Checkout in March 2026) the pattern is AI-led discovery with checkout kept by merchants. The agent never sees your storefront; it reads a structured product feed, a gzip file (.jsonl.gz/.csv.gz/.xml.gz) pushed to the platform endpoint and updated daily, plus corroborating web data. Scale is real: ~50M shopping queries/day in ChatGPT, AI agents drove ~20% of 2025 holiday orders ($262B, Salesforce), AI-referred US retail traffic +393% YoY (Adobe). Covers the feed fields that decide inclusion (price with ISO currency, availability, GTIN/MPN/brand, images, category, eligibility flags), matching Product/Offer schema on the PDP, the five competing protocols (OpenAI ACP, Google UCP and AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay), discovery vs checkout, what makes an agent recommend not just list you (price, stock, ratings, corroboration), feed hygiene/drift, a 10-point checklist and measurement. Includes feed-record and Product-schema code.]]></description>
+    </item>
+    <item>
       <title><![CDATA[YouTube, Video and the AI Citation &middot; rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/video-ai-citation-source</link>
       <guid isPermaLink="true">https://rawmktg.com/blogs/video-ai-citation-source</guid>

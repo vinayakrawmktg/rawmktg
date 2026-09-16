@@ -1,6 +1,6 @@
 # When the Buyer Is a Bot
 
-> Agentic commerce, the protocol stack running underneath it, and the infrastructure work nobody wants to budget for. When the thing evaluating your product reads JSON and times out at 200ms, the storefront was never the point.
+> Agentic commerce, the protocol stack running underneath it, and the infrastructure work nobody wants to budget for. When the thing evaluating your product reads JSON and times out at 200ms, the storefront was never the point. For the operational how-to on the merchant side, see product feeds for AI shopping agents .
 
 *Source: https://rawmktg.com/blogs/when-the-buyer-is-a-bot · rawmktg. by Vinayak Ravi*
 
