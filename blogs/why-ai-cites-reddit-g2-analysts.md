@@ -1,6 +1,6 @@
 # Why AI Cites Reddit, G2 & Analysts Over Your Website
 
-> The off-site authority stack AI engines actually pull from when buyers ask, and the tactics to seed G2 reviews, Reddit presence, and analyst mentions so they feed LLM answers.
+> The off-site authority stack AI engines actually pull from when buyers ask, and the tactics to seed G2 reviews, Reddit presence, and analyst mentions so they feed LLM answers. Video belongs in the same off-site mix, and YouTube is now a top-cited AI source .
 
 *Source: https://rawmktg.com/blogs/why-ai-cites-reddit-g2-analysts · rawmktg. by Vinayak Ravi*
 

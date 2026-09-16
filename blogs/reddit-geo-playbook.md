@@ -1,6 +1,6 @@
 # The Reddit GEO Playbook
 
-> Reddit is the single largest third-party source shaping B2B answers in generative search. Which threads get pulled, why the low-upvote ones win, and how to participate without getting nuked.
+> Reddit is the single largest third-party source shaping B2B answers in generative search. Which threads get pulled, why the low-upvote ones win, and how to participate without getting nuked. And Reddit is no longer the top social source: YouTube has overtaken it in AI citations .
 
 *Source: https://rawmktg.com/blogs/reddit-geo-playbook · rawmktg. by Vinayak Ravi*
 
