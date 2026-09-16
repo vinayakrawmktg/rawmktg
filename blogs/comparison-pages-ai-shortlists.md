@@ -539,6 +539,12 @@ Then test the segment before you build. Ask three engines the prompt you are tar
 
 One more discipline. A "best X for Y" page must genuinely rank things, including cases where you are not first. A shortlist that puts your product at position one across every segment is a shortlist in layout only, and engines read ItemList position literally.
 
+### How do you write an "Alternatives to [X]" page AI will cite?
+
+The highest-value variant of the "best X for Y" page is the **"Alternatives to [Incumbent]"** page, and in most categories it is a segment-wide zero: nobody has written it from their own point of view. That makes it the cheapest uncontested asset in AI search. The engine will answer "alternatives to [Incumbent]" whether or not you publish, and if you have not, it uses a competitor's page or a review site's. A study of one B2B segment found [not a single vendor appeared on the alternatives query](/blogs/clean-site-zero-citations), across 41 companies and four engines.
+
+Write it honestly. Lead with a plain answer block naming the real alternatives, including your own, give a comparison table with real numbers rather than checkmarks, and state clearly when the incumbent is still the right call, because balanced pages get quoted more often than sales pages. Mark it up with FAQPage schema so the answer is machine-readable, not inferred. One "Alternatives to [Incumbent]" page per major rival your buyers name is usually the fastest new decision-stage citation a B2B brand can earn.
+
 ## 10. How do you measure whether it worked?
 
 **A prompt repository, not a rank tracker.** Run a fixed prompt set on a schedule and track three numbers: Brand Visibility Rate, Share of Voice and AI Citation Frequency. Log which URL won each citation. AI-referred visitors convert far higher than organic.
@@ -632,6 +638,10 @@ Yes, and it is one of the highest-leverage moves on the page. Alignment training
 ### How do you measure whether AI is citing your comparison pages?
 
 Rank tracking will not tell you. Build a prompt repository, a fixed list of 20 to 40 buyer questions run on a schedule against the engines you care about, and track three numbers: Brand Visibility Rate (are you named at all, aim above 65%), Share of Voice (named against whom, aim above 35%), and AI Citation Frequency (is your URL the source or is G2, aim above 40%). Log which URL won each citation, because that tells you which template variant to clone next.
+
+### What is an 'alternatives to X' page and how do you get AI to cite it?
+
+An 'alternatives to [Incumbent]' page lists the real alternatives to a well-known product, written from your own point of view. It is often the cheapest uncontested asset in AI search because most categories have no vendor-written version, so the engine answers the query using a competitor's or a review site's page. To get cited, lead with a plain answer block naming the alternatives (including yours), add a comparison table with real numbers, state honestly when the incumbent is still the better choice (balanced pages get quoted more than sales pages), and mark it up with FAQPage schema. Publish one per major rival your buyers name.
 
 References
 

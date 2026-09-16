@@ -47,7 +47,7 @@
     "image": "https://rawmktg.com/assets/images/prompt-to-citation-tracking-header.webp",
     "url": "https://rawmktg.com/blogs/prompt-to-citation-tracking",
     "datePublished": "2026-05-30",
-    "dateModified": "2026-05-30",
+    "dateModified": "2026-09-16",
     "author":    { "@type": "Person", "name": "Vinayak Ravi", "url": "https://rawmktg.com", "sameAs": ["https://www.linkedin.com/in/vinayakravi/", "https://x.com/vinayaksravi"] },
     "publisher": { "@type": "Organization", "name": "rawmktg.", "url": "https://rawmktg.com" },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rawmktg.com/blogs/prompt-to-citation-tracking" },
@@ -308,38 +308,7 @@
   </script>
 
   <!-- FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do you track AI citations from ChatGPT and Perplexity in GA4?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Create a custom AI Search channel group in GA4 under Admin > Data Display > Channel Groups. Add a regex rule matching AI referrer hostnames: ^(chatgpt|perplexity|gemini|copilot|claude|you|phind|grok|deepseek|chat\\.mistral)\\.. Critically, drag this channel to the top of the evaluation order above Referral and Organic Search. Use a dual setup that keeps Google's native AI Assistant channel alongside your custom grouping for maximum coverage and retroactive classification."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a prompt portfolio in GEO measurement?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A prompt portfolio is a controlled set of 50-150 queries run across AI engines on a recurring schedule to measure citation visibility. Prompts are sorted into three buckets: Money prompts (high-intent commercial evaluation queries), Problem prompts (top-of-funnel pain and solution discovery), and Proof prompts (bottom-of-funnel trust and validation). The portfolio is run against your brand and 3-5 competitors simultaneously, tracking six metrics: Citation Rate, Citation Share, Citation Prominence, Source Gap, Source Diversity, and Volatility."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Revenue per Citation and how is it calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Revenue per Citation (RPC) is a Looker Studio calculated field that quantifies the financial return of each AI citation won. It is calculated as SUM(Revenue) divided by SUM(Citation Count), using blended data from GA4 (on-site revenue) joined to a prompt-portfolio Google Sheet (citation counts) on the date and page dimensions. RPC is the headline metric that proves GEO ROI to the C-suite."
-        }
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you track AI citations from ChatGPT and Perplexity in GA4?", "acceptedAnswer": {"@type": "Answer", "text": "Create a custom AI Search channel group in GA4 under Admin > Data Display > Channel Groups. Add a regex rule matching AI referrer hostnames: ^(chatgpt|perplexity|gemini|copilot|claude|you|phind|grok|deepseek|chat\\.mistral)\\.. Critically, drag this channel to the top of the evaluation order above Referral and Organic Search. Use a dual setup that keeps Google's native AI Assistant channel alongside your custom grouping for maximum coverage and retroactive classification."}}, {"@type": "Question", "name": "What is a prompt portfolio in GEO measurement?", "acceptedAnswer": {"@type": "Answer", "text": "A prompt portfolio is a controlled set of 50-150 queries run across AI engines on a recurring schedule to measure citation visibility. Prompts are sorted into three buckets: Money prompts (high-intent commercial evaluation queries), Problem prompts (top-of-funnel pain and solution discovery), and Proof prompts (bottom-of-funnel trust and validation). The portfolio is run against your brand and 3-5 competitors simultaneously, tracking six metrics: Citation Rate, Citation Share, Citation Prominence, Source Gap, Source Diversity, and Volatility."}}, {"@type": "Question", "name": "What is Revenue per Citation and how is it calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Revenue per Citation (RPC) is a Looker Studio calculated field that quantifies the financial return of each AI citation won. It is calculated as SUM(Revenue) divided by SUM(Citation Count), using blended data from GA4 (on-site revenue) joined to a prompt-portfolio Google Sheet (citation counts) on the date and page dimensions. RPC is the headline metric that proves GEO ROI to the C-suite."}}, {"@type": "Question", "name": "How do you measure AI traffic in GA4, and what is Dark AI?", "acceptedAnswer": {"@type": "Answer", "text": "To measure AI traffic in GA4, build a custom channel or segment for known AI referrers, chatgpt.com, perplexity.ai, gemini.google.com and copilot, and report their sessions and conversions over time. The complication is Dark AI: a large share of AI referrals arrive in GA4 as Direct with the referrer stripped, so they are undercounted. Segment Direct traffic against your AI-visibility trend to estimate the dark portion, tag links you control with UTMs, and report the AI-referral and Dark-AI estimate together in Looker Studio alongside your citation tracking."}}]}</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -425,7 +394,7 @@
       <span class="eyebrow-sep">·</span>
       <span class="eyebrow-series">Analytics &amp; Marketing Ops</span>
       <span class="eyebrow-sep">·</span>
-      <span class="eyebrow-date">Updated May 2026</span>
+      <span class="eyebrow-date">Updated Sep 2026</span>
     </div>
     <h1 class="article-headline">Prompt-to-Citation Tracking: How to Build a GEO Measurement Stack From Zero</h1>
     <p class="article-deck">A blueprint for building the monitoring system that turns AI citations into attributable revenue: query portfolios, GA4 session attribution, UTM handling for LLM referrals, and the Looker Studio setup that proves GEO ROI to the C-suite.</p>
@@ -979,7 +948,7 @@ Include  Search Appearance = AI_OVERVIEW
       <div class="faq-item">
         <h3 class="faq-q">What is Revenue per Citation and how is it calculated?</h3>
         <p class="faq-a">Revenue per Citation (RPC) is a Looker Studio calculated field that quantifies the financial return of each AI citation won. It is calculated as SUM(Revenue) divided by SUM(Citation Count), using blended data from GA4 (on-site revenue) joined to a prompt-portfolio Google Sheet (citation counts) on the date and page dimensions. RPC is the headline metric that proves GEO ROI to the C-suite.</p>
-      </div>
+      </div><div class="faq-item"><h3 class="faq-q">How do you measure AI traffic in GA4, and what is Dark AI?</h3><p class="faq-a">To measure AI traffic in GA4, build a custom channel or segment for known AI referrers, chatgpt.com, perplexity.ai, gemini.google.com and copilot, and report their sessions and conversions over time. The complication is Dark AI: a large share of AI referrals arrive in GA4 as Direct with the referrer stripped, so they are undercounted. Segment Direct traffic against your AI-visibility trend to estimate the dark portion, tag links you control with UTMs, and report the AI-referral and Dark-AI estimate together in Looker Studio alongside your citation tracking.</p></div>
         </div>
       </div>
 

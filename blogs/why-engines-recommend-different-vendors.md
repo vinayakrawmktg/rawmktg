@@ -218,6 +218,10 @@ For resource-constrained teams, the highest-ROI first move is configuring Bing W
 
 Perplexity uses a five-factor citation probability formula: Content Comprehensiveness (25%), Source Authority (20%), Content Recency (18%), Structural Clarity (15%), and Factual Verifiable Data (10%). Practically, this means: publish comprehensive guides that address a topic and all related sub-intents on one URL; build authoritative backlinks; update content within a 30-day freshness cycle; use clean H2/H3 hierarchies with comparison tables; and embed specific statistics and named expert quotes. Partner ecosystem content is disproportionately powerful: PartnerStack research found that 43% of AI-generated vendor citations originate from partner ecosystem sources.
 
+### What is ChatGPT SEO, and is it different from Perplexity SEO?
+
+ChatGPT SEO and Perplexity SEO are informal names for optimising to be cited by each engine, and they are not the same job. ChatGPT leans on its index plus corroboration and weights brand mentions and entity consistency heavily; Perplexity is more link- and freshness-driven and exposes its sub-queries and sources directly. Optimising for one does not guarantee the other, which is why a single-engine 'AI visibility' number is misleading. Prioritise the engine your buyers use, then generalise.
+
 Citations & Sources
 
 - 1. Generative Engine Optimization (GEO): How to Win AI Mentions, Search Engine Land. [searchengineland.com/what-is-generative-engine-optimization-geo](https://searchengineland.com/what-is-generative-engine-optimization-geo-444418)

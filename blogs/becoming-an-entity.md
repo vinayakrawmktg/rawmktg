@@ -417,6 +417,10 @@ The single, authoritatively controlled URL that acts as the canonical reference 
 
 Create a Wikidata item and point it, and your Entity Home's sameAs array, at each other. Wikidata is the direct descendant of the Freebase database that seeded Google's Knowledge Graph, it is fully machine-readable, and it has no notability wall for structured data. A Wikidata item with fifteen well-referenced, qualified statements and a handful of external identifiers, reciprocally linked to a JSON-LD Entity Home, does more for machine-readable authority than another two hundred blog posts.
 
+### How do you use Wikidata and Wikipedia to improve AI visibility?
+
+Wikidata and Wikipedia are two of the strongest entity signals an AI system reads, because they feed the knowledge graphs models use to resolve who you are; Wikidata in particular explains a large share of B2B recommendation variance. Ensure a well-sourced Wikidata item exists with consistent identifiers (official name, URL, founding date, sameAs links), keep it accurate, and earn a Wikipedia page only where you genuinely meet notability with independent coverage. Both must agree with your on-site entity markup, inconsistent entities do not get resolved or recommended.
+
 About rawmktg.
 
 rawmktg. publishes data-driven teardowns and technical playbooks on GEO, entity SEO and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com

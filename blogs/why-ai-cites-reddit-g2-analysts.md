@@ -410,6 +410,10 @@ The 60-minute reset: run the Verdict Test on your brand, quantify and source-lin
 
 Treat it as a quarterly program, not a campaign. The 30-day calendar builds the foundation, but compounding citation gains come from sustained consistency: fresh reviews, ongoing community presence, and updated facts across every surface engines cross-reference.
 
+### How do you get listed and cited on G2 for AI search?
+
+Claim and fully complete your G2 profile, then drive a steady stream of recent, detailed reviews, because AI engines weight review platforms heavily and favour freshness and volume. Fill every structured field (categories, features, pricing, integrations), since that is the extractable data models read, respond to reviews, and keep category placements current. G2 and similar review sites are hard-wired into how generative engines choose vendors, so a strong, current G2 presence is one of the fastest off-site levers for AI citations.
+
 Sources & further reading
 
 - [GEO: Generative Engine Optimization, KDD benchmark (arXiv)](https://arxiv.org/abs/2311.09735)

@@ -2997,6 +2997,10 @@ The single, authoritatively controlled URL that acts as the canonical reference 
 
 Create a Wikidata item and point it, and your Entity Home's sameAs array, at each other. Wikidata is the direct descendant of the Freebase database that seeded Google's Knowledge Graph, it is fully machine-readable, and it has no notability wall for structured data. A Wikidata item with fifteen well-referenced, qualified statements and a handful of external identifiers, reciprocally linked to a JSON-LD Entity Home, does more for machine-readable authority than another two hundred blog posts.
 
+### How do you use Wikidata and Wikipedia to improve AI visibility?
+
+Wikidata and Wikipedia are two of the strongest entity signals an AI system reads, because they feed the knowledge graphs models use to resolve who you are; Wikidata in particular explains a large share of B2B recommendation variance. Ensure a well-sourced Wikidata item exists with consistent identifiers (official name, URL, founding date, sameAs links), keep it accurate, and earn a Wikipedia page only where you genuinely meet notability with independent coverage. Both must agree with your on-site entity markup, inconsistent entities do not get resolved or recommended.
+
 About rawmktg.
 
 rawmktg. publishes data-driven teardowns and technical playbooks on GEO, entity SEO and B2B AI-search visibility. Method: same data, same lens, every time. Contact: vinayak@rawmktg.com
@@ -4714,6 +4718,12 @@ Then test the segment before you build. Ask three engines the prompt you are tar
 
 One more discipline. A "best X for Y" page must genuinely rank things, including cases where you are not first. A shortlist that puts your product at position one across every segment is a shortlist in layout only, and engines read ItemList position literally.
 
+### How do you write an "Alternatives to [X]" page AI will cite?
+
+The highest-value variant of the "best X for Y" page is the **"Alternatives to [Incumbent]"** page, and in most categories it is a segment-wide zero: nobody has written it from their own point of view. That makes it the cheapest uncontested asset in AI search. The engine will answer "alternatives to [Incumbent]" whether or not you publish, and if you have not, it uses a competitor's page or a review site's. A study of one B2B segment found [not a single vendor appeared on the alternatives query](/blogs/clean-site-zero-citations), across 41 companies and four engines.
+
+Write it honestly. Lead with a plain answer block naming the real alternatives, including your own, give a comparison table with real numbers rather than checkmarks, and state clearly when the incumbent is still the right call, because balanced pages get quoted more often than sales pages. Mark it up with FAQPage schema so the answer is machine-readable, not inferred. One "Alternatives to [Incumbent]" page per major rival your buyers name is usually the fastest new decision-stage citation a B2B brand can earn.
+
 ## 10. How do you measure whether it worked?
 
 **A prompt repository, not a rank tracker.** Run a fixed prompt set on a schedule and track three numbers: Brand Visibility Rate, Share of Voice and AI Citation Frequency. Log which URL won each citation. AI-referred visitors convert far higher than organic.
@@ -4807,6 +4817,10 @@ Yes, and it is one of the highest-leverage moves on the page. Alignment training
 ### How do you measure whether AI is citing your comparison pages?
 
 Rank tracking will not tell you. Build a prompt repository, a fixed list of 20 to 40 buyer questions run on a schedule against the engines you care about, and track three numbers: Brand Visibility Rate (are you named at all, aim above 65%), Share of Voice (named against whom, aim above 35%), and AI Citation Frequency (is your URL the source or is G2, aim above 40%). Log which URL won each citation, because that tells you which template variant to clone next.
+
+### What is an 'alternatives to X' page and how do you get AI to cite it?
+
+An 'alternatives to [Incumbent]' page lists the real alternatives to a well-known product, written from your own point of view. It is often the cheapest uncontested asset in AI search because most categories have no vendor-written version, so the engine answers the query using a competitor's or a review site's page. To get cited, lead with a plain answer block naming the alternatives (including yours), add a comparison table with real numbers, state honestly when the incumbent is still the better choice (balanced pages get quoted more than sales pages), and mark it up with FAQPage schema. Publish one per major rival your buyers name.
 
 References
 
@@ -12334,6 +12348,10 @@ A prompt portfolio is a controlled set of 50-150 queries run across AI engines o
 
 Revenue per Citation (RPC) is a Looker Studio calculated field that quantifies the financial return of each AI citation won. It is calculated as SUM(Revenue) divided by SUM(Citation Count), using blended data from GA4 (on-site revenue) joined to a prompt-portfolio Google Sheet (citation counts) on the date and page dimensions. RPC is the headline metric that proves GEO ROI to the C-suite.
 
+### How do you measure AI traffic in GA4, and what is Dark AI?
+
+To measure AI traffic in GA4, build a custom channel or segment for known AI referrers, chatgpt.com, perplexity.ai, gemini.google.com and copilot, and report their sessions and conversions over time. The complication is Dark AI: a large share of AI referrals arrive in GA4 as Direct with the referrer stripped, so they are undercounted. Segment Direct traffic against your AI-visibility trend to estimate the dark portion, tag links you control with UTMs, and report the AI-referral and Dark-AI estimate together in Looker Studio alongside your citation tracking.
+
 Works Cited
 
 1. 1. ThatWare, GEO Stack: 5-Layer AI Visibility & Citation Framework. [thatware.co/5-layer-geo-stack-ai-visibility-framework](https://thatware.co/5-layer-geo-stack-ai-visibility-framework/)
@@ -17782,6 +17800,10 @@ The 60-minute reset: run the Verdict Test on your brand, quantify and source-lin
 
 Treat it as a quarterly program, not a campaign. The 30-day calendar builds the foundation, but compounding citation gains come from sustained consistency: fresh reviews, ongoing community presence, and updated facts across every surface engines cross-reference.
 
+### How do you get listed and cited on G2 for AI search?
+
+Claim and fully complete your G2 profile, then drive a steady stream of recent, detailed reviews, because AI engines weight review platforms heavily and favour freshness and volume. Fill every structured field (categories, features, pricing, integrations), since that is the extractable data models read, respond to reviews, and keep category placements current. G2 and similar review sites are hard-wired into how generative engines choose vendors, so a strong, current G2 presence is one of the fastest off-site levers for AI citations.
+
 Sources & further reading
 
 - [GEO: Generative Engine Optimization, KDD benchmark (arXiv)](https://arxiv.org/abs/2311.09735)
@@ -18020,6 +18042,10 @@ For resource-constrained teams, the highest-ROI first move is configuring Bing W
 ### How do you optimise B2B SaaS content specifically for Perplexity AI citations?
 
 Perplexity uses a five-factor citation probability formula: Content Comprehensiveness (25%), Source Authority (20%), Content Recency (18%), Structural Clarity (15%), and Factual Verifiable Data (10%). Practically, this means: publish comprehensive guides that address a topic and all related sub-intents on one URL; build authoritative backlinks; update content within a 30-day freshness cycle; use clean H2/H3 hierarchies with comparison tables; and embed specific statistics and named expert quotes. Partner ecosystem content is disproportionately powerful: PartnerStack research found that 43% of AI-generated vendor citations originate from partner ecosystem sources.
+
+### What is ChatGPT SEO, and is it different from Perplexity SEO?
+
+ChatGPT SEO and Perplexity SEO are informal names for optimising to be cited by each engine, and they are not the same job. ChatGPT leans on its index plus corroboration and weights brand mentions and entity consistency heavily; Perplexity is more link- and freshness-driven and exposes its sub-queries and sources directly. Optimising for one does not guarantee the other, which is why a single-engine 'AI visibility' number is misleading. Prioritise the engine your buyers use, then generalise.
 
 Citations & Sources
 

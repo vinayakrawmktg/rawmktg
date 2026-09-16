@@ -245,6 +245,10 @@ A prompt portfolio is a controlled set of 50-150 queries run across AI engines o
 
 Revenue per Citation (RPC) is a Looker Studio calculated field that quantifies the financial return of each AI citation won. It is calculated as SUM(Revenue) divided by SUM(Citation Count), using blended data from GA4 (on-site revenue) joined to a prompt-portfolio Google Sheet (citation counts) on the date and page dimensions. RPC is the headline metric that proves GEO ROI to the C-suite.
 
+### How do you measure AI traffic in GA4, and what is Dark AI?
+
+To measure AI traffic in GA4, build a custom channel or segment for known AI referrers, chatgpt.com, perplexity.ai, gemini.google.com and copilot, and report their sessions and conversions over time. The complication is Dark AI: a large share of AI referrals arrive in GA4 as Direct with the referrer stripped, so they are undercounted. Segment Direct traffic against your AI-visibility trend to estimate the dark portion, tag links you control with UTMs, and report the AI-referral and Dark-AI estimate together in Looker Studio alongside your citation tracking.
+
 Works Cited
 
 1. 1. ThatWare, GEO Stack: 5-Layer AI Visibility & Citation Framework. [thatware.co/5-layer-geo-stack-ai-visibility-framework](https://thatware.co/5-layer-geo-stack-ai-visibility-framework/)
