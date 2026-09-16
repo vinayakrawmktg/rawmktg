@@ -65,10 +65,18 @@ def render(slug, eyebrow, kicker, title_lines, stat):
         im.resize((w,round(525*w/1000)),Image.LANCZOS).save((f"{base}-card.webp" if w==1000 else f"{base}-card-{w}.webp"),"WEBP",quality=86,method=6)
     return f"{base}.webp"
 
+COVERS={
+ "ai-visibility-tools-compared":("The Buyer's Guide  ·  2026","AI VISIBILITY TOOLING",
+    [("AI Visibility Tools,",None),("Compared",".")],"7 platforms  ·  $29–$300/mo  ·  reviews + real pricing"),
+ "pricing-page-ai-will-quote":("The Money Page  ·  GEO","PRICING PAGES FOR AI",
+    [("The Pricing Page",None),("AI Will Quote",".")],"real numbers  ·  answer blocks  ·  Offer schema  ·  the page buyers ask for"),
+ "video-ai-citation-source":("Off-Page  ·  GEO","VIDEO AS A CITATION SOURCE",
+    [("YouTube, Video &",None),("the AI Citation",".")],"transcripts  ·  chapters  ·  VideoObject schema  ·  the source engines quote"),
+ "product-feeds-ai-shopping-agents":("Agentic Commerce  ·  GEO","FEEDS FOR AI SHOPPING AGENTS",
+    [("Product Feeds for",None),("AI Shopping Agents",".")],"structured feeds  ·  ACP  ·  agentic checkout  ·  getting recommended"),
+}
 if __name__=="__main__":
-    out=render("ai-visibility-tools-compared",
-        "The Buyer's Guide  ·  2026",
-        "▸  AI VISIBILITY TOOLING",
-        [("AI Visibility Tools,",None),("Compared",".")],
-        "10 platforms  ·  $29–$499+/mo  ·  6+ answer engines tracked")
-    print("wrote", out)
+    import sys
+    slug=sys.argv[1] if len(sys.argv)>1 else "ai-visibility-tools-compared"
+    eyebrow,kicker,lines,stat=COVERS[slug]
+    print("wrote", render(slug,eyebrow,kicker,lines,stat))

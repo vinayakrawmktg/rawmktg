@@ -5,7 +5,7 @@
 *Source: https://rawmktg.com/blogs/comparison-pages-ai-shortlists · rawmktg. by Vinayak Ravi*
 
 
-Walk your own site backwards. Top of funnel is crowded, blog posts, a glossary, a few opinion pieces, maybe a report. Bottom of funnel is fine too, pricing page, product pages, a demo form. Then look at the middle. It is empty. It has been empty at almost every B2B software company we have ever pulled apart, for so long that most teams have stopped noticing.
+Walk your own site backwards. Top of funnel is crowded, blog posts, a glossary, a few opinion pieces, maybe a report. Bottom of funnel is fine too, pricing page, product pages, a demo form. Then look at the middle. It is empty. It has been empty at almost every B2B software company we have ever pulled apart, for so long that most teams have stopped noticing. The pricing page has its own extractability rules: [the pricing page AI will quote](/blogs/pricing-page-ai-will-quote).
 
 The middle is where the buying decision happens. It is the moment someone types "best contract management software for a 60-person legal team" and expects a shortlist, not a brochure. For roughly fifteen years that moment belonged to review aggregators, and vendors responded by paying rent: sponsored category placement, review-generation campaigns, paid search on their own competitor terms. The consideration funnel became a media buy.
 

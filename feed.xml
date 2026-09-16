@@ -10,6 +10,13 @@
     <lastBuildDate>Tue, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
 
     <item>
+      <title><![CDATA[The Pricing Page AI Will Quote &middot; rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/pricing-page-ai-will-quote</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/pricing-page-ai-will-quote</guid>
+      <pubDate>Tue, 16 Sep 2026 06:00:00 +0000</pubDate>
+      <description><![CDATA[How to write a pricing page that AI answer engines will quote correctly. Buyers ask ChatGPT, Perplexity, Gemini and Google AI what products cost, and the answer is assembled from whatever the model can extract; if your price sits in an image, a JavaScript widget, or behind 'contact sales', the model quotes a competitor, an outdated figure, or hallucinates a number with your name on it. The fix has three reinforcing layers: real numbers in server-side text, led by an answer block that states every tier in the first 40-55 words; a parseable comparison table; and Product/Offer/PriceSpecification JSON-LD whose numbers match the page exactly. Covers making 'it depends' pricing quotable (floor, unit, typical case), why 'contact us' is the one answer a model cannot pass on, why old prices persist (cross-source corroboration, reconcile G2/Capterra/directories), JavaScript-rendering pitfalls, crawler access, a 10-point checklist, and how to measure whether engines quote your price correctly.]]></description>
+    </item>
+    <item>
       <title><![CDATA[AI Visibility Tools, Compared (2026 Buyer's Guide) &middot; rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/ai-visibility-tools-compared</link>
       <guid isPermaLink="true">https://rawmktg.com/blogs/ai-visibility-tools-compared</guid>
