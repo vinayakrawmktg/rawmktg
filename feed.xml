@@ -7,8 +7,15 @@
     <language>en-us</language>
     <copyright>rawmktg.</copyright>
     <atom:link href="https://rawmktg.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 01 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title><![CDATA[AI Visibility Tools, Compared (2026 Buyer's Guide) &middot; rawmktg.]]></title>
+      <link>https://rawmktg.com/blogs/ai-visibility-tools-compared</link>
+      <guid isPermaLink="true">https://rawmktg.com/blogs/ai-visibility-tools-compared</guid>
+      <pubDate>Tue, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A 2026 buyer's guide to AI visibility tracking tools, the platforms that run a fixed prompt set against ChatGPT, Google AI Overviews and AI Mode, Perplexity, Gemini and Copilot and record whether your brand is named, which URLs are cited, and which competitors are recommended instead. Names and compares Profound (enterprise depth, ~11 engines, $99-$499+/mo), Peec AI and AthenaHQ (clean mid-market analytics, ~$95-$495 and ~$295/mo), Otterly.ai (agency/budget, $29+ with a 25-factor GEO audit), Scrunch, and the SEO incumbents (Semrush, SE Ranking). Covers the five evaluation axes (platform coverage, prompt methodology, data depth, actionability, pricing transparency), which tool to buy by profile, a minimum-viable tracker in ~12 lines of Python, and the gap none of them close: tracking is not remediation. Published pricing as of September 2026; independent, unaffiliated.]]></description>
+    </item>
     <item>
       <title><![CDATA[Clean Site, Zero Citations: An Investing & Wealth AI-Visibility Teardown &middot; rawmktg.]]></title>
       <link>https://rawmktg.com/blogs/clean-site-zero-citations</link>
