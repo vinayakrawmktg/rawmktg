@@ -1090,7 +1090,38 @@ A tracker is a thermometer. It tells you the temperature and whether it is risin
 
 RawMktg sits on the other side of that line. It [audits the page the way an AI crawler sees it](/features/ai-visibility-audit), measures [Share of Model](/features/share-of-model), and returns located, prioritised findings and the fix, not just a score. Run a tracker to know your position; run diagnosis-and-remediation to change it. Honest buyers budget for both, and read the tracker's number through the accuracy caveats in section 3.
 
-## 15. What actually drives the price?
+## 15. How is RawMktg's approach different, and who is it for?
+
+**RawMktg is not a tracker. It is a diagnosis-and-remediation engine: it crawls your pages the way an AI crawler does, measures Share of Model, and returns located, prioritised findings and the fix, not just a score.** So it is complementary to every tracker above, run one to learn your position, run RawMktg to change it. (Disclosure: this is our product; the comparison below is kept as fair as we can make it.)
+
+The trackers in this guide answer one question well: am I cited, how often, and versus whom. RawMktg is built for the question that comes next, why am I not, and what exactly do I change. It fetches each page as OAI-SearchBot or PerplexityBot would, computes the [Content Visibility Ratio](/features/ai-visibility-audit) (how much of the page survives without JavaScript), runs roughly fifty checks across retrievability, answer structure and markup, and returns findings located to the exact page and element and weighted by impact, alongside the generated fix. It measures [Share of Model](/features/share-of-model) the way a tracker measures visibility, but it does not stop at the number.
+
+### The benefit of closing the loop
+
+A tracker's dashboard tells you the temperature is falling; it does not tell you the window is open. Because RawMktg diagnoses and remediates in one workflow, the output is not a trend line but a prioritised worklist: this page fails gate 1 on a stray noindex, that section has no answer block, this comparison page is missing schema, ranked by the citations each fix is likely to move. The path from measure, to why, to fix lives in one place, which is the difference between knowing you have a problem and having it solved. It closes exactly the gap every tracker's own customers name in their reviews: monitoring-only.
+
+### Who this approach is for
+
+Diagnosis-and-remediation fits teams that have already looked at a tracker's number and asked 'now what': in-house B2B marketers who need to move the number rather than watch it; SEO and content teams who want located fixes instead of a score; and agencies who need to show clients the change, not just the chart. It is less relevant if all you need today is a broad multi-engine monitor, in which case a tracker above, paired with RawMktg when you are ready to act, is the right stack.
+
+Here is how the approaches stack up. The trackers lead on breadth of engine monitoring, which is their job; RawMktg leads on the audit-to-fix axis, which is a different job. Read it as complementary, not head-to-head.
+
+Trackers vs RawMktg, feature by feature. The trackers measure; RawMktg diagnoses and fixes. (Yes / Partial / No, September 2026.)
+
+| Capability | The seven trackers (Profound, Peec, Athena, Scrunch, Otterly, Semrush, SE Ranking) | RawMktg |
+| --- | --- | --- |
+| Track AI answers across many engines | Yes, breadth is their strength (Profound ~11 engines) | Measures Share of Model; not a broad multi-engine monitor |
+| Share of voice / model | Yes / Partial | Yes |
+| Cited URLs + competitors named | Yes | Yes |
+| Sentiment analysis | Partial (Peec, Profound) | Not the focus |
+| Crawl your pages as an AI bot (raw vs rendered) | No (Otterly, Semrush: light audit) | Yes, Content Visibility Ratio, ~50 checks |
+| Located, point-weighted findings (the 'why') | Mostly No (Athena, Otterly: light recommendations) | Yes, per page and element |
+| Generates the fix (remediation) | No | Yes |
+| Best used as | The measurement layer | The diagnosis-and-fix layer on top of it |
+
+The honest summary: if the question is 'where do I stand across the AI engines', buy a tracker. If the question is 'why am I not cited and what do I change', that is the [audit-and-fix job RawMktg is built for](/features/findings-and-fixes), and you can [start with a free audit of 25 pages](/pricing). Most serious programs end up wanting both.
+
+## 16. What actually drives the price?
 
 **Prompt volume and engine count, not the sticker. A tool's real cost is prompts x runs x engines x cycles, and every serious methodology multiplies all three, which is why '$29' and '$399' converge once you cover the engines and run enough to trust the number.** Match each tool's query allowance to the sampling you actually need before comparing headline tiers.
 
@@ -1107,7 +1138,7 @@ monthly_queries  =  prompts  x  runs_per_prompt  x  engines  x  cycles_per_month
   Match this to each tool's query/credit allowance, not its headline tier.
 ```
 
-## 16. Which AI visibility tool should you buy?
+## 17. Which AI visibility tool should you buy?
 
 **By profile: enterprise breadth, Profound (or Evertune above it); clean mid-market measurement, Peec AI; analytics with guidance, AthenaHQ; monitoring plus agent analytics, Scrunch; agency or budget, Otterly; already on an SEO suite, Semrush or SE Ranking's module.** Buy for the collection method you trust and the engines your buyers use, then confirm the query allowance covers real sampling.
 
@@ -1123,7 +1154,7 @@ Table 12. A starting point by profile. Trial two before committing; collection m
 | Already paying for Semrush or SE Ranking | That suite's AI module | No extra login; upgrade to a specialist once you know your priority axis |
 | Just proving the problem exists | Otterly Lite ($29) or the script below | Enough to confirm you are absent before spending on automation |
 
-## 17. How do you actually run one once you have it?
+## 18. How do you actually run one once you have it?
 
 **Point it at the questions your buyers really ask, run at least five times per prompt per engine, enable the search tool so you measure real citations, and report Answer Share plus who gets cited instead of you, each tagged with prompt set, engine and date.** The tool automates the loop; the discipline is yours. A number without its prompt set, engine and date is not comparable to anything, including its own value last quarter.
 
@@ -1162,7 +1193,7 @@ csv.DictWriter(open("visibility.csv","w"), fieldnames=list(rows[0])).writerows(r
 
 For the full measurement stack, prompt design through GA4 attribution and Looker reporting, see [prompt-to-citation tracking](/blogs/prompt-to-citation-tracking), and for the standard the numbers should meet, the [RawMktg methodology](/methodology).
 
-## 18. Method and honest limits
+## 19. Method and honest limits
 
 **This is an independent buyer's guide built from published vendor pricing and public customer reviews gathered in September 2026. It is not exhaustive, not affiliated, and the numbers move fast.** Treat prices, query volumes and engine counts as directionally true, not as a live quote.
 
